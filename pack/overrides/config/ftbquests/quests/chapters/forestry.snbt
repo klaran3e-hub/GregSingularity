@@ -1,0 +1,1619 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "forestry"
+  group: "468EF37A10F16FBE"
+  icon: "forestry:farm_gearbox_brick"
+  title: "Forestry и Gendustry"
+  id: "4DE93D4C8A5848F4"
+  order_index: 17
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/forestry.png"
+    x: 0.0d
+    y: 0.0d
+    width: 49.519d
+    height: 19.704d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "4152BF16E6AFA819"
+      title: "Кирпич для лесного участка"
+      description: ["Обожги кирпичи и собери кладку. На четыре секции фермы уходит четыре кирпичных блока, бронза и столярная обвязка."]
+      x: -19.720d
+      y: 5.421d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FCC63C022147426","4DB9F7C628654BD1","406FCCBDC3668AE7"]
+      optional: true
+      tasks: [{
+        id: "41079A27EEF88AE8"
+        type: "item"
+        item: "minecraft:bricks"
+        count: 36L
+      }]
+      rewards: [{
+        id: "49B54BF7107C9C8C"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4C7E209E20C5CA0E"
+      title: "Секции корпуса фермы"
+      description: ["Выпусти 36 секций в сборщике при 28 EU/t. Часть секций уйдёт на оснащение, остальные пойдут в корпус."]
+      x: -17.145d
+      y: -0.443d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4152BF16E6AFA819","48F933CA7A837F03","493BCB782DD7F53E","424C54CDC38321AB"]
+      optional: true
+      tasks: [{
+        id: "426097274064DF31"
+        type: "item"
+        item: "forestry:farm_plain_brick"
+        count: 36L
+      }]
+      rewards: [{
+        id: "4E206B1719669C84"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4617267B248EB87D"
+      title: "Привод лесной фермы"
+      description: ["Установи два двигателя LV и малые бронзовые шестерни в блок привода. Через него ферма принимает FE."]
+      x: -14.535d
+      y: 0.000d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["4C7E209E20C5CA0E","443D03067A820986","426E0E49436D4534","427909B3358090BF"]
+      optional: true
+      tasks: [{
+        id: "47C070EA807CD77D"
+        type: "item"
+        item: "forestry:farm_gearbox_brick"
+      }]
+      rewards: [{
+        id: "460F5EC4DF84EEAF"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "460B64C823EF4070"
+      title: "Водяной ввод"
+      description: ["Собери ввод из насоса LV и бронзовых труб. Подай обычную воду к боковой стороне."]
+      x: -14.195d
+      y: 3.974d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C7E209E20C5CA0E","49CE3A195951A7A9","443D03067A820986"]
+      optional: true
+      tasks: [{
+        id: "48E0052CFD623D19"
+        type: "item"
+        item: "forestry:farm_valve_brick"
+      }]
+      rewards: [{
+        id: "47AE6001A06D05FD"
+        type: "item"
+        item: "gtceu:tin_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4A30E97A04DB5B1B"
+      title: "Люк для подачи и выгрузки"
+      description: ["Установи люк рядом с буфером. Через него можно подать саженцы и вывезти урожай."]
+      x: -14.195d
+      y: -6.393d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C7E209E20C5CA0E","44514C253BD1B916","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "4644EBEFFF0F036E"
+        type: "item"
+        item: "forestry:farm_hatch_brick"
+      }]
+      rewards: [{
+        id: "494BF6D03E515424"
+        type: "item"
+        item: "gtceu:tin_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "488E525E03E88934"
+      title: "Выключатель лесного участка"
+      description: ["Добавь блок управления. Сигнал сверху или снизу останавливает всю ферму, боковой сигнал останавливает соответствующий участок."]
+      x: -14.875d
+      y: -2.717d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C7E209E20C5CA0E","48EE48FA97FC7401","42CA8D93FB0AC26C"]
+      optional: true
+      tasks: [{
+        id: "4859FB544848AC50"
+        type: "item"
+        item: "forestry:farm_control_brick"
+      }]
+      rewards: [{
+        id: "4EFCE7B5BCFDBC9F"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "42E302398DEBA0D2"
+      title: "Апатит для удобрения"
+      description: ["Найди жилу апатита GregTech в Верхнем мире и добудь восемь кристаллов."]
+      x: -19.720d
+      y: -2.920d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FCC63C022147426","48F933CA7A837F03"]
+      optional: true
+      tasks: [{
+        id: "4ADB448FD80B4591"
+        type: "item"
+        item: "gtceu:apatite_gem"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4DFB04FDF246C53C"
+        type: "item"
+        item: "gtceu:tin_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4436B19578B0CBB8"
+      title: "Зольный запас"
+      description: ["Сжигай древесный уголь в паровом котле и собирай золу из выхода. На цикл удобрения нужны четыре порции."]
+      x: -19.720d
+      y: -1.125d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FCC63C022147426","466EAC305CCCFB8C","49F90E9F2AFFA0DD"]
+      optional: true
+      tasks: [{
+        id: "4E5E2A2519D178D3"
+        type: "item"
+        item: "gtceu:ash_dust"
+        count: 16L
+      }]
+      rewards: [{
+        id: "424FF9E8CBF2E0DC"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4493B52738BDF733"
+      title: "Первая партия удобрения"
+      description: ["Подай апатит, золу, песок и воду в сборщик LV. Часть удобрения уйдёт на перегной, остальное загрузи в ферму."]
+      x: -17.298d
+      y: 4.971d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4436B19578B0CBB8","42E302398DEBA0D2"]
+      optional: true
+      tasks: [{
+        id: "4F83C512C57E8129"
+        type: "item"
+        item: "forestry:fertilizer_compound"
+        count: 32L
+      }]
+      rewards: [{
+        id: "4AA90B4C551951FF"
+        type: "item"
+        item: "gtceu:tin_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "47F29DCCB5DC45DD"
+      title: "Запас почвы для деревьев"
+      description: ["Подай землю, листья, удобрение и воду в сборщик. Ферма также принимает обычную землю и готовит из неё почву на месте."]
+      x: -14.875d
+      y: -5.113d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4493B52738BDF733"]
+      optional: true
+      tasks: [{
+        id: "413AC002EC28728B"
+        type: "item"
+        item: "forestry:humus"
+        count: 32L
+      }]
+      rewards: [{
+        id: "494325B32969790A"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "487B81B02EC7916E"
+      title: "Саженцы на первые посадки"
+      description: ["Собери шестнадцать дубовых саженцев. При первом запуске оставь часть в резерве на случай пустого возврата."]
+      x: -11.773d
+      y: -5.706d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["47F29DCCB5DC45DD","449E2C383338E843"]
+      optional: true
+      tasks: [{
+        id: "40EF9CA658366223"
+        type: "item"
+        item: "minecraft:oak_sapling"
+        count: 16L
+      }]
+      rewards: [{
+        id: "42D8700FD4EC59C9"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "461FB0E0BD54B261"
+      title: "Компактная древесная ферма"
+      description: ["Устрой основание из каменных кирпичей на два блока ниже фермы. Слой почвы будет на один блок ниже фермы. Подай FE, воду, удобрение, почву и саженцы."]
+      x: -9.690d
+      y: -1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4617267B248EB87D","460B64C823EF4070","4A30E97A04DB5B1B","487B81B02EC7916E","48EE48FA97FC7401","4B29F52E5A6FAD55"]
+      optional: true
+      tasks: [{
+        id: "4876F29DBD6AA49E"
+        type: "item"
+        item: "forestry:arboretum_managed"
+      }]
+      rewards: [{
+        id: "41F2105F3525ACC7"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "43D7893EF52B2774"
+      title: "Питание фермы от LV"
+      description: ["Киянкой переключи преобразователь в EU → FE. Соедини выход с приводом многоблочной фермы или с компактной установкой."]
+      x: -11.773d
+      y: 3.561d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4617267B248EB87D","4BB92B834B3EBDC5"]
+      optional: true
+      tasks: [{
+        id: "46C01B07EE672C81"
+        type: "item"
+        item: "gtceu:lv_1a_energy_converter"
+      }]
+      rewards: [{
+        id: "4CEF5C9AEBD01BAC"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4900EC47F6DD1AD9"
+      title: "Площадка под посадку"
+      description: ["Собери башню 3×3×4 по руководству Forestry. Третий слой полностью сложи из секций корпуса. Каменная кладка вокруг башни служит основанием грядок."]
+      x: -10.030d
+      y: -0.321d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["488E525E03E88934","460B64C823EF4070","487B81B02EC7916E","47114A2B1220EEED"]
+      optional: true
+      tasks: [{
+        id: "42FB6D42BC91BC13"
+        type: "item"
+        item: "minecraft:stone_bricks"
+        count: 32L
+      }]
+      rewards: [{
+        id: "4AE49F2C17F5539D"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4585A2F4C077938A"
+      title: "Древесина для лесопилки"
+      description: ["Подай воду, удобрение, почву и саженцы. Освободи выход для древесины, верни саженцы в посадочный отсек и передай брёвна на пилу Create."]
+      x: -7.608d
+      y: 2.721d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4900EC47F6DD1AD9","4A30E97A04DB5B1B","43D7893EF52B2774","45EADC6EDC7CA91F"]
+      optional: true
+      tasks: [{
+        id: "494D809950FD345F"
+        type: "item"
+        item: "minecraft:oak_log"
+        count: 64L
+      }]
+      rewards: [{
+        id: "47793FEB9DA1295C"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4D4339C0124DD9BD"
+      title: "Сачок для диких ульев"
+      description: ["Собери сачок перед полевым выездом. Им разбирают ульи Forestry, чтобы получить первых пчёл."]
+      x: -19.380d
+      y: 0.598d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4D12F46313F9CA9B","42E99CE4711A8261","4D7DA36B68C2978A"]
+      optional: true
+      tasks: [{
+        id: "4ACDB329A86F1D60"
+        type: "item"
+        item: "forestry:scoop"
+      }]
+      rewards: [{
+        id: "4ACD3F6EDD4A2444"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CCC1631D6D45C24"
+      title: "Маточный резерв пасеки"
+      description: ["Собери двух принцесс и оставь одну в резерве. Перед заселением сравни условия биома с требованиями пчелы."]
+      x: -17.298d
+      y: -3.125d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D4339C0124DD9BD"]
+      optional: true
+      tasks: [{
+        id: "475E6B9D42374084"
+        type: "item"
+        item: "forestry:bee_princess_ge"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4F4464249F700BDF"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4489880BDE49A20C"
+      title: "Трутни для первых скрещиваний"
+      description: ["Сохрани трутней разных линий в отдельных ячейках. Начни с пары, для которой можно обеспечить подходящие цветы и климат."]
+      x: -16.618d
+      y: 3.833d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D4339C0124DD9BD"]
+      optional: true
+      tasks: [{
+        id: "400C7795F8EDB4B9"
+        type: "item"
+        item: "forestry:bee_drone_ge"
+        count: 4L
+      }]
+      rewards: [{
+        id: "47CA03FA3EA75A81"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4B1FC3A982E00C91"
+      title: "Медовые соты из диких ульев"
+      description: ["Проверь добычу из диких ульев. Оставь часть медовых сот под первый домик, остальные передай на разделение."]
+      x: -17.298d
+      y: -5.310d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D4339C0124DD9BD"]
+      optional: true
+      tasks: [{
+        id: "4EFE0A41633BBEC4"
+        type: "item"
+        item: "forestry:bee_comb_honey"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4CB783984269D2D2"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "498A945E6D1E4C61"
+      title: "Пчелиный домик для размножения"
+      description: ["Поставь домик рядом с подходящими цветами и с открытым небом. Используй его для первых семей, пока собираешь оснастку полноценной пасеки."]
+      x: -14.195d
+      y: -1.608d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B1FC3A982E00C91","4CCC1631D6D45C24","4489880BDE49A20C"]
+      optional: true
+      tasks: [{
+        id: "4C52DEC3003DD0FA"
+        type: "item"
+        item: "forestry:bee_house"
+      }]
+      rewards: [{
+        id: "4D21F2C8418661B8"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "46448CCC6662902F"
+      title: "Первая матка пасеки"
+      description: ["Помести принцессу и подходящего трутня в домик. Когда появится матка, оставь ей условия для полного цикла и освободи выход."]
+      x: -12.453d
+      y: 5.253d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["498A945E6D1E4C61"]
+      optional: true
+      tasks: [{
+        id: "4E48B77E6C76FCC6"
+        type: "item"
+        item: "forestry:bee_queen_ge"
+      }]
+      rewards: [{
+        id: "471BA14ADEA34F22"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4E6BC7FBE4FB8795"
+      title: "Раздельный архив линий"
+      description: ["Один пчелиный сундук оставь для основных семей, другой для племенного резерва. Запасных трутней храни отдельно от партии переработки."]
+      x: -9.350d
+      y: 4.585d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46448CCC6662902F"]
+      optional: true
+      tasks: [{
+        id: "4674CD9ADF3073F7"
+        type: "item"
+        item: "forestry:bee_chest"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4F4159F7BF174AF7"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "48A0860B1CFB2E12"
+      title: "Пасека с рамками"
+      description: ["У полноценной пасеки есть слоты для рамок. После заселения проверь условия работы в интерфейсе и подбери рамки под свой цикл."]
+      x: -9.690d
+      y: 1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["46448CCC6662902F","4CDF30AA9C1ED4EC"]
+      optional: true
+      tasks: [{
+        id: "485BBC0CF89BF18D"
+        type: "item"
+        item: "forestry:apiary"
+      }]
+      rewards: [{
+        id: "4D84563000B098A4"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CD545C6E0FC4933"
+      title: "Рамки с масляной пропиткой"
+      description: ["Возьми пропитанные заготовки у плотника Forestry. Готовые рамки складывай рядом с пасеками, чтобы их можно было менять по мере износа."]
+      x: -6.928d
+      y: 1.118d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48A0860B1CFB2E12","407AD8226C81C437"]
+      optional: true
+      tasks: [{
+        id: "4BC4855D3A63E623"
+        type: "item"
+        item: "forestry:frame_impregnated"
+        count: 6L
+      }]
+      rewards: [{
+        id: "4B515DB0BE5F404F"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4DD9AC17F765E9CD"
+      title: "Переносная проверка признаков"
+      description: ["Помести образец в портативный анализатор. Для проверки держи под рукой каплю мёда или медвяной росы."]
+      x: -9.350d
+      y: 0.262d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["47DDE28946B1984A","444CA98FE3F4A3FE"]
+      optional: true
+      tasks: [{
+        id: "46043A3C0E7DB941"
+        type: "item"
+        item: "forestry:portable_alyzer"
+      }]
+      rewards: [{
+        id: "4499C6C9238C4219"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4D0828A38E946BE2"
+      title: "Стационарный анализатор питомника"
+      description: ["Поставь анализатор рядом с племенным архивом. Сравнивай оба набора признаков, прежде чем выделять родителей для новой линии."]
+      x: -7.268d
+      y: -1.162d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4DD9AC17F765E9CD","4965BF749A8C0B13"]
+      optional: true
+      tasks: [{
+        id: "461E504F8B5E959B"
+        type: "item"
+        item: "forestry:analyzer"
+      }]
+      rewards: [{
+        id: "483A945BA23FDD13"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "49FE53597ED907E9"
+      title: "Соты для непрерывной переработки"
+      description: ["Собери партию сот от освоенных семей. Снимай выпуск до заполнения выхода пасеки и не смешивай соты с племенным материалом."]
+      x: -4.505d
+      y: 4.043d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CD545C6E0FC4933","4D0828A38E946BE2"]
+      optional: true
+      tasks: [{
+        id: "4EC58222BF987D33"
+        type: "item"
+        item: "forestry:bee_comb_honey"
+        count: 32L
+      }]
+      rewards: [{
+        id: "4B812A5FB0A0EAAA"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4109692031F59623"
+      title: "Усиленные корпуса для машин Forestry"
+      description: ["Отложи корпуса для машин переработки. Проверь, что сеть GregTech через преобразователь даёт FE на сторону Forestry."]
+      x: -19.720d
+      y: 2.343d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D12F46313F9CA9B","42E99CE4711A8261","4BB92B834B3EBDC5"]
+      optional: true
+      tasks: [{
+        id: "4049CB866E42AF84"
+        type: "item"
+        item: "forestry:sturdy_machine"
+        count: 2L
+      }]
+      rewards: [{
+        id: "400381165C7B9F4C"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44794A2243AE7F3C"
+      title: "Отжим семян и медовых капель"
+      description: ["Подключи отжиматель к FE. На первом запуске выдели жидкостный буфер под масло, чтобы выход не переполнился."]
+      x: -17.298d
+      y: 2.705d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4109692031F59623"]
+      optional: true
+      tasks: [{
+        id: "46979B960AAE70C8"
+        type: "item"
+        item: "forestry:squeezer"
+      }]
+      rewards: [{
+        id: "4781C2B4F411E111"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "444CA98FE3F4A3FE"
+      title: "Плотник для пропитки древесины"
+      description: ["Поставь плотник рядом с отжимателем. Отдельно приготовь подачу воды, масла и мёда под разные рецепты."]
+      x: -16.618d
+      y: 1.455d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4109692031F59623","42FC2F9C0CA18C8C"]
+      optional: true
+      tasks: [{
+        id: "4C434EA8091A059F"
+        type: "item"
+        item: "forestry:carpenter"
+      }]
+      rewards: [{
+        id: "47D021C81B002979"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "46CFEDB4A286098A"
+      title: "Ведро семенного масла Forestry"
+      description: ["Отжимай семена до накопления масла и набери ведро из подходящей ёмкости. Остальное масло оставь на пропитку корпусов и заготовок."]
+      x: -14.195d
+      y: 2.508d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44794A2243AE7F3C"]
+      optional: true
+      tasks: [{
+        id: "4441F7DD480C67A8"
+        type: "item"
+        item: "forestry:bucket_seed_oil"
+      }]
+      rewards: [{
+        id: "41B852620C966138"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "407AD8226C81C437"
+      title: "Пропитанные заготовки рамок"
+      description: ["Задай рецепт в сетке плотника. Для автосборки укажи в шаблоне 250 мБ семенного масла и отфильтруй шину импорта по готовым палочкам, иначе она заберёт масло из бака."]
+      x: -11.773d
+      y: 1.665d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["444CA98FE3F4A3FE","46CFEDB4A286098A"]
+      optional: true
+      tasks: [{
+        id: "4F98721C0141C923"
+        type: "item"
+        item: "forestry:impregnated_stick"
+        count: 16L
+      }]
+      rewards: [{
+        id: "444E4DDDC5167708"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46C9BCECB13301F0"
+      title: "Древесина фермы для корпусов пасек"
+      description: ["Передай брёвна с фермы в плотник Forestry. Пропитай восемь корпусов семенным маслом и оставь их в буфере рядом с будущими пасеками."]
+      x: -5.185d
+      y: 2.744d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4585A2F4C077938A","407AD8226C81C437","46CFEDB4A286098A"]
+      optional: true
+      tasks: [{
+        id: "41C8FA260D96FAD3"
+        type: "item"
+        item: "forestry:impregnated_casing"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4956796FF0153C36"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CDF30AA9C1ED4EC"
+      title: "Пропитанные корпуса будущих пасек"
+      description: ["Часть партии отложи для пасек, остальное для большого улья. Храни корпуса отдельно от пропитанных палок."]
+      x: -11.773d
+      y: 6.925d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["444CA98FE3F4A3FE","46CFEDB4A286098A"]
+      optional: true
+      tasks: [{
+        id: "4A7460711DE62557"
+        type: "item"
+        item: "forestry:impregnated_casing"
+        count: 4L
+      }]
+      rewards: [{
+        id: "44FFF91EC8D129F5"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4965BF749A8C0B13"
+      title: "Разделение медовых сот"
+      description: ["Поставь центрифугу Forestry и подключи FE. Медовые соты дают воск и могут дать капли мёда."]
+      x: -14.195d
+      y: -3.829d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4109692031F59623","4B1FC3A982E00C91"]
+      optional: true
+      tasks: [{
+        id: "4E399F2ABBAE5102"
+        type: "item"
+        item: "forestry:centrifuge"
+      }]
+      rewards: [{
+        id: "42DEB25305F5BAEA"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "47DDE28946B1984A"
+      title: "Медовые капли для анализа"
+      description: ["Из партии сот отложи восемь капель мёда для анализатора. Остальные капли можешь отжать в жидкий мёд."]
+      x: -11.773d
+      y: -1.730d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4965BF749A8C0B13"]
+      optional: true
+      tasks: [{
+        id: "453C9335104D6775"
+        type: "item"
+        item: "forestry:honey_drop"
+        count: 8L
+      }]
+      rewards: [{
+        id: "47D79F1412641085"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "470F6B55413DAC4D"
+      title: "Восковой запас центрифуги"
+      description: ["Накопи воск отдельно от капель. Оставь запас под душистую обшивку будущего улья."]
+      x: -7.608d
+      y: -2.878d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4965BF749A8C0B13","48A0860B1CFB2E12"]
+      optional: true
+      tasks: [{
+        id: "4B4E27F5477F3119"
+        type: "item"
+        item: "forestry:beeswax"
+        count: 24L
+      }]
+      rewards: [{
+        id: "41D607678FCBA354"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D4A94798D8FA218"
+      title: "Жидкий мёд для плотника"
+      description: ["Отожми капли мёда и набери ведро. Мёд подавай к плотнику по отдельной линии от семенного масла."]
+      x: -10.030d
+      y: 5.827d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44794A2243AE7F3C","47DDE28946B1984A"]
+      optional: true
+      tasks: [{
+        id: "4A0ABF17FA8D65BE"
+        type: "item"
+        item: "forestry:bucket_honey"
+      }]
+      rewards: [{
+        id: "4FE52BA79CE74A51"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4760820866179780"
+      title: "Шёлковые соты селекционного участка"
+      description: ["Найди линию с шёлковыми сотами по подсказкам Forestry и выдели ей отдельную пасеку. Держи готовые соты отдельно от обычных медовых."]
+      x: -4.505d
+      y: -2.795d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D0828A38E946BE2","4CD545C6E0FC4933"]
+      optional: true
+      tasks: [{
+        id: "49DB0DEED050BA4E"
+        type: "item"
+        item: "forestry:bee_comb_silky"
+        count: 8L
+      }]
+      rewards: [{
+        id: "43E97D32596B74BB"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4A31D5A8836F8CF8"
+      title: "Тканый шёлк на фильтры улья"
+      description: ["Выдели прополис из шёлковых сот, затем получи из него волокно. На один цикл плотнику нужно 750 мБ дистиллированной воды. Для автосборки поставь фильтр по шёлку на выходной шине."]
+      x: -2.763d
+      y: 3.725d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4760820866179780","4965BF749A8C0B13","444CA98FE3F4A3FE"]
+      optional: true
+      tasks: [{
+        id: "4350F5E9D9926BEC"
+        type: "item"
+        item: "forestry:woven_silk"
+        count: 4L
+      }]
+      rewards: [{
+        id: "470827421F9FC2B3"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4599761C4A93E465"
+      title: "Душистая обшивка большого улья"
+      description: ["Для обшивки подготовь древесину, воск, королевское желе, обычную пыльцу и жидкий мёд. Выдели обшивке собственный заказ плотника."]
+      x: -5.185d
+      y: -0.520d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["470F6B55413DAC4D","4D4A94798D8FA218","4D0828A38E946BE2"]
+      optional: true
+      tasks: [{
+        id: "4F3520B011B7C3F4"
+        type: "item"
+        item: "forestry:scented_paneling"
+        count: 16L
+      }]
+      rewards: [{
+        id: "40AEB8C3D7A670F9"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "430AD4E410D5DF41"
+      title: "Корпус большого улья 3×3×3"
+      description: ["Подготовь 27 блоков и накрой куб деревянными плитами. Сверь сборку с руководством Forestry, оставь сверху свободное пространство."]
+      x: -2.763d
+      y: 6.322d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4599761C4A93E465","4CDF30AA9C1ED4EC"]
+      optional: true
+      tasks: [{
+        id: "41A6C02B6CE61893"
+        type: "item"
+        item: "forestry:alveary_plain"
+        count: 27L
+      }]
+      rewards: [{
+        id: "4B0B38A417F3C2C6"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "486E13F324C32CC8"
+      title: "Сито большого улья"
+      description: ["Поставь сито в допустимую ячейку нижних двух слоёв. Загрузи тканый шёлк, когда хочешь собирать пыльцу деревьев."]
+      x: -0.340d
+      y: 2.434d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["430AD4E410D5DF41","4A31D5A8836F8CF8"]
+      optional: true
+      tasks: [{
+        id: "4119CA6879D74BCD"
+        type: "item"
+        item: "forestry:alveary_sieve"
+      }]
+      rewards: [{
+        id: "43294B85D9F3AE8B"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4832A3CD65E4EA9C"
+      title: "Сосуды для лабораторных установок"
+      description: ["Отложи сосуды для сборки промышленной пасеки и лабораторных машин. Готовые заготовки храни на отдельной полке."]
+      x: -6.928d
+      y: -4.053d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48A0860B1CFB2E12","4D12F46313F9CA9B","42E99CE4711A8261"]
+      optional: true
+      tasks: [{
+        id: "4358093B183C1552"
+        type: "item"
+        item: "gendustry:receptacle"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4632DD59F9E36149"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4EF3A4416766913D"
+      title: "Модули питания лаборатории"
+      description: ["Подготовь модули перед сборкой станков. На площадке заранее проверь выход преобразователя EU в FE."]
+      x: -4.505d
+      y: 0.772d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4832A3CD65E4EA9C","4244F9758F2AC539"]
+      optional: true
+      tasks: [{
+        id: "47AC3840D903931A"
+        type: "item"
+        item: "gendustry:power_module"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4946D741DBCAFD1A"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "411A1843274DEB49"
+      title: "Процессоры управления лабораторией"
+      description: ["Отведи компоненты AE2 на отдельную партию электроники. Пригодные процессоры сохрани на сборку устройств, не смешивая с запасом сети."]
+      x: -2.083d
+      y: -0.516d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EF3A4416766913D","441850600A9234C2","4B3A39A4A264D4F4"]
+      optional: true
+      tasks: [{
+        id: "407B3D5565923FFD"
+        type: "item"
+        item: "gendustry:genetics_processor"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4B4C3443BE1384A7"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CC6DB8B19FB27DC"
+      title: "Блоки контроля среды"
+      description: ["Подготовь электронные блоки под климатическое оборудование. Условия конкретной семьи смотри в анализаторе Forestry."]
+      x: -0.340d
+      y: -3.765d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["411A1843274DEB49","4D0828A38E946BE2"]
+      optional: true
+      tasks: [{
+        id: "4B0DA170C13989AF"
+        type: "item"
+        item: "gendustry:environmental_processor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "49F867718A1265F5"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CF07BDDDB58DE64"
+      title: "Первая промышленная пасека"
+      description: ["Подключи пасеку к FE и пересели подходящую семью. Вместо деревянных рамок у этой машины используются модули улучшения."]
+      x: -2.423d
+      y: 2.058d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4EF3A4416766913D","4832A3CD65E4EA9C","48A0860B1CFB2E12"]
+      optional: true
+      tasks: [{
+        id: "4C070DE61AE54B08"
+        type: "item"
+        item: "gendustry:industrial_apiary"
+      }]
+      rewards: [{
+        id: "490E41DFA0BD6F07"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "400D9DCDB4E8CC74"
+      title: "Оснастка модулей промышленной пасеки"
+      description: ["Отложи по комплекту рамок под климат, автоматизацию и производительность. Пустые рамки предназначены для изготовления модулей."]
+      x: 2.083d
+      y: -3.690d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CF07BDDDB58DE64","4CC6DB8B19FB27DC"]
+      optional: true
+      tasks: [{
+        id: "45DDE58F850F71C1"
+        type: "item"
+        item: "gendustry:upgrade_frame"
+        count: 8L
+      }]
+      rewards: [{
+        id: "443A3A389FDED485"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4E61A556FB98EA67"
+      title: "Модуль климатического управления"
+      description: ["Изготовь климатические модули как компоненты дальнейших улучшений. Сравни температуру и влажность биома с требованиями линии."]
+      x: 4.505d
+      y: -1.470d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["400D9DCDB4E8CC74","4CC6DB8B19FB27DC"]
+      optional: true
+      tasks: [{
+        id: "41DB921BE2D5B213"
+        type: "item"
+        item: "gendustry:climate_control_module"
+        count: 2L
+      }]
+      rewards: [{
+        id: "47DFA02E68BB1ABB"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "473BC1945CCED356"
+      title: "Всепогодное оснащение промышленной пасеки"
+      description: ["Проверь в подсказке модуля допустимые условия работы. Испытай его на отдельной пасеке и следи за потреблением FE."]
+      x: 6.946d
+      y: -0.969d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E61A556FB98EA67","4CF07BDDDB58DE64"]
+      optional: true
+      tasks: [{
+        id: "416546E1AAD1A96B"
+        type: "item"
+        item: "gendustry:weatherproof_upgrade"
+      }]
+      rewards: [{
+        id: "41E6AE9700401FB1"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "483FF6722F595F55"
+      title: "Возврат потомства в рабочую пасеку"
+      description: ["Проверь автоматический возврат потомства на стабильной линии. Племенной резерв держи в отдельном сундуке."]
+      x: 4.505d
+      y: -3.976d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["400D9DCDB4E8CC74","4CF07BDDDB58DE64"]
+      optional: true
+      tasks: [{
+        id: "426A5AB2BF89AF88"
+        type: "item"
+        item: "gendustry:automation_upgrade"
+      }]
+      rewards: [{
+        id: "4721446DDD0F7DA6"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "464C6EA98A1DE566"
+      title: "Улучшение производительности пасеки"
+      description: ["Добавляй модули постепенно. После каждого проверь подвод FE и место для продукции в выходе."]
+      x: 4.505d
+      y: -6.937d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["400D9DCDB4E8CC74","49FE53597ED907E9"]
+      optional: true
+      tasks: [{
+        id: "4E8CA972738F5DF2"
+        type: "item"
+        item: "gendustry:productivity_upgrade"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4633B2596CC7451C"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "4BD04C62DCCC0831"
+      title: "Расходная посуда лаборатории"
+      description: ["Подготовь лабораторную посуду рядом с генетическими станками. Не расходуй запас, пока не выделил исходные образцы."]
+      x: 0.340d
+      y: 3.786d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4832A3CD65E4EA9C","411A1843274DEB49"]
+      optional: true
+      tasks: [{
+        id: "43DFC92EC06676EF"
+        type: "item"
+        item: "gendustry:labware"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4A1C7453B65F818D"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "43019DDAD239BD02"
+      title: "Пустые носители признаков"
+      description: ["Сложи пустые носители в отдельный лоток. Готовые образцы подписывай по признаку и виду."]
+      x: 2.763d
+      y: 6.541d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BD04C62DCCC0831"]
+      optional: true
+      tasks: [{
+        id: "4991E7A93A050082"
+        type: "item"
+        item: "gendustry:blank_gene_sample"
+        count: 8L
+      }]
+      rewards: [{
+        id: "41FC23F4FEF6C702"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "4183667F9CB801E9"
+      title: "Пробоотборник Gendustry"
+      description: ["Поставь пробоотборник и подай FE. Для первых проб используй избыточный материал и пустые носители."]
+      x: 4.845d
+      y: 1.657d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["43019DDAD239BD02","411A1843274DEB49","4D0828A38E946BE2"]
+      optional: true
+      tasks: [{
+        id: "40A3DCF25E040DD7"
+        type: "item"
+        item: "gendustry:sampler"
+      }]
+      rewards: [{
+        id: "4FDA4A27E4DEC536"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "41730CAC65E15F7B"
+      title: "Первые образцы признаков пасеки"
+      description: ["Собери четыре заполненных носителя в пробоотборнике. Сверь подписи и храни исходных родителей отдельно от материала для отбора."]
+      x: 6.928d
+      y: 5.330d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4183667F9CB801E9","4BD04C62DCCC0831"]
+      optional: true
+      tasks: [{
+        id: "456D71488FD6F8E0"
+        type: "item"
+        item: "gendustry:gene_sample"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4D740E4886380D9B"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44FA450D984FF485"
+      title: "Первый заполненный генетический шаблон"
+      description: ["Подготовь пустой шаблон и соедини его с образцами одного типа в верстаке. Задание проверяет наличие шаблона, его полноту смотри в подсказке предмета."]
+      x: 10.030d
+      y: 4.471d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41730CAC65E15F7B"]
+      optional: true
+      tasks: [{
+        id: "45ADEA04BEF3D219"
+        type: "item"
+        item: "gendustry:genetic_template"
+      }]
+      rewards: [{
+        id: "4769D101A86CC985"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "48787A1FB0A8C0F0"
+      title: "Экстрактор для переработки запаса"
+      description: ["Подключи экстрактор к FE и выдели жидкостный выход. Перерабатывай излишки трутней из отдельного лотка."]
+      x: 2.083d
+      y: -0.511d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BD04C62DCCC0831","4EF3A4416766913D"]
+      optional: true
+      tasks: [{
+        id: "4B635D7BE1855E62"
+        type: "item"
+        item: "gendustry:dna_extractor"
+      }]
+      rewards: [{
+        id: "413C178874FC950F"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "47FD5A428911CF7D"
+      title: "Буфер жидкой ДНК"
+      description: ["Собери ведро из выходного потока экстрактора. Исходных пчёл для разведения оставь за пределами переработки."]
+      x: 5.185d
+      y: -0.057d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48787A1FB0A8C0F0","4489880BDE49A20C"]
+      optional: true
+      tasks: [{
+        id: "4A2FD3B56726AFEC"
+        type: "item"
+        item: "gendustry:bucket_liquid_dna"
+      }]
+      rewards: [{
+        id: "45543D90B42D3B25"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "48714F7204F7654A"
+      title: "Аппарат приготовления мутагена"
+      description: ["Отведи аппарату отдельную подачу FE и резервуар. Рецепты расходников сверяй в JEI."]
+      x: 2.083d
+      y: 1.110d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BD04C62DCCC0831","4EF3A4416766913D"]
+      optional: true
+      tasks: [{
+        id: "4B792EC02548F9FA"
+        type: "item"
+        item: "gendustry:mutagen_producer"
+      }]
+      rewards: [{
+        id: "43DC322066DD432F"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "40A6BD2ECC21031B"
+      title: "Ведро реагента для мутатрона"
+      description: ["Собери жидкий реагент из выходного буфера. Красную пыль для аппарата держи отдельно от электроники."]
+      x: 5.185d
+      y: -2.705d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48714F7204F7654A"]
+      optional: true
+      tasks: [{
+        id: "4EFD5B34B55A3D90"
+        type: "item"
+        item: "gendustry:bucket_mutagen"
+      }]
+      rewards: [{
+        id: "482D90903360C491"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "457AC77A7CF5C7A8"
+      title: "Аппарат подготовки жидкого белка"
+      description: ["Поставь аппарат с самостоятельной выдачей. Сырьё для него подавай из отдельного склада, рецепты смотри в JEI."]
+      x: 2.404d
+      y: 2.751d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BD04C62DCCC0831","4EF3A4416766913D"]
+      optional: true
+      tasks: [{
+        id: "4017182BAA06C79E"
+        type: "item"
+        item: "gendustry:protein_liquefier"
+      }]
+      rewards: [{
+        id: "42C86F190646ED5A"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4F1D60B3FDD6D2F3"
+      title: "Белковый запас для репликатора"
+      description: ["Наполни ведро из белкового буфера. Держи белок отдельно от жидкой ДНК и мутагена."]
+      x: 5.185d
+      y: -5.266d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["457AC77A7CF5C7A8"]
+      optional: true
+      tasks: [{
+        id: "43656D2E6D98D33C"
+        type: "item"
+        item: "gendustry:bucket_protein"
+      }]
+      rewards: [{
+        id: "4B6D34E0AA9B5353"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "4A61624B83E7B4CC"
+      title: "Базовый мутатрон"
+      description: ["Поставь мутатрон у племенного архива. Подбирай родителей по возможным мутациям, которые показывает мод."]
+      x: 6.975d
+      y: 1.248d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40A6BD2ECC21031B","411A1843274DEB49","4183667F9CB801E9"]
+      optional: true
+      tasks: [{
+        id: "4FFA8BB877BC02A2"
+        type: "item"
+        item: "gendustry:mutatron"
+      }]
+      rewards: [{
+        id: "48F142DF18E02BE6"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "4ADDF82695F6CAF7"
+      title: "Выбор мутации на станции EV"
+      description: ["В продвинутом мутатроне можно выбрать доступный результат для пары родителей. Перед запуском проверь запас реагента и FE."]
+      x: 10.030d
+      y: -1.743d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A61624B83E7B4CC","463599FF8883FD0D","4228B850F50E1983"]
+      optional: true
+      tasks: [{
+        id: "4A5C08B6A06305E4"
+        type: "item"
+        item: "gendustry:advanced_mutatron"
+      }]
+      rewards: [{
+        id: "48445392ABA74C9B"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4129D5DFE187BED2"
+      title: "Транспозер для резервных копий"
+      description: ["Используй транспозер для копирования образцов и шаблонов. Рабочую копию храни отдельно от исходного архива."]
+      x: 11.773d
+      y: 1.992d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44FA450D984FF485","47FD5A428911CF7D"]
+      optional: true
+      tasks: [{
+        id: "4DCAAAB2CA1AABBA"
+        type: "item"
+        item: "gendustry:genetic_transposer"
+      }]
+      rewards: [{
+        id: "4439618D4E30EAEF"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4BF28737654D71A9"
+      title: "Импринтер для переноса шаблона"
+      description: ["Проверь полноту шаблона перед переносом признаков. Для первых опытов оставь родительскую семью в резерве."]
+      x: 14.515d
+      y: 1.212d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4129D5DFE187BED2","44FA450D984FF485"]
+      optional: true
+      tasks: [{
+        id: "48A996355EFF3C94"
+        type: "item"
+        item: "gendustry:imprinter"
+      }]
+      rewards: [{
+        id: "4EB10B97DB9C7109"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "41CD9FE5B89AE09D"
+      title: "Репликатор лаборатории EV"
+      description: ["Подай жидкую ДНК и белок раздельно. Репликатору нужен полный шаблон, проверь список признаков в его подсказке."]
+      x: 16.958d
+      y: -1.658d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4BF28737654D71A9","47FD5A428911CF7D","4F1D60B3FDD6D2F3","463599FF8883FD0D"]
+      optional: true
+      tasks: [{
+        id: "4A152C563D6E9F74"
+        type: "item"
+        item: "gendustry:replicator"
+      }]
+      rewards: [{
+        id: "40490E4587FE23AB"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "465610F60C5E3BD0"
+      title: "Оснастка элитных модулей IV"
+      description: ["Выпусти комплект элитных рамок после освоения IV. Храни их отдельно от обычных рамок и готовых модулей."]
+      x: 12.453d
+      y: -3.939d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4ADDF82695F6CAF7","4C4F332D5A35474D"]
+      optional: true
+      tasks: [{
+        id: "40935B173369FB22"
+        type: "item"
+        item: "gendustry:elite_upgrade_frame"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4C7F339E777D091A"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "42FB71BAD1DC5879"
+      title: "Элитный модуль плодовитости"
+      description: ["Подготовь модуль для племенной пасеки. Перед включением проверь, хватает ли ей питания и свободного места для потомства."]
+      x: 19.040d
+      y: -4.053d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["465610F60C5E3BD0","41CD9FE5B89AE09D"]
+      optional: true
+      tasks: [{
+        id: "4A56773100E0CBE0"
+        type: "item"
+        item: "gendustry:fertility_elite_upgrade"
+      }]
+      rewards: [{
+        id: "45C6625A8E3CAA6F"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+  ]
+}

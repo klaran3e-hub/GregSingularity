@@ -1,0 +1,3775 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "woodworking"
+  group: "468EF37A10F16FBE"
+  icon: "minecraft:oak_planks"
+  title: "Деревообработка"
+  id: "4B82FFDB51111657"
+  order_index: 18
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/woodworking.png"
+    x: 0.0d
+    y: 0.0d
+    width: 90.157d
+    height: 32.537d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "449E2C383338E843"
+      title: "Дубовые брёвна"
+      description: ["Собери восемь брёвен из дуба. Оставь часть для распила на пиле."]
+      x: -30.286d
+      y: 2.382d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["469A83EB7EBD443A"]
+      optional: true
+      tasks: [{
+        id: "4803F22C664A0EBC"
+        type: "item"
+        item: "minecraft:oak_log"
+        count: 8L
+      }]
+      rewards: [{
+        id: "41AEB2EC07F5D5B9"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4200891568251C35"
+      title: "Ручная распиловка дуба"
+      description: ["Распили заготовки из дуба кремнёвым ножом. Из каждой получишь две доски. Собери восемь."]
+      x: -28.430d
+      y: 0.000d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["449E2C383338E843","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4CE95B295F548EC6"
+        type: "item"
+        item: "minecraft:oak_planks"
+        count: 8L
+      }]
+      rewards: [{
+        id: "46916E9592A0DCFD"
+        type: "item"
+        item: "minecraft:oak_log"
+        count: 2
+      }]
+    }
+    {
+      id: "456814B22847B1CB"
+      title: "Запас досок из дуба"
+      description: ["Подай заготовки из дуба на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      x: 28.430d
+      y: 1.657d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["4200891568251C35","45EADC6EDC7CA91F"]
+      optional: true
+      tasks: [{
+        id: "4B8C3A52D038FFB2"
+        type: "item"
+        item: "minecraft:oak_planks"
+        count: 64L
+      }]
+      rewards: [{
+        id: "420722AE7D34419C"
+        type: "item"
+        item: "minecraft:oak_log"
+        count: 3
+      }]
+    }
+    {
+      id: "458D7E64FF498C8D"
+      title: "Напольные плиты из дуба"
+      description: ["Для одной напольной плиты возьми три доски из дуба и нагель. Собери восемь плит."]
+      x: -31.616d
+      y: -2.661d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4200891568251C35"]
+      optional: true
+      tasks: [{
+        id: "4DA82858434F7B7D"
+        type: "item"
+        item: "minecraft:oak_slab"
+        count: 8L
+      }]
+      rewards: [{
+        id: "485A46398F63F4C3"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4226BF8237A001D8"
+      title: "Лестничные ступени из дуба"
+      description: ["Скрепи шесть досок из дуба двумя столярными соединениями. За крафт выйдут две ступени, для квеста нужно восемь."]
+      x: -29.149d
+      y: -2.912d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4200891568251C35","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "40582B6ECCE38EC2"
+        type: "item"
+        item: "minecraft:oak_stairs"
+        count: 8L
+      }]
+      rewards: [{
+        id: "44EF332B1C432E76"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "40679927A3CD767A"
+      title: "Ограждение из дуба"
+      description: ["На две секции ограждения возьми четыре доски из дуба, два соединения, два нагеля и палку. Собери двенадцать секций."]
+      x: -34.073d
+      y: -0.924d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4200891568251C35","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4873D6BAA004EE5A"
+        type: "item"
+        item: "minecraft:oak_fence"
+        count: 12L
+      }]
+      rewards: [{
+        id: "41F67188CC9CFBB3"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "44E6BE41D3DE8031"
+      title: "Шарнирная калитка из дуба"
+      description: ["Собери две калитки из дуба. На каждую уйдут два кованых шарнира, два соединения, две доски и две палки."]
+      x: -37.114d
+      y: -1.293d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40679927A3CD767A","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "4BD66E22FB54E1DF"
+        type: "item"
+        item: "minecraft:oak_fence_gate"
+        count: 2L
+      }]
+      rewards: [{
+        id: "426645CB9B4EAEAF"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "4D13BB43A08D7740"
+      title: "Двери на шарнирах из дуба"
+      description: ["Собери две двери из дуба. Для каждой нужны пять досок, два шарнира и два столярных соединения."]
+      x: -28.196d
+      y: 3.491d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4200891568251C35","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "4A4D33DAEAF937D1"
+        type: "item"
+        item: "minecraft:oak_door"
+        count: 2L
+      }]
+      rewards: [{
+        id: "48AEEA552122A235"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "4EA634F654D226C7"
+      title: "Служебные люки из дуба"
+      description: ["На каждый из двух люков возьми шесть досок из дуба, два шарнира и одно столярное соединение."]
+      x: -29.746d
+      y: 6.358d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D13BB43A08D7740"]
+      optional: true
+      tasks: [{
+        id: "40C7E6F281824527"
+        type: "item"
+        item: "minecraft:oak_trapdoor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "442E802FE8E400A6"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "47666EBFDE5AB5AE"
+      title: "Кнопки управления из дуба"
+      description: ["Подгони плиту из дуба ножом и закрепи кнопку на нагеле. Сделай четыре кнопки."]
+      x: -33.244d
+      y: -5.369d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["458D7E64FF498C8D","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4B2EDEC88AF85D24"
+        type: "item"
+        item: "minecraft:oak_button"
+        count: 4L
+      }]
+      rewards: [{
+        id: "44081165F2E84FDC"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4368BEBA9A370E9D"
+      title: "Нажимные плиты из дуба"
+      description: ["Собери четыре нажимные плиты из дуба. Для каждой нужны три обычные плиты, два нагеля и вязаное крепление."]
+      x: -32.012d
+      y: 0.087d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["458D7E64FF498C8D","45D72E4E790DEE89"]
+      optional: true
+      tasks: [{
+        id: "42233F514FDA3720"
+        type: "item"
+        item: "minecraft:oak_pressure_plate"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4E61B37F6B1456D1"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4ADF38029C60CFE3"
+      title: "Маркировочные таблички из дуба"
+      description: ["Подготовь четыре таблички из дуба. Для каждой нужны четыре доски, два соединения и палка."]
+      x: -32.758d
+      y: 3.104d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4200891568251C35","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4E98F159E6D916A1"
+        type: "item"
+        item: "minecraft:oak_sign"
+        count: 4L
+      }]
+      rewards: [{
+        id: "46705E37BE6F23DC"
+        type: "item"
+        item: "minecraft:oak_log"
+        count: 2
+      }]
+    }
+    {
+      id: "4FD06E2601C2401D"
+      title: "Подвесные указатели из дуба"
+      description: ["Подвесь две таблички из дуба. На каждый указатель уйдут две железные цепи, два соединения, три доски и обычная табличка."]
+      x: -34.750d
+      y: 5.374d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4ADF38029C60CFE3","43C4612F0F6292A1"]
+      optional: true
+      tasks: [{
+        id: "49517E6A605D8A03"
+        type: "item"
+        item: "minecraft:oak_hanging_sign"
+        count: 2L
+      }]
+      rewards: [{
+        id: "418E19642E15BBC8"
+        type: "item"
+        item: "minecraft:iron_ingot"
+        count: 1
+      }]
+    }
+    {
+      id: "496DD0D8A52C7B7A"
+      title: "Лодка из дуба"
+      description: ["Собери лодку из дуба. На неё уйдут пять досок, два столярных соединения, рукоять и вязаное крепление."]
+      x: -27.222d
+      y: -4.214d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4200891568251C35","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "464EF14220C66E88"
+        type: "item"
+        item: "minecraft:oak_boat"
+      }]
+      rewards: [{
+        id: "44571D5714F0AD6C"
+        type: "item"
+        item: "kubejs:tool_binding"
+        count: 1
+      }]
+    }
+    {
+      id: "489C63FD765270AD"
+      title: "Лодка с сундуком из дуба"
+      description: ["Собери грузовую лодку из дуба. Для рецепта подготовь три лодки, сундук, два соединения и кованый шарнир."]
+      x: -28.254d
+      y: -7.229d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["496DD0D8A52C7B7A","4A09AF0ABA19165C","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "4636D491AB231F00"
+        type: "item"
+        item: "minecraft:oak_chest_boat"
+      }]
+      rewards: [{
+        id: "45FB7B3B9190C537"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "417D6C06587745B6"
+      title: "Еловые брёвна"
+      description: ["Собери восемь брёвен из ели. Оставь часть для распила на пиле."]
+      x: -8.159d
+      y: 5.999d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["469A83EB7EBD443A"]
+      optional: true
+      tasks: [{
+        id: "4027A76A7FC8B481"
+        type: "item"
+        item: "minecraft:spruce_log"
+        count: 8L
+      }]
+      rewards: [{
+        id: "499973A46E7694CE"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4F9E7A5AF4DBD654"
+      title: "Ручная распиловка ели"
+      description: ["Распили заготовки из ели кремнёвым ножом. Из каждой получишь две доски. Собери восемь."]
+      x: -2.306d
+      y: 4.702d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["417D6C06587745B6","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4EDA8BFD8F5A1AB7"
+        type: "item"
+        item: "minecraft:spruce_planks"
+        count: 8L
+      }]
+      rewards: [{
+        id: "40B18AEA78F7B784"
+        type: "item"
+        item: "minecraft:spruce_log"
+        count: 2
+      }]
+    }
+    {
+      id: "41CBDDC5ECE8FFD5"
+      title: "Запас досок из ели"
+      description: ["Подай заготовки из ели на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      x: -4.027d
+      y: -2.419d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F9E7A5AF4DBD654","45EADC6EDC7CA91F"]
+      optional: true
+      tasks: [{
+        id: "405B015EC0627EA9"
+        type: "item"
+        item: "minecraft:spruce_planks"
+        count: 64L
+      }]
+      rewards: [{
+        id: "4AAF3DEFC494C96C"
+        type: "item"
+        item: "minecraft:spruce_log"
+        count: 3
+      }]
+    }
+    {
+      id: "48E8B1A450D007D9"
+      title: "Напольные плиты из ели"
+      description: ["Для одной напольной плиты возьми три доски из ели и нагель. Собери восемь плит."]
+      x: 2.854d
+      y: 8.807d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F9E7A5AF4DBD654"]
+      optional: true
+      tasks: [{
+        id: "4818CCEC74B33FE1"
+        type: "item"
+        item: "minecraft:spruce_slab"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4B6F70C15E3EE304"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4B6C1508D79F2338"
+      title: "Лестничные ступени из ели"
+      description: ["Скрепи шесть досок из ели двумя столярными соединениями. За крафт выйдут две ступени, для квеста нужно восемь."]
+      x: 9.171d
+      y: 3.429d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F9E7A5AF4DBD654","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4DE1A81D7E7DA4E1"
+        type: "item"
+        item: "minecraft:spruce_stairs"
+        count: 8L
+      }]
+      rewards: [{
+        id: "40BB6C75AED1318D"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "423B095B49F8D789"
+      title: "Ограждение из ели"
+      description: ["На две секции ограждения возьми четыре доски из ели, два соединения, два нагеля и палку. Собери двенадцать секций."]
+      x: 2.147d
+      y: 4.922d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F9E7A5AF4DBD654","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4364484D7738CFD0"
+        type: "item"
+        item: "minecraft:spruce_fence"
+        count: 12L
+      }]
+      rewards: [{
+        id: "475AA9F146F54873"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "47E41689719ADBF8"
+      title: "Шарнирная калитка из ели"
+      description: ["Собери две калитки из ели. На каждую уйдут два кованых шарнира, два соединения, две доски и две палки."]
+      x: -13.343d
+      y: -2.928d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["423B095B49F8D789","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "4BD0BD2B02E7F7C9"
+        type: "item"
+        item: "minecraft:spruce_fence_gate"
+        count: 2L
+      }]
+      rewards: [{
+        id: "49C0488A2A6414CB"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "43B38608DF2FC99B"
+      title: "Двери на шарнирах из ели"
+      description: ["Собери две двери из ели. Для каждой нужны пять досок, два шарнира и два столярных соединения."]
+      x: -10.907d
+      y: 1.993d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F9E7A5AF4DBD654","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "4DC5B09E69FFE616"
+        type: "item"
+        item: "minecraft:spruce_door"
+        count: 2L
+      }]
+      rewards: [{
+        id: "43228C1D1FE499B0"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "4F147C31940FA2AD"
+      title: "Служебные люки из ели"
+      description: ["На каждый из двух люков возьми шесть досок из ели, два шарнира и одно столярное соединение."]
+      x: -12.938d
+      y: -0.940d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43B38608DF2FC99B"]
+      optional: true
+      tasks: [{
+        id: "43776F6E87063A7D"
+        type: "item"
+        item: "minecraft:spruce_trapdoor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "434F0692A2E18ACF"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4C8DEED8E4281A47"
+      title: "Кнопки управления из ели"
+      description: ["Подгони плиту из ели ножом и закрепи кнопку на нагеле. Сделай четыре кнопки."]
+      x: 1.193d
+      y: 10.850d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48E8B1A450D007D9","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "46F201EFD704D6B2"
+        type: "item"
+        item: "minecraft:spruce_button"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4620AB753D1E3EA3"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4794F56CD297050A"
+      title: "Нажимные плиты из ели"
+      description: ["Собери четыре нажимные плиты из ели. Для каждой нужны три обычные плиты, два нагеля и вязаное крепление."]
+      x: 6.161d
+      y: 8.309d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48E8B1A450D007D9","45D72E4E790DEE89"]
+      optional: true
+      tasks: [{
+        id: "4C958C5FD4440A82"
+        type: "item"
+        item: "minecraft:spruce_pressure_plate"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4C1302A19E77A5C2"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4CE0FCEEAFA40354"
+      title: "Маркировочные таблички из ели"
+      description: ["Подготовь четыре таблички из ели. Для каждой нужны четыре доски, два соединения и палка."]
+      x: 14.936d
+      y: 4.624d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F9E7A5AF4DBD654","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4AFA854D1596BB65"
+        type: "item"
+        item: "minecraft:spruce_sign"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4AEE8D809761D1D8"
+        type: "item"
+        item: "minecraft:spruce_log"
+        count: 2
+      }]
+    }
+    {
+      id: "46649110AAC23B8A"
+      title: "Подвесные указатели из ели"
+      description: ["Подвесь две таблички из ели. На каждый указатель уйдут две железные цепи, два соединения, три доски и обычная табличка."]
+      x: 24.777d
+      y: 2.697d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CE0FCEEAFA40354","43C4612F0F6292A1"]
+      optional: true
+      tasks: [{
+        id: "49DFBA231065C05F"
+        type: "item"
+        item: "minecraft:spruce_hanging_sign"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4C392D29AA1E10F0"
+        type: "item"
+        item: "minecraft:iron_ingot"
+        count: 1
+      }]
+    }
+    {
+      id: "4890BA0CA3BEE4EC"
+      title: "Лодка из ели"
+      description: ["Собери лодку из ели. На неё уйдут пять досок, два столярных соединения, рукоять и вязаное крепление."]
+      x: -13.774d
+      y: 6.957d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F9E7A5AF4DBD654","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "49184541DDE9EE61"
+        type: "item"
+        item: "minecraft:spruce_boat"
+      }]
+      rewards: [{
+        id: "48CD8E72C6359D86"
+        type: "item"
+        item: "kubejs:tool_binding"
+        count: 1
+      }]
+    }
+    {
+      id: "470434EDD42CA046"
+      title: "Лодка с сундуком из ели"
+      description: ["Собери грузовую лодку из ели. Для рецепта подготовь три лодки, сундук, два соединения и кованый шарнир."]
+      x: -16.256d
+      y: 10.560d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4890BA0CA3BEE4EC","4A09AF0ABA19165C","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "4D4BAAE2A2ED6FF8"
+        type: "item"
+        item: "minecraft:spruce_chest_boat"
+      }]
+      rewards: [{
+        id: "4CBB56F5B37839A7"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "48F52F63A2A8674E"
+      title: "Берёзовые брёвна"
+      description: ["Собери восемь брёвен из берёзы. Оставь часть для распила на пиле."]
+      x: -18.920d
+      y: 6.054d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["469A83EB7EBD443A"]
+      optional: true
+      tasks: [{
+        id: "49EC56049766AD7C"
+        type: "item"
+        item: "minecraft:birch_log"
+        count: 8L
+      }]
+      rewards: [{
+        id: "42FD65E5E6FC56BA"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "48A994819245876B"
+      title: "Ручная распиловка берёзы"
+      description: ["Распили заготовки из берёзы кремнёвым ножом. Из каждой получишь две доски. Собери восемь."]
+      x: -18.953d
+      y: 2.482d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["48F52F63A2A8674E","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4E6728142E6819EC"
+        type: "item"
+        item: "minecraft:birch_planks"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4956F5D31AC3A818"
+        type: "item"
+        item: "minecraft:birch_log"
+        count: 2
+      }]
+    }
+    {
+      id: "4ED9D4C9ACFFDF9D"
+      title: "Запас досок из берёзы"
+      description: ["Подай заготовки из берёзы на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      x: -16.929d
+      y: 4.229d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48A994819245876B","45EADC6EDC7CA91F"]
+      optional: true
+      tasks: [{
+        id: "46F5BB4686044001"
+        type: "item"
+        item: "minecraft:birch_planks"
+        count: 64L
+      }]
+      rewards: [{
+        id: "47971541F5014A91"
+        type: "item"
+        item: "minecraft:birch_log"
+        count: 3
+      }]
+    }
+    {
+      id: "42A5DBEA440DE914"
+      title: "Напольные плиты из берёзы"
+      description: ["Для одной напольной плиты возьми три доски из берёзы и нагель. Собери восемь плит."]
+      x: -21.608d
+      y: -1.701d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48A994819245876B"]
+      optional: true
+      tasks: [{
+        id: "481FDA700FB41EA0"
+        type: "item"
+        item: "minecraft:birch_slab"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4BF629184B9312CA"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4E313857FD19189F"
+      title: "Лестничные ступени из берёзы"
+      description: ["Скрепи шесть досок из берёзы двумя столярными соединениями. За крафт выйдут две ступени, для квеста нужно восемь."]
+      x: -19.958d
+      y: 8.465d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48A994819245876B","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4B806AC81105206F"
+        type: "item"
+        item: "minecraft:birch_stairs"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4D8E212F36E1B232"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "4EA3BD55693D39FF"
+      title: "Ограждение из берёзы"
+      description: ["На две секции ограждения возьми четыре доски из берёзы, два соединения, два нагеля и палку. Собери двенадцать секций."]
+      x: -20.378d
+      y: 4.739d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48A994819245876B","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "42073EEE94497B4B"
+        type: "item"
+        item: "minecraft:birch_fence"
+        count: 12L
+      }]
+      rewards: [{
+        id: "419FDAF07C8AE675"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "42E2171A22562415"
+      title: "Шарнирная калитка из берёзы"
+      description: ["Собери две калитки из берёзы. На каждую уйдут два кованых шарнира, два соединения, две доски и две палки."]
+      x: -17.430d
+      y: 7.750d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EA3BD55693D39FF","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "44FBA51D548D1D26"
+        type: "item"
+        item: "minecraft:birch_fence_gate"
+        count: 2L
+      }]
+      rewards: [{
+        id: "48BBF3385B3CC1B8"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "439374702CBAA506"
+      title: "Двери на шарнирах из берёзы"
+      description: ["Собери две двери из берёзы. Для каждой нужны пять досок, два шарнира и два столярных соединения."]
+      x: -16.468d
+      y: 0.423d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48A994819245876B","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "418B769BE07A48CC"
+        type: "item"
+        item: "minecraft:birch_door"
+        count: 2L
+      }]
+      rewards: [{
+        id: "43CA58111E0FCA5C"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "457C151ECB8A6857"
+      title: "Служебные люки из берёзы"
+      description: ["На каждый из двух люков возьми шесть досок из берёзы, два шарнира и одно столярное соединение."]
+      x: -17.126d
+      y: -2.926d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["439374702CBAA506"]
+      optional: true
+      tasks: [{
+        id: "414C558CD77F4653"
+        type: "item"
+        item: "minecraft:birch_trapdoor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "455A90DB7DD72B2F"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "48BC0BF5CD30CA6C"
+      title: "Кнопки управления из берёзы"
+      description: ["Подгони плиту из берёзы ножом и закрепи кнопку на нагеле. Сделай четыре кнопки."]
+      x: -23.447d
+      y: -4.294d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42A5DBEA440DE914","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4D2607C6E2776573"
+        type: "item"
+        item: "minecraft:birch_button"
+        count: 4L
+      }]
+      rewards: [{
+        id: "46A2582DEF68D182"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4A78A59BB29AD0AD"
+      title: "Нажимные плиты из берёзы"
+      description: ["Собери четыре нажимные плиты из берёзы. Для каждой нужны три обычные плиты, два нагеля и вязаное крепление."]
+      x: -20.805d
+      y: -5.471d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42A5DBEA440DE914","45D72E4E790DEE89"]
+      optional: true
+      tasks: [{
+        id: "4B651D19C64BCAFA"
+        type: "item"
+        item: "minecraft:birch_pressure_plate"
+        count: 4L
+      }]
+      rewards: [{
+        id: "436AC5345B8E26E2"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "41F3C445EE79CC7E"
+      title: "Маркировочные таблички из берёзы"
+      description: ["Подготовь четыре таблички из берёзы. Для каждой нужны четыре доски, два соединения и палка."]
+      x: -22.981d
+      y: 4.604d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48A994819245876B","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4693490285AE889F"
+        type: "item"
+        item: "minecraft:birch_sign"
+        count: 4L
+      }]
+      rewards: [{
+        id: "420AE03C0FAC90D6"
+        type: "item"
+        item: "minecraft:birch_log"
+        count: 2
+      }]
+    }
+    {
+      id: "41B9BC4CCF77AB45"
+      title: "Подвесные указатели из берёзы"
+      description: ["Подвесь две таблички из берёзы. На каждый указатель уйдут две железные цепи, два соединения, три доски и обычная табличка."]
+      x: -25.247d
+      y: 7.510d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41F3C445EE79CC7E","43C4612F0F6292A1"]
+      optional: true
+      tasks: [{
+        id: "4521CA14B3498039"
+        type: "item"
+        item: "minecraft:birch_hanging_sign"
+        count: 2L
+      }]
+      rewards: [{
+        id: "456A001274B14644"
+        type: "item"
+        item: "minecraft:iron_ingot"
+        count: 1
+      }]
+    }
+    {
+      id: "450004FFEE559BE3"
+      title: "Лодка из берёзы"
+      description: ["Собери лодку из берёзы. На неё уйдут пять досок, два столярных соединения, рукоять и вязаное крепление."]
+      x: -22.160d
+      y: 7.213d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48A994819245876B","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "463EEAA6F39CEC82"
+        type: "item"
+        item: "minecraft:birch_boat"
+      }]
+      rewards: [{
+        id: "48884898D2DBDEA7"
+        type: "item"
+        item: "kubejs:tool_binding"
+        count: 1
+      }]
+    }
+    {
+      id: "418939C1B3F1F7BE"
+      title: "Лодка с сундуком из берёзы"
+      description: ["Собери грузовую лодку из берёзы. Для рецепта подготовь три лодки, сундук, два соединения и кованый шарнир."]
+      x: -22.928d
+      y: 10.602d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["450004FFEE559BE3","4A09AF0ABA19165C","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "48859AE789F00273"
+        type: "item"
+        item: "minecraft:birch_chest_boat"
+      }]
+      rewards: [{
+        id: "47148CC75D2D3022"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "43B2AF7A29DCAFD8"
+      title: "Тропические брёвна"
+      description: ["Собери восемь брёвен из тропического дерева. Оставь часть для распила на пиле."]
+      x: -4.979d
+      y: -6.161d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["469A83EB7EBD443A"]
+      optional: true
+      tasks: [{
+        id: "4D838C5DF087B2D3"
+        type: "item"
+        item: "minecraft:jungle_log"
+        count: 8L
+      }]
+      rewards: [{
+        id: "460AF00ACADC736D"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "44BB6409EA88E12D"
+      title: "Ручная распиловка тропического дерева"
+      description: ["Распили заготовки из тропического дерева кремнёвым ножом. Из каждой получишь две доски. Собери восемь."]
+      x: -3.434d
+      y: 0.065d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43B2AF7A29DCAFD8","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4D5F417C5A3DED10"
+        type: "item"
+        item: "minecraft:jungle_planks"
+        count: 8L
+      }]
+      rewards: [{
+        id: "410A96BBBF5E8430"
+        type: "item"
+        item: "minecraft:jungle_log"
+        count: 2
+      }]
+    }
+    {
+      id: "453B4F18305282AD"
+      title: "Запас досок из тропического дерева"
+      description: ["Подай заготовки из тропического дерева на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      x: 11.135d
+      y: -1.716d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44BB6409EA88E12D","45EADC6EDC7CA91F"]
+      optional: true
+      tasks: [{
+        id: "4ED3285B49F8B22E"
+        type: "item"
+        item: "minecraft:jungle_planks"
+        count: 64L
+      }]
+      rewards: [{
+        id: "4A05CFBDD6EEF2F7"
+        type: "item"
+        item: "minecraft:jungle_log"
+        count: 3
+      }]
+    }
+    {
+      id: "48FD7DFCFBE02C72"
+      title: "Напольные плиты из тропического дерева"
+      description: ["Для одной напольной плиты возьми три доски из тропического дерева и нагель. Собери восемь плит."]
+      x: 24.875d
+      y: -0.516d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44BB6409EA88E12D"]
+      optional: true
+      tasks: [{
+        id: "43CBD09AFF14EFE6"
+        type: "item"
+        item: "minecraft:jungle_slab"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4B92DD264F10E603"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "418A64679FEDC2FF"
+      title: "Лестничные ступени из тропического дерева"
+      description: ["Скрепи шесть досок из тропического дерева двумя столярными соединениями. За крафт выйдут две ступени, для квеста нужно восемь."]
+      x: -17.575d
+      y: -6.816d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44BB6409EA88E12D","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "477036E102CB56B5"
+        type: "item"
+        item: "minecraft:jungle_stairs"
+        count: 8L
+      }]
+      rewards: [{
+        id: "46CE483E1C025671"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "4D3B36FAC3702F74"
+      title: "Ограждение из тропического дерева"
+      description: ["На две секции ограждения возьми четыре доски из тропического дерева, два соединения, два нагеля и палку. Собери двенадцать секций."]
+      x: -7.931d
+      y: 8.234d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44BB6409EA88E12D","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4AE0BF9636E27D51"
+        type: "item"
+        item: "minecraft:jungle_fence"
+        count: 12L
+      }]
+      rewards: [{
+        id: "43FB06EF93912A44"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "4E00423AE7F8C82F"
+      title: "Шарнирная калитка из тропического дерева"
+      description: ["Собери две калитки из тропического дерева. На каждую уйдут два кованых шарнира, два соединения, две доски и две палки."]
+      x: -9.341d
+      y: 11.401d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D3B36FAC3702F74","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "46E27B95A6C4F15B"
+        type: "item"
+        item: "minecraft:jungle_fence_gate"
+        count: 2L
+      }]
+      rewards: [{
+        id: "423156BE61706832"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "48B50734634EE4B5"
+      title: "Двери на шарнирах из тропического дерева"
+      description: ["Собери две двери из тропического дерева. Для каждой нужны пять досок, два шарнира и два столярных соединения."]
+      x: -0.260d
+      y: 3.915d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44BB6409EA88E12D","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "4259A1E9AB7FAB99"
+        type: "item"
+        item: "minecraft:jungle_door"
+        count: 2L
+      }]
+      rewards: [{
+        id: "447F6BFAE908400C"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "4B561BA4D276C1D7"
+      title: "Служебные люки из тропического дерева"
+      description: ["На каждый из двух люков возьми шесть досок из тропического дерева, два шарнира и одно столярное соединение."]
+      x: 4.099d
+      y: 1.266d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48B50734634EE4B5"]
+      optional: true
+      tasks: [{
+        id: "4050B91BD2BDFD3F"
+        type: "item"
+        item: "minecraft:jungle_trapdoor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4AFC9FF3F6795E72"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "41C405BDFC622957"
+      title: "Кнопки управления из тропического дерева"
+      description: ["Подгони плиту из тропического дерева ножом и закрепи кнопку на нагеле. Сделай четыре кнопки."]
+      x: 26.714d
+      y: -3.237d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48FD7DFCFBE02C72","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4612E9868CC8777D"
+        type: "item"
+        item: "minecraft:jungle_button"
+        count: 4L
+      }]
+      rewards: [{
+        id: "417A18A31726CC75"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4E47ADDECA8B6BD4"
+      title: "Нажимные плиты из тропического дерева"
+      description: ["Собери четыре нажимные плиты из тропического дерева. Для каждой нужны три обычные плиты, два нагеля и вязаное крепление."]
+      x: 30.220d
+      y: -0.059d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48FD7DFCFBE02C72","45D72E4E790DEE89"]
+      optional: true
+      tasks: [{
+        id: "4455B49EECB28CC0"
+        type: "item"
+        item: "minecraft:jungle_pressure_plate"
+        count: 4L
+      }]
+      rewards: [{
+        id: "407086297CA0091A"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "433667547AC4F6A6"
+      title: "Маркировочные таблички из тропического дерева"
+      description: ["Подготовь четыре таблички из тропического дерева. Для каждой нужны четыре доски, два соединения и палка."]
+      x: -18.101d
+      y: -1.107d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44BB6409EA88E12D","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4508B20C93A13311"
+        type: "item"
+        item: "minecraft:jungle_sign"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4B976217453DC34F"
+        type: "item"
+        item: "minecraft:jungle_log"
+        count: 2
+      }]
+    }
+    {
+      id: "43250039D5F74D1D"
+      title: "Подвесные указатели из тропического дерева"
+      description: ["Подвесь две таблички из тропического дерева. На каждый указатель уйдут две железные цепи, два соединения, три доски и обычная табличка."]
+      x: -22.616d
+      y: 0.429d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["433667547AC4F6A6","43C4612F0F6292A1"]
+      optional: true
+      tasks: [{
+        id: "4D8F7FE764427D05"
+        type: "item"
+        item: "minecraft:jungle_hanging_sign"
+        count: 2L
+      }]
+      rewards: [{
+        id: "484D757AD5495243"
+        type: "item"
+        item: "minecraft:iron_ingot"
+        count: 1
+      }]
+    }
+    {
+      id: "4B65B0FCB6CE9C20"
+      title: "Лодка из тропического дерева"
+      description: ["Собери лодку из тропического дерева. На неё уйдут пять досок, два столярных соединения, рукоять и вязаное крепление."]
+      x: -1.584d
+      y: 0.556d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44BB6409EA88E12D","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4B78CB4D0B416F0D"
+        type: "item"
+        item: "minecraft:jungle_boat"
+      }]
+      rewards: [{
+        id: "459ED3ECE1357FDB"
+        type: "item"
+        item: "kubejs:tool_binding"
+        count: 1
+      }]
+    }
+    {
+      id: "45F53F448CDDB7EE"
+      title: "Лодка с сундуком из тропического дерева"
+      description: ["Собери грузовую лодку из тропического дерева. Для рецепта подготовь три лодки, сундук, два соединения и кованый шарнир."]
+      x: 0.350d
+      y: -5.098d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B65B0FCB6CE9C20","4A09AF0ABA19165C","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "458500A4051F02D7"
+        type: "item"
+        item: "minecraft:jungle_chest_boat"
+      }]
+      rewards: [{
+        id: "401D2124B3840F2D"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "419513F12FEE7DDC"
+      title: "Акациевые брёвна"
+      description: ["Собери восемь брёвен из акации. Оставь часть для распила на пиле."]
+      x: 3.457d
+      y: 6.594d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["469A83EB7EBD443A"]
+      optional: true
+      tasks: [{
+        id: "477E7094F57B7A93"
+        type: "item"
+        item: "minecraft:acacia_log"
+        count: 8L
+      }]
+      rewards: [{
+        id: "49D413257E3326B2"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4AD4EC378DF1265F"
+      title: "Ручная распиловка акации"
+      description: ["Распили заготовки из акации кремнёвым ножом. Из каждой получишь две доски. Собери восемь."]
+      x: 0.513d
+      y: 2.640d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["419513F12FEE7DDC","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "47F92A2146D862C4"
+        type: "item"
+        item: "minecraft:acacia_planks"
+        count: 8L
+      }]
+      rewards: [{
+        id: "47C6D214C46207D1"
+        type: "item"
+        item: "minecraft:acacia_log"
+        count: 2
+      }]
+    }
+    {
+      id: "46B75EC9DDF218FB"
+      title: "Запас досок из акации"
+      description: ["Подай заготовки из акации на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      x: 15.110d
+      y: 9.879d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AD4EC378DF1265F","45EADC6EDC7CA91F"]
+      optional: true
+      tasks: [{
+        id: "427567254FA2891A"
+        type: "item"
+        item: "minecraft:acacia_planks"
+        count: 64L
+      }]
+      rewards: [{
+        id: "43589E06F7CF604F"
+        type: "item"
+        item: "minecraft:acacia_log"
+        count: 3
+      }]
+    }
+    {
+      id: "45BE15C4FB233894"
+      title: "Напольные плиты из акации"
+      description: ["Для одной напольной плиты возьми три доски из акации и нагель. Собери восемь плит."]
+      x: -7.412d
+      y: -2.359d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AD4EC378DF1265F"]
+      optional: true
+      tasks: [{
+        id: "43938B962CF7ED96"
+        type: "item"
+        item: "minecraft:acacia_slab"
+        count: 8L
+      }]
+      rewards: [{
+        id: "461BCB8BC3D804BB"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "436250E5A2DECE6A"
+      title: "Лестничные ступени из акации"
+      description: ["Скрепи шесть досок из акации двумя столярными соединениями. За крафт выйдут две ступени, для квеста нужно восемь."]
+      x: -4.967d
+      y: 8.636d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AD4EC378DF1265F","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4A93C50008529EE0"
+        type: "item"
+        item: "minecraft:acacia_stairs"
+        count: 8L
+      }]
+      rewards: [{
+        id: "44D62016C183ED0B"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "492C0E4CE5C28961"
+      title: "Ограждение из акации"
+      description: ["На две секции ограждения возьми четыре доски из акации, два соединения, два нагеля и палку. Собери двенадцать секций."]
+      x: -5.199d
+      y: 0.292d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AD4EC378DF1265F","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "44F160A3AF151A41"
+        type: "item"
+        item: "minecraft:acacia_fence"
+        count: 12L
+      }]
+      rewards: [{
+        id: "40F7E1521D0F9F4C"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "457CD3F27BE010B6"
+      title: "Шарнирная калитка из акации"
+      description: ["Собери две калитки из акации. На каждую уйдут два кованых шарнира, два соединения, две доски и две палки."]
+      x: -3.087d
+      y: 2.654d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["492C0E4CE5C28961","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "4EBAD21745406804"
+        type: "item"
+        item: "minecraft:acacia_fence_gate"
+        count: 2L
+      }]
+      rewards: [{
+        id: "41F6484A00005291"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "4239A81D8CB8DAEF"
+      title: "Двери на шарнирах из акации"
+      description: ["Собери две двери из акации. Для каждой нужны пять досок, два шарнира и два столярных соединения."]
+      x: 10.136d
+      y: -5.352d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AD4EC378DF1265F","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "47F2B93859FD01B8"
+        type: "item"
+        item: "minecraft:acacia_door"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4A0E2C6CE8D5AD5C"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "4716F4AE20B0EFDC"
+      title: "Служебные люки из акации"
+      description: ["На каждый из двух люков возьми шесть досок из акации, два шарнира и одно столярное соединение."]
+      x: 16.824d
+      y: -7.520d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4239A81D8CB8DAEF"]
+      optional: true
+      tasks: [{
+        id: "4F75F44E07B43697"
+        type: "item"
+        item: "minecraft:acacia_trapdoor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "460DF18A626A5688"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4250E3A572CE66D7"
+      title: "Кнопки управления из акации"
+      description: ["Подгони плиту из акации ножом и закрепи кнопку на нагеле. Сделай четыре кнопки."]
+      x: 22.925d
+      y: 3.870d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45BE15C4FB233894","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4323EED976D6AC5F"
+        type: "item"
+        item: "minecraft:acacia_button"
+        count: 4L
+      }]
+      rewards: [{
+        id: "45BD892D0233C951"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4046FBFCE0E39423"
+      title: "Нажимные плиты из акации"
+      description: ["Собери четыре нажимные плиты из акации. Для каждой нужны три обычные плиты, два нагеля и вязаное крепление."]
+      x: -15.329d
+      y: -5.350d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45BE15C4FB233894","45D72E4E790DEE89"]
+      optional: true
+      tasks: [{
+        id: "4454C7C34882FFE4"
+        type: "item"
+        item: "minecraft:acacia_pressure_plate"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4948E192B65B5966"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4040DFC92F445424"
+      title: "Маркировочные таблички из акации"
+      description: ["Подготовь четыре таблички из акации. Для каждой нужны четыре доски, два соединения и палка."]
+      x: -9.947d
+      y: 6.821d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AD4EC378DF1265F","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4DB2DA4E9B2F30AF"
+        type: "item"
+        item: "minecraft:acacia_sign"
+        count: 4L
+      }]
+      rewards: [{
+        id: "44EEE7A3133B7AA6"
+        type: "item"
+        item: "minecraft:acacia_log"
+        count: 2
+      }]
+    }
+    {
+      id: "47C62A7F48D3E6DF"
+      title: "Подвесные указатели из акации"
+      description: ["Подвесь две таблички из акации. На каждый указатель уйдут две железные цепи, два соединения, три доски и обычная табличка."]
+      x: -12.863d
+      y: 10.100d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4040DFC92F445424","43C4612F0F6292A1"]
+      optional: true
+      tasks: [{
+        id: "44A09E012965F10A"
+        type: "item"
+        item: "minecraft:acacia_hanging_sign"
+        count: 2L
+      }]
+      rewards: [{
+        id: "44624AEA6A6219F6"
+        type: "item"
+        item: "minecraft:iron_ingot"
+        count: 1
+      }]
+    }
+    {
+      id: "4CDCB1FA69CAD042"
+      title: "Лодка из акации"
+      description: ["Собери лодку из акации. На неё уйдут пять досок, два столярных соединения, рукоять и вязаное крепление."]
+      x: 4.795d
+      y: 3.233d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AD4EC378DF1265F","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4760375CCE93105A"
+        type: "item"
+        item: "minecraft:acacia_boat"
+      }]
+      rewards: [{
+        id: "48CCF8AC3B64D312"
+        type: "item"
+        item: "kubejs:tool_binding"
+        count: 1
+      }]
+    }
+    {
+      id: "48EA97741E7CA2CB"
+      title: "Лодка с сундуком из акации"
+      description: ["Собери грузовую лодку из акации. Для рецепта подготовь три лодки, сундук, два соединения и кованый шарнир."]
+      x: 7.347d
+      y: 2.799d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CDCB1FA69CAD042","4A09AF0ABA19165C","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "45EE68616603FA54"
+        type: "item"
+        item: "minecraft:acacia_chest_boat"
+      }]
+      rewards: [{
+        id: "4BE5EB1DA72DA0A9"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "41804A234B0A297B"
+      title: "Брёвна тёмного дуба"
+      description: ["Собери восемь брёвен из тёмного дуба. Оставь часть для распила на пиле."]
+      x: -13.394d
+      y: 3.171d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["469A83EB7EBD443A"]
+      optional: true
+      tasks: [{
+        id: "4B8D10EC6971FA22"
+        type: "item"
+        item: "minecraft:dark_oak_log"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4EFD89C7BEC8C6F2"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4EB6B389A0057ED9"
+      title: "Ручная распиловка тёмного дуба"
+      description: ["Распили заготовки из тёмного дуба кремнёвым ножом. Из каждой получишь две доски. Собери восемь."]
+      x: -9.477d
+      y: 0.598d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["41804A234B0A297B","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "43ACF05121F6C68A"
+        type: "item"
+        item: "minecraft:dark_oak_planks"
+        count: 8L
+      }]
+      rewards: [{
+        id: "417F2873B6A33A3B"
+        type: "item"
+        item: "minecraft:dark_oak_log"
+        count: 2
+      }]
+    }
+    {
+      id: "4A2B42AD58354479"
+      title: "Запас досок из тёмного дуба"
+      description: ["Подай заготовки из тёмного дуба на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      x: -9.589d
+      y: 3.416d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EB6B389A0057ED9","45EADC6EDC7CA91F"]
+      optional: true
+      tasks: [{
+        id: "48E780E8675E2E23"
+        type: "item"
+        item: "minecraft:dark_oak_planks"
+        count: 64L
+      }]
+      rewards: [{
+        id: "48D55809364579C7"
+        type: "item"
+        item: "minecraft:dark_oak_log"
+        count: 3
+      }]
+    }
+    {
+      id: "411A8AB5C2CF9D27"
+      title: "Напольные плиты из тёмного дуба"
+      description: ["Для одной напольной плиты возьми три доски из тёмного дуба и нагель. Собери восемь плит."]
+      x: -12.488d
+      y: -5.648d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EB6B389A0057ED9"]
+      optional: true
+      tasks: [{
+        id: "421D4BC13EA6AC30"
+        type: "item"
+        item: "minecraft:dark_oak_slab"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4C5895D0CA6D59C5"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "40068EE7BEF6BA34"
+      title: "Лестничные ступени из тёмного дуба"
+      description: ["Скрепи шесть досок из тёмного дуба двумя столярными соединениями. За крафт выйдут две ступени, для квеста нужно восемь."]
+      x: -8.174d
+      y: -0.679d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EB6B389A0057ED9","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "49046CACB0DC9F08"
+        type: "item"
+        item: "minecraft:dark_oak_stairs"
+        count: 8L
+      }]
+      rewards: [{
+        id: "49B9F2E1054D5F49"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "42819FDC6B05DE15"
+      title: "Ограждение из тёмного дуба"
+      description: ["На две секции ограждения возьми четыре доски из тёмного дуба, два соединения, два нагеля и палку. Собери двенадцать секций."]
+      x: -7.073d
+      y: 4.048d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EB6B389A0057ED9","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4D5EF365A94506C8"
+        type: "item"
+        item: "minecraft:dark_oak_fence"
+        count: 12L
+      }]
+      rewards: [{
+        id: "43A8CF9041FDFC6C"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "43C29551D462099D"
+      title: "Шарнирная калитка из тёмного дуба"
+      description: ["Собери две калитки из тёмного дуба. На каждую уйдут два кованых шарнира, два соединения, две доски и две палки."]
+      x: -3.964d
+      y: 6.749d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42819FDC6B05DE15","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "41052935D9A4B696"
+        type: "item"
+        item: "minecraft:dark_oak_fence_gate"
+        count: 2L
+      }]
+      rewards: [{
+        id: "453C4914BF0D6A61"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "4E7F365088718BDE"
+      title: "Двери на шарнирах из тёмного дуба"
+      description: ["Собери две двери из тёмного дуба. Для каждой нужны пять досок, два шарнира и два столярных соединения."]
+      x: -10.258d
+      y: -5.779d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EB6B389A0057ED9","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "41D6450C4CE7AF9B"
+        type: "item"
+        item: "minecraft:dark_oak_door"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4B73F55F22AB33E8"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "45BE348ACEDC11A5"
+      title: "Служебные люки из тёмного дуба"
+      description: ["На каждый из двух люков возьми шесть досок из тёмного дуба, два шарнира и одно столярное соединение."]
+      x: -9.589d
+      y: -9.946d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E7F365088718BDE"]
+      optional: true
+      tasks: [{
+        id: "4B52D9CEFA5E3C0E"
+        type: "item"
+        item: "minecraft:dark_oak_trapdoor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4C4FD938D43AE2EA"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4C650FB053D5464E"
+      title: "Кнопки управления из тёмного дуба"
+      description: ["Подгони плиту из тёмного дуба ножом и закрепи кнопку на нагеле. Сделай четыре кнопки."]
+      x: -14.609d
+      y: -8.819d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["411A8AB5C2CF9D27","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4608859829A8A7E9"
+        type: "item"
+        item: "minecraft:dark_oak_button"
+        count: 4L
+      }]
+      rewards: [{
+        id: "44CDFD39388155B1"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "41D180601635D585"
+      title: "Нажимные плиты из тёмного дуба"
+      description: ["Собери четыре нажимные плиты из тёмного дуба. Для каждой нужны три обычные плиты, два нагеля и вязаное крепление."]
+      x: -12.144d
+      y: -9.033d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["411A8AB5C2CF9D27","45D72E4E790DEE89"]
+      optional: true
+      tasks: [{
+        id: "41DD5534C09ED7BE"
+        type: "item"
+        item: "minecraft:dark_oak_pressure_plate"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4511F1D78E958ECC"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "448F9A3820CB2E64"
+      title: "Маркировочные таблички из тёмного дуба"
+      description: ["Подготовь четыре таблички из тёмного дуба. Для каждой нужны четыре доски, два соединения и палка."]
+      x: -8.629d
+      y: -4.562d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EB6B389A0057ED9","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "40297C9184F07EF9"
+        type: "item"
+        item: "minecraft:dark_oak_sign"
+        count: 4L
+      }]
+      rewards: [{
+        id: "47D540F7945CCE4F"
+        type: "item"
+        item: "minecraft:dark_oak_log"
+        count: 2
+      }]
+    }
+    {
+      id: "4B2A6CA7FA9D6839"
+      title: "Подвесные указатели из тёмного дуба"
+      description: ["Подвесь две таблички из тёмного дуба. На каждый указатель уйдут две железные цепи, два соединения, три доски и обычная табличка."]
+      x: -8.093d
+      y: -7.845d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["448F9A3820CB2E64","43C4612F0F6292A1"]
+      optional: true
+      tasks: [{
+        id: "427DD31BB01A1145"
+        type: "item"
+        item: "minecraft:dark_oak_hanging_sign"
+        count: 2L
+      }]
+      rewards: [{
+        id: "496DE325A93BCCC2"
+        type: "item"
+        item: "minecraft:iron_ingot"
+        count: 1
+      }]
+    }
+    {
+      id: "4753239FA0B64052"
+      title: "Лодка из тёмного дуба"
+      description: ["Собери лодку из тёмного дуба. На неё уйдут пять досок, два столярных соединения, рукоять и вязаное крепление."]
+      x: -11.705d
+      y: 4.812d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EB6B389A0057ED9","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4795CBD1BEE7DA85"
+        type: "item"
+        item: "minecraft:dark_oak_boat"
+      }]
+      rewards: [{
+        id: "47AD31712702669C"
+        type: "item"
+        item: "kubejs:tool_binding"
+        count: 1
+      }]
+    }
+    {
+      id: "41AA2C5D30C2AE1D"
+      title: "Лодка с сундуком из тёмного дуба"
+      description: ["Собери грузовую лодку из тёмного дуба. Для рецепта подготовь три лодки, сундук, два соединения и кованый шарнир."]
+      x: -11.416d
+      y: 8.466d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4753239FA0B64052","4A09AF0ABA19165C","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "420AF10AF7ECCE4F"
+        type: "item"
+        item: "minecraft:dark_oak_chest_boat"
+      }]
+      rewards: [{
+        id: "48BB3194E873CC52"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "4F87B11251FC5AB2"
+      title: "Мангровые брёвна"
+      description: ["Собери восемь брёвен из мангрового дерева. Оставь часть для распила на пиле."]
+      x: 16.747d
+      y: -4.551d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["469A83EB7EBD443A"]
+      optional: true
+      tasks: [{
+        id: "4AF0EBE867D2CEA5"
+        type: "item"
+        item: "minecraft:mangrove_log"
+        count: 8L
+      }]
+      rewards: [{
+        id: "49FFE19E0BB9559F"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "40FF21C8DCB9BBBD"
+      title: "Ручная распиловка мангрового дерева"
+      description: ["Распили заготовки из мангрового дерева кремнёвым ножом. Из каждой получишь две доски. Собери восемь."]
+      x: 1.653d
+      y: -0.267d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F87B11251FC5AB2","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4D910D7BCA01BEE7"
+        type: "item"
+        item: "minecraft:mangrove_planks"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4C0E2FDF25225345"
+        type: "item"
+        item: "minecraft:mangrove_log"
+        count: 2
+      }]
+    }
+    {
+      id: "4888AA303CE59673"
+      title: "Запас досок из мангрового дерева"
+      description: ["Подай заготовки из мангрового дерева на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      x: -9.995d
+      y: -2.248d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40FF21C8DCB9BBBD","45EADC6EDC7CA91F"]
+      optional: true
+      tasks: [{
+        id: "4454AF366A613C39"
+        type: "item"
+        item: "minecraft:mangrove_planks"
+        count: 64L
+      }]
+      rewards: [{
+        id: "424E1F7DB4C68335"
+        type: "item"
+        item: "minecraft:mangrove_log"
+        count: 3
+      }]
+    }
+    {
+      id: "4A48CF6713201F90"
+      title: "Напольные плиты из мангрового дерева"
+      description: ["Для одной напольной плиты возьми три доски из мангрового дерева и нагель. Собери восемь плит."]
+      x: -7.019d
+      y: 1.786d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40FF21C8DCB9BBBD"]
+      optional: true
+      tasks: [{
+        id: "4E4AD910AA6FA833"
+        type: "item"
+        item: "minecraft:mangrove_slab"
+        count: 8L
+      }]
+      rewards: [{
+        id: "457675C9C0C737B8"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "40E3B078D6D593C0"
+      title: "Лестничные ступени из мангрового дерева"
+      description: ["Скрепи шесть досок из мангрового дерева двумя столярными соединениями. За крафт выйдут две ступени, для квеста нужно восемь."]
+      x: 0.241d
+      y: 6.166d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40FF21C8DCB9BBBD","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4B5FC25E50167162"
+        type: "item"
+        item: "minecraft:mangrove_stairs"
+        count: 8L
+      }]
+      rewards: [{
+        id: "48C8B19EA6A83669"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "479DE37256E51F97"
+      title: "Ограждение из мангрового дерева"
+      description: ["На две секции ограждения возьми четыре доски из мангрового дерева, два соединения, два нагеля и палку. Собери двенадцать секций."]
+      x: 6.217d
+      y: 5.530d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40FF21C8DCB9BBBD","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "49E6C9B6E6A68F60"
+        type: "item"
+        item: "minecraft:mangrove_fence"
+        count: 12L
+      }]
+      rewards: [{
+        id: "41E70A9039545EAD"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "4D34A45F810B7685"
+      title: "Шарнирная калитка из мангрового дерева"
+      description: ["Собери две калитки из мангрового дерева. На каждую уйдут два кованых шарнира, два соединения, две доски и две палки."]
+      x: 10.332d
+      y: 9.973d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["479DE37256E51F97","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "4DC14809CE640BF1"
+        type: "item"
+        item: "minecraft:mangrove_fence_gate"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4E8278708C3B28B4"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "445CEA482173B6CE"
+      title: "Двери на шарнирах из мангрового дерева"
+      description: ["Собери две двери из мангрового дерева. Для каждой нужны пять досок, два шарнира и два столярных соединения."]
+      x: 4.224d
+      y: -4.738d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40FF21C8DCB9BBBD","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "452B987A5BE3E00B"
+        type: "item"
+        item: "minecraft:mangrove_door"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4D08868E801FD5E2"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "4A01EADE277B1A6A"
+      title: "Служебные люки из мангрового дерева"
+      description: ["На каждый из двух люков возьми шесть досок из мангрового дерева, два шарнира и одно столярное соединение."]
+      x: -19.258d
+      y: -3.690d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["445CEA482173B6CE"]
+      optional: true
+      tasks: [{
+        id: "48C6D277D4AA8F46"
+        type: "item"
+        item: "minecraft:mangrove_trapdoor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4B14D9FA7E59FCEE"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4131C682F2D25743"
+      title: "Кнопки управления из мангрового дерева"
+      description: ["Подгони плиту из мангрового дерева ножом и закрепи кнопку на нагеле. Сделай четыре кнопки."]
+      x: -13.489d
+      y: 1.153d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A48CF6713201F90","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "47BDD6B4DE23763F"
+        type: "item"
+        item: "minecraft:mangrove_button"
+        count: 4L
+      }]
+      rewards: [{
+        id: "434D048124D0AFAC"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4F47521EF16F7018"
+      title: "Нажимные плиты из мангрового дерева"
+      description: ["Собери четыре нажимные плиты из мангрового дерева. Для каждой нужны три обычные плиты, два нагеля и вязаное крепление."]
+      x: -6.042d
+      y: 5.973d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A48CF6713201F90","45D72E4E790DEE89"]
+      optional: true
+      tasks: [{
+        id: "49E5F4C027762B2A"
+        type: "item"
+        item: "minecraft:mangrove_pressure_plate"
+        count: 4L
+      }]
+      rewards: [{
+        id: "45500BDCE5DCDEB8"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "44BA73C5F464F6BB"
+      title: "Маркировочные таблички из мангрового дерева"
+      description: ["Подготовь четыре таблички из мангрового дерева. Для каждой нужны четыре доски, два соединения и палка."]
+      x: 1.729d
+      y: -8.836d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40FF21C8DCB9BBBD","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4C7AF26E58772960"
+        type: "item"
+        item: "minecraft:mangrove_sign"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4753C55732647F4E"
+        type: "item"
+        item: "minecraft:mangrove_log"
+        count: 2
+      }]
+    }
+    {
+      id: "466D4FCE044CE456"
+      title: "Подвесные указатели из мангрового дерева"
+      description: ["Подвесь две таблички из мангрового дерева. На каждый указатель уйдут две железные цепи, два соединения, три доски и обычная табличка."]
+      x: 5.434d
+      y: -12.303d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44BA73C5F464F6BB","43C4612F0F6292A1"]
+      optional: true
+      tasks: [{
+        id: "4C3272EFC1BAB08E"
+        type: "item"
+        item: "minecraft:mangrove_hanging_sign"
+        count: 2L
+      }]
+      rewards: [{
+        id: "483F72AA7520F8FD"
+        type: "item"
+        item: "minecraft:iron_ingot"
+        count: 1
+      }]
+    }
+    {
+      id: "4F8F1A8112DF06A9"
+      title: "Лодка из мангрового дерева"
+      description: ["Собери лодку из мангрового дерева. На неё уйдут пять досок, два столярных соединения, рукоять и вязаное крепление."]
+      x: 17.466d
+      y: -1.562d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40FF21C8DCB9BBBD","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4D32747C96DA5E12"
+        type: "item"
+        item: "minecraft:mangrove_boat"
+      }]
+      rewards: [{
+        id: "4F2C4E00E1A9E995"
+        type: "item"
+        item: "kubejs:tool_binding"
+        count: 1
+      }]
+    }
+    {
+      id: "4BA49E88A16424DA"
+      title: "Лодка с сундуком из мангрового дерева"
+      description: ["Собери грузовую лодку из мангрового дерева. Для рецепта подготовь три лодки, сундук, два соединения и кованый шарнир."]
+      x: 23.648d
+      y: -2.828d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F8F1A8112DF06A9","4A09AF0ABA19165C","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "4CF2CA585B670A3A"
+        type: "item"
+        item: "minecraft:mangrove_chest_boat"
+      }]
+      rewards: [{
+        id: "47EB641E6C2BFBBA"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "4FCDA6861BB4C376"
+      title: "Вишнёвые брёвна"
+      description: ["Собери восемь брёвен из вишни. Оставь часть для распила на пиле."]
+      x: 4.411d
+      y: -2.854d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["469A83EB7EBD443A"]
+      optional: true
+      tasks: [{
+        id: "4C62CF05D6816C27"
+        type: "item"
+        item: "minecraft:cherry_log"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4CC2202A97F47FBD"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "40D0336A9C610479"
+      title: "Ручная распиловка вишни"
+      description: ["Распили заготовки из вишни кремнёвым ножом. Из каждой получишь две доски. Собери восемь."]
+      x: 0.000d
+      y: -2.338d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4FCDA6861BB4C376","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4698921F5E87543A"
+        type: "item"
+        item: "minecraft:cherry_planks"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4C4DCCB7D0EF2705"
+        type: "item"
+        item: "minecraft:cherry_log"
+        count: 2
+      }]
+    }
+    {
+      id: "48BA627B5A2E3F1E"
+      title: "Запас досок из вишни"
+      description: ["Подай заготовки из вишни на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      x: 2.287d
+      y: -6.295d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40D0336A9C610479","45EADC6EDC7CA91F"]
+      optional: true
+      tasks: [{
+        id: "44B64C8D8EF2FC74"
+        type: "item"
+        item: "minecraft:cherry_planks"
+        count: 64L
+      }]
+      rewards: [{
+        id: "48ED26ED52AA813A"
+        type: "item"
+        item: "minecraft:cherry_log"
+        count: 3
+      }]
+    }
+    {
+      id: "4A7D614D82116BC7"
+      title: "Напольные плиты из вишни"
+      description: ["Для одной напольной плиты возьми три доски из вишни и нагель. Собери восемь плит."]
+      x: 3.458d
+      y: -8.296d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40D0336A9C610479"]
+      optional: true
+      tasks: [{
+        id: "4AFC6A0E4125C807"
+        type: "item"
+        item: "minecraft:cherry_slab"
+        count: 8L
+      }]
+      rewards: [{
+        id: "453F57A92A77D20C"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "41EBB6B3B875AD12"
+      title: "Лестничные ступени из вишни"
+      description: ["Скрепи шесть досок из вишни двумя столярными соединениями. За крафт выйдут две ступени, для квеста нужно восемь."]
+      x: -2.659d
+      y: -5.965d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40D0336A9C610479","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "45E6CA48ADA0FCB2"
+        type: "item"
+        item: "minecraft:cherry_stairs"
+        count: 8L
+      }]
+      rewards: [{
+        id: "40C41C9AE83860DB"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "4F9C67BA4F19D9CD"
+      title: "Ограждение из вишни"
+      description: ["На две секции ограждения возьми четыре доски из вишни, два соединения, два нагеля и палку. Собери двенадцать секций."]
+      x: -1.185d
+      y: -4.185d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40D0336A9C610479","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "409BFC76194F9094"
+        type: "item"
+        item: "minecraft:cherry_fence"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4FCE2364A0B6BAFF"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "47E9DEC939FD6712"
+      title: "Шарнирная калитка из вишни"
+      description: ["Собери две калитки из вишни. На каждую уйдут два кованых шарнира, два соединения, две доски и две палки."]
+      x: 2.821d
+      y: -1.769d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F9C67BA4F19D9CD","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "4A2AC78BEADA1B4D"
+        type: "item"
+        item: "minecraft:cherry_fence_gate"
+        count: 2L
+      }]
+      rewards: [{
+        id: "44E81F868BF46F0F"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "4D6789961350CAB6"
+      title: "Двери на шарнирах из вишни"
+      description: ["Собери две двери из вишни. Для каждой нужны пять досок, два шарнира и два столярных соединения."]
+      x: 1.846d
+      y: -3.598d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40D0336A9C610479","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "48B1A242EF543D54"
+        type: "item"
+        item: "minecraft:cherry_door"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4A225758980AFD8B"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "4CFE7E47E85AD27E"
+      title: "Служебные люки из вишни"
+      description: ["На каждый из двух люков возьми шесть досок из вишни, два шарнира и одно столярное соединение."]
+      x: -0.059d
+      y: -0.545d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D6789961350CAB6"]
+      optional: true
+      tasks: [{
+        id: "4C8F8EA054A0F74D"
+        type: "item"
+        item: "minecraft:cherry_trapdoor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4E9DB02EEE7C29C9"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "45DC88E73136C726"
+      title: "Кнопки управления из вишни"
+      description: ["Подгони плиту из вишни ножом и закрепи кнопку на нагеле. Сделай четыре кнопки."]
+      x: 1.789d
+      y: -12.242d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A7D614D82116BC7","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "463D933591582B68"
+        type: "item"
+        item: "minecraft:cherry_button"
+        count: 4L
+      }]
+      rewards: [{
+        id: "423E3F2ACD72FBCB"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "43756D9A8829CE29"
+      title: "Нажимные плиты из вишни"
+      description: ["Собери четыре нажимные плиты из вишни. Для каждой нужны три обычные плиты, два нагеля и вязаное крепление."]
+      x: 5.400d
+      y: -9.983d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A7D614D82116BC7","45D72E4E790DEE89"]
+      optional: true
+      tasks: [{
+        id: "45ADA88D0EC029A2"
+        type: "item"
+        item: "minecraft:cherry_pressure_plate"
+        count: 4L
+      }]
+      rewards: [{
+        id: "442E4D70C2AE59CC"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "45DDB0C4FA06A838"
+      title: "Маркировочные таблички из вишни"
+      description: ["Подготовь четыре таблички из вишни. Для каждой нужны четыре доски, два соединения и палка."]
+      x: -1.232d
+      y: -9.675d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40D0336A9C610479","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4F43EC153C948EF6"
+        type: "item"
+        item: "minecraft:cherry_sign"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4B46D3A4F5C82531"
+        type: "item"
+        item: "minecraft:cherry_log"
+        count: 2
+      }]
+    }
+    {
+      id: "49000F20E8C1757D"
+      title: "Подвесные указатели из вишни"
+      description: ["Подвесь две таблички из вишни. На каждый указатель уйдут две железные цепи, два соединения, три доски и обычная табличка."]
+      x: -3.325d
+      y: -12.435d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45DDB0C4FA06A838","43C4612F0F6292A1"]
+      optional: true
+      tasks: [{
+        id: "4C9FB8A50A75D98D"
+        type: "item"
+        item: "minecraft:cherry_hanging_sign"
+        count: 2L
+      }]
+      rewards: [{
+        id: "477167D349B8C016"
+        type: "item"
+        item: "minecraft:iron_ingot"
+        count: 1
+      }]
+    }
+    {
+      id: "41231ABFFA74EC59"
+      title: "Лодка из вишни"
+      description: ["Собери лодку из вишни. На неё уйдут пять досок, два столярных соединения, рукоять и вязаное крепление."]
+      x: -0.907d
+      y: -7.465d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40D0336A9C610479","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "40884019D9961844"
+        type: "item"
+        item: "minecraft:cherry_boat"
+      }]
+      rewards: [{
+        id: "4ABADEB35D663418"
+        type: "item"
+        item: "kubejs:tool_binding"
+        count: 1
+      }]
+    }
+    {
+      id: "47C8544607FEF476"
+      title: "Лодка с сундуком из вишни"
+      description: ["Собери грузовую лодку из вишни. Для рецепта подготовь три лодки, сундук, два соединения и кованый шарнир."]
+      x: -3.725d
+      y: -9.408d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41231ABFFA74EC59","4A09AF0ABA19165C","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "40016E55994AE5F8"
+        type: "item"
+        item: "minecraft:cherry_chest_boat"
+      }]
+      rewards: [{
+        id: "4D7621744196D509"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "48FFE39DDA506667"
+      title: "Блоки бамбука"
+      description: ["Собери восемь блоков бамбука. Каждый блок требует восемь стеблей и одно вязаное крепление."]
+      x: 8.466d
+      y: 0.647d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["469A83EB7EBD443A"]
+      optional: true
+      tasks: [{
+        id: "428F89783273F7D8"
+        type: "item"
+        item: "minecraft:bamboo_block"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4FE5B627350779D0"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4F47103784CAA0D4"
+      title: "Ручная распиловка бамбука"
+      description: ["Распили заготовки из бамбука кремнёвым ножом. Из каждой получишь две доски. Собери восемь."]
+      x: 9.477d
+      y: -1.162d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["48FFE39DDA506667","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "45B42D903CBA17B5"
+        type: "item"
+        item: "minecraft:bamboo_planks"
+        count: 8L
+      }]
+      rewards: [{
+        id: "49DCB226F440F52C"
+        type: "item"
+        item: "minecraft:bamboo_block"
+        count: 2
+      }]
+    }
+    {
+      id: "4A553107E9D8516E"
+      title: "Запас досок из бамбука"
+      description: ["Подай заготовки из бамбука на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      x: 11.739d
+      y: 3.864d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F47103784CAA0D4","45EADC6EDC7CA91F"]
+      optional: true
+      tasks: [{
+        id: "48A648CB7E13E5F2"
+        type: "item"
+        item: "minecraft:bamboo_planks"
+        count: 64L
+      }]
+      rewards: [{
+        id: "415E82FE8B223996"
+        type: "item"
+        item: "minecraft:bamboo_block"
+        count: 3
+      }]
+    }
+    {
+      id: "4ADE6CC02C7D7641"
+      title: "Напольные плиты из бамбука"
+      description: ["Для одной напольной плиты возьми три доски из бамбука и нагель. Собери восемь плит."]
+      x: 13.282d
+      y: -1.005d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F47103784CAA0D4"]
+      optional: true
+      tasks: [{
+        id: "4D019EF1784DFFF7"
+        type: "item"
+        item: "minecraft:bamboo_slab"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4889FB00E7480322"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4BF91C1EA9906E27"
+      title: "Лестничные ступени из бамбука"
+      description: ["Скрепи шесть досок из бамбука двумя столярными соединениями. За крафт выйдут две ступени, для квеста нужно восемь."]
+      x: 11.364d
+      y: 0.457d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F47103784CAA0D4","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "41AD20AEC9662039"
+        type: "item"
+        item: "minecraft:bamboo_stairs"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4E135F60258A7412"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "4B29DC6E05347ED9"
+      title: "Ограждение из бамбука"
+      description: ["На две секции ограждения возьми четыре доски из бамбука, два соединения, два нагеля и палку. Собери двенадцать секций."]
+      x: 11.793d
+      y: -7.499d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F47103784CAA0D4","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4ADFDBE1B302A75B"
+        type: "item"
+        item: "minecraft:bamboo_fence"
+        count: 12L
+      }]
+      rewards: [{
+        id: "45AADD8098B222AC"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "43E29309905B5058"
+      title: "Шарнирная калитка из бамбука"
+      description: ["Собери две калитки из бамбука. На каждую уйдут два кованых шарнира, два соединения, две доски и две палки."]
+      x: 13.366d
+      y: -10.827d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B29DC6E05347ED9","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "469B5DBF93F45DC1"
+        type: "item"
+        item: "minecraft:bamboo_fence_gate"
+        count: 2L
+      }]
+      rewards: [{
+        id: "46C2CBF68DD0D385"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "4BEA962F62D58A14"
+      title: "Двери на шарнирах из бамбука"
+      description: ["Собери две двери из бамбука. Для каждой нужны пять досок, два шарнира и два столярных соединения."]
+      x: 9.152d
+      y: -7.848d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F47103784CAA0D4","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "476F1D310B3E1540"
+        type: "item"
+        item: "minecraft:bamboo_door"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4EF0D7CCE3A29980"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "4D63367B5E761B43"
+      title: "Служебные люки из бамбука"
+      description: ["На каждый из двух люков возьми шесть досок из бамбука, два шарнира и одно столярное соединение."]
+      x: 9.875d
+      y: -11.117d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BEA962F62D58A14"]
+      optional: true
+      tasks: [{
+        id: "42A7AB6C520068C2"
+        type: "item"
+        item: "minecraft:bamboo_trapdoor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "45CBBF95F3028D42"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "414F5F6A9127E1E2"
+      title: "Кнопки управления из бамбука"
+      description: ["Подгони плиту из бамбука ножом и закрепи кнопку на нагеле. Сделай четыре кнопки."]
+      x: 15.295d
+      y: -1.992d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4ADE6CC02C7D7641","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4BD7476B35D33F7E"
+        type: "item"
+        item: "minecraft:bamboo_button"
+        count: 4L
+      }]
+      rewards: [{
+        id: "49C6D02D5263C0D4"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "47BA1BB74B6912DA"
+      title: "Нажимные плиты из бамбука"
+      description: ["Собери четыре нажимные плиты из бамбука. Для каждой нужны три обычные плиты, два нагеля и вязаное крепление."]
+      x: 13.624d
+      y: 1.993d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4ADE6CC02C7D7641","45D72E4E790DEE89"]
+      optional: true
+      tasks: [{
+        id: "4D6C49C2D07C5C3F"
+        type: "item"
+        item: "minecraft:bamboo_pressure_plate"
+        count: 4L
+      }]
+      rewards: [{
+        id: "487AF703656AAFB9"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4A65F86AFF5874BC"
+      title: "Маркировочные таблички из бамбука"
+      description: ["Подготовь четыре таблички из бамбука. Для каждой нужны четыре доски, два соединения и палка."]
+      x: 8.955d
+      y: 5.224d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F47103784CAA0D4","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "45F5095F85AD0E18"
+        type: "item"
+        item: "minecraft:bamboo_sign"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4E1594F03E371B2A"
+        type: "item"
+        item: "minecraft:bamboo_block"
+        count: 2
+      }]
+    }
+    {
+      id: "436E63C5CF3ECE6B"
+      title: "Подвесные указатели из бамбука"
+      description: ["Подвесь две таблички из бамбука. На каждый указатель уйдут две железные цепи, два соединения, три доски и обычная табличка."]
+      x: 7.712d
+      y: 9.911d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A65F86AFF5874BC","43C4612F0F6292A1"]
+      optional: true
+      tasks: [{
+        id: "4146C255F05908A9"
+        type: "item"
+        item: "minecraft:bamboo_hanging_sign"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4A3A56946D388102"
+        type: "item"
+        item: "minecraft:iron_ingot"
+        count: 1
+      }]
+    }
+    {
+      id: "498C5427826A3CF7"
+      title: "Бамбуковый плот"
+      description: ["Собери плот из пяти бамбуковых досок, двух столярных соединений, рукояти и вязаного крепления."]
+      x: 7.809d
+      y: -5.621d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F47103784CAA0D4","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4586B8B5E1F784CE"
+        type: "item"
+        item: "minecraft:bamboo_raft"
+      }]
+      rewards: [{
+        id: "468FC7ACAB786F8A"
+        type: "item"
+        item: "kubejs:tool_binding"
+        count: 1
+      }]
+    }
+    {
+      id: "4F66F2060D8FB6CC"
+      title: "Бамбуковый плот с сундуком"
+      description: ["Прикрепи сундук к бамбуковому плоту. На навеску нужны ещё два столярных соединения и кованый шарнир. Для рецепта подготовь три плота."]
+      x: 7.288d
+      y: -3.545d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["498C5427826A3CF7","4A09AF0ABA19165C","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "44B6A19AE5604A24"
+        type: "item"
+        item: "minecraft:bamboo_chest_raft"
+      }]
+      rewards: [{
+        id: "4211EC706C5DAF69"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "48795D3128060808"
+      title: "Бамбуковая мозаика для сухого настила"
+      description: ["Собери шестнадцать блоков мозаики. Для каждого нужны две бамбуковые плиты, столярное соединение и нагель."]
+      x: 12.728d
+      y: -4.946d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4ADE6CC02C7D7641","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "432532E77B848F8F"
+        type: "item"
+        item: "minecraft:bamboo_mosaic"
+        count: 16L
+      }]
+      rewards: [{
+        id: "43362E0149264C09"
+        type: "item"
+        item: "minecraft:bamboo_block"
+        count: 2
+      }]
+    }
+    {
+      id: "40BA00CFDFAF3108"
+      title: "Плиты бамбуковой мозаики"
+      description: ["Собери восемь плит. На одну возьми три блока мозаики и нагель."]
+      x: 14.441d
+      y: -7.949d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48795D3128060808"]
+      optional: true
+      tasks: [{
+        id: "43C3288BED09D8B8"
+        type: "item"
+        item: "minecraft:bamboo_mosaic_slab"
+        count: 8L
+      }]
+      rewards: [{
+        id: "41E1DAB18477BD32"
+        type: "item"
+        item: "minecraft:bamboo_block"
+        count: 2
+      }]
+    }
+    {
+      id: "4206E12533DDBD32"
+      title: "Ступени бамбуковой мозаики"
+      description: ["Собери восемь ступеней. Шесть блоков мозаики и два соединения дают две ступени."]
+      x: 10.422d
+      y: -3.431d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48795D3128060808","4BF91C1EA9906E27"]
+      optional: true
+      tasks: [{
+        id: "46447232D58C41DF"
+        type: "item"
+        item: "minecraft:bamboo_mosaic_stairs"
+        count: 8L
+      }]
+      rewards: [{
+        id: "45C8A34AD1838C09"
+        type: "item"
+        item: "minecraft:bamboo_block"
+        count: 2
+      }]
+    }
+    {
+      id: "468ECD7F779E1AB1"
+      title: "Багровые стебли"
+      description: ["Сруби восемь багровых стеблей в Нижнем мире. Оставь часть для распила на пиле."]
+      x: 21.347d
+      y: 5.510d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["469A83EB7EBD443A"]
+      optional: true
+      tasks: [{
+        id: "4C7215A4B9F616D5"
+        type: "item"
+        item: "minecraft:crimson_stem"
+        count: 8L
+      }]
+      rewards: [{
+        id: "441E0F000D52C6FC"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4F7F6F15A6F68784"
+      title: "Ручная распиловка багрового стебля"
+      description: ["Распили заготовки из багрового стебля кремнёвым ножом. Из каждой получишь две доски. Собери восемь."]
+      x: 18.953d
+      y: 2.058d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["468ECD7F779E1AB1","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4CAA57B4EAF3A0F7"
+        type: "item"
+        item: "minecraft:crimson_planks"
+        count: 8L
+      }]
+      rewards: [{
+        id: "405B855C49301786"
+        type: "item"
+        item: "minecraft:crimson_stem"
+        count: 2
+      }]
+    }
+    {
+      id: "4A20A8A1B9395A60"
+      title: "Запас досок из багрового стебля"
+      description: ["Подай заготовки из багрового стебля на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      x: 17.257d
+      y: 4.105d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F7F6F15A6F68784","45EADC6EDC7CA91F"]
+      optional: true
+      tasks: [{
+        id: "4392DAC27D4572C6"
+        type: "item"
+        item: "minecraft:crimson_planks"
+        count: 64L
+      }]
+      rewards: [{
+        id: "4C09558FA1687ED8"
+        type: "item"
+        item: "minecraft:crimson_stem"
+        count: 3
+      }]
+    }
+    {
+      id: "4D9D9E3CD06BDACF"
+      title: "Напольные плиты из багрового стебля"
+      description: ["Для одной напольной плиты возьми три доски из багрового стебля и нагель. Собери восемь плит."]
+      x: 19.957d
+      y: 4.027d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F7F6F15A6F68784"]
+      optional: true
+      tasks: [{
+        id: "477BB824028F377F"
+        type: "item"
+        item: "minecraft:crimson_slab"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4E078E7A54E33FC1"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4ED3A8A98BEF7984"
+      title: "Лестничные ступени из багрового стебля"
+      description: ["Скрепи шесть досок из багрового стебля двумя столярными соединениями. За крафт выйдут две ступени, для квеста нужно восемь."]
+      x: 20.038d
+      y: 8.347d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F7F6F15A6F68784","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4E791B1770C5D409"
+        type: "item"
+        item: "minecraft:crimson_stairs"
+        count: 8L
+      }]
+      rewards: [{
+        id: "40BD225226AD6E17"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "4688335A4A6337EB"
+      title: "Ограждение из багрового стебля"
+      description: ["На две секции ограждения возьми четыре доски из багрового стебля, два соединения, два нагеля и палку. Собери двенадцать секций."]
+      x: 21.533d
+      y: -1.920d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F7F6F15A6F68784","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "4A9B2EAF904253F3"
+        type: "item"
+        item: "minecraft:crimson_fence"
+        count: 12L
+      }]
+      rewards: [{
+        id: "45EC30E621FE34C3"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "4DA9FEA8DD33BF79"
+      title: "Шарнирная калитка из багрового стебля"
+      description: ["Собери две калитки из багрового стебля. На каждую уйдут два кованых шарнира, два соединения, две доски и две палки."]
+      x: 22.751d
+      y: -5.699d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4688335A4A6337EB","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "41F22E5E84F7C1F3"
+        type: "item"
+        item: "minecraft:crimson_fence_gate"
+        count: 2L
+      }]
+      rewards: [{
+        id: "498577B901F4AE71"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "4FB6A4BA46AB28A1"
+      title: "Двери на шарнирах из багрового стебля"
+      description: ["Собери две двери из багрового стебля. Для каждой нужны пять досок, два шарнира и два столярных соединения."]
+      x: 19.169d
+      y: 6.431d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F7F6F15A6F68784","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "4E61B231EB214628"
+        type: "item"
+        item: "minecraft:crimson_door"
+        count: 2L
+      }]
+      rewards: [{
+        id: "45A573FD6DBD2114"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "4C73F32AB21D2C56"
+      title: "Служебные люки из багрового стебля"
+      description: ["На каждый из двух люков возьми шесть досок из багрового стебля, два шарнира и одно столярное соединение."]
+      x: 22.547d
+      y: 9.669d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FB6A4BA46AB28A1"]
+      optional: true
+      tasks: [{
+        id: "4B6511D68823D5AE"
+        type: "item"
+        item: "minecraft:crimson_trapdoor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4A54BA6AF031FCEE"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4682C429C84E8BB7"
+      title: "Кнопки управления из багрового стебля"
+      description: ["Подгони плиту из багрового стебля ножом и закрепи кнопку на нагеле. Сделай четыре кнопки."]
+      x: 22.171d
+      y: 1.629d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D9D9E3CD06BDACF","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4BD854DD105488E4"
+        type: "item"
+        item: "minecraft:crimson_button"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4332245E5F470C8F"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4CD7B4334E9B2F43"
+      title: "Нажимные плиты из багрового стебля"
+      description: ["Собери четыре нажимные плиты из багрового стебля. Для каждой нужны три обычные плиты, два нагеля и вязаное крепление."]
+      x: 17.272d
+      y: 7.819d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D9D9E3CD06BDACF","45D72E4E790DEE89"]
+      optional: true
+      tasks: [{
+        id: "42A70DFCDBEA8A7A"
+        type: "item"
+        item: "minecraft:crimson_pressure_plate"
+        count: 4L
+      }]
+      rewards: [{
+        id: "418F1B99DAEE3B74"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "49069AFDD6433222"
+      title: "Маркировочные таблички из багрового стебля"
+      description: ["Подготовь четыре таблички из багрового стебля. Для каждой нужны четыре доски, два соединения и палка."]
+      x: 17.615d
+      y: 0.509d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F7F6F15A6F68784","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "40C0F3779C5C78FB"
+        type: "item"
+        item: "minecraft:crimson_sign"
+        count: 4L
+      }]
+      rewards: [{
+        id: "422250ACEC331A17"
+        type: "item"
+        item: "minecraft:crimson_stem"
+        count: 2
+      }]
+    }
+    {
+      id: "44D618ED11408F80"
+      title: "Подвесные указатели из багрового стебля"
+      description: ["Подвесь две таблички из багрового стебля. На каждый указатель уйдут две железные цепи, два соединения, три доски и обычная табличка."]
+      x: 19.569d
+      y: -2.968d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49069AFDD6433222","43C4612F0F6292A1"]
+      optional: true
+      tasks: [{
+        id: "455A9685B4FE6CAB"
+        type: "item"
+        item: "minecraft:crimson_hanging_sign"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4661BDA3963F7FA1"
+        type: "item"
+        item: "minecraft:iron_ingot"
+        count: 1
+      }]
+    }
+    {
+      id: "4437295D4AC3B878"
+      title: "Искажённые стебли"
+      description: ["Сруби восемь искажённых стеблей в Нижнем мире. Оставь часть для распила на пиле."]
+      x: 5.989d
+      y: -0.155d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["469A83EB7EBD443A"]
+      optional: true
+      tasks: [{
+        id: "489B16B9D63BE959"
+        type: "item"
+        item: "minecraft:warped_stem"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4D0D37BE99AF8294"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "42001D80FED23DDF"
+      title: "Ручная распиловка искажённого стебля"
+      description: ["Распили заготовки из искажённого стебля кремнёвым ножом. Из каждой получишь две доски. Собери восемь."]
+      x: 2.502d
+      y: 3.280d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4437295D4AC3B878","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4104D4BD41B15346"
+        type: "item"
+        item: "minecraft:warped_planks"
+        count: 8L
+      }]
+      rewards: [{
+        id: "470CAB58DBF2BAD1"
+        type: "item"
+        item: "minecraft:warped_stem"
+        count: 2
+      }]
+    }
+    {
+      id: "471A1CB42C19CC75"
+      title: "Запас досок из искажённого стебля"
+      description: ["Подай заготовки из искажённого стебля на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      x: 22.823d
+      y: 6.947d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42001D80FED23DDF","45EADC6EDC7CA91F"]
+      optional: true
+      tasks: [{
+        id: "47BA177F0FF4F5E8"
+        type: "item"
+        item: "minecraft:warped_planks"
+        count: 64L
+      }]
+      rewards: [{
+        id: "4ED7AA6F4C316CE7"
+        type: "item"
+        item: "minecraft:warped_stem"
+        count: 3
+      }]
+    }
+    {
+      id: "4BA70EE014A39E34"
+      title: "Напольные плиты из искажённого стебля"
+      description: ["Для одной напольной плиты возьми три доски из искажённого стебля и нагель. Собери восемь плит."]
+      x: -18.168d
+      y: 0.822d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42001D80FED23DDF"]
+      optional: true
+      tasks: [{
+        id: "457D4681D5351A66"
+        type: "item"
+        item: "minecraft:warped_slab"
+        count: 8L
+      }]
+      rewards: [{
+        id: "40B0CBEBF24CF4F7"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4B8A7789B5618443"
+      title: "Лестничные ступени из искажённого стебля"
+      description: ["Скрепи шесть досок из искажённого стебля двумя столярными соединениями. За крафт выйдут две ступени, для квеста нужно восемь."]
+      x: -4.939d
+      y: 2.922d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42001D80FED23DDF","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "44E4C9558B033433"
+        type: "item"
+        item: "minecraft:warped_stairs"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4495615F337CB919"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "47A9FE18D41FA65D"
+      title: "Ограждение из искажённого стебля"
+      description: ["На две секции ограждения возьми четыре доски из искажённого стебля, два соединения, два нагеля и палку. Собери двенадцать секций."]
+      x: -2.408d
+      y: -1.590d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42001D80FED23DDF","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "43EECE32A5AA892E"
+        type: "item"
+        item: "minecraft:warped_fence"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4857520DA1D1083A"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 1
+      }]
+    }
+    {
+      id: "4353A8EEC35C3443"
+      title: "Шарнирная калитка из искажённого стебля"
+      description: ["Собери две калитки из искажённого стебля. На каждую уйдут два кованых шарнира, два соединения, две доски и две палки."]
+      x: -5.512d
+      y: -4.141d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["47A9FE18D41FA65D","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "44EED7154D24C07A"
+        type: "item"
+        item: "minecraft:warped_fence_gate"
+        count: 2L
+      }]
+      rewards: [{
+        id: "42C5B4A05EE2096F"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "45AEF8C3373183B6"
+      title: "Двери на шарнирах из искажённого стебля"
+      description: ["Собери две двери из искажённого стебля. Для каждой нужны пять досок, два шарнира и два столярных соединения."]
+      x: 9.169d
+      y: 7.219d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42001D80FED23DDF","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "4413F5E24A76DC51"
+        type: "item"
+        item: "minecraft:warped_door"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4F7766B7EE3F6E48"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 1
+      }]
+    }
+    {
+      id: "45DF1197FC0A27B5"
+      title: "Служебные люки из искажённого стебля"
+      description: ["На каждый из двух люков возьми шесть досок из искажённого стебля, два шарнира и одно столярное соединение."]
+      x: 12.938d
+      y: 9.254d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45AEF8C3373183B6"]
+      optional: true
+      tasks: [{
+        id: "4EBDABF638B81978"
+        type: "item"
+        item: "minecraft:warped_trapdoor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "46C8E556DDA37F2F"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "424EAADC371100D7"
+      title: "Кнопки управления из искажённого стебля"
+      description: ["Подгони плиту из искажённого стебля ножом и закрепи кнопку на нагеле. Сделай четыре кнопки."]
+      x: 14.288d
+      y: -4.060d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BA70EE014A39E34","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "4DF0A5678EEA2798"
+        type: "item"
+        item: "minecraft:warped_button"
+        count: 4L
+      }]
+      rewards: [{
+        id: "47FF7E45B9B7FEC7"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4393A26CDB1B2360"
+      title: "Нажимные плиты из искажённого стебля"
+      description: ["Собери четыре нажимные плиты из искажённого стебля. Для каждой нужны три обычные плиты, два нагеля и вязаное крепление."]
+      x: -24.714d
+      y: 2.541d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BA70EE014A39E34","45D72E4E790DEE89"]
+      optional: true
+      tasks: [{
+        id: "4C050E02AD20152C"
+        type: "item"
+        item: "minecraft:warped_pressure_plate"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4310F235FAD9D38D"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4A3BB2A4790B6E1C"
+      title: "Маркировочные таблички из искажённого стебля"
+      description: ["Подготовь четыре таблички из искажённого стебля. Для каждой нужны четыре доски, два соединения и палка."]
+      x: -2.392d
+      y: 9.381d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42001D80FED23DDF","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "495D7C845004DB75"
+        type: "item"
+        item: "minecraft:warped_sign"
+        count: 4L
+      }]
+      rewards: [{
+        id: "44E37EC5CF688F19"
+        type: "item"
+        item: "minecraft:warped_stem"
+        count: 2
+      }]
+    }
+    {
+      id: "4E76DDE39CB5E929"
+      title: "Подвесные указатели из искажённого стебля"
+      description: ["Подвесь две таблички из искажённого стебля. На каждый указатель уйдут две железные цепи, два соединения, три доски и обычная табличка."]
+      x: -5.031d
+      y: 12.058d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A3BB2A4790B6E1C","43C4612F0F6292A1"]
+      optional: true
+      tasks: [{
+        id: "4F97A12715C12FEA"
+        type: "item"
+        item: "minecraft:warped_hanging_sign"
+        count: 2L
+      }]
+      rewards: [{
+        id: "440D25DCEEE7491B"
+        type: "item"
+        item: "minecraft:iron_ingot"
+        count: 1
+      }]
+    }
+  ]
+}

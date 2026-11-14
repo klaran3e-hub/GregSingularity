@@ -1,0 +1,3 @@
+# Use GregTech tin and apatite deposits for new worlds.
+spawn_tin_ore = false
+spawn_apatite_ore = false

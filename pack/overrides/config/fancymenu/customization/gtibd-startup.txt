@@ -1,0 +1,155 @@
+type = fancymenu_layout
+
+layout-meta {
+  identifier = drippy_loading_overlay
+  is_enabled = true
+  render_custom_elements_behind_vanilla = false
+  layout_index = 0
+}
+
+customization {
+  action = setscale
+  scale = 2
+}
+
+customization {
+  action = autoscale
+  basewidth = 1672
+  baseheight = 941
+}
+
+menu_background {
+  background_type = image
+  show_background = true
+  image_path = [source:local]/config/gtibd-interface/transfer.png
+  slide = false
+  repeat_texture = false
+}
+
+customization {
+  action = backgroundoptions
+  keepaspectratio = true
+}
+
+vanilla_button {
+  element_type = vanilla_button
+  instance_identifier = mojang_logo
+  anchor_point = vanilla
+  is_hidden = true
+}
+
+vanilla_button {
+  element_type = vanilla_button
+  instance_identifier = progress_bar
+  anchor_point = vanilla
+  is_hidden = true
+}
+
+element {
+  element_type = text_v2
+  instance_identifier = gtibd-loading-gt
+  source_mode = direct
+  source = ^^^%n%**GregTech:**%n%^^^
+  parse_markdown = true
+  base_color = #E99A45FF
+  shadow = true
+  scale = 1.4
+  text_border = 2
+  interactable = false
+  enable_scrolling = false
+  auto_line_wrapping = false
+  anchor_point = mid-centered
+  x = -173
+  y = -31
+  width = 346
+  height = 23
+  stay_on_screen = true
+}
+
+element {
+  element_type = text_v2
+  instance_identifier = gtibd-loading-title
+  source_mode = direct
+  source = ^^^%n%**Industrial Brain Damage**%n%^^^
+  parse_markdown = true
+  base_color = #F6ECE1FF
+  shadow = true
+  scale = 2.2
+  text_border = 2
+  interactable = false
+  enable_scrolling = false
+  auto_line_wrapping = false
+  anchor_point = mid-centered
+  x = -173
+  y = -10
+  width = 346
+  height = 33
+  stay_on_screen = true
+}
+
+element {
+  element_type = text_v2
+  instance_identifier = gtibd-loading-progress-label
+  source_mode = direct
+  source = ^^^%n%Загрузка ресурсов {"placeholder":"game_loading_progress"}%%n%^^^
+  parse_markdown = true
+  base_color = #ADDFE8FF
+  shadow = true
+  scale = 1.1
+  text_border = 2
+  interactable = false
+  enable_scrolling = false
+  auto_line_wrapping = false
+  anchor_point = mid-centered
+  x = -173
+  y = 28
+  width = 346
+  height = 18
+  stay_on_screen = true
+}
+
+element {
+  element_type = text_v2
+  instance_identifier = gtibd-loading-tip
+  source_mode = direct
+  source = ^^^%n%На механической пиле бревно даёт 4 доски.%n%^^^
+  parse_markdown = true
+  base_color = #C6BDB2FF
+  shadow = true
+  scale = 1
+  text_border = 2
+  interactable = false
+  enable_scrolling = false
+  auto_line_wrapping = false
+  anchor_point = mid-centered
+  x = -173
+  y = 55
+  width = 346
+  height = 18
+  stay_on_screen = true
+}
+
+element {
+  element_type = drippy_vanilla_bar
+  instance_identifier = gtibd-loading-progress
+  color = #E99A45FF
+  anchor_point = mid-centered
+  x = -114
+  y = 98
+  width = 228
+  height = 11
+  stay_on_screen = true
+}
+
+element {
+  element_type = image
+  instance_identifier = gtibd-loading-scan
+  source = [source:local]/config/fancymenu/assets/gtibd-loading-scan.apng
+  repeat_texture = false
+  anchor_point = mid-centered
+  x = -115
+  y = 111
+  width = 230
+  height = 4
+  stay_on_screen = true
+}

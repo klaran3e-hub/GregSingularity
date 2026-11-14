@@ -1,0 +1,3 @@
+[Drawers.Compacting]
+	enableExtraCompactingRules = false
+	compactingRules = []

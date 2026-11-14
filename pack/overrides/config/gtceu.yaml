@@ -1,0 +1,4 @@
+compat:
+  energy:
+    nativeEUToFE: false
+    enableFEConverters: true

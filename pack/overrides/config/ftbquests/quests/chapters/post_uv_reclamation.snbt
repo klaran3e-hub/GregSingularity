@@ -1,0 +1,365 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "post_uv_reclamation"
+  group: "49C57C767912BC15"
+  icon: "kubejs:reclaim_reclamation_certificate"
+  title: "Регенерация"
+  id: "43A88D4425C41E02"
+  order_index: 10
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/post_uv_reclamation.png"
+    x: 0.0d
+    y: 0.0d
+    width: 31.954d
+    height: 13.481d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "466EB9CB96210DEC"
+      title: "Форма для рам мембран"
+      description: ["Оставь форму пластины в прессе IE. Подай силовой ламинат и передавай полученные панели под отдельный пресс Create."]
+      x: -12.190d
+      y: 2.669d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43AA31A7D9ECA52D","4A85C0FEDAB59285"]
+      tasks: [{
+        id: "46C9DAB0C9C1950C"
+        type: "item"
+        item: "immersiveengineering:mold_plate"
+      }]
+      rewards: [{
+        id: "497C0BD746018CB0"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46659D4A98165A65"
+      title: "Рама фильтрующей мембраны"
+      description: ["На механическом прессе Create сожми подготовленные панели IE. Автокрафт может отправлять панели по одной в депо под прессом."]
+      x: -10.270d
+      y: 0.000d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["466EB9CB96210DEC","4FDED060320547AF"]
+      tasks: [{
+        id: "4987EB18BA32F7C2"
+        type: "item"
+        item: "kubejs:reclaim_membrane_frame"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4261876723EB0FFC"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "459D069055FF9CDE"
+      title: "Автоклав для спекания мембран"
+      description: ["Подключи дистиллированную воду к автоклаву UV. Собери мембраны партиями по четыре в смеси с силовым ламинатом."]
+      x: -8.696d
+      y: -2.532d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["46659D4A98165A65","44126B584B873E79"]
+      tasks: [{
+        id: "43A242C01BCFA9BB"
+        type: "item"
+        item: "gtceu:uv_autoclave"
+      }]
+      rewards: [{
+        id: "47CC59262DCCE9ED"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "499482A944CE52C6"
+      title: "Спечённая разделительная мембрана"
+      description: ["Подай в автоклав восемь рам, восемь ламинатов и 12 800 мБ дистиллята. Из цикла выходит четыре мембраны. Готовые мембраны выдавай в камеру опрессовки."]
+      x: -7.275d
+      y: 0.914d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["459D069055FF9CDE","4408470C5E66B7B4"]
+      tasks: [{
+        id: "4CCE4A66CC8C330D"
+        type: "item"
+        item: "kubejs:reclaim_sintered_membrane"
+        count: 4L
+      }]
+      rewards: [{
+        id: "430DDA10E4753D39"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4970F09FD7718C60"
+      title: "Картридж мембраны под давлением"
+      description: ["Сожми четыре мембраны, 16 плит фторопласта, восемь стёкол камеры и восемь манжет при 4,9 бар. Один картридж нужен на каждую центрифугу, ещё несколько уйдут в коллекторы и свидетельства."]
+      x: -5.190d
+      y: 4.276d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["499482A944CE52C6","473363017F3897CA"]
+      tasks: [{
+        id: "437E6774DCC54104"
+        type: "item"
+        item: "kubejs:reclaim_membrane_cartridge"
+        count: 2L
+      }]
+      rewards: [{
+        id: "497550436462C02C"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "412C3E1E1A27A367"
+      title: "Коллектор разделения потоков"
+      description: ["В сборщик UV установи сертификат эксплуатации. Расширенные поставщики шаблонов и тяжёлый блок IE входят в корпус коллектора."]
+      x: -3.950d
+      y: 2.482d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4970F09FD7718C60","43AA31A7D9ECA52D","42ABCAAD931D3A18"]
+      tasks: [{
+        id: "447ACA6DEE17DEBE"
+        type: "item"
+        item: "kubejs:reclaim_separation_manifold"
+      }]
+      rewards: [{
+        id: "4BF739EFF939E930"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "42CCC23524F26DC8"
+      title: "Смеситель свежего электролита"
+      description: ["Установи коллектор в смеситель UV. Подавай кислоту и воду раздельно, а свежий электролит держи в собственной ёмкости."]
+      x: -2.030d
+      y: -0.545d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["412C3E1E1A27A367","4E11CD775B6CB8A2"]
+      tasks: [{
+        id: "4C2091DE17C21FF3"
+        type: "item"
+        item: "gtceu:uv_mixer"
+      }]
+      rewards: [{
+        id: "4B80959A3AA5C21A"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4ADD91010E456696"
+      title: "Пластины после травления"
+      description: ["Партия из восьми наквадаховых пластин потребляет 8000 мБ свежего электролита. Обратку выведи из реактора в центрифугу."]
+      x: -0.450d
+      y: 2.030d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42CCC23524F26DC8","45B48414E910697C"]
+      tasks: [{
+        id: "49336A76D413D349"
+        type: "item"
+        item: "kubejs:reclaim_etched_collector"
+        count: 8L
+      }]
+      rewards: [{
+        id: "48DBB358F33D3E34"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4800A8E899A22526"
+      title: "Центрифуга с двумя жидкостными выходами"
+      description: ["Установи картридж и подай 8000 мБ отработанного электролита. Из одного цикла выходят 6000 мБ фильтрата и 2000 мБ рассола. Поставь два изолированных выходных буфера."]
+      x: 0.790d
+      y: 0.598d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4ADD91010E456696","4970F09FD7718C60"]
+      tasks: [{
+        id: "4EFD6AC24451486A"
+        type: "item"
+        item: "gtceu:uv_centrifuge"
+      }]
+      rewards: [{
+        id: "45DAB1F8EC1985D3"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44466CAC806A9642"
+      title: "Электролиз выработанного рассола"
+      description: ["Добавь восемь порций соли к 1600 мБ выработанного рассола. Установи коллектор разделения как оснастку. Электролизёр вернёт 1200 мБ регенерированной кислоты."]
+      x: 3.610d
+      y: 2.393d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42052B6DC519BC94","412C3E1E1A27A367"]
+      tasks: [{
+        id: "48E3F1AB3F23C045"
+        type: "item"
+        item: "gtceu:uv_electrolyzer"
+      }]
+      rewards: [{
+        id: "4D368A5B56B8416C"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "43C508CD113D01B5"
+      title: "Кислота в смесителе восстановления"
+      description: ["Подай 6000 мБ фильтрата, 1000 мБ регенерированной кислоты и четыре кассеты UV. На выходе получишь 7000 мБ восстановленного электролита. Используй люки для буферов сборочной линии."]
+      x: 5.190d
+      y: -0.059d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44466CAC806A9642","42CCC23524F26DC8"]
+      tasks: [{
+        id: "48FFFCD4AAB54EF3"
+        type: "item"
+        item: "gtceu:uv_input_hatch"
+        count: 2L
+      }]
+      rewards: [{
+        id: "495C0BD97703A962"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42052B6DC519BC94"
+      title: "Сорбент из продувочного рассола"
+      description: ["Реактор принимает 2000 мБ рассола, углерод и бор. Кроме сорбента получишь 1600 мБ выработанного рассола. Перекачай его в электролизёр. Не смешивай сырой и выработанный растворы. Оставь 16 000 мБ сырого для сертификата."]
+      x: 2.710d
+      y: -2.089d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4800A8E899A22526","4179AC4C8C3CCB3A"]
+      tasks: [{
+        id: "4B1282AD112F09CD"
+        type: "item"
+        item: "kubejs:reclaim_purge_adsorbent"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4C50AC8E57AD751C"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "456BA49EB7055C25"
+      title: "Коллектор после полировки возвратным раствором"
+      description: ["Полируй травлёные пластины регенерированным электролитом и защитным газом. Жидкость из реактора возвращается в общий буфер отработанного электролита."]
+      x: 7.110d
+      y: -2.338d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["43C508CD113D01B5","4ADD91010E456696"]
+      tasks: [{
+        id: "4811E038B73F4539"
+        type: "item"
+        item: "kubejs:reclaim_recovered_collector"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4BFD9A752D48DC3F"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4B46750DF967BF31"
+      title: "Свидетельство работы регенерации"
+      description: ["Передай на линию коллекторы, сорбент, картриджи, электронику и три жидкости. Выдели свежему и восстановленному электролиту отдельные слоты шаблона AE2. Собери пять партий. Одно свидетельство уйдёт на исследование, восемь на сертификат. На цикл уходят 16 коллекторов, восемь порций сорбента, восемь картриджей и три жидкости."]
+      x: 8.350d
+      y: -4.111d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["456BA49EB7055C25","42052B6DC519BC94","4C38F0977271AFAB"]
+      tasks: [{
+        id: "400BBF5850ACEF9A"
+        type: "item"
+        item: "kubejs:reclaim_loop_witness"
+        count: 10L
+      }]
+      rewards: [{
+        id: "4F9019CF7388E5CC"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4590A38032E4412F"
+      title: "Исследование ресурса мембран"
+      description: ["Исследуй свидетельство работы на станции. Сверь температуру обоих HPCA и обеспечь 64 CWU/t. На сферу уходит 1 152 000 CWU."]
+      x: 9.930d
+      y: 0.342d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B46750DF967BF31","40E65756199423E4"]
+      tasks: [{
+        id: "43201BFFF87F7F3F"
+        type: "item"
+        item: "gtceu:data_orb"
+      }]
+      rewards: [{
+        id: "4906E616719729A8"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4B08856355150FEE"
+      title: "Приёмка контура регенерации"
+      description: ["Подай четыре коллектора разделения, компоненты и четыре жидкости. На цикл нужны 28 000 мБ свежего электролита, 24 000 мБ восстановленного, 16 000 мБ рассола и 32 000 мБ теплоносителя. Базовый цикл 23 минуты 20 секунд."]
+      x: 11.850d
+      y: -1.162d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["4590A38032E4412F","42052B6DC519BC94","412C3E1E1A27A367"]
+      tasks: [{
+        id: "42454FF438EF9890"
+        type: "item"
+        item: "kubejs:reclaim_reclamation_certificate"
+      }]
+      rewards: [{
+        id: "4CA8E8AD54A0BE7E"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+  ]
+}

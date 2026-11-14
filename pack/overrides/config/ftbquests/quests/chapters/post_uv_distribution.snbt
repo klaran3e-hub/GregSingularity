@@ -1,0 +1,547 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "post_uv_distribution"
+  group: "49C57C767912BC15"
+  icon: "kubejs:distribution_network_certificate"
+  title: "Распределённое производство"
+  id: "4957C0A0869D733B"
+  order_index: 11
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/post_uv_distribution.png"
+    x: 0.0d
+    y: 0.0d
+    width: 30.593d
+    height: 20.093d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "46CC07D53BC30E87"
+      title: "Запас памяти грузового учёта"
+      description: ["Отведи память на матрицу синхронизации. Подключи к центральной сети буферы всех площадок."]
+      x: -11.608d
+      y: 2.127d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B08856355150FEE","43AA31A7D9ECA52D","48BA0DE6C0D211FB"]
+      tasks: [{
+        id: "4C4AD90778899C5C"
+        type: "item"
+        item: "ae2:256k_crafting_storage"
+        count: 8L
+      }]
+      rewards: [{
+        id: "46DB8D46A79BE35F"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4C05A8CAEE295D6D"
+      title: "Допуск трёх производственных площадок"
+      description: ["Потребуются оба предыдущих сертификата и 24 000 мБ регенерированного электролита. Линия выдаёт четыре допуска. Три оставь в сборщиках, четвёртый сохрани для итогового сертификата."]
+      x: -9.219d
+      y: 0.000d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["46CC07D53BC30E87","412C3E1E1A27A367"]
+      tasks: [{
+        id: "42AE90FD60890E9E"
+        type: "item"
+        item: "kubejs:distribution_distribution_license"
+        count: 4L
+      }]
+      rewards: [{
+        id: "478B9206535168F0"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4EE3F471200E41A5"
+      title: "Рама транспортной ячейки"
+      description: ["Отштампуй панели на прессе IE с формой пластины. Рамы пойдут в общую опрессовку и затем разойдутся между тремя цехами."]
+      x: -7.510d
+      y: -2.895d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C05A8CAEE295D6D","4FDED060320547AF"]
+      tasks: [{
+        id: "4946A46411E9573D"
+        type: "item"
+        item: "kubejs:distribution_cargo_skeleton"
+        count: 16L
+      }]
+      rewards: [{
+        id: "42525998C3E399BA"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "482AF2754C1E4F56"
+      title: "Опрессованные транспортные ячейки"
+      description: ["Добавь манжеты и фторопласт. Веди выдачу из камеры PneumaticCraft в складскую сеть."]
+      x: -5.122d
+      y: 2.482d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4EE3F471200E41A5","4970F09FD7718C60"]
+      tasks: [{
+        id: "48E9D1D37DF60BA5"
+        type: "item"
+        item: "kubejs:distribution_sealed_cell"
+        count: 16L
+      }]
+      rewards: [{
+        id: "48B0A8B901D19278"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "43FBC9D88B0AD9C9"
+      title: "Склад сырья Верхнего мира"
+      description: ["Отложи сырьё для грузового передела Верхнего мира. Для первого выпуска двух сертификатов подготовь 576 порций сырья, 288 грузовых комплектов и отдельные буферы для испытаний."]
+      x: -7.510d
+      y: 2.126d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C05A8CAEE295D6D","4369F016352A66ED"]
+      tasks: [{
+        id: "47C416C81DC85F5A"
+        type: "item"
+        item: "kubejs:uv_neutronium_coupon"
+        count: 576L
+      }]
+      rewards: [{
+        id: "4846DA1A68DABAF6"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "42BF6CB9A38D161E"
+      title: "Товарная серия Верхнего мира"
+      description: ["Подай пробы нейтрония, тританий и 16 000 мБ смазки. На партию прибавь восемь полированных коллекторов и восемь часов синхронизации. Оставь допуск в сборщике UV."]
+      x: -3.413d
+      y: 0.488d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43FBC9D88B0AD9C9","482AF2754C1E4F56","456BA49EB7055C25"]
+      tasks: [{
+        id: "4EBABC62624B24A8"
+        type: "item"
+        item: "kubejs:distribution_surface_feed"
+        count: 144L
+      }]
+      rewards: [{
+        id: "483EB0538E05C5C1"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4EACC7A74AA02254"
+      title: "Сборочные шины: лёгкая трасса в Верхнем мире"
+      description: ["Собери шесть предметных позиций для линии Верхнего мира. Регенерированный электролит подведи из общего склада отдельной трубой или через узел ME."]
+      x: -1.364d
+      y: -4.150d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42BF6CB9A38D161E","42052B6DC519BC94"]
+      tasks: [{
+        id: "4D1CE684B9D90FCB"
+        type: "item"
+        item: "gtceu:uv_input_bus"
+        count: 6L
+      }]
+      rewards: [{
+        id: "43A67DF2CCFA8B4E"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4ACAE124043E9FEF"
+      title: "Калибровочные ячейки Верхнего мира"
+      description: ["На четыре ячейки линия Верхнего мира принимает 32 грузовых комплекта и 18 000 мБ регенерированного электролита. На первую матрицу выпусти четыре партии. Для первого выпуска сертификата потребуется ещё столько же."]
+      x: 1.364d
+      y: -4.025d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4EACC7A74AA02254","42D25FCC04C94E52"]
+      tasks: [{
+        id: "452F2B30F819235D"
+        type: "item"
+        item: "kubejs:distribution_surface_calibration"
+        count: 16L
+      }]
+      rewards: [{
+        id: "48CCC0A1EFC22400"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "43E2B34BF47B942F"
+      title: "Гидравлические испытания Верхнего мира"
+      description: ["Реактор Верхнего мира принимает восемь местных грузовых комплектов, два модуля изоляции и три жидкости. Разведи два выходных потока: 16 000 мБ нагретого теплоносителя и 12 000 мБ отработанного электролита. Верни оба в переработку."]
+      x: -0.684d
+      y: 7.100d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42BF6CB9A38D161E","4B7A7D3DF5DCB0EE","43C508CD113D01B5"]
+      tasks: [{
+        id: "40C759BD2E7A1E19"
+        type: "item"
+        item: "kubejs:distribution_surface_pressure_record"
+        count: 8L
+      }]
+      rewards: [{
+        id: "42CFD0EFFB226D1A"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "41A0B6C0D8ED81B3"
+      title: "Склад сырья Нижнего мира"
+      description: ["Отложи сырьё для грузового передела Нижнего мира. Для первого выпуска двух сертификатов подготовь 576 порций сырья, 288 грузовых комплектов и отдельные буферы для испытаний."]
+      x: -7.510d
+      y: 4.782d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C05A8CAEE295D6D","4C7F6A3FFF251B9B"]
+      tasks: [{
+        id: "4A7745247C65CFF3"
+        type: "item"
+        item: "kubejs:zpm_nether_isotope_salt"
+        count: 576L
+      }]
+      rewards: [{
+        id: "41F556CFD630C655"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "41996BE0A74391F1"
+      title: "Товарная серия Нижнего мира"
+      description: ["Подай изотопные соли, пластины кантала и 16 000 мБ улучшенного дизеля. На партию прибавь восемь полированных коллекторов и восемь часов синхронизации. Оставь допуск в сборщике UV."]
+      x: -3.386d
+      y: 3.230d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41A0B6C0D8ED81B3","482AF2754C1E4F56","456BA49EB7055C25"]
+      tasks: [{
+        id: "4994661ABEA5214B"
+        type: "item"
+        item: "kubejs:distribution_nether_feed"
+        count: 144L
+      }]
+      rewards: [{
+        id: "48A7C7E5DB484C42"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "432737A485892ED3"
+      title: "Сборочные шины: тепловая трасса в Нижнем мире"
+      description: ["Собери шесть предметных позиций для линии Нижнего мира. Регенерированный электролит подведи из общего склада отдельной трубой или через узел ME."]
+      x: -1.364d
+      y: -1.227d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41996BE0A74391F1","42052B6DC519BC94"]
+      tasks: [{
+        id: "4FF09F4D328A6F20"
+        type: "item"
+        item: "gtceu:uv_input_bus"
+        count: 6L
+      }]
+      rewards: [{
+        id: "4C36AF14FE3B65B7"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "430A8F10CC146513"
+      title: "Калибровочные ячейки Нижнего мира"
+      description: ["На четыре ячейки линия Нижнего мира принимает 32 грузовых комплекта и 18 000 мБ регенерированного электролита. На первую матрицу выпусти четыре партии. Для первого выпуска сертификата потребуется ещё столько же."]
+      x: 1.024d
+      y: 0.598d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["432737A485892ED3","42D25FCC04C94E52"]
+      tasks: [{
+        id: "4EF3E5C37D400EA6"
+        type: "item"
+        item: "kubejs:distribution_nether_calibration"
+        count: 16L
+      }]
+      rewards: [{
+        id: "47945F042FB0502A"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "48A204CC639988D9"
+      title: "Гидравлические испытания Нижнего мира"
+      description: ["Реактор Нижнего мира принимает восемь местных грузовых комплектов, два модуля изоляции и три жидкости. Разведи два выходных потока: 16 000 мБ нагретого теплоносителя и 12 000 мБ отработанного электролита. Верни оба в переработку."]
+      x: -0.684d
+      y: 3.780d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41996BE0A74391F1","4B7A7D3DF5DCB0EE","43C508CD113D01B5"]
+      tasks: [{
+        id: "46DDF2384B1611E3"
+        type: "item"
+        item: "kubejs:distribution_nether_pressure_record"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4F53C9663A39BCDC"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4815E69A13D138A4"
+      title: "Склад сырья Энда"
+      description: ["Отложи сырьё для грузового передела Энда. Для первого выпуска двух сертификатов подготовь 576 порций сырья, 288 грузовых комплектов и отдельные буферы для испытаний."]
+      x: -6.830d
+      y: -0.159d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C05A8CAEE295D6D","468A1AA64CFCBE63"]
+      tasks: [{
+        id: "493791C0FC25E266"
+        type: "item"
+        item: "kubejs:zpm_end_heavy_concentrate"
+        count: 576L
+      }]
+      rewards: [{
+        id: "46B7B14D17A739C3"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4BA1C66371704E72"
+      title: "Товарная серия Энда"
+      description: ["Подай тяжёлый концентрат, наквадриевые капсулы и 16 000 мБ защитного газа. На партию прибавь восемь полированных коллекторов и восемь часов синхронизации. Оставь допуск в сборщике UV."]
+      x: -3.413d
+      y: 5.355d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4815E69A13D138A4","482AF2754C1E4F56","456BA49EB7055C25"]
+      tasks: [{
+        id: "44DB444EF90927E6"
+        type: "item"
+        item: "kubejs:distribution_end_feed"
+        count: 144L
+      }]
+      rewards: [{
+        id: "4D0E27B860A172E5"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4D924B045185A228"
+      title: "Сборочные шины: вакуумная трасса в Энде"
+      description: ["Собери шесть предметных позиций для линии Энда. Регенерированный электролит подведи из общего склада отдельной трубой или через узел ME."]
+      x: -0.684d
+      y: 5.430d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4BA1C66371704E72","42052B6DC519BC94"]
+      tasks: [{
+        id: "46B37AF7E9144575"
+        type: "item"
+        item: "gtceu:uv_input_bus"
+        count: 6L
+      }]
+      rewards: [{
+        id: "44D93D22EA74668C"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "464456980EB9EDBC"
+      title: "Калибровочные ячейки Энда"
+      description: ["На четыре ячейки линия Энда принимает 32 грузовых комплекта и 18 000 мБ регенерированного электролита. На первую матрицу выпусти четыре партии. Для первого выпуска сертификата потребуется ещё столько же."]
+      x: 1.364d
+      y: -1.228d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D924B045185A228","42D25FCC04C94E52"]
+      tasks: [{
+        id: "48FC29B7FE52564D"
+        type: "item"
+        item: "kubejs:distribution_end_calibration"
+        count: 16L
+      }]
+      rewards: [{
+        id: "436736D548B342A8"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "48B3DB1B78E0F5A9"
+      title: "Гидравлические испытания Энда"
+      description: ["Реактор Энда принимает восемь местных грузовых комплектов, два модуля изоляции и три жидкости. Разведи два выходных потока: 16 000 мБ нагретого теплоносителя и 12 000 мБ отработанного электролита. Верни оба в переработку."]
+      x: -0.684d
+      y: 2.036d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4BA1C66371704E72","4B7A7D3DF5DCB0EE","43C508CD113D01B5"]
+      tasks: [{
+        id: "4257C7F3965A36FA"
+        type: "item"
+        item: "kubejs:distribution_end_pressure_record"
+        count: 8L
+      }]
+      rewards: [{
+        id: "46B2328712C6DA7F"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D57FD697B514AE9"
+      title: "Общий буфер четырёх жидкостей"
+      description: ["Сведи все три серии на линии Верхнего мира. На четыре расходомера выдели отдельные накопители и контролируй остаток каждой жидкости."]
+      x: 2.950d
+      y: 1.767d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4ACAE124043E9FEF","430A8F10CC146513","464456980EB9EDBC","43E2B34BF47B942F","48A204CC639988D9","48B3DB1B78E0F5A9"]
+      tasks: [{
+        id: "4B863FA3B95555BF"
+        type: "item"
+        item: "gtceu:uv_input_hatch"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4E916469CC0E5BD5"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4C9520C7C6DDE9B4"
+      title: "Матрица синхронизации площадок"
+      description: ["На 35 минут подай 32 000 мБ холодного теплоносителя, 24 000 мБ защитного газа, 24 000 мБ регенерированного электролита и 20 000 мБ смазки. На каждой площадке прими 16 калибраторов и восемь протоколов давления. Для двух запусков матрицы удвой обе партии."]
+      x: 5.122d
+      y: -2.338d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4D57FD697B514AE9","406E1E495AE0CFC9","456BA49EB7055C25"]
+      tasks: [{
+        id: "4BC4DE9A5365EAA9"
+        type: "item"
+        item: "kubejs:distribution_distribution_matrix"
+        count: 4L
+      }]
+      rewards: [{
+        id: "40B436A7FD6BF641"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4D9382825568E821"
+      title: "Отпечаток согласованной нагрузки"
+      description: ["Перенеси матрицы с линии в стерильный сборщик схем. На цикл подай 16 000 мБ защитного газа. Сделай две партии: станция расходует один отпечаток, ещё четыре нужны для сертификата."]
+      x: 7.510d
+      y: -2.386d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C9520C7C6DDE9B4","4B46750DF967BF31"]
+      tasks: [{
+        id: "49B0DDE95A642EB9"
+        type: "item"
+        item: "kubejs:distribution_load_fingerprint"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4F7EA68AF3899575"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CFD0DB3888CA424"
+      title: "Запись синхронного запуска в сферу"
+      description: ["Подай отпечаток на станцию при 64 CWU/t. Дождись записи 576 000 CWU и перенеси данные на основную сборочную линию."]
+      x: 9.559d
+      y: 1.079d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D9382825568E821","40E65756199423E4"]
+      tasks: [{
+        id: "4AB90ACF81A2B96B"
+        type: "item"
+        item: "gtceu:data_orb"
+      }]
+      rewards: [{
+        id: "4B6803A0A3F60C5E"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4510292E9BD7DD32"
+      title: "Приёмка распределённого завода"
+      description: ["На 45 минут запитай центральную линию UV. Установи все отпечатки, четвёртый допуск и четыре жидкости. Один сертификат уйдёт в стерильный сборщик для двух ключей холодного пуска."]
+      x: 11.268d
+      y: -1.162d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["4CFD0DB3888CA424","4C05A8CAEE295D6D","4D9382825568E821"]
+      tasks: [{
+        id: "4CD54F82181D5C6C"
+        type: "item"
+        item: "kubejs:distribution_network_certificate"
+      }]
+      rewards: [{
+        id: "4BFC980D09557BD8"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+type = fancymenu_layout
+
+layout-meta {
+    identifier = title_screen
+    render_custom_elements_behind_vanilla = false
+    last_edited_time = 1794642000000
+    is_enabled = true
+    randommode = false
+    randomgroup = 1
+    randomonlyfirsttime = false
+    layout_index = 0
+}
+
+customization {
+    action = setscale
+    scale = 2.7
+}
+
+customization {
+    action = autoscale
+    basewidth = 1600
+    baseheight = 900
+}
+
+menu_background {
+    image_path = [source:local]/config/gtibd-interface/foundry.png
+    show_background = true
+    slide = false
+    repeat_texture = false
+    background_type = image
+}
+
+customization {
+    action = backgroundoptions
+    keepaspectratio = true
+}
+
+element {
+    element_type = image
+    instance_identifier = e9fc7be0-1b51-4d6f-b2a1-000000000001-1794642000000
+    source = [source:local]/config/gtibd-interface/foundry-fx.apng
+    repeat_texture = false
+    nine_slice_texture = false
+    image_tint = #FFFFFF
+    restart_animated_on_menu_load = false
+    anchor_point = top-left
+    sticky_anchor = false
+    x = 0
+    y = 0
+    width = 384
+    height = 216
+    stretch_x = true
+    stretch_y = true
+    stay_on_screen = false
+}
+
+element {
+    element_type = image
+    instance_identifier = e9fc7be0-1b51-4d6f-b2a1-000000000002-1794642000000
+    source = [source:local]/config/gtibd-interface/menu-wordmark.png
+    repeat_texture = false
+    nine_slice_texture = false
+    image_tint = #FFFFFF
+    restart_animated_on_menu_load = false
+    anchor_point = mid-left
+    sticky_anchor = false
+    x = 22
+    y = -106
+    width = 177
+    height = 62
+    stay_on_screen = true
+}
+
+vanilla_button {
+    element_type = vanilla_button
+    instance_identifier = mc_titlescreen_singleplayer_button
+    navigatable = true
+    backgroundnormal = [source:local]/config/gtibd-interface/menu-button-primary.png
+    backgroundhovered = [source:local]/config/gtibd-interface/menu-button-primary-hover.png
+    background_texture_inactive = [source:local]/config/gtibd-interface/menu-button-inactive.png
+    nine_slice_custom_background = false
+    anchor_point = mid-left
+    sticky_anchor = false
+    x = 22
+    y = -33
+    width = 154
+    height = 21
+    stay_on_screen = true
+    is_hidden = false
+}
+
+vanilla_button {
+    element_type = vanilla_button
+    instance_identifier = mc_titlescreen_playdemo_button
+    navigatable = true
+    backgroundnormal = [source:local]/config/gtibd-interface/menu-button-primary.png
+    backgroundhovered = [source:local]/config/gtibd-interface/menu-button-primary-hover.png
+    background_texture_inactive = [source:local]/config/gtibd-interface/menu-button-inactive.png
+    nine_slice_custom_background = false
+    anchor_point = mid-left
+    sticky_anchor = false
+    x = 22
+    y = -33
+    width = 154
+    height = 21
+    stay_on_screen = true
+    is_hidden = false
+}
+
+vanilla_button {
+    element_type = vanilla_button
+    instance_identifier = mc_titlescreen_multiplayer_button
+    navigatable = true
+    backgroundnormal = [source:local]/config/gtibd-interface/menu-button.png
+    backgroundhovered = [source:local]/config/gtibd-interface/menu-button-hover.png
+    background_texture_inactive = [source:local]/config/gtibd-interface/menu-button-inactive.png
+    nine_slice_custom_background = false
+    anchor_point = mid-left
+    sticky_anchor = false
+    x = 22
+    y = -8
+    width = 154
+    height = 19
+    stay_on_screen = true
+    is_hidden = false
+}
+
+vanilla_button {
+    element_type = vanilla_button
+    instance_identifier = titlescreen_mods_button
+    navigatable = true
+    backgroundnormal = [source:local]/config/gtibd-interface/menu-button.png
+    backgroundhovered = [source:local]/config/gtibd-interface/menu-button-hover.png
+    background_texture_inactive = [source:local]/config/gtibd-interface/menu-button-inactive.png
+    nine_slice_custom_background = false
+    anchor_point = mid-left
+    sticky_anchor = false
+    x = 22
+    y = 38
+    width = 75
+    height = 19
+    stay_on_screen = true
+    is_hidden = false
+}
+
+vanilla_button {
+    element_type = vanilla_button
+    instance_identifier = mc_titlescreen_realms_button
+    navigatable = true
+    backgroundnormal = [source:local]/config/gtibd-interface/menu-button.png
+    backgroundhovered = [source:local]/config/gtibd-interface/menu-button-hover.png
+    background_texture_inactive = [source:local]/config/gtibd-interface/menu-button-inactive.png
+    nine_slice_custom_background = false
+    anchor_point = mid-left
+    sticky_anchor = false
+    x = 22
+    y = 15
+    width = 154
+    height = 19
+    stay_on_screen = true
+    is_hidden = false
+}
+
+vanilla_button {
+    element_type = vanilla_button
+    instance_identifier = mc_titlescreen_options_button
+    navigatable = true
+    backgroundnormal = [source:local]/config/gtibd-interface/menu-button.png
+    backgroundhovered = [source:local]/config/gtibd-interface/menu-button-hover.png
+    background_texture_inactive = [source:local]/config/gtibd-interface/menu-button-inactive.png
+    nine_slice_custom_background = false
+    anchor_point = mid-left
+    sticky_anchor = false
+    x = 101
+    y = 38
+    width = 75
+    height = 19
+    stay_on_screen = true
+    is_hidden = false
+}
+
+vanilla_button {
+    element_type = vanilla_button
+    instance_identifier = mc_titlescreen_quit_button
+    navigatable = true
+    backgroundnormal = [source:local]/config/gtibd-interface/menu-button.png
+    backgroundhovered = [source:local]/config/gtibd-interface/menu-button-hover.png
+    background_texture_inactive = [source:local]/config/gtibd-interface/menu-button-inactive.png
+    nine_slice_custom_background = false
+    anchor_point = mid-left
+    sticky_anchor = false
+    x = 68
+    y = 61
+    width = 108
+    height = 19
+    stay_on_screen = true
+    is_hidden = false
+}
+
+vanilla_button {
+    element_type = vanilla_button
+    instance_identifier = mc_titlescreen_language_button
+    navigatable = true
+    anchor_point = mid-left
+    sticky_anchor = false
+    x = 22
+    y = 62
+    width = 19
+    height = 19
+    stay_on_screen = true
+    is_hidden = false
+}
+
+vanilla_button {
+    element_type = vanilla_button
+    instance_identifier = mc_titlescreen_accessibility_button
+    navigatable = true
+    anchor_point = mid-left
+    sticky_anchor = false
+    x = 45
+    y = 62
+    width = 19
+    height = 19
+    stay_on_screen = true
+    is_hidden = false
+}
+
+vanilla_button {
+    element_type = vanilla_button
+    instance_identifier = minecraft_logo_widget
+    navigatable = true
+    anchor_point = vanilla
+    sticky_anchor = false
+    x = 0
+    y = 0
+    width = 1
+    height = 1
+    stay_on_screen = true
+    is_hidden = true
+}
+
+vanilla_button {
+    element_type = vanilla_button
+    instance_identifier = minecraft_splash_widget
+    navigatable = true
+    anchor_point = vanilla
+    sticky_anchor = false
+    x = 0
+    y = 0
+    width = 1
+    height = 1
+    stay_on_screen = true
+    is_hidden = true
+}
+
+vanilla_button {
+    element_type = vanilla_button
+    instance_identifier = minecraft_realms_notification_icons_widget
+    navigatable = true
+    anchor_point = vanilla
+    sticky_anchor = false
+    x = 0
+    y = 0
+    width = 1
+    height = 1
+    stay_on_screen = true
+    is_hidden = true
+}

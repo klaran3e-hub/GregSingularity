@@ -1,0 +1,4197 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "luv_power"
+  group: "49C57C767912BC15"
+  icon: "kubejs:luv_commissioning_report"
+  title: "LuV"
+  id: "4333D286358919B5"
+  order_index: 6
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/luv_power.png"
+    x: 0.0d
+    y: 0.0d
+    width: 77.907d
+    height: 35.130d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "49B49B3B4B41F9B6"
+      title: "Дробилка для выездного участка IV"
+      description: ["Подготовь дробилку IV для выездного цеха. Для добычи танталита проверь карту жил GregTech в JEI."]
+      x: -31.196d
+      y: -7.310d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C4F332D5A35474D","4F5591C23EEAD900"]
+      tasks: [{
+        id: "4AF6DA8615A14FBD"
+        type: "item"
+        item: "gtceu:iv_macerator"
+      }]
+      rewards: [{
+        id: "42DACCDBC12725D0"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4922E430B7480F7D"
+      title: "Полевая центрифуга IV"
+      description: ["Установи центрифугу в Энде. Защити подачу газа и кабель от эндерменов, привези двигатель IV и улучшенное топливо."]
+      x: -30.099d
+      y: 3.994d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C4F332D5A35474D","4B55EA4F05374C6F"]
+      tasks: [{
+        id: "4863B0EBEAA4F790"
+        type: "item"
+        item: "gtceu:iv_centrifuge"
+      }]
+      rewards: [{
+        id: "457A3350D8F6CB08"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4E99E98E9C125AB8"
+      title: "Два реактора выщелачивания"
+      description: ["Выдели один реактор для переработки раствора, второй для танталита и платиновых осадков."]
+      x: -24.001d
+      y: 4.365d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C4F332D5A35474D","427198171F2C1A8A"]
+      tasks: [{
+        id: "47489B46516E5718"
+        type: "item"
+        item: "gtceu:iv_chemical_reactor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4CBB7BB4892897E7"
+        type: "item"
+        item: "gtceu:tungsten_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "40E6D1F1BBD8D9DD"
+      title: "Смеситель жаропрочных шихт"
+      description: ["Собери смеситель IV. Держи у него четыре буфера для концентратов, листов, порошков и плитки."]
+      x: -31.196d
+      y: 2.582d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C4F332D5A35474D","41638C3AD2DB43B1"]
+      tasks: [{
+        id: "401B7D48C883DF65"
+        type: "item"
+        item: "gtceu:iv_mixer"
+      }]
+      rewards: [{
+        id: "48B66918B9A8A4B3"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42C39B163107F9C0"
+      title: "Термическая очистка родия"
+      description: ["Оставь термоцентрифугу у линии обработки платинового осадка. Шлам и хвосты идут в разные буферы."]
+      x: -22.253d
+      y: 4.077d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C4F332D5A35474D","429039F29ED9AC6E"]
+      tasks: [{
+        id: "4BDF63EBDD84D685"
+        type: "item"
+        item: "gtceu:iv_thermal_centrifuge"
+      }]
+      rewards: [{
+        id: "46199555BCF4BD6C"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D2BCE8F7CCC56F2"
+      title: "Прокат трёх сплавов"
+      description: ["Листогиб IV прокатывает все три сплава. Оставь запас слитков ниобий-титана для проволоки."]
+      x: -21.730d
+      y: -3.844d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C4F332D5A35474D","42F96CEBCA9F1127"]
+      tasks: [{
+        id: "4CA7DD497A61EAE2"
+        type: "item"
+        item: "gtceu:iv_bender"
+      }]
+      rewards: [{
+        id: "4EDCEF4332A5EDF9"
+        type: "item"
+        item: "gtceu:tungsten_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D89381008A8DF59"
+      title: "Молибденовая шихта"
+      description: ["Найди молибденовую руду в списке жил JEI. Подготовь четыре порции пыли для первой загрузки быстрорежущей стали."]
+      x: -29.021d
+      y: -6.506d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["49B49B3B4B41F9B6"]
+      tasks: [{
+        id: "4B52D7DADC6B7BAE"
+        type: "item"
+        item: "gtceu:molybdenum_dust"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4576B02C2A1DE079"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4C150FDCECA2D097"
+      title: "Замес HSS-G"
+      description: ["Установи протокол IV как оснастку. На четыре порции шихты расходуются сталь, хромит, молибден, ванадий, футеровка и 1200 мБ защитного газа."]
+      x: -27.526d
+      y: -0.041d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D89381008A8DF59","40E6D1F1BBD8D9DD","4D6B4B72279B3591"]
+      tasks: [{
+        id: "4F33569CE7CA44BB"
+        type: "item"
+        item: "kubejs:luv_hssg_charge"
+        count: 4L
+      }]
+      rewards: [{
+        id: "480E85E04DC6172C"
+        type: "item"
+        item: "gtceu:molybdenum_dust"
+        count: 3
+      }]
+    }
+    {
+      id: "4E44049C463262E7"
+      title: "Плавка на нихроме при 3850 К"
+      description: ["Подай питание IV в домну с нихромовыми катушками. На болванку уйдут одна порция шихты, футеровка и 1600 мБ аргона."]
+      x: -25.351d
+      y: 2.887d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C150FDCECA2D097","43A198869D505DF7","47CCBD808EEC49BE"]
+      tasks: [{
+        id: "42934776B2FD80AE"
+        type: "item"
+        item: "kubejs:luv_hot_hssg"
+      }]
+      rewards: [{
+        id: "4F420802E846BADC"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46F32A0158C87663"
+      title: "Прокат быстрорежущей стали"
+      description: ["Подними питание вакуумной камеры до IV. На болванку подавай 2600 мБ холодной жидкости и 600 мБ защитного газа. Весь теплоноситель возвращается на охлаждение."]
+      x: -22.836d
+      y: 0.000d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4E44049C463262E7","4D2BCE8F7CCC56F2","426976ACBA8CC3F1"]
+      tasks: [{
+        id: "44BB63540F57670D"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4B33F3B7A388AE66"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "40C2579E8508E86B"
+      title: "Жаростойкая обмотка HSS-G"
+      description: ["Выпусти обмотки партиями по две из пластин HSS-G, сердечников IV, панелей, оболочки кабеля и моторов."]
+      x: -20.322d
+      y: -0.794d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["46F32A0158C87663","47B4BAEE4BC60591","447010EB772CE101"]
+      tasks: [{
+        id: "455813CEB2EB9615"
+        type: "item"
+        item: "kubejs:luv_coil_winding"
+        count: 16L
+      }]
+      rewards: [{
+        id: "48212E3C94457491"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A1DA5D8A3A7DA9C"
+      title: "Два кольца катушек HSS-G"
+      description: ["На два блока расходуются две старые катушки, две обмотки, четыре листа, плитка и прокладки. Полный комплект поднимает номинал домны до 5400 К."]
+      x: -14.922d
+      y: 0.744d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["40C2579E8508E86B","43A198869D505DF7"]
+      tasks: [{
+        id: "4A610F941542C790"
+        type: "item"
+        item: "gtceu:hssg_coil_block"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4C7AFCE8D87D6A3F"
+        type: "item"
+        item: "gtceu:tungsten_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "487316838200B844"
+      title: "Партия дроблёного танталита"
+      description: ["Привези дроблёный танталит в Энд. Для сортировки нужен сам Энд, руду можно добывать там, где она встречается в жилах."]
+      x: -29.021d
+      y: -3.948d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["49B49B3B4B41F9B6"]
+      tasks: [{
+        id: "4C35332E62F71CE5"
+        type: "item"
+        item: "gtceu:crushed_tantalite_ore"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4EEA61F2CC47F4DF"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "433F4630DA06B249"
+      title: "Полевая сортировка танталита"
+      description: ["В Энде отсортируй четыре порции дроблёнки с 750 мБ защитного газа. Протокол IV остаётся в центрифуге, а хвосты идут на отдельную выгрузку."]
+      x: -27.526d
+      y: 1.927d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["487316838200B844","4922E430B7480F7D","4CA60CD39F173263"]
+      tasks: [{
+        id: "49D995E200F1EDB2"
+        type: "item"
+        item: "kubejs:luv_tantalite_concentrate"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4E495F3B1E400346"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4957841A6B5DDC59"
+      title: "Осадок ниобия"
+      description: ["Разведи вольфрамовый раствор дистиллятом с флюсом и фильтром. Каждая обработка двух концентратов требует 1200 мБ. Регенерация возвращает 900 мБ, остаток восполняй."]
+      x: -25.351d
+      y: 0.599d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["433F4630DA06B249","4E99E98E9C125AB8","4CA8A3ABBA9A50BB"]
+      tasks: [{
+        id: "4DD2FE49A174BD3A"
+        type: "item"
+        item: "kubejs:luv_niobium_cake"
+        count: 8L
+      }]
+      rewards: [{
+        id: "443BC0770DBEABA6"
+        type: "item"
+        item: "gtceu:tungsten_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "48DFEC786270333A"
+      title: "Шихта проводникового сплава"
+      description: ["Смешай ниобиевый осадок, листы титана, вольфрамовую пыль и вакуумную керамику. Подай 850 мБ защитного газа."]
+      x: -23.176d
+      y: -1.753d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4957841A6B5DDC59","40E6D1F1BBD8D9DD","4608EEA0F92B9307"]
+      tasks: [{
+        id: "40DADECB9E86DEF2"
+        type: "item"
+        item: "kubejs:luv_niobium_charge"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4C78E2A538F6A582"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4110991FDF048711"
+      title: "Ниобий-титан при 4700 К"
+      description: ["Плавь в домне на катушках HSS-G с 1600 мБ аргона и футеровкой на загрузку."]
+      x: -16.652d
+      y: 1.241d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48DFEC786270333A","4A1DA5D8A3A7DA9C"]
+      tasks: [{
+        id: "458EBA2C47042A52"
+        type: "item"
+        item: "kubejs:luv_hot_conductor"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4646E4DA793A5B24"
+        type: "item"
+        item: "gtceu:molybdenum_dust"
+        count: 3
+      }]
+    }
+    {
+      id: "4182C3804F5549F0"
+      title: "Закалка ниобий-титанового листа"
+      description: ["Охлади болванки при 7680 EU/t. Камера возвращает 2400 мБ тёплого теплоносителя. Прокатай часть слитков в листы."]
+      x: -14.477d
+      y: -3.320d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4110991FDF048711","4D2BCE8F7CCC56F2","426976ACBA8CC3F1"]
+      tasks: [{
+        id: "4E8DDB3E77F52A6A"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4628AE68C4C2EC47"
+        type: "item"
+        item: "gtceu:molybdenum_dust"
+        count: 3
+      }]
+    }
+    {
+      id: "443E95DFF9852407"
+      title: "Повторная очистка платинового осадка"
+      description: ["На четыре осадка куперита расходуются два фильтра и 1500 мБ ниобиевого раствора. Отведи палладиевую пыль, шлам и отработанный раствор в отдельные буферы."]
+      x: -23.176d
+      y: 2.839d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["40321A0953E2CD87","4957841A6B5DDC59"]
+      tasks: [{
+        id: "45CF8140DA2DFA46"
+        type: "item"
+        item: "kubejs:luv_pgm_sludge"
+        count: 8L
+      }]
+      rewards: [{
+        id: "48A223D18DE8FA30"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4C04A7B6E1A1F32C"
+      title: "Родиевая губка из шлама"
+      description: ["Высуши шлам в термоцентрифуге IV. Сохрани палладий от предыдущей операции для следующей шихты."]
+      x: -21.002d
+      y: 2.783d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["443E95DFF9852407","42C39B163107F9C0"]
+      tasks: [{
+        id: "430DF359BD059EB7"
+        type: "item"
+        item: "kubejs:luv_rhodium_sponge"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4F798D1F1FA69649"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "425B3BE7BA5EBEE8"
+      title: "Родированный палладий"
+      description: ["Смешай родиевую губку, палладий, платиновые листы и HSS-G. Для цикла подготовь 1600 мБ защитного газа."]
+      x: -18.827d
+      y: 2.465d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C04A7B6E1A1F32C","40E6D1F1BBD8D9DD","40EAC963E3020793"]
+      tasks: [{
+        id: "47B2191C5BD972C1"
+        type: "item"
+        item: "kubejs:luv_palladium_charge"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4094652FC8266BC9"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44D5657C07C40BB1"
+      title: "Горячая болванка при 5100 К"
+      description: ["Добавь футеровку и 1800 мБ аргона на болванку. Горячие детали разгружай в буфер вакуумной камеры."]
+      x: -16.441d
+      y: -0.508d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["425B3BE7BA5EBEE8","4A1DA5D8A3A7DA9C"]
+      tasks: [{
+        id: "4B4FC2EDAC0D5652"
+        type: "item"
+        item: "kubejs:luv_hot_palladium"
+        count: 4L
+      }]
+      rewards: [{
+        id: "444541D1A38BCEFA"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4596C320DE2DEF95"
+      title: "Листовой сплав для LuV"
+      description: ["Закали болванку с 3000 мБ теплоносителя и 600 мБ защитного газа, затем прокатай. Для вычислителей и термоядерного кольца понадобится серийный цех."]
+      x: -13.797d
+      y: -0.511d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44D5657C07C40BB1","4D2BCE8F7CCC56F2"]
+      tasks: [{
+        id: "48624B4E6CD860A4"
+        type: "item"
+        item: "gtceu:rhodium_plated_palladium_plate"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4623AF3D8A5C5B90"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "48A2F5DCD47F1ACE"
+      title: "Два холодных поста для трёх сплавов"
+      description: ["На каждом посту разведи защитный газ и холодную жидкость по двум люкам. На выходе слиток и тёплая обратка идут в разные буферы."]
+      x: -14.477d
+      y: 5.448d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46F32A0158C87663","4110991FDF048711","499F11426589EABF"]
+      optional: true
+      tasks: [{
+        id: "4503C8C9F41E4320"
+        type: "item"
+        item: "gtceu:iv_input_hatch"
+        count: 4L
+      }]
+      rewards: [{
+        id: "42A042A673560688"
+        type: "item"
+        item: "gtceu:tungsten_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4346D92147D0A653"
+      title: "Оснастка для намотки HSS-G"
+      description: ["Отложи механизмы Create и восемь изолированных катушек IE на четыре партии обмоток. Старые блоки нихрома подавай отдельной линией."]
+      x: -18.827d
+      y: -5.680d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46F32A0158C87663","40C2579E8508E86B"]
+      optional: true
+      tasks: [{
+        id: "4B72CF9A9718BE89"
+        type: "item"
+        item: "create:precision_mechanism"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4506AA0A10D24213"
+        type: "item"
+        item: "gtceu:molybdenum_dust"
+        count: 2
+      }]
+    }
+    {
+      id: "43C0D2E80B534FC8"
+      title: "Отделение хвостов на танталите"
+      description: ["Выведи хвосты центрифуги в отдельный ящик. Две партии концентрата уходят на выщелачивание, часть запаса оставь в Энде для следующей линии."]
+      x: -25.351d
+      y: -4.393d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["433F4630DA06B249","488E4A6E8B091627"]
+      optional: true
+      tasks: [{
+        id: "46CAD56F490F7977"
+        type: "item"
+        item: "kubejs:ore_tailings"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4AC74AAD286AA5C8"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "488E4A6E8B091627"
+      title: "Склад у центрифуги в Энде"
+      description: ["Разнеси дроблёнку, концентрат и хвосты по отдельным ящикам. Подвод защитного газа держи у станка."]
+      x: -27.526d
+      y: -2.236d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4922E430B7480F7D","487316838200B844"]
+      optional: true
+      tasks: [{
+        id: "4DF2B1AB2A55B5C8"
+        type: "item"
+        item: "gtceu:stainless_steel_crate"
+        count: 3L
+      }]
+      rewards: [{
+        id: "460B512CF1ED62AA"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4B280715BC95BEDD"
+      title: "Отдельная выдача регенерированного раствора"
+      description: ["Подай на восстановление 1200 мБ отработанной жидкости. Вернувшиеся 900 мБ смешивай с новой порцией только после фильтрации."]
+      x: -21.002d
+      y: -2.182d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4957841A6B5DDC59","443E95DFF9852407","49D8F03481818386"]
+      optional: true
+      tasks: [{
+        id: "4B78290F675A48FE"
+        type: "item"
+        item: "gtceu:iv_fluid_regulator"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4C576DD3F969518F"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4EAA44DFE455DF30"
+      title: "Палладий на оптику и реактор"
+      description: ["Собери резерв листов отдельно от выдачи на обмотки. На каждую горячую болванку подай 1800 мБ аргона, на охлаждение 3000 мБ холодной жидкости."]
+      x: -12.302d
+      y: 3.608d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4596C320DE2DEF95","48A2F5DCD47F1ACE","4B280715BC95BEDD"]
+      optional: true
+      tasks: [{
+        id: "4CFC086893C3B095"
+        type: "item"
+        item: "gtceu:rhodium_plated_palladium_plate"
+        count: 32L
+      }]
+      rewards: [{
+        id: "4486165F12B1D6DD"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "49C6508D1C674761"
+      title: "Молибденовая добавка на серию HSS-G"
+      description: ["Отложи молибденовую пыль до загрузки смесителя. Проверь, чтобы в выдаче дробления сохранялся запас на высокотемпературную сталь."]
+      x: -25.351d
+      y: 4.921d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C150FDCECA2D097"]
+      optional: true
+      tasks: [{
+        id: "43EBF4B39551304C"
+        type: "item"
+        item: "gtceu:molybdenum_dust"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4F81739F0A3E7385"
+        type: "item"
+        item: "gtceu:tungsten_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4737A576750F319B"
+      title: "Стеллаж листов HSS-G"
+      description: ["Разложи листы по двум заказам. Один идёт на катушки, второй оставь для магнитов и элементов охлаждения."]
+      x: -21.002d
+      y: 1.188d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49C6508D1C674761","46F32A0158C87663"]
+      optional: true
+      tasks: [{
+        id: "4719EF877AA8663C"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 24L
+      }]
+      rewards: [{
+        id: "46E0BF8BA9AE0B1D"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "411D7A7DDDE2D232"
+      title: "Запас намоток горячей зоны"
+      description: ["Выпускай намотки отдельно от готовых катушек. Запас пригодится при замене колец в домне и выпуске оснастки."]
+      x: -15.083d
+      y: -1.450d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A1DA5D8A3A7DA9C","4737A576750F319B"]
+      optional: true
+      tasks: [{
+        id: "4AF488A65240FD41"
+        type: "item"
+        item: "kubejs:luv_coil_winding"
+        count: 24L
+      }]
+      rewards: [{
+        id: "41DFB55BE70D7F0D"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "427B27A0A02B763E"
+      title: "Склад дроблёного танталита"
+      description: ["Заполни бункер танталита перед запуском сортировки. Настрой выход концентрата на собственную ёмкость или сундук."]
+      x: -24.994d
+      y: 7.327d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["433F4630DA06B249"]
+      optional: true
+      tasks: [{
+        id: "417C6D45B77DB314"
+        type: "item"
+        item: "gtceu:crushed_tantalite_ore"
+        count: 32L
+      }]
+      rewards: [{
+        id: "4D339BBF53A17D08"
+        type: "item"
+        item: "gtceu:tungsten_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "41461872C3865A79"
+      title: "Ниобиевый осадок для плавки"
+      description: ["Отсортируй готовый осадок от отработанных материалов. Подачу к шихте держи отдельной, чтобы не заблокировать реактор."]
+      x: -21.002d
+      y: 5.306d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["427B27A0A02B763E","48DFEC786270333A"]
+      optional: true
+      tasks: [{
+        id: "433C48CCD6DAA59F"
+        type: "item"
+        item: "kubejs:luv_niobium_cake"
+        count: 16L
+      }]
+      rewards: [{
+        id: "42A156F975091683"
+        type: "item"
+        item: "gtceu:tungsten_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44BC307AD7A6A235"
+      title: "Листы ниобия с титаном для энергетиков"
+      description: ["Сохрани часть листов под заготовки шин и оставь металл на прокат для следующей партии."]
+      x: -19.881d
+      y: 3.898d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41461872C3865A79","4EBB2593880A3DC3"]
+      optional: true
+      tasks: [{
+        id: "4641D398A67E44A4"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 24L
+      }]
+      rewards: [{
+        id: "4AE8AF9C7F5ABC93"
+        type: "item"
+        item: "gtceu:tungsten_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "40CD9A5D1C774C60"
+      title: "Буфер шлама платиновой группы"
+      description: ["Отдельно собирай шлам перед отделением родия. Палладиевую пыль для сплава не пускай в этот же вход."]
+      x: -18.528d
+      y: -1.917d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C04A7B6E1A1F32C"]
+      optional: true
+      tasks: [{
+        id: "4F7CA7193DEB64EC"
+        type: "item"
+        item: "kubejs:luv_pgm_sludge"
+        count: 16L
+      }]
+      rewards: [{
+        id: "476484B8B5BF4208"
+        type: "item"
+        item: "gtceu:tungsten_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "479517EDA4698648"
+      title: "Губка для серийного покрытия палладия"
+      description: ["Подготовь родиевую губку под новые порции шихты. Отдельно оставь ресурсы на поддержание раствора переработки."]
+      x: -15.972d
+      y: 2.871d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40CD9A5D1C774C60","425B3BE7BA5EBEE8"]
+      optional: true
+      tasks: [{
+        id: "45B4007C4ABECEAA"
+        type: "item"
+        item: "kubejs:luv_rhodium_sponge"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4E59490B0F205BCE"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4F80008806175B40"
+      title: "Родированный палладий на вычислительные корпуса"
+      description: ["Собери прокат охлаждённых болванок под корпуса вычислителей и механизмы термоядерного кольца."]
+      x: -12.302d
+      y: -2.584d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["479517EDA4698648","4596C320DE2DEF95"]
+      optional: true
+      tasks: [{
+        id: "46C54E05545E8162"
+        type: "item"
+        item: "gtceu:rhodium_plated_palladium_plate"
+        count: 24L
+      }]
+      rewards: [{
+        id: "4D674B394829D064"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D40ABF061257E3A"
+      title: "Две линии проката LuV-сплавов"
+      description: ["Отдели палладиевый прокат от проводникового. Храни рецептурные схемы и выдачу каждого станка отдельно."]
+      x: -10.127d
+      y: -2.291d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44BC307AD7A6A235","4F80008806175B40"]
+      optional: true
+      tasks: [{
+        id: "4CCFDAB6FEA61F4C"
+        type: "item"
+        item: "gtceu:iv_bender"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4DEC898012D5F76D"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4EBB2593880A3DC3"
+      title: "Изоляция высокого напряжения"
+      description: ["Сборщик IV прессует диэлектрик из плёнки хоруса, керамики, брони, платиновых листов и уплотнений. Протокол IV остаётся оснасткой."]
+      x: -21.991d
+      y: -5.372d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C4F332D5A35474D","48DBF8E41B50E8A3","446ABC78A7B039F7"]
+      tasks: [{
+        id: "4CB6CCC950EE9107"
+        type: "item"
+        item: "kubejs:luv_dielectric_laminate"
+        count: 16L
+      }]
+      rewards: [{
+        id: "47F4420FE94D237D"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4174DF17DD9BC683"
+      title: "Волочильный станок IV"
+      description: ["Переоборудуй станок EV. На первом цикле один ниобиево-титановый слиток даёт четыре проволоки."]
+      x: -13.797d
+      y: 1.964d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4110991FDF048711","413F0FDA6BEBDCFA"]
+      tasks: [{
+        id: "49C0947B796D6A69"
+        type: "item"
+        item: "gtceu:iv_wiremill"
+      }]
+      rewards: [{
+        id: "4F8EB37C4C3DC94F"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4C15DD1173BE4A28"
+      title: "Ниобиево-титановая проволока"
+      description: ["Отведи слитки на станок и выпусти первую партию. Изоляция накладывается в отдельном сборщике."]
+      x: -11.991d
+      y: -0.078d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4174DF17DD9BC683","4182C3804F5549F0"]
+      tasks: [{
+        id: "45EB25DD0CF9A271"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4728C3E688590075"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "41024D5F387DD821"
+      title: "Шины с платиновыми контактами"
+      description: ["Перепрессуй вольфрамовые заготовки IV с новыми листами, диэлектриком и платиной. Одна партия даёт четыре шины."]
+      x: -11.622d
+      y: 1.686d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4182C3804F5549F0","4EBB2593880A3DC3","4F63C0EF09148C70"]
+      tasks: [{
+        id: "40CD1C30C590EDDB"
+        type: "item"
+        item: "kubejs:luv_busbar"
+        count: 8L
+      }]
+      rewards: [{
+        id: "42374825C10CA14F"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "403EB3342AA5C2AA"
+      title: "Ниобий-титановая магистраль LuV"
+      description: ["Обожми четыре проволоки с шинами, диэлектриком и прокладками. Проводку IV используй до трансформатора, новую магистраль после него."]
+      x: -9.447d
+      y: -0.295d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C15DD1173BE4A28","41024D5F387DD821"]
+      tasks: [{
+        id: "4F956C18CF48063A"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_cable"
+        count: 16L
+      }]
+      rewards: [{
+        id: "465C4C5A0F90F010"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "49FEAD14BC104CAC"
+      title: "Магистраль LuV на четыре ампера"
+      description: ["Добавь диэлектрик, шины и уплотнения, выбери схему 4 на сборщике. Кабель нужен для HPCA и намотки магнитов."]
+      x: -7.272d
+      y: -0.711d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["403EB3342AA5C2AA"]
+      tasks: [{
+        id: "4505229CD96CE5D6"
+        type: "item"
+        item: "gtceu:niobium_titanium_quadruple_cable"
+        count: 8L
+      }]
+      rewards: [{
+        id: "41B773FCAB220B4C"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D5F19306B4E0483"
+      title: "Пусковой трансформатор IV"
+      description: ["Переключи отвёрткой трансформатор IV в повышение. На входе нужны четыре пакета IV по 8192 EU, на выходе будет один пакет LuV на 32768 EU."]
+      x: -6.072d
+      y: -1.739d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4EBB2593880A3DC3","403EB3342AA5C2AA","41583F3F0B788E22"]
+      tasks: [{
+        id: "43B77F1A0AF77A1B"
+        type: "item"
+        item: "gtceu:iv_transformer_1a"
+      }]
+      rewards: [{
+        id: "4E17261DDA7F63A4"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "428882D85A9BE689"
+      title: "Питание вычислительного массива"
+      description: ["Повышающий трансформатор 4A принимает до 16A IV. Спроектируй ввод LuV 4A и отдельную ветвь для исследовательской станции."]
+      x: -5.097d
+      y: -0.226d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D5F19306B4E0483","49FEAD14BC104CAC"]
+      tasks: [{
+        id: "4D704BA1CCC38026"
+        type: "item"
+        item: "gtceu:iv_transformer_4a"
+      }]
+      rewards: [{
+        id: "46AC33752EF185EA"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44B75B8EAE173C1F"
+      title: "Оптическая заготовка"
+      description: ["Собери многослойное стекло, плотный кабель ME, оптические вставки и листы родированного палладия в защитном газе."]
+      x: -12.302d
+      y: -5.182d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4596C320DE2DEF95","4EBB2593880A3DC3","45C71EF86703469D"]
+      tasks: [{
+        id: "46A13B07EEC93947"
+        type: "item"
+        item: "kubejs:luv_optical_blank"
+        count: 4L
+      }]
+      rewards: [{
+        id: "401E12B6AD57C6BA"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4FA787EE4D9CE63A"
+      title: "Калибровка волновода прессом Create"
+      description: ["Заготовка проходит отдельный цикл механического пресса. Поставь фильтр на депо, чтобы оптика не смешивалась с обычным прокатом."]
+      x: -9.447d
+      y: -3.684d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44B75B8EAE173C1F","45F90DBA04E36F7D"]
+      tasks: [{
+        id: "47579997E9D06BA7"
+        type: "item"
+        item: "kubejs:luv_polished_waveguide"
+        count: 4L
+      }]
+      rewards: [{
+        id: "42F68793E12C36C6"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4857CB5B1B280A38"
+      title: "Гравёр для юстировки IV"
+      description: ["Поставь гравёр в стерильную комнату с питанием IV. Возьми действующую маску IV как оснастку."]
+      x: -7.952d
+      y: 5.435d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4FA787EE4D9CE63A","48E90B972FD9335A","413F0FDA6BEBDCFA"]
+      tasks: [{
+        id: "4ACB8E7BF0005415"
+        type: "item"
+        item: "gtceu:iv_laser_engraver"
+      }]
+      rewards: [{
+        id: "4B74E0F8BADECD88"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4B7DE494F18A0582"
+      title: "Юстированное оптическое ядро"
+      description: ["Выполни цикл юстировки при 7360 EU/t. Маска остаётся в гравёре. Следи за стерильностью при загрузке."]
+      x: -5.097d
+      y: 6.242d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4857CB5B1B280A38","478155E16FD0E4B0"]
+      tasks: [{
+        id: "4A398AEF68135954"
+        type: "item"
+        item: "kubejs:luv_optical_core"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4E5DE61AC1245B12"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CCE016086E0DCFC"
+      title: "Герметизация на 4,9 бар"
+      description: ["Опрессуй ядро с модулем IV, диэлектриком, инженерным процессором, прокладкой и продвинутой трубой. На ветке камеры поставь клапан на 4,92 бар. Рабочий минимум рецепта 4,9 бар."]
+      x: -2.922d
+      y: 9.777d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B7DE494F18A0582","461FA67C1738BE88","4B3A39A4A264D4F4"]
+      tasks: [{
+        id: "413ACDC09F04B603"
+        type: "item"
+        item: "kubejs:luv_processor_package"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4CE2DF28509ED244"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "40F391F2CA5C40DC"
+      title: "Матрица синхронизации"
+      description: ["Стерильный сборщик схем IV объединяет два оптопроцессора, старые платы, память 64k и шины. Подай 1050 мБ защитного газа."]
+      x: -0.747d
+      y: 2.290d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4CCE016086E0DCFC","41024D5F387DD821","4911E11A8D0CA9DC","4EF89A40A3BD476B"]
+      tasks: [{
+        id: "408BB8285D1925ED"
+        type: "item"
+        item: "kubejs:luv_clock_matrix"
+        count: 4L
+      }]
+      rewards: [{
+        id: "40155D2D51E1BD0C"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46AEE8B95B4B6A94"
+      title: "Вычислительная память 256k"
+      description: ["Подготовь секции автосборки на компонентах 256k. Избегай смешивания этих блоков с обычными ячейками привода."]
+      x: -1.946d
+      y: 4.439d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4DBC8F1020C2B8A1","46FD8C58A90D0DFE"]
+      tasks: [{
+        id: "42EBDBE421984653"
+        type: "item"
+        item: "ae2:256k_crafting_storage"
+        count: 2L
+      }]
+      rewards: [{
+        id: "487C5C1B046858FA"
+        type: "item"
+        item: "minecraft:gravel"
+        count: 3
+      }]
+    }
+    {
+      id: "46356B4F2F03C4E9"
+      title: "Точные шины для линии LuV"
+      description: ["Изготовь четыре точные шины ExtendedAE на IV. Используй протокол IV как оснастку и отложи шины на первый заказ LuV."]
+      x: -0.061d
+      y: 3.868d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C4F332D5A35474D","469BDB3001DF442B","413F0FDA6BEBDCFA"]
+      tasks: [{
+        id: "4E2B1406F2871DBD"
+        type: "item"
+        item: "expatternprovider:precise_storage_bus"
+        count: 4L
+      }]
+      rewards: [{
+        id: "495D74E6FC027BC6"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "40FE96C7C4C5FFA0"
+      title: "Первый мейнфрейм LuV"
+      description: ["На девять шин подай компоненты по JEI, включая четыре точные шины ExtendedAE. Для двух мейнфреймов нужны 5000 мБ смазки, 4200 мБ газа и 6400 мБ дизеля. Базовый цикл 400 секунд."]
+      x: 1.087d
+      y: 2.482d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["40F391F2CA5C40DC","46AEE8B95B4B6A94","403EB3342AA5C2AA","46C4C7D7071FC26F","4B357FFC32D28065","46203DFC1C374FF2","46356B4F2F03C4E9"]
+      tasks: [{
+        id: "4711C1919C921A4C"
+        type: "item"
+        item: "gtceu:nano_processor_mainframe"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4E1C400CABE0CF27"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4C7C897B77341A67"
+      title: "Бронированная оболочка LuV"
+      description: ["Усиль оболочку IV шестью палладиевыми и четырьмя листами HSS-G, диэлектриком и дугозащитой."]
+      x: 2.922d
+      y: -2.854d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["40FE96C7C4C5FFA0","4596C320DE2DEF95","46F32A0158C87663"]
+      tasks: [{
+        id: "400D14E81FD0D4D0"
+        type: "item"
+        item: "gtceu:luv_machine_casing"
+      }]
+      rewards: [{
+        id: "44DCA718397DB98C"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D8B18D88F28756F"
+      title: "Силовой корпус LuV"
+      description: ["Установи в оболочку матрицы, шины и два мейнфрейма LuV. Повтори сборку для каждого нового станка."]
+      x: 5.097d
+      y: 0.902d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C7C897B77341A67","40FE96C7C4C5FFA0","403EB3342AA5C2AA"]
+      tasks: [{
+        id: "4CF18923AA9470C6"
+        type: "item"
+        item: "gtceu:luv_machine_hull"
+      }]
+      rewards: [{
+        id: "43194F6744D84D3F"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4ECDD3841D79CF3E"
+      title: "Двигатель LuV"
+      description: ["Перемотай мотор IV. Для каждого нужны четыре палладиевых листа, две схемы и четыре кабеля."]
+      x: 2.922d
+      y: -1.066d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["40FE96C7C4C5FFA0","403EB3342AA5C2AA","447010EB772CE101"]
+      tasks: [{
+        id: "424601A0C7D84DD9"
+        type: "item"
+        item: "gtceu:luv_electric_motor"
+      }]
+      rewards: [{
+        id: "4B7C801EB04E106F"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "45857275C3DDD09C"
+      title: "Насос с двойной рубашкой"
+      description: ["Добавь к насосу IV новый мотор, две охлаждающие рубашки, прокладки и защиту обмоток."]
+      x: 5.777d
+      y: -3.352d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4ECDD3841D79CF3E","4BFAD3686F4F4913"]
+      tasks: [{
+        id: "4B5CBE3FE9B075FB"
+        type: "item"
+        item: "gtceu:luv_electric_pump"
+      }]
+      rewards: [{
+        id: "474231A4DD1F3897"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46C465AE419FC87E"
+      title: "Поршень LuV"
+      description: ["Добавь HSS-G, палладиевые листы и сердечники к поршню предыдущего уровня."]
+      x: 5.386d
+      y: -1.379d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4ECDD3841D79CF3E","4437DF2D8B7B687B","46F32A0158C87663"]
+      tasks: [{
+        id: "4D9DC708C9DB9B01"
+        type: "item"
+        item: "gtceu:luv_electric_piston"
+      }]
+      rewards: [{
+        id: "4D833DA74C2C11D9"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44BC853DE75ED5C1"
+      title: "Привод подачи LuV"
+      description: ["Два мотора приходятся на одну передачу. Подготовь отдельный запас для сборщика и складских машин."]
+      x: 5.097d
+      y: -4.750d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4ECDD3841D79CF3E","4931071FE8C39420","41024D5F387DD821"]
+      tasks: [{
+        id: "4851F221C49321AF"
+        type: "item"
+        item: "gtceu:luv_conveyor_module"
+      }]
+      rewards: [{
+        id: "4F5D312FC2252783"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44DAF6D8971EB770"
+      title: "Манипулятор LuV"
+      description: ["Доукомплектуй руку IV мотором, поршнем, матрицами и кабелем. Для первого сборщика потребуются два таких манипулятора."]
+      x: 7.272d
+      y: -0.527d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["46C465AE419FC87E","4311D82F9C5D89B7","40F391F2CA5C40DC"]
+      tasks: [{
+        id: "4BA0A8F286AB2EE5"
+        type: "item"
+        item: "gtceu:luv_robot_arm"
+      }]
+      rewards: [{
+        id: "4FFE46FDF777103C"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4B985757DDF3C062"
+      title: "Первый сборщик LuV"
+      description: ["Собери на IV при 8000 EU/t. Подключи к выходу повышающего трансформатора кабелем из ниобий-титана."]
+      x: 9.447d
+      y: -3.230d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D8B18D88F28756F","44DAF6D8971EB770","44BC853DE75ED5C1","4D5F19306B4E0483"]
+      tasks: [{
+        id: "49A2169655FC782B"
+        type: "item"
+        item: "gtceu:luv_assembler"
+      }]
+      rewards: [{
+        id: "469EFF50CECF4171"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4ECE7494582F6299"
+      title: "Оптический излучатель LuV"
+      description: ["Излучатели понадобятся для сборщика схем, оптической передачи вычислений и генераторов поля."]
+      x: 3.602d
+      y: 4.427d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["40FE96C7C4C5FFA0","4B7DE494F18A0582","40F391F2CA5C40DC"]
+      tasks: [{
+        id: "420F60D0DED49CE1"
+        type: "item"
+        item: "gtceu:luv_emitter"
+      }]
+      rewards: [{
+        id: "408580DD367B7772"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42417EFA373AF69C"
+      title: "Датчик LuV"
+      description: ["Собери датчик с двумя ядрами и двумя схемами. Отложи несколько штук для держателя и термоядерного эталона."]
+      x: 3.602d
+      y: 6.795d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["40FE96C7C4C5FFA0","4B7DE494F18A0582","40EAC963E3020793"]
+      tasks: [{
+        id: "44E93E8472475C74"
+        type: "item"
+        item: "gtceu:luv_sensor"
+      }]
+      rewards: [{
+        id: "4A8E863AFAE6E524"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "4A5D82798266F29C"
+      title: "Энерговвод LuV на один ампер"
+      description: ["Собери люк на двух вводах IV. Используй его для сборочной линии и исследования, когда отдельной машине хватает одного пакета LuV."]
+      x: 7.272d
+      y: 3.151d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D8B18D88F28756F","4D5F19306B4E0483"]
+      tasks: [{
+        id: "46A42EE72E9C5D98"
+        type: "item"
+        item: "gtceu:luv_energy_input_hatch"
+      }]
+      rewards: [{
+        id: "46F2C7A00150D474"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "45EB2D3D57030754"
+      title: "Энерговвод LuV для HPCA"
+      description: ["Два ввода LuV и четырёхжильная магистраль нужны для нового люка. Выдели ему отдельную линию питания."]
+      x: 9.447d
+      y: 5.746d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4A5D82798266F29C","428882D85A9BE689"]
+      tasks: [{
+        id: "4F779A6F91C32BC9"
+        type: "item"
+        item: "gtceu:luv_energy_input_hatch_4a"
+      }]
+      rewards: [{
+        id: "44326F8F8BE93ED3"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4685A7C61C31C7D6"
+      title: "Четыре голые жилы"
+      description: ["Сначала собери двойной провод, затем по два двойных в четырёхжильный. Для сборщика нужны стальные катушки IE и смазка."]
+      x: -10.127d
+      y: 5.079d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C15DD1173BE4A28","41024D5F387DD821"]
+      optional: true
+      tasks: [{
+        id: "4F28CBD622160351"
+        type: "item"
+        item: "gtceu:niobium_titanium_quadruple_wire"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4E3BF2E05A753024"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4B028450B4D0EEC5"
+      title: "Ниобий-титановый трубопровод"
+      description: ["Футеруй вольфрамовые трубы IV с диэлектриком и продвинутой пневмотрубой. Отметь отдельные трассы газа и теплоносителя."]
+      x: -11.622d
+      y: -6.925d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4182C3804F5549F0","4EBB2593880A3DC3","4904C7F81E7C0C51"]
+      optional: true
+      tasks: [{
+        id: "4C0554037B1B49BB"
+        type: "item"
+        item: "gtceu:niobium_titanium_normal_fluid_pipe"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4F6308788D2F273F"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46187791D72EAF88"
+      title: "Шестнадцатижильная магистраль"
+      description: ["Раздели голую скрутку и изоляцию. Для кабеля на 16 пакетов нужны шестнадцать одиночных кабелей и собственная голая скрутка."]
+      x: -2.922d
+      y: -1.327d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49FEAD14BC104CAC","4685A7C61C31C7D6","428882D85A9BE689"]
+      optional: true
+      tasks: [{
+        id: "4E9D80C3533D44B7"
+        type: "item"
+        item: "gtceu:niobium_titanium_hex_cable"
+        count: 4L
+      }]
+      rewards: [{
+        id: "45590FEBEEBF7F3D"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "486F75CF0EC542CD"
+      title: "Подача оптики под пресс"
+      description: ["Первую воронку настрой на оптические заготовки, вторую на готовые волноводы. Не пускай их в общую выдачу прокатного стола."]
+      x: -7.272d
+      y: -7.938d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FA787EE4D9CE63A","4B028450B4D0EEC5"]
+      optional: true
+      tasks: [{
+        id: "4A2CCF964DDA0F9D"
+        type: "item"
+        item: "create:brass_funnel"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4F0E8EFF061A66CB"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CEDCE6E754F31EE"
+      title: "Клапан на ветке герметизации"
+      description: ["Поставь обычную трубу с клапаном на ветке камеры. Он открывается после 4,92 бар. На усиленной трубе штатная уставка 19,9 бар, там нужен настроенный клапан или регулятор."]
+      x: -0.747d
+      y: 12.146d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CCE016086E0DCFC","4D29D3B13125FE79"]
+      optional: true
+      tasks: [{
+        id: "4885BD83A94BFB4C"
+        type: "item"
+        item: "pneumaticcraft:safety_tube_module"
+      }]
+      rewards: [{
+        id: "4ADA31FC1D783D58"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42F21CD5A06ABFD7"
+      title: "Силовой ввод расширенной серверной"
+      description: ["Собери ввод на четырёх люках LuV 4A. Перед подключением проверь запас генерации и пропускную способность магистрали."]
+      x: 7.249d
+      y: -3.320d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45EB2D3D57030754","46187791D72EAF88","4B985757DDF3C062"]
+      optional: true
+      tasks: [{
+        id: "44E724481BD6E094"
+        type: "item"
+        item: "gtceu:luv_energy_input_hatch_16a"
+      }]
+      rewards: [{
+        id: "4C73D49FB1950683"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "45E61DC661733EB4"
+      title: "Изоляция для шины LuV"
+      description: ["Распредели ламинат между шинными заготовками и силовыми кабелями. Оставь небольшой лоток для вычислительных корпусов."]
+      x: -9.719d
+      y: 1.442d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41024D5F387DD821"]
+      optional: true
+      tasks: [{
+        id: "40C15806D181D3B4"
+        type: "item"
+        item: "kubejs:luv_dielectric_laminate"
+        count: 32L
+      }]
+      rewards: [{
+        id: "42D37E4865CA4DB8"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "484C4F64A2E8CA0A"
+      title: "Проводники для независимых отводов LuV"
+      description: ["Собери запас голых жил перед изоляцией. Маркируй выход волочильного станка, чтобы заготовки не уезжали сразу в общую сеть."]
+      x: -7.272d
+      y: -2.549d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45E61DC661733EB4","403EB3342AA5C2AA"]
+      optional: true
+      tasks: [{
+        id: "4D98782ABE5DBCE6"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 32L
+      }]
+      rewards: [{
+        id: "483755FD7BB6CAC6"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4BDD96256171C73B"
+      title: "Два узла повышения напряжения"
+      description: ["Поставь трансформаторы на разные ветви IV. Проверь сторону высокого напряжения на каждом перед подачей питания."]
+      x: 11.622d
+      y: 11.874d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["428882D85A9BE689","45EB2D3D57030754"]
+      optional: true
+      tasks: [{
+        id: "4A1E13AA9D2FBB40"
+        type: "item"
+        item: "gtceu:iv_transformer_4a"
+        count: 2L
+      }]
+      rewards: [{
+        id: "498401A091780BB5"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4082996FA76A5AF5"
+      title: "Четырёхжильная разводка под вычислители"
+      description: ["Отмерь кабель для магистрали вычислительного цеха. Выдели отдельные ответвления на подачу к термоядерному кольцу."]
+      x: -6.739d
+      y: 3.254d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["484C4F64A2E8CA0A","49FEAD14BC104CAC"]
+      optional: true
+      tasks: [{
+        id: "4A4D88DDFBFEFA10"
+        type: "item"
+        item: "gtceu:niobium_titanium_quadruple_cable"
+        count: 16L
+      }]
+      rewards: [{
+        id: "47F43E8D30AE1590"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4509469BF42A7291"
+      title: "Партия заготовок волноводов LuV"
+      description: ["Снимай заготовки со сборщика до полировки. Отдельный запас позволит продолжать гравировку при остановке подготовки основы."]
+      x: -1.532d
+      y: 9.163d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FA787EE4D9CE63A"]
+      optional: true
+      tasks: [{
+        id: "4D18708BE0F82AF8"
+        type: "item"
+        item: "kubejs:luv_optical_blank"
+        count: 12L
+      }]
+      rewards: [{
+        id: "42C94974046EA14D"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44F21088A7DC5AA3"
+      title: "Оптические ядра для управления LuV"
+      description: ["Отложи полированные ядра для процессоров и оптических труб. Забирай готовые изделия из выхода гравёра, пока там есть место."]
+      x: -2.922d
+      y: 8.020d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4509469BF42A7291","4B7DE494F18A0582"]
+      optional: true
+      tasks: [{
+        id: "430D8BB8354065C3"
+        type: "item"
+        item: "kubejs:luv_optical_core"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4A357FD57D525187"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42A115E2B95E9902"
+      title: "Матрицы такта под серию LuV"
+      description: ["Держи заказы на матрицы отдельно от первых мейнфреймов. После выпуска проверь запас для исследовательской станции и магнитной оснастки."]
+      x: 2.922d
+      y: 5.595d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44F21088A7DC5AA3","40FE96C7C4C5FFA0"]
+      optional: true
+      tasks: [{
+        id: "4013C1878D713E40"
+        type: "item"
+        item: "kubejs:luv_clock_matrix"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4EB349FE25245904"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "410592834CEFD540"
+      title: "Насосы для аппаратуры LuV"
+      description: ["Положи по паре насосов рядом с охлаждением и лабораторной частью. Их используют и готовые станки, и детали активного отвода тепла."]
+      x: 8.097d
+      y: -4.421d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45857275C3DDD09C","4B985757DDF3C062"]
+      optional: true
+      tasks: [{
+        id: "4F492E90C2C13E97"
+        type: "item"
+        item: "gtceu:luv_electric_pump"
+        count: 4L
+      }]
+      rewards: [{
+        id: "42E9AD002F802312"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "40FA943530C6A93A"
+      title: "Комплект манипуляторов на новые линии"
+      description: ["Сохрани готовые руки для держателя образцов и корпуса кольца. Отдельно оставь механизмы под новые предметные входы."]
+      x: 1.680d
+      y: -0.234d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44DAF6D8971EB770","42A115E2B95E9902"]
+      optional: true
+      tasks: [{
+        id: "41C4A93031E15E24"
+        type: "item"
+        item: "gtceu:luv_robot_arm"
+        count: 6L
+      }]
+      rewards: [{
+        id: "4BBF5FA7226BAA09"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D80B89EBAE25995"
+      title: "Энерговводы LuV для двух независимых линий"
+      description: ["Проверь, что каждый ввод подключён к своей ветке. Не подавай оба ввода из одного слабого отвода."]
+      x: 13.797d
+      y: 13.532d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BDD96256171C73B","4082996FA76A5AF5"]
+      optional: true
+      tasks: [{
+        id: "4B0AEBDD4FDAD62D"
+        type: "item"
+        item: "gtceu:luv_energy_input_hatch_4a"
+        count: 2L
+      }]
+      rewards: [{
+        id: "432417439ACD3FEE"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "40BF1802E6BE3D20"
+      title: "Стерильный сборщик схем LuV"
+      description: ["Собери станок на IV и установи в стерильной комнате с отдельным вводом LuV."]
+      x: 7.272d
+      y: 5.026d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D8B18D88F28756F","4ECE7494582F6299","42417EFA373AF69C","4911E11A8D0CA9DC","4D5F19306B4E0483"]
+      tasks: [{
+        id: "4B53F2DF7E8371EF"
+        type: "item"
+        item: "gtceu:luv_circuit_assembler"
+      }]
+      rewards: [{
+        id: "44751F60FC6B0865"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "479D81923A606E64"
+      title: "Квантовый компьютер LuV"
+      description: ["Собери из двух квантовых сборок IV, двух оптопроцессоров, матрицы и двух компонентов памяти 256k. Цикл идёт при 24768 EU/t."]
+      x: 5.551d
+      y: 3.930d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["40BF1802E6BE3D20","46AEE8B95B4B6A94","471B89589CD0C95B"]
+      tasks: [{
+        id: "48634DBC1558AE36"
+        type: "item"
+        item: "gtceu:quantum_processor_computer"
+        count: 2L
+      }]
+      rewards: [{
+        id: "476208E513A208CD"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "410FA3BCCFEF5090"
+      title: "Кристаллическая сборка LuV"
+      description: ["Для сборки соедини кристаллические процессоры IV с оптопроцессорами и инженерными схемами AE2. Подай 1400 мБ защитного газа."]
+      x: 7.531d
+      y: 6.807d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["40BF1802E6BE3D20","40F391F2CA5C40DC","4B3A39A4A264D4F4"]
+      tasks: [{
+        id: "494EA62735D5FCD6"
+        type: "item"
+        item: "gtceu:crystal_processor_assembly"
+        count: 2L
+      }]
+      rewards: [{
+        id: "419D7778594816AE"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "4F819A0889F48936"
+      title: "Сборочные кожухи серверной"
+      description: ["Собирай партиями по четыре. Кожухи идут в обе структуры, расходуются на компоненты и улучшаются до управляющих блоков."]
+      x: -9.447d
+      y: 3.497d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4596C320DE2DEF95","41024D5F387DD821","41A6AEF2E68EA281"]
+      tasks: [{
+        id: "452934D80EA50CFB"
+        type: "item"
+        item: "gtceu:computer_casing"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4DBEEBB94E5D332C"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "448D7C7FE383AFA8"
+      title: "Управляющие кожухи"
+      description: ["Усиль кожухи оптикой, матрицами и многослойным стеклом. Партия даёт два блока."]
+      x: 2.922d
+      y: 3.165d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F819A0889F48936","40FE96C7C4C5FFA0","4B7DE494F18A0582"]
+      tasks: [{
+        id: "4992B82BBBDD4711"
+        type: "item"
+        item: "gtceu:advanced_computer_casing"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4058EF7E96D553FD"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "49544BE729CF27B7"
+      title: "Вентиляция серверной"
+      description: ["Проверь раскладку HPCA в JEI. Вентиляционные блоки также расходуются на сборку радиаторов."]
+      x: -7.952d
+      y: 1.251d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F819A0889F48936","46F32A0158C87663","4D9342BC98CF63D6"]
+      tasks: [{
+        id: "4C1114DD68DEB0B2"
+        type: "item"
+        item: "gtceu:computer_heat_vent"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4258E21FFB9F5B6B"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "43FC401F17A06AC3"
+      title: "Оптоволокно GregTech"
+      description: ["Собери отдельную оптическую магистраль GregTech. Направь лицевые стороны люков к ней и проверь соединения ключом."]
+      x: -4.342d
+      y: 4.609d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B7DE494F18A0582","403EB3342AA5C2AA","45C71EF86703469D"]
+      tasks: [{
+        id: "4B8C1144858F1A36"
+        type: "item"
+        item: "gtceu:normal_optical_pipe"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4A63DF438C0FA103"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4DE96186C5476184"
+      title: "Незаписанные сферы данных"
+      description: ["Первую сферу оставь для эталона поля, вторую для итоговой приёмки. При необходимости собери запас на повторные записи."]
+      x: -2.922d
+      y: 5.951d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["46AEE8B95B4B6A94","4B7DE494F18A0582","440A56885EF3F8DC"]
+      tasks: [{
+        id: "4E58A7C1AD5AF9B6"
+        type: "item"
+        item: "gtceu:data_orb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4BB415C50FD7F1EE"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "44503DCB8E9A5D92"
+      title: "Люк чтения сфер на линии"
+      description: ["Один продвинутый люк уходит в контроллер станции. Второй устанавливается в сборочную линию и принимает записанные сферы данных."]
+      x: 25.174d
+      y: 8.669d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4DE96186C5476184","448D7C7FE383AFA8","479D81923A606E64"]
+      tasks: [{
+        id: "4B142F1453A58D6D"
+        type: "item"
+        item: "gtceu:advanced_data_access_hatch"
+        count: 2L
+      }]
+      rewards: [{
+        id: "48683C24242A7409"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "47418396D575F5DF"
+      title: "Выход вычислительной мощности"
+      description: ["Поставь передатчик на наружном кожухе HPCA и направь в сторону оптоволокна."]
+      x: 11.622d
+      y: 8.682d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43FC401F17A06AC3","4ECE7494582F6299","479D81923A606E64"]
+      tasks: [{
+        id: "4735602D8449DF8A"
+        type: "item"
+        item: "gtceu:computation_transmitter_hatch"
+      }]
+      rewards: [{
+        id: "43AA007993DC9AD9"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4B5DA84E3344B566"
+      title: "Ввод вычислительной мощности"
+      description: ["На станции нужен приёмный люк с подключением к передатчику HPCA. По нему поступают CWU."]
+      x: 12.302d
+      y: 4.744d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43FC401F17A06AC3","42417EFA373AF69C","479D81923A606E64"]
+      tasks: [{
+        id: "4C6F60DF5963B3B0"
+        type: "item"
+        item: "gtceu:computation_receiver_hatch"
+      }]
+      rewards: [{
+        id: "4BB1C70678F5A64F"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "41A08B9634774ABE"
+      title: "Посадочные кассеты HPCA"
+      description: ["Запас пустых модулей нужен для процессоров и радиаторов. Для испытания на 12 CWU/t заполни все девять мест рабочими блоками."]
+      x: -5.097d
+      y: 2.937d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["49544BE729CF27B7","4F819A0889F48936"]
+      tasks: [{
+        id: "48A77176731CB9DB"
+        type: "item"
+        item: "gtceu:hpca_empty_component"
+        count: 9L
+      }]
+      rewards: [{
+        id: "432967C68EA921FB"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4EC1CDEDCC3E7CED"
+      title: "Три вычислительных компонента"
+      description: ["Каждый вычислительный блок выдаёт 4 CWU/t и требует отвода двух единиц тепла. Три блока дадут 12 CWU/t."]
+      x: 11.622d
+      y: 5.865d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41A08B9634774ABE","479D81923A606E64","46AEE8B95B4B6A94"]
+      tasks: [{
+        id: "46ACEFB4ED98A2C0"
+        type: "item"
+        item: "gtceu:hpca_computation_component"
+        count: 3L
+      }]
+      rewards: [{
+        id: "4D7B0985FD2A1919"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "412E7A76D0F6B3EC"
+      title: "Шесть пассивных радиаторов"
+      description: ["Один пассивный блок отводит одну единицу тепла. Для трёх вычислительных блоков собери шесть радиаторов."]
+      x: -2.922d
+      y: 3.195d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41A08B9634774ABE","49544BE729CF27B7","4596C320DE2DEF95"]
+      tasks: [{
+        id: "49E15B0D3B4BB043"
+        type: "item"
+        item: "gtceu:hpca_heat_sink_component"
+        count: 6L
+      }]
+      rewards: [{
+        id: "4AEEC8C2361CD928"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "489FED56A4313E69"
+      title: "Вычислительный массив HPCA"
+      description: ["Собери структуру по JEI. Контроллер расходует один вычислитель и два радиатора при крафте. Подготовь для массива ещё три вычислителя и шесть радиаторов."]
+      x: 13.797d
+      y: 5.769d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4EC1CDEDCC3E7CED","412E7A76D0F6B3EC","47418396D575F5DF","45EB2D3D57030754"]
+      tasks: [{
+        id: "4689DD86167CFDE6"
+        type: "item"
+        item: "gtceu:high_performance_computation_array"
+      }]
+      rewards: [{
+        id: "4942444CFF7B0D64"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4652933D89B006F2"
+      title: "Держатель образца и носителя"
+      description: ["Разверни лицевую сторону держателя наружу. Поставь его в стенку напротив контроллера. В два слота вставляются образец и сфера."]
+      x: 5.395d
+      y: 6.959d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44DAF6D8971EB770","42417EFA373AF69C","448D7C7FE383AFA8"]
+      tasks: [{
+        id: "4E0F33F7B28FD6B9"
+        type: "item"
+        item: "gtceu:object_holder"
+      }]
+      rewards: [{
+        id: "486FE540D88B3BB0"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "40457F396D5EB82E"
+      title: "Исследовательская станция"
+      description: ["Построй станцию по схеме JEI. Разверни держатель образца наружу на стороне, противоположной контроллеру. Положи изоленту в сервисный люк, чтобы устранить стартовые неисправности. Подключи питание LuV и вычислительную линию от HPCA."]
+      x: 16.312d
+      y: 0.598d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["44503DCB8E9A5D92","4652933D89B006F2","4B5DA84E3344B566","489FED56A4313E69","45DEADF06AA1FC95"]
+      tasks: [{
+        id: "42A8BEF358202E8E"
+        type: "item"
+        item: "gtceu:research_station"
+      }]
+      rewards: [{
+        id: "4C5FA9317436AB11"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 4
+      }]
+    }
+    {
+      id: "4CA6641D09704403"
+      title: "Активное охлаждение HPCA"
+      description: ["Для усиленного массива понадобится отдельный контур штатного теплоносителя HPCA. Пассивный массив на 12 CWU/t работает с радиаторами."]
+      x: 7.272d
+      y: 1.043d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["412E7A76D0F6B3EC","45857275C3DDD09C"]
+      optional: true
+      tasks: [{
+        id: "41ACB91E90F00EA8"
+        type: "item"
+        item: "gtceu:hpca_active_cooler_component"
+        count: 2L
+      }]
+      rewards: [{
+        id: "470ED69EF3791EDE"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "41D676B8A27CFE5D"
+      title: "Мост вычислительных массивов"
+      description: ["Мост позволяет включить массив в общую вычислительную сеть. Подготовь его при расширении цеха."]
+      x: 16.652d
+      y: 5.890d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["489FED56A4313E69","4B5DA84E3344B566"]
+      optional: true
+      tasks: [{
+        id: "4984F63230E7E8CC"
+        type: "item"
+        item: "gtceu:hpca_bridge_component"
+      }]
+      rewards: [{
+        id: "49255D54DC313B98"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "43C10BB582F2443A"
+      title: "Сменная вентиляция HPCA"
+      description: ["На четыре вентиляционных блока приготовь два вентилятора Create и два радиатора PneumaticCraft. Часть блоков уйдёт на сборку пассивных модулей."]
+      x: -5.777d
+      y: 1.230d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49544BE729CF27B7","4EAA44DFE455DF30"]
+      optional: true
+      tasks: [{
+        id: "45955BC21445790E"
+        type: "item"
+        item: "gtceu:computer_heat_vent"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4E04143298D1E776"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "480E9B2607B48B5A"
+      title: "Резерв оптоволокна"
+      description: ["Соедини передатчик массива и приёмник станции. Держи запас трубы для второй станции и не прокладывай её вплотную к незапитанному ответвлению."]
+      x: 13.797d
+      y: 9.294d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["47418396D575F5DF","4B5DA84E3344B566","448D7C7FE383AFA8"]
+      optional: true
+      tasks: [{
+        id: "44950009141B3A21"
+        type: "item"
+        item: "gtceu:normal_optical_pipe"
+        count: 24L
+      }]
+      rewards: [{
+        id: "4CE6BCCF0A7256F6"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A06262AD3ECE20F"
+      title: "Буфер активного охлаждения"
+      description: ["Подай штатный теплоноситель HPCA в разрешённый JEI вход. Подключи охлаждение до того, как поставишь усиленные вычислители под нагрузку."]
+      x: 9.447d
+      y: 3.735d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CA6641D09704403","4BFAF9073F9764CD","4B028450B4D0EEC5"]
+      optional: true
+      tasks: [{
+        id: "4F15D59F301A85BD"
+        type: "item"
+        item: "gtceu:luv_input_hatch"
+      }]
+      rewards: [{
+        id: "40C8206141DC4B6F"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42C3515CD8164659"
+      title: "Носители на две независимые линии"
+      description: ["Пустые и записанные сферы держи в разных контейнерах. Для реактора и приёмки используй отдельные записи."]
+      x: 15.972d
+      y: 4.754d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4DE96186C5476184","44503DCB8E9A5D92","480E9B2607B48B5A"]
+      optional: true
+      tasks: [{
+        id: "448E42F73C562607"
+        type: "item"
+        item: "gtceu:data_orb"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4963899A0E627C5C"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4D32559B8455CE9D"
+      title: "Отдельное питание исследовательской станции"
+      description: ["Выдели станцию на отдельную ветвь после диода. При просадке серверной исследование можно запускать от резервного ввода."]
+      x: 6.805d
+      y: -5.064d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40457F396D5EB82E","42F21CD5A06ABFD7"]
+      optional: true
+      tasks: [{
+        id: "4A3DA9919153F7A4"
+        type: "item"
+        item: "gtceu:luv_diode"
+      }]
+      rewards: [{
+        id: "4E697D2D1995EB76"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "414B4F86F691B00F"
+      title: "Запас оптических труб лаборатории"
+      description: ["Подготовь короткую трассу от вычислительного массива до исследовательской станции. Оставь трубы для обхода при переносе приборов."]
+      x: 14.477d
+      y: 4.659d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["47418396D575F5DF","4B5DA84E3344B566"]
+      optional: true
+      tasks: [{
+        id: "4BD38B9013035100"
+        type: "item"
+        item: "gtceu:normal_optical_pipe"
+        count: 24L
+      }]
+      rewards: [{
+        id: "409CAEB8F50F01D1"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4F6331D22648EA2C"
+      title: "Чистые сферы для очереди исследований"
+      description: ["Отложи незаписанные сферы возле станции. Подписывай записанные носители после работы, чтобы не подать старую запись на другую линию."]
+      x: 18.827d
+      y: -0.260d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40457F396D5EB82E"]
+      optional: true
+      tasks: [{
+        id: "496934FDFF906F28"
+        type: "item"
+        item: "gtceu:data_orb"
+        count: 8L
+      }]
+      rewards: [{
+        id: "45AD777669D0C2BE"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "476A1619D249F43B"
+      title: "Пустые ячейки для ремонта HPCA"
+      description: ["Оставь пустые элементы для запасной матрицы. При замене проверяй внутреннюю раскладку массива по подсказке конструкции."]
+      x: 16.652d
+      y: -7.350d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["489FED56A4313E69"]
+      optional: true
+      tasks: [{
+        id: "4121223256F3B5F1"
+        type: "item"
+        item: "gtceu:hpca_empty_component"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4E918DA6D4808F34"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "407B9A881B564BBC"
+      title: "Пассивные радиаторы для ремонта массива"
+      description: ["Запас радиаторов держи у вычислительной стойки. При апгрейде сперва проверь суммарный теплоотвод для новых процессоров."]
+      x: 18.827d
+      y: -2.877d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["476A1619D249F43B","489FED56A4313E69"]
+      optional: true
+      tasks: [{
+        id: "43CDB10013C6ABEF"
+        type: "item"
+        item: "gtceu:hpca_heat_sink_component"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4515EB6BEE2EB3E0"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "4A38313D85A42712"
+      title: "Вентиляционные панели вычислительного ряда"
+      description: ["Часть панелей оставь под сборку радиаторов, часть на замену наружных панелей. Храни их в отдельном отделении у оборудования."]
+      x: 10.355d
+      y: 7.806d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["489FED56A4313E69","407B9A881B564BBC"]
+      optional: true
+      tasks: [{
+        id: "4329B14975D8A3D9"
+        type: "item"
+        item: "gtceu:computer_heat_vent"
+        count: 24L
+      }]
+      rewards: [{
+        id: "46A473214FFC0162"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "4F04A8F04BA628AD"
+      title: "Вычислительные элементы второго массива"
+      description: ["Собери запас базовых процессоров. В усиленной детали расходуются два таких элемента, поэтому не снимай их с уже настроенного массива."]
+      x: 18.409d
+      y: 2.299d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["476A1619D249F43B","40457F396D5EB82E"]
+      optional: true
+      tasks: [{
+        id: "431F29AC5C1BCE2C"
+        type: "item"
+        item: "gtceu:hpca_computation_component"
+        count: 6L
+      }]
+      rewards: [{
+        id: "4974C60E4551107D"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "46652E9893291D12"
+      title: "Пара передатчиков для расширения лаборатории"
+      description: ["Поставь передатчики на отдельные выходы, а приёмники оставь на стороне нагрузки. До начала исследования проверь, что CWU поступают по правильной линии."]
+      x: 18.827d
+      y: 6.724d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["414B4F86F691B00F","41D676B8A27CFE5D"]
+      optional: true
+      tasks: [{
+        id: "454A65EF6CDE4180"
+        type: "item"
+        item: "gtceu:computation_transmitter_hatch"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4DA8401AE395446A"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "425B6CB704CA4CBE"
+      title: "Активное охлаждение для длинной записи"
+      description: ["Отложи активные элементы и заранее разведи жидкий охладитель. Следи, чтобы подача не останавливалась во время записи."]
+      x: 21.002d
+      y: -2.644d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["407B9A881B564BBC","4CA6641D09704403"]
+      optional: true
+      tasks: [{
+        id: "4CBA17233E4F451B"
+        type: "item"
+        item: "gtceu:hpca_active_cooler_component"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4FF1695E8674BA4E"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "43C92063F72C3B50"
+      title: "Дополнительные люки записей для длинной линии"
+      description: ["Распредели люки между станцией и сборочными линиями. Переноси только записанный носитель, оставив люки на месте."]
+      x: 21.002d
+      y: 0.544d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F6331D22648EA2C","40457F396D5EB82E"]
+      optional: true
+      tasks: [{
+        id: "4F2B531EAEC76D4B"
+        type: "item"
+        item: "gtceu:advanced_data_access_hatch"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4DF827BD16316015"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "4CEBBD225FE2ADA6"
+      title: "Запас мостов двух вычислительных сегментов"
+      description: ["Проверь трассу оптики и сохрани второй мост для расширения. Сам мост не заменяет источник вычислительной мощности."]
+      x: 23.176d
+      y: 8.554d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46652E9893291D12","425B6CB704CA4CBE"]
+      optional: true
+      tasks: [{
+        id: "4CEAB6B6CF1B447A"
+        type: "item"
+        item: "gtceu:hpca_bridge_component"
+        count: 2L
+      }]
+      rewards: [{
+        id: "442FFFD2FA788DED"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4E24AA9254EEB6BE"
+      title: "Генераторы магнитного поля"
+      description: ["На генератор нужны четыре мейнфрейма и две оптические головки LuV. Отложи четыре генератора для реактора."]
+      x: 12.302d
+      y: 0.024d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B985757DDF3C062","4ECE7494582F6299","40F391F2CA5C40DC"]
+      tasks: [{
+        id: "4590A1A26B9DC789"
+        type: "item"
+        item: "gtceu:luv_field_generator"
+        count: 4L
+      }]
+      rewards: [{
+        id: "436893899ADD1D7A"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "48A6A0371402F0D8"
+      title: "Модули обмотки кольца"
+      description: ["Наматывай модули парами при 24576 EU/t с охлаждённой жидкостью, кабелем, генераторами поля IV и вакуумной изоляцией."]
+      x: 11.622d
+      y: -2.100d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B985757DDF3C062","49FEAD14BC104CAC","46F32A0158C87663"]
+      tasks: [{
+        id: "414B90F3CDCA427F"
+        type: "item"
+        item: "kubejs:luv_magnet_module"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4E030215C3EA3862"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "418A99F866E9FC03"
+      title: "Сверхпроводящие катушки Mk I"
+      description: ["Собери кольцевые катушки с двумя модулями, листами и охлаждающими насосами. Четыре катушки расходуются ещё на сам контроллер."]
+      x: 13.797d
+      y: -2.960d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48A6A0371402F0D8","45857275C3DDD09C","4A1DA5D8A3A7DA9C"]
+      tasks: [{
+        id: "41960ACE260E92AF"
+        type: "item"
+        item: "gtceu:superconducting_coil"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4752289AFB4E2F31"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46A75EB37574720E"
+      title: "Секции кожуха реактора"
+      description: ["Запусти серию кожухов партиями по четыре. При восьми энерговводах, двух жидкостных вводах, одном выходе и без стекла кольцо использует 116 кожухов. Учти ещё восемь на контроллер."]
+      x: 14.477d
+      y: 0.898d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48A6A0371402F0D8","417F38645BEAFA54","4596C320DE2DEF95"]
+      tasks: [{
+        id: "4AF0B8355971B2BC"
+        type: "item"
+        item: "gtceu:fusion_casing"
+        count: 64L
+      }]
+      rewards: [{
+        id: "421FF5F7D7F911DE"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "4037EE2B965F6763"
+      title: "Окна термоядерного кольца"
+      description: ["Окна можно ставить в разрешённых JEI местах кольца. Соедини оба сорта стекла с диэлектриком, оптикой и палладиевыми листами."]
+      x: 21.520d
+      y: 6.185d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46A75EB37574720E","4B7DE494F18A0582","48DBF8E41B50E8A3"]
+      optional: true
+      tasks: [{
+        id: "48EEF6D2DFD03A42"
+        type: "item"
+        item: "gtceu:fusion_glass"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4B3BAE2145C7C3AD"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42D17E10BD7F7D64"
+      title: "Отражатели для стенда и топлива"
+      description: ["Набери отражатели из вольфрамовой стали и родированного палладия. Два оставь в центрифуге как оснастку для топливного цикла."]
+      x: 14.477d
+      y: -6.015d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48A6A0371402F0D8","4B985757DDF3C062","4F8D2DA594AD422C"]
+      tasks: [{
+        id: "42E20BA20DC82041"
+        type: "item"
+        item: "gtceu:neutron_reflector"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4F2BC0A110330399"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "4983622601034C5D"
+      title: "Эталон магнитного поля"
+      description: ["Собери эталон и изучи его на станции. Исследование требует 8 CWU/t, 16000 CWU и 24576 EU/t. Сфера с записью идёт в продвинутый люк линии."]
+      x: 18.147d
+      y: -1.547d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42D17E10BD7F7D64","479D81923A606E64","42417EFA373AF69C","40457F396D5EB82E"]
+      tasks: [{
+        id: "44CE38D4AA4404A6"
+        type: "item"
+        item: "kubejs:luv_fusion_specimen"
+      }]
+      rewards: [{
+        id: "46F060C51E65E047"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "43DAB8435ED07E7F"
+      title: "Восемь энерговводов LuV"
+      description: ["Каждый энерговвод добавляет 10 млн EU внутренней ёмкости Mk I. Для запуска нужны восемь вводов и заряд 80 млн EU."]
+      x: 15.972d
+      y: 2.186d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4A5D82798266F29C","46A75EB37574720E"]
+      tasks: [{
+        id: "43EE63A193B7105F"
+        type: "item"
+        item: "gtceu:luv_energy_input_hatch"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4D6C5B12428E0DD2"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4BFAF9073F9764CD"
+      title: "Два жидкостных ввода Mk I"
+      description: ["Отведи отдельный вход каждому топливному потоку. На цикл подавай 1000 мБ дейтерия и 750 мБ трития."]
+      x: 7.948d
+      y: -1.975d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45857275C3DDD09C","4D8B18D88F28756F"]
+      tasks: [{
+        id: "4CD65F837A1236CE"
+        type: "item"
+        item: "gtceu:luv_input_hatch"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4FD1CBF3DE5DEACB"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "486D6A5BB7CBD1BF"
+      title: "Вывод горячей плазмы Mk I"
+      description: ["Для плазмы выдели собственный выходной люк. Подавай её в соседний буфер или прямо в жидкостный люк турбины. Проверь допустимую температуру труб."]
+      x: 9.660d
+      y: -0.593d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4BFAF9073F9764CD"]
+      tasks: [{
+        id: "4E65B6CF636DCF71"
+        type: "item"
+        item: "gtceu:luv_output_hatch"
+      }]
+      rewards: [{
+        id: "4DB7D589778ED7F0"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "4B359E52BCB9AFD5"
+      title: "Контроллер реактора Mk I"
+      description: ["Удлини линию до девяти предметных входов и выходной секции. В девятый вход поставь два накопителя IE высокого напряжения. Вставь записанную сферу, подай газ, смазку и теплоноситель. Цикл идёт при 32000 EU/t. Само кольцо строй по JEI."]
+      x: 20.322d
+      y: -1.264d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4983622601034C5D","4E24AA9254EEB6BE","46A75EB37574720E","418A99F866E9FC03","43DAB8435ED07E7F","486D6A5BB7CBD1BF"]
+      tasks: [{
+        id: "43E44AC37DA4E3C5"
+        type: "item"
+        item: "gtceu:luv_fusion_reactor"
+      }]
+      rewards: [{
+        id: "4CC2E4A0228859A5"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "40874E15F969F38C"
+      title: "Центрифуга изотопного цеха"
+      description: ["Первый станок с двумя диэлектриками даёт 2250 мБ дейтерия из водорода. Второй с двумя отражателями превращает 1250 мБ дейтерия в 750 мБ трития. Оставшиеся 1000 мБ идут в реактор, оснастка остаётся в станках."]
+      x: 15.972d
+      y: -4.611d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B985757DDF3C062","4922E430B7480F7D","42D17E10BD7F7D64"]
+      tasks: [{
+        id: "46DEC9E492C81220"
+        type: "item"
+        item: "gtceu:luv_centrifuge"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4B80E1F8039ABB67"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46ABA7EF40A9A75F"
+      title: "Первая проба плазмы"
+      description: ["Реактор тратит электричество и выдаёт 1000 мБ плазмы. Вакуумная камера LuV испытывает пластину с 500 мБ плазмы и возвращает теплоноситель."]
+      x: 22.725d
+      y: -4.918d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B359E52BCB9AFD5","40874E15F969F38C","426976ACBA8CC3F1"]
+      tasks: [{
+        id: "433665F317805B2D"
+        type: "item"
+        item: "kubejs:luv_plasma_coupon"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4ED90E5D5E9089CA"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4504B906F2CA1177"
+      title: "Кожухи плазменной турбины"
+      description: ["Подготовь 32 кожуха, из них четыре уйдут в контроллер. Четыре редуктора раздели между контроллером и корпусом. Собери турбину 3×3×4 по JEI."]
+      x: -20.322d
+      y: -4.698d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["417F38645BEAFA54","46F32A0158C87663","4EBB2593880A3DC3"]
+      tasks: [{
+        id: "4126552EDF5984A3"
+        type: "item"
+        item: "gtceu:tungstensteel_turbine_casing"
+        count: 32L
+      }]
+      rewards: [{
+        id: "495D3DAC2388C0C5"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4104A5EDC62CC5FA"
+      title: "Подшипники и держатели"
+      description: ["Два держателя расходуются в контроллере. Третий установи в корпус турбины и оставь свободное пространство перед его лицевой стороной."]
+      x: 11.622d
+      y: -7.891d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B985757DDF3C062","4ECDD3841D79CF3E","4504B906F2CA1177"]
+      tasks: [{
+        id: "45A3559187F3EFA4"
+        type: "item"
+        item: "gtceu:luv_rotor_holder"
+        count: 3L
+      }]
+      rewards: [{
+        id: "40AA565CF7EFC729"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "4793FF686D71504C"
+      title: "Балансировка палладиевого ротора"
+      description: ["Для полноценного ротора сначала изготовь две роторные заготовки. Сбалансируй их на сборщике LuV с осями, листами и датчиками."]
+      x: 13.797d
+      y: -4.520d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4596C320DE2DEF95","4104A5EDC62CC5FA","42417EFA373AF69C"]
+      tasks: [{
+        id: "48855750265B313A"
+        type: "item"
+        item: { id: "gtceu:turbine_rotor", Count: 1b, tag: {"GT.PartStats":{"Material":"gtceu:rhodium_plated_palladium"}} }
+        match_nbt: true
+        weak_nbt_match: true
+      }]
+      rewards: [{
+        id: "43895054D15A3694"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4DFE312240821927"
+      title: "Вывод турбины"
+      description: ["Собери вывод на несколько пакетов LuV для плазменного контура и сверь предел напряжения кабеля."]
+      x: 11.622d
+      y: 3.528d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45EB2D3D57030754","49FEAD14BC104CAC"]
+      tasks: [{
+        id: "4BB55A005C3E67C2"
+        type: "item"
+        item: "gtceu:luv_energy_output_hatch_4a"
+      }]
+      rewards: [{
+        id: "47520F58ECD7CD2C"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "44A2C0C27464467C"
+      title: "Большая плазменная турбина"
+      description: ["Подай плазму в собранную турбину. Сохрани газ с её выходного люка для протокола первого зажигания. Перед пуском разгрузи энерговывод."]
+      x: 24.671d
+      y: -0.835d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4504B906F2CA1177","4104A5EDC62CC5FA","4793FF686D71504C","4DFE312240821927","46ABA7EF40A9A75F"]
+      tasks: [{
+        id: "48B51A54A36DD6D8"
+        type: "item"
+        item: "gtceu:plasma_large_turbine"
+      }]
+      rewards: [{
+        id: "4F885514F7457B30"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "4E55479770C889C2"
+      title: "Протокол первого зажигания"
+      description: ["Сдай восемь испытанных пластин и 1500 мБ отработанного гелия из турбины. Оставь протокол для нагрузочных испытаний и второй записи."]
+      x: 27.186d
+      y: -2.338d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["44A2C0C27464467C","46ABA7EF40A9A75F","479D81923A606E64"]
+      tasks: [{
+        id: "40F343A2CF5C2560"
+        type: "item"
+        item: "kubejs:luv_ignition_report"
+      }]
+      rewards: [{
+        id: "425D3D8C16EBF769"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4073F21350281B05"
+      title: "Процессор Wetware"
+      description: ["Переведи сборочную линию на LuV. Wetware требует кристаллические сборки, память, инженерные процессоры и две плазменные пробы."]
+      x: 24.671d
+      y: -2.296d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["46ABA7EF40A9A75F","410FA3BCCFEF5090","479D81923A606E64","4A5D82798266F29C"]
+      tasks: [{
+        id: "485C7DC7DC0BD7D1"
+        type: "item"
+        item: "gtceu:wetware_processor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4FE15BDAD366F6D2"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "422A7AD4F39E4174"
+      title: "Нагрузочная серия из 64 образцов"
+      description: ["За цикл при 30720 EU/t сборщик испытывает четыре образца с 750 мБ плазмы. Протокол первого зажигания остаётся оснасткой."]
+      x: 29.021d
+      y: -4.897d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4E55479770C889C2","48A6A0371402F0D8","41024D5F387DD821"]
+      tasks: [{
+        id: "4D22671FF82B016F"
+        type: "item"
+        item: "kubejs:luv_load_coupon"
+        count: 64L
+      }]
+      rewards: [{
+        id: "4EDD41B27D4D867B"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46246E20CC8ECB99"
+      title: "Приёмка сети LuV"
+      description: ["Исследуй протокол зажигания с чистой сферой при 12 CWU/t и 36000 CWU. Вставь запись в линию LuV на девять входов. Последние два накопителя IE подай отдельно от памяти AE2. Нужны 4000 мБ плазмы, 3500 мБ защитного газа и 4000 мБ смазки. Цикл идёт пять минут при 32000 EU/t."]
+      x: 31.536d
+      y: -1.162d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["422A7AD4F39E4174","4073F21350281B05","40457F396D5EB82E","46AEE8B95B4B6A94"]
+      tasks: [{
+        id: "4DC0736880532963"
+        type: "item"
+        item: "kubejs:luv_commissioning_report"
+      }]
+      rewards: [{
+        id: "440440E91BD51A10"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 4
+      }]
+    }
+    {
+      id: "4474AB66FE2641F0"
+      title: "Усиленный процессор HPCA"
+      description: ["Для расширения сети подготовь запасной протокол, Wetware и компоненты 256k. Усиленный модуль выдаёт 16 CWU/t и требует более мощного охлаждения."]
+      x: 29.021d
+      y: -3.325d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E55479770C889C2","4073F21350281B05","4CA6641D09704403"]
+      optional: true
+      tasks: [{
+        id: "4BE64E524CF3923A"
+        type: "item"
+        item: "gtceu:hpca_advanced_computation_component"
+      }]
+      rewards: [{
+        id: "4930FF5D73E31950"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "448F0E6F8B4B24A0"
+      title: "Накопители для девятой позиции"
+      description: ["Два накопителя отложи под контроллер и два под протокол. На сборочной линии это отдельный вход после вычислительной памяти."]
+      x: 21.002d
+      y: 3.979d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4983622601034C5D","46A75EB37574720E","4EEF14AF22879613"]
+      optional: true
+      tasks: [{
+        id: "447C242D5C64C442"
+        type: "item"
+        item: "immersiveengineering:capacitor_hv"
+        count: 4L
+      }]
+      rewards: [{
+        id: "43C211F676B2088D"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44969EDAED5B467E"
+      title: "Девятая предметная шина"
+      description: ["Добавь девятую входную секцию перед выходом. Одиночная шина ULV принимает один тип детали, поэтому разведи позиции по JEI."]
+      x: 23.176d
+      y: 5.401d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4990A6C9D79D3066","448F0E6F8B4B24A0"]
+      optional: true
+      tasks: [{
+        id: "4A70EA460AA9105A"
+        type: "item"
+        item: "gtceu:ulv_input_bus"
+        count: 9L
+      }]
+      rewards: [{
+        id: "4C6C5E5E5BB160F1"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D8C1083446C7DB5"
+      title: "Изоляция двух изотопных потоков"
+      description: ["На 2250 мБ дейтерия отведи 1250 мБ в обогащение и 1000 мБ прямо в кольцо. Тритий выводи в отдельный дозатор."]
+      x: 18.827d
+      y: -6.573d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40874E15F969F38C","4B028450B4D0EEC5"]
+      optional: true
+      tasks: [{
+        id: "452DAB858B610EAB"
+        type: "item"
+        item: "gtceu:luv_fluid_regulator"
+        count: 2L
+      }]
+      rewards: [{
+        id: "43F1FE7B855179BA"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4DDE5690DE9CCC62"
+      title: "Резерв отработанного гелия"
+      description: ["Дай турбине принять плазму и разгрузи энерговывод. Отложи 1500 мБ отработанного газа на протокол и только потом пускай остаток на рекуперацию."]
+      x: 26.846d
+      y: -4.225d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44A2C0C27464467C","4D8C1083446C7DB5"]
+      optional: true
+      tasks: [{
+        id: "41BF4EFD2F196A50"
+        type: "item"
+        item: "gtceu:luv_output_hatch"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4D4F9F3384A287A0"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4EB96ECF0A3496B3"
+      title: "Комплект датчиков на протокол"
+      description: ["Для каждой записи подай по два наблюдателя Create и два манометра PneumaticCraft. Второй комплект отложи под усиленные модули HPCA."]
+      x: 29.021d
+      y: -1.653d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E55479770C889C2","4983622601034C5D"]
+      optional: true
+      tasks: [{
+        id: "43FD6052798BD30F"
+        type: "item"
+        item: "create:content_observer"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4A8299E3F9DD615D"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "40999188CD8D3AB3"
+      title: "Серия плазменных проб на две смены"
+      description: ["Разложи пробы на контроль турбины, изготовление Wetware и европиевые мишени. На одну закалку уходит 500 мБ плазмы и 2400 мБ холодной жидкости."]
+      x: 30.811d
+      y: -5.085d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["422A7AD4F39E4174","4DDE5690DE9CCC62","4A06262AD3ECE20F"]
+      optional: true
+      tasks: [{
+        id: "4C76C08EF0200A93"
+        type: "item"
+        item: "kubejs:luv_plasma_coupon"
+        count: 24L
+      }]
+      rewards: [{
+        id: "49526A8A6007A7CD"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "41EEA5F084BB3699"
+      title: "Магнитные модули второго набора"
+      description: ["Отложи модули для катушек и испытаний нагрузки. Часть готовой оснастки держи вне сборки работающего кольца."]
+      x: 23.176d
+      y: 0.610d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B359E52BCB9AFD5"]
+      optional: true
+      tasks: [{
+        id: "4A4A5D12858006CA"
+        type: "item"
+        item: "kubejs:luv_magnet_module"
+        count: 24L
+      }]
+      rewards: [{
+        id: "489D9588309A7E7A"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "41D34EE282EFA05F"
+      title: "Резерв сверхпроводящих катушек Mk I"
+      description: ["Сложи катушки рядом с деталями первого кольца. Они потребуются при повторной сборке и на переделе ZPM."]
+      x: 25.141d
+      y: 2.031d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41EEA5F084BB3699","418A99F866E9FC03"]
+      optional: true
+      tasks: [{
+        id: "46064B724150BE48"
+        type: "item"
+        item: "gtceu:superconducting_coil"
+        count: 8L
+      }]
+      rewards: [{
+        id: "43041E9871A7ACB1"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "48FB1AD124274EDD"
+      title: "Смотровое остекление горячей камеры"
+      description: ["Оставь запас стекла у корпуса кольца. Точки подключения ставь в ячейки, которые допускает голограмма мультиблока."]
+      x: 23.176d
+      y: 6.890d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B359E52BCB9AFD5","4037EE2B965F6763"]
+      optional: true
+      tasks: [{
+        id: "40F9F5645017AE6F"
+        type: "item"
+        item: "gtceu:fusion_glass"
+        count: 24L
+      }]
+      rewards: [{
+        id: "4187EF43270FD386"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "45466C2DD74994D6"
+      title: "Отражатели для изотопного обогащения"
+      description: ["Держи пару отражателей в центрифуге для обогащения трития. Резерв для исследования и протоколов не смешивай с этой оснасткой."]
+      x: 18.827d
+      y: -8.172d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40874E15F969F38C","42D17E10BD7F7D64"]
+      optional: true
+      tasks: [{
+        id: "42A2E366B03DA388"
+        type: "item"
+        item: "gtceu:neutron_reflector"
+        count: 12L
+      }]
+      rewards: [{
+        id: "43C3A6F2E7C279CD"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4685BD786C75D3D3"
+      title: "Третья центрифуга на резервном водороде"
+      description: ["Выдели линии для дейтерия и трития. Третья машина пригодится для поддержания запаса, если один поток останавливается."]
+      x: 22.496d
+      y: -7.912d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45466C2DD74994D6","4B359E52BCB9AFD5"]
+      optional: true
+      tasks: [{
+        id: "43D188AB914827A0"
+        type: "item"
+        item: "gtceu:luv_centrifuge"
+        count: 3L
+      }]
+      rewards: [{
+        id: "446F9F1B2ABD7D72"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4FD83C20A6AD3909"
+      title: "Купоны первого зажигания и нагрузки"
+      description: ["Раздели плазменные образцы между протоколом зажигания и нагрузочной серией. Вакуумной камере оставь собственный возврат теплоносителя."]
+      x: 29.021d
+      y: 1.765d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E55479770C889C2","41EEA5F084BB3699"]
+      optional: true
+      tasks: [{
+        id: "4561B73064DC262A"
+        type: "item"
+        item: "kubejs:luv_plasma_coupon"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4ECC7DFB41BA7CC0"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "43E643DA879AAF3C"
+      title: "Пара палладиевых заготовок ротора"
+      description: ["Собери две роторные заготовки для одного балансировочного прохода. Подай их вместе с листами, осями и смазкой на сборщик."]
+      x: 16.940d
+      y: -3.515d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4793FF686D71504C"]
+      optional: true
+      tasks: [{
+        id: "4DB257BC4C6A49B8"
+        type: "item"
+        item: "gtceu:rhodium_plated_palladium_rotor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4D163ACF5A8CB966"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "41B340E4E3ABD4F3"
+      title: "Сменный ротор плазменной турбины"
+      description: ["Держи запасной сбалансированный ротор рядом с турбиной. Для работы используй исполнение из родированного палладия."]
+      x: 23.141d
+      y: -1.782d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43E643DA879AAF3C","44A2C0C27464467C"]
+      optional: true
+      tasks: [{
+        id: "46984A2B3A116624"
+        type: "item"
+        item: "gtceu:turbine_rotor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "40E26BB1C6734179"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4FF090907DDFB5A0"
+      title: "Запасные кожухи турбинного участка"
+      description: ["Сохрани кожухи для ремонта и новых силовых узлов. Перед заменой снимай нагрузку с турбины и отключай подачу плазмы."]
+      x: 27.471d
+      y: 4.902d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44A2C0C27464467C","48FB1AD124274EDD"]
+      optional: true
+      tasks: [{
+        id: "4EEB6F0DC8DFBFBB"
+        type: "item"
+        item: "gtceu:tungstensteel_turbine_casing"
+        count: 20L
+      }]
+      rewards: [{
+        id: "4F7EC4C843291582"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "433E07DE30817CA0"
+      title: "Дополнительная партия нагрузочных купонов LuV"
+      description: ["Загрузи только 32 купона в приёмочный заказ. Остальные сохрани для нового цикла, пока первый протокол остаётся в испытательном станке."]
+      x: 31.876d
+      y: -3.738d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FD83C20A6AD3909","422A7AD4F39E4174"]
+      optional: true
+      tasks: [{
+        id: "4D6DDC258E23D6AB"
+        type: "item"
+        item: "kubejs:luv_load_coupon"
+        count: 48L
+      }]
+      rewards: [{
+        id: "42B5EEC6E6A5B8C4"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "474D81B476115F16"
+      title: "Линия дробления и сортировки"
+      description: ["Перенеси привод дробилки IV в новый корпус. Сразу выдели место для отдельных выходов рудных концентратов."]
+      x: 15.674d
+      y: 8.400d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B985757DDF3C062","46C465AE419FC87E","49B49B3B4B41F9B6"]
+      optional: true
+      tasks: [{
+        id: "4E2951966FE3AA0D"
+        type: "item"
+        item: "gtceu:luv_macerator"
+      }]
+      rewards: [{
+        id: "48F6963B8E3AA03A"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4FF69DE8E9D76B5C"
+      title: "Промывка руды"
+      description: ["Поставь промыватель с постоянной подачей дистиллята и резервной линией для хвостов."]
+      x: 14.291d
+      y: 7.249d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["474D81B476115F16","45857275C3DDD09C"]
+      optional: true
+      tasks: [{
+        id: "46B3AE1D064D2BE4"
+        type: "item"
+        item: "gtceu:luv_ore_washer"
+      }]
+      rewards: [{
+        id: "4238D4C478B0BEA8"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4AC4EADA45C342B9"
+      title: "Термоцентрифуга LuV"
+      description: ["Добавь горячий контур обработки рядом с промывателем. Разведи бункеры промытых руд и шлама."]
+      x: 15.972d
+      y: 10.583d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FF69DE8E9D76B5C","42C39B163107F9C0"]
+      optional: true
+      tasks: [{
+        id: "4F3C5F411E532F69"
+        type: "item"
+        item: "gtceu:luv_thermal_centrifuge"
+      }]
+      rewards: [{
+        id: "44D52B638A329471"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "44A00F3DA2009773"
+      title: "Грохот тяжёлой фракции"
+      description: ["Подготовь просеиватель для цепочек, где нужна отдельная сортировка частиц."]
+      x: 18.461d
+      y: 9.963d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AC4EADA45C342B9","4ECDD3841D79CF3E"]
+      optional: true
+      tasks: [{
+        id: "4D60B9CEAFE2FD64"
+        type: "item"
+        item: "gtceu:luv_sifter"
+      }]
+      rewards: [{
+        id: "4DCFEE89A5C86B8D"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "42A87B37E1432005"
+      title: "Поточная химия LuV"
+      description: ["Отведи ему отдельный контур. Реактор и конвейеры имеют собственные рецепты модернизации с IV."]
+      x: 9.736d
+      y: -5.007d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E99E98E9C125AB8","4B985757DDF3C062","45857275C3DDD09C"]
+      optional: true
+      tasks: [{
+        id: "44A440EBAE23348D"
+        type: "item"
+        item: "gtceu:luv_chemical_reactor"
+      }]
+      rewards: [{
+        id: "433DE393D92EB383"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "422360EAF600E907"
+      title: "Возврат гелия"
+      description: ["Дистиллятор при 22528 EU/t возвращает 850 мБ обычного гелия с 1000 мБ отработанного. Сначала оставь нужное количество газа для протокола."]
+      x: 26.222d
+      y: 0.079d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44A2C0C27464467C","42A87B37E1432005"]
+      optional: true
+      tasks: [{
+        id: "405DCEC13F27F302"
+        type: "item"
+        item: "gtceu:luv_distillery"
+      }]
+      rewards: [{
+        id: "45303D9AA5B99482"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4289875F7829B176"
+      title: "Электролиз на отдельной линии"
+      description: ["Поставь электролизёр с раздельным отводом газов и предметов."]
+      x: 10.193d
+      y: -6.748d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42A87B37E1432005","45857275C3DDD09C"]
+      optional: true
+      tasks: [{
+        id: "4A24F35847A24ECC"
+        type: "item"
+        item: "gtceu:luv_electrolyzer"
+      }]
+      rewards: [{
+        id: "49E566EB0D784612"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4E60B42DFACBA34F"
+      title: "Промышленный прокат"
+      description: ["Используй отдельный прокат для выпуска листов. Для разных металлов настрой отдельные шаблоны ME."]
+      x: 11.622d
+      y: -4.278d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D2BCE8F7CCC56F2","4B985757DDF3C062","46C465AE419FC87E"]
+      optional: true
+      tasks: [{
+        id: "4470F444C7503C9C"
+        type: "item"
+        item: "gtceu:luv_bender"
+      }]
+      rewards: [{
+        id: "4C8207A4CAC2EDF0"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4CD2E958D9BCDCCF"
+      title: "Волочение крупных партий"
+      description: ["Размести станок у участка кабеля. Листы и проволоку разгружай в раздельные буферы."]
+      x: 13.155d
+      y: -7.200d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E60B42DFACBA34F","4174DF17DD9BC683"]
+      optional: true
+      tasks: [{
+        id: "469B490B72BE42E3"
+        type: "item"
+        item: "gtceu:luv_wiremill"
+      }]
+      rewards: [{
+        id: "4EDC452F8578848F"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4C3392F021C5F939"
+      title: "Экструзия профилей"
+      description: ["Размести рядом хранилище матриц и контейнер на выдаче станка."]
+      x: 16.463d
+      y: -9.054d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E60B42DFACBA34F","46C465AE419FC87E"]
+      optional: true
+      tasks: [{
+        id: "4B40942388CEDFFD"
+        type: "item"
+        item: "gtceu:luv_extruder"
+      }]
+      rewards: [{
+        id: "45B334AABB84C1B9"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4225A8AC37FF6DD3"
+      title: "Сдвоенный предметно-жидкостный ввод"
+      description: ["Собери общий ввод из двух жидкостных люков, шин IV и памяти AE2. Используй в структурах, где JEI допускает сдвоенные люки."]
+      x: 9.447d
+      y: 2.267d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44BC853DE75ED5C1","4BFAF9073F9764CD","4EF89A40A3BD476B"]
+      optional: true
+      tasks: [{
+        id: "490027A344575490"
+        type: "item"
+        item: "gtceu:luv_dual_input_hatch"
+      }]
+      rewards: [{
+        id: "4F762F733E5EF8F8"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4CC4C44B09D1C621"
+      title: "Четыре жидкости без смешивания"
+      description: ["Подведи четыре фильтрованных линии к отдельным отсекам люка. Перед подачей проверь настройку каждой трубы."]
+      x: 17.369d
+      y: 7.128d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BFAF9073F9764CD","42A87B37E1432005"]
+      optional: true
+      tasks: [{
+        id: "441AEEF6F0409604"
+        type: "item"
+        item: "gtceu:luv_input_hatch_4x"
+      }]
+      rewards: [{
+        id: "4759F3B7AF6F3A90"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4E0DB2EE2F4381C0"
+      title: "Квантовый буфер предметов"
+      description: ["Обнови сундук IV, используя ячейки 256k и шины хранения. Назначь отдельный буфер на массовую позицию."]
+      x: 11.622d
+      y: -0.926d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B985757DDF3C062","46AEE8B95B4B6A94","44BC853DE75ED5C1"]
+      optional: true
+      tasks: [{
+        id: "43F7E8B1EFB80139"
+        type: "item"
+        item: "gtceu:luv_quantum_chest"
+      }]
+      rewards: [{
+        id: "4C8A14BB2E8B074A"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "437CA450E47250DF"
+      title: "Квантовый жидкостный буфер"
+      description: ["Танк требует жидкостных ячеек 256k, насосов и усиленной изоляции. Отдельно проверь стороны ввода и выдачи."]
+      x: 11.622d
+      y: -3.216d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B985757DDF3C062","46AEE8B95B4B6A94","45857275C3DDD09C"]
+      optional: true
+      tasks: [{
+        id: "452B8F6C681F210A"
+        type: "item"
+        item: "gtceu:luv_quantum_tank"
+      }]
+      rewards: [{
+        id: "4BFF8097BA6A5EAD"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4B8B0AB9D9320622"
+      title: "Параллельный люк LuV"
+      description: ["Поставь только в подходящую многоблочную машину. Проверь, что подача предметов, жидкости и электричества выдерживает параллельные циклы."]
+      x: 11.622d
+      y: -6.406d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B985757DDF3C062","44DAF6D8971EB770","40F391F2CA5C40DC","4AFA0EC9ECEEB554"]
+      optional: true
+      tasks: [{
+        id: "4155855D62953540"
+        type: "item"
+        item: "gtceu:luv_parallel_hatch"
+      }]
+      rewards: [{
+        id: "46D92C41D1F09CDB"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4C8626D5DDBECC7B"
+      title: "Лапотронные блоки LuV"
+      description: ["На лапотронный блок LuV идут четыре лапотронных блока IV, корпус, шины и матрицы. Готовый блок служит деталью стационарного накопителя."]
+      x: 11.622d
+      y: 10.237d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45EB2D3D57030754","41024D5F387DD821","40F391F2CA5C40DC"]
+      optional: true
+      tasks: [{
+        id: "4ADA8CC054F7187F"
+        type: "item"
+        item: "gtceu:luv_lapotronic_battery"
+      }]
+      rewards: [{
+        id: "4E69934418133867"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "49875D4813942071"
+      title: "Лазерный источник 256A"
+      description: ["Подготовь подходящий вывод 16A и отдельный тракт для лазерной передачи. Для первого реактора достаточно обычных кабелей."]
+      x: 13.797d
+      y: 2.096d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E24AA9254EEB6BE","4ECE7494582F6299","49FEAD14BC104CAC"]
+      optional: true
+      tasks: [{
+        id: "4742A92AA734EB70"
+        type: "item"
+        item: "gtceu:luv_256a_laser_source_hatch"
+      }]
+      rewards: [{
+        id: "4628FBBCE10BFD3C"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "465EAD4D8463A40C"
+      title: "Лазерная цель 256A"
+      description: ["Подбери совместимый энерговвод и запитай отдельный участок производства. Сверь разрешённые места установки в JEI."]
+      x: 13.003d
+      y: -1.634d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E24AA9254EEB6BE","42417EFA373AF69C","49875D4813942071"]
+      optional: true
+      tasks: [{
+        id: "420CC5E83E48F95B"
+        type: "item"
+        item: "gtceu:luv_256a_laser_target_hatch"
+      }]
+      rewards: [{
+        id: "4021153E8764E45D"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "463B25B98A6D190B"
+      title: "Оптические ядра на склад"
+      description: ["Закрепи за серийным выпуском своё депо и лазерный пост. Переноси оптическую маску только после остановки обеих машин."]
+      x: 13.797d
+      y: -10.921d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B8B0AB9D9320622","486F75CF0EC542CD","4B7DE494F18A0582"]
+      optional: true
+      tasks: [{
+        id: "437471705FA59ABF"
+        type: "item"
+        item: "kubejs:luv_optical_core"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4316FE3543750457"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4334B0CEA2FA5723"
+      title: "Ячейки под руду и реагенты"
+      description: ["Одну ячейку выдели на полуфабрикаты, вторую на готовую оптику. Жидкости направь в отдельную жидкостную ячейку."]
+      x: 18.147d
+      y: 0.921d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E0DB2EE2F4381C0","437CA450E47250DF","42DA622AEE83EE88"]
+      optional: true
+      tasks: [{
+        id: "4224BB13801DDD31"
+        type: "item"
+        item: "ae2:item_storage_cell_256k"
+        count: 2L
+      }]
+      rewards: [{
+        id: "42BD85F4503A9F6A"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "42DA622AEE83EE88"
+      title: "Шины буферного цеха"
+      description: ["Назначь отдельные шины на листы, проволоку и горячую обратку. Укажи в фильтрах, что сеть может брать из каждого буфера."]
+      x: 16.652d
+      y: 3.285d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E60B42DFACBA34F","4CD2E958D9BCDCCF","48BCE34185AF80F5"]
+      optional: true
+      tasks: [{
+        id: "4CD87A916A0DAF60"
+        type: "item"
+        item: "ae2:storage_bus"
+        count: 3L
+      }]
+      rewards: [{
+        id: "40A01036CEA38222"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4F7015683F4AC21C"
+      title: "Предметные буферы сортировки руд"
+      description: ["Раздели склад питания дробилки и склад продукта сортировки. Собирай породу и очищенный концентрат в разные выходы."]
+      x: 20.322d
+      y: 2.693d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["474D81B476115F16","44A00F3DA2009773","4E0DB2EE2F4381C0"]
+      optional: true
+      tasks: [{
+        id: "4F50A606CBF3BCB2"
+        type: "item"
+        item: "gtceu:luv_quantum_chest"
+        count: 2L
+      }]
+      rewards: [{
+        id: "47E0DE8CC525694F"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "462D02E88A2E03D0"
+      title: "Два контура промывки руды"
+      description: ["Поставь промывку драгоценных концентратов отдельно от потока массовой руды. На каждую линию сделай свой вывод жидкости."]
+      x: 23.176d
+      y: 3.136d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FF69DE8E9D76B5C","4F7015683F4AC21C"]
+      optional: true
+      tasks: [{
+        id: "4833760D5F6F0789"
+        type: "item"
+        item: "gtceu:luv_ore_washer"
+        count: 2L
+      }]
+      rewards: [{
+        id: "46A897E8219F0F4D"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "40EB9169BD722C81"
+      title: "Пара термоцентрифуг рудного цеха"
+      description: ["Раздели тяжёлую и обычную фракции между машинами. На сухой выдаче предусмотрительно оставь место под побочный продукт."]
+      x: 22.202d
+      y: 1.623d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AC4EADA45C342B9","462D02E88A2E03D0"]
+      optional: true
+      tasks: [{
+        id: "4FB0C5D1FF17DEFF"
+        type: "item"
+        item: "gtceu:luv_thermal_centrifuge"
+        count: 2L
+      }]
+      rewards: [{
+        id: "416A409845708BD6"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "43DB44CA30956EC4"
+      title: "Изолированные ёмкости реакторного участка"
+      description: ["Отложи танки для исходного раствора, продукта и обратки. Подключи обратку через отдельную ветку, чтобы она не попадала на вход подачи."]
+      x: 14.477d
+      y: -1.722d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42A87B37E1432005","437CA450E47250DF"]
+      optional: true
+      tasks: [{
+        id: "44CFB5B602038B35"
+        type: "item"
+        item: "gtceu:luv_quantum_tank"
+        count: 3L
+      }]
+      rewards: [{
+        id: "4E433223133ABBFD"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "463678EED59EDD10"
+      title: "Резерв дистилляции турбинной обратки"
+      description: ["Один дистиллятор подключи к отработанному гелию, другой оставь для нефтехимии. Не объединяй источники на общем входе."]
+      x: 29.021d
+      y: -0.120d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["422360EAF600E907","44A2C0C27464467C"]
+      optional: true
+      tasks: [{
+        id: "4BEF5958984D27D1"
+        type: "item"
+        item: "gtceu:luv_distillery"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4650791F22113FA1"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4D5DA66572FE3F01"
+      title: "Прокатный дублёр цеха LuV"
+      description: ["Выдели один листогиб под серийный прокат, другой под переналадку и ремонт. Настройки схем сверяй на каждой машине отдельно."]
+      x: 19.757d
+      y: -5.141d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E60B42DFACBA34F","4C3392F021C5F939"]
+      optional: true
+      tasks: [{
+        id: "44E3AA8A73669226"
+        type: "item"
+        item: "gtceu:luv_bender"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4F05652BB784A886"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "46E006BB357791C4"
+      title: "Предметно-жидкостные входы двух узлов"
+      description: ["Используй отдельную шину на каждом обслуживаемом мультиблоке. Сначала проверь подключение на небольшой партии."]
+      x: 16.652d
+      y: -0.864d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4225A8AC37FF6DD3","43DB44CA30956EC4"]
+      optional: true
+      tasks: [{
+        id: "4323DE34CD62E5D0"
+        type: "item"
+        item: "gtceu:luv_dual_input_hatch"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4E94581785CC690A"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "459BE11A8FDBA0D3"
+      title: "Многосекционные входы реакторного парка"
+      description: ["Назначь каждой подающей линии свою жидкость. Для рецептов сборочной линии сохраняй отдельные входы, где важен порядок."]
+      x: 18.827d
+      y: 8.184d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CC4C44B09D1C621","46E006BB357791C4"]
+      optional: true
+      tasks: [{
+        id: "4A0D0B886A24C246"
+        type: "item"
+        item: "gtceu:luv_input_hatch_4x"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4F508CC0CCCE5E98"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "47FDB8079C08D41D"
+      title: "Параллелизация двух узких мест"
+      description: ["Поставь по люку на подходящий мультиблок. Сначала проверь запас энергии и пропускную способность входов на одиночном цикле."]
+      x: 18.147d
+      y: -4.337d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B8B0AB9D9320622","4D5DA66572FE3F01"]
+      optional: true
+      tasks: [{
+        id: "4ED027CC3ED960A6"
+        type: "item"
+        item: "gtceu:luv_parallel_hatch"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4FF9A7873934FBED"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4DDFB08D07DD6CA9"
+      title: "Приёмники для двух лазерных трасс LuV"
+      description: ["Разведи трассы так, чтобы передатчик и приёмник каждой пары смотрели друг на друга. Проверь класс подключённой нагрузки."]
+      x: 15.064d
+      y: 3.374d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49875D4813942071","465EAD4D8463A40C"]
+      optional: true
+      tasks: [{
+        id: "4A97AD289D9FF9A4"
+        type: "item"
+        item: "gtceu:luv_256a_laser_target_hatch"
+        count: 2L
+      }]
+      rewards: [{
+        id: "409E85152B5E8F49"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+type = fancymenu_layout
+
+layout-meta {
+  identifier = level_loading_screen
+  is_enabled = true
+  render_custom_elements_behind_vanilla = true
+  layout_index = 0
+}
+
+menu_background {
+  background_type = image
+  show_background = true
+  image_path = [source:local]/config/gtibd-interface/transfer.png
+  slide = false
+  repeat_texture = false
+}
+
+customization {
+  action = backgroundoptions
+  keepaspectratio = true
+}

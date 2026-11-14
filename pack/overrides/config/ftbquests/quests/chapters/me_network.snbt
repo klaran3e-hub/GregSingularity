@@ -1,0 +1,1902 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "me_network"
+  group: "468EF37A10F16FBE"
+  icon: "ae2:controller"
+  title: "AE2"
+  id: "4743A75391EE8955"
+  order_index: 13
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/me_network.png"
+    x: 0.0d
+    y: 0.0d
+    width: 54.120d
+    height: 27.870d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "4649C6B45A16A26D"
+      title: "Метеоритный компас"
+      description: ["Сборщик LV соединяет компас, магнитный якорь, схему, полосу и уплотнение. Найди метеорит по направлению стрелки."]
+      x: -21.329d
+      y: 0.000d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4FCC63C022147426","4799482036E52418"]
+      tasks: [{
+        id: "4F8CBD7715DBED59"
+        type: "item"
+        item: "ae2:meteorite_compass"
+      }]
+      rewards: [{
+        id: "4B3D7C99DD0F1676"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4DD90EF6BC5FB6F9"
+      title: "Сертиус из метеорита"
+      description: ["Собери зрелые кристаллы в метеорите. Оставь растущие блоки на месте и заготовь запас небесного камня."]
+      x: -18.480d
+      y: -0.028d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4649C6B45A16A26D"]
+      tasks: [{
+        id: "448AF7354F65AF7A"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4CFFB77383F7B345"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D22CBE6ADD985EC"
+      title: "Логическая матрица"
+      description: ["Из загадочного куба метеорита выпадают матрицы инскрайбера. Сохрани каждую."]
+      x: -15.971d
+      y: 6.044d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4DD90EF6BC5FB6F9"]
+      tasks: [{
+        id: "499826FC595ED556"
+        type: "item"
+        item: "ae2:logic_processor_press"
+      }]
+      rewards: [{
+        id: "48940BE379860F62"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4DC127F588991D48"
+      title: "Вычислительная матрица"
+      description: ["Используй отдельную матрицу для вычислительных схем."]
+      x: -15.971d
+      y: -1.716d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4DD90EF6BC5FB6F9"]
+      tasks: [{
+        id: "49286D9FEEC1A6B0"
+        type: "item"
+        item: "ae2:calculation_processor_press"
+      }]
+      rewards: [{
+        id: "47A9454385F0717D"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "400454F2F6A3F641"
+      title: "Инженерная матрица"
+      description: ["Нужна для основы контроллера, ME-привода и складской шины."]
+      x: -15.971d
+      y: -0.056d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4DD90EF6BC5FB6F9"]
+      tasks: [{
+        id: "44D13883ED37A53A"
+        type: "item"
+        item: "ae2:engineering_processor_press"
+      }]
+      rewards: [{
+        id: "439C16A06A59DC13"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "479C0C07A630170F"
+      title: "Кремниевая матрица"
+      description: ["Кремниевый оттиск входит во все три процессора."]
+      x: -15.971d
+      y: 1.864d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4DD90EF6BC5FB6F9"]
+      tasks: [{
+        id: "44087AF05548E22B"
+        type: "item"
+        item: "ae2:silicon_press"
+      }]
+      rewards: [{
+        id: "45F26C66F3A88A61"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "43A4533EE8FABAF5"
+      title: "Экранированный корпус ME"
+      description: ["Собери корпус MV на двух рамах с полиэтиленом, сталью и уплотнением."]
+      x: -20.989d
+      y: 3.448d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["481EFC0EEFC2DEF6","4799482036E52418","40E8A71E8042D10C"]
+      tasks: [{
+        id: "423FD714DFF73427"
+        type: "item"
+        item: "kubejs:me_isolation_shell"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4BEE1722F8895441"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CF85B81EF8027B7"
+      title: "Преобразователь питания ME от MV"
+      description: ["Перенеси преобразователь LV на корпус MV. Киянкой переключи EU → FE и подключи сторону выдачи к оборудованию AE2."]
+      x: -18.480d
+      y: 2.054d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43A4533EE8FABAF5","4BB92B834B3EBDC5","4303A0AC3F43FE45"]
+      tasks: [{
+        id: "4716B68799335361"
+        type: "item"
+        item: "gtceu:mv_1a_energy_converter"
+      }]
+      rewards: [{
+        id: "405759E180D4BAB3"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "43B238D358E0F82E"
+      title: "Зарядник для сертиуса"
+      description: ["Сборщик MV соединяет корпус, мотор, схему, кабели и кристаллы. Подай FE на зарядник."]
+      x: -16.651d
+      y: -3.127d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4DD90EF6BC5FB6F9","43A4533EE8FABAF5","4CF85B81EF8027B7"]
+      tasks: [{
+        id: "45EAA8014258A1DA"
+        type: "item"
+        item: "ae2:charger"
+      }]
+      rewards: [{
+        id: "42B5300241AFAAE4"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "48C29303FC244FBB"
+      title: "Партия заряженных кристаллов"
+      description: ["Заряди четыре кристалла сертиуса. На первый запуск смесителя уйдёт один."]
+      x: -13.461d
+      y: 2.438d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43B238D358E0F82E"]
+      tasks: [{
+        id: "4DB43AD2D3481E00"
+        type: "item"
+        item: "ae2:charged_certus_quartz_crystal"
+        count: 4L
+      }]
+      rewards: [{
+        id: "435E791F1935F863"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "40EC0380EE0ED1B8"
+      title: "Флюикс из смесителя MV"
+      description: ["Смешай в смесителе MV заряженный сертиус, кварцит, редстоун и уплотнение с 500 мБ дистиллята. Получишь два кристалла флюикса."]
+      x: -10.952d
+      y: 5.479d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48C29303FC244FBB","4D5546CBC26CE3AD","41A5C2604C172D00"]
+      tasks: [{
+        id: "4166DEE2424E4162"
+        type: "item"
+        item: "ae2:fluix_crystal"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4FFEB6E660FCBEB1"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "4D341636DCFC2D65"
+      title: "Восстановление кремния"
+      description: ["Для одной партии нужны две пыли кварцита, древесный уголь и футеровка. Домна работает при 2400 К и 96 EU/t."]
+      x: -8.274d
+      y: 0.543d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4224447257CA4F65","41A5C2604C172D00"]
+      tasks: [{
+        id: "4E27802A9E61E198"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4DFBC03D10C49E6A"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "43735395BE8D7314"
+      title: "Кварцевое волокно"
+      description: ["Сборщик вытягивает волокно из сертиуса, стекла и полимера через фильтровальную сетку."]
+      x: -15.971d
+      y: 3.809d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4DD90EF6BC5FB6F9","43A4533EE8FABAF5"]
+      tasks: [{
+        id: "4F5D40129D1CAA4B"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4E38F265256A70C4"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4E6A8D8BAFC7F263"
+      title: "Опрессовка пьезоламината"
+      description: ["Обожми волокно, флюикс, полимер и уплотнение при 4,1 бар в камере PneumaticCraft."]
+      x: -9.123d
+      y: 2.778d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["40EC0380EE0ED1B8","43735395BE8D7314","4C73EC0019DD35B3"]
+      tasks: [{
+        id: "42F70327D625FF81"
+        type: "item"
+        item: "kubejs:me_piezo_laminate"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4060C2A0D8ACCF5A"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4C17F04EC22960BF"
+      title: "Фольга памяти"
+      description: ["Соедини кремний, ламинат, медные полосы, золото и полиэтилен в сборщике MV."]
+      x: -6.613d
+      y: -0.152d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4E6A8D8BAFC7F263","4D341636DCFC2D65","487FE16FF61AA069"]
+      tasks: [{
+        id: "44742B90BF1ADD88"
+        type: "item"
+        item: "kubejs:me_memory_foil"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4C2C4FEB0BEC43FA"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "46670FDE6B0A3A13"
+      title: "Инскрайбер для матриц"
+      description: ["Установи корпус с двумя поршнями и волокном. Подведи питание через сеть AE2."]
+      x: -3.764d
+      y: 2.482d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4E90415D073AF69D","4E6A8D8BAFC7F263","42F96AB63F8EABA4"]
+      tasks: [{
+        id: "42BC00569A12375B"
+        type: "item"
+        item: "ae2:inscriber"
+      }]
+      rewards: [{
+        id: "4EAD980D61E024CB"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "4F55877A3400C3EF"
+      title: "Заготовка дубликата матрицы"
+      description: ["Сошлифуй стальную заготовку с рамой и алюминием. В инскрайбере используй исходную матрицу для копирования."]
+      x: -1.595d
+      y: -2.630d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46670FDE6B0A3A13"]
+      optional: true
+      tasks: [{
+        id: "454CEA270C052344"
+        type: "item"
+        item: "kubejs:me_press_blank"
+      }]
+      rewards: [{
+        id: "4A4C7052BCABC21C"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "437491178B0704D9"
+      title: "Кремниевые оттиски"
+      description: ["Верхний слот держит матрицу, средний принимает очищенный кремний."]
+      x: -1.595d
+      y: 3.472d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["46670FDE6B0A3A13","4D341636DCFC2D65","479C0C07A630170F"]
+      tasks: [{
+        id: "4056F237C66C8634"
+        type: "item"
+        item: "ae2:printed_silicon"
+        count: 4L
+      }]
+      rewards: [{
+        id: "446BAFDBFB718933"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "42374BFE8388FC02"
+      title: "Логические оттиски"
+      description: ["Вставь матрицу логики и ламинированную фольгу."]
+      x: -1.595d
+      y: 5.877d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["46670FDE6B0A3A13","4C17F04EC22960BF","4D22CBE6ADD985EC"]
+      tasks: [{
+        id: "4999DD0E3928B353"
+        type: "item"
+        item: "ae2:printed_logic_processor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "47E530B47BF3F0DC"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D4AB192A2CE13F8"
+      title: "Вычислительные оттиски"
+      description: ["Та же фольга под другой матрицей даёт вычислительную дорожку."]
+      x: -1.595d
+      y: -1.043d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["46670FDE6B0A3A13","4C17F04EC22960BF","4DC127F588991D48"]
+      tasks: [{
+        id: "40CDBDE878E7E061"
+        type: "item"
+        item: "ae2:printed_calculation_processor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4D87D490460274A1"
+        type: "item"
+        item: "ae2:fluix_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "442F094AB426D075"
+      title: "Фольга инженерных схем"
+      description: ["Подложка делается прессом IE и доступна на MV. Добавь сертиус, контакты и припой."]
+      x: -0.173d
+      y: 0.174d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C17F04EC22960BF","4D6D72BEBB7C6068"]
+      tasks: [{
+        id: "405C93A9F06D52E1"
+        type: "item"
+        item: "kubejs:me_etched_foil"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4F8083CA2E3768E2"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4531DF79D76153E1"
+      title: "Инженерные оттиски"
+      description: ["Инженерную фольгу оттисни под соответствующей матрицей."]
+      x: -1.595d
+      y: 1.278d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["46670FDE6B0A3A13","442F094AB426D075","400454F2F6A3F641"]
+      tasks: [{
+        id: "4F907F56D9C9D105"
+        type: "item"
+        item: "ae2:printed_engineering_processor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4346EE8A817C6300"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "4EDD66C5D27AC008"
+      title: "Сборщик схем на MV"
+      description: ["Перенеси головку со сборщика схем LV. Добавь корпус MV, две схемы, два конвейера, герметичный модуль и контакты."]
+      x: 2.287d
+      y: 4.040d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["481EFC0EEFC2DEF6","41AF8F5C14E516BE","4303A0AC3F43FE45"]
+      tasks: [{
+        id: "4AEEC811B8B9BC6B"
+        type: "item"
+        item: "gtceu:mv_circuit_assembler"
+      }]
+      rewards: [{
+        id: "4BEFB121C8E72130"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4481F0B74A8DFAE6"
+      title: "Логический процессор"
+      description: ["При 120 EU/t спаяй два оттиска, схему MV, контакт и редстоун."]
+      x: 0.915d
+      y: 2.875d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42374BFE8388FC02","437491178B0704D9","4EDD66C5D27AC008"]
+      tasks: [{
+        id: "4E7F9BC6975607B3"
+        type: "item"
+        item: "ae2:logic_processor"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4DA5568BE95D6484"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "4CCDB29FBE1A0842"
+      title: "Вычислительный процессор"
+      description: ["Подай оттиски, сертиус, схему и припой в сборщик схем MV."]
+      x: 1.318d
+      y: -0.224d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D4AB192A2CE13F8","437491178B0704D9","4EDD66C5D27AC008"]
+      tasks: [{
+        id: "4B11EBDB69056E9E"
+        type: "item"
+        item: "ae2:calculation_processor"
+        count: 4L
+      }]
+      rewards: [{
+        id: "47717D5A407C99CA"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4B3A39A4A264D4F4"
+      title: "Инженерный процессор"
+      description: ["Добавь ламинат и две заготовки припоя. Такой процессор уходит в привод, контроллер и шину хранения."]
+      x: 1.595d
+      y: -1.790d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4531DF79D76153E1","437491178B0704D9","4EDD66C5D27AC008"]
+      tasks: [{
+        id: "4A4581BBEF0BB650"
+        type: "item"
+        item: "ae2:engineering_processor"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4613A5539AA88DDF"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "4E90415D073AF69D"
+      title: "Ввод питания ME"
+      description: ["Собери вход питания из корпуса, двух схем MV и ламината. Соедини выход FE преобразователя с тестовой сетью."]
+      x: -5.933d
+      y: 1.281d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4CF85B81EF8027B7","4303A0AC3F43FE45","4E6A8D8BAFC7F263"]
+      tasks: [{
+        id: "467F286648E818E2"
+        type: "item"
+        item: "ae2:energy_acceptor"
+      }]
+      rewards: [{
+        id: "4AEB11E567A68724"
+        type: "item"
+        item: "ae2:fluix_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "4987075AC3B4A98F"
+      title: "Шина на восемь каналов"
+      description: ["Из двух волокон, двух кристаллов, полимера и ламината выходят четыре кабеля."]
+      x: -5.933d
+      y: 4.325d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43735395BE8D7314","4E6A8D8BAFC7F263"]
+      tasks: [{
+        id: "45E24F071393CB33"
+        type: "item"
+        item: "ae2:fluix_glass_cable"
+        count: 8L
+      }]
+      rewards: [{
+        id: "44C1BC5FD9717139"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "441850600A9234C2"
+      title: "Контроллер сети ME"
+      description: ["Собери контроллер с двумя инженерными и двумя вычислительными процессорами, флюиксом в ламинате и небесным камнем."]
+      x: 3.764d
+      y: 0.598d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["4E90415D073AF69D","4B3A39A4A264D4F4","4CCDB29FBE1A0842","4987075AC3B4A98F"]
+      tasks: [{
+        id: "4B5ECE37A76D7DC3"
+        type: "item"
+        item: "ae2:controller"
+      }]
+      rewards: [{
+        id: "46FEBE3B1F248249"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 4
+      }]
+    }
+    {
+      id: "4D1DB2B84B55A35C"
+      title: "ME-привод"
+      description: ["На привод поставь два конвейера MV, ядра формирования и три процессора."]
+      x: 5.933d
+      y: -3.356d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["441850600A9234C2","4B3A39A4A264D4F4","41AF8F5C14E516BE"]
+      tasks: [{
+        id: "4C82D369EBA25419"
+        type: "item"
+        item: "ae2:drive"
+      }]
+      rewards: [{
+        id: "4D9D35FDDA377D31"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "492F56FFFFBBDB3A"
+      title: "Корпус ячейки ME"
+      description: ["Один корпус нужен для готовой ячейки, ещё три уйдут в её компонент памяти."]
+      x: -6.613d
+      y: 2.760d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43A4533EE8FABAF5","4E6A8D8BAFC7F263","43735395BE8D7314"]
+      tasks: [{
+        id: "42DF6CB8CDAC3F58"
+        type: "item"
+        item: "ae2:item_cell_housing"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4F5D391A2783F3A4"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4164CED273C2B778"
+      title: "Первая ячейка 1k"
+      description: ["Спаяй компонент из трёх корпусов и логических процессоров. Собери ячейку в четвёртом корпусе и вставь её в привод."]
+      x: 8.443d
+      y: 0.765d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["492F56FFFFBBDB3A","4481F0B74A8DFAE6","4D1DB2B84B55A35C"]
+      tasks: [{
+        id: "4D4DCED79527B571"
+        type: "item"
+        item: "ae2:item_storage_cell_1k"
+      }]
+      rewards: [{
+        id: "45D348405B61EE66"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "45644DEB9FF7E154"
+      title: "Терминал хранения"
+      description: ["Поставь два дисплея на процессоры, ядро и фольгу. Установи терминал сбоку кабеля."]
+      x: 3.424d
+      y: 2.315d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4E90415D073AF69D","4987075AC3B4A98F","4481F0B74A8DFAE6","4CCDB29FBE1A0842"]
+      tasks: [{
+        id: "4A44731BBEAE0552"
+        type: "item"
+        item: "ae2:terminal"
+      }]
+      rewards: [{
+        id: "4200A01108A90545"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "40A5F82ADBBFD401"
+      title: "Терминал с верстаком"
+      description: ["Перенеси терминал на верстак с инженерным процессором и двумя слоями фольги."]
+      x: 6.613d
+      y: 0.585d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45644DEB9FF7E154","4B3A39A4A264D4F4"]
+      tasks: [{
+        id: "45E98AC47CBF9B02"
+        type: "item"
+        item: "ae2:crafting_terminal"
+      }]
+      rewards: [{
+        id: "4FC5DD3774600DCD"
+        type: "item"
+        item: "ae2:fluix_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "4775A71BF050B5DD"
+      title: "Ввод предметов и жидкостей"
+      description: ["Подключи шину к выходному инвентарю машины или к баку. Для жидкости нужна свободная ячейка жидкости."]
+      x: 5.933d
+      y: -7.535d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45644DEB9FF7E154","41AF8F5C14E516BE"]
+      tasks: [{
+        id: "45D7FF05998EE1F9"
+        type: "item"
+        item: "ae2:import_bus"
+      }]
+      rewards: [{
+        id: "43E41CD29ADD9CD4"
+        type: "item"
+        item: "ae2:fluix_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "4850118B2CFEECD4"
+      title: "Выдача на станки"
+      description: ["Подключи шину к буферу и задай фильтр того, что нужно подавать из сети."]
+      x: 1.783d
+      y: 1.575d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45644DEB9FF7E154","41AF8F5C14E516BE"]
+      tasks: [{
+        id: "4E54C7B26A8A7333"
+        type: "item"
+        item: "ae2:export_bus"
+      }]
+      rewards: [{
+        id: "495354D6596673C5"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "48BCE34185AF80F5"
+      title: "Складские ящики в ME"
+      description: ["Шина подключается к контроллеру ящиков. Поставь приоритет, чтобы поступающие материалы сначала шли на стеллажи."]
+      x: 5.933d
+      y: 2.006d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["441850600A9234C2","44EB05CF179B4517","4B3A39A4A264D4F4"]
+      tasks: [{
+        id: "4C6DF4DF4025D0FB"
+        type: "item"
+        item: "ae2:storage_bus"
+      }]
+      rewards: [{
+        id: "4EB1F22AD6D567F0"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A649BF3E40FC231"
+      title: "Ячейка для жидкостей"
+      description: ["Переделай корпус под насос и уплотнения. Вставь ещё один компонент 1k и установи ячейку в привод. Подключи резервуар шиной импорта."]
+      x: 11.632d
+      y: -6.846d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4164CED273C2B778","401C26D7638E14EC","47E85178CC260515"]
+      tasks: [{
+        id: "4286BE210E25138D"
+        type: "item"
+        item: "ae2:fluid_storage_cell_1k"
+      }]
+      rewards: [{
+        id: "43DAE53AC38C28A2"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "449373F32E750188"
+      title: "Серийная ячейка 4k"
+      description: ["Собери три компонента 1k, два вычислительных процессора и новую оболочку."]
+      x: 14.646d
+      y: -6.377d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4164CED273C2B778","4CCDB29FBE1A0842"]
+      tasks: [{
+        id: "4313FFFE627DD002"
+        type: "item"
+        item: "ae2:item_storage_cell_4k"
+      }]
+      rewards: [{
+        id: "4AD44EB3F989B8E3"
+        type: "item"
+        item: "ae2:fluix_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "4856C17462E143A1"
+      title: "Заряженный сертиус на флюиксовую серию"
+      description: ["Заряди двенадцать кристаллов сертиуса. Сложи их отдельно от обычного кварца возле смесителя MV."]
+      x: -9.123d
+      y: 7.196d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48C29303FC244FBB","40EC0380EE0ED1B8"]
+      optional: true
+      tasks: [{
+        id: "4C754C5355156389"
+        type: "item"
+        item: "ae2:charged_certus_quartz_crystal"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4441C33E1D57291C"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "46C6E6E3015F8A47"
+      title: "Заготовки матриц для второго инскрайбера"
+      description: ["Собери четыре заготовки для копий матриц. Оставь оригиналы рядом с первым инскрайбером."]
+      x: 0.915d
+      y: 5.042d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F55877A3400C3EF","437491178B0704D9"]
+      optional: true
+      tasks: [{
+        id: "4C3DFE4CE5DBCF90"
+        type: "item"
+        item: "kubejs:me_press_blank"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4046CAD41361DAA4"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "4802925991C2FB55"
+      title: "Кремниевые оттиски на три вида процессоров"
+      description: ["Отпрессуй двенадцать кремниевых оттисков. Распредели их между тремя видами процессоров."]
+      x: -3.025d
+      y: 5.144d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["437491178B0704D9","4B3A39A4A264D4F4"]
+      optional: true
+      tasks: [{
+        id: "469D408D863470C4"
+        type: "item"
+        item: "ae2:printed_silicon"
+        count: 12L
+      }]
+      rewards: [{
+        id: "44C862CA79661F38"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 2
+      }]
+    }
+    {
+      id: "4635DB0A769635A7"
+      title: "Стеклянный кабель на два плеча ME"
+      description: ["Подготовь шестнадцать отрезков кабеля. Подключи терминал и приводы, проверяя число каналов."]
+      x: 5.933d
+      y: 6.718d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4987075AC3B4A98F","441850600A9234C2"]
+      optional: true
+      tasks: [{
+        id: "4E0E5D5E616815CF"
+        type: "item"
+        item: "ae2:fluix_glass_cable"
+        count: 16L
+      }]
+      rewards: [{
+        id: "44BD349F5F922F5E"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4F358D7899C50971"
+      title: "Терминалы для двух производственных постов"
+      description: ["Поставь два терминала. Один оставь у склада, второй выведи к сборке плат."]
+      x: 5.519d
+      y: -0.844d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45644DEB9FF7E154","40A5F82ADBBFD401"]
+      optional: true
+      tasks: [{
+        id: "460F20940FAF56CA"
+        type: "item"
+        item: "ae2:terminal"
+        count: 2L
+      }]
+      rewards: [{
+        id: "49A082C2BE34CBF7"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 2
+      }]
+    }
+    {
+      id: "42B0B97E93B07956"
+      title: "Шины импорта двух станков"
+      description: ["Собери две шины импорта. Подключи их к двум выходам станков, сохранив отдельные фильтры."]
+      x: 8.443d
+      y: -4.748d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4775A71BF050B5DD","48BCE34185AF80F5"]
+      optional: true
+      tasks: [{
+        id: "43CCD7B3D022C6B6"
+        type: "item"
+        item: "ae2:import_bus"
+        count: 2L
+      }]
+      rewards: [{
+        id: "49A1A9B0829862A3"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "407C4BC6819BF6C8"
+      title: "Шины подачи к складу и станку"
+      description: ["Собери две шины экспорта. Настрой подачу одного материала на каждом выходе до подключения общего запаса."]
+      x: 10.952d
+      y: -5.507d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4850118B2CFEECD4","42B0B97E93B07956"]
+      optional: true
+      tasks: [{
+        id: "43E27EF54826284A"
+        type: "item"
+        item: "ae2:export_bus"
+        count: 2L
+      }]
+      rewards: [{
+        id: "44E50740EDB360C6"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4EBEBFEFEFB9BDA4"
+      title: "Корпуса ячеек для предметов и жидкостей"
+      description: ["Собери шесть корпусов. Разложи их между предметными ячейками и жидкостным хранилищем."]
+      x: 13.461d
+      y: -5.549d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["492F56FFFFBBDB3A","4A649BF3E40FC231"]
+      optional: true
+      tasks: [{
+        id: "4D1D6475D8F281DB"
+        type: "item"
+        item: "ae2:item_cell_housing"
+        count: 6L
+      }]
+      rewards: [{
+        id: "437D4EFF68BCEC4B"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "4F98A38AC22441A8"
+      title: "Флюикс на складскую разводку"
+      description: ["Приготовь шестнадцать кристаллов флюикса. Часть оставь под кабель, часть под компоненты терминалов."]
+      x: 8.443d
+      y: 5.599d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40EC0380EE0ED1B8","4635DB0A769635A7"]
+      optional: true
+      tasks: [{
+        id: "423DE060BA909F94"
+        type: "item"
+        item: "ae2:fluix_crystal"
+        count: 16L
+      }]
+      rewards: [{
+        id: "45BADFFE84453660"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 2
+      }]
+    }
+    {
+      id: "45BB2BFB763D59F5"
+      title: "Инженерные процессоры на узлы ME"
+      description: ["Собери восемь инженерных процессоров. Отложи их для цифрового склада и последующей автосборки."]
+      x: 13.461d
+      y: -7.732d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B3A39A4A264D4F4","449373F32E750188"]
+      optional: true
+      tasks: [{
+        id: "42E16BD4A0CF3713"
+        type: "item"
+        item: "ae2:engineering_processor"
+        count: 8L
+      }]
+      rewards: [{
+        id: "454A2A5D92CEAC26"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "44F6FABF536BB3AA"
+      title: "Ячейки для раздельных жидкостей"
+      description: ["Подготовь две жидкостные ячейки. Закрепи за каждой свою жидкость и проверь выдачу."]
+      x: 16.651d
+      y: -4.466d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A649BF3E40FC231","4EBEBFEFEFB9BDA4"]
+      optional: true
+      tasks: [{
+        id: "489073153D80272A"
+        type: "item"
+        item: "ae2:fluid_storage_cell_1k"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4CEC5470E73CBAE9"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "479EC8AB1517ABE0"
+      title: "Основа автоматического шаблона"
+      description: ["Ламинат соединяет фольгу, керамику, процессор, схему HV и нержавейку. Сборщик работает при 480 EU/t."]
+      x: 4.104d
+      y: -1.589d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B3A39A4A264D4F4","42E99CE4711A8261","4DE113F0F32CD880"]
+      tasks: [{
+        id: "44B68AB8F154FB91"
+        type: "item"
+        item: "kubejs:me_pattern_laminate"
+        count: 4L
+      }]
+      rewards: [{
+        id: "49821AA3D2C78182"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "41253A24F9222D6F"
+      title: "Изолированные кабели ME"
+      description: ["Четыре кварцевых кабеля обожми с полимером, изоляционными полосами и уплотнением."]
+      x: -4.534d
+      y: 5.458d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4987075AC3B4A98F","40E8A71E8042D10C"]
+      tasks: [{
+        id: "4B6950445C612EE9"
+        type: "item"
+        item: "ae2:fluix_covered_cable"
+        count: 8L
+      }]
+      rewards: [{
+        id: "440C542139D7E309"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4FAA755065E34D1B"
+      title: "Контроль каналов HV"
+      description: ["Четыре изолированных кабеля получают вычислительный процессор и основу шаблона. Посмотри на деления при подключении шин."]
+      x: 5.933d
+      y: 3.662d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41253A24F9222D6F","479EC8AB1517ABE0"]
+      tasks: [{
+        id: "49659A189D639D83"
+        type: "item"
+        item: "ae2:fluix_smart_cable"
+        count: 8L
+      }]
+      rewards: [{
+        id: "46B5722E7AB4E071"
+        type: "item"
+        item: "ae2:fluix_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "43B7A684DF2A922C"
+      title: "Промежуточный инвентарь"
+      description: ["Сборщик соединяет корпус, ядра, процессор, конвейер и уплотнение. Используй интерфейс для постоянного запаса на линии."]
+      x: 6.613d
+      y: -2.058d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45644DEB9FF7E154","4CCDB29FBE1A0842","41AF8F5C14E516BE"]
+      tasks: [{
+        id: "40F73E346990894E"
+        type: "item"
+        item: "ae2:interface"
+      }]
+      rewards: [{
+        id: "4AB4462408BED717"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "46510DF60AA86802"
+      title: "Заготовки шаблонов"
+      description: ["На шаблон расходуются основа, фольга, контакт и полимер. Сделай отдельный под каждый рецепт."]
+      x: 9.123d
+      y: 2.550d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["479EC8AB1517ABE0","40A5F82ADBBFD401"]
+      tasks: [{
+        id: "47E9AD0B434A3830"
+        type: "item"
+        item: "ae2:blank_pattern"
+        count: 4L
+      }]
+      rewards: [{
+        id: "48A21967E0472D6F"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4AFA0EC9ECEEB554"
+      title: "Поставщик шаблонов"
+      description: ["Подключи поставщик к машине. Закодируй фактические входы и выходы рецепта в режиме обработки."]
+      x: 11.292d
+      y: -2.338d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["43B7A684DF2A922C","46510DF60AA86802","40308FA4B19A06BF"]
+      tasks: [{
+        id: "405B543F25ADCCF1"
+        type: "item"
+        item: "ae2:pattern_provider"
+      }]
+      rewards: [{
+        id: "4538B7384AEAFA06"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 4
+      }]
+    }
+    {
+      id: "4F28CDFCFCF2116D"
+      title: "Терминал кодирования"
+      description: ["Поставь терминал на свободный канал. Закодируй простой рецепт и сохрани шаблон."]
+      x: 10.952d
+      y: -0.588d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["46510DF60AA86802","40A5F82ADBBFD401"]
+      tasks: [{
+        id: "442512CEEE34776F"
+        type: "item"
+        item: "ae2:pattern_encoding_terminal"
+      }]
+      rewards: [{
+        id: "4F4F5A03B58694B4"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "48CCA83C2E554367"
+      title: "Молекулярный сборщик"
+      description: ["К корпусу добавь инскрайбер, два ядра каждого вида и манипулятор HV. Соедини сборщик с поставщиком шаблонов."]
+      x: 13.461d
+      y: 5.248d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4AFA0EC9ECEEB554","46670FDE6B0A3A13"]
+      tasks: [{
+        id: "448EF1B27B0E8C74"
+        type: "item"
+        item: "ae2:molecular_assembler"
+      }]
+      rewards: [{
+        id: "47641241F6DA9FC8"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "487E0F1E7FA2E531"
+      title: "Корпус вычислительного кластера"
+      description: ["Пара процессоров каждого вида и корпус HV образуют вычислительную секцию."]
+      x: 5.933d
+      y: -5.877d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["479EC8AB1517ABE0","4CCDB29FBE1A0842","474A46D0E9C2FE5A"]
+      tasks: [{
+        id: "48A9694B95A53F87"
+        type: "item"
+        item: "ae2:crafting_unit"
+      }]
+      rewards: [{
+        id: "4F539ED8D443D883"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "4738AF5459EBADE5"
+      title: "Память автосборки 1k"
+      description: ["Собери вычислительное хранилище на компоненте 1k. Поставь в кластер и проверь размер задания."]
+      x: 11.632d
+      y: 0.687d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["487E0F1E7FA2E531","4164CED273C2B778"]
+      tasks: [{
+        id: "49B577C3EC35F05C"
+        type: "item"
+        item: "ae2:1k_crafting_storage"
+      }]
+      rewards: [{
+        id: "4ECB99CC14FF71A2"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "4898E8E031076839"
+      title: "Заказ на кабель со смазкой"
+      description: ["Закодируй рецепт сборщика MV в режиме обработки. Впиши пять видов предметов и 350 мБ смазки. Подключи шину импорта к выдаче сборщика и закажи четыре золотых кабеля."]
+      x: 14.141d
+      y: -2.150d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4A649BF3E40FC231","4AFA0EC9ECEEB554","4738AF5459EBADE5","4F28CDFCFCF2116D"]
+      tasks: [{
+        id: "49C72E1FAE619B68"
+        type: "item"
+        item: "gtceu:gold_single_cable"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4FC636BA82CACC08"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "4E23D4BFD06C4A8C"
+      title: "Обратка химического реактора"
+      description: ["Отведи предметы и жидкости из химреактора на две шины. В шаблоне промывки укажи отработанный картридж, 800 мБ промытой нефти и 400 мБ солёной воды. Оставь под них место в сети."]
+      x: 16.651d
+      y: 2.959d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4898E8E031076839","44539B688C2EE6EC"]
+      tasks: [{
+        id: "444540375A342D6A"
+        type: "item"
+        item: "ae2:import_bus"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4CCCCECFCC96C0EF"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "477EFD6EDCD911E5"
+      title: "Буфер предметов и жидкостей"
+      description: ["Поставь поставщик шаблонов вплотную к буферу ExtendedAE. Выводы направь к входам станков с фильтрами по каждому виду сырья. На новом маршруте сначала выполни один заказ."]
+      x: 18.480d
+      y: 4.094d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4E23D4BFD06C4A8C","469BDB3001DF442B","463599FF8883FD0D"]
+      tasks: [{
+        id: "4898F4A54A239F95"
+        type: "item"
+        item: "expatternprovider:ingredient_buffer"
+      }]
+      rewards: [{
+        id: "496C31B695872EBC"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4F4EFD0A11D0CBC9"
+      title: "Раздельные входы сборочной линии"
+      description: ["Поставь предметные шины по порядку рецепта от контроллера. Из буфера отправляй в каждую шину один нужный предмет и в каждый жидкостный люк одну жидкость. Исследовательский носитель оставь в люке данных."]
+      x: 21.669d
+      y: 4.977d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["477EFD6EDCD911E5","46C4C7D7071FC26F"]
+      tasks: [{
+        id: "427C54CA9B66F568"
+        type: "item"
+        item: "gtceu:ulv_input_bus"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4B63CD020FB6E737"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "4B7F1FE56B83A8A8"
+      title: "Подача на термопневматическую установку"
+      description: ["Подай катализатор и нафту одним шаблоном. На установке выдержи давление и температуру из JEI. Верни активированный носитель и этилен в сеть через выходные стороны."]
+      x: 19.160d
+      y: 0.674d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4E23D4BFD06C4A8C","4855C424E62059A6"]
+      tasks: [{
+        id: "45398DA1BBE48AF8"
+        type: "item"
+        item: "pneumaticcraft:thermopneumatic_processing_plant"
+      }]
+      rewards: [{
+        id: "49CDB2E8B81DFB5E"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "4A0DDC16BDD9E5BC"
+      title: "Подача жидкостей на НПЗ"
+      description: ["Установи многоразовый носитель в НПЗ через его меню. В шаблон внеси только расходуемые жидкости. Подключи поставщик к одному из жидкостных входов и шину импорта к выходу дизеля."]
+      x: 16.874d
+      y: 4.745d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4E23D4BFD06C4A8C","4833917F67B76DD6"]
+      tasks: [{
+        id: "42D5A5E714431091"
+        type: "item"
+        item: "immersiveengineering:refinery"
+      }]
+      rewards: [{
+        id: "46C631F21730F675"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "4554261056D7140D"
+      title: "Параллельная сборка"
+      description: ["Поставь сопроцессор рядом с вычислительной секцией. Для нескольких шагов подготовь отдельные машины."]
+      x: 13.461d
+      y: -0.669d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4738AF5459EBADE5","4B3A39A4A264D4F4"]
+      tasks: [{
+        id: "4114FB6C1820D96D"
+        type: "item"
+        item: "ae2:crafting_accelerator"
+      }]
+      rewards: [{
+        id: "414A0EEEE4C52AAF"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4A8D12A9D68D5CD8"
+      title: "Память хранения 16k"
+      description: ["Три компонента 4k и два инженерных процессора проходят ещё одну сборку на HV."]
+      x: 13.547d
+      y: 1.133d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["449373F32E750188","479EC8AB1517ABE0"]
+      tasks: [{
+        id: "4D0A70CC4DEBF4BB"
+        type: "item"
+        item: "ae2:item_storage_cell_16k"
+      }]
+      rewards: [{
+        id: "423648334FECDDB0"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "42C9B9848CC00FA5"
+      title: "Беспроводной терминал ME"
+      description: ["Собери приёмник из жемчуга, оптики и эмиттера. Для связи нужна отдельная точка доступа."]
+      x: 8.784d
+      y: -0.809d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43B7A684DF2A922C","479EC8AB1517ABE0"]
+      tasks: [{
+        id: "44ECB45CBAC0FC5C"
+        type: "item"
+        item: "ae2:wireless_terminal"
+      }]
+      rewards: [{
+        id: "41D094BF61C140D4"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "46203DFC1C374FF2"
+      title: "Передача между секциями"
+      description: ["Собери два туннеля из интерфейсов, кабелей, датчиков и основ шаблона. Свяжи их картой памяти."]
+      x: 8.997d
+      y: -3.302d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43B7A684DF2A922C","4FAA755065E34D1B","42E99CE4711A8261"]
+      tasks: [{
+        id: "4B0C7121694580FA"
+        type: "item"
+        item: "ae2:me_p2p_tunnel"
+        count: 2L
+      }]
+      rewards: [{
+        id: "49B3C5CB18558551"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "469BDB3001DF442B"
+      title: "Сборка оптического узла"
+      description: ["Сборщик схем EV соединяет подложки и волокно в чистой комнате. Титан и процессор EV входят в каждый узел."]
+      x: 6.613d
+      y: -4.717d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["479EC8AB1517ABE0","40358791920A0106","448B3023048D20B7","46AD4757BCFCA2CA"]
+      tasks: [{
+        id: "468AA3F39682D627"
+        type: "item"
+        item: "kubejs:me_optical_link"
+        count: 2L
+      }]
+      rewards: [{
+        id: "469881C2BD6C8519"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4EF89A40A3BD476B"
+      title: "Память хранения 64k"
+      description: ["На компонент уходят три предыдущих модуля, инженерные процессоры и два оптических узла."]
+      x: 16.368d
+      y: -1.704d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["469BDB3001DF442B","4A8D12A9D68D5CD8","4228B850F50E1983"]
+      tasks: [{
+        id: "41F66FACD23507CA"
+        type: "item"
+        item: "ae2:item_storage_cell_64k"
+      }]
+      rewards: [{
+        id: "487AE65F06D6394B"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 3
+      }]
+    }
+    {
+      id: "4DBC8F1020C2B8A1"
+      title: "Серийная память 256k"
+      description: ["Компонент 256k требует три компонента 64k, схемы EV и калиброванные подложки."]
+      x: 18.820d
+      y: -1.162d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4EF89A40A3BD476B","4EAC8796D98A3CF6"]
+      tasks: [{
+        id: "4FAFD8995753BF0A"
+        type: "item"
+        item: "ae2:item_storage_cell_256k"
+      }]
+      rewards: [{
+        id: "44BCD55DA08CC132"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "4BA73101DBDB3CAA"
+      title: "Квантовый мост EV"
+      description: ["На мосты уйдут два готовых кольца и оптика. Пару сингулярностей свяжи в смесителе EV под защитным газом."]
+      x: 10.952d
+      y: -8.573d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46203DFC1C374FF2","469BDB3001DF442B","4EAC8796D98A3CF6"]
+      optional: true
+      tasks: [{
+        id: "436A6287F15B112C"
+        type: "item"
+        item: "ae2:quantum_link"
+        count: 2L
+      }]
+      rewards: [{
+        id: "446960BF9DA573AC"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 2
+      }]
+    }
+    {
+      id: "42CCAD03F3657CDD"
+      title: "Пространственный порт"
+      description: ["Пересобери порт ввода-вывода на раме EV. Добавь оптику, манипуляторы и протокол. Пилоны и ячейки собираются отдельно."]
+      x: 19.160d
+      y: -5.312d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EF89A40A3BD476B","463599FF8883FD0D"]
+      optional: true
+      tasks: [{
+        id: "431AFE784875CD95"
+        type: "item"
+        item: "ae2:spatial_io_port"
+      }]
+      rewards: [{
+        id: "444129A55D493DCE"
+        type: "item"
+        item: "ae2:fluix_crystal"
+        count: 2
+      }]
+    }
+    {
+      id: "42884314A6CEAE36"
+      title: "Шаблоны на заказы трёх станков"
+      description: ["Подготовь двенадцать пустых шаблонов. Запиши раздельные операции для сборщика, пресса и химического станка."]
+      x: 13.461d
+      y: 3.480d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46510DF60AA86802","4F28CDFCFCF2116D"]
+      optional: true
+      tasks: [{
+        id: "47E1DF33CC9B6000"
+        type: "item"
+        item: "ae2:blank_pattern"
+        count: 12L
+      }]
+      rewards: [{
+        id: "46AA820C394B56CC"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 2
+      }]
+    }
+    {
+      id: "4BFE2AE16FF9167B"
+      title: "Поставщики шаблонов на четыре станка"
+      description: ["Собери четыре поставщика. Подключи их к станкам и проверь, чтобы готовый предмет возвращался в сеть."]
+      x: 15.971d
+      y: 1.579d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AFA0EC9ECEEB554","48CCA83C2E554367"]
+      optional: true
+      tasks: [{
+        id: "4D067CB77B30BDA4"
+        type: "item"
+        item: "ae2:pattern_provider"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4D4C676A25B60FAE"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "4AD2DEAEB352E7AC"
+      title: "Молекулярные сборщики на две очереди"
+      description: ["Поставь два молекулярных сборщика рядом с поставщиками. Назначь им отдельные типы крафтов."]
+      x: 18.480d
+      y: 6.668d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48CCA83C2E554367","4BFE2AE16FF9167B"]
+      optional: true
+      tasks: [{
+        id: "46461826F7B01CB9"
+        type: "item"
+        item: "ae2:molecular_assembler"
+        count: 2L
+      }]
+      rewards: [{
+        id: "42425E783701D503"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "40993AF3A6A1AEF4"
+      title: "Умный кабель под контроль каналов"
+      description: ["Проложи шестнадцать секций умного кабеля. Сверь число занятых каналов у каждого разветвления."]
+      x: 8.443d
+      y: 7.137d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FAA755065E34D1B","487E0F1E7FA2E531"]
+      optional: true
+      tasks: [{
+        id: "4CE2B336C279511C"
+        type: "item"
+        item: "ae2:fluix_smart_cable"
+        count: 16L
+      }]
+      rewards: [{
+        id: "44B94703213FF6B1"
+        type: "item"
+        item: "ae2:fluix_crystal"
+        count: 2
+      }]
+    }
+    {
+      id: "4B0AF0F405AA92A0"
+      title: "Две точки туннеля между цехами"
+      description: ["Подготовь два туннеля. Свяжи вход с выходом картой памяти и проверь передачу каналов."]
+      x: 7.974d
+      y: -6.446d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46203DFC1C374FF2","469BDB3001DF442B"]
+      optional: true
+      tasks: [{
+        id: "473BE78477EB7B73"
+        type: "item"
+        item: "ae2:me_p2p_tunnel"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4B5784640B580EAA"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 2
+      }]
+    }
+    {
+      id: "49BDE0C4DE0D6D30"
+      title: "Интерфейсы для буферов автосборки"
+      description: ["Собери четыре интерфейса. На каждом держи запас конкретного ингредиента для своего станка."]
+      x: 13.461d
+      y: -3.764d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43B7A684DF2A922C","4AFA0EC9ECEEB554"]
+      optional: true
+      tasks: [{
+        id: "4331560DD4B53144"
+        type: "item"
+        item: "ae2:interface"
+        count: 4L
+      }]
+      rewards: [{
+        id: "417BC8F49BE6B163"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "4515CF88BCB51C80"
+      title: "Ускорители для двух вычислительных блоков"
+      description: ["Подготовь четыре ускорителя. Раздели их между кластерами и проверь выполнение двух отдельных заказов."]
+      x: 15.971d
+      y: -5.773d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4554261056D7140D","4738AF5459EBADE5"]
+      optional: true
+      tasks: [{
+        id: "47B7CFE627A3EAEE"
+        type: "item"
+        item: "ae2:crafting_accelerator"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4A313420D6126D69"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 2
+      }]
+    }
+    {
+      id: "469351F4B0A0A347"
+      title: "Память 1k для очередей автосборки"
+      description: ["Собери четыре блока памяти автосборки. Установи память в кластеры по нужному размеру заказа."]
+      x: 18.480d
+      y: -7.280d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4738AF5459EBADE5","4515CF88BCB51C80"]
+      optional: true
+      tasks: [{
+        id: "42673CE8DDB98A06"
+        type: "item"
+        item: "ae2:1k_crafting_storage"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4F56F578B7279D31"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "466B51AC197347A6"
+      title: "Ячейки 16k для материалов разных цехов"
+      description: ["Собери четыре ячейки 16k. Отведи их под металлы, платы, крепёж и заготовки."]
+      x: 17.407d
+      y: -0.234d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A8D12A9D68D5CD8","4EF89A40A3BD476B"]
+      optional: true
+      tasks: [{
+        id: "482F9AB91525EA45"
+        type: "item"
+        item: "ae2:item_storage_cell_16k"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4E64A1EAAF898BE2"
+        type: "item"
+        item: "ae2:certus_quartz_crystal"
+        count: 2
+      }]
+    }
+    {
+      id: "4F4187512DF831C2"
+      title: "Терминалы для двух операторов ME"
+      description: ["Подготовь два беспроводных терминала. Привяжи оба к сети и проверь доступ у склада и у станков."]
+      x: 10.952d
+      y: 5.768d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42C9B9848CC00FA5","40993AF3A6A1AEF4"]
+      optional: true
+      tasks: [{
+        id: "40355A8B04B95EE1"
+        type: "item"
+        item: "ae2:wireless_terminal"
+        count: 2L
+      }]
+      rewards: [{
+        id: "48B153810E142E03"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 2
+      }]
+    }
+    {
+      id: "4F1B63FC2EDF8826"
+      title: "Детали оптической связи между цехами"
+      description: ["Подготовь четыре оптических узла. Часть отложи для повторного монтажа после переноса сети."]
+      x: 13.461d
+      y: -10.441d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["469BDB3001DF442B","4BA73101DBDB3CAA"]
+      optional: true
+      tasks: [{
+        id: "4F00F207B7F26153"
+        type: "item"
+        item: "kubejs:me_optical_link"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4C040976E39D19C4"
+        type: "item"
+        item: "ae2:fluix_crystal"
+        count: 2
+      }]
+    }
+  ]
+}

@@ -1,0 +1,3782 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "final_operation"
+  group: "49C57C767912BC15"
+  icon: "kubejs:final_commissioning_report"
+  title: "Главный завод"
+  id: "4862CF1C6438CE85"
+  order_index: 12
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/final_operation.png"
+    x: 0.0d
+    y: 0.0d
+    width: 73.111d
+    height: 33.444d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "4C405856DCDD978F"
+      title: "Допуск к главному заводу"
+      description: ["Положи протокол приёмки UV в отдельный слот оснастки там, где его показывает JEI. Он подтверждает допуск к финальным переделам. Для работающей линии оставь отдельный экземпляр."]
+      x: -29.811d
+      y: 0.000d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4901380DFC8E746C"]
+      tasks: [{
+        id: "457D00BF705B82BC"
+        type: "item"
+        item: "kubejs:uv_commissioning_report"
+      }]
+      rewards: [{
+        id: "452A13FEF5E2F9C9"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A85C0FEDAB59285"
+      title: "Тяжёлый пресс для переборок"
+      description: ["Подготовь рабочий тяжёлый пресс Immersive Engineering с формой пластины, отдельной подачей FE и свободной выдачей. Сними с линии конкурирующие заказы на обычный прокат."]
+      x: -28.095d
+      y: 1.074d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C405856DCDD978F","4B32418586555A24","4408470C5E66B7B4"]
+      tasks: [{
+        id: "48CB4C11C9074253"
+        type: "item"
+        item: "immersiveengineering:mold_plate"
+      }]
+      rewards: [{
+        id: "4AE30689BE950003"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42B4A73B844A58FB"
+      title: "Запас нейтрониевых листов"
+      description: ["Отведи жидкий нейтроний в отдельный буфер, проведи закалку и прокат. Держи эти листы в отдельном складе от партии, отложенной на приёмку UV."]
+      x: -27.415d
+      y: -5.971d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C405856DCDD978F","4179AC4C8C3CCB3A","423BC689062EBA67"]
+      tasks: [{
+        id: "443E78E59D84FD1A"
+        type: "item"
+        item: "gtceu:neutronium_plate"
+        count: 32L
+      }]
+      rewards: [{
+        id: "458059C1C6BD99EA"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "43BAD2D1E8AD4C83"
+      title: "Запас силового ламината"
+      description: ["Готовь ламинат в нагретой чаше Create с защитным газом. Выдавай листы дозами на пресс IE и сборку аварийного оборудования."]
+      x: -28.095d
+      y: -1.417d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C405856DCDD978F","4408470C5E66B7B4","4EB8D43BB2A85DF3"]
+      tasks: [{
+        id: "47A961DC47B93CBC"
+        type: "item"
+        item: "kubejs:uv_structural_laminate"
+        count: 32L
+      }]
+      rewards: [{
+        id: "4A557910E59244C2"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "4FDED060320547AF"
+      title: "Штампованная силовая панель"
+      description: ["Пресс IE расходует четыре ламината UV и 220000 FE на панель. Используй форму пластины, освобождай выдачу после каждого цикла."]
+      x: -25.359d
+      y: -4.146d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4A85C0FEDAB59285","43BAD2D1E8AD4C83"]
+      tasks: [{
+        id: "4F2B1B7CB18F1B78"
+        type: "item"
+        item: "kubejs:final_heavy_backplane"
+        count: 8L
+      }]
+      rewards: [{
+        id: "48E854AFFBE9E076"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "402E3C5D30DC5FEF"
+      title: "Сборщик главного цеха"
+      description: ["Подготовь сборщик UV с постоянной выдачей в раздельные буферы. Для силовых комплектующих и товарных партий отведи разные задания AE2."]
+      x: -27.415d
+      y: -2.744d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C405856DCDD978F","44126B584B873E79","49DD0676F98B4FF0"]
+      tasks: [{
+        id: "45EE9E0E688CCB42"
+        type: "item"
+        item: "gtceu:uv_assembler"
+      }]
+      rewards: [{
+        id: "41575B2FCF60EC71"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4597567953CAA81E"
+      title: "Сердечник силового выключателя"
+      description: ["На пару сердечников подай четыре панели, восемь тритановых и четыре нейтрониевых листа, по четыре катушки, шунта и поршня UV, восемь контактов HV и 7800 мБ смазки."]
+      x: -23.304d
+      y: 0.889d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4FDED060320547AF","42B4A73B844A58FB","402E3C5D30DC5FEF"]
+      tasks: [{
+        id: "4E1BE20F4AD04C7B"
+        type: "item"
+        item: "kubejs:final_breaker_core"
+        count: 4L
+      }]
+      rewards: [{
+        id: "454D3BEEBC389BCD"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "4BA6DFBDF8AA5948"
+      title: "Запас магистрального купрата"
+      description: ["Подготовь провода и изоляцию для разводки UV. На пусковой части линии соблюдай предел пропуска пакетов каждого кабеля и ставь узлы там, где есть доступ для обслуживания."]
+      x: -27.415d
+      y: 2.316d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C405856DCDD978F","473EE0B9913111A5"]
+      tasks: [{
+        id: "47ADD702360EC47C"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_quadruple_cable"
+        count: 16L
+      }]
+      rewards: [{
+        id: "48502933BD5F6471"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4FA63D8DDF5DE970"
+      title: "Силовая шина резерва"
+      description: ["На пару шин расходуются панели, кабели 4×, шунты, листы двух сплавов, диоды UV и щиты ZPM. Подай 8200 мБ защитного газа. Сохрани запас шин для итогового протокола."]
+      x: -21.248d
+      y: 0.603d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4597567953CAA81E","4BA6DFBDF8AA5948","4A406850C24C4065"]
+      tasks: [{
+        id: "450F5F97AD7FE2E7"
+        type: "item"
+        item: "kubejs:final_reserve_bus"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4F0440E6521E4A29"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4A88C05670250978"
+      title: "Сборщик схем главного завода"
+      description: ["Поставь сборщик схем UV в действующей стерильной комнате. Проверь активность чистого контура, энерговвод и свободный слот выдачи."]
+      x: -27.415d
+      y: 5.348d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C405856DCDD978F","44126B584B873E79","4F2B4853CEB587CE","4E4792148D8D986E"]
+      tasks: [{
+        id: "4C7026D9FB7ACF81"
+        type: "item"
+        item: "gtceu:uv_circuit_assembler"
+      }]
+      rewards: [{
+        id: "461AA4C072AA140C"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "48C846904B03889F"
+      title: "Реле последовательного пуска"
+      description: ["Стерильный сборщик соединяет сердечники, фазовую защиту, Wetware, кристаллические мейнфреймы, инженерные процессоры AE2 и оптику LuV. Подай 8600 мБ защитного газа на два реле."]
+      x: -19.192d
+      y: -0.123d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4FA63D8DDF5DE970","4A88C05670250978","4DEBFA437B5D0A72"]
+      tasks: [{
+        id: "4754F4805ADC8983"
+        type: "item"
+        item: "kubejs:final_control_relay"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4C038BBE709E1CF0"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "48A6CA2FC1615156"
+      title: "Промышленный компьютер диспетчера"
+      description: ["Установи два обычных компьютера в набор сырья вместе с силовыми панелями, датчиками UV, корпусами HPCA, фазовой защитой и оптикой LuV. Сборщик UV принимает 6600 мБ защитного газа. Протокол UV остаётся в станке."]
+      x: -23.326d
+      y: -0.774d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["402E3C5D30DC5FEF","4FDED060320547AF","4C405856DCDD978F"]
+      tasks: [{
+        id: "4D2E19958A44441A"
+        type: "item"
+        item: "computercraft:computer_advanced"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4883F02BDF71A31F"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4EDB1BF92AFC2F77"
+      title: "Проводные модемы диспетчерской"
+      description: ["Собери модемы из панелей, излучателей UV, управляющих корпусов HPCA, фазовой защиты, оптики LuV и процессоров AE2. Для каждой штуки отведи один цикл сборщика UV."]
+      x: -21.248d
+      y: 2.158d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48A6CA2FC1615156","4CBBD54B3D3EF882"]
+      tasks: [{
+        id: "435BCC17862E89DB"
+        type: "item"
+        item: "computercraft:wired_modem"
+        count: 4L
+      }]
+      rewards: [{
+        id: "48414375800A255C"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "425A256842156F2E"
+      title: "Кабель диспетчерской сети"
+      description: ["Сборщик выпускает сразу шестнадцать кабелей. Подай панели, катушки UV, кожухи HPCA, фазовую защиту, процессоры и оптику."]
+      x: -21.928d
+      y: 3.554d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48A6CA2FC1615156","451542FDC4F51D9C"]
+      tasks: [{
+        id: "44034463D6533D94"
+        type: "item"
+        item: "computercraft:cable"
+        count: 16L
+      }]
+      rewards: [{
+        id: "43F7E1CDFD91DD35"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46942F8B89CD5531"
+      title: "Мониторы диспетчерской"
+      description: ["На каждый монитор подай два обычных монитора, панели, излучатели, стекло чистого цеха, фазовую защиту и оптику. Мониторы расходуются при изготовлении стойки."]
+      x: -21.248d
+      y: 4.945d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48A6CA2FC1615156","4CBBD54B3D3EF882"]
+      tasks: [{
+        id: "42DC8331B6E0542A"
+        type: "item"
+        item: "computercraft:monitor_advanced"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4E199434377FC64D"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "42ABCAAD931D3A18"
+      title: "Узел телеметрии"
+      description: ["На два узла в стерильном сборщике подай два реле, два компьютера, четыре модема, восемь кабелей, память 256k и датчики UV. Нужны 9000 мБ защитного газа. Узлы расходуются на пульт и все три вида накладных."]
+      x: -17.476d
+      y: 2.482d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["48C846904B03889F","48A6CA2FC1615156","4EDB1BF92AFC2F77","425A256842156F2E","4E4DF2091D1B0E31"]
+      tasks: [{
+        id: "4111045DBDD771BD"
+        type: "item"
+        item: "kubejs:final_telemetry_unit"
+        count: 4L
+      }]
+      rewards: [{
+        id: "468ABEB1A2DCD79B"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4DEC936230F107DB"
+      title: "Резервный пресс Create"
+      description: ["Оставь второй пресс на механической линии. Его удобно держать отдельным от основного потока ламината, чтобы без переналадки забирать пробные детали."]
+      x: -25.268d
+      y: 0.285d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43BAD2D1E8AD4C83","45F90DBA04E36F7D"]
+      optional: true
+      tasks: [{
+        id: "47C9F1E19B0CC00F"
+        type: "item"
+        item: "create:mechanical_press"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4FB079D0C5D8E1FD"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "498C462B09F74744"
+      title: "Вторая матрица тяжёлого пресса"
+      description: ["Оставь одну матрицу на прессе IE. Вторую держи рядом для ремонта или одновременной штамповки двух заказов."]
+      x: -23.304d
+      y: -2.547d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FDED060320547AF"]
+      optional: true
+      tasks: [{
+        id: "4531AF09E895AAC7"
+        type: "item"
+        item: "immersiveengineering:mold_plate"
+        count: 2L
+      }]
+      rewards: [{
+        id: "417525BCC99A3C94"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4980E018F42F451C"
+      title: "Тяжёлые панели на корпусную серию"
+      description: ["На шестнадцать панелей выдели 64 конструкционных ламината UV. Прессу понадобятся 3 520 000 FE на всю серию."]
+      x: -21.928d
+      y: 6.328d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["498C462B09F74744","4597567953CAA81E"]
+      optional: true
+      tasks: [{
+        id: "4E4DC936E59B9FBB"
+        type: "item"
+        item: "kubejs:final_heavy_backplane"
+        count: 16L
+      }]
+      rewards: [{
+        id: "403BE7AD9E78A71F"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4870F556E5A8C3AE"
+      title: "Сердечники для резерва и маркировки"
+      description: ["Сложи готовые сердечники отдельно от силовых панелей. Сверь остаток после отправки партии к сборщику маркировки."]
+      x: -19.192d
+      y: 7.422d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4980E018F42F451C","4FA63D8DDF5DE970"]
+      optional: true
+      tasks: [{
+        id: "4EEBCD72AE03331F"
+        type: "item"
+        item: "kubejs:final_breaker_core"
+        count: 12L
+      }]
+      rewards: [{
+        id: "440DDE28F4C4F0DF"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "45E4BBD004DCE8EC"
+      title: "Резервные шины двух шкафов"
+      description: ["Выдели четыре шины на изолированные секции. Ещё четыре оставь для силовой сборки и не пускай на текущие отводы."]
+      x: -11.648d
+      y: 7.763d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4870F556E5A8C3AE","43791EBC01638482"]
+      optional: true
+      tasks: [{
+        id: "4F04A55A27DB4355"
+        type: "item"
+        item: "kubejs:final_reserve_bus"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4AA3CC770A3C2E0D"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "48A8341822322249"
+      title: "Базовые компьютеры для заводской модернизации"
+      description: ["На каждый продвинутый компьютер нужны два обычных. Для серии не снимай действующие терминалы с других цехов."]
+      x: -21.928d
+      y: -6.288d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48A6CA2FC1615156"]
+      optional: true
+      tasks: [{
+        id: "45CC2C97049C6F91"
+        type: "item"
+        item: "computercraft:computer_normal"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4C8233B9FF75BAE3"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "4A142759C39207A5"
+      title: "Обычные мониторы для заводских панелей"
+      description: ["Подготовь обычные мониторы для четырёх продвинутых. Сложи их у сборщика вместе с излучателями и готовым стеклом."]
+      x: -19.192d
+      y: 5.946d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46942F8B89CD5531"]
+      optional: true
+      tasks: [{
+        id: "4195A3C535B53956"
+        type: "item"
+        item: "computercraft:monitor_normal"
+        count: 8L
+      }]
+      rewards: [{
+        id: "499AEA15EC90AE0F"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "4F4B11FE91CBF943"
+      title: "Запас кабеля телеметрии и обслуживания"
+      description: ["Шестнадцать единиц получаются за одну сборку кабеля. Раздели серию на комплект телеметрии и материал для разводки."]
+      x: -15.760d
+      y: 1.196d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EDB1BF92AFC2F77","42ABCAAD931D3A18"]
+      optional: true
+      tasks: [{
+        id: "4C813882C84C710D"
+        type: "item"
+        item: "computercraft:cable"
+        count: 32L
+      }]
+      rewards: [{
+        id: "41C596EF454D1074"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "42484DC603365E1B"
+      title: "Модемы телеметрии и стендовой сети"
+      description: ["Оставь отдельный набор для сборки телеметрии. Рабочую проводную сеть не разбирай ради комплектующих."]
+      x: -17.650d
+      y: 4.273d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F4B11FE91CBF943","42ABCAAD931D3A18"]
+      optional: true
+      tasks: [{
+        id: "43A54176CE78443A"
+        type: "item"
+        item: "computercraft:wired_modem"
+        count: 8L
+      }]
+      rewards: [{
+        id: "470EF29F99F28643"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "413715EC0F369295"
+      title: "Стерильная партия реле завода"
+      description: ["Проверь чистоту перед каждым циклом. Готовые реле разнеси на пульт, испытательную нагрузку и силовые шкафы."]
+      x: -15.760d
+      y: -0.537d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42ABCAAD931D3A18","4870F556E5A8C3AE"]
+      optional: true
+      tasks: [{
+        id: "45C0CFBFDF19E099"
+        type: "item"
+        item: "kubejs:final_control_relay"
+        count: 12L
+      }]
+      rewards: [{
+        id: "46C46446203A91D5"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4BD4BEECD3FE58E8"
+      title: "Телеметрия для склада и диспетчерской"
+      description: ["Сохрани телеметрию на выпуск накладных и пульта. Складским сборщикам выдавай узлы отдельными комплектами."]
+      x: -11.648d
+      y: -5.491d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42484DC603365E1B","413715EC0F369295"]
+      optional: true
+      tasks: [{
+        id: "408C1AA19105E8F0"
+        type: "item"
+        item: "kubejs:final_telemetry_unit"
+        count: 12L
+      }]
+      rewards: [{
+        id: "459185CC1B5E8E7F"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "45D4FFEDAD48A64F"
+      title: "Раздельные предметные секции"
+      description: ["Подготовь десять отдельных позиций для предметов и выходную секцию сборочной линии. В JEI сверь порядок каждой новой сборки, особенно однотипные шины, приборы и аккумуляторы."]
+      x: -27.415d
+      y: -0.151d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C405856DCDD978F","4AAB69079D68C22A","46C4C7D7071FC26F"]
+      tasks: [{
+        id: "48CEBF1B1B7CF48F"
+        type: "item"
+        item: "gtceu:ulv_input_bus"
+        count: 10L
+      }]
+      rewards: [{
+        id: "42B13C6E3850A7EB"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "429A5FE8E4F9D799"
+      title: "Четыре жидкостных ввода UV"
+      description: ["Разведи жидкостные подводы по отдельным фильтрам. Перед каждой сборкой выгружай остатки предыдущих реагентов и сверяй по JEI объёмы и типы."]
+      x: -25.359d
+      y: 3.876d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45D4FFEDAD48A64F","4F3F6404159ABE6C","4B8F8A3B8A4FE0EF"]
+      tasks: [{
+        id: "434B0A664B85C55D"
+        type: "item"
+        item: "gtceu:uv_input_hatch"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4A64DAFF07C30EBE"
+        type: "item"
+        item: "gtceu:vanadium_gallium_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "4E9E8682F2DB50D4"
+      title: "Аварийный выпрямитель"
+      description: ["На пару выпрямителей сборочная линия расходует сердечники, шины, диоды, трансформаторы, энерговыводы 4A, Wetware, накопители и нейтроний. Заполни четыре входа смазкой, защитным газом, холодным теплоносителем и улучшенным дизелем."]
+      x: -15.760d
+      y: 6.614d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4FA63D8DDF5DE970","42ABCAAD931D3A18","429A5FE8E4F9D799","469C227A11FB4A51"]
+      tasks: [{
+        id: "4A05D3CFDEDD3223"
+        type: "item"
+        item: "kubejs:final_emergency_rectifier"
+        count: 2L
+      }]
+      rewards: [{
+        id: "443C23DBBAC64841"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "43791EBC01638482"
+      title: "Изолированная аварийная секция"
+      description: ["Две секции собираются из четырёх шин, четырёх сердечников, двух выпрямителей, восьми химстойких уплотнений, четырёх трансформаторов 4A и четырёх листов нейтрония. На цикл нужно 9200 мБ смазки."]
+      x: -13.704d
+      y: 1.380d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4E9E8682F2DB50D4","4597567953CAA81E","4BA6DFBDF8AA5948"]
+      tasks: [{
+        id: "479C851AC0F5D48A"
+        type: "item"
+        item: "kubejs:final_isolated_bus"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4D216D8C284B236E"
+        type: "item"
+        item: "gtceu:vanadium_gallium_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "44EDE61B439938B8"
+      title: "Стойка управления"
+      description: ["Четыре панели, узла телеметрии, реле, корпуса HPCA, монитора, блока памяти 256k и датчика дают две стойки. В сборщик подай 9800 мБ защитного газа."]
+      x: -11.627d
+      y: 2.646d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43791EBC01638482","42ABCAAD931D3A18","46942F8B89CD5531","4E4DF2091D1B0E31"]
+      tasks: [{
+        id: "4C40646E460AFFA2"
+        type: "item"
+        item: "kubejs:final_control_rack"
+        count: 2L
+      }]
+      rewards: [{
+        id: "49A044223CB63D52"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44C4815EF54134F2"
+      title: "Калиброванная контрольная нагрузка"
+      description: ["Два нагрузочных модуля требуют изолированных секций, реле, контрольных узлов UV, катушек, моторов и нейтрониевых листов. Подай 10000 мБ холодного теплоносителя. Отложи экземпляр для исследования."]
+      x: -8.912d
+      y: 5.424d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44EDE61B439938B8","4597567953CAA81E","4369F016352A66ED"]
+      tasks: [{
+        id: "46C268EB39D4EA59"
+        type: "item"
+        item: "kubejs:final_test_load"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4E22D28175988CB5"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4B30F3A4551CE9D6"
+      title: "Лапотронные блоки резервного модуля"
+      description: ["Собери восемь лапотронных блоков для рецепта резервного модуля. Батарейные буферы заполняются отдельными переносными наквадриевыми батареями UV."]
+      x: -27.415d
+      y: -4.355d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C405856DCDD978F","4606B1FE80456B80","456874B5C9282C24"]
+      tasks: [{
+        id: "45E7E26210A1FA87"
+        type: "item"
+        item: "gtceu:uv_lapotronic_battery"
+        count: 8L
+      }]
+      rewards: [{
+        id: "485C04AC856045AC"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4B798F9249C5EA4E"
+      title: "Переносные наквадриевые батареи"
+      description: ["Подготовь два набора по четыре наквадриевых батареи UV. Один комплект запасает до 10,48576 млрд EU. Перед пуском держи основной комплект разряженным, а запасной заряди отдельно."]
+      x: -25.359d
+      y: -2.483d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C405856DCDD978F","411E437603289ED3","4B30F3A4551CE9D6"]
+      tasks: [{
+        id: "48DD391133C24B4C"
+        type: "item"
+        item: "gtceu:uv_naquadria_battery"
+        count: 8L
+      }]
+      rewards: [{
+        id: "490FF45C90024E11"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "41700DFB792D0D47"
+      title: "Основной и резервный банки"
+      description: ["Собери четыре батарейных буфера UV 4×. Два входят в рецепт резервного модуля, а два других установи как основной и резервный банки. Оставь свободный доступ к обоим."]
+      x: -11.648d
+      y: -1.556d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B30F3A4551CE9D6","4B798F9249C5EA4E","43791EBC01638482","49DD0676F98B4FF0"]
+      tasks: [{
+        id: "440A8BC33DC3B888"
+        type: "item"
+        item: "gtceu:uv_battery_buffer_4x"
+        count: 4L
+      }]
+      rewards: [{
+        id: "406E6236366796BC"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4BA2130F7FD8BA50"
+      title: "Выключатель основного банка"
+      description: ["Установи крышку управления станком и проверь рычагом, какой сигнал отключает выдачу основного банка. Сохрани доступ к разрыву входной линии независимо от крышки."]
+      x: -8.912d
+      y: -2.447d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41700DFB792D0D47","48C846904B03889F"]
+      tasks: [{
+        id: "4ABB210A4FA92D26"
+        type: "item"
+        item: "gtceu:machine_controller_cover"
+      }]
+      rewards: [{
+        id: "4A76467377E33EA6"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "466C332A13B3813F"
+      title: "Модуль аварийного питания"
+      description: ["Для модуля выдели восемь батарей, два буфера UV 4×, четыре дизельных двигателя IV и силовые узлы. Подай 12000 мБ улучшенного дизеля, 10000 мБ смазки, 12000 мБ теплоносителя и 9800 мБ защитного газа."]
+      x: -6.856d
+      y: -0.259d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44C4815EF54134F2","41700DFB792D0D47","456874B5C9282C24"]
+      tasks: [{
+        id: "4278FE5C0644CC41"
+        type: "item"
+        item: "kubejs:final_backup_module"
+      }]
+      rewards: [{
+        id: "43CB978065CCFE23"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 4
+      }]
+    }
+    {
+      id: "4C6EA39A6A01B8FE"
+      title: "Пульт приёмочной смены"
+      description: ["Сборочная линия расходует стойки, телеметрию, нагрузки, шины, четыре сборщика схем UV, компьютеры, память 256k и восемь мейнфреймов. Подай защитный газ, холодный теплоноситель, смазку и улучшенный дизель."]
+      x: -5.140d
+      y: 0.598d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["466C332A13B3813F","44EDE61B439938B8","42ABCAAD931D3A18","429A5FE8E4F9D799"]
+      tasks: [{
+        id: "4DC9CA1EC4886C25"
+        type: "item"
+        item: "kubejs:final_control_console"
+      }]
+      rewards: [{
+        id: "40057F642A785475"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "4BB2604374F0C8BE"
+      title: "Ключ холодного пуска"
+      description: ["Стерильный сборщик кодирует два ключа из реле, телеметрии, сфер данных, фазовых блоков, Wetware и сертификата распределённой сети. Подай 9800 мБ защитного газа."]
+      x: -3.424d
+      y: 1.132d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C6EA39A6A01B8FE","4597567953CAA81E","48C846904B03889F","4DE96186C5476184","4510292E9BD7DD32"]
+      tasks: [{
+        id: "47A021D114EEC3A5"
+        type: "item"
+        item: "kubejs:final_start_key"
+      }]
+      rewards: [{
+        id: "4F5CFC6AC60BC16B"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A5A36E5C6FAAF2B"
+      title: "Независимый дизельный источник"
+      description: ["Дизельный двигатель IV годится для независимой зарядки через соответствующие трансформаторы. Сверь мощность всех звеньев и отдели зарядную линию от отключаемого ввода."]
+      x: -13.448d
+      y: -1.553d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41700DFB792D0D47","41583F3F0B788E22","4414E612C384562D"]
+      optional: true
+      tasks: [{
+        id: "4EAA42304D8E2C71"
+        type: "item"
+        item: "gtceu:extreme_combustion_engine"
+      }]
+      rewards: [{
+        id: "49417320FB56A67B"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "407C3F6A71987886"
+      title: "Обход обслуживания"
+      description: ["Для развязки поставь диоды UV в направлении нужного потока и проверь допустимую силу тока. Разрыв основного ввода должен оставаться доступен оператору."]
+      x: -12.895d
+      y: -2.854d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41700DFB792D0D47","451542FDC4F51D9C"]
+      optional: true
+      tasks: [{
+        id: "48257E0C4C044911"
+        type: "item"
+        item: "gtceu:uv_diode"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4659646DDACA5525"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "46D913E01E689C58"
+      title: "Три бочки для выдачи партий"
+      description: ["Поставь бочку под каждым из трёх испытательных станков. Пульт перенесёт туда учтённые партии. Держи автоматический вывод предметов станков выключенным."]
+      x: 7.536d
+      y: -5.344d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E04D10E2E61108A"]
+      optional: true
+      tasks: [{
+        id: "434AD9A1CF8355F0"
+        type: "item"
+        item: "minecraft:barrel"
+        count: 3L
+      }]
+      rewards: [{
+        id: "451FB90779004B9C"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "43E451BE71899E53"
+      title: "Возврат партий в сеть ME"
+      description: ["Поставь шины импорта на бочки. Выдели в ME место для продукции, чтобы бочка не заполнялась во время смены."]
+      x: 8.912d
+      y: -0.408d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46D913E01E689C58","4D702687169EEC63"]
+      optional: true
+      tasks: [{
+        id: "4EEA3335FB3B21DF"
+        type: "item"
+        item: "ae2:import_bus"
+        count: 3L
+      }]
+      rewards: [{
+        id: "40312A3695EC109F"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "43A584227ABC3627"
+      title: "Контроль выдачи на трёх станках"
+      description: ["Разведи питание сборщика, реактора и чистовой линии. Перед холодным пуском отключи зарядку резерва и проверь отсутствие обратного тока."]
+      x: 10.968d
+      y: 3.618d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BA2130F7FD8BA50","414F7CA3EF89124F","43E451BE71899E53"]
+      optional: true
+      tasks: [{
+        id: "4A481A7898C8D903"
+        type: "item"
+        item: "gtceu:uv_diode"
+        count: 4L
+      }]
+      rewards: [{
+        id: "46D53A5272FBEB0A"
+        type: "item"
+        item: "gtceu:vanadium_gallium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "411CB8657DD8FA7A"
+      title: "Выпрямители для двух силовых заказов"
+      description: ["Отложи четыре выпрямителя на аварийный модуль и ещё четыре на приёмочный комплект. Изолированные секции потребуют дополнительной серии."]
+      x: -9.581d
+      y: 11.354d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E9E8682F2DB50D4","45E4BBD004DCE8EC"]
+      optional: true
+      tasks: [{
+        id: "4E1AA90E71A6D03F"
+        type: "item"
+        item: "kubejs:final_emergency_rectifier"
+        count: 8L
+      }]
+      rewards: [{
+        id: "40A81FC2EB567E0E"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "44F755B1AB22B478"
+      title: "Секции для пульта и испытательной нагрузки"
+      description: ["Разложи секции по заказам пульта и нагрузки. На выпуск каждой новой пары подай отдельные герметичные уплотнения."]
+      x: -6.856d
+      y: 8.775d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["411CB8657DD8FA7A","44C4815EF54134F2"]
+      optional: true
+      tasks: [{
+        id: "4BE077DAD17F4FEE"
+        type: "item"
+        item: "kubejs:final_isolated_bus"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4D12889630F8FB27"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "45139D679D9BB5F4"
+      title: "Стойки для приёмки и диспетчерского шкафа"
+      description: ["Подготовь две партии стоек по четыре. Сохрани отдельные комплекты памяти и мониторов перед запуском заказа."]
+      x: -3.424d
+      y: 7.694d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C6EA39A6A01B8FE","4A142759C39207A5"]
+      optional: true
+      tasks: [{
+        id: "4185FD468D180BBC"
+        type: "item"
+        item: "kubejs:final_control_rack"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4E3DC482B3F09FDE"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "42785F47C2E3D7FD"
+      title: "Испытательные нагрузки для исследования и сборки"
+      description: ["Отдели исследуемый образец от четырёх деталей финального заказа. Сменную нагрузку оставь возле установки на случай повторной записи."]
+      x: -9.058d
+      y: 2.199d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["466C332A13B3813F","44F755B1AB22B478"]
+      optional: true
+      tasks: [{
+        id: "48DC8B6070A880C8"
+        type: "item"
+        item: "kubejs:final_test_load"
+        count: 6L
+      }]
+      rewards: [{
+        id: "41299EDB96F343E4"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4399689F6F98930F"
+      title: "Стационарные блоки аварийного модуля"
+      description: ["Восемь блоков выдели на модуль, четыре держи на обслуживание и другие заказы. В слоты буфера идут переносные элементы."]
+      x: -5.480d
+      y: -1.362d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["466C332A13B3813F","4B30F3A4551CE9D6"]
+      optional: true
+      tasks: [{
+        id: "433F9FB6A6385914"
+        type: "item"
+        item: "gtceu:uv_lapotronic_battery"
+        count: 12L
+      }]
+      rewards: [{
+        id: "479732D9DFD2E23B"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "48EB91589CBE4CF3"
+      title: "Сменные аккумуляторы резервного банка"
+      description: ["Оставь по четыре элемента в двух банках. Третий комплект заряжай отдельно, чтобы не подавать ток на резерв во время аварийной проверки."]
+      x: -13.068d
+      y: -5.296d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41700DFB792D0D47","4B798F9249C5EA4E"]
+      optional: true
+      tasks: [{
+        id: "4AFB439D05F03517"
+        type: "item"
+        item: "gtceu:uv_naquadria_battery"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4141B6520036C0B2"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4AF3DAEEEC7904D8"
+      title: "Два выключателя аккумуляторных банков"
+      description: ["Установи по управляющему покрытию на банк. До начала испытания проверь, что у каждого свой сигнал включения."]
+      x: -3.026d
+      y: -0.396d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BA2130F7FD8BA50","4C6EA39A6A01B8FE"]
+      optional: true
+      tasks: [{
+        id: "4EA7F922CD537DE2"
+        type: "item"
+        item: "gtceu:machine_controller_cover"
+        count: 2L
+      }]
+      rewards: [{
+        id: "487FBE40383EDFC7"
+        type: "item"
+        item: "gtceu:vanadium_gallium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4A200EA2D6C942E0"
+      title: "Четыре диода силовой развязки UV"
+      description: ["Раздели зарядку и выдачу каждого банка. Убедись по стрелке, что диод пропускает ток в нужном направлении."]
+      x: -14.060d
+      y: -4.226d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["407C3F6A71987886","4AF3DAEEEC7904D8"]
+      optional: true
+      tasks: [{
+        id: "48249597912C782F"
+        type: "item"
+        item: "gtceu:uv_diode"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4C74119B01C47AEC"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4D3768FBDFBBE0D6"
+      title: "Две независимые зарядные установки UV"
+      description: ["Одну установку выдели под сменные элементы, вторую оставь на испытательной нагрузке. При переключении не соединяй два независимых ввода."]
+      x: 13.024d
+      y: -7.164d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48EB91589CBE4CF3","4F201676FDB2AC46"]
+      optional: true
+      tasks: [{
+        id: "407E2860F65A20A2"
+        type: "item"
+        item: "gtceu:uv_charger_4x"
+        count: 2L
+      }]
+      rewards: [{
+        id: "463FC3D984C2F7CC"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4B8D678AA3F2FDC9"
+      title: "Два кодированных ключа диспетчерской"
+      description: ["Запасной ключ храни в диспетчерской. Действующий держи рядом с основным буфером для подтверждения фаз."]
+      x: -0.688d
+      y: 6.877d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BB2604374F0C8BE","45139D679D9BB5F4"]
+      optional: true
+      tasks: [{
+        id: "443F81B127B8DC3F"
+        type: "item"
+        item: "kubejs:final_start_key"
+        count: 2L
+      }]
+      rewards: [{
+        id: "44FFC76344BB43EE"
+        type: "item"
+        item: "gtceu:niobium_titanium_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "43D085C426AB1FD5"
+      title: "Сборщики для трёх складов"
+      description: ["На каждом складе установи сборщик UV с отдельным входом жидкости. Протокол UV нужен во всех трёх сборщиках. Он остаётся после крафта, поэтому один экземпляр можно переносить между измерениями."]
+      x: -17.816d
+      y: -2.972d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["402E3C5D30DC5FEF","48C846904B03889F"]
+      tasks: [{
+        id: "43F5D9E8F6E4888E"
+        type: "item"
+        item: "gtceu:uv_assembler"
+        count: 3L
+      }]
+      rewards: [{
+        id: "43CD9F9FC6AB1C19"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "473363017F3897CA"
+      title: "Камера складских пломб"
+      description: ["Опрессуй оснастку складской пломбы в камере PneumaticCraft при 4,9 бар. Поставь на вход фильтры для ингредиентов, на выход фильтр для готовой пломбы."]
+      x: -27.415d
+      y: 3.784d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C405856DCDD978F","4D29D3B13125FE79","4C73EC0019DD35B3"]
+      tasks: [{
+        id: "4B5793F838D90B4F"
+        type: "item"
+        item: "pneumaticcraft:pressure_chamber_interface"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4C8BA04B22929A85"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "420671C7B9D76B98"
+      title: "Серия складских пломб"
+      description: ["Восемь пломб требуют восемь вакуумных прокладок, восемь химстойких уплотнений, четыре ламината UV и четыре инженерных процессора. Раздели выпуск между тремя складами и упаковкой готовых товаров."]
+      x: -15.080d
+      y: 2.599d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["473363017F3897CA","42ABCAAD931D3A18"]
+      tasks: [{
+        id: "4035FD763C4266D6"
+        type: "item"
+        item: "kubejs:final_warehouse_seal"
+        count: 24L
+      }]
+      rewards: [{
+        id: "4D168CC2B0978DEB"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44768F69BCE3EFE3"
+      title: "Склад металла обычного мира"
+      description: ["Подготовь отгрузочную площадку с отдельными запасами вольфрамовой стали, наквадахового сплава и нейтрония. Разведи расход на производство и поставки по отдельным каналам."]
+      x: -17.314d
+      y: -1.243d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43D085C426AB1FD5","4D6B4B72279B3591","45B48414E910697C"]
+      tasks: [{
+        id: "4A27044A938010E7"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 32L
+      }]
+      rewards: [{
+        id: "4D7B4FDC59D6FCF5"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4B5D43EB27B07C1A"
+      title: "Накладные обычного мира"
+      description: ["На четыре накладные расходуются шестнадцать вольфрамовых листов, восемь наквадаховых, четыре нейтрониевых и 10240 мБ смазки. Добавь пломбы, телеметрию, узлы AE2 и память. Протокол UV остаётся в сборщике обычного мира."]
+      x: -13.024d
+      y: -0.087d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44768F69BCE3EFE3","420671C7B9D76B98","48BA0DE6C0D211FB"]
+      tasks: [{
+        id: "4589D0AAB67D42D6"
+        type: "item"
+        item: "kubejs:final_overworld_dispatch"
+        count: 8L
+      }]
+      rewards: [{
+        id: "43E742D87DF28703"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "448A62F178DF63D9"
+      title: "Склад Нижнего мира"
+      description: ["Подготовь локальный буфер реагентов в Нижнем мире. Храни соль отдельно от потока реактора подготовки подачи для Mk III."]
+      x: -15.760d
+      y: -2.307d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43D085C426AB1FD5","4C7F6A3FFF251B9B","496F8D9DF63B280F"]
+      tasks: [{
+        id: "433DA284E7F49C68"
+        type: "item"
+        item: "kubejs:zpm_nether_isotope_salt"
+        count: 16L
+      }]
+      rewards: [{
+        id: "455C49C30B89F01F"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "43B0F2889EAD70E7"
+      title: "Накладные Нижнего мира"
+      description: ["Сборщик в Нижнем мире выдаёт четыре накладные за цикл. Подай по шестнадцать порций изотопной соли и огнеупорной смеси, восемь листов PTFE и 10240 мБ улучшенного дизеля. Пломбы, телеметрия и AE2 расходуются на месте."]
+      x: -13.024d
+      y: 4.630d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["448A62F178DF63D9","420671C7B9D76B98","48BA0DE6C0D211FB"]
+      tasks: [{
+        id: "478E562682E9016B"
+        type: "item"
+        item: "kubejs:final_nether_dispatch"
+        count: 8L
+      }]
+      rewards: [{
+        id: "46CC7010013388D5"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4689B62B4DB86EAF"
+      title: "Склад тяжёлой фракции Энда"
+      description: ["Собери тяжёлый концентрат в Энде. Отложи часть готовых капсул для грузовой линии и подай остальные в реактор."]
+      x: -15.760d
+      y: -4.261d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43D085C426AB1FD5","4359459B4912B018","468A1AA64CFCBE63"]
+      tasks: [{
+        id: "462A80603A22A1AC"
+        type: "item"
+        item: "kubejs:zpm_end_heavy_concentrate"
+        count: 16L
+      }]
+      rewards: [{
+        id: "438CA3BC2A49F9E4"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4FAF06EA71AA5B74"
+      title: "Накладные Энда"
+      description: ["Для четырёх накладных подай шестнадцать порций тяжёлого концентрата, восемь капсул UV, восемь оптических вставок и 10240 мБ защитного газа. Добавь стандартный комплект оформления, протокол UV держи в станке."]
+      x: -13.024d
+      y: 3.199d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4689B62B4DB86EAF","420671C7B9D76B98","48BA0DE6C0D211FB"]
+      tasks: [{
+        id: "4474EC5BF9BE233E"
+        type: "item"
+        item: "kubejs:final_end_dispatch"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4949690BC38A35DB"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4641702C8858C36C"
+      title: "Два квантовых маршрута"
+      description: ["Для автоматической доставки собери отдельный квантовый мост AE2 на каждом маршруте и запитай обе стороны. Проверь, что целевые буферы сохраняют независимость партий."]
+      x: -12.688d
+      y: 6.399d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43B0F2889EAD70E7","4FAF06EA71AA5B74","4BF2B9B6309DA8D0"]
+      optional: true
+      tasks: [{
+        id: "4A3513E80D0187D9"
+        type: "item"
+        item: "ae2:quantum_link"
+        count: 4L
+      }]
+      rewards: [{
+        id: "42B984802CAE3EB0"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "43C8795DE7C99D1F"
+      title: "Отдельные жидкостные склады"
+      description: ["Квантовые танки нужны при непрерывной подаче. Назначай каждой ёмкости только одну жидкость и проверяй пропускную способность труб."]
+      x: -14.143d
+      y: 6.040d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43B0F2889EAD70E7","4FAF06EA71AA5B74","438019B4BB1F1CB7"]
+      optional: true
+      tasks: [{
+        id: "40F2B5F2139E72C2"
+        type: "item"
+        item: "gtceu:uv_quantum_tank"
+        count: 2L
+      }]
+      rewards: [{
+        id: "44BE46856417F769"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4B9D9A6FF3CF3003"
+      title: "Подвоз по заводской ветке"
+      description: ["Железная дорога может подвозить сырьё между складами обычного мира. Сборщик всё равно должен оформить накладную в нужном измерении. Поставь независимый приёмный буфер на станции."]
+      x: -11.648d
+      y: -4.165d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B5D43EB27B07C1A","4B68CC0CBE01C563"]
+      optional: true
+      tasks: [{
+        id: "474CCAA00F0A7E38"
+        type: "item"
+        item: "create:track_station"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4C552E451D4B520A"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4BD2AEB626A4419B"
+      title: "Выделенные ячейки для трёх поставок"
+      description: ["Закрепи за каждой ячейкой накладные одной площадки. Держи в буфере исходные грузы, материалы и жидкость для нужного измерения."]
+      x: -15.760d
+      y: -6.124d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43D085C426AB1FD5","4A8D12A9D68D5CD8"]
+      optional: true
+      tasks: [{
+        id: "4B94A0A6D0CC9E17"
+        type: "item"
+        item: "ae2:item_storage_cell_16k"
+        count: 3L
+      }]
+      rewards: [{
+        id: "478644E56A3BF15C"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "40196036A728677F"
+      title: "Выездная тара для реагентов"
+      description: ["Подготовь по паре ёмкостей на площадку. Выдели отдельно смазку, дизель и защитный газ, и пометь обратку."]
+      x: -14.627d
+      y: 4.016d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BD2AEB626A4419B","4FAF06EA71AA5B74","4AE12B3FE26A11FF"]
+      optional: true
+      tasks: [{
+        id: "46A83F4DD94092E0"
+        type: "item"
+        item: "gtceu:stainless_steel_drum"
+        count: 6L
+      }]
+      rewards: [{
+        id: "4D1CC2CB56B59E4A"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "49C47A2D2BFCC65B"
+      title: "Вольфрамовая сталь на четыре партии накладных"
+      description: ["Отложи сталь на четыре выпуска по четыре накладные. Добавь 32 листа наквадахового сплава и 16 листов нейтрония."]
+      x: -11.668d
+      y: 1.098d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B5D43EB27B07C1A"]
+      optional: true
+      tasks: [{
+        id: "4F6F105B7756A707"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 64L
+      }]
+      rewards: [{
+        id: "46C7C1A60A84C706"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "42B00A54B9C2DF5D"
+      title: "Запас соли на четыре складские отгрузки"
+      description: ["Держи 64 порции соли у местного сборщика UV. Сложи рядом огнеупорную смесь и PTFE, чтобы разделить выпуск от потока на кольцо."]
+      x: -11.648d
+      y: 5.310d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43B0F2889EAD70E7"]
+      optional: true
+      tasks: [{
+        id: "4142F69DAA99E5F8"
+        type: "item"
+        item: "kubejs:zpm_nether_isotope_salt"
+        count: 64L
+      }]
+      rewards: [{
+        id: "492A7150DA855ED8"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4953D6DBE4150B8D"
+      title: "Концентрат Энда для четырёх грузовых партий"
+      description: ["Оставь концентрат в Энде на месте потребления. На четыре цикла подготовь по 32 капсулы UV и оптические вставки."]
+      x: -8.785d
+      y: 9.327d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FAF06EA71AA5B74"]
+      optional: true
+      tasks: [{
+        id: "47DC23AFDAB8EE89"
+        type: "item"
+        item: "kubejs:zpm_end_heavy_concentrate"
+        count: 64L
+      }]
+      rewards: [{
+        id: "404ACAFA75090FBC"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "451A608230D4A907"
+      title: "Люки опрессовки складских пломб"
+      description: ["Раздели ввод и выдачу на двух камерах. Для пломб и полимерных заготовок используй разные фильтры."]
+      x: -7.536d
+      y: 2.935d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["420671C7B9D76B98","44201711F919832E"]
+      optional: true
+      tasks: [{
+        id: "453BFFE843CB0674"
+        type: "item"
+        item: "pneumaticcraft:pressure_chamber_interface"
+        count: 4L
+      }]
+      rewards: [{
+        id: "40CAE358B5FCE1D8"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4F52B0A88E919592"
+      title: "Пломбы для трёх складов"
+      description: ["Отложи по шестнадцать пломб на склад. Дополнительные пломбы выпусти под маркировку и контрольные партии."]
+      x: -5.480d
+      y: 4.252d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["451A608230D4A907","4FAF06EA71AA5B74"]
+      optional: true
+      tasks: [{
+        id: "43063D6E98DE0CF2"
+        type: "item"
+        item: "kubejs:final_warehouse_seal"
+        count: 48L
+      }]
+      rewards: [{
+        id: "4D28E752A7C0D671"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4004A0FCE14413F2"
+      title: "Сменные квантовые узлы складской линии"
+      description: ["Не снимай узлы со связанного моста ради накладных. У каждого склада держи резерв для сборщика и ремонта."]
+      x: -3.424d
+      y: 3.899d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4641702C8858C36C","4F52B0A88E919592"]
+      optional: true
+      tasks: [{
+        id: "4FDF60697B678218"
+        type: "item"
+        item: "ae2:quantum_link"
+        count: 8L
+      }]
+      rewards: [{
+        id: "470394E2B2764FB8"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46DB5AE4A9FF3B42"
+      title: "Компоненты памяти трёх грузовых заказов"
+      description: ["Отложи по четыре компонента на один цикл каждого склада. Блоки вычислительной памяти оставь у сборочной линии."]
+      x: -10.968d
+      y: -0.092d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FAF06EA71AA5B74","4DBC8F1020C2B8A1"]
+      optional: true
+      tasks: [{
+        id: "47BE767B79B7FCA0"
+        type: "item"
+        item: "ae2:cell_component_256k"
+        count: 12L
+      }]
+      rewards: [{
+        id: "42BD34FFC427CD8D"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "47E98EAA619E4DF9"
+      title: "Стальные накладные пробной смены"
+      description: ["Сертифицируй четыре партии в обычном мире. Ранние накладные храни отдельно, пока не заполнишь рабочую партию."]
+      x: -6.952d
+      y: 5.288d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49C47A2D2BFCC65B","4F52B0A88E919592"]
+      optional: true
+      tasks: [{
+        id: "4DB3515C14F1E1E7"
+        type: "item"
+        item: "kubejs:final_overworld_dispatch"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4A871F0843BF6A88"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4EC49E33A5EDCA81"
+      title: "Отдельная поставка Нижнего мира на запуск"
+      description: ["Проверь, что рабочая выдача идёт из станка в Нижнем мире. Восемь накладных отведи на активацию, оставшиеся на подготовительные прогоны."]
+      x: -8.912d
+      y: 0.671d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42B00A54B9C2DF5D","46DB5AE4A9FF3B42"]
+      optional: true
+      tasks: [{
+        id: "498D7979068E016B"
+        type: "item"
+        item: "kubejs:final_nether_dispatch"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4F2E696205C5A635"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "460D558577F59E01"
+      title: "Отдельная поставка Энда на наладку"
+      description: ["Готовый груз вывози из Энда готовыми накладными. Отдельно отложи расход на номера и на тест перед приёмкой."]
+      x: -8.912d
+      y: 7.531d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4953D6DBE4150B8D","46DB5AE4A9FF3B42"]
+      optional: true
+      tasks: [{
+        id: "473E9FD64BDD6148"
+        type: "item"
+        item: "kubejs:final_end_dispatch"
+        count: 16L
+      }]
+      rewards: [{
+        id: "41F564DA8F37F73B"
+        type: "item"
+        item: "gtceu:niobium_titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "443CDF772C97D5C7"
+      title: "Слитки для серийной закалки"
+      description: ["Выдели партию слитков вольфрамовой стали для вакуумной закалки усиленных болванок."]
+      x: -17.753d
+      y: 0.735d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B5D43EB27B07C1A","4D6B4B72279B3591"]
+      tasks: [{
+        id: "49F358919B71A2F4"
+        type: "item"
+        item: "gtceu:tungsten_steel_ingot"
+        count: 32L
+      }]
+      rewards: [{
+        id: "426E7903BD45E9F4"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "47D42F114519D9B4"
+      title: "Тритановые листы для грузовой партии"
+      description: ["Прокатай тританий и сложи листы отдельно. Оставь часть для маркировки, остальные подай в сборщик готовых партий."]
+      x: -8.912d
+      y: -5.177d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["443CDF772C97D5C7","4376C65E9E3405F6"]
+      tasks: [{
+        id: "40272FFFB2BF000B"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 32L
+      }]
+      rewards: [{
+        id: "42EC19C9D9C5417F"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4E37EEB70DA72FE1"
+      title: "Камера закалки серийных заготовок"
+      description: ["Выдели вакуумную камеру с вводом UV и обраткой теплоносителя. Сверь допустимое число предметных слотов и раздели горячие изделия и готовые заготовки."]
+      x: -7.536d
+      y: -1.657d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42B4A73B844A58FB","47D42F114519D9B4","4D772D11A246EF32"]
+      tasks: [{
+        id: "44D5F805B16C3F3A"
+        type: "item"
+        item: "gtceu:vacuum_freezer"
+      }]
+      rewards: [{
+        id: "4100279153CB5956"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "40722D14AC004345"
+      title: "Смеситель закалочной жидкости"
+      description: ["На 12800 мБ смеси подай четыре кассеты UV, восемь порций известкового флюса, четыре порции бора, 9600 мБ холодного теплоносителя и 3200 мБ дистиллята."]
+      x: -4.800d
+      y: -2.731d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4E37EEB70DA72FE1","4E11CD775B6CB8A2"]
+      tasks: [{
+        id: "4C9A48BA0C872D6D"
+        type: "item"
+        item: "gtceu:uv_mixer"
+      }]
+      rewards: [{
+        id: "47C1801207F79137"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4F1FA15698CD3861"
+      title: "Охладитель обратного контура"
+      description: ["Термопневматическая установка возвращает 3000 мБ из 4000 мБ отработанной смеси. Держи не выше 270 К и давление 4,5 бар. Потери восполняй в смесителе UV."]
+      x: -5.283d
+      y: -4.464d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["40722D14AC004345","492BF99A4855429A"]
+      tasks: [{
+        id: "4B1D386110EC1F35"
+        type: "item"
+        item: "pneumaticcraft:thermopneumatic_processing_plant"
+      }]
+      rewards: [{
+        id: "40A1E04C3BF8D374"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A09D5DB5CCDF0A6"
+      title: "Раздельные ёмкости охлаждения"
+      description: ["Подготовь два буфера для свежей смеси и обратки. Отдельно подключи нейтроний к вакуумной камере."]
+      x: -2.008d
+      y: 5.989d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["40722D14AC004345","4F1FA15698CD3861","426976ACBA8CC3F1"]
+      tasks: [{
+        id: "4BA634814F27A40C"
+        type: "item"
+        item: "gtceu:tungsten_steel_drum"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4E9CA3FEA243FA8C"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A1E2D40775E3488"
+      title: "Партия усиленных болванок"
+      description: ["Вакуумная камера принимает восемь вольфрамовых слитков, 6400 мБ закалочной смеси и 720 мБ нейтрония. За 300 секунд выдаёт восемь болванок и возвращает 6400 мБ отработанной жидкости."]
+      x: 1.368d
+      y: 7.484d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4A09D5DB5CCDF0A6","443CDF772C97D5C7"]
+      tasks: [{
+        id: "4BFC41FF0DB007D2"
+        type: "item"
+        item: "kubejs:final_reinforced_billet"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4113070528EA4402"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4736FF402AD56EAE"
+      title: "Сборщик стальных партий"
+      description: ["Поставь сборщик UV в обычном мире. На испытании выключи автоматическую выдачу. Пульт заберёт свежие партии из выходных ячеек сборщика."]
+      x: 2.744d
+      y: 2.711d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4A1E2D40775E3488","402E3C5D30DC5FEF","420671C7B9D76B98"]
+      tasks: [{
+        id: "496B4A866F29542E"
+        type: "item"
+        item: "gtceu:uv_assembler"
+      }]
+      rewards: [{
+        id: "4EF264A08B123FF5"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "407ED1E35CBA2F3C"
+      title: "Серийная маркировка стали"
+      description: ["На восемь стальных номеров подай восемь болванок, по четыре пломбы, накладные, сердечника, тритановых листа и панели. На десять циклов потребуется 80 000 мБ смазки."]
+      x: 4.800d
+      y: 0.055d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4736FF402AD56EAE","4B5D43EB27B07C1A","47D42F114519D9B4"]
+      tasks: [{
+        id: "4083FCC5646E6CD6"
+        type: "item"
+        item: "kubejs:final_serial_steel"
+        count: 80L
+      }]
+      rewards: [{
+        id: "42138DE5486B43EF"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "491DD25D6C8C08DC"
+      title: "Пробная партия стали"
+      description: ["Подай по четыре стальных номера и болванки, по две пломбы, тритановых листа и накладные, а также 7200 мБ смазки. Сборщик обычного мира выдаёт четыре партии. Держи пробу вне испытательного станка."]
+      x: 6.183d
+      y: -2.264d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["407ED1E35CBA2F3C"]
+      optional: true
+      tasks: [{
+        id: "4283B69D5A6AF253"
+        type: "item"
+        item: "kubejs:final_steel_lot"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4B34549B76D9FA16"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CAA71630BC00552"
+      title: "Раздельная выдача стали"
+      description: ["Подключи отдельную шину хранения к складу стали. При испытании держи выход станка под контролем пульта и не подключай к нему склад старых партий."]
+      x: 5.480d
+      y: 2.624d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4736FF402AD56EAE","48BCE34185AF80F5"]
+      optional: true
+      tasks: [{
+        id: "4E6C50F4868BE2F6"
+        type: "item"
+        item: "ae2:storage_bus"
+      }]
+      rewards: [{
+        id: "49DDF4553A770993"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42FD3F1BD9D95BE7"
+      title: "Слитки на 20 загрузок закалки"
+      description: ["На 20 загрузок зарезервируй 160 слитков вольфрамовой стали, 14 400 мБ нейтрония и 128 000 мБ закалочной смеси. Столько же смеси выйдет в обратку."]
+      x: -4.154d
+      y: 6.477d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["443CDF772C97D5C7","4A09D5DB5CCDF0A6"]
+      optional: true
+      tasks: [{
+        id: "4488317B87BFA00F"
+        type: "item"
+        item: "gtceu:tungsten_steel_ingot"
+        count: 160L
+      }]
+      rewards: [{
+        id: "41160A36B1D9E84B"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A73DFFCE0FDD550"
+      title: "Кассеты для четырёх смесей закалки"
+      description: ["На четыре цикла выдели шестнадцать кассет, 32 порции известкового флюса и шестнадцать порций бора."]
+      x: -2.934d
+      y: -3.271d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40722D14AC004345"]
+      optional: true
+      tasks: [{
+        id: "42F3700641A2682B"
+        type: "item"
+        item: "kubejs:uv_quench_cassette"
+        count: 16L
+      }]
+      rewards: [{
+        id: "44BD4EE518D9BF18"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A43D683265360FA"
+      title: "Флюс для оборотного теплоносителя"
+      description: ["Флюс отмеряй по восемь порций на замес. Держи рабочую смесь отдельно от жидкости, возвращённой с закалки."]
+      x: -1.368d
+      y: -2.384d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A73DFFCE0FDD550","4F1FA15698CD3861"]
+      optional: true
+      tasks: [{
+        id: "4BB8D328DF7E73A4"
+        type: "item"
+        item: "kubejs:lime_flux"
+        count: 32L
+      }]
+      rewards: [{
+        id: "46201F8A7A00E95B"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "402865C76A6BB308"
+      title: "Бор для четырёх замесов главного цеха"
+      description: ["Четыре замеса дадут стартовые 51 200 мБ смеси. Из каждых 4000 мБ обратки установка возвращает 3000 мБ. Пополняй рабочую ёмкость свежей смесью."]
+      x: -0.688d
+      y: -9.234d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A73DFFCE0FDD550"]
+      optional: true
+      tasks: [{
+        id: "4B75D0AFFAC62ECC"
+        type: "item"
+        item: "gtceu:boron_dust"
+        count: 16L
+      }]
+      rewards: [{
+        id: "43F0CFC4AE9337E7"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4586429E6A4DB8D7"
+      title: "Ёмкости свежей смеси и отдельной обратки"
+      description: ["Оставь по две ёмкости на подачу и возврат. Нейтроний держи на собственном вводе вакуумной камеры."]
+      x: 1.368d
+      y: -4.098d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A43D683265360FA","402865C76A6BB308"]
+      optional: true
+      tasks: [{
+        id: "4CA82DC703137F0C"
+        type: "item"
+        item: "gtceu:tungsten_steel_drum"
+        count: 4L
+      }]
+      rewards: [{
+        id: "48A3176D6F9CD43A"
+        type: "item"
+        item: "gtceu:hssg_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A60967B0A54767A"
+      title: "Вторая камера для параллельной закалки"
+      description: ["Раздели партию вольфрамовых слитков по камерам. Проверь свободный выход обратки, затем подай первую серию."]
+      x: 3.424d
+      y: -2.813d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42FD3F1BD9D95BE7","4586429E6A4DB8D7"]
+      optional: true
+      tasks: [{
+        id: "4BBB45EE8E53996A"
+        type: "item"
+        item: "gtceu:vacuum_freezer"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4C3E8467188FC276"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "48186159B9C758B5"
+      title: "Тританий для стальной маркировки и партий"
+      description: ["Выдели 40 листов на десять проходов маркировки. Ещё 40 оставь на 20 выпусков готовых партий."]
+      x: 4.800d
+      y: -4.939d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["47D42F114519D9B4","4A60967B0A54767A"]
+      optional: true
+      tasks: [{
+        id: "4FEE19924200406B"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 80L
+      }]
+      rewards: [{
+        id: "488663F7BDD28CF9"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4BE11D9219B2F2F6"
+      title: "Раздельный склад 160 усиленных болванок"
+      description: ["Раздели болванки пополам. Первая партия уйдёт в номера, вторая останется для товарного сборщика."]
+      x: 5.480d
+      y: 5.244d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A60967B0A54767A","4A1E2D40775E3488"]
+      optional: true
+      tasks: [{
+        id: "4AE1E66D108CAD53"
+        type: "item"
+        item: "kubejs:final_reinforced_billet"
+        count: 160L
+      }]
+      rewards: [{
+        id: "460B42480B759FFE"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4BE7C7860DD48321"
+      title: "Вторая проба стального участка"
+      description: ["Проведи два подготовительных цикла вне приёмочной смены. Сохрани отдельный образец, а выходные ячейки к запуску очисти."]
+      x: 7.895d
+      y: -2.819d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BE11D9219B2F2F6","491DD25D6C8C08DC"]
+      optional: true
+      tasks: [{
+        id: "497DA490FCADD5B7"
+        type: "item"
+        item: "kubejs:final_steel_lot"
+        count: 8L
+      }]
+      rewards: [{
+        id: "47E295D6290A3C26"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4BA41805425D611A"
+      title: "Два буфера стали перед сборщиком"
+      description: ["Держи сырьё и номера в отдельных предметных буферах. Не веди автоматическую выдачу с испытательного сборщика в общий склад."]
+      x: 7.536d
+      y: 5.923d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48186159B9C758B5","4CAA71630BC00552","4E0DB2EE2F4381C0"]
+      optional: true
+      tasks: [{
+        id: "4FC36B5C4916A6A9"
+        type: "item"
+        item: "gtceu:luv_quantum_chest"
+        count: 2L
+      }]
+      rewards: [{
+        id: "44D6A3FCBFB9F85E"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "45A22964F2606B15"
+      title: "Полиэтилен нефтехимического завода"
+      description: ["Накопи полиэтиленовые плиты в нефтехимическом цехе. Проведи отдельную подачу полиэтилена к полимерной линии, чтобы она работала при переключении питания."]
+      x: -11.648d
+      y: -7.026d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43B0F2889EAD70E7","436CDAC3B0A49B7A"]
+      tasks: [{
+        id: "4D5E7C2CE3B3123B"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 64L
+      }]
+      rewards: [{
+        id: "49C82A5C42FBB5E1"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44201711F919832E"
+      title: "Опрессовка полимерного пакета"
+      description: ["В камере подай шестнадцать листов полиэтилена, восемь PTFE, четыре ламината UV и четыре пломбы. Восемь заготовок выходят при 4,9 бар."]
+      x: -9.592d
+      y: -3.784d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45A22964F2606B15","473363017F3897CA","420671C7B9D76B98"]
+      tasks: [{
+        id: "41D55A4E20305CA6"
+        type: "item"
+        item: "kubejs:final_polymer_preform"
+        count: 8L
+      }]
+      rewards: [{
+        id: "46C6F22AEF272EA4"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4C4B3E1FAFF056B9"
+      title: "Реактор товарной полимеризации"
+      description: ["Поставь реактор UV в обычном мире. Разведи жидкостные входы и оставь предметную выдачу свободной для готовой партии."]
+      x: -11.583d
+      y: -9.018d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44201711F919832E","402E3C5D30DC5FEF","490A7C45E14E0595"]
+      tasks: [{
+        id: "49A7BC0476BEC0CF"
+        type: "item"
+        item: "gtceu:uv_chemical_reactor"
+      }]
+      rewards: [{
+        id: "40DF2DF81A92F1ED"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "459D7D3A34EB4085"
+      title: "Дозировка реактивов"
+      description: ["Поставь отдельные буферы для дозируемых жидкостей. Клапаны обратки и подачи проверяй на пустой машине, затем сверяй объёмы рецепта в JEI."]
+      x: -5.119d
+      y: -6.740d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C4B3E1FAFF056B9","426976ACBA8CC3F1"]
+      tasks: [{
+        id: "48950A6D2CD20D9C"
+        type: "item"
+        item: "gtceu:stainless_steel_drum"
+        count: 3L
+      }]
+      rewards: [{
+        id: "4CD55612CC32CF15"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A5F0FC0F578B6CB"
+      title: "Серийная маркировка полимера"
+      description: ["На восемь номеров подай восемь заготовок, по четыре пломбы, накладные и изолированные секции, по восемь уплотнений и полиэтиленовых листов. На десять циклов потребуется 96 000 мБ жидкого полиэтилена."]
+      x: -3.424d
+      y: -1.853d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["459D7D3A34EB4085","43B0F2889EAD70E7","43791EBC01638482"]
+      tasks: [{
+        id: "434553BC02B489B1"
+        type: "item"
+        item: "kubejs:final_serial_polymer"
+        count: 80L
+      }]
+      rewards: [{
+        id: "4DFADD80DB0632B0"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "45AFC3E6F1BA5EA0"
+      title: "Пробная партия полимера"
+      description: ["В реактор обычного мира подай четыре полимерных номера, две накладные, 6400 мБ полиэтилена и 3200 мБ закалочной смеси. На выходе четыре партии и 3200 мБ обратки. Убери пробу до привязки станка к пульту."]
+      x: -0.688d
+      y: -1.366d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A5F0FC0F578B6CB"]
+      optional: true
+      tasks: [{
+        id: "478F73FFF5E4E1B5"
+        type: "item"
+        item: "kubejs:final_polymer_lot"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4E138CDD893EE882"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "431B10424D756E33"
+      title: "Резерв насосного узла"
+      description: ["Держи отдельные насосы для реагентов и обратки. Для нового подключения оставь запас арматуры и свободное место между ёмкостями."]
+      x: -2.744d
+      y: -11.048d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["459D7D3A34EB4085","4B8F8A3B8A4FE0EF"]
+      optional: true
+      tasks: [{
+        id: "4C28008BAEC967D4"
+        type: "item"
+        item: "gtceu:uv_electric_pump"
+        count: 4L
+      }]
+      rewards: [{
+        id: "461B4F34A75BE1A2"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "42E33BAD3DBE95EF"
+      title: "Шаблон с полиэтиленом и закалочной смесью"
+      description: ["В шаблоне укажи 6400 мБ полиэтилена, 3200 мБ смеси и предметные входы. Импортируй партии из бочки. Включи автовывод жидкости в отдельный бак и отведи обратку на охладитель."]
+      x: 0.688d
+      y: 5.850d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C4B3E1FAFF056B9","4AFA0EC9ECEEB554","4A09D5DB5CCDF0A6"]
+      optional: true
+      tasks: [{
+        id: "46E316D338A3FEEE"
+        type: "item"
+        item: "ae2:pattern_provider"
+      }]
+      rewards: [{
+        id: "455B39C76F837C6A"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "482547936C49F85F"
+      title: "Фторопласт для десяти опрессовок"
+      description: ["Отложи по восемь листов PTFE на каждую загрузку камеры. Отдельно рассчитай полиэтилен, ламинат и пломбы."]
+      x: -13.409d
+      y: -6.654d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45A22964F2606B15","473363017F3897CA"]
+      optional: true
+      tasks: [{
+        id: "40B39159E5C8012A"
+        type: "item"
+        item: "gtceu:polytetrafluoroethylene_plate"
+        count: 80L
+      }]
+      rewards: [{
+        id: "4249AD2D614639CC"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "40A45B68721FA906"
+      title: "Полиэтилен под прессование и маркировку"
+      description: ["На десять опрессовок выдели 160 листов. Ещё 80 нужны сборщику для десяти циклов маркировки."]
+      x: -7.536d
+      y: -7.835d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["482547936C49F85F","45A22964F2606B15"]
+      optional: true
+      tasks: [{
+        id: "40E796FA0B8F5912"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 240L
+      }]
+      rewards: [{
+        id: "413D5BCED25DCEBC"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "489934E57902EFFF"
+      title: "Опрессованные пакеты полной полимерной серии"
+      description: ["Подай подготовленную партию на сборщик номеров. Перед опрессовкой каждой загрузки проверь давление 4,9 бар."]
+      x: -5.480d
+      y: -9.422d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40A45B68721FA906","44201711F919832E"]
+      optional: true
+      tasks: [{
+        id: "4AFC33C647426463"
+        type: "item"
+        item: "kubejs:final_polymer_preform"
+        count: 80L
+      }]
+      rewards: [{
+        id: "484B6BA2B6BA032A"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4911D81A33DEF96F"
+      title: "Химстойкие уплотнения на десять заказов"
+      description: ["Отмерь по восемь уплотнений на маркировочный цикл. Камера складских пломб получает уплотнения из другого запаса."]
+      x: -3.424d
+      y: -12.818d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["489934E57902EFFF","4799482036E52418"]
+      optional: true
+      tasks: [{
+        id: "4C89C143D7E72E75"
+        type: "item"
+        item: "kubejs:chemical_grade_seal"
+        count: 80L
+      }]
+      rewards: [{
+        id: "44278FE245790C0A"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D7C3EB3ED93B5F5"
+      title: "Изолированные секции для серийных номеров"
+      description: ["Подготовь по четыре секции на каждый из десяти заходов. Оставь собственный запас секций для основного шкафа."]
+      x: -3.424d
+      y: -5.010d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["489934E57902EFFF","43791EBC01638482"]
+      optional: true
+      tasks: [{
+        id: "4D35B8709FF4F9B2"
+        type: "item"
+        item: "kubejs:final_isolated_bus"
+        count: 40L
+      }]
+      rewards: [{
+        id: "4D6B5C1267EB0B80"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A737EDA5A373FC9"
+      title: "Резервный реактор для подготовки полимеров"
+      description: ["Выдели один реактор для наблюдаемой линии. На втором проводи пробные операции, не заполняя выход испытательного реактора."]
+      x: 1.368d
+      y: -9.879d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45AFC3E6F1BA5EA0"]
+      optional: true
+      tasks: [{
+        id: "4CB71E254001D286"
+        type: "item"
+        item: "gtceu:uv_chemical_reactor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "460A5F841545B23F"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4F36253715286879"
+      title: "Буферы полимера, закалки и обратки"
+      description: ["Разложи ёмкости по двум группам. На каждой линии отдели жидкий полимер, закалочную смесь и отработанный поток."]
+      x: 2.744d
+      y: -12.633d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A737EDA5A373FC9","431B10424D756E33"]
+      optional: true
+      tasks: [{
+        id: "4A8CA337F7ED6DCB"
+        type: "item"
+        item: "gtceu:stainless_steel_drum"
+        count: 6L
+      }]
+      rewards: [{
+        id: "41AE0B6D01EAF16A"
+        type: "item"
+        item: "gtceu:titanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44753293830BAEB9"
+      title: "Насосный запас полимерного обслуживания"
+      description: ["Отложи насосы для свежей смеси, полимера и обратки. При каждой замене проверяй направление потока по стрелке на корпусе."]
+      x: 4.800d
+      y: -11.524d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F36253715286879","431B10424D756E33"]
+      optional: true
+      tasks: [{
+        id: "49F7133A0CC35A80"
+        type: "item"
+        item: "gtceu:uv_electric_pump"
+        count: 6L
+      }]
+      rewards: [{
+        id: "4AE343F46D7E7D78"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4AA4151CF2AF47F4"
+      title: "Дополнительные номера для повторных циклов"
+      description: ["Один дополнительный цикл маркировки даст восемь номеров. Отложи под него четыре накладные и 9600 мБ полиэтилена. На две партии в реакторе отдельно нужны четыре накладные, 12 800 мБ полиэтилена и 6400 мБ смеси."]
+      x: -1.368d
+      y: -7.990d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4911D81A33DEF96F","4D7C3EB3ED93B5F5"]
+      optional: true
+      tasks: [{
+        id: "40366C9B2A5487B7"
+        type: "item"
+        item: "kubejs:final_serial_polymer"
+        count: 88L
+      }]
+      rewards: [{
+        id: "48210655C335E98C"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4B6C402415EADDDD"
+      title: "Две архивные партии реактора"
+      description: ["Сделай две пробные партии до привязки. Перенеси их в архив, чтобы позже не принять за свежую продукцию."]
+      x: 1.368d
+      y: -7.671d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AA4151CF2AF47F4","45AFC3E6F1BA5EA0"]
+      optional: true
+      tasks: [{
+        id: "4C96E0B0C958A7BB"
+        type: "item"
+        item: "kubejs:final_polymer_lot"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4012B58FE2F9925A"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4278C7DCD2DDF1F0"
+      title: "Вычислительный склад 256k"
+      description: ["Собери восемь вычислительных хранилищ AE2 на 256k для итогового протокола. Компоненты ячеек для накладных и телеметрии подготовь отдельно."]
+      x: -7.045d
+      y: -5.939d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4FAF06EA71AA5B74","46AEE8B95B4B6A94"]
+      tasks: [{
+        id: "4489734A3CFE25F7"
+        type: "item"
+        item: "ae2:256k_crafting_storage"
+        count: 4L
+      }]
+      rewards: [{
+        id: "49EFED10F626A5EC"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "45510DDDBA016E25"
+      title: "Партия вычислителей UV"
+      description: ["Раздели Wetware и кристаллические мейнфреймы на технологические буферы. Не допускай взаимной блокировки автозаказов с общими комплектующими."]
+      x: -9.592d
+      y: -6.835d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4278C7DCD2DDF1F0","4F2B4853CEB587CE","491F26A020CE463B"]
+      tasks: [{
+        id: "40693EF58FEA16E5"
+        type: "item"
+        item: "gtceu:wetware_processor_computer"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4BA0AF3F00663B4D"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "47DCBC996071F6F0"
+      title: "Оптическая панель серии"
+      description: ["На восемь панелей подай восемь оптических ядер LuV, восемь плотных кабелей AE2, по четыре фазовых блока, силовые панели, тритановых листа и ламината. Нужно 9000 мБ защитного газа."]
+      x: -7.004d
+      y: -3.032d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45510DDDBA016E25","4A88C05670250978","4B7DE494F18A0582"]
+      tasks: [{
+        id: "47388F7FE191DC88"
+        type: "item"
+        item: "kubejs:final_optics_panel"
+        count: 8L
+      }]
+      rewards: [{
+        id: "412827B60DA094B1"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "49EAAF53E61BB3F0"
+      title: "Инскрайбер серийной маркировки"
+      description: ["Подготовь отдельный инскрайбер. Инженерная матрица остаётся в верхнем слоте, оптическая панель подаётся в средний."]
+      x: -0.974d
+      y: 2.871d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["47DCBC996071F6F0","46670FDE6B0A3A13","400454F2F6A3F641"]
+      tasks: [{
+        id: "4D374C250D2E1756"
+        type: "item"
+        item: "ae2:inscriber"
+      }]
+      rewards: [{
+        id: "46D48EF54C170905"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42BFB6B39DE06F1A"
+      title: "Партия серийных заготовок"
+      description: ["Каждая панель даёт одну серийную заготовку. Подготовь 160 заготовок, половину для номеров и половину для сборки электронных партий."]
+      x: -2.744d
+      y: 2.541d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["49EAAF53E61BB3F0"]
+      tasks: [{
+        id: "4EB04608BD6F90FD"
+        type: "item"
+        item: "kubejs:final_serial_blank"
+        count: 160L
+      }]
+      rewards: [{
+        id: "48B1D25EAD6E5744"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "4C38F0977271AFAB"
+      title: "Серийная маркировка электроники"
+      description: ["На восемь номеров подай восемь заготовок, по четыре накладные, узла телеметрии, Wetware, кристаллических мейнфрейма и компонента памяти. На десять циклов потребуется 92 000 мБ защитного газа."]
+      x: -1.368d
+      y: 4.523d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42BFB6B39DE06F1A","4FAF06EA71AA5B74","42ABCAAD931D3A18"]
+      tasks: [{
+        id: "4137017931A69347"
+        type: "item"
+        item: "kubejs:final_serial_logic"
+        count: 80L
+      }]
+      rewards: [{
+        id: "42EFCE01DB975638"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "4F736504B4D5387C"
+      title: "Выделенный стерильный станок"
+      description: ["На главной площадке оставь выделенный сборщик схем UV в стерильной комнате. Отведи свободную выдачу для свежих изделий при приёмочной смене."]
+      x: 0.797d
+      y: 1.884d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C38F0977271AFAB","4A88C05670250978"]
+      tasks: [{
+        id: "4FE4AC2109AABF9B"
+        type: "item"
+        item: "gtceu:uv_circuit_assembler"
+      }]
+      rewards: [{
+        id: "45F25FD515C5B094"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "4764E57C82EB8FBC"
+      title: "Пробная партия электроники"
+      description: ["Стерильный сборщик обычного мира принимает по четыре номера и серийных заготовки, по две накладные, пломбы и процессора AE2, 7800 мБ защитного газа. Четыре пробные партии убери до испытания."]
+      x: 2.744d
+      y: -1.570d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F736504B4D5387C"]
+      optional: true
+      tasks: [{
+        id: "4A14D2024A50E2D3"
+        type: "item"
+        item: "kubejs:final_logic_lot"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4CF280F5F688D834"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "4D702687169EEC63"
+      title: "Поставщики шаблонов по цехам"
+      description: ["Разнеси поставщиков по трём цехам. Подготавливай входы заранее. На выдаче во время испытания оставь доступ диспетчерской, чтобы не потерять свежую партию в общей сети."]
+      x: 2.744d
+      y: 4.231d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F736504B4D5387C","4AFA0EC9ECEEB554","4278C7DCD2DDF1F0"]
+      optional: true
+      tasks: [{
+        id: "4CEEBAF724CD89DD"
+        type: "item"
+        item: "ae2:pattern_provider"
+        count: 3L
+      }]
+      rewards: [{
+        id: "48412B2F6F38E8F8"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4ADA677F7864F676"
+      title: "Оптические ядра на 20 заказов панелей"
+      description: ["На 20 партий по восемь панелей нужны 160 ядер. Оставь отдельную партию для узлов телеметрии."]
+      x: -5.182d
+      y: 5.595d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["47DCBC996071F6F0"]
+      optional: true
+      tasks: [{
+        id: "418BDF3C0986AAEF"
+        type: "item"
+        item: "kubejs:luv_optical_core"
+        count: 160L
+      }]
+      rewards: [{
+        id: "428A10911742EA74"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "49CBA4931DA1F80D"
+      title: "Плотный кабель для оптической основы"
+      description: ["Оставь 160 единиц плотного кабеля в буфере сборщика панелей. Для рабочей сети приготовь кабель отдельно."]
+      x: -3.424d
+      y: 5.208d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4ADA677F7864F676","47DCBC996071F6F0"]
+      optional: true
+      tasks: [{
+        id: "41329B6344E97CAD"
+        type: "item"
+        item: "ae2:fluix_smart_dense_cable"
+        count: 160L
+      }]
+      rewards: [{
+        id: "42AF1A5E6D8B6B54"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4C9851140C7AE3CB"
+      title: "Оптические панели полной серии заготовок"
+      description: ["Выпусти 20 партий по восемь панелей. Загружай их в средний слот инскрайбера, инженерную матрицу держи сверху."]
+      x: -1.368d
+      y: -4.649d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49CBA4931DA1F80D","49EAAF53E61BB3F0"]
+      optional: true
+      tasks: [{
+        id: "4638F5D3F68F4DDD"
+        type: "item"
+        item: "kubejs:final_optics_panel"
+        count: 160L
+      }]
+      rewards: [{
+        id: "4A7E89850F801D12"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "493A93431D1A74C9"
+      title: "Два пресса серийной маркировки AE2"
+      description: ["Поставь отдельный инскрайбер под следующую партию. Проверь, что его выход идёт на тот же сортировочный участок."]
+      x: 1.368d
+      y: -5.506d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42BFB6B39DE06F1A","4C9851140C7AE3CB"]
+      optional: true
+      tasks: [{
+        id: "4648896132EA832D"
+        type: "item"
+        item: "ae2:inscriber"
+        count: 2L
+      }]
+      rewards: [{
+        id: "49086DF1C6479FD7"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "45408463D3897E0C"
+      title: "Инженерные матрицы серийных прессов"
+      description: ["Подготовь отдельную матрицу на каждый пресс. После маркировки оставь матрицы в оборудовании."]
+      x: 4.730d
+      y: 6.588d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["493A93431D1A74C9","400454F2F6A3F641"]
+      optional: true
+      tasks: [{
+        id: "4295DBA218AFA954"
+        type: "item"
+        item: "ae2:engineering_processor_press"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4A02427A9D7EC8DB"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42F29607D1B6ED4D"
+      title: "Компоненты памяти электронной маркировки"
+      description: ["Отмерь по четыре компонента на каждую из десяти партий номеров. Блоки автосборки 256k отложи для итогового отчёта."]
+      x: -6.058d
+      y: -7.905d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4278C7DCD2DDF1F0","4DBC8F1020C2B8A1"]
+      optional: true
+      tasks: [{
+        id: "48207D620A60687D"
+        type: "item"
+        item: "ae2:cell_component_256k"
+        count: 40L
+      }]
+      rewards: [{
+        id: "40A223C3D444D7F6"
+        type: "item"
+        item: "gtceu:silicon_ingot"
+        count: 2
+      }]
+    }
+    {
+      id: "4ED92D719C2EF6D0"
+      title: "Номера и чистые заготовки в разных бункерах"
+      description: ["Раздели 160 заготовок поровну между маркировкой и выпуском партий. Подготовь по бункеру на каждый поток."]
+      x: 4.800d
+      y: 3.889d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45408463D3897E0C","42BFB6B39DE06F1A"]
+      optional: true
+      tasks: [{
+        id: "48B85E3B0AE69D79"
+        type: "item"
+        item: "kubejs:final_serial_blank"
+        count: 160L
+      }]
+      rewards: [{
+        id: "499DCBB3C22437B8"
+        type: "item"
+        item: "gtceu:platinum_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46A3A9A696BE792D"
+      title: "Инженерные процессоры на 20 циклов"
+      description: ["На каждый цикл готовой партии отложи два процессора. Пломбы используй из отдельного грузового запаса."]
+      x: 4.080d
+      y: 1.552d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F736504B4D5387C","42F29607D1B6ED4D"]
+      optional: true
+      tasks: [{
+        id: "4BE5139AEF690C4E"
+        type: "item"
+        item: "ae2:engineering_processor"
+        count: 40L
+      }]
+      rewards: [{
+        id: "4BB3B61769672787"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "485004CBB507D74C"
+      title: "Резервный стерильный сборщик UV"
+      description: ["Зарезервируй один сборщик для испытания. Второму выдели собственный газовый вход и выход пробных изделий."]
+      x: 6.856d
+      y: -3.879d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4ED92D719C2EF6D0","4764E57C82EB8FBC"]
+      optional: true
+      tasks: [{
+        id: "45BE7CDE6A65E412"
+        type: "item"
+        item: "gtceu:uv_circuit_assembler"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4C40DCFDD10956FE"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "41E5DF29F96DA660"
+      title: "Архив двух электронных партий"
+      description: ["Проверь два цикла сборки до испытания. Перенеси полученные партии в отдельный ящик, не оставляй их в контролируемом станке."]
+      x: 9.481d
+      y: -3.556d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["485004CBB507D74C","46A3A9A696BE792D"]
+      optional: true
+      tasks: [{
+        id: "4198DF464FD11F7B"
+        type: "item"
+        item: "kubejs:final_logic_lot"
+        count: 8L
+      }]
+      rewards: [{
+        id: "41C658302865525B"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "463F01EC76DE5565"
+      title: "Рабочий запас накладных обычного мира"
+      description: ["После стальной маркировки отложи 16 накладных на пуск и 80 на основные фазы. Для двух совместных испытаний понадобятся ещё четыре накладные."]
+      x: 7.536d
+      y: 4.101d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B5D43EB27B07C1A","407ED1E35CBA2F3C"]
+      tasks: [{
+        id: "4C392A98F2A8A7F6"
+        type: "item"
+        item: "kubejs:final_overworld_dispatch"
+        count: 96L
+      }]
+      rewards: [{
+        id: "486207AD41E87C97"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46B4E6516FD40721"
+      title: "Рабочий запас накладных Нижнего мира"
+      description: ["Подготовь 96 накладных Нижнего мира. Держи отдельные партии для холодного пуска, реактора и двух совместных испытаний."]
+      x: -1.071d
+      y: 0.860d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43B0F2889EAD70E7","4A5F0FC0F578B6CB"]
+      tasks: [{
+        id: "42E169BA4972D25C"
+        type: "item"
+        item: "kubejs:final_nether_dispatch"
+        count: 96L
+      }]
+      rewards: [{
+        id: "47977EF1B7F2E0E5"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "488F01885DD58E82"
+      title: "Рабочий запас накладных Энда"
+      description: ["Отложи 16 накладных Энда на пуск и восемь десятков для сборщика схем. Четыре накладные для повторных проверок подготовь сверх этого числа."]
+      x: 0.688d
+      y: 3.860d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4FAF06EA71AA5B74","4C38F0977271AFAB"]
+      tasks: [{
+        id: "46D14F59732BBA6D"
+        type: "item"
+        item: "kubejs:final_end_dispatch"
+        count: 96L
+      }]
+      rewards: [{
+        id: "458BFDE6E936A9E2"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4E04D10E2E61108A"
+      title: "Привязка трёх производственных линий"
+      description: ["В обычном мире поставь два батарейных буфера UV 4×, сборщик UV, химический реактор UV и сборщик схем UV со стерильной комнатой. Размести всё в пределах 48 блоков от основного буфера. Возьми пульт и нажми Shift + ПКМ сначала по основному буферу, затем по резервному и по трём станкам. Выключи автоматическую выдачу предметов станков. Пульт будет складывать готовые партии в бочки под станками."]
+      x: 4.800d
+      y: -1.541d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4BB2604374F0C8BE","4BA2130F7FD8BA50","4736FF402AD56EAE","4C4B3E1FAFF056B9","4F736504B4D5387C"]
+      tasks: [{
+        id: "4E24969C3C21F270"
+        type: "item"
+        item: "kubejs:final_control_console"
+      }]
+      rewards: [{
+        id: "495F8A2993FC1257"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "41CC58988603DCB9"
+      title: "Проверка развязки накопителей"
+      description: ["Разведи вводы зарядки, выключи оба накопителя и разряди основной буфер и станки. Освободи выходы. В резерве должно быть не меньше 3 млрд EU, для полного запуска заряди четыре батареи."]
+      x: 9.592d
+      y: 0.799d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4E04D10E2E61108A","4B798F9249C5EA4E","466C332A13B3813F","46D913E01E689C58"]
+      tasks: [{
+        id: "4DF50568A7FB5A2F"
+        type: "item"
+        item: "gtceu:uv_battery_buffer_4x"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4C4D264BAE164791"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4F201676FDB2AC46"
+      title: "Зарядная нагрузка для проверки линии"
+      description: ["Если выдачи энергии не хватает, подключи к активной линии зарядник с разряженными аккумуляторами. В каждую засчитываемую секунду один из трёх станков должен выполнять рецепт приёмочной партии."]
+      x: 10.968d
+      y: -5.346d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41CC58988603DCB9","4B798F9249C5EA4E"]
+      optional: true
+      tasks: [{
+        id: "4298FA04F5C8BD0F"
+        type: "item"
+        item: "gtceu:uv_charger_4x"
+      }]
+      rewards: [{
+        id: "4BE9411F6200A923"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "47C53352330C709C"
+      title: "Запас на 40 циклов стали"
+      description: ["На 40 рабочих циклов отложи по 160 номеров и болванок, по 80 пломб, тритановых листов и накладных и 288 000 мБ смазки. Два испытания совместной нагрузки потребуют отдельного сырья."]
+      x: 9.592d
+      y: -1.697d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["407ED1E35CBA2F3C","463F01EC76DE5565","4E04D10E2E61108A"]
+      tasks: [{
+        id: "4918A0A7ED475F7F"
+        type: "item"
+        item: "kubejs:final_reinforced_billet"
+        count: 160L
+      }]
+      rewards: [{
+        id: "40E3A87D70E0D926"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "4C986FB113518422"
+      title: "Запас на 40 циклов полимера"
+      description: ["На 40 рабочих циклов подай 160 номеров, 80 накладных, 256 000 мБ полиэтилена и 128 000 мБ закалочной смеси. Подготовь место под такой же объём обратки."]
+      x: 7.536d
+      y: 2.395d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4A5F0FC0F578B6CB","46B4E6516FD40721","4E04D10E2E61108A"]
+      tasks: [{
+        id: "46516702280C0A6C"
+        type: "item"
+        item: "kubejs:final_serial_polymer"
+        count: 160L
+      }]
+      rewards: [{
+        id: "400006EED4B57690"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4148A4F69F65AAD9"
+      title: "Запас на 40 циклов электроники"
+      description: ["Подай по 160 номеров и чистых заготовок, по 80 накладных, пломб и инженерных процессоров и 312 000 мБ защитного газа. Запас на одновременные испытания выдели отдельно."]
+      x: 6.856d
+      y: -0.421d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C38F0977271AFAB","488F01885DD58E82","4E04D10E2E61108A"]
+      tasks: [{
+        id: "463E40F6B865F050"
+        type: "item"
+        item: "kubejs:final_serial_logic"
+        count: 160L
+      }]
+      rewards: [{
+        id: "450DDC1FEE896C01"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "487FDEB9D5ED3A9C"
+      title: "Протокол холодного пуска"
+      description: ["Ключом нажми Shift + ПКМ по основному буферу. Пульт спишет по 16 накладных из каждого измерения. Запусти только резерв. Засчитаются 120 секунд с отдачей резерва от 4 194 304 EU/с при работе приёмочных линий."]
+      x: 11.308d
+      y: -2.338d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["41CC58988603DCB9","47C53352330C709C","4C986FB113518422","4148A4F69F65AAD9"]
+      tasks: [{
+        id: "4F6C8C16018657FF"
+        type: "item"
+        item: "kubejs:final_black_start_record"
+      }]
+      rewards: [{
+        id: "42EC09230AAF401D"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "42E0EB8DFBE5A7A5"
+      title: "Протокол работы от резерва"
+      description: ["От основной сети выпусти по 32 изделия за 40 минут. Заряди резерв до 9 млрд EU, отключи основной ввод и зарядку резерва. Подтверди первый отказ ключом. На резерве выпусти по восемь изделий за пять минут."]
+      x: 13.364d
+      y: -1.162d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["487FDEB9D5ED3A9C"]
+      tasks: [{
+        id: "41BB57C15A8C47E5"
+        type: "item"
+        item: "kubejs:final_outage_record"
+      }]
+      rewards: [{
+        id: "4B91386961B19363"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 4
+      }]
+    }
+    {
+      id: "414F8B3C8440DD01"
+      title: "Протокол приёмочной смены"
+      description: ["После первого отказа проработай 19 минут от основного питания и выдай по 24 изделия. Снова заряди резерв до 9 млрд EU, повтори пятиминутный отказ с восемью изделиями и ещё 19 минут основной работы с 24 изделиями. Пульт выдаёт журнал после всех 90 минут."]
+      x: 15.420d
+      y: 2.058d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["42E0EB8DFBE5A7A5"]
+      tasks: [{
+        id: "4B0EC7DAC97E03F2"
+        type: "item"
+        item: "kubejs:final_shift_record"
+      }]
+      rewards: [{
+        id: "4F397A406E67B941"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 4
+      }]
+    }
+    {
+      id: "4EDAB4C440488718"
+      title: "Сырьё для совместной работы трёх линий"
+      description: ["Выдели ещё по восемь стальных, полимерных и электронных номеров. На два цикла добавь по четыре накладные каждого вида, сырьё и соответствующую жидкость по JEI."]
+      x: 17.136d
+      y: 1.123d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["414F8B3C8440DD01","47C53352330C709C","4C986FB113518422"]
+      tasks: [{
+        id: "44A68772ADCBB34D"
+        type: "item"
+        item: "kubejs:final_serial_logic"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4EEE4DBA6A8E62CD"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4ABC7A54A7EE6A9F"
+      title: "Протокол совместной нагрузки"
+      description: ["Останови станки, освободи выходы и подтверди испытание ключом. От основного накопителя запусти все три линии одновременно. Накопитель должен отдавать не менее 24 млн EU в секунду. После двух минут без остановок получи ещё по четыре изделия каждого вида и забери протокол пультом."]
+      x: 19.532d
+      y: 1.657d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4EDAB4C440488718","414F8B3C8440DD01","41CC58988603DCB9"]
+      tasks: [{
+        id: "48D67264FBCBF9F7"
+        type: "item"
+        item: "kubejs:final_concurrent_record"
+      }]
+      rewards: [{
+        id: "49A3FBF78910F08F"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4A1FD220EFB5E254"
+      title: "Повторная приёмка трёх линий"
+      description: ["После первого теста снова останови станки и освободи выходы. Подтверди перезапуск ключом. Требуются ещё 120 секунд совместной работы от основного накопителя и четыре новых изделия каждого вида."]
+      x: 21.248d
+      y: 3.811d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4ABC7A54A7EE6A9F","4EDAB4C440488718"]
+      tasks: [{
+        id: "4319FC25DC16CE84"
+        type: "item"
+        item: "kubejs:final_repeat_load_record"
+      }]
+      rewards: [{
+        id: "4A6FE871A9DA9C2B"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "441DD0A1F3816C5C"
+      title: "Пятнадцать предметных секций приёмки"
+      description: ["Разведи 15 предметных позиций и четыре жидкости по JEI. В отдельный люк поставь записанную сферу. Для сетевого сертификата оставь собственную шину."]
+      x: 23.304d
+      y: 0.002d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4A1FD220EFB5E254","45D4FFEDAD48A64F","44503DCB8E9A5D92"]
+      tasks: [{
+        id: "47B9222E8744C0BE"
+        type: "item"
+        item: "gtceu:ulv_input_bus"
+        count: 15L
+      }]
+      rewards: [{
+        id: "4E7D2B443970216C"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "400B8D964406CBD5"
+      title: "Исследование контрольной нагрузки"
+      description: ["Подай контрольную нагрузку и чистую сферу. Станция требует 458 752 EU/t и 576 000 CWU при 64 CWU/t. Запас штатного охлаждения раздели между двумя HPCA."]
+      x: 17.816d
+      y: -0.782d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44C4815EF54134F2","414F8B3C8440DD01","40E65756199423E4","4DE96186C5476184"]
+      tasks: [{
+        id: "4515CC31D284DC0D"
+        type: "item"
+        item: { id: "gtceu:data_orb", Count: 1b, tag: {"assembly_line_research":{"research_id":"1x_kubejs_final_test_load","research_type":"gtceu:assembly_line"}} }
+        match_nbt: true
+        weak_nbt_match: true
+      }]
+      rewards: [{
+        id: "4C63050254A04ACA"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "4516AE2C2E7E4DCE"
+      title: "Приёмка главного завода"
+      description: ["В обычном мире вставь запись в продвинутый люк, загрузи пять протоколов, сертификат распределённой сети, оснастку, электронику UV и память AE2. Подай 11 520 мБ нейтрония, 28 000 мБ газа, 32 000 мБ закалочной смеси и 28 000 мБ дизеля. Базовый цикл 30 минут при 507 904 EU/t."]
+      x: 25.699d
+      y: -1.658d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["441DD0A1F3816C5C","400B8D964406CBD5","429A5FE8E4F9D799"]
+      tasks: [{
+        id: "4A9E69BCA436F411"
+        type: "item"
+        item: "kubejs:final_commissioning_report"
+      }]
+      rewards: [{
+        id: "43E8CB4122EDEF1A"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 6
+      }]
+    }
+    {
+      id: "44F4398E85919955"
+      title: "Буфер смешанного заказа для линии"
+      description: ["Поставь буфер у поставщика шаблонов. Отведи из него пятнадцать предметных и четыре жидкостных выхода по порядку JEI. Вместе с шиной хранения это двадцать каналов отдельной сети."]
+      x: 25.359d
+      y: 3.649d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["441DD0A1F3816C5C","400B8D964406CBD5","477EFD6EDCD911E5"]
+      optional: true
+      tasks: [{
+        id: "44D5FB8525C25C8C"
+        type: "item"
+        item: "expatternprovider:ingredient_buffer"
+      }]
+      rewards: [{
+        id: "449BF54BD83634ED"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 2
+      }]
+    }
+    {
+      id: "46FF8C9FA5C6016A"
+      title: "Фильтры четырёх жидкостных входов"
+      description: ["Для каждого люка задай одну жидкость. После заказа проверь, что остаток реагента не занимает вход следующего шаблона."]
+      x: 27.415d
+      y: 2.529d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44F4398E85919955","429A5FE8E4F9D799"]
+      optional: true
+      tasks: [{
+        id: "47A4D0DD85D90E9B"
+        type: "item"
+        item: "ae2:export_bus"
+        count: 4L
+      }]
+      rewards: [{
+        id: "45CE031E0CF251EB"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D63B5DA6331A66F"
+      title: "Возврат протокола в сеть"
+      description: ["Подключи импорт к выходной шине сборочной линии. В режиме обработки шаблон должен ожидать готовый протокол, а не одну из его оснасток."]
+      x: 29.471d
+      y: 0.317d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46FF8C9FA5C6016A","441DD0A1F3816C5C"]
+      optional: true
+      tasks: [{
+        id: "49689A83D9FD7438"
+        type: "item"
+        item: "ae2:import_bus"
+      }]
+      rewards: [{
+        id: "48629AAD329718DB"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "47620E7A58DC7E81"
+      title: "Контрольные пульты двух рабочих мест"
+      description: ["Оставь запасной пульт в диспетчерской. Рабочим пультом проверяй состояние основной установки и забирай записи после испытаний."]
+      x: 6.856d
+      y: 1.131d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B8D678AA3F2FDC9","4E04D10E2E61108A"]
+      optional: true
+      tasks: [{
+        id: "4BC01F210B45F395"
+        type: "item"
+        item: "kubejs:final_control_console"
+        count: 2L
+      }]
+      rewards: [{
+        id: "428337938A003907"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4E85D3ABBA4FB6CC"
+      title: "Накладные стального резервного запуска"
+      description: ["Отложи ещё восемь накладных сверх основного запаса. Их хватит на новую активацию, если испытание придётся начинать сначала."]
+      x: 8.912d
+      y: 8.221d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["463F01EC76DE5565","47E98EAA619E4DF9"]
+      optional: true
+      tasks: [{
+        id: "49579D3D98761B5D"
+        type: "item"
+        item: "kubejs:final_overworld_dispatch"
+        count: 56L
+      }]
+      rewards: [{
+        id: "49309959CE58FB43"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4634D539E514D397"
+      title: "Резерв накладных для второго запуска полимера"
+      description: ["Положи восемь резервных накладных отдельно от подачи реактора. При сбросе пульт не возвращает документы."]
+      x: 0.688d
+      y: -0.587d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46B4E6516FD40721","4EC49E33A5EDCA81"]
+      optional: true
+      tasks: [{
+        id: "4D2A5F7146AA8D0F"
+        type: "item"
+        item: "kubejs:final_nether_dispatch"
+        count: 56L
+      }]
+      rewards: [{
+        id: "4DDC2C09A77B1134"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4DE10B032DF4524D"
+      title: "Резерв накладных для повторного запуска электроники"
+      description: ["Подпиши восемь запасных накладных из Энда и убери их в резерв до следующего пуска."]
+      x: 2.059d
+      y: 5.580d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["488F01885DD58E82","460D558577F59E01"]
+      optional: true
+      tasks: [{
+        id: "4190A489DB49AC5E"
+        type: "item"
+        item: "kubejs:final_end_dispatch"
+        count: 56L
+      }]
+      rewards: [{
+        id: "4635C775496E917E"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "45CAB5597AFCE06A"
+      title: "Четыре комплекта аккумуляторов для смены"
+      description: ["Проверь две рабочие четвёрки и два комплекта замены. Заряжай запас на независимом входе, вне режима аварии."]
+      x: 15.121d
+      y: -2.460d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41CC58988603DCB9","4D3768FBDFBBE0D6"]
+      optional: true
+      tasks: [{
+        id: "4BF20CC068EFF40A"
+        type: "item"
+        item: "gtceu:uv_naquadria_battery"
+        count: 16L
+      }]
+      rewards: [{
+        id: "47161CF357F7A7B7"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "440911ABAE386A2F"
+      title: "Крышки управления и обслуживание вводов"
+      description: ["Оставь пару управляющих крышек в запасе. На действующих двух проверь переключение по сигналу и отсутствие выдачи у отключённого банка."]
+      x: 15.260d
+      y: -0.666d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45CAB5597AFCE06A","4A200EA2D6C942E0"]
+      optional: true
+      tasks: [{
+        id: "41C5CAE537682B10"
+        type: "item"
+        item: "gtceu:machine_controller_cover"
+        count: 4L
+      }]
+      rewards: [{
+        id: "46E0D4ED8ACA3343"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4697CBA54AAB454C"
+      title: "Четыре независимые линии жидкости приёмки"
+      description: ["Разведи нейтроний, газ, закалочную смесь и дизель по четырём входам. Два запасных люка оставь под обслуживание."]
+      x: 25.359d
+      y: 1.455d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["441DD0A1F3816C5C","429A5FE8E4F9D799"]
+      optional: true
+      tasks: [{
+        id: "4AA9FB06AEF5A29E"
+        type: "item"
+        item: "gtceu:uv_input_hatch"
+        count: 6L
+      }]
+      rewards: [{
+        id: "40A26628A33CF266"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "480B3AFA05F4053C"
+      title: "Нейтрониевые пробы итогового отчёта"
+      description: ["Оставь 16 проб в отдельной шине. Не трать комплект на свидетелей сети или складские накладные."]
+      x: 25.359d
+      y: -4.179d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["441DD0A1F3816C5C","4901380DFC8E746C"]
+      optional: true
+      tasks: [{
+        id: "4C4902C39BAD00A3"
+        type: "item"
+        item: "kubejs:uv_neutronium_coupon"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4D5B9B0FC87D3CDF"
+        type: "item"
+        item: "gtceu:yttrium_barium_cuprate_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4DEAAFD3FEEC276F"
+      title: "Накладные UV для окончательной приёмки"
+      description: ["Выдели восемь накладных UV как отдельный вход отчёта. Не путай их с документами трёх маршрутов пульта."]
+      x: 19.872d
+      y: -4.492d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["400B8D964406CBD5","442C8CBD2F789516"]
+      optional: true
+      tasks: [{
+        id: "4973EBE38714F41E"
+        type: "item"
+        item: "kubejs:uv_freight_manifest"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4504CD8FF5F93FC9"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "44571F4655763331"
+      title: "Силовой запас после успешной приёмки"
+      description: ["Собери новый комплект шин после передачи отчёта. Держи запас рядом с узлом резерва для ремонта рабочего завода."]
+      x: 27.415d
+      y: -5.276d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4516AE2C2E7E4DCE","4DEAAFD3FEEC276F","480B3AFA05F4053C"]
+      optional: true
+      tasks: [{
+        id: "46840C33BBD58ADF"
+        type: "item"
+        item: "kubejs:final_reserve_bus"
+        count: 12L
+      }]
+      rewards: [{
+        id: "41E8264A725D0584"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+  ]
+}

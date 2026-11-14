@@ -1,0 +1,369 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "post_uv_operations"
+  group: "49C57C767912BC15"
+  icon: "kubejs:post_uv_operations_certificate"
+  title: "Эксплуатация после UV"
+  id: "4FA9B89ED1A1E937"
+  order_index: 9
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/post_uv_operations.png"
+    x: 0.0d
+    y: 0.0d
+    width: 25.796d
+    height: 16.139d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "499605CD3A20FE48"
+      title: "Экземпляр приёмки UV для эксплуатации"
+      description: ["Выпусти экземпляр протокола для новой очереди завода. Часть станков прежней очереди использует свой экземпляр как оснастку."]
+      x: -9.540d
+      y: 1.106d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4901380DFC8E746C"]
+      tasks: [{
+        id: "42C2CDA3A2CA21C7"
+        type: "item"
+        item: "kubejs:uv_commissioning_report"
+      }]
+      rewards: [{
+        id: "461C15F433D74129"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "446DCC854AFF73A9"
+      title: "Шины линии эксплуатационного допуска"
+      description: ["Подготовь восемь предметных позиций по порядку JEI. Подведи газ и теплоноситель в отдельные люки."]
+      x: -6.911d
+      y: -1.371d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["499605CD3A20FE48","44126B584B873E79"]
+      tasks: [{
+        id: "464551165B9FA347"
+        type: "item"
+        item: "gtceu:uv_input_bus"
+        count: 8L
+      }]
+      rewards: [{
+        id: "432730E258F4C36F"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44AD99FA528522FA"
+      title: "Разрешение на эксплуатацию сети"
+      description: ["Отдай протокол UV и комплект электроники линии в Верхнем мире. Из цикла выходит 16 допусков. Раздели их между лабораторией шин, испытаниями резерва и двумя удалёнными площадками."]
+      x: -3.943d
+      y: 0.000d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["446DCC854AFF73A9","48BA0DE6C0D211FB","491F26A020CE463B"]
+      tasks: [{
+        id: "40E48351C331FDF4"
+        type: "item"
+        item: "kubejs:post_uv_operations_permit"
+        count: 16L
+      }]
+      rewards: [{
+        id: "49EE5AF3FD3E9ED8"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4DFB2F837B93BCCE"
+      title: "Измерительные катушки IE для шин UV"
+      description: ["Отведи партию катушек Immersive Engineering в стерильный цех. На каждой шине измерительная обмотка и силовой медный ввод выполняют разные задачи."]
+      x: -1.654d
+      y: 1.650d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44AD99FA528522FA","4E4DF2091D1B0E31"]
+      tasks: [{
+        id: "4B8D26C1B8DCE818"
+        type: "item"
+        item: "immersiveengineering:coil_hv"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4A9E24C35B2AE0B7"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42D25FCC04C94E52"
+      title: "Диагностика нагрузки на шинах"
+      description: ["Соедини датчики UV, катушки IE, P2P-туннели и кристаллические мейнфреймы. Сборщику схем в стерильной комнате нужно свободное место для партии из четырёх блоков."]
+      x: 1.314d
+      y: 2.482d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4DFB2F837B93BCCE","491F26A020CE463B","465B14C2FEB0C522"]
+      tasks: [{
+        id: "4572953F17CADBB6"
+        type: "item"
+        item: "kubejs:post_uv_bus_diagnostic"
+        count: 4L
+      }]
+      rewards: [{
+        id: "40B7F4E1EB21904D"
+        type: "item"
+        item: "gtceu:tritanium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "41F1D1FF9C8A891B"
+      title: "Регуляторы для испытания привода"
+      description: ["Подготовь четыре регулятора оборотов Create для нагрузочной сборки. Добавь их к аккумуляторам, трансформаторам и шинам в сборщике UV."]
+      x: -1.654d
+      y: -4.105d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44AD99FA528522FA","456874B5C9282C24"]
+      tasks: [{
+        id: "481B5FEDE7D1153E"
+        type: "item"
+        item: "create:rotation_speed_controller"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4410F022F0780782"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "495BF77F10F9D001"
+      title: "Матрица для проверки резерва"
+      description: ["На четыре матрицы уходят четыре переносных наквадриевых аккумулятора UV и 12 000 мБ смазки."]
+      x: 1.654d
+      y: -0.647d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41F1D1FF9C8A891B","4606B1FE80456B80","4E4DF2091D1B0E31"]
+      tasks: [{
+        id: "4F3653B8448FB6BF"
+        type: "item"
+        item: "kubejs:post_uv_reserve_load_matrix"
+        count: 4L
+      }]
+      rewards: [{
+        id: "457B8D0572B83299"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4AF0FB58FB2E1FC9"
+      title: "Контур испытания в Нижнем мире"
+      description: ["Установи реактор в Нижнем мире. Отдельные входы нужны для холодного теплоносителя и силиконовой резины. Нагретый теплоноситель верни в охлаждение."]
+      x: -1.050d
+      y: 4.134d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44AD99FA528522FA","496F8D9DF63B280F","4E11CD775B6CB8A2"]
+      tasks: [{
+        id: "43A4E941540EAFFB"
+        type: "item"
+        item: "gtceu:uv_chemical_reactor"
+      }]
+      rewards: [{
+        id: "4F440099A9B7E550"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4C5A07B2E0D3B508"
+      title: "Изоляция жидкостной магистрали"
+      description: ["Испытай изоляцию на реакторе UV в Нижнем мире. Подай материалы по JEI и освобождай ёмкость обратки после каждого цикла."]
+      x: 4.010d
+      y: 2.585d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4AF0FB58FB2E1FC9","4B979DAE99817888","495BF77F10F9D001"]
+      tasks: [{
+        id: "4C1FD7DD7850EA6C"
+        type: "item"
+        item: "kubejs:post_uv_coolant_isolation_module"
+        count: 4L
+      }]
+      rewards: [{
+        id: "46B42B57E471A65C"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4F3D60B6695A3691"
+      title: "Ответвление ME на склад Энда"
+      description: ["Организуй склад готовых эталонов у сборщика в Энде. Квантовые узлы нужны и для рецепта, поэтому подготовь отдельный запас."]
+      x: -1.654d
+      y: -2.015d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44AD99FA528522FA","468A1AA64CFCBE63","4BF2B9B6309DA8D0"]
+      tasks: [{
+        id: "4E886B1D9615DA89"
+        type: "item"
+        item: "ae2:quantum_link"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4A7C84AED1957188"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "412397AA89017BDA"
+      title: "Эталон времени грузовой сети"
+      description: ["Изготовь часы в Энде. Сборщик UV принимает концентрат, накладные обеих ступеней, датчики уровня Create и детали ME."]
+      x: 1.445d
+      y: -4.658d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F3D60B6695A3691","48BA0DE6C0D211FB","413B1081C60521FD"]
+      tasks: [{
+        id: "4819F74B69CAB975"
+        type: "item"
+        item: "kubejs:post_uv_logistics_clock"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4D9D9B134AD4B445"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "4C51B58FDE2B05CE"
+      title: "Протокол нагрузки шин и резерва"
+      description: ["Собери результаты трёх цехов на линии в Верхнем мире. Подай холодный теплоноситель, защитный газ и остальные реагенты согласно JEI."]
+      x: 6.571d
+      y: 0.598d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["42D25FCC04C94E52","495BF77F10F9D001","4C5A07B2E0D3B508"]
+      tasks: [{
+        id: "4F03D4BFDF9364AC"
+        type: "item"
+        item: "kubejs:post_uv_load_acceptance_record"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4F6E49FDCC937C9A"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "406E1E495AE0CFC9"
+      title: "Протокол сверки удалённых отгрузок"
+      description: ["Доставь часы из Энда. На центральной линии сверь их с диагностикой шин, накладными UV и квантовыми узлами AE2. Сделай две партии: станция расходует один протокол, ещё два нужны для сертификата."]
+      x: 4.283d
+      y: -2.457d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["412397AA89017BDA","42D25FCC04C94E52"]
+      tasks: [{
+        id: "48097DBF3CC1614B"
+        type: "item"
+        item: "kubejs:post_uv_supply_sync_record"
+        count: 4L
+      }]
+      rewards: [{
+        id: "45F79FC08977E89B"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4B7A7D3DF5DCB0EE"
+      title: "Пролив резервного контура"
+      description: ["На цикл в реакторе UV обычного мира подай четыре матрицы, четыре модуля изоляции, 16 000 мБ холодного теплоносителя, 12 000 мБ защитного газа и 2304 мБ силиконовой резины. Два цикла дают четыре протокола. Собери по 16 000 мБ нагретой обратки."]
+      x: 6.231d
+      y: -1.416d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["495BF77F10F9D001","4C5A07B2E0D3B508"]
+      tasks: [{
+        id: "410762652F1DF360"
+        type: "item"
+        item: "kubejs:post_uv_reserve_bleed_record"
+        count: 4L
+      }]
+      rewards: [{
+        id: "416D02051E3F8F68"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4444A16C98767653"
+      title: "Сфера с архивом грузовой сети"
+      description: ["Исследуй протокол синхронизации на станции. Используй сферу данных и перенеси запись в исследовательскую шину сборочной линии."]
+      x: 6.911d
+      y: -5.414d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["406E1E495AE0CFC9","40E65756199423E4"]
+      tasks: [{
+        id: "48EE4869F1E00636"
+        type: "item"
+        item: "gtceu:data_orb"
+      }]
+      rewards: [{
+        id: "41EBBC9929C2CE8D"
+        type: "item"
+        item: "ae2:quartz_fiber"
+        count: 3
+      }]
+    }
+    {
+      id: "43AA31A7D9ECA52D"
+      title: "Сертификат работы сети UV"
+      description: ["Сведи нагрузочные протоколы, сверку отгрузок, четыре протокола пролива и установочные модули. Сертификат устанавливается в сборщик разделительных коллекторов. После выпуска коллекторов забери сертификат из сборщика и используй для допуска трёх площадок."]
+      x: 9.200d
+      y: -2.338d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["4444A16C98767653","4C51B58FDE2B05CE","406E1E495AE0CFC9","4B7A7D3DF5DCB0EE"]
+      tasks: [{
+        id: "4FB26D9055743FFD"
+        type: "item"
+        item: "kubejs:post_uv_operations_certificate"
+      }]
+      rewards: [{
+        id: "4DC0E7EF5CEF9C0A"
+        type: "item"
+        item: "gtceu:tungsten_steel_plate"
+        count: 1
+      }]
+    }
+  ]
+}

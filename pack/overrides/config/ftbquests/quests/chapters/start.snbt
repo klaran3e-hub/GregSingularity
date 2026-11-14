@@ -1,0 +1,3607 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "start"
+  group: "49C57C767912BC15"
+  icon: "gtceu:lp_steam_solid_boiler"
+  title: "Начало"
+  id: "422E3E124BC80F8F"
+  order_index: 0
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/start.png"
+    x: 0.0d
+    y: 0.0d
+    width: 73.046d
+    height: 33.574d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "48E2C67CD23B90EC"
+      title: "Ручной разбор гравия"
+      description: ["Собери четыре блока гравия. В сетке 2×2 из них можно сделать один кремень."]
+      x: -29.114d
+      y: -2.744d
+      shape: "circle"
+      size: 1.090d
+      tasks: [{
+        id: "4E478691422BC7F7"
+        type: "item"
+        item: "minecraft:gravel"
+        count: 4L
+      }]
+      rewards: [{
+        id: "48542B1F9BE9ECBE"
+        type: "item"
+        item: "minecraft:stick"
+        count: 2
+      }]
+    }
+    {
+      id: "4B20DED2EAABC731"
+      title: "Сортировка кремня"
+      description: ["Два кремня пойдут на раскол. Ещё один нужен для обуха ножа."]
+      x: -28.158d
+      y: 3.119d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48E2C67CD23B90EC"]
+      tasks: [{
+        id: "415E39BC957F1B56"
+        type: "item"
+        item: "minecraft:flint"
+        count: 3L
+      }]
+      rewards: [{
+        id: "406530045DE8CE13"
+        type: "item"
+        item: "minecraft:gravel"
+        count: 3
+      }]
+    }
+    {
+      id: "482E3615721F6FA1"
+      title: "Сухие ветви"
+      description: ["Палки можно добыть из листвы, сухих кустов или собрать из двух саженцев."]
+      x: -29.794d
+      y: -1.278d
+      shape: "circle"
+      size: 1.090d
+      tasks: [{
+        id: "4BFD45FDC59C703A"
+        type: "item"
+        item: "minecraft:stick"
+        count: 4L
+      }]
+      rewards: [{
+        id: "45F992E8D5510DFF"
+        type: "item"
+        item: "kubejs:plant_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "40F255BBE540EBE8"
+      title: "Волокно с берега"
+      description: ["Собери волокно с травы и папоротника. Когда сделаешь нож, режь им тростник, пшеницу или ламинарию."]
+      x: -29.114d
+      y: 0.224d
+      shape: "circle"
+      size: 1.090d
+      tasks: [{
+        id: "4A9008CA8FCEC803"
+        type: "item"
+        item: "kubejs:plant_fibre"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4F3A1A3F896702E4"
+        type: "item"
+        item: "minecraft:gravel"
+        count: 2
+      }]
+    }
+    {
+      id: "4DD5BD0433FCD2A5"
+      title: "Раскол кремня"
+      description: ["Расколи два кремня на гравии. Это заготовка лезвия."]
+      x: -25.842d
+      y: -1.349d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B20DED2EAABC731"]
+      tasks: [{
+        id: "48331B0256C31FFC"
+        type: "item"
+        item: "kubejs:flint_shard"
+      }]
+      rewards: [{
+        id: "4E133A7B888243F2"
+        type: "item"
+        item: "minecraft:gravel"
+        count: 3
+      }]
+    }
+    {
+      id: "435AD3172CD57ED7"
+      title: "Первый нож"
+      description: ["Собери нож в инвентаре. Для рукоятей и нагелей держи запас кремнёвых лезвий."]
+      x: -24.545d
+      y: 0.000d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4DD5BD0433FCD2A5","482E3615721F6FA1","40F255BBE540EBE8"]
+      tasks: [{
+        id: "4634637C21BD62D6"
+        type: "item"
+        item: "kubejs:flint_knife"
+      }]
+      rewards: [{
+        id: "4BF6FD8F9737ED5D"
+        type: "item"
+        item: "minecraft:stick"
+        count: 3
+      }]
+    }
+    {
+      id: "47A521E814192495"
+      title: "Промывка волокна"
+      description: ["Возьми волокно и наведи курсор на воду. ПКМ промывает одну единицу, Shift + ПКМ промывает до четырёх. Для непрерывной промывки проведи поток воздуха Create через воду над лентой."]
+      x: -27.478d
+      y: 1.604d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["40F255BBE540EBE8"]
+      tasks: [{
+        id: "4B0E55C7508FD0B7"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 4L
+      }]
+      rewards: [{
+        id: "453B4F1BEEBDAFBB"
+        type: "item"
+        item: "kubejs:plant_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "44F44EB6168E16BC"
+      title: "Плетение шнура"
+      description: ["На два шнура уйдёт восемь единиц промытого волокна."]
+      x: -25.842d
+      y: 3.380d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["47A521E814192495"]
+      tasks: [{
+        id: "4A67CB0C7362080C"
+        type: "item"
+        item: "kubejs:fibre_cord"
+        count: 2L
+      }]
+      rewards: [{
+        id: "46B6BD06B558D32E"
+        type: "item"
+        item: "kubejs:plant_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "45D72E4E790DEE89"
+      title: "Вязка креплений"
+      description: ["Два шнура и промытое волокно дают одно крепление. До верстака понадобятся три крепления."]
+      x: -24.205d
+      y: -1.604d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44F44EB6168E16BC"]
+      tasks: [{
+        id: "454EDCEE0B9D313A"
+        type: "item"
+        item: "kubejs:tool_binding"
+      }]
+      rewards: [{
+        id: "4F529E9CC31B0DE8"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "468D4C1249381858"
+      title: "Рукоять под хват"
+      description: ["Обработай две ветви ножом. Рукоять используется в инструментах и раме."]
+      x: -22.569d
+      y: 3.689d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["435AD3172CD57ED7"]
+      tasks: [{
+        id: "4BB890A699E9BBA2"
+        type: "item"
+        item: "kubejs:tool_handle"
+      }]
+      rewards: [{
+        id: "428DCEAF7588C34C"
+        type: "item"
+        item: "minecraft:stick"
+        count: 3
+      }]
+    }
+    {
+      id: "4A88897457730988"
+      title: "Щепные планки для настила"
+      description: ["На одну щепную планку потрать три ветви. Для настила верстака собери три планки."]
+      x: -23.249d
+      y: 2.255d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["435AD3172CD57ED7"]
+      tasks: [{
+        id: "4853CE142D46CAFB"
+        type: "item"
+        item: "kubejs:rough_slat"
+        count: 3L
+      }]
+      rewards: [{
+        id: "46F555ECEDDB1D5A"
+        type: "item"
+        item: "minecraft:stick"
+        count: 3
+      }]
+    }
+    {
+      id: "4F6874E031173E06"
+      title: "Нагели вместо гвоздей"
+      description: ["Одна ветвь даёт два нагеля. Часть уйдёт на верстак, остальные оставь для инструментов."]
+      x: -22.569d
+      y: -0.007d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["435AD3172CD57ED7"]
+      tasks: [{
+        id: "41FB353A109ED553"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4569094A9E217C85"
+        type: "item"
+        item: "minecraft:flint"
+        count: 3
+      }]
+    }
+    {
+      id: "44085C938170158D"
+      title: "Рама верстака"
+      description: ["Собери две рукояти на нагеле и вязаном креплении в сетке 2×2."]
+      x: -21.237d
+      y: -1.519d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["468D4C1249381858","4F6874E031173E06","45D72E4E790DEE89"]
+      tasks: [{
+        id: "44827133410ED334"
+        type: "item"
+        item: "kubejs:workbench_frame"
+      }]
+      rewards: [{
+        id: "4BC8ED01DDCA7303"
+        type: "item"
+        item: "minecraft:gravel"
+        count: 3
+      }]
+    }
+    {
+      id: "4E460BDB3A690926"
+      title: "Настил верстака"
+      description: ["Три планки и крепление складываются в инвентаре."]
+      x: -21.613d
+      y: 5.533d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4A88897457730988","45D72E4E790DEE89"]
+      tasks: [{
+        id: "42D7CE1F98417DE3"
+        type: "item"
+        item: "kubejs:workbench_top"
+      }]
+      rewards: [{
+        id: "46FB4E3B8166A527"
+        type: "item"
+        item: "minecraft:stick"
+        count: 3
+      }]
+    }
+    {
+      id: "44E5E24E52DC8208"
+      title: "Первый верстак"
+      description: ["Соедини раму, настил, нагель и крепление в сетке 2×2. Откроется сетка 3×3."]
+      x: -19.636d
+      y: 2.482d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["44085C938170158D","4E460BDB3A690926"]
+      tasks: [{
+        id: "40122659DBC42234"
+        type: "item"
+        item: "minecraft:crafting_table"
+      }]
+      rewards: [{
+        id: "4FE711763A570959"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "42A319164F84D373"
+      title: "Кремнёвая головка топора"
+      description: ["Собери головку топора из трёх кремнёвых осколков и одного гравия."]
+      x: -18.340d
+      y: -2.624d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44E5E24E52DC8208","4DD5BD0433FCD2A5"]
+      tasks: [{
+        id: "47D29C169546DFF6"
+        type: "item"
+        item: "kubejs:axe_head"
+      }]
+      rewards: [{
+        id: "4811AF725556E909"
+        type: "item"
+        item: "minecraft:gravel"
+        count: 3
+      }]
+    }
+    {
+      id: "48A8D65F2FC16415"
+      title: "Кремнёвая головка кирки"
+      description: ["Подбери три кремнёвых осколка и гравий."]
+      x: -18.340d
+      y: -0.865d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44E5E24E52DC8208","4DD5BD0433FCD2A5"]
+      tasks: [{
+        id: "475573B68388B0F1"
+        type: "item"
+        item: "kubejs:pick_head"
+      }]
+      rewards: [{
+        id: "47AE15447B10E40A"
+        type: "item"
+        item: "minecraft:stick"
+        count: 3
+      }]
+    }
+    {
+      id: "469A83EB7EBD443A"
+      title: "Первый топор"
+      description: ["Рукоять фиксируется нагелем и двумя креплениями. Теперь можно валить деревья."]
+      x: -16.704d
+      y: 1.194d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42A319164F84D373","45D72E4E790DEE89","468D4C1249381858"]
+      tasks: [{
+        id: "4394510C8DD84FBE"
+        type: "item"
+        item: "kubejs:flint_axe"
+      }]
+      rewards: [{
+        id: "48F851E8F04D5B53"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "4606926DBDE39BB8"
+      title: "Первая кирка"
+      description: ["Для камня и первых руд. Возьми сменный инструмент, если идёшь далеко."]
+      x: -16.704d
+      y: -0.460d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48A8D65F2FC16415","45D72E4E790DEE89","468D4C1249381858"]
+      tasks: [{
+        id: "4708F09169F32EE7"
+        type: "item"
+        item: "kubejs:flint_pickaxe"
+      }]
+      rewards: [{
+        id: "43221FCC7FE33195"
+        type: "item"
+        item: "kubejs:plant_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "4CD088474AE49C19"
+      title: "Каменный молот"
+      description: ["Нужен для дробления руды, ковки и приготовления отощителя."]
+      x: -14.387d
+      y: 2.892d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4606926DBDE39BB8","468D4C1249381858"]
+      tasks: [{
+        id: "426904C278E50161"
+        type: "item"
+        item: "kubejs:stone_hammer"
+      }]
+      rewards: [{
+        id: "48702F2FA34D19E7"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "4C7BAE0FB15D57DD"
+      title: "Огневое сверло"
+      description: ["Собери сверло из нагеля, рукояти, планки и двух шнуров. Сверло входит в крафт костра и пилы."]
+      x: -18.340d
+      y: 5.042d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44E5E24E52DC8208","44F44EB6168E16BC","468D4C1249381858","4A88897457730988","4F6874E031173E06"]
+      tasks: [{
+        id: "4D638E14F5AF2A5B"
+        type: "item"
+        item: "kubejs:fire_drill"
+      }]
+      rewards: [{
+        id: "4DA018F408970397"
+        type: "item"
+        item: "minecraft:gravel"
+        count: 3
+      }]
+    }
+    {
+      id: "493BCB782DD7F53E"
+      title: "Столярная вязка"
+      description: ["Подгони доски ножом и скрепи их нагелями, шнуром и креплением. Столярное соединение идёт в мебель и приводы."]
+      x: -14.387d
+      y: -2.003d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["469A83EB7EBD443A","4F6874E031173E06"]
+      tasks: [{
+        id: "4DEE4724C133E380"
+        type: "item"
+        item: "kubejs:wooden_joint"
+      }]
+      rewards: [{
+        id: "4C1FE26C0274BA9E"
+        type: "item"
+        item: "minecraft:flint"
+        count: 3
+      }]
+    }
+    {
+      id: "4A09AF0ABA19165C"
+      title: "Сундук без клея"
+      description: ["Сундук требует досок, нагеля и двух вязаных креплений."]
+      x: -12.799d
+      y: 2.702d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["493BCB782DD7F53E"]
+      tasks: [{
+        id: "4320A67CE51ADE7F"
+        type: "item"
+        item: "minecraft:chest"
+      }]
+      rewards: [{
+        id: "4481193C53110824"
+        type: "item"
+        item: "minecraft:gravel"
+        count: 3
+      }]
+    }
+    {
+      id: "4C5EDD8F82704B98"
+      title: "Бочка на обвязке"
+      description: ["Собери бочку из сундука, обвязки и плит. Рецепт для своей породы дерева посмотри в JEI."]
+      x: -11.114d
+      y: 7.586d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4A09AF0ABA19165C"]
+      tasks: [{
+        id: "4CAF2CA02DE973EB"
+        type: "item"
+        item: "minecraft:barrel"
+      }]
+      rewards: [{
+        id: "4D83F517FA9F6775"
+        type: "item"
+        item: "minecraft:flint"
+        count: 3
+      }]
+    }
+    {
+      id: "4F7D5CE189689B06"
+      title: "Лестница к рудной жиле"
+      description: ["Собери восемь секций лестницы перед разведкой под землёй."]
+      x: -20.933d
+      y: 1.214d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F6874E031173E06","44F44EB6168E16BC"]
+      tasks: [{
+        id: "45BA4B297781E0F8"
+        type: "item"
+        item: "minecraft:ladder"
+        count: 8L
+      }]
+      rewards: [{
+        id: "477F56DFCB227D43"
+        type: "item"
+        item: "minecraft:flint"
+        count: 3
+      }]
+    }
+    {
+      id: "42C21930549F51D4"
+      title: "Костёр для обжига"
+      description: ["Брёвна, ветви, сухое волокно и огневое сверло. Поставь костёр рядом с водой."]
+      x: -14.387d
+      y: -0.205d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["469A83EB7EBD443A","4C7BAE0FB15D57DD"]
+      tasks: [{
+        id: "411B878F36D7B890"
+        type: "item"
+        item: "minecraft:campfire"
+      }]
+      rewards: [{
+        id: "401407FF1026B476"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "42A6109600EE0940"
+      title: "Волокно на растопку и обвязку"
+      description: ["Собери двенадцать единиц растительного волокна. Часть отложи сухой для костра, остальное промой для шнура."]
+      x: -23.249d
+      y: -3.487d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40F255BBE540EBE8","435AD3172CD57ED7"]
+      optional: true
+      tasks: [{
+        id: "41F54216DBD491FF"
+        type: "item"
+        item: "kubejs:plant_fibre"
+        count: 12L
+      }]
+      rewards: [{
+        id: "41761335C4B8140C"
+        type: "item"
+        item: "minecraft:gravel"
+        count: 2
+      }]
+    }
+    {
+      id: "466A45812A562432"
+      title: "Гравий на три кремня"
+      description: ["Для трёх гарантированных кремней собери двенадцать блоков гравия. Разложи их в сетке 2×2 тремя порциями."]
+      x: -26.522d
+      y: 5.055d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48E2C67CD23B90EC","4B20DED2EAABC731"]
+      optional: true
+      tasks: [{
+        id: "472890B86681DA07"
+        type: "item"
+        item: "minecraft:gravel"
+        count: 12L
+      }]
+      rewards: [{
+        id: "43B5513AB0DB861E"
+        type: "item"
+        item: "minecraft:flint"
+        count: 2
+      }]
+    }
+    {
+      id: "450581277314EBA7"
+      title: "Промытое волокно для шнуров"
+      description: ["Промой шестнадцать единиц волокна у воды. За четыре нажатия Shift + ПКМ обработаешь всю партию."]
+      x: -24.885d
+      y: 6.903d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["47A521E814192495","44F44EB6168E16BC"]
+      optional: true
+      tasks: [{
+        id: "4A52C1314F91AEB3"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 16L
+      }]
+      rewards: [{
+        id: "489CDD76D35A21C5"
+        type: "item"
+        item: "kubejs:plant_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "42446E81316E9872"
+      title: "Два запасных кремнёвых ножа"
+      description: ["Собери три ножа. Один оставь для распила, два держи у верстака для замены изношенного инструмента."]
+      x: -18.340d
+      y: -4.577d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["435AD3172CD57ED7","44E5E24E52DC8208"]
+      optional: true
+      tasks: [{
+        id: "48E30C42C05DFD29"
+        type: "item"
+        item: "kubejs:flint_knife"
+        count: 3L
+      }]
+      rewards: [{
+        id: "461D48F0934D56FD"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "4D8CA3BD8D5AB414"
+      title: "Нагели для столярного поста"
+      description: ["Нарежь шестнадцать нагелей из восьми палок. Держи их у верстака вместе с досками и шнуром."]
+      x: -13.431d
+      y: -5.197d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F6874E031173E06","493BCB782DD7F53E"]
+      optional: true
+      tasks: [{
+        id: "423A080555805BC1"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4D29EB65F0642DC3"
+        type: "item"
+        item: "minecraft:gravel"
+        count: 2
+      }]
+    }
+    {
+      id: "48DB42526D304B21"
+      title: "Соединения для деревянной оснастки"
+      description: ["Собери двенадцать столярных соединений. Они нужны для водяного колеса и деревянной обвязки станков."]
+      x: -11.114d
+      y: 0.852d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["493BCB782DD7F53E","4D8CA3BD8D5AB414"]
+      optional: true
+      tasks: [{
+        id: "419B4BCCF67D7A5F"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 12L
+      }]
+      rewards: [{
+        id: "49452A944CCCDAD6"
+        type: "item"
+        item: "kubejs:plant_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "42D4ED31B2F13D53"
+      title: "Крепления для сменных инструментов"
+      description: ["Сплети восемь креплений. На два сменных топора и две кирки уйдёт по два крепления на инструмент."]
+      x: -15.067d
+      y: 1.190d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45D72E4E790DEE89","469A83EB7EBD443A","4606926DBDE39BB8"]
+      optional: true
+      tasks: [{
+        id: "42B25DD8A7F31FD3"
+        type: "item"
+        item: "kubejs:tool_binding"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4C3A277645E461EF"
+        type: "item"
+        item: "minecraft:flint"
+        count: 2
+      }]
+    }
+    {
+      id: "44D8067DAC9CEEEF"
+      title: "Рукояти на два комплекта инструмента"
+      description: ["Подгони шесть рукоятей. Отложи их для кирок, топоров, молота и следующего огневого сверла."]
+      x: -13.431d
+      y: 5.733d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["468D4C1249381858","4CD088474AE49C19"]
+      optional: true
+      tasks: [{
+        id: "4C47FCD0CF0AD1DE"
+        type: "item"
+        item: "kubejs:tool_handle"
+        count: 6L
+      }]
+      rewards: [{
+        id: "4CA5840E1329007B"
+        type: "item"
+        item: "minecraft:gravel"
+        count: 2
+      }]
+    }
+    {
+      id: "43D5CB49D7716912"
+      title: "Сундуки у забоя и верстака"
+      description: ["Собери три сундука. Разложи гравий, руду и сменный инструмент по разным местам, чтобы освободить инвентарь."]
+      x: -11.794d
+      y: 9.022d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A09AF0ABA19165C","4F7D5CE189689B06"]
+      optional: true
+      tasks: [{
+        id: "441D97310B96D24A"
+        type: "item"
+        item: "minecraft:chest"
+        count: 3L
+      }]
+      rewards: [{
+        id: "41148C82187A76E8"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "4DC8851E350F826D"
+      title: "Длинный спуск по лестницам"
+      description: ["Возьми двадцать четыре секции лестницы и освещение для вертикального спуска в шахту."]
+      x: -10.158d
+      y: -3.457d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F7D5CE189689B06","44DEA566E88B53D3"]
+      optional: true
+      tasks: [{
+        id: "4BD7870E11C8C473"
+        type: "item"
+        item: "minecraft:ladder"
+        count: 24L
+      }]
+      rewards: [{
+        id: "43CE55125E84B58E"
+        type: "item"
+        item: "minecraft:stick"
+        count: 2
+      }]
+    }
+    {
+      id: "49BB030F23339ABE"
+      title: "Костры под две партии обжига"
+      description: ["Поставь два костра рядом с водой. Разложи сырую футеровку на обоих, чтобы обжигать две загрузки одновременно."]
+      x: -10.158d
+      y: -5.607d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42C21930549F51D4","4D561E66A394757B"]
+      optional: true
+      tasks: [{
+        id: "4BD4D425B4336FA1"
+        type: "item"
+        item: "minecraft:campfire"
+        count: 2L
+      }]
+      rewards: [{
+        id: "477934B3BD2BB486"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "4FD71992F8C53B7D"
+      title: "Береговая глина"
+      description: ["Ищи глину на мелководье. Часть уйдёт в футеровку, часть в тигли."]
+      x: -14.387d
+      y: 4.492d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4606926DBDE39BB8"]
+      tasks: [{
+        id: "42716A0051F0557E"
+        type: "item"
+        item: "minecraft:clay_ball"
+        count: 16L
+      }]
+      rewards: [{
+        id: "44265D19DAB9331D"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "48F79DB5C825B40D"
+      title: "Песчаный отощитель"
+      description: ["Разотри песок и гравий молотом. Примесь нужна глине."]
+      x: -12.751d
+      y: 4.319d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4CD088474AE49C19"]
+      tasks: [{
+        id: "4EBA726B65B55F8A"
+        type: "item"
+        item: "kubejs:sand_temper"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4898A17534D14474"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "4D561E66A394757B"
+      title: "Сырая футеровка"
+      description: ["Из двух комков глины, отощителя и промытого волокна выходит одна футеровка. Для пары повтори замес."]
+      x: -11.794d
+      y: -0.332d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4FD71992F8C53B7D","48F79DB5C825B40D","47A521E814192495"]
+      tasks: [{
+        id: "4BEFCCBC24AAF6BC"
+        type: "item"
+        item: "kubejs:wet_lining"
+        count: 2L
+      }]
+      rewards: [{
+        id: "49A0D816BEC02A6B"
+        type: "item"
+        item: "kubejs:sand_temper"
+        count: 3
+      }]
+    }
+    {
+      id: "4A969DC8CC61D772"
+      title: "Обжиг футеровки на костре"
+      description: ["Разложи сырые детали по углам костра. Один обжиг занимает 90 секунд. На колосник и первую печь нужны шесть обожжённых деталей."]
+      x: -9.478d
+      y: -0.372d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D561E66A394757B","42C21930549F51D4"]
+      tasks: [{
+        id: "49F401CFCF6D815D"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4BAAABB4968B2023"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "42461A09EFC7AF3E"
+      title: "Каменный колосник"
+      description: ["Собери каменное основание с огнеупорными вставками."]
+      x: -7.842d
+      y: -1.255d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4A969DC8CC61D772","4CD088474AE49C19"]
+      tasks: [{
+        id: "4C244DD079B325E1"
+        type: "item"
+        item: "kubejs:kiln_grate"
+      }]
+      rewards: [{
+        id: "4874A9AC0DE7A747"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 3
+      }]
+    }
+    {
+      id: "406FCCBDC3668AE7"
+      title: "Футерованная печь"
+      description: ["Окружи колосник камнем и обожжённой футеровкой."]
+      x: -6.545d
+      y: 0.598d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["42461A09EFC7AF3E"]
+      tasks: [{
+        id: "40932460D94CE2BB"
+        type: "item"
+        item: "minecraft:furnace"
+      }]
+      rewards: [{
+        id: "4D1074AC717B2DF9"
+        type: "item"
+        item: "kubejs:sand_temper"
+        count: 3
+      }]
+    }
+    {
+      id: "49F90E9F2AFFA0DD"
+      title: "Углежжение"
+      description: ["Обожги обычные брёвна, например дуб или акацию. Одно бревно даёт один древесный уголь за 40 секунд на костре или 18 секунд в печи. Уголь нужен в шихте и в топке."]
+      x: -12.751d
+      y: -3.265d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42C21930549F51D4"]
+      tasks: [{
+        id: "4C56AF75A16C7016"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4815A7531124AA84"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "40E032B0E0192F8D"
+      title: "Мотыга для первого поля"
+      description: ["Собери мотыгу из камня, кремня и деревянной оснастки. Вспаши землю рядом с водой."]
+      x: -18.340d
+      y: 3.479d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44E5E24E52DC8208","4DD5BD0433FCD2A5","468D4C1249381858","4F6874E031173E06","45D72E4E790DEE89"]
+      optional: true
+      tasks: [{
+        id: "4CCD982C38DD7107"
+        type: "item"
+        item: "minecraft:stone_hoe"
+      }]
+      rewards: [{
+        id: "4F15601E2239F668"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "43471160A705075D"
+      title: "Зерно на первую муку"
+      description: ["Выращивай пшеницу или разбери снопы из деревни. На одну порцию муки ручного помола идут три колоса."]
+      x: -13.431d
+      y: 7.102d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40E032B0E0192F8D","4CD088474AE49C19","42C21930549F51D4"]
+      optional: true
+      tasks: [{
+        id: "43FAC53858F58754"
+        type: "item"
+        item: "minecraft:wheat"
+        count: 6L
+      }]
+      rewards: [{
+        id: "4B43391BF488461A"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "47BE4E43DFD6948E"
+      title: "Ручной помол"
+      description: ["Разотри зерно каменным молотом. Мельница Create позже облегчит помол."]
+      x: -11.114d
+      y: -1.579d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43471160A705075D"]
+      optional: true
+      tasks: [{
+        id: "4A9EBCB2611466B7"
+        type: "item"
+        item: "create:wheat_flour"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4B294040925EC588"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "429921730CAD8150"
+      title: "Замес у воды"
+      description: ["Возьми муку в руку и нажми ПКМ по воде. При зажатом Shift можно замесить до четырёх порций."]
+      x: -9.478d
+      y: 9.880d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["47BE4E43DFD6948E"]
+      optional: true
+      tasks: [{
+        id: "4D46B15D3BCB3197"
+        type: "item"
+        item: "create:dough"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4B8EB1CDCD803716"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "428EBE4E750FDD6E"
+      title: "Хлеб на костре"
+      description: ["Разложи тесто на костре. Печь и коптильня выпекают быстрее."]
+      x: -7.842d
+      y: 12.870d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["429921730CAD8150"]
+      optional: true
+      tasks: [{
+        id: "4AB012CD614BA8F0"
+        type: "item"
+        item: "minecraft:bread"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4A02CFD03EAB7409"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "44DEA566E88B53D3"
+      title: "Свет на забое"
+      description: ["Из промытого волокна сделай фитили. Один фитиль идёт на два факела."]
+      x: -11.236d
+      y: 2.366d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["49F90E9F2AFFA0DD","47A521E814192495"]
+      tasks: [{
+        id: "49AB28EA30C7E58C"
+        type: "item"
+        item: "minecraft:torch"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4A9E055E55E8B260"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "42BA7213D0114741"
+      title: "Формовка сырого тигля"
+      description: ["Добавь отощитель, чтобы получить заготовку тигля."]
+      x: -5.249d
+      y: 3.479d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4FD71992F8C53B7D","48F79DB5C825B40D","406FCCBDC3668AE7"]
+      tasks: [{
+        id: "4165136FCD8A10C7"
+        type: "item"
+        item: "kubejs:unfired_crucible"
+      }]
+      rewards: [{
+        id: "4561BDF7708083CD"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "4F91B6A200BBB092"
+      title: "Обожжённый тигель"
+      description: ["Обожги сырой тигель в печи. Для каждой ранней плавки нужен новый тигель."]
+      x: -2.933d
+      y: 2.938d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42BA7213D0114741"]
+      tasks: [{
+        id: "4A6447836D440DAD"
+        type: "item"
+        item: "kubejs:fired_crucible"
+      }]
+      rewards: [{
+        id: "4EB163FAD48DBA79"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 3
+      }]
+    }
+    {
+      id: "4772B3A38BB6B7AD"
+      title: "Дробление меди"
+      description: ["Ищи медь, халькопирит или малахит. На одну ручную дроблёную порцию уйдут три куска руды."]
+      x: -10.158d
+      y: 5.066d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4CD088474AE49C19","44DEA566E88B53D3"]
+      tasks: [{
+        id: "4DB2184B3B7FB4CC"
+        type: "item"
+        item: "kubejs:copper_grit"
+      }]
+      rewards: [{
+        id: "4CED25F27272C6BC"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "41689E048458B753"
+      title: "Медный концентрат"
+      description: ["Промой дроблёную медную руду в воде. Собери концентрат и хвосты раздельно."]
+      x: -7.842d
+      y: 1.417d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4772B3A38BB6B7AD"]
+      tasks: [{
+        id: "4BADE1FC36E4E4C1"
+        type: "item"
+        item: "kubejs:washed_copper_grit"
+      }]
+      rewards: [{
+        id: "4C237550B59D8D2B"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "48755B9C008253F9"
+      title: "Склад хвостов"
+      description: ["Восемь промывок дадут восемь единиц хвостов. Приготовь отдельный отсек на складе."]
+      x: -6.205d
+      y: -4.800d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41689E048458B753"]
+      tasks: [{
+        id: "4642B78D2C1158A5"
+        type: "item"
+        item: "kubejs:ore_tailings"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4BF6ED5E6147D639"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "4B77FB5B85B13193"
+      title: "Загрузка медной шихты"
+      description: ["Пять единиц концентрата, уголь и тигель."]
+      x: -1.976d
+      y: -0.231d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41689E048458B753","4F91B6A200BBB092","49F90E9F2AFFA0DD"]
+      tasks: [{
+        id: "4551677F1CCA4004"
+        type: "item"
+        item: "kubejs:copper_charge"
+      }]
+      rewards: [{
+        id: "49A92E71F19F611F"
+        type: "item"
+        item: "minecraft:clay_ball"
+        count: 3
+      }]
+    }
+    {
+      id: "4F970C29ED1DBD0D"
+      title: "Первый медный слиток"
+      description: ["Ручной передел расходует пятнадцать кусков руды на слиток. Мельница сократит расход."]
+      x: 0.340d
+      y: -4.980d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B77FB5B85B13193"]
+      tasks: [{
+        id: "423F1B6EAA1061AC"
+        type: "item"
+        item: "minecraft:copper_ingot"
+      }]
+      rewards: [{
+        id: "468C754F06015060"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 3
+      }]
+    }
+    {
+      id: "491D5107B7A6FFCD"
+      title: "Медная лента"
+      description: ["Расплющи медь молотом. Лента нужна и для крицы, и для втулок."]
+      x: 1.976d
+      y: -0.326d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F970C29ED1DBD0D","4CD088474AE49C19"]
+      tasks: [{
+        id: "4A562A9203AD3BEB"
+        type: "item"
+        item: "kubejs:copper_strap"
+      }]
+      rewards: [{
+        id: "4F7326CBCFFF9F1E"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 3
+      }]
+    }
+    {
+      id: "4D0B250682216FA6"
+      title: "Дробление железа"
+      description: ["Ищи гётит, гематит, бурый железняк или магнетит."]
+      x: -9.478d
+      y: 3.582d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4CD088474AE49C19","44DEA566E88B53D3"]
+      tasks: [{
+        id: "4F86BDD0D80AD14C"
+        type: "item"
+        item: "kubejs:iron_grit"
+      }]
+      rewards: [{
+        id: "4D0E1986AE0A1676"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "4D89158C3E05A1AF"
+      title: "Железный концентрат"
+      description: ["Промой дроблёную железную руду в воде. Хвосты складывай отдельно от концентрата."]
+      x: -7.842d
+      y: 7.856d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D0B250682216FA6"]
+      tasks: [{
+        id: "43BCB26697110DA4"
+        type: "item"
+        item: "kubejs:washed_iron_grit"
+      }]
+      rewards: [{
+        id: "4B72807C0D3664CA"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "4DA08EC148756311"
+      title: "Загрузка железной шихты"
+      description: ["Помимо концентрата и угля нужны футеровка и кованая медная лента."]
+      x: 2.933d
+      y: 3.282d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D89158C3E05A1AF","491D5107B7A6FFCD","4F91B6A200BBB092"]
+      tasks: [{
+        id: "4EFC159DE3AAE5F0"
+        type: "item"
+        item: "kubejs:iron_charge"
+      }]
+      rewards: [{
+        id: "48F64177760C56D2"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "4883609C0C4D3B4D"
+      title: "Выпуск крицы"
+      description: ["Обожги железную шихту в печи."]
+      x: 4.569d
+      y: 3.112d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4DA08EC148756311"]
+      tasks: [{
+        id: "499200B2F678E1E9"
+        type: "item"
+        item: "kubejs:iron_bloom"
+      }]
+      rewards: [{
+        id: "4EB86C61CB4D7DEC"
+        type: "item"
+        item: "kubejs:sand_temper"
+        count: 3
+      }]
+    }
+    {
+      id: "43C4612F0F6292A1"
+      title: "Ковка железа"
+      description: ["Прокуй крицу с углём и каменным молотом."]
+      x: 6.814d
+      y: 2.499d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4883609C0C4D3B4D"]
+      tasks: [{
+        id: "4FD446A71925F8C4"
+        type: "item"
+        item: "minecraft:iron_ingot"
+      }]
+      rewards: [{
+        id: "4B9116F9B223DB5F"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 4
+      }]
+    }
+    {
+      id: "4650DF862BB30C74"
+      title: "Ручные заклёпки"
+      description: ["Из одного слитка выкуй две заклёпки. Оставь запас для шарниров, пластин и первых станков."]
+      x: 8.522d
+      y: -0.610d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43C4612F0F6292A1"]
+      tasks: [{
+        id: "4C4C53A1F41C5511"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 2L
+      }]
+      rewards: [{
+        id: "47D4C8676E8BA294"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 3
+      }]
+    }
+    {
+      id: "4F86238C829276F1"
+      title: "Пластина под молотом"
+      description: ["Два слитка на грубую пластину. Стандартные пластины позже даёт пресс."]
+      x: 7.842d
+      y: -6.880d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43C4612F0F6292A1"]
+      tasks: [{
+        id: "4A31C9A34FA7CB39"
+        type: "item"
+        item: "kubejs:hand_forged_plate"
+      }]
+      rewards: [{
+        id: "43FC5C2478387DAB"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "4B60FDD8C3547550"
+      title: "Шарнир для створок"
+      description: ["Две грубые пластины, медная лента, заклёпка и молот."]
+      x: 9.478d
+      y: -9.201d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F86238C829276F1","4650DF862BB30C74","491D5107B7A6FFCD"]
+      tasks: [{
+        id: "4649AFC918FA1796"
+        type: "item"
+        item: "kubejs:iron_hinge"
+      }]
+      rewards: [{
+        id: "47DA312E3AC606C3"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "43F73BA603870F07"
+      title: "Золото в магнетитовой жиле"
+      description: ["Дроби золотую руду. На мельнице расход руды ниже."]
+      x: -9.478d
+      y: 6.474d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CD088474AE49C19","44DEA566E88B53D3"]
+      optional: true
+      tasks: [{
+        id: "44697E11B83CE130"
+        type: "item"
+        item: "kubejs:gold_grit"
+      }]
+      rewards: [{
+        id: "4C2B208567AB91B4"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "4ADFA5E49F791B08"
+      title: "Промытое золото"
+      description: ["Подготовь три порции концентрата для одной загрузки."]
+      x: -7.842d
+      y: 3.154d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43F73BA603870F07"]
+      optional: true
+      tasks: [{
+        id: "4C8DD2C4AB37EAA8"
+        type: "item"
+        item: "kubejs:washed_gold_grit"
+        count: 3L
+      }]
+      rewards: [{
+        id: "4C8569BD092437D6"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "46B7350592B17877"
+      title: "Золотая шихта"
+      description: ["Собери шихту с углём и огнеупорной футеровкой."]
+      x: -1.976d
+      y: -1.746d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4ADFA5E49F791B08","4F91B6A200BBB092","4A969DC8CC61D772"]
+      optional: true
+      tasks: [{
+        id: "468DCE8A6DBD570E"
+        type: "item"
+        item: "kubejs:gold_charge"
+      }]
+      rewards: [{
+        id: "40058ECBFE64FB47"
+        type: "item"
+        item: "minecraft:clay_ball"
+        count: 2
+      }]
+    }
+    {
+      id: "42F0238A60452AA4"
+      title: "Первый золотой слиток"
+      description: ["Проведи обжиг. Подготовь слиток для дальнейшей обработки."]
+      x: -0.340d
+      y: -2.164d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46B7350592B17877"]
+      optional: true
+      tasks: [{
+        id: "4240DB5DD24BF175"
+        type: "item"
+        item: "minecraft:gold_ingot"
+      }]
+      rewards: [{
+        id: "4BE09E82C18DAC5A"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 2
+      }]
+    }
+    {
+      id: "44B1CC4455433EFD"
+      title: "Глина на партию тиглей"
+      description: ["Собери тридцать два комка глины на мелководье. Держи их рядом с запасом песчаного отощителя."]
+      x: -3.613d
+      y: 1.375d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FD71992F8C53B7D","42BA7213D0114741"]
+      optional: true
+      tasks: [{
+        id: "4E8B9A7F4FE9BF53"
+        type: "item"
+        item: "minecraft:clay_ball"
+        count: 32L
+      }]
+      rewards: [{
+        id: "46A9F96378A13FDF"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "40709A14C06A2D5A"
+      title: "Отощитель для печной оснастки"
+      description: ["Разотри песок и гравий молотом. Отложи двенадцать единиц отощителя для футеровки и тиглей."]
+      x: -6.885d
+      y: 5.261d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48F79DB5C825B40D","42461A09EFC7AF3E"]
+      optional: true
+      tasks: [{
+        id: "4CCAB5EB9F55E441"
+        type: "item"
+        item: "kubejs:sand_temper"
+        count: 12L
+      }]
+      rewards: [{
+        id: "44D070216038414B"
+        type: "item"
+        item: "minecraft:clay_ball"
+        count: 2
+      }]
+    }
+    {
+      id: "474A572C8FC723D8"
+      title: "Обожжённые вкладыши для ремонта"
+      description: ["Обожги восемь деталей футеровки на костре. Отложи партию на дополнительную печь и медную плавку."]
+      x: -4.569d
+      y: 5.280d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A969DC8CC61D772","406FCCBDC3668AE7"]
+      optional: true
+      tasks: [{
+        id: "4EC9F8D56109B91F"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4B70C100E55CE26D"
+        type: "item"
+        item: "kubejs:sand_temper"
+        count: 2
+      }]
+    }
+    {
+      id: "4064C3BCA0E201D0"
+      title: "Тигли под шесть ручных плавок"
+      description: ["Обожги шесть сырцов тиглей. Тигель расходуется в шихте, поэтому проверь запас перед каждой плавкой."]
+      x: 4.569d
+      y: -3.216d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F91B6A200BBB092","4B77FB5B85B13193","4DA08EC148756311"]
+      optional: true
+      tasks: [{
+        id: "43A5FF100BC7AF22"
+        type: "item"
+        item: "kubejs:fired_crucible"
+        count: 6L
+      }]
+      rewards: [{
+        id: "42032B453BF266B7"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "40B14F684A305378"
+      title: "Древесный уголь для шихты и печи"
+      description: ["Обожги брёвна и сложи тридцать два куска угля. Часть пойдёт в шихту, остальное оставь у топки."]
+      x: 1.296d
+      y: 1.066d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49F90E9F2AFFA0DD","4F970C29ED1DBD0D"]
+      optional: true
+      tasks: [{
+        id: "441C04044AB7F6AB"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 32L
+      }]
+      rewards: [{
+        id: "4B8DD549D088723E"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 2
+      }]
+    }
+    {
+      id: "4EC650742980202D"
+      title: "Концентрат на две медные плавки"
+      description: ["Промой десять порций дроблёной меди. На каждую плавку отмерь по пять порций концентрата."]
+      x: -0.340d
+      y: -3.618d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41689E048458B753","4B77FB5B85B13193"]
+      optional: true
+      tasks: [{
+        id: "4F66A7C21C9BC527"
+        type: "item"
+        item: "kubejs:washed_copper_grit"
+        count: 10L
+      }]
+      rewards: [{
+        id: "46F9883E264CAB76"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "4989FA82BE9BBF8D"
+      title: "Партия железных криц под молот"
+      description: ["Обожги четыре загрузки железной шихты. Крицы отправь на ковку с углём и каменным молотом."]
+      x: 7.842d
+      y: 8.101d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4883609C0C4D3B4D","43C4612F0F6292A1"]
+      optional: true
+      tasks: [{
+        id: "4C79627C89678C97"
+        type: "item"
+        item: "kubejs:iron_bloom"
+        count: 4L
+      }]
+      rewards: [{
+        id: "44AA00C271A25626"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 2
+      }]
+    }
+    {
+      id: "4236558E0C959DD2"
+      title: "Грубые листы для зубьев пилы"
+      description: ["Прокуй шесть грубых листов из железных слитков. Держи их вместе с заклёпками у места сборки полотна."]
+      x: 11.114d
+      y: -10.739d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F86238C829276F1","4C867C6D96BA473A"]
+      optional: true
+      tasks: [{
+        id: "491567A7A13CB32F"
+        type: "item"
+        item: "kubejs:hand_forged_plate"
+        count: 6L
+      }]
+      rewards: [{
+        id: "4255A0B4EC351F67"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "471D9BBD22EBD8D8"
+      title: "Запас железных заклёпок"
+      description: ["Выкуй двенадцать заклёпок из шести слитков. Отложи часть на железные шарниры и пилу."]
+      x: 11.114d
+      y: -8.765d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4650DF862BB30C74","4B60FDD8C3547550"]
+      optional: true
+      tasks: [{
+        id: "47B83C0C176A40F8"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4B59063D4DF9AA44"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "42B7165513418E0A"
+      title: "Кованые ленты для печных узлов"
+      description: ["Расплющи медь в восемь лент. Раздели их между железной шихтой и втулками Create."]
+      x: 4.569d
+      y: 6.745d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["491D5107B7A6FFCD","4DA08EC148756311","427909B3358090BF"]
+      optional: true
+      tasks: [{
+        id: "49593F27D6483BAE"
+        type: "item"
+        item: "kubejs:copper_strap"
+        count: 8L
+      }]
+      rewards: [{
+        id: "437B429D81176112"
+        type: "item"
+        item: "minecraft:clay_ball"
+        count: 2
+      }]
+    }
+    {
+      id: "41EEF99E3DB32CC9"
+      title: "Золото для точёных контактов"
+      description: ["Выдели четыре золотых слитка для контактных заготовок. При серийной плавке подготовь запас тиглей и футеровки."]
+      x: 1.296d
+      y: -7.601d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42F0238A60452AA4","487FE16FF61AA069"]
+      optional: true
+      tasks: [{
+        id: "49CDF0AFDE6446B9"
+        type: "item"
+        item: "minecraft:gold_ingot"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4310C129048E06BD"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 2
+      }]
+    }
+    {
+      id: "41ECB50771568041"
+      title: "Андезитовый композит"
+      description: ["Андезит, медь, керамика и отощитель. Этот композит собирается до любых машин GregTech."]
+      x: 1.976d
+      y: -1.860d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F970C29ED1DBD0D","4A969DC8CC61D772","48F79DB5C825B40D"]
+      tasks: [{
+        id: "4FC3189410883B0B"
+        type: "item"
+        item: "create:andesite_alloy"
+      }]
+      rewards: [{
+        id: "4A5D9061596790E4"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "427909B3358090BF"
+      title: "Втулка с футеровкой"
+      description: ["Ручная посадка керамики в медную ленту. На один привод пойдёт несколько втулок."]
+      x: 2.933d
+      y: 1.616d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["491D5107B7A6FFCD","4A969DC8CC61D772","4F6874E031173E06"]
+      tasks: [{
+        id: "41E6C51430CC71A4"
+        type: "item"
+        item: "kubejs:shaft_bushing"
+      }]
+      rewards: [{
+        id: "4BAF6D68E6F9262E"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "49E7A58B4F8C3E26"
+      title: "Первая пара валов"
+      description: ["Две втулки, две порции композита и обработанная рукоять дают один вал. Для пары повтори сборку."]
+      x: 4.569d
+      y: 0.840d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41ECB50771568041","427909B3358090BF","468D4C1249381858"]
+      tasks: [{
+        id: "49E29C65720BA8F3"
+        type: "item"
+        item: "create:shaft"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4B13B8EACBCE56AD"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "4796D02E9418E0BE"
+      title: "Андезитовый корпус"
+      description: ["Обтеши бревно топором. На верстаке обложи его композитом, закрепи четырьмя нагелями и добавь футеровку и столярное соединение."]
+      x: 3.613d
+      y: -2.046d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41ECB50771568041","469A83EB7EBD443A","493BCB782DD7F53E","4A969DC8CC61D772"]
+      tasks: [{
+        id: "4687FF7A76995507"
+        type: "item"
+        item: "create:andesite_casing"
+      }]
+      rewards: [{
+        id: "485C7E1F1E3C309F"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "418189C36C86241C"
+      title: "Венец с нагелями"
+      description: ["Подготовь зубчатые венцы. На малую шестерню нужны четыре венца."]
+      x: 2.933d
+      y: 4.859d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41ECB50771568041","4F6874E031173E06","45D72E4E790DEE89"]
+      tasks: [{
+        id: "49BBDB442001D280"
+        type: "item"
+        item: "kubejs:gear_rim"
+      }]
+      rewards: [{
+        id: "4015FDEA66ED8F59"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "48DC1F680E7618FA"
+      title: "Малая шестерня"
+      description: ["Собери венцы на валу. Проверь зацепление, прежде чем собирать постоянный привод."]
+      x: 6.443d
+      y: -3.835d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["418189C36C86241C","49E7A58B4F8C3E26"]
+      tasks: [{
+        id: "47DA2629282EFE10"
+        type: "item"
+        item: "create:cogwheel"
+      }]
+      rewards: [{
+        id: "41BD6CB1D3B28E90"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "4F73C37D2074DA97"
+      title: "Большая шестерня"
+      description: ["Малая шестерня, столярные соединения и доски дают большой венец."]
+      x: 7.842d
+      y: 0.880d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48DC1F680E7618FA","493BCB782DD7F53E"]
+      tasks: [{
+        id: "4FE534F19DBF474C"
+        type: "item"
+        item: "create:large_cogwheel"
+      }]
+      rewards: [{
+        id: "47B0246E84A53B3D"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "4EF6BDCE054014E3"
+      title: "Ручной привод"
+      description: ["Используй рукоятку для первых проб и для резервного вращения."]
+      x: 6.205d
+      y: 6.039d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["49E7A58B4F8C3E26","41ECB50771568041"]
+      tasks: [{
+        id: "49D60D9A22A0943F"
+        type: "item"
+        item: "create:hand_crank"
+      }]
+      rewards: [{
+        id: "4D436A4E3A7D4237"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "42A3C7AE08EAED9A"
+      title: "Секции водяного колеса"
+      description: ["На колесо нужно четыре одинаковых секции, соединения и втулки."]
+      x: -12.795d
+      y: -1.668d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["493BCB782DD7F53E","4F6874E031173E06"]
+      tasks: [{
+        id: "46722FD3F90D7E5B"
+        type: "item"
+        item: "kubejs:wheel_segment"
+        count: 4L
+      }]
+      rewards: [{
+        id: "49B102F23F1DB236"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "43844A5B69EF8D6D"
+      title: "Водяное колесо для привода"
+      description: ["Установи колесо в текущей воде и подключи вал."]
+      x: 6.412d
+      y: -1.685d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42A3C7AE08EAED9A","49E7A58B4F8C3E26","427909B3358090BF"]
+      tasks: [{
+        id: "422D741ED2B162A1"
+        type: "item"
+        item: "create:water_wheel"
+      }]
+      rewards: [{
+        id: "4FB526DAFA4DEC11"
+        type: "item"
+        item: "create:andesite_alloy"
+        count: 2
+      }]
+    }
+    {
+      id: "47CA9A598E9E24D0"
+      title: "Большое водяное колесо"
+      description: ["Большое колесо требует дополнительного обода из четырёх секций."]
+      x: 7.842d
+      y: -5.434d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43844A5B69EF8D6D"]
+      tasks: [{
+        id: "4F20992A9B6649EB"
+        type: "item"
+        item: "create:large_water_wheel"
+      }]
+      rewards: [{
+        id: "40ACE41889095151"
+        type: "item"
+        item: "create:andesite_alloy"
+        count: 3
+      }]
+    }
+    {
+      id: "4ACC3DA0FCD37416"
+      title: "Опора вращения"
+      description: ["Собери опору на валу со стандартными железными листами. Она понадобится для ветрового привода."]
+      x: 12.751d
+      y: -8.427d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4975F2C8A1CEDA75","4796D02E9418E0BE","48DC1F680E7618FA"]
+      optional: true
+      tasks: [{
+        id: "4F9BB9A926972104"
+        type: "item"
+        item: "create:mechanical_bearing"
+      }]
+      rewards: [{
+        id: "40474D042F30C6A2"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "48BEE691C5B60B66"
+      title: "Ветровой привод"
+      description: ["Установи узел на открытом месте. Закрепи минимум восемь парусов на вращающейся раме и запусти подшипник."]
+      x: 15.048d
+      y: -7.033d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["47CA9A598E9E24D0","4ACC3DA0FCD37416","4452A35956333A16"]
+      optional: true
+      tasks: [{
+        id: "436D4AF00F360FDD"
+        type: "item"
+        item: "create:windmill_bearing"
+      }]
+      rewards: [{
+        id: "42C789DD2F02D17B"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "4C32003CBC8DD8DA"
+      title: "Паруса для ротора"
+      description: ["На каждый парус нужны шерсть, тканая основа и жёсткая рама. Разнеси паруса по лопастям, чтобы ротор было удобно расширять."]
+      x: 16.024d
+      y: 0.237d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48BEE691C5B60B66","45255327AE91F770"]
+      optional: true
+      tasks: [{
+        id: "4939C58E8BCBE691"
+        type: "item"
+        item: "create:white_sail"
+        count: 8L
+      }]
+      rewards: [{
+        id: "415A432F5B2D3863"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4452A35956333A16"
+      title: "Редуктор для поворота оси"
+      description: ["Поставь редуктор там, где линия меняет направление."]
+      x: 8.522d
+      y: -4.025d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48DC1F680E7618FA","4796D02E9418E0BE","49E7A58B4F8C3E26"]
+      tasks: [{
+        id: "47B779E9CBF1CE7B"
+        type: "item"
+        item: "create:gearbox"
+      }]
+      rewards: [{
+        id: "459D84F33B103BC9"
+        type: "item"
+        item: "kubejs:shaft_bushing"
+        count: 1
+      }]
+    }
+    {
+      id: "4F02B33142C9C943"
+      title: "Вертикальная передача"
+      description: ["Переориентируй готовый редуктор, когда меняешь плоскость привода."]
+      x: 9.478d
+      y: 3.195d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4452A35956333A16"]
+      tasks: [{
+        id: "447E5172AE57BABF"
+        type: "item"
+        item: "create:vertical_gearbox"
+      }]
+      rewards: [{
+        id: "441C9BE0D14A2627"
+        type: "item"
+        item: "kubejs:shaft_bushing"
+        count: 1
+      }]
+    }
+    {
+      id: "4C867C6D96BA473A"
+      title: "Зубья для полотна"
+      description: ["Выкуй зубья на каменном молоте."]
+      x: 10.052d
+      y: 0.004d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F86238C829276F1","4650DF862BB30C74"]
+      tasks: [{
+        id: "410BDCC78A8CD117"
+        type: "item"
+        item: "kubejs:saw_teeth"
+      }]
+      rewards: [{
+        id: "45F71E9499D012E8"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 3
+      }]
+    }
+    {
+      id: "4CA6ADB18CCFF965"
+      title: "Сборное полотно"
+      description: ["Шесть комплектов зубьев и крепёж собираются в полотно."]
+      x: 11.114d
+      y: 7.900d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C867C6D96BA473A"]
+      tasks: [{
+        id: "44B483EC5F4D9513"
+        type: "item"
+        item: "kubejs:saw_blade"
+      }]
+      rewards: [{
+        id: "4E372E02819D7573"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 3
+      }]
+    }
+    {
+      id: "45EADC6EDC7CA91F"
+      title: "Пилорама"
+      description: ["Подведи вращение к пиле и поставь её режущей стороной вверх. Сделай ножом две доски из бревна и выставь одну из них в фильтре пилы. Затем брось бревно той же породы на полотно. Получишь четыре доски."]
+      x: 12.751d
+      y: 1.559d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4CA6ADB18CCFF965","4796D02E9418E0BE","43844A5B69EF8D6D","4C7BAE0FB15D57DD"]
+      tasks: [{
+        id: "4B4FA1BEDB59BFDA"
+        type: "item"
+        item: "create:mechanical_saw"
+      }]
+      rewards: [{
+        id: "4BAB3EC609842DCF"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 4
+      }]
+    }
+    {
+      id: "482CDD7DB61ADFDD"
+      title: "Мельница с валовым приводом"
+      description: ["Подведи вертикальный вал снизу. От горизонтального вала поверни привод коробкой передач. Мельница даёт одну дроблёную порцию с одного куска медной, железной или оловянной руды."]
+      x: 8.182d
+      y: -2.338d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["48DC1F680E7618FA","4796D02E9418E0BE","43844A5B69EF8D6D"]
+      tasks: [{
+        id: "4212E6E125BA829B"
+        type: "item"
+        item: "create:millstone"
+      }]
+      rewards: [{
+        id: "4A8BB621F32C1635"
+        type: "item"
+        item: "kubejs:shaft_bushing"
+        count: 1
+      }]
+    }
+    {
+      id: "49E7C605C81E9796"
+      title: "Депо для подачи под пресс"
+      description: ["Депо удерживает заготовку под рабочей головкой пресса."]
+      x: 5.249d
+      y: 4.510d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4796D02E9418E0BE","493BCB782DD7F53E"]
+      tasks: [{
+        id: "4D1364ACD1E84FC6"
+        type: "item"
+        item: "create:depot"
+      }]
+      rewards: [{
+        id: "40795EB2C1B69F77"
+        type: "item"
+        item: "create:andesite_alloy"
+        count: 3
+      }]
+    }
+    {
+      id: "45F90DBA04E36F7D"
+      title: "Пресс с ручной подгонкой"
+      description: ["Грубые пластины и втулки входят в пресс. Стандартный лист получится из одного слитка."]
+      x: 10.158d
+      y: -2.823d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F86238C829276F1","4796D02E9418E0BE","49E7C605C81E9796","43844A5B69EF8D6D"]
+      tasks: [{
+        id: "4CBEE122DC41F1A9"
+        type: "item"
+        item: "create:mechanical_press"
+      }]
+      rewards: [{
+        id: "4FE5FB2F9ADF5833"
+        type: "item"
+        item: "kubejs:copper_strap"
+        count: 2
+      }]
+    }
+    {
+      id: "4975F2C8A1CEDA75"
+      title: "Первый стандартный лист"
+      description: ["Пропусти железный слиток через пресс на депо. Это стандартная пластина для железных крафтов."]
+      x: 11.114d
+      y: 1.899d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45F90DBA04E36F7D","43C4612F0F6292A1"]
+      tasks: [{
+        id: "4AE9D6889ACEBC0B"
+        type: "item"
+        item: "gtceu:iron_plate"
+      }]
+      rewards: [{
+        id: "4E0C2A877EAFC2D3"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "4902DE3C92891C55"
+      title: "Железная кирка для глубокой добычи"
+      description: ["Собери кирку из трёх железных листов, двух заклёпок, рукояти и крепления. Возьми её к жиле редстоуна."]
+      x: 13.095d
+      y: -1.757d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4975F2C8A1CEDA75","4650DF862BB30C74","468D4C1249381858","45D72E4E790DEE89"]
+      tasks: [{
+        id: "4357330B8C4B8B16"
+        type: "item"
+        item: "minecraft:iron_pickaxe"
+      }]
+      rewards: [{
+        id: "461972BB8568BC7B"
+        type: "item"
+        item: "create:andesite_alloy"
+        count: 3
+      }]
+    }
+    {
+      id: "4CA8AC099D33AB3B"
+      title: "Тонкий медный лист"
+      description: ["Используй тот же пресс для медного слитка."]
+      x: 11.794d
+      y: -2.765d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45F90DBA04E36F7D","4F970C29ED1DBD0D"]
+      tasks: [{
+        id: "400304C7EFFFE612"
+        type: "item"
+        item: "gtceu:copper_plate"
+      }]
+      rewards: [{
+        id: "45A9314AAD6577EB"
+        type: "item"
+        item: "create:andesite_alloy"
+        count: 3
+      }]
+    }
+    {
+      id: "4C6769E1DF590FE7"
+      title: "Чаша для смешивания"
+      description: ["Для чаши нужны три грубые железные пластины, две обожжённые футеровки, медная лента и три заклёпки."]
+      x: 9.705d
+      y: -1.509d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F86238C829276F1","4A969DC8CC61D772","491D5107B7A6FFCD","4650DF862BB30C74"]
+      tasks: [{
+        id: "4AF849AFB38D4CA3"
+        type: "item"
+        item: "create:basin"
+      }]
+      rewards: [{
+        id: "4EFF647783FC86FA"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "4C0913C4256699D4"
+      title: "Венчик с втулкой"
+      description: ["Собери венчик из четырёх грубых железных пластин, вала, втулки и заклёпки."]
+      x: 9.478d
+      y: 1.510d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["49E7A58B4F8C3E26","4F86238C829276F1","4650DF862BB30C74","427909B3358090BF"]
+      tasks: [{
+        id: "446F9124ADC0367C"
+        type: "item"
+        item: "create:whisk"
+      }]
+      rewards: [{
+        id: "4EC3DDDB48E7C99C"
+        type: "item"
+        item: "kubejs:shaft_bushing"
+        count: 1
+      }]
+    }
+    {
+      id: "400D05E49B71D05B"
+      title: "Механический смеситель"
+      description: ["Оставь один блок между чашей и смесителем. Две последовательные пары из большой ведущей и малой ведомой шестерён поднимут скорость малого водяного колеса с 8 до 32 об/мин."]
+      x: 11.454d
+      y: -1.162d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4C6769E1DF590FE7","4C0913C4256699D4","4F73C37D2074DA97","43844A5B69EF8D6D","4796D02E9418E0BE"]
+      tasks: [{
+        id: "4190FC3DEE114CC8"
+        type: "item"
+        item: "create:mechanical_mixer"
+      }]
+      rewards: [{
+        id: "4F164575D806BFEA"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 3
+      }]
+    }
+    {
+      id: "4D1008BF561AFF2B"
+      title: "Серийный замес композита"
+      description: ["За цикл смеситель выдаёт две порции композита. Подай четыре андезита, три медных слитка, футеровку, отощитель и 250 мБ воды."]
+      x: 12.751d
+      y: -5.817d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["400D05E49B71D05B","41ECB50771568041","4F970C29ED1DBD0D"]
+      optional: true
+      tasks: [{
+        id: "49EB2565488B7191"
+        type: "item"
+        item: "create:andesite_alloy"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4E10EAB0F5CDADB1"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "49FDAF644104B589"
+      title: "Промывка потоком воздуха"
+      description: ["Продувай дроблёную руду через воду. Концентрат и хвосты выходят вместе."]
+      x: 10.158d
+      y: -5.865d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F86238C829276F1","4796D02E9418E0BE","43844A5B69EF8D6D"]
+      tasks: [{
+        id: "42A27E0C04F3891C"
+        type: "item"
+        item: "create:encased_fan"
+      }]
+      rewards: [{
+        id: "49BC18218E4F0093"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "45255327AE91F770"
+      title: "Тканая основа ремня"
+      description: ["Плетёные шнуры и крепления дают четыре основы для одного ремня."]
+      x: -22.569d
+      y: -5.083d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45D72E4E790DEE89"]
+      tasks: [{
+        id: "43A2E8E20D95920A"
+        type: "item"
+        item: "kubejs:woven_drive_belt"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4D97158D05E37C62"
+        type: "item"
+        item: "kubejs:plant_fibre"
+        count: 3
+      }]
+    }
+    {
+      id: "4E698C6BAC973ABB"
+      title: "Ремень внутрицеховой подачи"
+      description: ["Собери ремень из четырёх тканых основ, шнуров и заклёпок. Соедини два параллельных вала."]
+      x: 9.478d
+      y: 4.981d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45255327AE91F770","49E7A58B4F8C3E26","4650DF862BB30C74"]
+      tasks: [{
+        id: "485FB0625F20FBD4"
+        type: "item"
+        item: "create:belt_connector"
+      }]
+      rewards: [{
+        id: "44DD86F512CEF2AD"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 3
+      }]
+    }
+    {
+      id: "43C45FA3C7CDBFA0"
+      title: "Загрузка с ленты"
+      description: ["Собери две воронки для ввода и вывода. Оставь место под сундуки и разведи сырьё и готовую продукцию."]
+      x: 12.751d
+      y: 2.938d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E698C6BAC973ABB","4CA8AC099D33AB3B","41ECB50771568041"]
+      optional: true
+      tasks: [{
+        id: "435E0DA03F91286E"
+        type: "item"
+        item: "create:andesite_funnel"
+        count: 2L
+      }]
+      rewards: [{
+        id: "40193505935034F2"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "4E16BF50A9F55410"
+      title: "Медные трубы"
+      description: ["Собери медные трубы для подачи воды. Эти трубы используются в обвязке Create."]
+      x: 12.751d
+      y: -4.019d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CA8AC099D33AB3B","491D5107B7A6FFCD","41ECB50771568041"]
+      optional: true
+      tasks: [{
+        id: "4ECD39AF758EC5A9"
+        type: "item"
+        item: "create:fluid_pipe"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4039C2C283483F7A"
+        type: "item"
+        item: "create:andesite_alloy"
+        count: 2
+      }]
+    }
+    {
+      id: "4B422782C14592A1"
+      title: "Механический насос"
+      description: ["Подключи вал к насосу. Проверь направление потока и отведи воду в отдельный буфер."]
+      x: 14.387d
+      y: -4.623d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E16BF50A9F55410","45255327AE91F770","48DC1F680E7618FA","43844A5B69EF8D6D"]
+      optional: true
+      tasks: [{
+        id: "4E7199E85C2D2C72"
+        type: "item"
+        item: "create:mechanical_pump"
+      }]
+      rewards: [{
+        id: "457B573EB0582CEA"
+        type: "item"
+        item: "kubejs:copper_strap"
+        count: 1
+      }]
+    }
+    {
+      id: "4A3620957F771FF5"
+      title: "Водяной буфер Create"
+      description: ["Собери бак из бочки, листов и футеровки. Наполни его от насоса и оставь место под выход."]
+      x: 16.024d
+      y: -5.019d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B422782C14592A1","4A969DC8CC61D772","4650DF862BB30C74"]
+      optional: true
+      tasks: [{
+        id: "4D78F682E931F904"
+        type: "item"
+        item: "create:fluid_tank"
+      }]
+      rewards: [{
+        id: "4D35B7AC6AA0DA90"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "4295F7650B36960B"
+      title: "Добыча олова"
+      description: ["Ищи оловянные руды и касситерит в жилах GregTech."]
+      x: 9.478d
+      y: -7.579d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["482CDD7DB61ADFDD"]
+      tasks: [{
+        id: "40F26296D746CF98"
+        type: "item"
+        item: "kubejs:tin_grit"
+      }]
+      rewards: [{
+        id: "49A959901FDFD17A"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "4F8C9D44DA0E4DC9"
+      title: "Оловянный концентрат"
+      description: ["Промой олово вручную или на линии с вентилятором."]
+      x: 11.200d
+      y: -4.275d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4295F7650B36960B"]
+      tasks: [{
+        id: "4837E96C371900E0"
+        type: "item"
+        item: "kubejs:washed_tin_grit"
+      }]
+      rewards: [{
+        id: "45B2584BDF1B0D9A"
+        type: "item"
+        item: "kubejs:copper_strap"
+        count: 1
+      }]
+    }
+    {
+      id: "472A53268625DCD7"
+      title: "Шихта для плавки олова"
+      description: ["На отдельную плавку олова идут три концентрата, две порции древесного угля, тигель и футеровка."]
+      x: 12.751d
+      y: 7.029d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F8C9D44DA0E4DC9","4F91B6A200BBB092","4A969DC8CC61D772","49F90E9F2AFFA0DD"]
+      tasks: [{
+        id: "465E189A7EAEA893"
+        type: "item"
+        item: "kubejs:tin_charge"
+      }]
+      rewards: [{
+        id: "412F3FEFFD7A6179"
+        type: "item"
+        item: "kubejs:shaft_bushing"
+        count: 1
+      }]
+    }
+    {
+      id: "43DD512594965578"
+      title: "Первый оловянный слиток"
+      description: ["Оловянный слиток нужен для будущей электрической линии."]
+      x: 15.067d
+      y: 5.358d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["472A53268625DCD7","406FCCBDC3668AE7"]
+      tasks: [{
+        id: "47F70EF12A2DAB6F"
+        type: "item"
+        item: "gtceu:tin_ingot"
+      }]
+      rewards: [{
+        id: "48BF432ECC70FEB8"
+        type: "item"
+        item: "create:andesite_alloy"
+        count: 3
+      }]
+    }
+    {
+      id: "46891B6776223889"
+      title: "Бронзовая шихта"
+      description: ["Загрузи в чашу три медных концентрата, оловянный концентрат, уголь и тигель. Подай 500 мБ воды и включи смеситель."]
+      x: 12.751d
+      y: 4.334d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["400D05E49B71D05B","4F8C9D44DA0E4DC9","41689E048458B753","4F91B6A200BBB092"]
+      tasks: [{
+        id: "4FD7BC336D1CDC46"
+        type: "item"
+        item: "kubejs:bronze_charge"
+      }]
+      rewards: [{
+        id: "46B2812AD67D6DD7"
+        type: "item"
+        item: "kubejs:copper_strap"
+        count: 1
+      }]
+    }
+    {
+      id: "48D37EA483665B88"
+      title: "Первая бронза"
+      description: ["Обожги бронзовую шихту. Основной цикл первой печи занимает 120 секунд."]
+      x: 15.067d
+      y: 3.754d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["46891B6776223889","406FCCBDC3668AE7"]
+      tasks: [{
+        id: "4855AF6218B6B815"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+      }]
+      rewards: [{
+        id: "48705FC5C3084703"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "48F933CA7A837F03"
+      title: "Первая бронзовая пластина"
+      description: ["Первым проходом пресса сформуй пластину."]
+      x: 16.704d
+      y: -1.173d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48D37EA483665B88","45F90DBA04E36F7D"]
+      tasks: [{
+        id: "468A3E10152CF40F"
+        type: "item"
+        item: "gtceu:bronze_plate"
+      }]
+      rewards: [{
+        id: "48CFA6CF9E73DC76"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "490956E7FD293643"
+      title: "Штампованная заготовка котла"
+      description: ["Положи в чашу две бронзовые пластины, подай 250 мБ воды и уплотни прессом Create. Выход один штамп."]
+      x: 17.829d
+      y: -3.464d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48F933CA7A837F03","4C6769E1DF590FE7","45F90DBA04E36F7D"]
+      tasks: [{
+        id: "4931E9269AD36968"
+        type: "item"
+        item: "kubejs:stamped_bronze_blank"
+      }]
+      rewards: [{
+        id: "4C403FA032FF1277"
+        type: "item"
+        item: "kubejs:shaft_bushing"
+        count: 1
+      }]
+    }
+    {
+      id: "44B031D5213F50F8"
+      title: "Втулки на разводку валов"
+      description: ["Собери двенадцать футерованных втулок. Они пригодятся для дополнительных валов и корпуса пресса."]
+      x: 6.205d
+      y: 0.378d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["427909B3358090BF","49E7A58B4F8C3E26"]
+      optional: true
+      tasks: [{
+        id: "40DA2D93171D97E8"
+        type: "item"
+        item: "kubejs:shaft_bushing"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4EE63588B61540BB"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4FC3A93577CBAFC5"
+      title: "Приводы горизонтального и вертикального ряда"
+      description: ["Подготовь три редуктора. Расположи их на поворотах привода и сверь направление перед пуском станков."]
+      x: 11.685d
+      y: 0.485d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4452A35956333A16","4F02B33142C9C943"]
+      optional: true
+      tasks: [{
+        id: "42FACB8F4D10A44D"
+        type: "item"
+        item: "create:gearbox"
+        count: 3L
+      }]
+      rewards: [{
+        id: "460726D79ED5769C"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "4D03FC0913641F91"
+      title: "Валы на два рабочих ряда"
+      description: ["Собери шестнадцать валов. Один ряд отведи к пиле и мельнице, другой к прессу и смесителю."]
+      x: 7.842d
+      y: 4.281d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49E7A58B4F8C3E26","43844A5B69EF8D6D"]
+      optional: true
+      tasks: [{
+        id: "429FB6C60A3E2F14"
+        type: "item"
+        item: "create:shaft"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4D91ADB6CCBDFE3B"
+        type: "item"
+        item: "kubejs:shaft_bushing"
+        count: 1
+      }]
+    }
+    {
+      id: "4304DF4275A4AC51"
+      title: "Большие шестерни для регулировки оборотов"
+      description: ["Собери четыре большие шестерни для пар с малыми. Проверь нагрузку после каждой ступени передачи."]
+      x: 13.431d
+      y: 0.041d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F73C37D2074DA97","400D05E49B71D05B"]
+      optional: true
+      tasks: [{
+        id: "4DF865F339274CFF"
+        type: "item"
+        item: "create:large_cogwheel"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4F53675423F28148"
+        type: "item"
+        item: "kubejs:copper_strap"
+        count: 1
+      }]
+    }
+    {
+      id: "4CA28843B4398ACA"
+      title: "Депо подачи и съёма деталей"
+      description: ["Подготовь четыре депо для заготовок и готовых деталей. Одно держи под головкой пресса."]
+      x: 14.439d
+      y: 6.921d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49E7C605C81E9796","45F90DBA04E36F7D","45EADC6EDC7CA91F"]
+      optional: true
+      tasks: [{
+        id: "4E614EE144B93AB7"
+        type: "item"
+        item: "create:depot"
+        count: 4L
+      }]
+      rewards: [{
+        id: "472419CB9977D1D1"
+        type: "item"
+        item: "kubejs:copper_strap"
+        count: 1
+      }]
+    }
+    {
+      id: "4680CA5094134780"
+      title: "Медные листы для контактов и кабелей"
+      description: ["Прокатай двенадцать медных листов. Раздели партию между контактами LV и следующим рядом кабельных заготовок."]
+      x: 13.431d
+      y: 9.649d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CA8AC099D33AB3B","42CA8D93FB0AC26C"]
+      optional: true
+      tasks: [{
+        id: "45117594A97DB68E"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 12L
+      }]
+      rewards: [{
+        id: "44C0F69FB928502E"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "41804B297EB58381"
+      title: "Запасные полотна для лесопилки"
+      description: ["Собери два дополнительных полотна из зубьев, листов и заклёпки. Используй их для новых пил и камнереза."]
+      x: 15.067d
+      y: 2.251d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CA6ADB18CCFF965","45EADC6EDC7CA91F"]
+      optional: true
+      tasks: [{
+        id: "4973652D5B8B1628"
+        type: "item"
+        item: "kubejs:saw_blade"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4A9DD5C47A0FDEF2"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 2
+      }]
+    }
+    {
+      id: "480FCAF62B6AE347"
+      title: "Вентиляторы для промывочных постов"
+      description: ["Собери два вентилятора. Отведи один на промывку сырья, второй оставь для следующей линии."]
+      x: 13.431d
+      y: -7.248d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49FDAF644104B589","4F8C9D44DA0E4DC9"]
+      optional: true
+      tasks: [{
+        id: "44856539A3344D87"
+        type: "item"
+        item: "create:encased_fan"
+        count: 2L
+      }]
+      rewards: [{
+        id: "43D4C122FD1BCD3F"
+        type: "item"
+        item: "kubejs:shaft_bushing"
+        count: 1
+      }]
+    }
+    {
+      id: "433CEF2C9CCF4B87"
+      title: "Заготовки конвейерных ремней"
+      description: ["Сплети четыре основы ремня. Оставь заготовки рядом с валами для удлинения конвейеров."]
+      x: 11.114d
+      y: 6.340d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45255327AE91F770","4E698C6BAC973ABB"]
+      optional: true
+      tasks: [{
+        id: "4C35682E9F715A82"
+        type: "item"
+        item: "kubejs:woven_drive_belt"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4FA9FFF445ACBE6D"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 2
+      }]
+    }
+    {
+      id: "4D0C07F1AC582F8B"
+      title: "Бронзовые листы под второй проход"
+      description: ["Отпрессуй десять листов бронзы. Следующим проходом превращай нужную часть партии в заготовки котельного цеха."]
+      x: 19.296d
+      y: -7.240d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48F933CA7A837F03","490956E7FD293643"]
+      optional: true
+      tasks: [{
+        id: "4AD6E5F3F3C944FA"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 10L
+      }]
+      rewards: [{
+        id: "4B66718CD5A8F49F"
+        type: "item"
+        item: "kubejs:copper_strap"
+        count: 1
+      }]
+    }
+    {
+      id: "42C9DDDF8F292755"
+      title: "Ремни для двух конвейеров Create"
+      description: ["Изготовь два готовых ремня. Для каждого заранее поставь пару валов с нужным расстоянием."]
+      x: 13.431d
+      y: 5.718d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E698C6BAC973ABB","433CEF2C9CCF4B87"]
+      optional: true
+      tasks: [{
+        id: "4ECF1F9C380CCC38"
+        type: "item"
+        item: "create:belt_connector"
+        count: 2L
+      }]
+      rewards: [{
+        id: "42A77B3DA57D451C"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 2
+      }]
+    }
+    {
+      id: "4950A05DC49E2608"
+      title: "Герметичный стык"
+      description: ["Уплотни в чаше четыре штампа, две футеровки, два шнура и заклёпку. Подай 500 мБ воды."]
+      x: 19.296d
+      y: 0.947d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["490956E7FD293643","4A969DC8CC61D772","4650DF862BB30C74","45F90DBA04E36F7D","4C6769E1DF590FE7"]
+      tasks: [{
+        id: "42FEF1FB53C0C4AB"
+        type: "item"
+        item: "kubejs:sealed_boiler_joint"
+      }]
+      rewards: [{
+        id: "4384FBD6FE768663"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "489F63BB524E3929"
+      title: "Бронзовый корпус для пара"
+      description: ["Детали после пресса и герметичный стык образуют корпус."]
+      x: 21.613d
+      y: -2.201d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4950A05DC49E2608","48F933CA7A837F03"]
+      tasks: [{
+        id: "4B21B9E89F4488D3"
+        type: "item"
+        item: "gtceu:bronze_machine_casing"
+      }]
+      rewards: [{
+        id: "4E65516EDB34FAC0"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 3
+      }]
+    }
+    {
+      id: "4FC4C7F5CC813B3A"
+      title: "Топочная камера"
+      description: ["Топочная камера требует две футерованные печи."]
+      x: 22.569d
+      y: 2.831d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["489F63BB524E3929","406FCCBDC3668AE7"]
+      tasks: [{
+        id: "45AFF01EE8D24621"
+        type: "item"
+        item: "gtceu:bronze_firebox_casing"
+      }]
+      rewards: [{
+        id: "40D8998FF958C69E"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "49CE3A195951A7A9"
+      title: "Паропровод"
+      description: ["Шесть бронзовых пластин, штамп и заклёпка дают две трубы. Восемь труб уйдут на котёл и четыре станка. Остальные оставь на обвязку."]
+      x: 19.976d
+      y: -0.455d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48F933CA7A837F03","490956E7FD293643","4650DF862BB30C74"]
+      tasks: [{
+        id: "494EB0997560BE78"
+        type: "item"
+        item: "gtceu:bronze_small_fluid_pipe"
+        count: 12L
+      }]
+      rewards: [{
+        id: "43D95DD6D3D4DE98"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "466EAC305CCCFB8C"
+      title: "Первый котёл GregTech"
+      description: ["На сборку нужны две бронзовые трубы и отдельный герметичный стык. Заполни холодный котёл водой перед загрузкой топлива. Если котёл выкипел, дождись остывания перед новой подачей воды."]
+      x: 24.545d
+      y: 2.058d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["4FC4C7F5CC813B3A","49CE3A195951A7A9","4950A05DC49E2608"]
+      tasks: [{
+        id: "42761575FE67A1AF"
+        type: "item"
+        item: "gtceu:lp_steam_solid_boiler"
+      }]
+      rewards: [{
+        id: "433F48F9E400E181"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 4
+      }]
+    }
+    {
+      id: "4EF35DA6AEE11365"
+      title: "Паровое дробление"
+      description: ["При сборке вложи мельницу Create. Подай пар и дроби руду или древесный уголь для первых резисторов."]
+      x: 25.842d
+      y: 6.622d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["466EAC305CCCFB8C","482CDD7DB61ADFDD"]
+      tasks: [{
+        id: "4EF44F85FE907B97"
+        type: "item"
+        item: "gtceu:lp_steam_macerator"
+      }]
+      rewards: [{
+        id: "48B94F59F184EB71"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "44E8E284B41365EF"
+      title: "Паровой молот"
+      description: ["Один пресс Create уйдёт в сборку. Оставь второй пресс в работе."]
+      x: 25.842d
+      y: 0.464d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["466EAC305CCCFB8C","45F90DBA04E36F7D"]
+      tasks: [{
+        id: "47A42A5D60DCB35E"
+        type: "item"
+        item: "gtceu:lp_steam_forge_hammer"
+      }]
+      rewards: [{
+        id: "440354D8168E534A"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "4D80CF78A8709C72"
+      title: "Паровой экстрактор"
+      description: ["Добавь вентилятор Create, четыре медных листа и герметичный стык. Подключи пар и оставь выхлоп открытым. Экстрактор перерабатывает смолу для изоляции."]
+      x: 25.842d
+      y: -1.241d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["466EAC305CCCFB8C","49FDAF644104B589","4CA8AC099D33AB3B","4950A05DC49E2608"]
+      tasks: [{
+        id: "44D73550664D08AC"
+        type: "item"
+        item: "gtceu:lp_steam_extractor"
+      }]
+      rewards: [{
+        id: "4C3186081A741F28"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "45BDF33A1B33E59F"
+      title: "Паровой компрессор"
+      description: ["В компрессор входит пресс Create. Подготовь пар для прессования волокна."]
+      x: 25.842d
+      y: -2.803d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["466EAC305CCCFB8C","45F90DBA04E36F7D","4950A05DC49E2608"]
+      tasks: [{
+        id: "4753619690EE52C9"
+        type: "item"
+        item: "gtceu:lp_steam_compressor"
+      }]
+      rewards: [{
+        id: "4867A2BB066170DE"
+        type: "item"
+        item: "kubejs:stamped_bronze_blank"
+        count: 1
+      }]
+    }
+    {
+      id: "444055F8AB6BDA34"
+      title: "Бочка для запаса воды"
+      description: ["Закрепи деревянную бочку обвязкой из досок, заклёпок и липкой смолы. Потом она войдёт в бронзовый барабан."]
+      x: 25.842d
+      y: 3.637d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["466EAC305CCCFB8C","493BCB782DD7F53E","4650DF862BB30C74","4EDA16293D93081B","4C5EDD8F82704B98"]
+      tasks: [{
+        id: "4C69CD1598FAFD93"
+        type: "item"
+        item: "gtceu:wood_drum"
+      }]
+      rewards: [{
+        id: "4CFFC286BBD9F0C0"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "43EB83B93075B898"
+      title: "Буфер для пара"
+      description: ["Подведи пар от котла к бронзовому барабану. Трубу на турбину подсоедини снизу. Накопи пар, затем нажми по барабану ПКМ деревянной киянкой GregTech без Shift, чтобы включить выдачу."]
+      x: 27.478d
+      y: 3.239d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["444055F8AB6BDA34","49CE3A195951A7A9","4950A05DC49E2608","44B3F4EF29DA51F3"]
+      tasks: [{
+        id: "451757E81407319E"
+        type: "item"
+        item: "gtceu:bronze_drum"
+      }]
+      rewards: [{
+        id: "4705EB1DE061CE8C"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "4FE2E8ED8D030C6C"
+      title: "Магистраль большего сечения"
+      description: ["Собери трубу большего сечения из двух малых труб, пластины, герметичного стыка и заклёпки."]
+      x: 29.794d
+      y: 9.463d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43EB83B93075B898"]
+      optional: true
+      tasks: [{
+        id: "4D68EC4D6C24B959"
+        type: "item"
+        item: "gtceu:bronze_normal_fluid_pipe"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4A28D4621DB3D827"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "4CCC011C50940C3E"
+      title: "Печь на паре"
+      description: ["Собери отдельную паровую печь для обжига. Оставь выхлопную сторону открытой и проверь доступ к топке котла."]
+      x: 26.387d
+      y: 2.068d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["466EAC305CCCFB8C","4FC4C7F5CC813B3A","4950A05DC49E2608"]
+      optional: true
+      tasks: [{
+        id: "437DB084C08B6644"
+        type: "item"
+        item: "gtceu:lp_steam_furnace"
+      }]
+      rewards: [{
+        id: "42A9E328B06E5B62"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 2
+      }]
+    }
+    {
+      id: "40B38C87F17348FB"
+      title: "Паровая печь сплавов"
+      description: ["Установи обожжённый тигель в усиленную паровую печь. Собери вторую печь, если нужна отдельная линия обжига."]
+      x: 27.478d
+      y: 6.175d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CCC011C50940C3E","4F91B6A200BBB092","49CE3A195951A7A9"]
+      optional: true
+      tasks: [{
+        id: "4C0904ED34B10FA0"
+        type: "item"
+        item: "gtceu:lp_steam_alloy_smelter"
+      }]
+      rewards: [{
+        id: "4A7E82C071245592"
+        type: "item"
+        item: "kubejs:stamped_bronze_blank"
+        count: 1
+      }]
+    }
+    {
+      id: "4904A3AD04D1BF7B"
+      title: "Ремонтный запас паровых корпусов"
+      description: ["Собери отдельный запас из восьми корпусов под восстановление линии."]
+      x: 25.842d
+      y: -4.416d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["466EAC305CCCFB8C"]
+      optional: true
+      tasks: [{
+        id: "42086D8EC2ED3241"
+        type: "item"
+        item: "gtceu:bronze_machine_casing"
+        count: 8L
+      }]
+      rewards: [{
+        id: "40D2DCEA1BF933B0"
+        type: "item"
+        item: "kubejs:stamped_bronze_blank"
+        count: 1
+      }]
+    }
+    {
+      id: "44B76CCBB23497AD"
+      title: "Ремонтный запас паровых труб"
+      description: ["Держи на складе 32 трубы, чтобы не останавливать выпуск ради ремонта."]
+      x: 25.842d
+      y: 5.154d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["466EAC305CCCFB8C"]
+      optional: true
+      tasks: [{
+        id: "4063CE4D934F34DD"
+        type: "item"
+        item: "gtceu:bronze_small_fluid_pipe"
+        count: 32L
+      }]
+      rewards: [{
+        id: "4AB8766B621CC9F2"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 2
+      }]
+    }
+    {
+      id: "4B407E07C82B9A62"
+      title: "Партия штампованных заготовок LV"
+      description: ["Накопи 32 штампованные бронзовые заготовки для корпусов и тяжёлых компонентов."]
+      x: 19.976d
+      y: -5.556d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["490956E7FD293643","426E0E49436D4534"]
+      optional: true
+      tasks: [{
+        id: "438A6B2A882E59DA"
+        type: "item"
+        item: "kubejs:stamped_bronze_blank"
+        count: 32L
+      }]
+      rewards: [{
+        id: "487856B8C9B41FC0"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4A81444574745923"
+      title: "Резервный котёл парового ряда"
+      description: ["Собери второй котёл. Подведи к нему воду отдельной веткой, чтобы ремонт первого не остановил весь цех."]
+      x: 28.158d
+      y: 4.678d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["466EAC305CCCFB8C","4EF35DA6AEE11365","44E8E284B41365EF"]
+      optional: true
+      tasks: [{
+        id: "422A5B0A699E4223"
+        type: "item"
+        item: "gtceu:lp_steam_solid_boiler"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4175C6B7A597DCAC"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 2
+      }]
+    }
+    {
+      id: "4659112F0411B70C"
+      title: "Бронзовые трубы на раздельные отводы"
+      description: ["Отложи шестнадцать малых бронзовых труб на линии дробилки, экстрактора и компрессора."]
+      x: 27.478d
+      y: -3.396d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49CE3A195951A7A9","4D80CF78A8709C72","45BDF33A1B33E59F"]
+      optional: true
+      tasks: [{
+        id: "4B1F5A7C80AB0F25"
+        type: "item"
+        item: "gtceu:bronze_small_fluid_pipe"
+        count: 16L
+      }]
+      rewards: [{
+        id: "41B0A925F9DDB106"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 2
+      }]
+    }
+    {
+      id: "49367304AB341896"
+      title: "Бронзовые корпуса для парового ряда"
+      description: ["Подготовь четыре корпуса. Распредели запас между котлами и ремонтом паровых станков."]
+      x: 25.842d
+      y: -6.008d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["489F63BB524E3929","466EAC305CCCFB8C"]
+      optional: true
+      tasks: [{
+        id: "4F19711D84824BE0"
+        type: "item"
+        item: "gtceu:bronze_machine_casing"
+        count: 4L
+      }]
+      rewards: [{
+        id: "43C3011EC921833A"
+        type: "item"
+        item: "kubejs:stamped_bronze_blank"
+        count: 1
+      }]
+    }
+    {
+      id: "4EF8AE026E8F795C"
+      title: "Герметичные стыки на расширение пара"
+      description: ["Подай в чашу по четыре штампа, две футеровки, два шнура, заклёпку и 500 мБ воды на стык."]
+      x: 27.478d
+      y: -0.596d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4950A05DC49E2608","45BDF33A1B33E59F"]
+      optional: true
+      tasks: [{
+        id: "46F8C56C514960CE"
+        type: "item"
+        item: "kubejs:sealed_boiler_joint"
+        count: 6L
+      }]
+      rewards: [{
+        id: "4D1874628A5E610F"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "4AD57A929EE2449D"
+      title: "Топочные камеры на второй котёл"
+      description: ["Отложи две топочные камеры. Для каждой заранее приготовь футерованные печи."]
+      x: 29.794d
+      y: 2.947d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FC4C7F5CC813B3A","4A81444574745923"]
+      optional: true
+      tasks: [{
+        id: "46759123466005B5"
+        type: "item"
+        item: "gtceu:bronze_firebox_casing"
+        count: 2L
+      }]
+      rewards: [{
+        id: "47925C2B3185AAD0"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "41CA5E6C74969E40"
+      title: "Паровая дробилка для угля"
+      description: ["Поставь вторую паровую дробилку. На ней измельчай древесный уголь, пока первая занята рудой."]
+      x: 28.158d
+      y: -4.697d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EF35DA6AEE11365","451F856DC6658D9F"]
+      optional: true
+      tasks: [{
+        id: "4686F4F5A35380A7"
+        type: "item"
+        item: "gtceu:lp_steam_macerator"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4A8D0C36C0649C76"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "48E6FA70FB290F41"
+      title: "Раздельное прессование волокна"
+      description: ["Собери второй паровой компрессор и выдели ему подачу пропитанного волокна."]
+      x: 28.158d
+      y: -2.087d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45BDF33A1B33E59F","424C54CDC38321AB"]
+      optional: true
+      tasks: [{
+        id: "4B301F1B54DB07DB"
+        type: "item"
+        item: "gtceu:lp_steam_compressor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "44A319ABC8DCFF30"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "46C20FE4285EC45A"
+      title: "Оловянные листы для паровой мастерской"
+      description: ["Прокатай десять оловянных листов. Оставь их рядом с зубилом для заготовок проволоки."]
+      x: 16.024d
+      y: -2.526d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49FFA666884CE764","43DD512594965578","45F90DBA04E36F7D","41239334E42F5ADA"]
+      optional: true
+      tasks: [{
+        id: "403202DB83BD8602"
+        type: "item"
+        item: "gtceu:tin_plate"
+        count: 10L
+      }]
+      rewards: [{
+        id: "4EE3BC83B4D0E484"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "49F43286183B13B0"
+      title: "Смола для непрерывной вытяжки"
+      description: ["Собери двенадцать порций смолы и подавай их в экстрактор. Готовое связующее складывай рядом с волокном."]
+      x: 28.158d
+      y: 0.851d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EDA16293D93081B","4D80CF78A8709C72"]
+      optional: true
+      tasks: [{
+        id: "423CB88B8ECEE631"
+        type: "item"
+        item: "gtceu:sticky_resin"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4D9F0AD7AECC29C5"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "4B689393F6A67236"
+      title: "Связующее на изоляцию и платы"
+      description: ["Получи шестнадцать порций связующего из смолы. Отдели часть на изоляцию, остальное оставь для основ плат."]
+      x: 28.158d
+      y: -7.064d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4020C4C97BCB96C8","4D80CF78A8709C72","424C54CDC38321AB","4349BCAC49332D0F"]
+      optional: true
+      tasks: [{
+        id: "4B006603E9449BA0"
+        type: "item"
+        item: "kubejs:insulating_gum"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4FCF6C4A9DDEC6E4"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 2
+      }]
+    }
+    {
+      id: "4E0074393BD755A9"
+      title: "Топливо на долгую работу котлов"
+      description: ["Собери шестьдесят четыре куска древесного угля. Раздели запас между котлами перед запуском парового ряда."]
+      x: 29.114d
+      y: 7.563d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49F90E9F2AFFA0DD","4A81444574745923"]
+      optional: true
+      tasks: [{
+        id: "480117A8F186E518"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 64L
+      }]
+      rewards: [{
+        id: "43274D281ADD685F"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 2
+      }]
+    }
+  ]
+}

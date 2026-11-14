@@ -1,0 +1,3736 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "hv_foundry"
+  group: "49C57C767912BC15"
+  icon: "kubejs:hv_commissioning_report"
+  title: "HV"
+  id: "44D8D045D389FDDC"
+  order_index: 3
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/hv_foundry.png"
+    x: 0.0d
+    y: 0.0d
+    width: 73.694d
+    height: 33.833d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "4D6D72BEBB7C6068"
+      title: "Керамическая подложка"
+      description: ["Пресс Immersive Engineering формует подложку из обожжённого вкладыша. На один цикл уходит 24 000 FE."]
+      x: -29.723d
+      y: 0.000d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["48213B64C43AC340","42FC2F9C0CA18C8C"]
+      tasks: [{
+        id: "4EA4CC7A4770840E"
+        type: "item"
+        item: "kubejs:ceramic_hv_substrate"
+      }]
+      rewards: [{
+        id: "4BCE467A63E1751A"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4AE9CC74C99F3CD7"
+      title: "Заготовка модуля HV"
+      description: ["Спрессуй в нагретой чаше Create керамику, фенольную плату, две схемы MV, две канталовые намотки, медь, электрум и уплотнение."]
+      x: -22.895d
+      y: -1.325d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45006FBF0C84E932","4AAFD322DBC21D0B","468857EEFC4A4329","4799482036E52418","49EB9F2234E10E7C"]
+      tasks: [{
+        id: "43FA2FF73A62AA37"
+        type: "item"
+        item: "kubejs:hv_circuit_preform"
+      }]
+      rewards: [{
+        id: "4DF5519C972F37F7"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44BE4BCD5E0EEC02"
+      title: "Опрессовка модуля HV при 4,5 бар"
+      description: ["Загрузи заготовку, полиэтилен, усиленную трубу, два уплотнения и соединитель MV от IE. Поставь предохранитель на воздушной линии и контролируй по манометру 4,5 бар."]
+      x: -19.871d
+      y: -3.647d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4AE9CC74C99F3CD7","4C73EC0019DD35B3","40E8A71E8042D10C","4B979DAE99817888","4AD25FD6425ABA8E","4CCFB8C93642F18B"]
+      tasks: [{
+        id: "43D976BF2888CDC8"
+        type: "item"
+        item: "kubejs:sealed_hv_module"
+      }]
+      rewards: [{
+        id: "46383942F807CB6E"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4DE113F0F32CD880"
+      title: "Первая схема HV на MV"
+      description: ["В сборщик схем MV загрузи два герметичных модуля, по четыре схемы MV, резистора и припоя, два золотых контакта и два листа нержавейки. Подай 600 мБ смазки. Базовый цикл 144 секунды."]
+      x: -15.456d
+      y: 2.482d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["478047075E11A56A","487FE16FF61AA069","49003E4C43790D16"]
+      tasks: [{
+        id: "4677FFCF247568B5"
+        type: "item"
+        item: "gtceu:advanced_integrated_circuit"
+      }]
+      rewards: [{
+        id: "436CE9CA46ADEA9E"
+        type: "item"
+        item: "kubejs:ceramic_hv_substrate"
+        count: 2
+      }]
+    }
+    {
+      id: "43F1AAE1CF9F4272"
+      title: "Волочение золотого провода"
+      description: ["Одна золотая заготовка даёт два провода в волочильном стане MV."]
+      x: -29.383d
+      y: -1.898d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["487FE16FF61AA069","46182370343AAFA3"]
+      tasks: [{
+        id: "450E3A62389769BB"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 4L
+      }]
+      rewards: [{
+        id: "400D2C1FF98BFE8D"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42EAAAC3CFB2D02D"
+      title: "Золотой кабель HV"
+      description: ["Подай четыре провода, полиэтилен, изоляцию, уплотнения, пневмотрубу и 350 мБ смазки. Держи первый ввод HV рядом с генератором."]
+      x: -27.005d
+      y: 1.470d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43F1AAE1CF9F4272","40E8A71E8042D10C","4799482036E52418","4B979DAE99817888"]
+      tasks: [{
+        id: "4E27DE315A71316F"
+        type: "item"
+        item: "gtceu:gold_single_cable"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4B725A44C9C297FD"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4672B5B9EEC5D34E"
+      title: "Пакет золотых и канталовых обмоток"
+      description: ["Сборщик MV соединяет провод и кантал с обмоткой IE. Подай 450 мБ смазки на пару пакетов."]
+      x: -24.627d
+      y: 1.537d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4CEBD3A7073E1660","4AAFD322DBC21D0B","49003E4C43790D16"]
+      tasks: [{
+        id: "47470D88B5A008D6"
+        type: "item"
+        item: "kubejs:hv_winding_pack"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4588C485148A467D"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4E5A6C2B09825088"
+      title: "Дугогашение"
+      description: ["Добавь к керамике нержавейку, горячую болванку, футеровку, раму IE и прессованное железо. На пару деталей подай 500 мБ дистиллята."]
+      x: -27.005d
+      y: -2.135d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D6D72BEBB7C6068","49003E4C43790D16","488B9F155DA6DC27"]
+      tasks: [{
+        id: "440AF8A4D1DD4C3F"
+        type: "item"
+        item: "kubejs:hv_arc_shield"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4F207A1C003CC753"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "474A46D0E9C2FE5A"
+      title: "Оболочка HV"
+      description: ["Собери оболочку из нержавейки, огнеупоров, тяжёлого блока IE и стенки камеры PneumaticCraft."]
+      x: -24.627d
+      y: 4.119d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4E5A6C2B09825088","49003E4C43790D16","42DE723368A78D21"]
+      tasks: [{
+        id: "4480368551528685"
+        type: "item"
+        item: "gtceu:hv_machine_casing"
+      }]
+      rewards: [{
+        id: "4C5065236693062C"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "41FB2523B261274D"
+      title: "Корпус с принятыми огнеупорами"
+      description: ["На один корпус расходуется ящик огнеупоров после входного контроля. Добавь корпус MV, разъём IE и усиленную пневмотрубу."]
+      x: -22.589d
+      y: 0.598d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["474A46D0E9C2FE5A","47FC3713B09C656E","42EAAAC3CFB2D02D","49DB74F897C0B0E3","4CCFB8C93642F18B"]
+      tasks: [{
+        id: "4ACD492696882951"
+        type: "item"
+        item: "gtceu:hv_machine_hull"
+      }]
+      rewards: [{
+        id: "4EB8E0AB5D2060BD"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "4B8AF246DCFA1999"
+      title: "Электродвигатель HV"
+      description: ["Установи пакеты обмоток вокруг двигателя MV. Добавь обмотку IE и прецизионный механизм Create."]
+      x: -12.738d
+      y: -0.585d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4DE113F0F32CD880","4672B5B9EEC5D34E","42EAAAC3CFB2D02D","474A8230F5DCBD20"]
+      tasks: [{
+        id: "45CA98E2230EB964"
+        type: "item"
+        item: "gtceu:hv_electric_motor"
+      }]
+      rewards: [{
+        id: "41F17B57CC108D37"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 3
+      }]
+    }
+    {
+      id: "42DCC7F618DACF0C"
+      title: "Силовой поршень HV"
+      description: ["Подготовь мотор, оси, механический поршень Create и интерфейс камеры. Перенеси рабочую часть старого поршня MV."]
+      x: -10.360d
+      y: 5.510d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B8AF246DCFA1999","42F96AB63F8EABA4","4D06EB526892D424","4D29D3B13125FE79"]
+      tasks: [{
+        id: "47EBD814BE10E22A"
+        type: "item"
+        item: "gtceu:hv_electric_piston"
+      }]
+      rewards: [{
+        id: "4FCEE8A91BB28B5C"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CDCE7C66BE4199A"
+      title: "Герметичный насос HV"
+      description: ["Соедини насосы MV и IE, двигатель и дугогаситель. Для герметизации добавь усиленную пневмотрубу и прокладки."]
+      x: -10.360d
+      y: -5.886d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B8AF246DCFA1999","401C26D7638E14EC","4E5A6C2B09825088","4F339FF0E8F95AAD"]
+      tasks: [{
+        id: "475FC43BEFE82ADF"
+        type: "item"
+        item: "gtceu:hv_electric_pump"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4A0149A247AE5FA6"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4616FF376279F4D0"
+      title: "Транспортёр HV"
+      description: ["Подготовь полимерную передачу, воронку Create и конвейер IE. Поставь их на старый модуль MV вместе с двигателями и осями."]
+      x: -10.360d
+      y: -4.273d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B8AF246DCFA1999","41AF8F5C14E516BE","4D06EB526892D424","48CA1AEE96E14DB0"]
+      tasks: [{
+        id: "49B160298680EF3D"
+        type: "item"
+        item: "gtceu:hv_conveyor_module"
+      }]
+      rewards: [{
+        id: "47E00806167210E7"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "40308FA4B19A06BF"
+      title: "Сборочный манипулятор HV"
+      description: ["На каждый манипулятор нужны привод MV, рука Create, мотор, поршень, обмотки и схема."]
+      x: -8.662d
+      y: -0.094d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42DCC7F618DACF0C","4B8AF246DCFA1999","4672B5B9EEC5D34E","42BBDBBD32BB451C"]
+      tasks: [{
+        id: "4F5ED6104E53F2AF"
+        type: "item"
+        item: "gtceu:hv_robot_arm"
+        count: 2L
+      }]
+      rewards: [{
+        id: "477F1A2BD0864528"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4244F9758F2AC539"
+      title: "Первый дизельный генератор HV"
+      description: ["Подготовь жидкотопливный компрессор и наладочный комплект. На сборку подай 1400 мБ дизеля и 120 EU/t. Оставь отдельный генератор MV на прежней линии."]
+      x: -8.322d
+      y: -2.338d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["41FB2523B261274D","4CDCE7C66BE4199A","4B8AF246DCFA1999","484AC673FAFF433C","4C73EC0019DD35B3"]
+      tasks: [{
+        id: "42AFD5EC9B02C8F5"
+        type: "item"
+        item: "gtceu:hv_combustion"
+      }]
+      rewards: [{
+        id: "48E9934FF630312C"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D0036FCF5733F13"
+      title: "Ввод высокого напряжения"
+      description: ["Собери ввод с реле IE и 550 мБ припоя. Подключи домну через люк HV, а генератор поставь рядом. Испытательная плавка потребляет 480 EU/t."]
+      x: -19.871d
+      y: 1.955d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41FB2523B261274D","43F1186D39F4E05C","4672B5B9EEC5D34E","407614E5A04E11FE","4EE84E6C851507A7"]
+      tasks: [{
+        id: "47AE520FAFF70294"
+        type: "item"
+        item: "gtceu:hv_energy_input_hatch"
+      }]
+      rewards: [{
+        id: "404FDBBDD35F0B44"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "42E99CE4711A8261"
+      title: "Сборщик для серийной работы HV"
+      description: ["Один сборщик MV и механическая рука Create уйдут в новую машину. На цикл подай 1200 мБ смазки и 120 EU/t. Оставь второй сборщик MV для комплектующих."]
+      x: -5.945d
+      y: -1.162d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["41FB2523B261274D","40308FA4B19A06BF","4616FF376279F4D0","4244F9758F2AC539","42BBDBBD32BB451C"]
+      tasks: [{
+        id: "4F131270766432B4"
+        type: "item"
+        item: "gtceu:hv_assembler"
+      }]
+      rewards: [{
+        id: "4F0987637D55568F"
+        type: "item"
+        item: "gtceu:gold_single_cable"
+        count: 4
+      }]
+    }
+    {
+      id: "4B273BADC8D818E1"
+      title: "Смеситель испытательных шихт"
+      description: ["На 384 EU/t собери смеситель HV из предыдущей машины, нового корпуса, двигателей, схем и кабеля."]
+      x: -0.055d
+      y: 7.909d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42E99CE4711A8261","4244F9758F2AC539","4D5546CBC26CE3AD"]
+      tasks: [{
+        id: "4FE4E7012332BF71"
+        type: "item"
+        item: "gtceu:hv_mixer"
+      }]
+      rewards: [{
+        id: "428737281B0561E3"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "45FC710629F4CD87"
+      title: "Ванна для испытательной плавки"
+      description: ["Запитай ванну на 512 EU и подключи буфер дистиллята. На каждый образец уйдёт 1000 мБ."]
+      x: -3.227d
+      y: -5.583d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42E99CE4711A8261","4CDCE7C66BE4199A","4427DA1CF541EA57"]
+      tasks: [{
+        id: "4082FD3D8AC72813"
+        type: "item"
+        item: "gtceu:hv_chemical_bath"
+      }]
+      rewards: [{
+        id: "4C9BA63C5EA86395"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4F16EFC0B79A77E2"
+      title: "Загрузка на испытательную смену"
+      description: ["Смеситель HV готовит четыре порции из нержавейки, никеля, хромита, футеровки, шлака IE и угольного порошка. Подай 750 мБ дистиллята."]
+      x: -0.849d
+      y: 6.293d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4B273BADC8D818E1","401408A1CBBD012A","44167261FEBDFC99","42D1A0C15E16EC1D"]
+      tasks: [{
+        id: "4320B0CDD8796BD0"
+        type: "item"
+        item: "kubejs:hv_trial_charge"
+        count: 16L
+      }]
+      rewards: [{
+        id: "42A49C6A700A2FEC"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "459597978C01D180"
+      title: "Пробная плавка при 2550 К"
+      description: ["На одну болванку выдели 1200 мБ кислорода и 90 секунд работы при 480 EU/t. Используй канталовые катушки."]
+      x: 1.189d
+      y: 2.058d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4F16EFC0B79A77E2","4D0036FCF5733F13","4224447257CA4F65","4244F9758F2AC539","4CEC8C5D4058263D"]
+      tasks: [{
+        id: "45BE02F54D6F5EEF"
+        type: "item"
+        item: "kubejs:hot_hv_trial_billet"
+      }]
+      rewards: [{
+        id: "4EAFA144088A5DE4"
+        type: "item"
+        item: "kubejs:fired_refractory_liner"
+        count: 2
+      }]
+    }
+    {
+      id: "46DFDFF141296B7A"
+      title: "Серия из 16 образцов"
+      description: ["Проведи всю партию через домну и закалочную ванну. Собери 16 образцов для сдачи цеха."]
+      x: 3.907d
+      y: 0.216d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["459597978C01D180","45FC710629F4CD87"]
+      tasks: [{
+        id: "420FCFC01F131A87"
+        type: "item"
+        item: "kubejs:hv_alloy_coupon"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4A66BE01CCB655E6"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D12F46313F9CA9B"
+      title: "Приёмка металлургической смены"
+      description: ["Загрузи 16 образцов, два принятых ящика, три схемы HV, два сигнальных реле, два дугогасителя и четыре листа нержавейки. Добавь наблюдатель Create, обмотку IE, регулятор PneumaticCraft и 1500 мБ дистиллята. Протокол нужен для пропуска в Энд."]
+      x: 5.945d
+      y: 1.657d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["46DFDFF141296B7A","42E99CE4711A8261","47FC3713B09C656E","440E8E81A8CE044C","4E5A6C2B09825088","40C9F0EA6064E6C4","4CEBD3A7073E1660","45EF06650A5651D4"]
+      tasks: [{
+        id: "412ADE8D7FFC74B7"
+        type: "item"
+        item: "kubejs:hv_commissioning_report"
+      }]
+      rewards: [{
+        id: "4FD53385A725AD7C"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 4
+      }]
+    }
+    {
+      id: "457F00FF81B159E3"
+      title: "Серийный листогиб HV"
+      description: ["Перенеси рабочий узел MV на новый корпус и два силовых поршня."]
+      x: -3.907d
+      y: 7.272d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","42DCC7F618DACF0C","42AC3B3C9EE4DF2E"]
+      optional: true
+      tasks: [{
+        id: "4859A2DBD4E1493D"
+        type: "item"
+        item: "gtceu:hv_bender"
+      }]
+      rewards: [{
+        id: "4CC4B52ECD011051"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46C1C260BDDE3F61"
+      title: "Промышленное дробление HV"
+      description: ["Используй запасной мацератор MV. Полевую машину оставь на линии снабжения базальтом."]
+      x: -3.907d
+      y: 10.964d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","42DCC7F618DACF0C","4C7496D384A1E722"]
+      optional: true
+      tasks: [{
+        id: "454482F2A740F702"
+        type: "item"
+        item: "gtceu:hv_macerator"
+      }]
+      rewards: [{
+        id: "46307126FADE37F9"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4E1568B9F2F13C8C"
+      title: "Термическое разделение HV"
+      description: ["Установи два двигателя в новый корпус и добавь термоцентрифугу MV."]
+      x: -3.907d
+      y: -9.468d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","4B8AF246DCFA1999"]
+      optional: true
+      tasks: [{
+        id: "4C7E9029379E65B0"
+        type: "item"
+        item: "gtceu:hv_thermal_centrifuge"
+      }]
+      rewards: [{
+        id: "4A81477BAE04678F"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "425FBB80431AE04E"
+      title: "Извлечение древнего сплава"
+      description: ["Вместо простой плавки прогоняй древние обломки через термоцентрифугу при 384 EU/t."]
+      x: -0.849d
+      y: -12.980d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E1568B9F2F13C8C","43AFB808F798CD31"]
+      optional: true
+      tasks: [{
+        id: "459BD5A8B9AEC465"
+        type: "item"
+        item: "minecraft:netherite_scrap"
+        count: 6L
+      }]
+      rewards: [{
+        id: "464FD0CE34FE2041"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "473EB814EAC6AD53"
+      title: "Первый незеритовый слиток"
+      description: ["Соедини шесть обломков с золотом, образцом сплава HV и огнеупорами при 480 EU/t."]
+      x: 6.285d
+      y: 4.477d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["425FBB80431AE04E","46DFDFF141296B7A"]
+      optional: true
+      tasks: [{
+        id: "4091A87D2F40DD60"
+        type: "item"
+        item: "minecraft:netherite_ingot"
+      }]
+      rewards: [{
+        id: "42914DE84D244020"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "48799B9670405915"
+      title: "Вставка для кузнечного стола"
+      description: ["Сборщик добавляет к слитку два испытательных образца и уплотнения. Кузнечному столу также нужен шаблон из бастиона."]
+      x: 8.109d
+      y: 0.693d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["473EB814EAC6AD53","46DFDFF141296B7A"]
+      optional: true
+      tasks: [{
+        id: "453B280A37D4E2A7"
+        type: "item"
+        item: "kubejs:netherite_upgrade_charge"
+      }]
+      rewards: [{
+        id: "4402F7A7F14DC33F"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "45B789AB2A7F8C4C"
+      title: "Резервный источник HV"
+      description: ["Собери турбину на отдельной магистрали. Держи резерв, пока основной цех обслуживает дизельный генератор."]
+      x: -3.907d
+      y: -0.833d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","4B8AF246DCFA1999","4244F9758F2AC539"]
+      optional: true
+      tasks: [{
+        id: "42A3376E5C58CC2A"
+        type: "item"
+        item: "gtceu:hv_steam_turbine"
+      }]
+      rewards: [{
+        id: "4D4D5330666F2C46"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42D9FFBF36EBC9DA"
+      title: "Силовой блок электроинструмента"
+      description: ["Установи мотор, литиевую батарею и механизм Create на старый привод. Подай 950 мБ смазки. Новый блок хранит до 1,8 млн EU."]
+      x: 3.227d
+      y: -5.537d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","4B8AF246DCFA1999","4C8AD14786A0B31F","42BBDBBD32BB451C"]
+      optional: true
+      tasks: [{
+        id: "47333D6B05992DB6"
+        type: "item"
+        item: "gtceu:hv_power_unit"
+      }]
+      rewards: [{
+        id: "4E99C6D49315D4F6"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4C8AD14786A0B31F"
+      title: "Литиевая батарея HV"
+      description: ["Перенеси литиевую батарею MV в новую кассету. Добавь литиевую и углеродную пыль, катушку, контакты и 900 мБ серной кислоты."]
+      x: 2.737d
+      y: -7.269d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40E9522C9A7681CE","4EAAD77F978AA058"]
+      optional: true
+      tasks: [{
+        id: "4812412E9241D66C"
+        type: "item"
+        item: "gtceu:hv_lithium_battery"
+      }]
+      rewards: [{
+        id: "49EA84367DEB41CA"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D790645523898E0"
+      title: "Бур с новой передачей"
+      description: ["Собери бур из бронзовой машины MV, нового силового блока, поршня и бура Create. Подай 850 мБ смазки, затем заряди инструмент."]
+      x: 7.982d
+      y: -6.823d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42D9FFBF36EBC9DA","42DCC7F618DACF0C","4DD47C42B9E57BB4"]
+      optional: true
+      tasks: [{
+        id: "41255A764166B852"
+        type: "item"
+        item: "gtceu:hv_bronze_drill"
+      }]
+      rewards: [{
+        id: "4F7E0E1F5D288CF3"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "41BA8CB5BF3E576C"
+      title: "Отдельная шина серийного выпуска"
+      description: ["Добавь выходную шину с двумя транспортёрами и отдельный буфер для следующей смены."]
+      x: -11.757d
+      y: -5.408d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","4616FF376279F4D0"]
+      optional: true
+      tasks: [{
+        id: "4D56FA486EFD6E6C"
+        type: "item"
+        item: "gtceu:hv_output_bus"
+      }]
+      rewards: [{
+        id: "4FD765A97E41BDA4"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A3195DBF8A27EBE"
+      title: "Незерская точка восстановления"
+      description: ["Собери якорь из плачущего обсидиана, светокамня и огнеупоров. Для заряда привези дополнительный светокамень."]
+      x: -5.790d
+      y: -2.955d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","4E5A6C2B09825088","4DE113F0F32CD880","43AFB808F798CD31"]
+      optional: true
+      tasks: [{
+        id: "4ABD926AF7218D5B"
+        type: "item"
+        item: "minecraft:respawn_anchor"
+      }]
+      rewards: [{
+        id: "4499E59C2A9251EA"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "48897690C9F8FA22"
+      title: "Керамические подложки на серию HV"
+      description: ["Подготовь восемь керамических подложек. Держи партию у камеры давления вместе с заготовками схем."]
+      x: -16.530d
+      y: 1.038d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D6D72BEBB7C6068","4DE113F0F32CD880"]
+      optional: true
+      tasks: [{
+        id: "40CC24DA60E0C304"
+        type: "item"
+        item: "kubejs:ceramic_hv_substrate"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4C41111D31E12B19"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4E5EE5728F05A100"
+      title: "Золотой кабель для двух цехов HV"
+      description: ["Подготовь шестнадцать кабелей. Отведи отдельные короткие вводы сборщику и металлургическому участку."]
+      x: -5.056d
+      y: 3.556d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42EAAAC3CFB2D02D","42E99CE4711A8261"]
+      optional: true
+      tasks: [{
+        id: "40874A65978251A4"
+        type: "item"
+        item: "gtceu:gold_single_cable"
+        count: 16L
+      }]
+      rewards: [{
+        id: "422D5FC9AFAE9A12"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "42872843886387AE"
+      title: "Двигатели на сменные приводы HV"
+      description: ["Собери четыре двигателя. Оставь их для конвейеров, манипулятора и резервного генератора."]
+      x: -6.285d
+      y: 2.382d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B8AF246DCFA1999","4616FF376279F4D0","40308FA4B19A06BF"]
+      optional: true
+      tasks: [{
+        id: "4569D98B94AFB088"
+        type: "item"
+        item: "gtceu:hv_electric_motor"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4F5AADFA1B1ACC01"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4F0D5E7EC539103F"
+      title: "Насосы на подачу и возврат HV"
+      description: ["Собери четыре насоса. Раздели их между подачей чистого реагента и отводом нагретой жидкости."]
+      x: -11.013d
+      y: -7.420d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CDCE7C66BE4199A","45FC710629F4CD87"]
+      optional: true
+      tasks: [{
+        id: "40120381FA088406"
+        type: "item"
+        item: "gtceu:hv_electric_pump"
+        count: 4L
+      }]
+      rewards: [{
+        id: "408CC4508185691E"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4F50AC5221FF4D8D"
+      title: "Комплект схем высокого напряжения"
+      description: ["Собери двенадцать схем HV. Отложи отдельные партии на станки, питание и развитие чистой комнаты."]
+      x: -13.934d
+      y: -1.580d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4DE113F0F32CD880","42E99CE4711A8261"]
+      optional: true
+      tasks: [{
+        id: "48147CAC33EAABB6"
+        type: "item"
+        item: "gtceu:advanced_integrated_circuit"
+        count: 12L
+      }]
+      rewards: [{
+        id: "407C7AC3CDE2F6EC"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4C438519F41A26D6"
+      title: "Корпуса под две машины HV"
+      description: ["Подготовь четыре корпуса HV с принятыми огнеупорами. Отложи часть на независимые станки после приёмки."]
+      x: 7.982d
+      y: 2.922d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41FB2523B261274D","4D12F46313F9CA9B"]
+      optional: true
+      tasks: [{
+        id: "4B54E48E650A9973"
+        type: "item"
+        item: "gtceu:hv_machine_hull"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4067C7B018961FEC"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "409ACBD725FFB322"
+      title: "Два смесителя для раздельных шихт"
+      description: ["Поставь два смесителя. Держи контрольную шихту и обычные металлургические заказы на разных вводах."]
+      x: -4.769d
+      y: 9.063d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B273BADC8D818E1","4F16EFC0B79A77E2"]
+      optional: true
+      tasks: [{
+        id: "4C40E4C1BEB4C0F2"
+        type: "item"
+        item: "gtceu:hv_mixer"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4C8910A250D61CFB"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "491284E2628599D3"
+      title: "Образцы на повторную приёмку HV"
+      description: ["Закали двадцать четыре контрольных образца. Держи их отдельно от незакалённых болванок."]
+      x: 4.318d
+      y: -1.214d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46DFDFF141296B7A","4D12F46313F9CA9B"]
+      optional: true
+      tasks: [{
+        id: "423C29D5CDDE94CB"
+        type: "item"
+        item: "kubejs:hv_alloy_coupon"
+        count: 24L
+      }]
+      rewards: [{
+        id: "43646FE1B07009F5"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4D97265BECC4C795"
+      title: "Излучатели для автоматики HV"
+      description: ["Собери два излучателя для устройств управления и передачи сигнала. Отложи нужную схему HV на каждый цикл."]
+      x: -3.907d
+      y: -6.432d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","4E5A6C2B09825088"]
+      optional: true
+      tasks: [{
+        id: "4CFBE995E144644E"
+        type: "item"
+        item: "gtceu:hv_emitter"
+        count: 2L
+      }]
+      rewards: [{
+        id: "45D47028A3909625"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4FF2677E3C3CA2BA"
+      title: "Датчики для контроля нагрузки HV"
+      description: ["Собери два датчика HV. Держи один в резерве для следующего устройства контроля."]
+      x: -0.849d
+      y: -1.301d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D97265BECC4C795"]
+      optional: true
+      tasks: [{
+        id: "4D0E5F0931B31D21"
+        type: "item"
+        item: "gtceu:hv_sensor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4B11724C2DE43111"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "433C08868978F6F3"
+      title: "Энерговывод дизельного участка HV"
+      description: ["Собери энерговыход HV. Оставь его отдельно от энерговвода, чтобы не перепутать стороны при обвязке."]
+      x: -3.907d
+      y: 2.597d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4244F9758F2AC539","4D0036FCF5733F13","42E99CE4711A8261"]
+      optional: true
+      tasks: [{
+        id: "46425F5558E71D02"
+        type: "item"
+        item: "gtceu:hv_energy_output_hatch"
+      }]
+      rewards: [{
+        id: "481D72A6CB4F01CC"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "44AE56E4FB9AF5B3"
+      title: "Предметный магнит высокого напряжения"
+      description: ["Собери магнит HV для сбора выпавших предметов. Подготовь зарядку перед выездом."]
+      x: 7.982d
+      y: -3.433d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D12F46313F9CA9B","42E99CE4711A8261"]
+      optional: true
+      tasks: [{
+        id: "41B5741645C1C606"
+        type: "item"
+        item: "gtceu:hv_item_magnet"
+      }]
+      rewards: [{
+        id: "476B798561568BD8"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "46C30FCD77569CEC"
+      title: "Механический пресс для модулей"
+      description: ["Поставь пресс над чашей. Под чашей оставь место под горелку."]
+      x: -27.005d
+      y: 4.387d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D6D72BEBB7C6068","4C29531708BD325C","45F90DBA04E36F7D"]
+      tasks: [{
+        id: "46305FE44379E8A5"
+        type: "item"
+        item: "create:basin"
+      }]
+      rewards: [{
+        id: "4FEB9F07CB9DCC5F"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "45006FBF0C84E932"
+      title: "Нагрев слоёв перед прессованием"
+      description: ["Поймай ифрита в пустую горелку. Поставь её под чашей и подай твёрдое топливо перед прессованием слоёв."]
+      x: -25.307d
+      y: -3.656d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["46C30FCD77569CEC","43AFB808F798CD31"]
+      tasks: [{
+        id: "4DC31399D6915AE9"
+        type: "item"
+        item: "create:blaze_burner"
+      }]
+      rewards: [{
+        id: "4BCE0D6C8A1CD690"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "478047075E11A56A"
+      title: "Сборщик схем на 128 EU"
+      description: ["Подготовь сборщик схем MV. Подведи смазку и короткий кабель от источника на 128 EU. Здесь будет спаяна первая схема HV."]
+      x: -17.494d
+      y: -4.261d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44BE4BCD5E0EEC02","41AF8F5C14E516BE","4303A0AC3F43FE45"]
+      tasks: [{
+        id: "4DE7AB1BF29C2110"
+        type: "item"
+        item: "gtceu:mv_circuit_assembler"
+      }]
+      rewards: [{
+        id: "4C6C661A8A34AAC4"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4772AD241F41EEFF"
+      title: "Манипулятор для механической руки"
+      description: ["Подготовь манипулятор MV для переноса в оснастку Create. Оставь запас приводов на сборочный участок."]
+      x: -13.418d
+      y: 4.925d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4DE113F0F32CD880","42F96AB63F8EABA4","41AF8F5C14E516BE"]
+      tasks: [{
+        id: "4A8550015A2A9E73"
+        type: "item"
+        item: "gtceu:mv_robot_arm"
+      }]
+      rewards: [{
+        id: "40E6B0142F027EB5"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42BBDBBD32BB451C"
+      title: "Механическая рука для сборочного поста"
+      description: ["Собери руку Create из манипулятора MV, выверенных осей и пневматического интерфейса. Подай 500 мБ смазки."]
+      x: -10.527d
+      y: -0.099d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4772AD241F41EEFF","474A8230F5DCBD20","4D29D3B13125FE79","4D06EB526892D424"]
+      tasks: [{
+        id: "4F7D9AAEF47136B4"
+        type: "item"
+        item: "create:mechanical_arm"
+      }]
+      rewards: [{
+        id: "4DDA750518D78902"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "49E229D2C62BA14A"
+      title: "Сурьма для жидкого припоя"
+      description: ["Найди стибнит по карте жил. Проверь в JEI цепочку переработки руды до сурьмы и отложи отдельную партию под припой."]
+      x: -25.381d
+      y: -1.936d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43F1AAE1CF9F4272","4C7496D384A1E722"]
+      tasks: [{
+        id: "4D60ECA8CAAB3455"
+        type: "item"
+        item: "gtceu:antimony_dust"
+      }]
+      rewards: [{
+        id: "496673DEDCF04DC0"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4EE84E6C851507A7"
+      title: "Жидкий припой силовой сборки"
+      description: ["В смеситель MV подай шесть оловянных заготовок, три пыли свинца, сурьму и сетку. С одного цикла получишь 1440 мБ жидкого припоя."]
+      x: -24.645d
+      y: -0.294d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["49E229D2C62BA14A","418EB90C74ED6F19","4D5546CBC26CE3AD","46185BA948518477"]
+      tasks: [{
+        id: "4FAF5AC2D254FE28"
+        type: "item"
+        item: "gtceu:soldering_alloy_bucket"
+      }]
+      rewards: [{
+        id: "466BC57A018D3E90"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CEBD3A7073E1660"
+      title: "Электрумовая обмотка цеха"
+      description: ["Собери обмотки IE из изолированных электрумовых мотков. Первая партия уйдёт на силовые пакеты и приёмку цеха."]
+      x: -27.005d
+      y: -0.266d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["43F1AAE1CF9F4272","430A1F7DE06F9A8B","474A8230F5DCBD20"]
+      tasks: [{
+        id: "408AE11B85AF71A5"
+        type: "item"
+        item: "immersiveengineering:coil_mv"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4E33041C02DC53B3"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "489D8D1A5DCE46D3"
+      title: "Кислородный участок домны"
+      description: ["Выдели электролизёр под кислород. Разведи газовые выходы и поставь отдельный буфер перед домной."]
+      x: -11.243d
+      y: -9.642d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","4CDCE7C66BE4199A","4CEC8C5D4058263D"]
+      optional: true
+      tasks: [{
+        id: "4952079EBACC2278"
+        type: "item"
+        item: "gtceu:hv_electrolyzer"
+      }]
+      rewards: [{
+        id: "4186BD7E55629BFB"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4EAAD77F978AA058"
+      title: "Катушка управления HV"
+      description: ["Подготовь две катушки. Одна нужна силовой сети, другая пригодится при сборке измерительных блоков."]
+      x: -3.227d
+      y: 2.012d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","4672B5B9EEC5D34E","420C865AFE04FB9E"]
+      optional: true
+      tasks: [{
+        id: "451949D1EE37DE6B"
+        type: "item"
+        item: "gtceu:hv_voltage_coil"
+        count: 2L
+      }]
+      rewards: [{
+        id: "48F71A5CBFA7F43B"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4ACB11CF2EAC9C0E"
+      title: "Двойной золотой провод"
+      description: ["Собери двойные жилы и отложи их отдельно от одиночных. Из них пойдут кабели и следующая ступень сечения."]
+      x: -22.587d
+      y: 2.360d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43F1AAE1CF9F4272","4672B5B9EEC5D34E"]
+      optional: true
+      tasks: [{
+        id: "4C1355D42C8107CD"
+        type: "item"
+        item: "gtceu:gold_double_wire"
+        count: 4L
+      }]
+      rewards: [{
+        id: "45C5200E6C975C53"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4594FD9A0BAA3555"
+      title: "Кабель на две нагрузки"
+      description: ["Изолируй двойные жилы. При подключении двух потребителей сверь ток источников и длину участка."]
+      x: -19.871d
+      y: 4.196d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4ACB11CF2EAC9C0E","42EAAAC3CFB2D02D"]
+      optional: true
+      tasks: [{
+        id: "428D9B0AC99AA25C"
+        type: "item"
+        item: "gtceu:gold_double_cable"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4534EA56810EFB1D"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4C6CC1D6DBE35271"
+      title: "Четырёхжильный золотой провод"
+      description: ["Соедини двойные жилы под общий ввод. Отложи пару пучков для силового буфера."]
+      x: -1.529d
+      y: 10.788d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4ACB11CF2EAC9C0E","4EAAD77F978AA058"]
+      optional: true
+      tasks: [{
+        id: "4728A2F618E374DD"
+        type: "item"
+        item: "gtceu:gold_quadruple_wire"
+        count: 4L
+      }]
+      rewards: [{
+        id: "46ADA7F22C9CD5E4"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4F2720EBECF11771"
+      title: "Золотая магистраль HV"
+      description: ["Разведи питание к домне, ванне и сборщику через отдельные отводы. Учти падение напряжения на длинной линии."]
+      x: 0.849d
+      y: 9.889d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C6CC1D6DBE35271","4594FD9A0BAA3555"]
+      optional: true
+      tasks: [{
+        id: "42B98DE76F1D2419"
+        type: "item"
+        item: "gtceu:gold_quadruple_cable"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4F3571688471722B"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "40E9522C9A7681CE"
+      title: "Корпуса аккумуляторов HV"
+      description: ["Собери кассеты на четыре элемента. Вторую партию держи под сборку буфера и замену изношенных батарей."]
+      x: -1.529d
+      y: -4.673d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EAAD77F978AA058","4D4EC925F6219F9E","41FB2523B261274D"]
+      optional: true
+      tasks: [{
+        id: "442DB811E2A6256F"
+        type: "item"
+        item: "gtceu:hv_battery_hull"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4416C628C8A28805"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "45F1A43599D5A2A5"
+      title: "Натриевые элементы для резерва"
+      description: ["Собери и заряди четыре элемента. Установи батареи одной партии в общий буфер."]
+      x: 4.597d
+      y: 5.990d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40E9522C9A7681CE","4C6CBCF33FD787F0"]
+      optional: true
+      tasks: [{
+        id: "4520E666FFB833E6"
+        type: "item"
+        item: "gtceu:hv_sodium_battery"
+        count: 4L
+      }]
+      rewards: [{
+        id: "42436C367915AA65"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4ED3427FFB113A0C"
+      title: "Кадмиевая батарея для выезда"
+      description: ["Заполни отдельную кассету кадмиевой смесью. Проверь заряд перед отправлением на полевую площадку."]
+      x: 0.849d
+      y: -6.766d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40E9522C9A7681CE","42E99CE4711A8261"]
+      optional: true
+      tasks: [{
+        id: "48D7B267AEA88321"
+        type: "item"
+        item: "gtceu:hv_cadmium_battery"
+      }]
+      rewards: [{
+        id: "43922B2B3E68869F"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "43E3F69D1695081E"
+      title: "Буфер на четыре элемента HV"
+      description: ["Разверни выдачу к станкам. Отключи подачу дизеля и проверь, сколько времени буфер удерживает одну рабочую машину."]
+      x: 3.907d
+      y: 4.327d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45F1A43599D5A2A5","4F2720EBECF11771","43215F0F197E208E"]
+      optional: true
+      tasks: [{
+        id: "427544C34910DEB4"
+        type: "item"
+        item: "gtceu:hv_battery_buffer_4x"
+      }]
+      rewards: [{
+        id: "4FEAD7F623ABA52D"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4E6633961D6022D9"
+      title: "Буфер второй линии"
+      description: ["Собери буфер на восемь мест. Выдели отдельную ветку под остановку и обслуживание основной станции."]
+      x: 6.136d
+      y: 6.672d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43E3F69D1695081E","4EAAD77F978AA058"]
+      optional: true
+      tasks: [{
+        id: "46940D50DD3DE44D"
+        type: "item"
+        item: "gtceu:hv_battery_buffer_8x"
+      }]
+      rewards: [{
+        id: "44ED9BB0B7A638EA"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4DD47C42B9E57BB4"
+      title: "Зарядный пост инструмента HV"
+      description: ["Поставь зарядник рядом со складом оснастки. Добавь клемму IE и пневматическую зарядную стойку."]
+      x: 5.785d
+      y: -1.442d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43E3F69D1695081E","4E5DF5449DBC0F6E","43841A687F548CD3"]
+      optional: true
+      tasks: [{
+        id: "4BA0C6D599417DAD"
+        type: "item"
+        item: "gtceu:hv_charger_4x"
+      }]
+      rewards: [{
+        id: "40C5CFED02F4BFB3"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "40938AAB4F1EB84A"
+      title: "Трансформатор на один пакет"
+      description: ["Отметь стороны высокого и среднего напряжения. Для первого подключения используй один потребитель."]
+      x: -1.529d
+      y: 5.112d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D0036FCF5733F13","4EAAD77F978AA058","47A668A664BBAA11"]
+      optional: true
+      tasks: [{
+        id: "40A14F38EACD6F09"
+        type: "item"
+        item: "gtceu:hv_transformer_1a"
+      }]
+      rewards: [{
+        id: "431AE8A9CD3BEBA4"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D9C2595C7697ECE"
+      title: "Трансформатор на четыре пакета"
+      description: ["Подключи трансформатор к магистрали подходящего сечения. В режиме понижения сверь допустимый ток на стороне MV."]
+      x: 3.227d
+      y: 12.413d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40938AAB4F1EB84A","4F2720EBECF11771"]
+      optional: true
+      tasks: [{
+        id: "4A8ED2716D26A0B0"
+        type: "item"
+        item: "gtceu:hv_transformer_4a"
+      }]
+      rewards: [{
+        id: "42695483781A04A6"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4368D5C2DA2667CB"
+      title: "Питание линии FE от HV"
+      description: ["Подключи вход EU и переключи преобразователь в режим выдачи FE. Отдельная ветка питает пресс IE и пост обслуживания."]
+      x: 1.529d
+      y: 11.175d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40938AAB4F1EB84A","4E5DF5449DBC0F6E","4CDF7D2E3529F4F4"]
+      optional: true
+      tasks: [{
+        id: "4B0645C284A99778"
+        type: "item"
+        item: "gtceu:hv_1a_energy_converter"
+      }]
+      rewards: [{
+        id: "40376E59033A2809"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4E0089CF73130929"
+      title: "Стальная проволока силовой сети IE"
+      description: ["Подай стальную проволоку GregTech в тяжёлый пресс с проволочной матрицей. На один цикл выдели 19 200 FE."]
+      x: -3.907d
+      y: -3.306d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43F1AAE1CF9F4272","42E99CE4711A8261","49EB9F2234E10E7C"]
+      optional: true
+      tasks: [{
+        id: "46D3DF8AB97500AB"
+        type: "item"
+        item: "immersiveengineering:wire_steel"
+        count: 8L
+      }]
+      rewards: [{
+        id: "492FF372101781BC"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "48417196439C9B60"
+      title: "Мотки стального провода"
+      description: ["Собери мотки с пакетами обмоток, нержавейкой и механизмом Create. Оставь часть на высоковольтную обмотку IE."]
+      x: -5.298d
+      y: -4.447d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E0089CF73130929","4672B5B9EEC5D34E"]
+      optional: true
+      tasks: [{
+        id: "431DD50DB5A34E4E"
+        type: "item"
+        item: "immersiveengineering:wirecoil_steel"
+        count: 4L
+      }]
+      rewards: [{
+        id: "486355B945DB3953"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4E5DF5449DBC0F6E"
+      title: "Высоковольтная клемма IE"
+      description: ["Собери две клеммы из разъёмов MV, стальной проволоки, керамики, контактов и защиты. Подай жидкий припой."]
+      x: 2.487d
+      y: -0.807d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E0089CF73130929","4E5A6C2B09825088","4CCFB8C93642F18B"]
+      optional: true
+      tasks: [{
+        id: "4C06662E094A0ABE"
+        type: "item"
+        item: "immersiveengineering:connector_hv"
+        count: 2L
+      }]
+      rewards: [{
+        id: "46E26E66401F8DAD"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4A01675BF263199A"
+      title: "Реле высоковольтной линии FE"
+      description: ["Собери реле с дугогасителем и блоком управления. Поставь реле на опорах между клеммами."]
+      x: 2.024d
+      y: -3.467d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E5DF5449DBC0F6E","48417196439C9B60"]
+      optional: true
+      tasks: [{
+        id: "49FDE2654DBACC0E"
+        type: "item"
+        item: "immersiveengineering:connector_hv_relay"
+        count: 2L
+      }]
+      rewards: [{
+        id: "47A5356AABA91148"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4FCFBC4E007620F3"
+      title: "Высоковольтная обмотка IE"
+      description: ["Соедини обмотку MV, два стальных мотка и две катушки GregTech. Подай 950 мБ смазки."]
+      x: 0.849d
+      y: 3.578d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48417196439C9B60","4EAAD77F978AA058","4CEBD3A7073E1660"]
+      optional: true
+      tasks: [{
+        id: "45A09CF3A781835F"
+        type: "item"
+        item: "immersiveengineering:coil_hv"
+      }]
+      rewards: [{
+        id: "451EF24D93ADE5A6"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4EEF14AF22879613"
+      title: "Высоковольтный запас FE"
+      description: ["Собери накопитель с 1600 мБ серной кислоты. Подведи FE к накопителю и выдели отдельную выдачу на пресс."]
+      x: 3.984d
+      y: 10.817d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E5DF5449DBC0F6E","48417196439C9B60","4C93F36E9E7117AC"]
+      optional: true
+      tasks: [{
+        id: "429C412B42CA10FB"
+        type: "item"
+        item: "immersiveengineering:capacitor_hv"
+      }]
+      rewards: [{
+        id: "400808D6737391BC"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "41E678140CBEE853"
+      title: "Стыковка высоковольтной сети IE"
+      description: ["Собери трансформатор с обмоткой IE и трансформатором GregTech. Разведи клеммы по сторонам, указанным в руководстве IE."]
+      x: 3.293d
+      y: 2.393d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FCFBC4E007620F3","4E5DF5449DBC0F6E","40938AAB4F1EB84A"]
+      optional: true
+      tasks: [{
+        id: "496BD7D6B90084DC"
+        type: "item"
+        item: "immersiveengineering:transformer_hv"
+      }]
+      rewards: [{
+        id: "44671F413C30E667"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4DC3085E343B581F"
+      title: "Шина для контрольной шихты"
+      description: ["Поставь входную шину на домне. Установи фильтр подачи, чтобы чужой заказ не занял рабочие слоты."]
+      x: -3.907d
+      y: -8.184d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","4616FF376279F4D0","43641BE1341BF8C5"]
+      optional: true
+      tasks: [{
+        id: "43219ED8E81DDEE1"
+        type: "item"
+        item: "gtceu:hv_input_bus"
+      }]
+      rewards: [{
+        id: "45318C1606C272C6"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4970FF898C430EAB"
+      title: "Жидкостный ввод под кислород"
+      description: ["Выдели ввод под кислород. Другие газы подводи через отдельные люки, когда они понадобятся в следующем переделе."]
+      x: -8.662d
+      y: 1.440d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CDCE7C66BE4199A","4D0036FCF5733F13","4D91E7F13EEBEDF7"]
+      optional: true
+      tasks: [{
+        id: "4E308E5BF4A63E88"
+        type: "item"
+        item: "gtceu:hv_input_hatch"
+      }]
+      rewards: [{
+        id: "40727ED6FA23E8CC"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4C690BCCDD18726B"
+      title: "Жидкостная выдача цеха"
+      description: ["Отведи жидкий продукт в отдельную ёмкость. Проверь, куда уйдут побочные продукты при заполнении буфера."]
+      x: -0.849d
+      y: -5.897d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4970FF898C430EAB","42541E1F0797352B","45FC710629F4CD87"]
+      optional: true
+      tasks: [{
+        id: "40DBF98753819A3B"
+        type: "item"
+        item: "gtceu:hv_output_hatch"
+      }]
+      rewards: [{
+        id: "47BE6125A8F0C0C6"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "46C047E46657EA05"
+      title: "Дозатор технических жидкостей"
+      description: ["Один регулятор оставь на подаче к ванне, второй на возврате. Сверь направление стрелки и расход."]
+      x: -6.285d
+      y: 0.534d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CDCE7C66BE4199A","4970FF898C430EAB","45EF06650A5651D4"]
+      optional: true
+      tasks: [{
+        id: "41AE0C14F0FCF1C0"
+        type: "item"
+        item: "gtceu:hv_fluid_regulator"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4D94EF8EF9658502"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "48D3C80A8BC838A2"
+      title: "Вытяжка горячего цеха"
+      description: ["Поставь люк с открытым выходом. Оставь проход, чтобы не разбирать обвязку при обслуживании."]
+      x: -0.086d
+      y: 0.787d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","4E5A6C2B09825088","459597978C01D180"]
+      optional: true
+      tasks: [{
+        id: "446D5B276FF7305D"
+        type: "item"
+        item: "gtceu:hv_muffler_hatch"
+      }]
+      rewards: [{
+        id: "4A097C42EE26DAEF"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4178298FDECE6400"
+      title: "Компрессор для твёрдых заготовок"
+      description: ["Перенеси рабочую часть MV на новый привод. Приготовь отдельную подачу заготовок от пневматической камеры."]
+      x: -3.907d
+      y: 5.764d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","42DCC7F618DACF0C","480DDA7386C5A2FC"]
+      optional: true
+      tasks: [{
+        id: "4E5BFFCB1E71463C"
+        type: "item"
+        item: "gtceu:hv_compressor"
+      }]
+      rewards: [{
+        id: "4A6C14982AA32921"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "414D76C278AFF084"
+      title: "Формовочный пресс GregTech"
+      description: ["Подготовь станок со сменной оснасткой. Перед серией проверь форму и освободи выдачу."]
+      x: -5.674d
+      y: 7.805d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4178298FDECE6400","42DCC7F618DACF0C","4B32418586555A24"]
+      optional: true
+      tasks: [{
+        id: "44102706BAEF7524"
+        type: "item"
+        item: "gtceu:hv_forming_press"
+      }]
+      rewards: [{
+        id: "41820DB22383FEC0"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CFC2F218C7AF4E3"
+      title: "Ковка силовых заготовок"
+      description: ["Поставь молот между плавильным участком и складом. Для горячих заготовок оставь отдельный вход."]
+      x: -3.907d
+      y: 12.389d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","42DCC7F618DACF0C","4372ACCE966A3544"]
+      optional: true
+      tasks: [{
+        id: "492B5138FFBCADB7"
+        type: "item"
+        item: "gtceu:hv_forge_hammer"
+      }]
+      rewards: [{
+        id: "41E2C90D0989A520"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "49F1B036B4EEF43E"
+      title: "Токарный пост высокого напряжения"
+      description: ["Выдели станок для осей и контактов. Держи стружку отдельно от готовой партии."]
+      x: -8.798d
+      y: 4.615d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","42DCC7F618DACF0C","43EBD3A60557EEC6"]
+      optional: true
+      tasks: [{
+        id: "4C80A16799BB9B4D"
+        type: "item"
+        item: "gtceu:hv_lathe"
+      }]
+      rewards: [{
+        id: "42104CAF654EF4ED"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "416CD5EFBE0C6C7E"
+      title: "Волочильный стан с запасным приводом"
+      description: ["Подготовь станок HV к серийному прокату. Заготовки первого золотого кабеля можно продолжать тянуть на MV."]
+      x: -3.907d
+      y: -4.750d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","42DCC7F618DACF0C","46182370343AAFA3","4ACB11CF2EAC9C0E"]
+      optional: true
+      tasks: [{
+        id: "49DD1527177DF684"
+        type: "item"
+        item: "gtceu:hv_wiremill"
+      }]
+      rewards: [{
+        id: "4F6D5DF2BDFE71E4"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "422FBF3217F817D0"
+      title: "Распил с жидкостным охлаждением"
+      description: ["Подключи распил к отдельному буферу технической жидкости. На выдаче оставь фильтр под нужный размер."]
+      x: -3.907d
+      y: 4.690d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","42DCC7F618DACF0C","480624F6B1C193A1"]
+      optional: true
+      tasks: [{
+        id: "42D56413F9360E3F"
+        type: "item"
+        item: "gtceu:hv_cutter"
+      }]
+      rewards: [{
+        id: "43D6787925124E14"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "415739C498722F5E"
+      title: "Водоподготовка высокой нагрузки"
+      description: ["Подготовь отдельный дистиллятор под закалочную ванну. Оставь резерв дистиллята на повторную плавку."]
+      x: -3.907d
+      y: -10.797d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","4CDCE7C66BE4199A","41A5C2604C172D00"]
+      optional: true
+      tasks: [{
+        id: "4C1C92B2D27BE6E7"
+        type: "item"
+        item: "gtceu:hv_distillery"
+      }]
+      rewards: [{
+        id: "40147063CBCEFEEB"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4C2E296872A8237C"
+      title: "Реактор для следующего передела"
+      description: ["Разведи два жидкостных входа. Оставь реактор свободным для теплоносителя и реагентов чистой комнаты."]
+      x: -3.907d
+      y: -1.831d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","4CDCE7C66BE4199A","4785BDDC7D73AFB0","46C047E46657EA05"]
+      optional: true
+      tasks: [{
+        id: "497428F36CB35826"
+        type: "item"
+        item: "gtceu:hv_chemical_reactor"
+      }]
+      rewards: [{
+        id: "4A4519947AC8BD10"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "40D718C856102D4C"
+      title: "Подогрев технологического контура"
+      description: ["Собери отдельный подогреватель. Размести его у горячей линии и пометь сторону подачи."]
+      x: -1.529d
+      y: 7.596d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C2E296872A8237C","4418C506CC617B38","4EAAD77F978AA058"]
+      optional: true
+      tasks: [{
+        id: "43764D6E8F1A5D5D"
+        type: "item"
+        item: "gtceu:hv_fluid_heater"
+      }]
+      rewards: [{
+        id: "41BE686BBF46485B"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4B2EC74299C28C31"
+      title: "Гидротермальная обработка HV"
+      description: ["Подключи чистую воду через регулятор. Сливай остаток перед сменой режима."]
+      x: -2.262d
+      y: -1.099d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C2E296872A8237C","4D29D3B13125FE79","4CDCE7C66BE4199A"]
+      optional: true
+      tasks: [{
+        id: "4C119AC9B75A1B5A"
+        type: "item"
+        item: "gtceu:hv_autoclave"
+      }]
+      rewards: [{
+        id: "401C08D9CB40F652"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4F5A9423BBA9D6C1"
+      title: "Гравёр для точной оснастки"
+      description: ["Подготовь гравёр и отдельное место под сменные линзы. Оснастка понадобится при развитии электроники."]
+      x: -5.135d
+      y: -8.837d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E99CE4711A8261","4D97265BECC4C795","4D6D72BEBB7C6068"]
+      optional: true
+      tasks: [{
+        id: "48FA334238E2255D"
+        type: "item"
+        item: "gtceu:hv_laser_engraver"
+      }]
+      rewards: [{
+        id: "4E6F85C39248C70E"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4020145F0B082B75"
+      title: "Контроль заготовок и деталей"
+      description: ["Поставь сканер на контрольный стол. Держи проверенные изделия отдельно от следующей загрузки."]
+      x: 1.529d
+      y: -5.472d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F5A9423BBA9D6C1","4FF2677E3C3CA2BA"]
+      optional: true
+      tasks: [{
+        id: "4C22544E104F084D"
+        type: "item"
+        item: "gtceu:hv_scanner"
+      }]
+      rewards: [{
+        id: "497897346C725AA7"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "49EDFD6CA5D4B443"
+      title: "Сборка схем на 512 EU"
+      description: ["Собери электрический участок высокого напряжения. Сохрани старый сборщик для заказов MV и деталей первого запуска."]
+      x: -3.227d
+      y: -7.244d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["478047075E11A56A","42E99CE4711A8261","4616FF376279F4D0"]
+      optional: true
+      tasks: [{
+        id: "4D3D4769EC0D6A8D"
+        type: "item"
+        item: "gtceu:hv_circuit_assembler"
+      }]
+      rewards: [{
+        id: "4E75B4DB14407BB7"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4C21BE19FCE99A7A"
+      title: "Парный выпуск схем HV"
+      description: ["Для двух схем подай четыре герметичных модуля и 1100 мБ смазки. В первой серии выполни четыре цикла при 480 EU/t."]
+      x: -1.429d
+      y: -7.146d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49EDFD6CA5D4B443","44BE4BCD5E0EEC02","4E5A6C2B09825088"]
+      optional: true
+      tasks: [{
+        id: "422F7E61223B09CA"
+        type: "item"
+        item: "gtceu:advanced_integrated_circuit"
+        count: 8L
+      }]
+      rewards: [{
+        id: "495FC9882B1EFAAA"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D081351AEF1CBBD"
+      title: "Узел микропроцессоров HV"
+      description: ["Поставь в сборщик схем готовую схему HV, герметичный модуль, контакты, диоды, припой и керамику. Подай 500 мБ смазки."]
+      x: -0.396d
+      y: -8.620d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C21BE19FCE99A7A","4D6D72BEBB7C6068"]
+      optional: true
+      tasks: [{
+        id: "44DB620B3A117C4E"
+        type: "item"
+        item: "gtceu:micro_processor_assembly"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4C81B9CEE30CA39E"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "48F119B2DE41A2F7"
+      title: "Отдельная центрифуга дома"
+      description: ["Подготовь вторую машину. Газовые пробы и рудные концентраты держи на разных входах."]
+      x: -0.849d
+      y: -11.323d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CF4E868EBAE06D1","4E1568B9F2F13C8C"]
+      optional: true
+      tasks: [{
+        id: "426F2FA6F951645E"
+        type: "item"
+        item: "gtceu:hv_centrifuge"
+        count: 2L
+      }]
+      rewards: [{
+        id: "46F65FEEC588D097"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4007650C0455ACD3"
+      title: "Электрумовая магистраль цеха"
+      description: ["Собери трубы с конвейером IE и воронкой Create. На линии от склада до домны оставь доступ к фильтрам."]
+      x: -2.142d
+      y: -8.538d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4616FF376279F4D0","4DC3085E343B581F","48CA1AEE96E14DB0"]
+      optional: true
+      tasks: [{
+        id: "4931E8F9617A7ADC"
+        type: "item"
+        item: "gtceu:electrum_normal_item_pipe"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4891B64BB3D59E0E"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4D0012948F8FE280"
+      title: "Трубы холодного участка"
+      description: ["Подготовь стыки под подачу дистиллята и отвод продукта. Подачу и обратку веди отдельными трассами."]
+      x: 1.529d
+      y: -8.070d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CDCE7C66BE4199A","4C690BCCDD18726B","49003E4C43790D16"]
+      optional: true
+      tasks: [{
+        id: "4C2E90DA893F3FDF"
+        type: "item"
+        item: "gtceu:stainless_steel_normal_fluid_pipe"
+        count: 8L
+      }]
+      rewards: [{
+        id: "40800FDD2A9701B4"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4AE12B3FE26A11FF"
+      title: "Герметичный барабан из нержавейки"
+      description: ["Собери барабаны из стальных бочек, нержавейки и баков PneumaticCraft. Пометь ёмкости под сырую смесь и обе газовые фракции."]
+      x: 11.305d
+      y: 0.326d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D0012948F8FE280","49CD904373F64345"]
+      optional: true
+      tasks: [{
+        id: "4C9CDB0708B35944"
+        type: "item"
+        item: "gtceu:stainless_steel_drum"
+        count: 3L
+      }]
+      rewards: [{
+        id: "43BB3C6EDCC886CF"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4FBC7DEA33C4840D"
+      title: "Роторный узел генераторной"
+      description: ["Собери роторный узел с запасным приводом. Оставь вокруг корпуса место для демонтажа оси."]
+      x: -1.529d
+      y: 2.351d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45B789AB2A7F8C4C","4B8AF246DCFA1999","4672B5B9EEC5D34E"]
+      optional: true
+      tasks: [{
+        id: "4B5AFBCE11F9BA73"
+        type: "item"
+        item: "gtceu:hv_rotor_holder"
+      }]
+      rewards: [{
+        id: "44EC3E8BFECFBCE0"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "430C3B201E26B396"
+      title: "Стальная облицовка большой турбины"
+      description: ["Подготовь стальные кожухи с огнеупорами, тяжёлыми блоками IE и пневмотрубами. Проверь число блоков в схеме турбины."]
+      x: 0.849d
+      y: -2.592d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FBC7DEA33C4840D","4E5A6C2B09825088","4B979DAE99817888"]
+      optional: true
+      tasks: [{
+        id: "4CD73CAD7AA948F1"
+        type: "item"
+        item: "gtceu:steel_turbine_casing"
+        count: 16L
+      }]
+      rewards: [{
+        id: "445596FD53924948"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "45B0D88BE198CE79"
+      title: "Редукторы паровой турбины"
+      description: ["Собери стальные редукторы из механики Create и выверенных осей. На партию подай 1000 мБ смазки."]
+      x: 3.907d
+      y: -2.712d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["430C3B201E26B396","4D06EB526892D424"]
+      optional: true
+      tasks: [{
+        id: "4D35BE6EE12F4BAC"
+        type: "item"
+        item: "gtceu:steel_gearbox"
+        count: 4L
+      }]
+      rewards: [{
+        id: "48D74FBFDD65835B"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4EAC0C43285EAFD4"
+      title: "Стальной ротор на смену"
+      description: ["Собери ротор из стальных лопастей, выверенных осей и ротора PneumaticCraft. Подай 1400 мБ смазки."]
+      x: 0.849d
+      y: -0.305d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FBC7DEA33C4840D","4FF2677E3C3CA2BA","4672B5B9EEC5D34E"]
+      optional: true
+      tasks: [{
+        id: "43DA45961DD6A77D"
+        type: "item"
+        item: "gtceu:turbine_rotor"
+      }]
+      rewards: [{
+        id: "4D08B1B0253D556E"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D0F88F8C4C43090"
+      title: "Большая паровая турбина"
+      description: ["Собери контроллер и корпус 3×3×4. Установи стальные кожухи, два редуктора, держатель ротора и силовой выход HV."]
+      x: -1.330d
+      y: 0.002d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45B0D88BE198CE79","4EAC0C43285EAFD4","433C08868978F6F3"]
+      optional: true
+      tasks: [{
+        id: "478BD0B06735017F"
+        type: "item"
+        item: "gtceu:steam_large_turbine"
+      }]
+      rewards: [{
+        id: "46590DACDD932763"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4BE892335EE086E6"
+      title: "Резерв турбинного корпуса"
+      description: ["Выдели пару корпусов на генераторную и поле. Сохрани часть принятых огнеупоров на протокол цеха."]
+      x: 1.529d
+      y: 0.628d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45B789AB2A7F8C4C","4FBC7DEA33C4840D","47FC3713B09C656E"]
+      optional: true
+      tasks: [{
+        id: "4F3D94385AC91DFA"
+        type: "item"
+        item: "gtceu:hv_machine_hull"
+        count: 2L
+      }]
+      rewards: [{
+        id: "493E868548C2C1D9"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "477601D6DC826507"
+      title: "Два сборщика на разные серии"
+      description: ["Оставь один сборщик на силовые узлы. Второй используй для деталей экспедиции и следующего этапа."]
+      x: 8.292d
+      y: 4.896d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D12F46313F9CA9B","49EDFD6CA5D4B443"]
+      optional: true
+      tasks: [{
+        id: "4DAEAB0667467D60"
+        type: "item"
+        item: "gtceu:hv_assembler"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4B7937139BF47B7B"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "49A40A23AD67211F"
+      title: "Усиленная разводка у камеры"
+      description: ["Убери утечки перед опрессовкой очей. Отдельный воздушный отвод оставь на контрольные кассеты."]
+      x: -17.495d
+      y: -1.399d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44BE4BCD5E0EEC02","4E3F507E3DBCFA01","4C73EC0019DD35B3"]
+      optional: true
+      tasks: [{
+        id: "47ABCE5C0F2B288F"
+        type: "item"
+        item: "pneumaticcraft:reinforced_pressure_tube"
+        count: 16L
+      }]
+      rewards: [{
+        id: "484C205AF179CFE0"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4A177CA31ED6BAF9"
+      title: "Предохранитель у камеры HV"
+      description: ["Оставь один модуль у компрессора, второй у контрольного отвода. Сверь показания манометра при полной загрузке камеры."]
+      x: -15.116d
+      y: 0.681d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49A40A23AD67211F","4AD25FD6425ABA8E"]
+      optional: true
+      tasks: [{
+        id: "48E98F23BEE92C10"
+        type: "item"
+        item: "pneumaticcraft:safety_tube_module"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4E49F71ECAEC280D"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4235AC70409006C7"
+      title: "Компрессор второго класса"
+      description: ["Перенеси воздушный компрессор на усиленные трубки, новую обмотку и регулятор. Проверь допустимое давление каждого участка."]
+      x: 3.869d
+      y: 7.625d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FCFBC4E007620F3","4A177CA31ED6BAF9","49C254D2724E8CB4"]
+      optional: true
+      tasks: [{
+        id: "4B30AA0629CAF344"
+        type: "item"
+        item: "pneumaticcraft:advanced_air_compressor"
+      }]
+      rewards: [{
+        id: "405A815EBC43A7E2"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "44FDB37813E809AF"
+      title: "Топливный компрессор второго класса"
+      description: ["Модернизируй топливный компрессор. Подведи дизель отдельной трубой и не повышай давление в старой камере выше её предела."]
+      x: 6.285d
+      y: 9.759d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4235AC70409006C7","4C73EC0019DD35B3"]
+      optional: true
+      tasks: [{
+        id: "4DDCF1E62B58BC83"
+        type: "item"
+        item: "pneumaticcraft:advanced_liquid_compressor"
+      }]
+      rewards: [{
+        id: "47A98409EDBFD9C6"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "49D76A358E2731EE"
+      title: "Сжатый воздух от сети FE"
+      description: ["Собери компрессор с накопителем IE и силовыми катушками. Подключи его к отдельному выходу FE."]
+      x: 5.605d
+      y: 11.601d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4235AC70409006C7","4368D5C2DA2667CB","4EEF14AF22879613"]
+      optional: true
+      tasks: [{
+        id: "48C0D1C9A0D719EB"
+        type: "item"
+        item: "pneumaticcraft:flux_compressor"
+      }]
+      rewards: [{
+        id: "40486B0D72182E71"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "43D24C20D0917DFC"
+      title: "Забор жидкости для полевого поста"
+      description: ["Подготовь два шланговых блока. Отдельно промаркируй забор топлива и технической воды."]
+      x: 3.227d
+      y: -11.259d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CDCE7C66BE4199A","4D19836ADE5C1BF8","4D0012948F8FE280"]
+      optional: true
+      tasks: [{
+        id: "4A6ACFDA6F931AF8"
+        type: "item"
+        item: "create:hose_pulley"
+        count: 2L
+      }]
+      rewards: [{
+        id: "455343C2FD2EB4C2"
+        type: "item"
+        item: "gtceu:gold_single_wire"
+        count: 2
+      }]
+    }
+    {
+      id: "4D7DA36B68C2978A"
+      title: "Промышленный допуск"
+      description: ["Подай протокол, датчики, дугогасители, принятые огнеупоры, герметичный модуль и изолированный моток IE. Держи пропуск в инвентаре при входе в Энд."]
+      x: 8.322d
+      y: -1.658d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4D12F46313F9CA9B","42E99CE4711A8261","47FC3713B09C656E","4FF2677E3C3CA2BA","44BE4BCD5E0EEC02","430A1F7DE06F9A8B"]
+      tasks: [{
+        id: "435598B83DB25C4E"
+        type: "item"
+        item: "kubejs:end_transit_permit"
+      }]
+      rewards: [{
+        id: "460DA21D7BBE2879"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 4
+      }]
+    }
+    {
+      id: "42301685B51D14E2"
+      title: "Оптическая вставка"
+      description: ["Спрессуй в чаше Create жемчуг, стекло, керамику IE, золотую заготовку, точёный контакт и изоляцию. Получишь две вставки."]
+      x: -3.907d
+      y: 0.255d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42E99CE4711A8261","4D6D72BEBB7C6068","487FE16FF61AA069","46C30FCD77569CEC"]
+      tasks: [{
+        id: "40E68FC400C2870D"
+        type: "item"
+        item: "kubejs:ender_optical_insert"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4D768B3F22D8F887"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4C160A6823FE5AF0"
+      title: "Стабилизация ока Эндера"
+      description: ["Подай вставку, огненный порошок, уплотнение и золотой провод в камеру PneumaticCraft. Требуется 4,55 бар."]
+      x: -0.849d
+      y: 3.765d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42301685B51D14E2","4799482036E52418","4C73EC0019DD35B3","43F1AAE1CF9F4272"]
+      tasks: [{
+        id: "44357CA42688A15B"
+        type: "item"
+        item: "minecraft:ender_eye"
+      }]
+      rewards: [{
+        id: "4D99E77D2B35A4E6"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "497B7F42F7C2A1C1"
+      title: "Запас очей для поиска крепости"
+      description: ["Подготовь запас очей для поиска крепости и заполнения рамок. Для входа в уже активный портал тоже понадобится пропуск."]
+      x: 1.529d
+      y: 4.735d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C160A6823FE5AF0"]
+      optional: true
+      tasks: [{
+        id: "490BBB7298D086C7"
+        type: "item"
+        item: "minecraft:ender_eye"
+        count: 16L
+      }]
+      rewards: [{
+        id: "413A9E147D8223D8"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4F42E9466C47E7C9"
+      title: "Выездная дизельная станция HV"
+      description: ["Перевези генератор, дизель и кабель HV. Выдели площадку под резак, газосборник и ёмкость для вывоза смеси."]
+      x: 10.471d
+      y: -2.362d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D7DA36B68C2978A","4244F9758F2AC539"]
+      tasks: [{
+        id: "498746F1B744CAAE"
+        type: "item"
+        item: "gtceu:hv_combustion"
+      }]
+      rewards: [{
+        id: "4C7D6623C87D5596"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "49CD904373F64345"
+      title: "Три ёмкости для экспедиции"
+      description: ["Оставь отдельные бочки под дизель, сырой газ и очищенную фракцию."]
+      x: 13.038d
+      y: -0.161d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F42E9466C47E7C9","40D49ABF64A7D89A"]
+      optional: true
+      tasks: [{
+        id: "427DBAD555D6D0AC"
+        type: "item"
+        item: "gtceu:steel_drum"
+        count: 3L
+      }]
+      rewards: [{
+        id: "4382154665DAF736"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42A92130A5C8335E"
+      title: "Резак для эндерняка"
+      description: ["Привези резак HV в Энд. Подведи смазку и подключи коротким кабелем к генератору."]
+      x: 12.738d
+      y: -3.676d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42E99CE4711A8261","422FBF3217F817D0","4F42E9466C47E7C9"]
+      tasks: [{
+        id: "4F3E31FC2592A60B"
+        type: "item"
+        item: "gtceu:hv_cutter"
+      }]
+      rewards: [{
+        id: "49023F572730C415"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42A8D706871E0A00"
+      title: "Партия эндерняка"
+      description: ["Добывай эндерняк для первой партии. Сохрани часть блоков для кладки."]
+      x: 10.451d
+      y: 1.618d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D7DA36B68C2978A","4C160A6823FE5AF0"]
+      tasks: [{
+        id: "419357FA3A38DCF4"
+        type: "item"
+        item: "minecraft:end_stone"
+        count: 32L
+      }]
+      rewards: [{
+        id: "4E7D4DD4FFB8C37E"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "402B8CFCF82E57C6"
+      title: "Распил эндерняка на месте"
+      description: ["Четыре блока эндерняка и 300 мБ смазки дают две порции концентрата при 384 EU/t. Резак выполняет эту операцию только в Энде."]
+      x: 15.456d
+      y: -2.057d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["42A92130A5C8335E","42A8D706871E0A00","4100CCF0CB377266"]
+      tasks: [{
+        id: "45CD50CE97DB2020"
+        type: "item"
+        item: "kubejs:endstone_grit"
+        count: 16L
+      }]
+      rewards: [{
+        id: "40BF930A24376DFC"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4596A2EA5F1D5532"
+      title: "Газосборник HV"
+      description: ["Перенеси газосборник MV на корпус HV и добавь насосы, схемы и кабель. Поставь машину в Энде."]
+      x: 12.738d
+      y: -2.020d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F42E9466C47E7C9","4CDCE7C66BE4199A","41FB2523B261274D"]
+      tasks: [{
+        id: "47BEB8A64FB6B4B7"
+        type: "item"
+        item: "gtceu:hv_gas_collector"
+      }]
+      rewards: [{
+        id: "4C23C9FBD3688519"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4AD0DA3CEA69BA75"
+      title: "Сетка газовой кассеты"
+      description: ["Спрессуй в чаше Create две сетки, нержавейку, тарелку IE, медную полосу, изоляцию и точёный контакт."]
+      x: 12.738d
+      y: 4.502d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F42E9466C47E7C9","49003E4C43790D16","49DB74F897C0B0E3","4FA870DD08BC7335","46C30FCD77569CEC"]
+      tasks: [{
+        id: "4FEB55D4299D6E0E"
+        type: "item"
+        item: "kubejs:end_filter_blank"
+        count: 4L
+      }]
+      rewards: [{
+        id: "47E9BBEB70406262"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "45C7FFC31951E37F"
+      title: "Заправка газовой кассеты"
+      description: ["Обожми сетку с носителем, парафином, уплотнением и прессованным железом при 4,25 бар. Отправь готовую кассету в газосборник."]
+      x: 15.116d
+      y: -0.287d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4AD0DA3CEA69BA75","4855C424E62059A6","4100CCF0CB377266","44BE4BCD5E0EEC02"]
+      tasks: [{
+        id: "4F58603185B474AC"
+        type: "item"
+        item: "kubejs:end_sampling_filter"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4A0B4A2D30B55B71"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CF4E868EBAE06D1"
+      title: "Центрифуга для разделения газов"
+      description: ["Собери машину HV из центрифуги MV, двух моторов и нового корпуса. Отведи два жидкостных выхода в отдельные буферы."]
+      x: -8.636d
+      y: -8.695d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42E99CE4711A8261","4B8AF246DCFA1999","41FB2523B261274D"]
+      tasks: [{
+        id: "431222292861F9EC"
+        type: "item"
+        item: "gtceu:hv_centrifuge"
+      }]
+      rewards: [{
+        id: "4E7470D3AD48DD10"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CA60CD39F173263"
+      title: "Разделение первой газовой пробы"
+      description: ["Газосборник в Энде даёт 1200 мБ сырой смеси на кассету. Добавь к смеси сетку и две порции концентрата. Центрифуга выдаст 800 мБ защитного газа, 400 мБ аргона и отработанный фильтр."]
+      x: 17.834d
+      y: 1.162d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4596A2EA5F1D5532","45C7FFC31951E37F","402B8CFCF82E57C6","4CF4E868EBAE06D1"]
+      tasks: [{
+        id: "4E93AC26DB1D10F0"
+        type: "item"
+        item: "kubejs:spent_end_filter"
+      }]
+      rewards: [{
+        id: "4CC8F73DD27B3882"
+        type: "item"
+        item: "kubejs:end_filter_blank"
+        count: 2
+      }]
+    }
+    {
+      id: "4F8F4D393CFA1E08"
+      title: "Возврат сетки"
+      description: ["Промой каждый отработанный фильтр 600 мБ дистиллята. Забери сетки и отведи хвосты."]
+      x: 19.871d
+      y: -1.373d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CA60CD39F173263","45FC710629F4CD87","41A5C2604C172D00"]
+      optional: true
+      tasks: [{
+        id: "4B42C51D272919CD"
+        type: "item"
+        item: "kubejs:end_filter_blank"
+        count: 4L
+      }]
+      rewards: [{
+        id: "46ACB7653DAFCD24"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4DAC6DC233EA426E"
+      title: "Сырьё для диэлектрика"
+      description: ["Собери плоды хоруса. Для серийного снабжения разведи растения на эндерняке."]
+      x: 12.738d
+      y: 2.972d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D7DA36B68C2978A","42A8D706871E0A00"]
+      optional: true
+      tasks: [{
+        id: "4B3AB8DA88564931"
+        type: "item"
+        item: "minecraft:chorus_fruit"
+        count: 16L
+      }]
+      rewards: [{
+        id: "42ADB35E8C3E9BB3"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "49705F2D88AB1617"
+      title: "Сушка хоруса под защитным газом"
+      description: ["Подай три плода и 160 мБ защитного газа в горячую установку PneumaticCraft при 423 К и 4 бар. На выходе два сушёных плода."]
+      x: 19.871d
+      y: 3.746d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4CA60CD39F173263","4DAC6DC233EA426E","4B05471AEE277D36"]
+      tasks: [{
+        id: "4AB67B1BB5A87BD2"
+        type: "item"
+        item: "minecraft:popped_chorus_fruit"
+        count: 4L
+      }]
+      rewards: [{
+        id: "44AA9DD312C5DEC7"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4DEF2F7788DB1D3F"
+      title: "Диэлектрическая плёнка"
+      description: ["Три порции сушёного хоруса промой в ванне HV с 650 мБ дистиллята. Плёнка нужна вакуумным подложкам."]
+      x: 22.589d
+      y: 2.337d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["49705F2D88AB1617","45FC710629F4CD87"]
+      tasks: [{
+        id: "41F709E98030D657"
+        type: "item"
+        item: "kubejs:chorus_dielectric_film"
+        count: 2L
+      }]
+      rewards: [{
+        id: "452BFB9F4E8AC65A"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4E8753E90EA3CB6E"
+      title: "Кладка из эндерняка"
+      description: ["В чаше Create спрессуй эндерняк, концентрат, плитку и раствор. Подай 200 мБ защитного газа. Плиты и ограждения проходят отдельную сборку."]
+      x: 20.551d
+      y: -6.357d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["402B8CFCF82E57C6","4EE1E405F1DA9075","4CA60CD39F173263"]
+      optional: true
+      tasks: [{
+        id: "4B743CDD4183BB84"
+        type: "item"
+        item: "minecraft:end_stone_bricks"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4B8608611A6246F3"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4AF95301B33E7AC3"
+      title: "Пурпурный композит"
+      description: ["Отпрессуй сушёный хорус с диэлектриком, концентратом и керамикой. Подай 300 мБ защитного газа. Для колонн подготовь плитки, вакуумные уплотнения и стальной компонент IE."]
+      x: 24.627d
+      y: -1.811d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4DEF2F7788DB1D3F","4EE1E405F1DA9075","46C30FCD77569CEC"]
+      optional: true
+      tasks: [{
+        id: "471ED3BF2944713D"
+        type: "item"
+        item: "minecraft:purpur_block"
+        count: 4L
+      }]
+      rewards: [{
+        id: "45C2C968FAA4EB14"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "432FF77A54315D95"
+      title: "Светильники экспедиции"
+      description: ["Для стержней нужны огненные стержни, плёнка, стекло, керамика и золотая проволока. Подай защитный газ."]
+      x: 25.307d
+      y: 3.993d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4DEF2F7788DB1D3F","4EE1E405F1DA9075"]
+      optional: true
+      tasks: [{
+        id: "4624CDD99D05F9BC"
+        type: "item"
+        item: "minecraft:end_rod"
+        count: 4L
+      }]
+      rewards: [{
+        id: "47051E50693C7905"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "47F0A5EBE2B07FE6"
+      title: "Сундук для второй площадки"
+      description: ["Добавь к обсидиану два ока, вакуумную плитку, уплотнения, наблюдатель Create и разъём IE. Подай защитный газ."]
+      x: 19.871d
+      y: 7.111d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C160A6823FE5AF0","4EE1E405F1DA9075","4CA60CD39F173263","40C9F0EA6064E6C4"]
+      optional: true
+      tasks: [{
+        id: "4BB08A6F19DA6C1C"
+        type: "item"
+        item: "minecraft:ender_chest"
+      }]
+      rewards: [{
+        id: "4752852D8FAF0FCD"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "49FA7F932500C574"
+      title: "Герметичный шалкеровый ящик"
+      description: ["Собери ящик из панцирей, сундука, плитки, уплотнений, воронки Create, пропитанной древесины и оси. Подай смазку."]
+      x: 24.627d
+      y: 1.084d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D7DA36B68C2978A","4EE1E405F1DA9075","4DEF2F7788DB1D3F","48CA1AEE96E14DB0"]
+      optional: true
+      tasks: [{
+        id: "44CDD29DAE4C65F7"
+        type: "item"
+        item: "minecraft:shulker_box"
+      }]
+      rewards: [{
+        id: "47D14D3DBC674641"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4AF16836DE2F60BE"
+      title: "Запас очей на повторную разведку"
+      description: ["Подготовь двадцать стабилизированных очей для поиска крепости и заполнения рамы портала."]
+      x: 3.907d
+      y: 9.287d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C160A6823FE5AF0","497B7F42F7C2A1C1"]
+      optional: true
+      tasks: [{
+        id: "43847EAD50D42348"
+        type: "item"
+        item: "minecraft:ender_eye"
+        count: 20L
+      }]
+      rewards: [{
+        id: "40CD4E2D3FA2BBFE"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42F32404D005FBE3"
+      title: "Вторая дизельная станция в Энде"
+      description: ["Подготовь резервный дизельный источник. Подключи его на отдельную ветку полевого цеха."]
+      x: 15.116d
+      y: -8.010d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F42E9466C47E7C9","42A92130A5C8335E"]
+      optional: true
+      tasks: [{
+        id: "479AC8FBFAD1905A"
+        type: "item"
+        item: "gtceu:hv_combustion"
+        count: 2L
+      }]
+      rewards: [{
+        id: "45ACADDDEB873086"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "44F45B4A6FC69E4B"
+      title: "Ёмкости для топлива и газовых проб Энда"
+      description: ["Привези шесть ёмкостей. Раздели подачу топлива и сбор технологических жидкостей."]
+      x: 15.116d
+      y: 1.321d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49CD904373F64345","4596A2EA5F1D5532"]
+      optional: true
+      tasks: [{
+        id: "4DF425C5DA4F1FCE"
+        type: "item"
+        item: "gtceu:steel_drum"
+        count: 6L
+      }]
+      rewards: [{
+        id: "409D6E19DB61B493"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A70F0E1C2A70D33"
+      title: "Концентрат эндерняка для газовой линии"
+      description: ["Режь эндерняк на месте с подачей смазки. Сохрани шестнадцать порций рядом с газосборником и кассетами."]
+      x: 16.096d
+      y: -3.739d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["402B8CFCF82E57C6","4596A2EA5F1D5532"]
+      optional: true
+      tasks: [{
+        id: "42AAC11169C5C4C9"
+        type: "item"
+        item: "kubejs:endstone_grit"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4C766DDD287DDCDB"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4AAD99ED4EB90761"
+      title: "Сетки для повторного отбора газа"
+      description: ["Подготовь восемь сеток. Готовые сетки храни отдельно от использованных кассет."]
+      x: 22.249d
+      y: 7.825d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AD0DA3CEA69BA75","4F8F4D393CFA1E08"]
+      optional: true
+      tasks: [{
+        id: "4CACCC3AAEC4CDFF"
+        type: "item"
+        item: "kubejs:end_filter_blank"
+        count: 8L
+      }]
+      rewards: [{
+        id: "41A55965BD5A1D06"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "47AB62AEF2DA04F4"
+      title: "Заправленные кассеты полевой лаборатории"
+      description: ["Подготовь шесть заправленных кассет. Удерживай чистую выдачу возле центрифуги."]
+      x: 19.871d
+      y: -3.078d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45C7FFC31951E37F","4CA60CD39F173263"]
+      optional: true
+      tasks: [{
+        id: "44C0D1FB967BECD9"
+        type: "item"
+        item: "kubejs:end_sampling_filter"
+        count: 6L
+      }]
+      rewards: [{
+        id: "422E362CFB6EFFF2"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4280F2E39DE44441"
+      title: "Отработанные фильтры полевой лаборатории"
+      description: ["Собери шесть отработанных фильтров после разделения газовых проб. Защитный газ отведи на сушку хоруса, фильтры отправь на промывку."]
+      x: 22.249d
+      y: 6.090d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CA60CD39F173263","49705F2D88AB1617"]
+      optional: true
+      tasks: [{
+        id: "49763EE63691270C"
+        type: "item"
+        item: "kubejs:spent_end_filter"
+        count: 6L
+      }]
+      rewards: [{
+        id: "4E49DA8BA4DF494F"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4909ADAC287D29E1"
+      title: "Сушёный хорус на серию диэлектрика"
+      description: ["Высуши шестнадцать плодов под защитным газом. Затем отправляй их в ванну HV."]
+      x: 25.307d
+      y: -0.158d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49705F2D88AB1617","4DEF2F7788DB1D3F"]
+      optional: true
+      tasks: [{
+        id: "409B17028ED7C921"
+        type: "item"
+        item: "minecraft:popped_chorus_fruit"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4B1577E416CBA508"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4FC1078D7C5A3880"
+      title: "Диэлектрическая плёнка для вакуумных узлов"
+      description: ["Промой хорус и подготовь двенадцать плёнок. Перевези их к месту сборки вакуумного оборудования."]
+      x: 27.685d
+      y: 5.027d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4DEF2F7788DB1D3F","4909ADAC287D29E1","40C5D8B77213A459"]
+      optional: true
+      tasks: [{
+        id: "4876989D20248CC3"
+        type: "item"
+        item: "kubejs:chorus_dielectric_film"
+        count: 12L
+      }]
+      rewards: [{
+        id: "454D0C9FF981A5ED"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42FB81D069C74AF5"
+      title: "Пурпурные блоки для полевого настила"
+      description: ["Подготовь двадцать четыре пурпурных блока. Проложи ровный проход между складом и установками."]
+      x: 27.685d
+      y: 2.547d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AF95301B33E7AC3","47F0A5EBE2B07FE6"]
+      optional: true
+      tasks: [{
+        id: "4D64A14B9122028E"
+        type: "item"
+        item: "minecraft:purpur_block"
+        count: 24L
+      }]
+      rewards: [{
+        id: "4175B849AF5BDE5C"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "47F737B3F4DEA6D5"
+      title: "Шалкеровые ящики двух выездов"
+      description: ["Подготовь два ящика. Разложи по ним инструменты и пробы, чтобы следующая экспедиция взяла только нужный груз."]
+      x: 30.063d
+      y: 0.495d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49FA7F932500C574","42FB81D069C74AF5"]
+      optional: true
+      tasks: [{
+        id: "410C9A09E54810FC"
+        type: "item"
+        item: "minecraft:shulker_box"
+        count: 2L
+      }]
+      rewards: [{
+        id: "41C745AE1552851A"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4D79003E418C4942"
+      title: "Первый бак с аргоном"
+      description: ["После трёх загрузок на выходе будет больше одного ведра аргона. Оставь запас в баке для первых титановых плавок."]
+      x: 20.551d
+      y: -0.218d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CA60CD39F173263","4C690BCCDD18726B"]
+      optional: true
+      tasks: [{
+        id: "4B3789FFCFDF21F9"
+        type: "item"
+        item: "gtceu:argon_bucket"
+      }]
+      rewards: [{
+        id: "4050982FA64CB2BB"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4CAC071CFBBAA5E0"
+      title: "Короткий кабель для острова"
+      description: ["Поставь источник рядом с полевыми машинами. Оставь несколько отрезков в запасе для второго газосборника."]
+      x: 12.738d
+      y: 1.492d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F42E9466C47E7C9","42EAAAC3CFB2D02D"]
+      optional: true
+      tasks: [{
+        id: "42FA8DA48FDA3625"
+        type: "item"
+        item: "gtceu:gold_single_cable"
+        count: 12L
+      }]
+      rewards: [{
+        id: "417BC83682DE60B9"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4B8FCC94919833B5"
+      title: "Дозированная выдача полевого газа"
+      description: ["Раздели подачу смеси и выдачу чистого газа. У каждой ёмкости должен быть свой отвод."]
+      x: 15.116d
+      y: 3.164d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4596A2EA5F1D5532","46C047E46657EA05","49CD904373F64345"]
+      optional: true
+      tasks: [{
+        id: "4856A289FE8AEA08"
+        type: "item"
+        item: "gtceu:hv_fluid_regulator"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4E53A4A6E37E5B4A"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4F25507F6C140958"
+      title: "Пост розлива на выезде"
+      description: ["Подготовь два носика для выездной лаборатории. Отметь один для технологических жидкостей и второй для контрольных проб."]
+      x: 15.116d
+      y: 6.035d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49CD904373F64345","4795B5C09D1B1ACB","4CAC071CFBBAA5E0"]
+      optional: true
+      tasks: [{
+        id: "4C8E80D10ADFC8D6"
+        type: "item"
+        item: "create:spout"
+        count: 2L
+      }]
+      rewards: [{
+        id: "41B5BA2E42A6FFE8"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "491DC68AB018D673"
+      title: "Сетки на повторный отбор"
+      description: ["Подготовь сменные сетки для сборки кассет и работы центрифуги. Храни чистый запас отдельно от отработанного."]
+      x: 15.116d
+      y: -5.548d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AD0DA3CEA69BA75","46185BA948518477"]
+      optional: true
+      tasks: [{
+        id: "4C446DDAC9D84A63"
+        type: "item"
+        item: "kubejs:strainer_mesh"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4303E9C2B01AA75C"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "49ED97DD0554D4C1"
+      title: "Носитель для полевых кассет"
+      description: ["Отложи шесть порций носителя из нефтехимического цеха. Заправляй кассеты перед выездом."]
+      x: 17.494d
+      y: -5.106d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45C7FFC31951E37F","4855C424E62059A6"]
+      optional: true
+      tasks: [{
+        id: "46A3D02A5FFE464E"
+        type: "item"
+        item: "kubejs:activated_carrier"
+        count: 6L
+      }]
+      rewards: [{
+        id: "4C29CE19E393D92D"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "443B3E3ADF6E382E"
+      title: "Кассеты на две станции"
+      description: ["Раздели двенадцать кассет между основным постом и резервом. Не заполняй выход газосборника перед запуском."]
+      x: 19.871d
+      y: -4.973d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["491DC68AB018D673","49ED97DD0554D4C1","4596A2EA5F1D5532"]
+      optional: true
+      tasks: [{
+        id: "40364E26D67E6F22"
+        type: "item"
+        item: "kubejs:end_sampling_filter"
+        count: 12L
+      }]
+      rewards: [{
+        id: "42166CA6B439DDCD"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4761F35384000DB6"
+      title: "Отдельная ванна возврата сеток"
+      description: ["Выдели ванну под фильтры. Установи отдельную ёмкость с дистиллятом и буфер хвостов."]
+      x: 27.439d
+      y: 6.825d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F8F4D393CFA1E08","45FC710629F4CD87"]
+      optional: true
+      tasks: [{
+        id: "4BA5A312E2688269"
+        type: "item"
+        item: "gtceu:hv_chemical_bath"
+        count: 2L
+      }]
+      rewards: [{
+        id: "45600339D48E086A"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4B1438FACCD275A3"
+      title: "Выдача полевого концентрата"
+      description: ["Выведи концентрат из резака к центрифуге. На запасной ветке оставь свободную выдачу под керамику."]
+      x: 17.494d
+      y: -1.645d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["402B8CFCF82E57C6","4007650C0455ACD3","42A92130A5C8335E"]
+      optional: true
+      tasks: [{
+        id: "480B141404A13407"
+        type: "item"
+        item: "gtceu:electrum_normal_item_pipe"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4F5EAF84D0220D23"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "42EC085AFDD26BAA"
+      title: "Конвейер выездной лаборатории"
+      description: ["Размести конвейер между складом и входом резака. На развилке сохрани доступ к ручной подаче."]
+      x: 18.485d
+      y: -3.147d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42A92130A5C8335E","4B1438FACCD275A3","4C2EA0D5A25D6F25"]
+      optional: true
+      tasks: [{
+        id: "46F73B7574FA453A"
+        type: "item"
+        item: "immersiveengineering:conveyor_basic"
+        count: 8L
+      }]
+      rewards: [{
+        id: "411D86F6075DCADF"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4A669A64D377165B"
+      title: "Эндерняк для двух смен"
+      description: ["Оставь полевой запас под дробление. Доставляй готовый концентрат отдельными партиями, чтобы не занять место под газ."]
+      x: 17.494d
+      y: 3.363d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42A8D706871E0A00","402B8CFCF82E57C6"]
+      optional: true
+      tasks: [{
+        id: "45B57D317A96959B"
+        type: "item"
+        item: "minecraft:end_stone"
+        count: 64L
+      }]
+      rewards: [{
+        id: "479683C06A28AB78"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4608EB750A657E56"
+      title: "Концентрат на первые вакуумные плитки"
+      description: ["Раздели концентрат между центрифугой и плитками. Отложи вывозимую партию после первой пробной загрузки."]
+      x: 20.551d
+      y: 2.417d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CA60CD39F173263","4A669A64D377165B"]
+      optional: true
+      tasks: [{
+        id: "4B2F71FC7AAE0AA3"
+        type: "item"
+        item: "kubejs:endstone_grit"
+        count: 24L
+      }]
+      rewards: [{
+        id: "466EEC82D8CFFDC7"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4BB1FF212F15B4CB"
+      title: "Чистая ванна под диэлектрик"
+      description: ["Оставь отдельную ванну под хорус. Веди дистиллят из чистого бака, чтобы хвосты фильтра не попадали в линию плёнки."]
+      x: 25.307d
+      y: 2.524d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4DEF2F7788DB1D3F","4761F35384000DB6"]
+      optional: true
+      tasks: [{
+        id: "415A326A902A4C1A"
+        type: "item"
+        item: "gtceu:hv_chemical_bath"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4B0821DFD6075D3F"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4D8EC5F9EE0A68F2"
+      title: "Газовая магистраль с буфером"
+      description: ["Подготовь отдельную трубу и отдельный барабан для каждой фракции. Проверь свободное место на выходах перед запуском центрифуги."]
+      x: 19.871d
+      y: 1.036d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CA60CD39F173263","4B8FCC94919833B5","4AE12B3FE26A11FF"]
+      optional: true
+      tasks: [{
+        id: "4E96D872324B68B7"
+        type: "item"
+        item: "gtceu:stainless_steel_normal_fluid_pipe"
+        count: 16L
+      }]
+      rewards: [{
+        id: "42D1D0608C2A01DF"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "49A6F5E46E091DE1"
+      title: "Резервная партия газосборников"
+      description: ["Поставь второй сборник на отдельный вход центрифуги. При смене кассеты один аппарат сможет продолжать работу."]
+      x: 22.929d
+      y: -4.555d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D8EC5F9EE0A68F2","443B3E3ADF6E382E"]
+      optional: true
+      tasks: [{
+        id: "4C238CC848A14640"
+        type: "item"
+        item: "gtceu:hv_gas_collector"
+        count: 2L
+      }]
+      rewards: [{
+        id: "49D8B9CB7B7F30F7"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4782AE4AEA504DAD"
+      title: "Плиты для настила Энда"
+      description: ["Подай пурпурный блок, абразив и керамику в сборщик. Оставь плиты на проход от портала к цеху."]
+      x: 27.685d
+      y: -2.762d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4AF95301B33E7AC3"]
+      optional: true
+      tasks: [{
+        id: "4F926B2A1E2C5A44"
+        type: "item"
+        item: "minecraft:purpur_slab"
+        count: 8L
+      }]
+      rewards: [{
+        id: "451CC3D04847E4BC"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4F4820D95C8875AB"
+      title: "Ограждение полевого цеха"
+      description: ["Собери стенки из кирпичей, огнеупорной смеси и плитки. Оставь открытым доступ к трубам и выходам."]
+      x: 27.005d
+      y: -4.678d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E8753E90EA3CB6E","432FF77A54315D95"]
+      optional: true
+      tasks: [{
+        id: "4F178D62FDD33424"
+        type: "item"
+        item: "minecraft:end_stone_brick_wall"
+        count: 8L
+      }]
+      rewards: [{
+        id: "416C7F585C7C8232"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "4A20C1743947C93E"
+      title: "Плёнка для первого вакуумного заказа"
+      description: ["Перевези плёнку, концентрат и защитный газ к вакуумному цеху. Держи тару маркированной после разгрузки."]
+      x: 24.627d
+      y: 5.764d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4DEF2F7788DB1D3F","4608EB750A657E56","4D8EC5F9EE0A68F2"]
+      optional: true
+      tasks: [{
+        id: "4CA12FC53675659F"
+        type: "item"
+        item: "kubejs:chorus_dielectric_film"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4CD08C98B53F1B7A"
+        type: "item"
+        item: "gtceu:aluminium_plate"
+        count: 1
+      }]
+    }
+  ]
+}

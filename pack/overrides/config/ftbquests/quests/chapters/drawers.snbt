@@ -1,0 +1,825 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "drawers"
+  group: "468EF37A10F16FBE"
+  icon: "storagedrawers:controller"
+  title: "Складские ящики"
+  id: "4A6C700642AA8D7B"
+  order_index: 14
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/drawers.png"
+    x: 0.0d
+    y: 0.0d
+    width: 32.667d
+    height: 22.944d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "45522306E2761FAD"
+      title: "Заготовка направляющих"
+      description: ["Собери четыре кованые пластины на втулке с заклёпками. Абразивом подгони поверхности."]
+      x: -12.490d
+      y: 1.661d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F86238C829276F1","4650DF862BB30C74","4E25A659A8E18BF9"]
+      tasks: [{
+        id: "4079F954277E384E"
+        type: "item"
+        item: "kubejs:drawer_runner_blank"
+      }]
+      rewards: [{
+        id: "4B47557135A95793"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 3
+      }]
+    }
+    {
+      id: "42479D8BE5CE4B21"
+      title: "Прокат направляющих"
+      description: ["Пресс Create выдаёт две направляющие за удар. Поставь рядом отдельное депо для заготовок."]
+      x: -9.110d
+      y: 0.668d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45522306E2761FAD","45F90DBA04E36F7D"]
+      tasks: [{
+        id: "40E977DF1E58DFE7"
+        type: "item"
+        item: "kubejs:drawer_slide"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4A20962E537F3277"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "4028C8F729C27CAF"
+      title: "Выдвижная кассета"
+      description: ["Соедини направляющую с досками, нагелями, кованой петлёй и шнуром."]
+      x: -7.090d
+      y: -1.976d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42479D8BE5CE4B21","493BCB782DD7F53E"]
+      tasks: [{
+        id: "4607E9CE90200D87"
+        type: "item"
+        item: "kubejs:drawer_cartridge"
+        count: 2L
+      }]
+      rewards: [{
+        id: "40B4F5D2EAF17A81"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "49C678786C5356E0"
+      title: "Первый складской ящик"
+      description: ["Вставь кассету в дубовую обшивку и добавь направляющую с петлёй. Такой ящик хранит один вид предметов."]
+      x: -4.050d
+      y: 0.000d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4028C8F729C27CAF"]
+      tasks: [{
+        id: "4B3472610E574D46"
+        type: "item"
+        item: "storagedrawers:oak_full_drawers_1"
+      }]
+      rewards: [{
+        id: "441B1A6AF00C0BB5"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 3
+      }]
+    }
+    {
+      id: "41D33BE5BA738EC7"
+      title: "Ящик на два отделения"
+      description: ["Собери дубовый ящик с двумя отделениями. Оба отделения делят вместимость одного корпуса."]
+      x: -1.690d
+      y: -0.853d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["49C678786C5356E0","42479D8BE5CE4B21"]
+      tasks: [{
+        id: "42A791089C816046"
+        type: "item"
+        item: "storagedrawers:oak_full_drawers_2"
+      }]
+      rewards: [{
+        id: "4299B01C9D9C289D"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "4B49EFED8B424667"
+      title: "Ящик на четыре отделения"
+      description: ["На корпус с четырьмя отделениями возьми две кассеты, две направляющие и две петли."]
+      x: 1.010d
+      y: -1.017d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["41D33BE5BA738EC7"]
+      tasks: [{
+        id: "4FB0A1A65F0B71A7"
+        type: "item"
+        item: "storagedrawers:oak_full_drawers_4"
+      }]
+      rewards: [{
+        id: "4C58612BB698EEC3"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "41C99C41C644A44E"
+      title: "Ящик половинной глубины"
+      description: ["Замени доски корпуса плитами. Ящик половинной глубины помещается в узком проходе."]
+      x: -1.010d
+      y: 0.613d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["49C678786C5356E0"]
+      tasks: [{
+        id: "4288B99737062007"
+        type: "item"
+        item: "storagedrawers:oak_half_drawers_1"
+      }]
+      rewards: [{
+        id: "47955B496B3A7279"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 3
+      }]
+    }
+    {
+      id: "4F20785AFDF305D4"
+      title: "Обвязка складских ящиков"
+      description: ["Обвязка соединяет ящики без свободного гнезда хранения. За крафт выходят две секции."]
+      x: -1.690d
+      y: -2.448d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["49C678786C5356E0","4650DF862BB30C74"]
+      tasks: [{
+        id: "4737D2D765CEFBBC"
+        type: "item"
+        item: "storagedrawers:oak_trim"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4802379D37E72892"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 3
+      }]
+    }
+    {
+      id: "477629F7E1A0CC1E"
+      title: "Ключ фиксации ячейки"
+      description: ["Нажми ключом по заполненному ящику, чтобы закрепить тип предмета после опустошения."]
+      x: -1.690d
+      y: -5.139d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["49C678786C5356E0","42479D8BE5CE4B21"]
+      tasks: [{
+        id: "44FBEFF6125D3135"
+        type: "item"
+        item: "storagedrawers:drawer_key"
+      }]
+      rewards: [{
+        id: "40AF231652BF3A69"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 3
+      }]
+    }
+    {
+      id: "4EB4691ED306C606"
+      title: "Рамка складского улучшения"
+      description: ["На рамку улучшения уходят четыре направляющие, кассета и крепёж."]
+      x: -4.390d
+      y: -2.956d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4028C8F729C27CAF","42479D8BE5CE4B21"]
+      tasks: [{
+        id: "4ED1CFC021430FCF"
+        type: "item"
+        item: "storagedrawers:upgrade_template"
+        count: 2L
+      }]
+      rewards: [{
+        id: "42F3643DCF4A2368"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "4D9079F4675A2086"
+      title: "Стол облицовки"
+      description: ["Для корпуса стола нужны ящик, две пилы в разобранном виде и направляющие. Используй штатный интерфейс стола, чтобы облицевать готовый ящик."]
+      x: -1.690d
+      y: 5.231d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["49C678786C5356E0","45EADC6EDC7CA91F","42479D8BE5CE4B21"]
+      tasks: [{
+        id: "428960AFD77FDA67"
+        type: "item"
+        item: "storagedrawers:framing_table"
+      }]
+      rewards: [{
+        id: "424E668870AC7721"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "4C0FE1EC7972E1E1"
+      title: "Медное расширение склада"
+      description: ["Сборщик LV потребляет медные листы, кассеты, схему и стальную раму."]
+      x: -1.010d
+      y: 6.504d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4EB4691ED306C606","4FCC63C022147426"]
+      tasks: [{
+        id: "4B4F3C8CEF0176B9"
+        type: "item"
+        item: "storagedrawers:copper_storage_upgrade"
+      }]
+      rewards: [{
+        id: "48F899A2859EB179"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "488159E2A40B2067"
+      title: "Железное расширение склада"
+      description: ["Железное улучшение строится из медного. На второй ящик изготовь полный комплект заново."]
+      x: 1.690d
+      y: -2.370d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C0FE1EC7972E1E1","4975F2C8A1CEDA75"]
+      tasks: [{
+        id: "4C55B165957A236C"
+        type: "item"
+        item: "storagedrawers:iron_storage_upgrade"
+      }]
+      rewards: [{
+        id: "4D3D5D9339D7047F"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "42CB5D8692660807"
+      title: "Индикация заполнения"
+      description: ["Через сигнальное улучшение подключи схему LV и стеклянную колбу."]
+      x: -1.690d
+      y: -8.322d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4EB4691ED306C606","48EE48FA97FC7401"]
+      tasks: [{
+        id: "48D69B08B5DF0480"
+        type: "item"
+        item: "storagedrawers:fill_level_upgrade"
+      }]
+      rewards: [{
+        id: "4ECD6D0DCE64BDCB"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "42E63A896FEC3177"
+      title: "Адресация складских ячеек"
+      description: ["Сборщик MV соединяет две схемы, кассеты, контакты и раму. Подай 180 мБ смазки."]
+      x: -3.710d
+      y: -1.611d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4028C8F729C27CAF","4303A0AC3F43FE45","4799482036E52418"]
+      tasks: [{
+        id: "4B2328BC2279D290"
+        type: "item"
+        item: "kubejs:drawer_selector"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4E4C36C389A1B77E"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 3
+      }]
+    }
+    {
+      id: "44EB05CF179B4517"
+      title: "Контроллер общего склада"
+      description: ["Из двух ящиков и селектора собери контроллер. Подключи к нему ряд ящиков и обвязку."]
+      x: -1.350d
+      y: 2.482d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["42E63A896FEC3177","49C678786C5356E0","41AF8F5C14E516BE"]
+      tasks: [{
+        id: "462FDE390B4701DD"
+        type: "item"
+        item: "storagedrawers:controller"
+      }]
+      rewards: [{
+        id: "4741F5B023B75E7D"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4D1607A933949760"
+      title: "Второй вход в склад"
+      description: ["На выносной порт уходит ещё один селектор, ящик, ключ подключения и конвейер."]
+      x: 1.350d
+      y: 0.598d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["44EB05CF179B4517","477629F7E1A0CC1E"]
+      tasks: [{
+        id: "4A066B0FF3EAC31F"
+        type: "item"
+        item: "storagedrawers:controller_slave"
+      }]
+      rewards: [{
+        id: "45900E051ED068A6"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "45138745B07C2678"
+      title: "Ящик на две степени упаковки"
+      description: ["Установи два поршня MV и селектор. Ящик хранит предмет в двух совместимых формах и выдаёт его в любой из них. Пары смотри в JEI."]
+      x: 1.034d
+      y: -5.322d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42E63A896FEC3177","41D33BE5BA738EC7","42F96AB63F8EABA4"]
+      tasks: [{
+        id: "4472071790F27444"
+        type: "item"
+        item: "storagedrawers:compacting_drawers_2"
+      }]
+      rewards: [{
+        id: "47DFA94E2081B90F"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "423A56AC556E9A11"
+      title: "Ящик на три степени упаковки"
+      description: ["Добавь к двухступенчатому ящику два селектора, два поршня и две рамы. Совместимые формы предметов смотри в JEI."]
+      x: 4.390d
+      y: -5.532d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["45138745B07C2678"]
+      tasks: [{
+        id: "4EE057707EA6B4AD"
+        type: "item"
+        item: "storagedrawers:compacting_drawers_3"
+      }]
+      rewards: [{
+        id: "440F7E9BCD3379DD"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 3
+      }]
+    }
+    {
+      id: "4DC8B69999DD7A8B"
+      title: "Выдача в линию"
+      description: ["В сборщике установи два поршня LV на кассету с воронкой и магнитным якорем."]
+      x: -1.010d
+      y: -3.847d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4EB4691ED306C606","4FCC63C022147426"]
+      tasks: [{
+        id: "4205976AC9B0F223"
+        type: "item"
+        item: "storagedrawers:push_upgrade"
+      }]
+      rewards: [{
+        id: "4A49345A2011DC7D"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "4B32950345549C2E"
+      title: "Автоматическая подача"
+      description: ["Сначала собери улучшение подачи LV. Затем добавь два конвейера MV, селектор и раму."]
+      x: -1.010d
+      y: 4.101d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42E63A896FEC3177","41AF8F5C14E516BE"]
+      tasks: [{
+        id: "4315829DDAC8F510"
+        type: "item"
+        item: "storagedrawers:pull_upgrade_2"
+      }]
+      rewards: [{
+        id: "4DB0CAB22102A289"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "490F54AD79EF4777"
+      title: "Золотое расширение склада"
+      description: ["Добавь четыре золотых листа, две кассеты, схему MV и раму к железному улучшению."]
+      x: 3.851d
+      y: -8.223d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["488159E2A40B2067","481EFC0EEFC2DEF6"]
+      tasks: [{
+        id: "493A262901EADD30"
+        type: "item"
+        item: "storagedrawers:gold_storage_upgrade"
+      }]
+      rewards: [{
+        id: "446BC8B43E751EEC"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4A6C7B630EEFCE0B"
+      title: "Изумрудное расширение склада"
+      description: ["На золотой каркас уйдут четыре изумруда и новая пара кассет."]
+      x: 7.090d
+      y: -5.893d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["490F54AD79EF4777"]
+      tasks: [{
+        id: "473553169E066ADC"
+        type: "item"
+        item: "storagedrawers:emerald_storage_upgrade"
+      }]
+      rewards: [{
+        id: "40D950210710993E"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "4A580917A6414C57"
+      title: "Алмазное расширение склада HV"
+      description: ["Добавь четыре алмаза и схему HV. Сборщик работает при 480 EU/t."]
+      x: 9.450d
+      y: -2.338d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4A6C7B630EEFCE0B","42E99CE4711A8261"]
+      tasks: [{
+        id: "42AF730F2AF15448"
+        type: "item"
+        item: "storagedrawers:diamond_storage_upgrade"
+      }]
+      rewards: [{
+        id: "4B757E4F27109780"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "489B155B69E5FEC2"
+      title: "Контроль переполнения HV"
+      description: ["Поршень, дугогаситель и обсидиан превращают стандартную рамку в сброс переполнения. Проверь настройки перед подачей дорогих деталей."]
+      x: -1.690d
+      y: 7.969d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EB4691ED306C606","42DCC7F618DACF0C"]
+      optional: true
+      tasks: [{
+        id: "407985F52A92DC39"
+        type: "item"
+        item: "storagedrawers:void_upgrade"
+      }]
+      rewards: [{
+        id: "4425BD05D8CAAB56"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4CD686DD4CF5ED86"
+      title: "Выносная связь HV"
+      description: ["Из порта, эмиттера и схемы собери привязку склада. Используй для удалённых стеллажей."]
+      x: 4.390d
+      y: 0.370d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D1607A933949760","42E99CE4711A8261"]
+      optional: true
+      tasks: [{
+        id: "4717FC201C37CF4B"
+        type: "item"
+        item: "storagedrawers:remote_upgrade"
+      }]
+      rewards: [{
+        id: "4F314D67FCA201BD"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 2
+      }]
+    }
+    {
+      id: "4E5A2C34CA2BF29C"
+      title: "Незеритовое расширение склада EV"
+      description: ["Закончи обсидиановое усиление. В сборщике EV добавь незерит, титановые листы и протокол EV."]
+      x: 12.490d
+      y: -4.037d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A580917A6414C57","463599FF8883FD0D"]
+      optional: true
+      tasks: [{
+        id: "4DFEEA3D5AAB9491"
+        type: "item"
+        item: "storagedrawers:netherite_storage_upgrade"
+      }]
+      rewards: [{
+        id: "40D09DF3F7B2479E"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 2
+      }]
+    }
+    {
+      id: "483ECEF108156F5C"
+      title: "Направляющие под два складских стеллажа"
+      description: ["Прокатай шестнадцать направляющих на прессе. Часть уйдёт на кассеты, остаток оставь на расширение склада."]
+      x: 1.010d
+      y: 5.585d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42479D8BE5CE4B21","44EB05CF179B4517"]
+      optional: true
+      tasks: [{
+        id: "4922204AD6D379FF"
+        type: "item"
+        item: "kubejs:drawer_slide"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4B44AB2F6D8B6B79"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "491DE56798D042A0"
+      title: "Малые стеллажи крепежа"
+      description: ["Собери четыре дубовых ящика с двумя отделениями. Выдели гнёзда под нагели и шарниры."]
+      x: 1.010d
+      y: -3.723d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41D33BE5BA738EC7","44EB05CF179B4517"]
+      optional: true
+      tasks: [{
+        id: "48CF7F925AE77D27"
+        type: "item"
+        item: "storagedrawers:oak_full_drawers_2"
+        count: 4L
+      }]
+      rewards: [{
+        id: "46269D0286314F4C"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "455C8F48CB2D3853"
+      title: "Ящики для образцов и остатков"
+      description: ["Поставь четыре ящика на четыре отделения. Закрепи ключом типы мелких деталей перед опустошением ячеек."]
+      x: 3.710d
+      y: 3.054d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B49EFED8B424667","477629F7E1A0CC1E"]
+      optional: true
+      tasks: [{
+        id: "42348C8E85CFC436"
+        type: "item"
+        item: "storagedrawers:oak_full_drawers_4"
+        count: 4L
+      }]
+      rewards: [{
+        id: "43CA9772DAD54011"
+        type: "item"
+        item: "kubejs:wooden_joint"
+        count: 2
+      }]
+    }
+    {
+      id: "468BE4944C91920D"
+      title: "Обвязка между рядами ящиков"
+      description: ["Подготовь шестнадцать секций обвязки. Соедини ряды с портом, сохранив проход перед дверцами."]
+      x: 3.790d
+      y: -3.254d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4F20785AFDF305D4","4D1607A933949760"]
+      optional: true
+      tasks: [{
+        id: "4CC6596A6E8B834D"
+        type: "item"
+        item: "storagedrawers:oak_trim"
+        count: 16L
+      }]
+      rewards: [{
+        id: "49A7DEF4E0FA6492"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "46836BD1ADB0EFED"
+      title: "Контроллер отдельного стеллажа"
+      description: ["Собери второй контроллер для отдельного ряда. Выдели ему ящики, которые не связаны с первым складом."]
+      x: 4.390d
+      y: -1.081d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44EB05CF179B4517","4D1607A933949760"]
+      optional: true
+      tasks: [{
+        id: "486C0CCC0C5BC90A"
+        type: "item"
+        item: "storagedrawers:controller"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4D1520D481CA56B9"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "437666A01AE2EEA5"
+      title: "Расширение для рядов руды"
+      description: ["Собери четыре железных улучшения для ящиков дроблёной руды и концентратов."]
+      x: 6.410d
+      y: -8.138d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["488159E2A40B2067","490F54AD79EF4777"]
+      optional: true
+      tasks: [{
+        id: "4B8309678A9BA8F0"
+        type: "item"
+        item: "storagedrawers:iron_storage_upgrade"
+        count: 4L
+      }]
+      rewards: [{
+        id: "480073BA2AB3F50F"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "46378581FFAD35A5"
+      title: "Ящик упаковки половинной глубины"
+      description: ["Собери компактный ящик половинной глубины для материала с двумя формами. Примеры упаковки смотри в JEI."]
+      x: 3.710d
+      y: 1.580d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45138745B07C2678","41C99C41C644A44E"]
+      optional: true
+      tasks: [{
+        id: "4987E891F162C8AF"
+        type: "item"
+        item: "storagedrawers:compacting_half_drawers_2"
+      }]
+      rewards: [{
+        id: "46544A051FA6E170"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 2
+      }]
+    }
+    {
+      id: "4B8B90A25B864515"
+      title: "Ряд ящиков трёх форм"
+      description: ["Подготовь два ящика трёх форм. Раздели материалы между ними и проверь обратную выдачу."]
+      x: 7.090d
+      y: -1.377d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["423A56AC556E9A11","46378581FFAD35A5"]
+      optional: true
+      tasks: [{
+        id: "4ADA1A9E9B76F4A8"
+        type: "item"
+        item: "storagedrawers:compacting_drawers_3"
+        count: 2L
+      }]
+      rewards: [{
+        id: "444EFC7B2163C8B4"
+        type: "item"
+        item: "kubejs:iron_rivet"
+        count: 2
+      }]
+    }
+    {
+      id: "48880F7C7C40EFDF"
+      title: "Выносные порты двух стеллажей"
+      description: ["Собери два порта. Подключи по одному к каждому контроллеру и проверь, куда выдаются предметы."]
+      x: 7.090d
+      y: 2.645d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D1607A933949760","46836BD1ADB0EFED"]
+      optional: true
+      tasks: [{
+        id: "4D8F33FA337D9A55"
+        type: "item"
+        item: "storagedrawers:controller_slave"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4E2ECF1A11FB5D28"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "428B741FFFCBB289"
+      title: "Медное расширение для кассет"
+      description: ["Подготовь четыре медных расширения для ящиков крепежа. Железные усиления оставь для тяжёлого сырья."]
+      x: 3.710d
+      y: 5.438d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C0FE1EC7972E1E1","488159E2A40B2067"]
+      optional: true
+      tasks: [{
+        id: "48BCE669A2BD3498"
+        type: "item"
+        item: "storagedrawers:copper_storage_upgrade"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4F8ADB09566ACC07"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 2
+      }]
+    }
+  ]
+}

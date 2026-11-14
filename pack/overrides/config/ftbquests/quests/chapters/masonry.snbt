@@ -1,0 +1,548 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "masonry"
+  group: "468EF37A10F16FBE"
+  icon: "minecraft:stonecutter"
+  title: "Камень и стекло"
+  id: "4F1646F95F4E803F"
+  order_index: 16
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/masonry.png"
+    x: 0.0d
+    y: 0.0d
+    width: 20.093d
+    height: 19.574d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "4B9AC55A97FEBAF9"
+      title: "Кремнёвое зубило"
+      description: ["Собери отдельный инструмент для камня. Он изнашивается при ручной обработке."]
+      x: -6.750d
+      y: 0.000d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["44E5E24E52DC8208","4DD5BD0433FCD2A5","468D4C1249381858"]
+      optional: true
+      tasks: [{
+        id: "4F7412E898241A08"
+        type: "item"
+        item: "kubejs:stone_chisel"
+      }]
+      rewards: [{
+        id: "4C3F921049144031"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "4E25A659A8E18BF9"
+      title: "Подготовка абразива"
+      description: ["Разотри гравий и песок с промытым волокном."]
+      x: -6.410d
+      y: -3.094d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4CD088474AE49C19","47A521E814192495"]
+      optional: true
+      tasks: [{
+        id: "42E60629D88FA3B3"
+        type: "item"
+        item: "kubejs:abrasive_paste"
+        count: 4L
+      }]
+      rewards: [{
+        id: "44DDB1700442E364"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "4DB9F7C628654BD1"
+      title: "Глиняный раствор"
+      description: ["Раствор нужен для стен, кирпича и основания станка."]
+      x: -4.031d
+      y: -1.023d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FD71992F8C53B7D","4E25A659A8E18BF9","48F79DB5C825B40D"]
+      optional: true
+      tasks: [{
+        id: "4A8BC099A672333A"
+        type: "item"
+        item: "kubejs:clay_mortar"
+        count: 4L
+      }]
+      rewards: [{
+        id: "45FB5D58866F05BC"
+        type: "item"
+        item: "kubejs:abrasive_paste"
+        count: 2
+      }]
+    }
+    {
+      id: "4D09ECAD45E3744D"
+      title: "Каменные плиты вручную"
+      description: ["Три камня с абразивом дают одну плиту. Подготовь четыре детали."]
+      x: -3.710d
+      y: -4.007d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B9AC55A97FEBAF9","4E25A659A8E18BF9","406FCCBDC3668AE7"]
+      optional: true
+      tasks: [{
+        id: "425A79CF15C781EC"
+        type: "item"
+        item: "minecraft:stone_slab"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4E1E4CEEAE32824E"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "47114A2B1220EEED"
+      title: "Кладка под станину"
+      description: ["Отдельно обработай камни и собери кладку на глиняном растворе."]
+      x: -1.350d
+      y: -1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4B9AC55A97FEBAF9","4DB9F7C628654BD1","406FCCBDC3668AE7"]
+      optional: true
+      tasks: [{
+        id: "43B6301228BE5637"
+        type: "item"
+        item: "minecraft:stone_bricks"
+        count: 3L
+      }]
+      rewards: [{
+        id: "4B806A2106C890CD"
+        type: "item"
+        item: "minecraft:clay_ball"
+        count: 2
+      }]
+    }
+    {
+      id: "4FD4E169DB18CC70"
+      title: "Каменная перегородка"
+      description: ["Сложи восемь секций на растворе. Запас пригодится при ограждении цеха."]
+      x: -1.690d
+      y: 3.221d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4DB9F7C628654BD1","4B9AC55A97FEBAF9"]
+      optional: true
+      tasks: [{
+        id: "45E645A32B2916E2"
+        type: "item"
+        item: "minecraft:cobblestone_wall"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4DF84AC6A03AAE65"
+        type: "item"
+        item: "kubejs:abrasive_paste"
+        count: 2
+      }]
+    }
+    {
+      id: "4538A5542283FE40"
+      title: "Каменный марш"
+      description: ["Сделай подъём к настилу и оставь ступени для доступа к станку."]
+      x: 1.010d
+      y: 3.605d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["47114A2B1220EEED"]
+      optional: true
+      tasks: [{
+        id: "4043934FA4C8CA17"
+        type: "item"
+        item: "minecraft:stone_brick_stairs"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4F7E5198C24D9965"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "4B27230AE538F79F"
+      title: "Станок для резки камня"
+      description: ["Собери камнерез из трёх каменных кирпичей, двух железных листов, полотна пилы и втулки вала. Из одного блока камнерез даёт две плиты."]
+      x: 1.350d
+      y: 0.598d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["47114A2B1220EEED","4CA6ADB18CCFF965","4975F2C8A1CEDA75"]
+      optional: true
+      tasks: [{
+        id: "41B7D983A378AA93"
+        type: "item"
+        item: "minecraft:stonecutter"
+      }]
+      rewards: [{
+        id: "4ADC9ED24173D20F"
+        type: "item"
+        item: "minecraft:clay_ball"
+        count: 2
+      }]
+    }
+    {
+      id: "4220F5B406051C3D"
+      title: "Резка плит серией"
+      description: ["Подготовь запас из 32 плит для пола первого цеха."]
+      x: 3.710d
+      y: -5.507d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B27230AE538F79F","4D09ECAD45E3744D"]
+      optional: true
+      tasks: [{
+        id: "426B040D737DCBCA"
+        type: "item"
+        item: "minecraft:stone_slab"
+        count: 32L
+      }]
+      rewards: [{
+        id: "4F8144D517F951E5"
+        type: "item"
+        item: "minecraft:clay_ball"
+        count: 2
+      }]
+    }
+    {
+      id: "4C8D2891EB5DE413"
+      title: "Стекольная шихта"
+      description: ["Смешай песок с абразивом, углём и огнеупорной добавкой."]
+      x: -4.390d
+      y: 2.542d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["406FCCBDC3668AE7","4E25A659A8E18BF9","4A969DC8CC61D772"]
+      optional: true
+      tasks: [{
+        id: "48A316B18BC5B63B"
+        type: "item"
+        item: "kubejs:glass_batch"
+        count: 5L
+      }]
+      rewards: [{
+        id: "4EFBD46339C4BDBC"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "44FCB127F66F0B21"
+      title: "Отжиг стекла"
+      description: ["Обожги пять загрузок. Голый песок не плавится в готовый блок."]
+      x: -1.350d
+      y: 1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4C8D2891EB5DE413"]
+      optional: true
+      tasks: [{
+        id: "4D4B959C519F4F37"
+        type: "item"
+        item: "minecraft:glass"
+        count: 5L
+      }]
+      rewards: [{
+        id: "49E68686324E2032"
+        type: "item"
+        item: "minecraft:clay_ball"
+        count: 2
+      }]
+    }
+    {
+      id: "4B29F52E5A6FAD55"
+      title: "Раскрой остекления"
+      description: ["На две панели идут четыре блока стекла, зубило и абразив."]
+      x: 1.010d
+      y: -1.255d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44FCB127F66F0B21","4B9AC55A97FEBAF9"]
+      optional: true
+      tasks: [{
+        id: "489E593B56054A91"
+        type: "item"
+        item: "minecraft:glass_pane"
+        count: 2L
+      }]
+      rewards: [{
+        id: "42C926B44EDA7F35"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "4C0B4EDF6EA99801"
+      title: "Зубила для камнерезного поста"
+      description: ["Собери три зубила. Одно оставь в работе, остальные держи у ручной резки плит."]
+      x: -1.690d
+      y: -0.021d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B9AC55A97FEBAF9","4D09ECAD45E3744D"]
+      optional: true
+      tasks: [{
+        id: "48E563E1F9706465"
+        type: "item"
+        item: "kubejs:stone_chisel"
+        count: 3L
+      }]
+      rewards: [{
+        id: "47611E23793ACD42"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "49A65DBDCE5FA68C"
+      title: "Абразив на ручную резку"
+      description: ["Разотри гравий и песок с промытым волокном. Подготовь шестнадцать порций для ручной резки и последующих заготовок."]
+      x: -1.690d
+      y: -6.258d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4E25A659A8E18BF9","4D09ECAD45E3744D"]
+      optional: true
+      tasks: [{
+        id: "44B48E609391ABEA"
+        type: "item"
+        item: "kubejs:abrasive_paste"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4BE58098F3F3B3A2"
+        type: "item"
+        item: "minecraft:clay_ball"
+        count: 2
+      }]
+    }
+    {
+      id: "475525413C2F89BD"
+      title: "Раствор на перегородки цеха"
+      description: ["Замеси двенадцать порций глиняного раствора. Часть отложи на огнеупорные заготовки."]
+      x: 1.010d
+      y: -3.260d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4DB9F7C628654BD1","4FD4E169DB18CC70"]
+      optional: true
+      tasks: [{
+        id: "4FEF0DA9E504AEC8"
+        type: "item"
+        item: "kubejs:clay_mortar"
+        count: 12L
+      }]
+      rewards: [{
+        id: "42FECC3B19E0ED95"
+        type: "item"
+        item: "kubejs:sand_temper"
+        count: 2
+      }]
+    }
+    {
+      id: "4802876B35A2A218"
+      title: "Полированный андезит под привод"
+      description: ["Подготовь шестнадцать блоков полированного андезита для пола вдоль валов и редукторов."]
+      x: 4.390d
+      y: -1.491d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B27230AE538F79F","4796D02E9418E0BE"]
+      optional: true
+      tasks: [{
+        id: "4E1C636C949EB217"
+        type: "item"
+        item: "minecraft:polished_andesite"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4367A45688DD0404"
+        type: "item"
+        item: "kubejs:clay_mortar"
+        count: 2
+      }]
+    }
+    {
+      id: "49B19DBA4057FE9E"
+      title: "Андезитовые ступени обслуживания"
+      description: ["Вырежи восемь ступеней из обычного андезита для проходов к приводу."]
+      x: 7.090d
+      y: -2.633d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4802876B35A2A218"]
+      optional: true
+      tasks: [{
+        id: "49667EF863FF822D"
+        type: "item"
+        item: "minecraft:andesite_stairs"
+        count: 8L
+      }]
+      rewards: [{
+        id: "45EE262012C412DB"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "4C6B0773BAFCA4A9"
+      title: "Кирпичные плиты вокруг топок"
+      description: ["Вырежи шестнадцать плит из каменных кирпичей. Оставь проход для подачи топлива."]
+      x: 4.215d
+      y: 0.621d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B27230AE538F79F","47114A2B1220EEED"]
+      optional: true
+      tasks: [{
+        id: "450FB0CBA0AC531B"
+        type: "item"
+        item: "minecraft:stone_brick_slab"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4AC3A1EB23C5BFD4"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "45F70250B4A9AFC1"
+      title: "Кирпичная ограда горячего участка"
+      description: ["Подготовь двенадцать секций стенки из каменных кирпичей для ограды вокруг топок."]
+      x: 7.090d
+      y: 2.352d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4C6B0773BAFCA4A9"]
+      optional: true
+      tasks: [{
+        id: "4A4B20BC1ED6559F"
+        type: "item"
+        item: "minecraft:stone_brick_wall"
+        count: 12L
+      }]
+      rewards: [{
+        id: "42D32B67821B97DE"
+        type: "item"
+        item: "kubejs:abrasive_paste"
+        count: 2
+      }]
+    }
+    {
+      id: "419F9409ECDF7E20"
+      title: "Остекление двух рабочих постов"
+      description: ["Раскрои стекло на двенадцать панелей. Часть пойдёт на колбы, остальное оставь для остекления."]
+      x: 3.710d
+      y: 4.536d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B29F52E5A6FAD55","44FCB127F66F0B21","4430AD5B6F8B697E"]
+      optional: true
+      tasks: [{
+        id: "488B482C9C0E4529"
+        type: "item"
+        item: "minecraft:glass_pane"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4C70C0232AB7E977"
+        type: "item"
+        item: "minecraft:clay_ball"
+        count: 2
+      }]
+    }
+    {
+      id: "4D17881871AC97F1"
+      title: "Стекло на ранние корпуса"
+      description: ["Обожги запас из шестнадцати блоков стекла. Из него нарежешь панели для камеры давления и резервуаров."]
+      x: 1.010d
+      y: 6.871d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44FCB127F66F0B21","4A840D36716D0603"]
+      optional: true
+      tasks: [{
+        id: "49D74448968D554A"
+        type: "item"
+        item: "minecraft:glass"
+        count: 16L
+      }]
+      rewards: [{
+        id: "44A3E4C6779F6D48"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+    {
+      id: "45527D4D23EF5B40"
+      title: "Глубинный сланец на настил шахты"
+      description: ["Вырежи шестнадцать плит из колотого глубинного сланца для сухого настила у забоя."]
+      x: 4.390d
+      y: 2.864d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4B27230AE538F79F","4F7D5CE189689B06"]
+      optional: true
+      tasks: [{
+        id: "4713B7AD1E5A6850"
+        type: "item"
+        item: "minecraft:cobbled_deepslate_slab"
+        count: 16L
+      }]
+      rewards: [{
+        id: "410D82DC8CA67D61"
+        type: "item"
+        item: "kubejs:sand_temper"
+        count: 2
+      }]
+    }
+    {
+      id: "4B12FABBDA1F50EE"
+      title: "Каменные кирпичи под второй станок"
+      description: ["Подготовь двадцать четыре каменных кирпича. Отложи три на второй камнерез, остальное используй под станину и пол."]
+      x: 3.710d
+      y: -3.385d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["47114A2B1220EEED","4B27230AE538F79F"]
+      optional: true
+      tasks: [{
+        id: "413AB1CAFAC70F05"
+        type: "item"
+        item: "minecraft:stone_bricks"
+        count: 24L
+      }]
+      rewards: [{
+        id: "4329F58AAA979042"
+        type: "item"
+        item: "kubejs:washed_fibre"
+        count: 2
+      }]
+    }
+  ]
+}

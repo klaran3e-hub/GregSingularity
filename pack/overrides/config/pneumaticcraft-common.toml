@@ -1,0 +1,6 @@
+[General]
+enable_dungeon_loot = false
+
+[Villagers]
+addMechanicHouse = 0
+mechanicTrades = "PCB_BLUEPRINT"

@@ -1,0 +1,12 @@
+{
+  title: "GregTech: Industrial Brain Damage"
+  version: 13
+  default_consume_items: false
+  default_reward_team: true
+  default_autoclaim_rewards: "disabled"
+  default_quest_disable_jei: false
+  detection_delay: 20
+  drop_loot_crates: false
+  show_lock_icons: true
+  icon: "create:water_wheel"
+}
