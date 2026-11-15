@@ -6,7 +6,7 @@ ServerEvents.recipes(event => {
   const pipe = 'gtceu:bronze_small_fluid_pipe'
   const lining = 'kubejs:fired_lining'
   const rivet = 'kubejs:iron_rivet'
-  const hammer = 'kubejs:stone_hammer'
+  const hammer = 'gtceu:flint_hammer'
   const gt = name => 'gtceu:' + name
   const ks = name => 'kubejs:' + name
   const furnace = 'minecraft:furnace'

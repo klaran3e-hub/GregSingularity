@@ -1,7 +1,9 @@
 ServerEvents.recipes(event => {
-  const knife = 'kubejs:flint_knife'
-  const hammer = 'kubejs:stone_hammer'
+  const knife = 'gtceu:flint_knife'
+  const hammer = 'gtceu:flint_hammer'
   const drill = 'kubejs:fire_drill'
+  const flintTools = ['knife', 'axe', 'pickaxe', 'saw', 'shovel', 'hoe', 'sword', 'mortar', 'hammer']
+  flintTools.forEach(tool => event.remove({ output: 'gtceu:flint_' + tool }))
   const woods = {
     oak: '#minecraft:oak_logs',
     spruce: '#minecraft:spruce_logs',
@@ -87,11 +89,26 @@ ServerEvents.recipes(event => {
   shaped('pick_head', 'kubejs:pick_head', ['FFF', ' G '], { F: 'kubejs:flint_shard', G: 'minecraft:gravel' })
   shaped('axe_head', 'kubejs:axe_head', ['FF', 'FG'], { F: 'kubejs:flint_shard', G: 'minecraft:gravel' })
   for (const kind of ['pickaxe', 'axe']) {
-    shaped('haft_flint_' + kind, 'kubejs:flint_' + kind, ['BHB', ' P ', ' S '], {
+    shaped('haft_flint_' + kind, 'gtceu:flint_' + kind, ['BHB', ' P ', ' S '], {
       B: 'kubejs:tool_binding', H: kind === 'pickaxe' ? 'kubejs:pick_head' : 'kubejs:axe_head',
       P: 'kubejs:wooden_peg', S: 'kubejs:tool_handle'
     })
   }
+  shaped('haft_flint_saw', 'gtceu:flint_saw', ['FFF', 'BHP', ' S '], {
+    F: 'kubejs:flint_shard', B: 'kubejs:tool_binding', H: 'kubejs:tool_handle',
+    P: 'kubejs:wooden_peg', S: 'minecraft:stick'
+  })
+  for (const [kind, pattern] of [
+    ['shovel', [' F ', 'BPB', ' H ']],
+    ['hoe', ['FF ', 'BP ', ' H ']],
+    ['sword', [' F ', 'FBF', 'PH ']]
+  ]) {
+    var toolParts = { F: 'kubejs:flint_shard', B: 'kubejs:tool_binding', P: 'kubejs:wooden_peg', H: 'kubejs:tool_handle' }
+    shaped('haft_flint_' + kind, 'gtceu:flint_' + kind, pattern, toolParts)
+  }
+  shaped('flint_mortar', 'gtceu:flint_mortar', ['FHF', 'CPC', 'CCC'], {
+    F: 'kubejs:flint_shard', H: 'kubejs:tool_handle', C: '#forge:cobblestone', P: 'kubejs:wooden_peg'
+  })
   shaped('stone_hammer', hammer, ['FCF', 'CBC', ' H '], {
     F: 'kubejs:flint_shard', C: '#forge:cobblestone', B: 'kubejs:tool_binding', H: 'kubejs:tool_handle'
   })
@@ -103,16 +120,35 @@ ServerEvents.recipes(event => {
     P: 'kubejs:wooden_peg', B: 'kubejs:fibre_cord', H: 'kubejs:tool_handle', S: 'kubejs:rough_slat'
   })
 
-  Object.entries(woods).forEach(([wood, logs]) => {
-    const planks = 'minecraft:' + wood + '_planks'
-    event.remove({ output: planks })
-    shapeless('hand_split_' + wood, '2x ' + planks, [logs, knife]).damageIngredient(knife)
+  function woodRecipes(id, planks, logs) {
+    shapeless('hand_split_' + id, '2x ' + planks, [logs, knife]).damageIngredient(knife)
+    shapeless('hand_saw_' + id, '3x ' + planks, [logs, 'gtceu:flint_saw']).damageIngredient('gtceu:flint_saw')
     event.custom({
       type: 'create:cutting',
       ingredients: [{ tag: logs.substring(1) }],
       processingTime: 160,
       results: [{ item: planks, count: 4 }]
-    }).id('zero_shift:create/saw_planks_' + wood)
+    }).id('zero_shift:create/saw_planks_' + id)
+  }
+  Object.entries(woods).forEach(([wood, logs]) => {
+    const planks = 'minecraft:' + wood + '_planks'
+    event.remove({ output: planks })
+    woodRecipes(wood, planks, logs)
+  })
+  event.remove({ output: 'gtceu:rubber_planks' })
+  woodRecipes('rubber', 'gtceu:rubber_planks', '#gtceu:rubber_logs')
+  const forestryWood = [
+    'acacia_desert', 'balsa', 'baobab', 'beech', 'chestnut', 'citrus', 'cocobolo', 'coconut',
+    'dogwood', 'ebony', 'elm', 'feijoa', 'fir', 'giganteum', 'ginkgo', 'greenheart',
+    'hill_cherry', 'ipe', 'jacaranda', 'kapok', 'kauri', 'larch', 'lime', 'macrocarpa',
+    'mahoe', 'mahogany', 'maple', 'olive', 'orange', 'padauk', 'palm', 'papaya',
+    'pear', 'pewen', 'pine', 'plum', 'poplar', 'sequoia', 'teak', 'walnut',
+    'wenge', 'willow', 'zebrawood'
+  ]
+  forestryWood.forEach(wood => {
+    const planks = 'forestry:' + wood + '_planks'
+    event.remove({ id: planks })
+    woodRecipes('forestry_' + wood, planks, '#forestry:' + wood + '_logs')
   })
   shapeless('split_sticks', '2x minecraft:stick', ['#minecraft:planks', knife]).damageIngredient(knife)
   shaped('chest', 'minecraft:chest', ['PPP', 'BHB', 'PPP'], {
@@ -134,6 +170,9 @@ ServerEvents.recipes(event => {
   shapeless('hand_grind_wheat', 'create:wheat_flour', [
     'minecraft:wheat', 'minecraft:wheat', 'minecraft:wheat', hammer
   ]).damageIngredient(hammer)
+  shapeless('hand_grind_wheat_mortar', '2x create:wheat_flour', [
+    'minecraft:wheat', 'minecraft:wheat', 'minecraft:wheat', 'gtceu:flint_mortar'
+  ]).damageIngredient('gtceu:flint_mortar')
   firing('hearth_bread', 'campfire_cooking', 'create:dough', 'minecraft:bread', 900, 0.1)
   firing('kiln_bread', 'smelting', 'create:dough', 'minecraft:bread', 360, 0.1)
   firing('smoker_bread', 'smoking', 'create:dough', 'minecraft:bread', 180, 0.1)
@@ -142,12 +181,24 @@ ServerEvents.recipes(event => {
   shaped('wet_lining', 'kubejs:wet_lining', ['CC', 'SF'], {
     C: 'minecraft:clay_ball', S: 'kubejs:sand_temper', F: 'kubejs:washed_fibre'
   })
+  shaped('unfired_clay_bucket', 'kubejs:unfired_clay_bucket', ['C C', 'CSC', ' C '], {
+    C: 'minecraft:clay_ball', S: 'kubejs:sand_temper'
+  })
+  firing('pit_fire_clay_bucket', 'campfire_cooking', 'kubejs:unfired_clay_bucket', 'kubejs:clay_bucket', 1600, 0)
+  firing('kiln_fire_clay_bucket', 'smelting', 'kubejs:unfired_clay_bucket', 'kubejs:clay_bucket', 620, 0.1)
   firing('pit_fire_lining', 'campfire_cooking', 'kubejs:wet_lining', 'kubejs:fired_lining', 1800, 0)
+  firing('kiln_fire_lining', 'smelting', 'kubejs:wet_lining', 'kubejs:fired_lining', 700, 0.1)
+  firing('blast_fire_lining', 'blasting', 'kubejs:wet_lining', 'kubejs:fired_lining', 350, 0.1)
   event.recipes.gtceu.electric_furnace('zero_shift:gtceu/furnace/industrial_fired_lining')
     .itemInputs('kubejs:wet_lining')
     .itemOutputs('kubejs:fired_lining')
     .duration(1800)
     .EUt(16)
+  event.recipes.gtceu.electric_furnace('zero_shift:gtceu/furnace/batch_fired_lining')
+    .itemInputs('4x kubejs:wet_lining')
+    .itemOutputs('4x kubejs:fired_lining')
+    .duration(1800)
+    .EUt(30)
   for (const wood of Object.keys(woods)) {
     if (['crimson', 'warped', 'bamboo'].includes(wood)) continue
     for (const [type, time] of [['campfire_cooking', 800], ['smelting', 360]]) {

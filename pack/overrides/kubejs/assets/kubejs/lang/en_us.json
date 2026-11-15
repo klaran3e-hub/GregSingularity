@@ -112,7 +112,7 @@
   "item.kubejs.fire_drill": "Fire Drill",
   "item.kubejs.flint_pickaxe": "Lashed Flint Pickaxe",
   "item.kubejs.flint_axe": "Lashed Flint Axe",
-  "message.zero_shift.axe_required": "Felling requires an axe. Find flint and build your first workbench.",
+  "message.zero_shift.axe_required": "Use an axe to harvest logs, planks, slabs and stairs.",
   "tooltip.zero_shift.wash": "Look at water and right-click. Sneak + right-click washes up to four.",
   "tooltip.zero_shift.knead": "Hold flour and right-click water. Sneak + right-click makes up to four dough.",
   "tooltip.zero_shift.lining": "Fire it on a campfire. The first furnace requires fired lining.",
@@ -387,5 +387,8 @@
   "fluid.kubejs.reclaim_depleted_brine": "Depleted Brine",
   "fluid.kubejs.reclaim_recovered_acid": "Recovered Acid",
   "item.kubejs.zpm_americium_acceptance_crate": "Americium Acceptance Crate",
-  "item.kubejs.uv_neutronium_acceptance_crate": "Neutronium Acceptance Crate"
+  "item.kubejs.uv_neutronium_acceptance_crate": "Neutronium Acceptance Crate",
+  "item.kubejs.unfired_clay_bucket": "Unfired Clay Bucket",
+  "item.kubejs.clay_bucket": "Fired Clay Bucket",
+  "item.kubejs.clay_water_bucket": "Clay Bucket of Water"
 }

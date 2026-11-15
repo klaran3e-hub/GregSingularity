@@ -114,7 +114,15 @@ StartupEvents.registry('item', event => {
     if (id === 'seismic_probe') item.maxDamage(24)
   })
 
+  // Legacy registry entries keep v0.0.1 stacks readable until they can be exchanged.
   event.create('flint_knife').maxDamage(24).texture('kubejs:item/flint_knife')
+  event.create('unfired_clay_bucket')
+    .texture('minecraft:item/bucket').color(0, 0xb8a18b)
+  event.create('clay_bucket').maxStackSize(1)
+    .texture('minecraft:item/bucket').color(0, 0xd48761)
+  event.create('clay_water_bucket').maxStackSize(1)
+    .texture('layer0', 'minecraft:item/bucket').color(0, 0xd48761)
+    .texture('layer1', 'kubejs:item/clay_bucket_water_surface')
   event.create('stone_hammer').maxDamage(48).texture('kubejs:item/stone_hammer')
   event.create('fire_drill').maxDamage(16).texture('kubejs:item/fire_drill')
   event.create('flint_pickaxe', 'pickaxe').tier('stone').maxDamage(52).texture('kubejs:item/flint_pickaxe')

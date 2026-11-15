@@ -18,7 +18,11 @@ const target = join(assets, 'assets', 'kubejs', 'textures', 'item')
 const art = drawItems([workshop, plant, factory, precision, zpm, uv, final, postUv])
 
 const translations = JSON.parse(readFileSync(join(assets, 'assets', 'kubejs', 'lang', 'ru_ru.json'), 'utf8'))
-const names = Object.keys(translations).filter(key => key.startsWith('item.kubejs.')).map(key => key.slice(12))
+// These three item models reuse the Minecraft bucket texture with runtime tints.
+const tintedBucketModels = new Set(['unfired_clay_bucket', 'clay_bucket', 'clay_water_bucket'])
+const names = Object.keys(translations)
+  .filter(key => key.startsWith('item.kubejs.')).map(key => key.slice(12))
+  .filter(id => !tintedBucketModels.has(id))
 const expected = new Set(names)
 const missing = names.filter(id => !art.has(id))
 const extra = [...art.keys()].filter(id => !expected.has(id))
@@ -29,7 +33,14 @@ const distinct = new Set([...art.values()].map(sprite => sprite.toString('base64
 if (distinct.size !== art.size) throw new Error('Duplicate sprite pixels')
 mkdirSync(target, { recursive: true })
 for (const [id, pixels] of art) writeFileSync(join(target, id + '.png'), png(spriteSize, spriteSize, pixels))
-console.log(art.size + ' item textures at ' + spriteSize + 'x' + spriteSize)
+const bucketWater = Buffer.alloc(16 * 16 * 4)
+const waterColors = [[42, 73, 160, 255], [67, 110, 202, 255], [99, 156, 230, 255]]
+const surface = [[4, 3, '01111110'], [3, 4, '0122222210'], [5, 5, '011110']]
+for (const [x, y, row] of surface) {
+  for (let i = 0; i < row.length; i++) bucketWater.set(waterColors[Number(row[i])], (y * 16 + x + i) * 4)
+}
+writeFileSync(join(target, 'clay_bucket_water_surface.png'), png(16, 16, bucketWater))
+console.log(art.size + ' item textures and a bucket water overlay at ' + spriteSize + 'x' + spriteSize)
 
 const fluidTextures = join(assets, 'assets', 'kubejs', 'textures', 'block')
 mkdirSync(fluidTextures, { recursive: true })

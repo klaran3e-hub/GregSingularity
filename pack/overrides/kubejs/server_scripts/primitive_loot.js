@@ -1,10 +1,12 @@
 ServerEvents.genericLootTables(event => {
   const chestTables = [
     'abandoned_mineshaft', 'buried_treasure', 'desert_pyramid', 'igloo_chest',
-    'jungle_temple', 'pillager_outpost', 'ruined_portal', 'shipwreck_treasure',
+    'jungle_temple', 'pillager_outpost', 'ruined_portal', 'shipwreck_treasure', 'shipwreck_supply', 'shipwreck_map',
     'simple_dungeon', 'spawn_bonus_chest', 'stronghold_corridor', 'stronghold_crossing',
     'underwater_ruin_big', 'underwater_ruin_small', 'woodland_mansion',
-    'village/village_armorer', 'village/village_fisher', 'village/village_plains_house',
+    'village/village_armorer', 'village/village_butcher', 'village/village_cartographer',
+    'village/village_desert_house', 'village/village_fisher', 'village/village_fletcher',
+    'village/village_mason', 'village/village_plains_house', 'village/village_shepherd',
     'village/village_savanna_house', 'village/village_snowy_house', 'village/village_taiga_house',
     'village/village_temple', 'village/village_toolsmith', 'village/village_weaponsmith'
   ].map(name => 'minecraft:chests/' + name)
@@ -25,6 +27,14 @@ ServerEvents.genericLootTables(event => {
     'minecraft:barrel': 'kubejs:rough_slat',
     'minecraft:bucket': 'minecraft:raw_iron',
     'minecraft:furnace': 'minecraft:clay_ball',
+    'minecraft:blast_furnace': 'minecraft:clay_ball',
+    'minecraft:smoker': 'minecraft:clay_ball',
+    'minecraft:crafting_table': 'kubejs:rough_slat',
+    'minecraft:campfire': 'minecraft:charcoal',
+    'minecraft:soul_campfire': 'minecraft:charcoal',
+    'minecraft:iron_block': 'minecraft:raw_iron_block',
+    'minecraft:water_bucket': 'minecraft:raw_iron',
+    'minecraft:lava_bucket': 'minecraft:raw_iron',
     'minecraft:flint_and_steel': 'minecraft:flint'
   }
   const engineersHouse = {
@@ -48,10 +58,11 @@ ServerEvents.genericLootTables(event => {
       entry.remove('functions')
       return
     }
-    const replacement = tableReplacements[name] || replacements[name]
+    const replacement = tableReplacements[name] || replacements[name] ||
+      (/^minecraft:[a-z_]+_planks$/.test(name) ? 'kubejs:rough_slat' : null)
     if (!replacement) return
     // Retain the original roll, weight and conditions. Nugget stacks become one piece of raw ore.
-    if (name.endsWith('_nugget')) entry.remove('functions')
+    if (name.endsWith('_nugget') || name.endsWith('_planks')) entry.remove('functions')
     entry.addProperty('name', replacement)
   }
 

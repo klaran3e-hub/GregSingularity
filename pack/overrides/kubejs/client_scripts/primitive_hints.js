@@ -4,5 +4,5 @@ ItemEvents.tooltip(event => {
   }
   event.add('kubejs:wet_lining', Text.translate('tooltip.zero_shift.lining'))
   event.add('create:wheat_flour', Text.translate('tooltip.zero_shift.knead'))
-  event.add('kubejs:flint_knife', Text.translate('tooltip.zero_shift.knife'))
+  event.add('gtceu:flint_knife', Text.translate('tooltip.zero_shift.knife'))
 })

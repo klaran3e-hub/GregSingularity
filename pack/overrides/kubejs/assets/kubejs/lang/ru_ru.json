@@ -112,7 +112,7 @@
   "item.kubejs.fire_drill": "Огневое сверло",
   "item.kubejs.flint_pickaxe": "Вязаная кремнёвая кирка",
   "item.kubejs.flint_axe": "Вязаный кремнёвый топор",
-  "message.zero_shift.axe_required": "Для валки нужен топор. Найди кремень и собери первый верстак.",
+  "message.zero_shift.axe_required": "Для брёвен, досок и деревянных ступеней нужен топор.",
   "tooltip.zero_shift.wash": "Наведи на воду и нажми ПКМ. Shift + ПКМ промывает до четырёх единиц.",
   "tooltip.zero_shift.knead": "Наведи муку на воду и нажми ПКМ. Shift + ПКМ замешивает до четырёх порций теста.",
   "tooltip.zero_shift.lining": "Обожги на костре. Печь собирается из уже обожжённой футеровки.",
@@ -387,5 +387,8 @@
   "fluid.kubejs.reclaim_depleted_brine": "Выработанный рассол",
   "fluid.kubejs.reclaim_recovered_acid": "Регенерированная кислота",
   "item.kubejs.zpm_americium_acceptance_crate": "Контейнер америциевой приёмки",
-  "item.kubejs.uv_neutronium_acceptance_crate": "Контейнер нейтрониевой приёмки"
+  "item.kubejs.uv_neutronium_acceptance_crate": "Контейнер нейтрониевой приёмки",
+  "item.kubejs.unfired_clay_bucket": "Сырое глиняное ведро",
+  "item.kubejs.clay_bucket": "Обожжённое глиняное ведро",
+  "item.kubejs.clay_water_bucket": "Глиняное ведро с водой"
 }
