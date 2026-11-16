@@ -1,6 +1,6 @@
 # GregTech: Industrial Brain Damage · Beta 1.0.1
 
-Версия сборки для Minecraft 1.20.1, Forge 47.4.28 и Java 17. В [манифесте](pack/manifest.json) закреплены 35 файлов, включая ExtendedAE, Glodium, FancyMenu и Drippy Loading Screen. CC: Tweaked 1.116.1 входит в архив. Роли модов и межмодовые цепочки описаны в [списке модов](Список%20модов.md).
+Версия сборки для Minecraft 1.20.1, Forge 47.4.28 и Java 17.
 
 [Скачать Beta 1.0.1](https://github.com/klaran3e-hub/gregtech-industrial-brain-damage/releases/tag/v1.0.1-beta) · [Discord сборки](https://discord.gg/PppDQ2ZE6P)
 
