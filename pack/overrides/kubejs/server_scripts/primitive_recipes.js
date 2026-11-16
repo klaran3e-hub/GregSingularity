@@ -137,6 +137,10 @@ ServerEvents.recipes(event => {
   })
   event.remove({ output: 'gtceu:rubber_planks' })
   woodRecipes('rubber', 'gtceu:rubber_planks', '#gtceu:rubber_logs')
+  if (Item.exists('upgrade_aquatic:driftwood_planks')) {
+    event.remove({ output: 'upgrade_aquatic:driftwood_planks' })
+    woodRecipes('driftwood', 'upgrade_aquatic:driftwood_planks', '#upgrade_aquatic:driftwood_logs')
+  }
   const forestryWood = [
     'acacia_desert', 'balsa', 'baobab', 'beech', 'chestnut', 'citrus', 'cocobolo', 'coconut',
     'dogwood', 'ebony', 'elm', 'feijoa', 'fir', 'giganteum', 'ginkgo', 'greenheart',

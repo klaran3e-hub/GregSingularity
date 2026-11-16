@@ -6,7 +6,7 @@
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
   "name": "GregTech: Industrial Brain Damage",
-  "version": "1.0.1-beta",
+  "version": "0.0.2",
   "author": "klaran3e",
   "files": [
     { "projectID": 890405, "fileID": 7917773, "required": true },
@@ -42,8 +42,24 @@
     { "projectID": 410295, "fileID": 5028413, "required": true },
     { "projectID": 938643, "fileID": 5109692, "required": true },
     { "projectID": 349559, "fileID": 9396779, "required": true },
-    { "projectID": 1233297, "fileID": 7003808, "required": true },
-    { "projectID": 1090771, "fileID": 6307432, "required": true }
+    { "projectID": 1090771, "fileID": 6307432, "required": true },
+    { "projectID": 995122, "fileID": 6670776, "required": true },
+    { "projectID": 711216, "fileID": 6347320, "required": true },
+    { "projectID": 326895, "fileID": 6393133, "required": true },
+    { "projectID": 382216, "fileID": 6408581, "required": true },
+    { "projectID": 509285, "fileID": 6373226, "required": true },
+    { "projectID": 535489, "fileID": 7032235, "required": true },
+    { "projectID": 639584, "fileID": 8140573, "required": true },
+    { "projectID": 314645, "fileID": 7434158, "required": true },
+    { "projectID": 300331, "fileID": 4832944, "required": true },
+    { "projectID": 254284, "fileID": 9099044, "required": true },
+    { "projectID": 257814, "fileID": 7976407, "required": true },
+    { "projectID": 421897, "fileID": 9430175, "required": true },
+    { "projectID": 1510238, "fileID": 8931439, "required": true },
+    { "projectID": 1219053, "fileID": 8275089, "required": true },
+    { "projectID": 1392308, "fileID": 8368682, "required": true },
+    { "projectID": 267602, "fileID": 5983309, "required": true },
+    { "projectID": 1264423, "fileID": 7544807, "required": true }
   ],
   "overrides": "overrides"
 }
