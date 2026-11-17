@@ -1,4 +1,10 @@
 {
+  "item.kubejs.copper_pickaxe": "Медная кирка",
+  "item.kubejs.copper_axe": "Медный топор",
+  "item.kubejs.copper_sword": "Медный меч",
+  "item.kubejs.copper_hoe": "Медная мотыга",
+  "item.kubejs.copper_shovel": "Медная лопата",
+  "item.kubejs.copper_mining_hammer": "Медный шахтёрский молот",
   "item.kubejs.flint_shard": "Колотый кремень",
   "item.kubejs.plant_fibre": "Сырое растительное волокно",
   "item.kubejs.washed_fibre": "Промытое волокно",
@@ -133,6 +139,7 @@
   "item.kubejs.sealed_hv_module": "Герметичный модуль HV",
   "item.kubejs.gold_conductor_blank": "Заготовка золотого проводника",
   "item.kubejs.hv_winding_pack": "Пакет обмоток HV",
+  "item.kubejs.hv_steel_coil_preform": "Заготовка стального мотка HV",
   "item.kubejs.hv_arc_shield": "Дугогасительная пластина HV",
   "item.kubejs.hv_switch_contact": "Точёный контакт HV",
   "item.kubejs.hv_trial_charge": "Испытательная шихта HV",

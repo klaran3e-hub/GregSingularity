@@ -261,7 +261,7 @@ ServerEvents.recipes(event => {
     const narrower = gt('gold_' + gauges[index])
     const wider = gt('gold_' + width)
     replace(wider + '_wire', 'draw_gold_' + width, ['2x ' + narrower + '_wire', '2x ' + contact,
-      gt('gold_foil'), winding, ie('wire_electrum')], 580 + index * 150, 384, lubricant, 500 + index * 150)
+      gt('gold_foil'), winding, gt('electrum_single_wire')], 580 + index * 150, 384, lubricant, 500 + index * 150)
     replace(wider + '_cable', 'insulate_gold_' + width, [wider + '_wire', '2x ' + narrower + '_cable',
       '2x ' + gt('polyethylene_plate'), '2x ' + seal, reinforcedTube],
     670 + index * 150, 384, lubricant, 600 + index * 150)
@@ -337,15 +337,16 @@ ServerEvents.recipes(event => {
   steelRotor.inputFluids(Fluid.of(lubricant, 1400))
     .itemOutputs(Item.of(gt('turbine_rotor'), '{"GT.PartStats":{Material:"gtceu:steel"}}')).duration(1940).EUt(480)
 
-  event.remove({ output: ie('wire_steel') })
   event.remove({ id: ie('metalpress/wire_steel') })
+  event.remove({ output: ie('wirecoil_steel') })
+  const spool = ks('hv_steel_coil_preform')
+  replace(spool, 'ie_steel_coil_preform', ['4x ' + gt('steel_single_wire'), '2x ' + winding,
+    '2x ' + stainless, precision, '2x ' + seal], 980, 384, lubricant, 700)
   event.custom({
     type: ie('metal_press'), energy: 19200, mold: ie('mold_wire'),
-    input: { item: gt('steel_single_wire') }, result: { item: ie('wire_steel') }
-  }).id(prefix + 'press_ie_steel_wire')
-  replace(ie('wirecoil_steel'), 'ie_steel_wirecoil', ['4x ' + ie('wire_steel'), '2x ' + winding,
-    '2x ' + stainless, precision, '2x ' + seal], 980, 384, lubricant, 700, 2)
-  replace(ie('connector_hv'), 'ie_hv_connector', ['2x ' + ie('connector_mv'), '2x ' + ie('wire_steel'),
+    input: { item: spool }, result: { item: ie('wirecoil_steel'), count: 2 }
+  }).id(prefix + 'press_ie_steel_coil')
+  replace(ie('connector_hv'), 'ie_hv_connector', ['2x ' + ie('connector_mv'), '2x ' + gt('steel_single_wire'),
     '2x ' + ks('ceramic_hv_substrate'), '2x ' + contact, shield, reinforcedTube], 1040, 384, solder, 720, 2)
   replace(ie('connector_hv_relay'), 'ie_hv_relay', ['2x ' + ie('connector_hv'), ie('wirecoil_steel'), shield,
     '2x ' + stainless, control, '2x ' + seal], 1120, 384, solder, 800, 2)

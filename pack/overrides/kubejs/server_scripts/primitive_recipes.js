@@ -33,12 +33,6 @@ ServerEvents.recipes(event => {
   for (const id of replaced) {
     event.remove({ output: 'minecraft:' + id })
   }
-  for (const id of ['minecraft:copper_ingot', 'minecraft:iron_ingot', 'minecraft:gold_ingot', 'gtceu:tin_ingot', 'gtceu:bronze_ingot']) {
-    for (const type of ['minecraft:smelting', 'minecraft:blasting']) {
-      event.remove({ type: type, output: id })
-    }
-  }
-
   function shaped(id, output, pattern, keys) {
     return event.shaped(output, pattern, keys).id('zero_shift:' + id)
   }

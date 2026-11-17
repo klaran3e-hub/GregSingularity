@@ -51,7 +51,7 @@ ServerEvents.recipes(event => {
 
   machine('assembler', 'pack_resist_ampoule', [
     ks('sample_ampoule'), '2x ' + ks('paraffin_cake'), ks('chorus_dielectric_film'),
-    '2x ' + platinum, gasket, ie('wire_electrum')
+    '2x ' + platinum, gasket, gt('electrum_single_wire')
   ], ks('iv_photoresist_ampoule'), 1320, 1536).inputFluids(Fluid.of(gt('distilled_water'), 600))
   event.recipes.gtceu.chemical_reactor(prefix + 'prepare_photoresist')
     .itemInputs(ks('iv_photoresist_ampoule')).inputFluids(Fluid.of(gt('naphtha'), 750))

@@ -64,22 +64,31 @@ export default function drawWorkshop({ item, poly, rect, ellipse, line, px }) {
     for (const [x, y] of spill) px(x,y,base)
   }
 
-  function oreRock(x, y, size, host, seam, glint) {
-    const scale = size / 14
-    const face = (points, fill, outline = null) => poly(points.map(([u, v]) => [
-      Math.round(x + u * scale), Math.round(y + v * scale)
-    ]), fill, outline)
-    face([[0,8],[4,3],[10,0],[13,4],[14,9],[11,13],[5,14],[2,12]], host, 'edge')
-    face([[1,8],[5,4],[9,2],[7,7],[4,8],[3,11]], seam)
-    face([[6,11],[9,8],[12,7],[13,9],[10,12]], '#30353b')
-    face([[4,8],[7,5],[8,5],[6,9],[5,11],[4,10]], glint)
-  }
-
-  function rawOre(host, seam, glint) {
-    oreRock(9,4,17,host,seam,glint)
-    oreRock(3,14,12,host,seam,glint)
-    oreRock(15,17,11,host,seam,glint)
-    oreRock(24,21,5,host,seam,glint)
+  function rawOre(shadow, vein, glint) {
+    const colors = { e: '#28262b', d: '#3c3d43', f: '#575b63', h: '#979ca6', s: shadow, v: vein, m: glint }
+    const cells = [
+      '................',
+      '.......ee.......',
+      '......ehe.......',
+      '....ehfdm.......',
+      '...ehffdde......',
+      '..ehfddddee.....',
+      '..efffmvdeehee..',
+      '..dddvddeehfde..',
+      '..dvddeeeffmvs..',
+      '..edfdeefdddde..',
+      '...efeeedvedee..',
+      '....eeeeddeee...',
+      '........ehmde...',
+      '.........dd.....',
+      '.........ee.....',
+      '................'
+    ]
+    cells.forEach((row, y) => {
+      Array.from(row).forEach((cell, x) => {
+        if (cell !== '.') rect(x * 2, y * 2, 2, 2, colors[cell])
+      })
+    })
   }
 
   function concentrate(base, glint, dark) {
@@ -301,7 +310,7 @@ export default function drawWorkshop({ item, poly, rect, ellipse, line, px }) {
     rect(10,8,18,2,'steel')
   })
 
-  item('copper_grit', () => rawOre('#626153','#a66548','#e4a678'))
+  item('copper_grit', () => rawOre('#8e5139', '#bd7151', '#edaa83'))
   item('washed_copper_grit', () => concentrate('#a35d38','#d58f5e','#694939'))
   item('copper_charge', () => crucible(clayBody,clayLip,clayDark,['#9a593c','#ed9d6c']))
 
@@ -315,7 +324,7 @@ export default function drawWorkshop({ item, poly, rect, ellipse, line, px }) {
     px(23,12,'white')
   })
 
-  item('iron_grit', () => rawOre('#5c6265','#8d533f','#c48968'))
+  item('iron_grit', () => rawOre('#724b43', '#a87563', '#d6ac96'))
   item('washed_iron_grit', () => concentrate('#796e60','#b7a18e','#514a47'))
   item('iron_charge', () => crucible(clayBody,clayLip,clayDark,['#5c6062','#b5a69a']))
 
@@ -355,10 +364,10 @@ export default function drawWorkshop({ item, poly, rect, ellipse, line, px }) {
     px(19,15,'steel')
   })
 
-  item('tin_grit', () => rawOre('#656971','#a2a6a7','#dddcd1'))
+  item('tin_grit', () => rawOre('#555e69', '#98a7b5', '#d9e4e7'))
   item('washed_tin_grit', () => concentrate('#a9aba8','#e0dfd5','#686d6b'))
   item('tin_charge', () => crucible(clayBody,clayLip,clayDark,['#a8adae','#eaebdd']))
-  item('gold_grit', () => rawOre('#625d60','#a77f42','#f1d181'))
+  item('gold_grit', () => rawOre('#86602c', '#c69a4c', '#ffe09a'))
   item('washed_gold_grit', () => concentrate('#b8904f','#efcf7a','#79613d'))
   item('gold_charge', () => crucible(clayBody,clayLip,clayDark,['#ad8240','#f9dc88']))
   item('bronze_charge', () => crucible(clayBody,clayLip,clayDark,['#88573d','#d19670','#9ca8aa']))

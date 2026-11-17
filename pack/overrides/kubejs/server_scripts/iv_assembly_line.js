@@ -39,7 +39,7 @@ ServerEvents.recipes(event => {
   ], '4x ' + gt('assembly_line_grating'), 1840, 6144)
   install('laminated_glass', [
     '4x ' + gt('cleanroom_glass'), '2x ' + ks('iv_cable_jacket'), '2x ' + ks('me_optical_link'),
-    '2x ' + ks('vacuum_gasket'), '2x ' + pnc('pressure_chamber_glass'), ie('wire_electrum')
+    '2x ' + ks('vacuum_gasket'), '2x ' + pnc('pressure_chamber_glass'), gt('electrum_single_wire')
   ], '4x ' + gt('laminated_glass'), 1780, 6144)
   install('control_casing', [
     gt('iv_hermetic_casing'), '2x ' + switchStack, regulator, circuit, '2x ' + plate, '2x ' + arc,
@@ -51,7 +51,7 @@ ServerEvents.recipes(event => {
   ], '2x ' + gt('assembly_line_unit'), 2560, 6656)
   install('data_stick', [
     '2x ' + ks('iv_clean_die'), '2x ' + ks('me_memory_foil'), ks('iv_cable_jacket'),
-    '2x ' + gt('platinum_plate'), circuit, ie('wire_electrum'), pnc('pressure_gauge_module')
+    '2x ' + gt('platinum_plate'), circuit, gt('electrum_single_wire'), pnc('pressure_gauge_module')
   ], '2x ' + stick, 1980, 6144)
   install('basic_data_access_hatch', [
     gt('ev_input_bus'), gt('iv_machine_hull'), '2x ' + stick, '2x ' + backplane,

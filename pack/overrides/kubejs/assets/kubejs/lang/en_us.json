@@ -1,4 +1,10 @@
 {
+  "item.kubejs.copper_pickaxe": "Copper Pickaxe",
+  "item.kubejs.copper_axe": "Copper Axe",
+  "item.kubejs.copper_sword": "Copper Sword",
+  "item.kubejs.copper_hoe": "Copper Hoe",
+  "item.kubejs.copper_shovel": "Copper Shovel",
+  "item.kubejs.copper_mining_hammer": "Copper Mining Hammer",
   "item.kubejs.flint_shard": "Knapped Flint",
   "item.kubejs.plant_fibre": "Raw Plant Fibre",
   "item.kubejs.washed_fibre": "Washed Fibre",
@@ -133,6 +139,7 @@
   "item.kubejs.sealed_hv_module": "Sealed HV Module",
   "item.kubejs.gold_conductor_blank": "Gold Conductor Blank",
   "item.kubejs.hv_winding_pack": "HV Winding Pack",
+  "item.kubejs.hv_steel_coil_preform": "HV Steel Coil Preform",
   "item.kubejs.hv_arc_shield": "HV Arc Shield",
   "item.kubejs.hv_switch_contact": "Machined HV Contact",
   "item.kubejs.hv_trial_charge": "HV Trial Charge",

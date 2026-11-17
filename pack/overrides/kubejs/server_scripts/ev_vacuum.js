@@ -114,7 +114,7 @@ ServerEvents.recipes(event => {
 
   compact('clean_panel_blank', [
     tile, tile, gt('polyethylene_plate'), gt('polyethylene_plate'), stainless, stainless, gasket,
-    ks('pressed_insulation'), ie('wire_electrum')
+    ks('pressed_insulation'), gt('electrum_single_wire')
   ], ks('clean_panel_blank'), 2, shieldGas, 180)
   machine('electric_blast_furnace', 'fire_clean_panel', [ks('clean_panel_blank')], ks('hot_clean_panel'),
     680, 480).blastFurnaceTemp(2480).inputFluids(Fluid.of(shieldGas, 200))
@@ -140,7 +140,7 @@ ServerEvents.recipes(event => {
   ], ks('laser_mask'), 640)
   assemble('vacuum_wafer_preform', [
     panel, ks('ceramic_hv_substrate'), '2x ' + ks('chorus_dielectric_film'), gt('phenolic_printed_circuit_board'),
-    '2x ' + ks('copper_contact_strip'), ie('wire_electrum'), gasket
+    '2x ' + ks('copper_contact_strip'), gt('electrum_single_wire'), gasket
   ], ks('vacuum_wafer_preform'), 1080).inputFluids(Fluid.of(lubricant, 400))
   vacuum('condition_wafer', ks('vacuum_wafer_preform'), ks('conditioned_wafer'), 620)
   machine('laser_engraver', 'etch_cleanroom_wafer', [ks('conditioned_wafer'), ks('laser_mask')],

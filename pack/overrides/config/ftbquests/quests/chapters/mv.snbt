@@ -5055,7 +5055,7 @@
       tasks: [{
         id: "4D88D9B25177F014"
         type: "item"
-        item: "immersiveengineering:wire_electrum"
+        item: "gtceu:electrum_single_wire"
         count: 8L
       }]
       rewards: [{
