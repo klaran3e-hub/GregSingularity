@@ -222,9 +222,18 @@ ServerEvents.recipes(event => {
     '2x ' + a('fluix_smart_dense_cable'), gt('ev_machine_casing'), seal], 1920, 1600)
   build('quantum_link', ['2x ' + link, a('quantum_ring'), '2x ' + gt('micro_processor_computer'),
     a('dense_energy_cell'), ks('ev_calibrated_wafer')], 1920, 1760)
+  const capsule = ks('singularity_pair_capsule')
+  const entangled = a('quantum_entangled_singularity')
   machine('mixer', 'entangle_singularity', [a('singularity'), a('ender_dust'), '2x ' + link,
-    ks('ev_calibrated_wafer')], '2x ' + a('quantum_entangled_singularity'), 1560, 1920)
+    ks('ev_calibrated_wafer')], capsule, 1560, 1920)
     .inputFluids(Fluid.of(ks('vacuum_shield_gas'), 800))
+  // AE2 assigns one fresh frequency to both items when its transform recipe completes.
+  event.custom({ type: 'ae2:transform', circumstance: { type: 'fluid', tag: 'minecraft:water' },
+    ingredients: [{ item: capsule }], result: { item: entangled, count: 2 }
+  }).id(prefix + 'link_singularity_pair')
+  // Previously the mixer returned two plain AE2 items. A bound item carries a frequency tag.
+  const unbound = { type: 'forge:nbt', item: entangled }
+  event.shapeless(capsule, [unbound, unbound]).id(prefix + 'recover_unbound_singularities')
 
   let spatialBase = a('cell_component_64k')
   ;['2', '16', '128'].forEach(size => {

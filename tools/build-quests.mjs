@@ -36,7 +36,12 @@ const researchTag = researchId => ({
   assembly_line_research: { research_id: researchId, research_type: 'gtceu:assembly_line' }
 })
 const taskTags = {
+  hv_shop_steel_rotor: { 'GT.PartStats': { Material: 'gtceu:steel' } },
   luv_turbine_rotor: { 'GT.PartStats': { Material: 'gtceu:rhodium_plated_palladium' } },
+  late_turbine_rotor_replacement: { 'GT.PartStats': { Material: 'gtceu:rhodium_plated_palladium' } },
+  post_uv_archive_record: researchTag('1x_kubejs_post_uv_supply_sync_record'),
+  reclaim_line_research: researchTag('1x_kubejs_reclaim_loop_witness'),
+  distribution_research: researchTag('1x_kubejs_distribution_load_fingerprint'),
   zpm_hpca_32: researchTag('1x_kubejs_zpm_irradiated_cask'),
   final_report_research: researchTag('1x_kubejs_final_test_load')
 }
@@ -665,7 +670,7 @@ chapter('me_automation', 'HV–EV. Автосборка ME', me('pattern_provide
   ['me_ingredient_buffer', 'Буфер предметов и жидкостей', 'expatternprovider:ingredient_buffer', 1, ['me_recipe_return', 'me_optical_link', 'ev_foundry_accepted'], 'Поставь поставщик шаблонов вплотную к буферу ExtendedAE. Выводы направь к входам станков с фильтрами по каждому виду сырья. На новом маршруте сначала выполни один заказ.'],
   ['me_line_distribution', 'Раздельные входы сборочной линии', gt('ulv_input_bus'), 8, ['me_ingredient_buffer', 'iv_line_controller'], 'Поставь предметные шины по порядку рецепта от контроллера. Из буфера отправляй в каждую шину один нужный предмет и в каждый жидкостный люк одну жидкость. Исследовательский носитель оставь в люке данных.'],
   ['me_pnc_process', 'Подача на термопневматическую установку', 'pneumaticcraft:thermopneumatic_processing_plant', 1, ['me_recipe_return', 'activated_carrier'], 'Подай катализатор и нафту одним шаблоном. На установке выдержи давление и температуру из JEI. Верни активированный носитель и этилен в сеть через выходные стороны.'],
-  ['me_refinery_catalyst', 'Подача жидкостей на НПЗ', 'immersiveengineering:refinery', 1, ['me_recipe_return', 'process_commissioning'], 'Установи многоразовый носитель в НПЗ через его меню. В шаблон внеси только расходуемые жидкости. Подключи поставщик к одному из жидкостных входов и шину импорта к выходу дизеля.'],
+  ['me_refinery_catalyst', 'Сборка НПЗ для сети ME', 'immersiveengineering:refinery', 1, ['me_recipe_return', 'process_commissioning'], 'Собери НПЗ по чертежу из справочника инженера и сформируй его молотом. Вставь многоразовый носитель через меню установки. Подведи поставщик шаблонов к жидкостному входу и шину импорта к выходу дизеля.'],
   ['me_accel', 'Параллельная сборка', me('crafting_accelerator'), 1, ['me_cpu_storage', 'me_eng'], 'Поставь сопроцессор рядом с вычислительной секцией. Для нескольких шагов подготовь отдельные машины.'],
   ['me_16k', 'Память хранения 16k', me('item_storage_cell_16k'), 1, ['me_4k', 'me_pattern_laminate'], 'Три компонента 4k и два инженерных процессора проходят ещё одну сборку на HV.'],
   ['me_wireless', 'Терминал без кабеля', me('wireless_terminal'), 1, ['me_interface', 'me_pattern_laminate'], 'Собери приёмник из жемчуга, оптики и эмиттера. Для связи нужна отдельная точка доступа.'],
@@ -673,7 +678,7 @@ chapter('me_automation', 'HV–EV. Автосборка ME', me('pattern_provide
   ['me_optical_link', 'Сборка оптического узла', ks('me_optical_link'), 2, ['me_pattern_laminate', 'ev_circuit_assembler', 'vacuum_titanium_plate', 'cleanroom_controller'], 'Сборщик схем EV соединяет подложки и волокно в чистой комнате. Титан и процессор EV входят в каждый узел.'],
   ['me_64k', 'Память хранения 64k', me('item_storage_cell_64k'), 1, ['me_optical_link', 'me_16k', 'ev_assembler'], 'На компонент уходят три предыдущих модуля, инженерные процессоры и два оптических узла.'],
   ['me_256k', 'Серийная память 256k', me('item_storage_cell_256k'), 1, ['me_64k', 'ev_wafer_acceptance'], 'Компонент 256k требует три компонента 64k, схемы EV и калиброванные подложки.'],
-  ['me_quantum', 'Квантовый мост EV', me('quantum_link'), 2, ['me_p2p', 'me_optical_link', 'ev_wafer_acceptance'], 'На мосты уйдут два готовых кольца и оптика. Пару сингулярностей свяжи в смесителе EV под защитным газом.', true],
+  ['me_quantum', 'Квантовый мост EV', me('quantum_link'), 2, ['me_p2p', 'me_optical_link', 'ev_wafer_acceptance'], 'Изготовь контейнер пары в смесителе EV под защитным газом и брось его в источник воды. Вставь по одной сингулярности из полученной пары в камеры двух запитанных колец. Две старые сингулярности без частоты можно упаковать в контейнер в сетке крафта.', true],
   ['me_spatial', 'Пространственный порт', me('spatial_io_port'), 1, ['me_64k', 'ev_foundry_accepted'], 'Пересобери порт ввода-вывода на раме EV. Добавь оптику, манипуляторы и протокол. Пилоны и ячейки собираются отдельно.', true]
 ])
 
@@ -978,7 +983,7 @@ chapter('zpm_fusion', 'XXX. Термоядерное кольцо Mk II', gt('zp
 
 chapter('zpm_commissioning', 'XXXI. Приёмка сети ZPM', ks('zpm_commissioning_report'), [
   ['zpm_freight_link', 'Квантовые узлы для двух маршрутов', me('quantum_link'), 2, ['me_quantum', 'zpm_end_heavy_concentrate', 'zpm_nether_isotope_salt'], 'Подготовь компоненты AE2 для проверки грузов. Для автоматической доставки собери квантовые мосты по обе стороны маршрута, запитай их и оставь загруженными нужные чанки.'],
-  ['zpm_freight_buffer', 'Жидкостный резерв приёмного цеха', gt('zpm_quantum_tank'), 1, ['zpm_assembler', 'zpm_freight_link', 'luv_bulk_tank'], 'Квантовый танк принимает жидкость после выгрузки в цехе. Для твёрдого груза можно поставить отдельный сундук и фильтровать партии шиной ME.', true],
+  ['zpm_freight_buffer', 'Жидкостный резерв приёмного цеха', gt('zpm_quantum_tank'), 1, ['zpm_assembler', 'zpm_freight_link', 'luv_bulk_tank'], 'Изготовь квантовый жидкостный резервуар ZPM на большой сборочной фабрике GregTech. На этой же фабрике можно собрать квантовый сундук. Подведи питание ZPM. При ручной подаче выдели десять предметных слотов и отдельный жидкостный люк. Четыре ячейки ME занимают по одному слоту. Для заказа из сети установи ME Pattern Buffer в стенку фабрики.', true],
   ['zpm_freight_certificate', 'Сверка образцов из трёх миров', ks('zpm_freight_certificate'), 1, ['zpm_freight_link', 'zpm_phase_module', 'zpm_americium_coupon'], 'В обычном мире сдай по 12 образцов из Энда и Нижнего мира, четыре охлаждённые пластины, две тары и узлы AE2. Груз можно привезти вручную, через мосты или подать со склада по трубам.'],
   ['zpm_bulk_centrifuge', 'Центрифуга для выемки образцов', gt('zpm_centrifuge'), 1, ['zpm_assembler', 'zpm_motor', 'zpm_upshift'], 'Выдели отдельный станок для поточного производства. Подключи сортировку на выдаче для горячих образцов и пустых контейнеров.'],
   ['zpm_wetware', 'Сборка Wetware ZPM', gt('wetware_processor_assembly'), 4, ['zpm_americium_coupon', 'zpm_power_1a', 'luv_wetware', 'luv_me_crafting'], 'Собери два комплекта на линии ZPM при 98304 EU/t. Добавь Wetware, охлаждённые образцы, фазовые модули и память 256k. Подай защитный газ и смазку.'],
@@ -1033,7 +1038,7 @@ chapter('uv_factory', 'XXXIV. Сборочные цеха UV', gt('uv_assembler'
   ['uv_assembler', 'Первый сборщик UV', gt('uv_assembler'), 1, ['uv_hull', 'uv_robot', 'uv_conveyor', 'uv_energy_input', 'hv_create_arm'], 'Подай два сборщика ZPM, корпус, манипуляторы, конвейеры, фазу, Wetware и две руки Create. Для сборки подай 7600 мБ смазки при 126976 EU/t.'],
   ['uv_bender', 'Прокат для нейтрония', gt('uv_bender'), 1, ['uv_assembler', 'uv_piston', 'uv_cuprate_cable'], 'Поставь отдельный прокат UV и оставь слот для контрольного узла сети. Он понадобится как несгораемая оснастка при прокате нейтрониевых листов.'],
   ['uv_lapotronic_battery', 'Резервные батареи UV', gt('uv_lapotronic_battery'), 4, ['uv_assembler', 'uv_pulse_reserve', 'uv_voltage_coil', 'zpm_battery'], 'Собери корпуса и обнови батареи ZPM. Четыре готовые батареи отложи для итоговой приёмки. Отдельную партию используй в энергетическом буфере.'],
-  ['uv_quantum_tank', 'Квантовый жидкостный склад UV', gt('uv_quantum_tank'), 1, ['uv_assembler', 'uv_pump', 'zpm_freight_buffer', 'uv_wetware'], 'Поставь квантовый танк на одной из линий подачи, если нужен объём под длительные серии. Для разных жидкостей используй раздельные резервуары.', true]
+  ['uv_quantum_tank', 'Квантовый жидкостный склад UV', gt('uv_quantum_tank'), 1, ['uv_assembler', 'uv_pump', 'zpm_freight_buffer', 'uv_wetware'], 'Собери квантовый жидкостный резервуар UV на большой сборочной фабрике GregTech. На этой же фабрике можно собрать квантовый сундук. Подведи питание UV. При ручной подаче выдели двенадцать предметных слотов и отдельный жидкостный люк. Шесть ячеек ME занимают по одному слоту. Для заказа из сети установи ME Pattern Buffer в стенку фабрики.', true]
 ])
 
 chapter('uv_fusion', 'XXXV. Термоядерное кольцо Mk III', gt('uv_fusion_reactor'), [
@@ -1270,7 +1275,12 @@ function checkDependencies(key, trail = new Set()) {
   trail.delete(key)
   visited.add(key)
 }
+checkDependencies('final_commissioning_report')
+const requiredForFinal = new Set(visited)
 for (const key of quests.keys()) checkDependencies(key)
+for (const key of Object.keys(taskTags)) {
+  if (!quests.has(key)) throw new Error('Unknown NBT task ' + key)
+}
 
 const q = JSON.stringify
 const check = process.argv.includes('--check')
@@ -1365,14 +1375,16 @@ for (const { key, title, icon, sections, milestone, order, group } of orderedCha
       '      x: ' + decimal(x), '      y: ' + decimal(y), '      shape: ' + q(shape), '      size: ' + decimal(size)
     )
     if (deps.length) lines.push('      dependencies: ' + q(deps.map(dep => quests.get(dep).id)))
-    if (optional) lines.push('      optional: true')
-    lines.push('      tasks: [{', '        id: ' + q(task), '        type: "item"')
+    if (optional && !requiredForFinal.has(questKey)) lines.push('      optional: true')
+    lines.push('      tasks: [{', '        id: ' + q(task))
     const tag = itemTag ?? taskTags[questKey]
-    if (tag) {
-      lines.push('        item: { id: ' + q(item) + ', Count: 1b, tag: ' + q(tag) + ' }',
+    if (questKey === 'me_refinery_catalyst') {
+      lines.push('        type: "advancement"', '        advancement: "immersiveengineering:multiblocks/mb_refinery"')
+    } else if (tag) {
+      lines.push('        type: "item"', '        item: { id: ' + q(item) + ', Count: 1b, tag: ' + q(tag) + ' }',
         '        match_nbt: true', '        weak_nbt_match: true')
     } else {
-      lines.push('        item: ' + q(item))
+      lines.push('        type: "item"', '        item: ' + q(item))
     }
     if (count > 1) lines.push('        count: ' + count + 'L')
     lines.push(

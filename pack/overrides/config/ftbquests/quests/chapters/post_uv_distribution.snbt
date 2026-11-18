@@ -513,7 +513,9 @@
       tasks: [{
         id: "4AB90ACF81A2B96B"
         type: "item"
-        item: "gtceu:data_orb"
+        item: { id: "gtceu:data_orb", Count: 1b, tag: {"assembly_line_research":{"research_id":"1x_kubejs_distribution_load_fingerprint","research_type":"gtceu:assembly_line"}} }
+        match_nbt: true
+        weak_nbt_match: true
       }]
       rewards: [{
         id: "4B6803A0A3F60C5E"

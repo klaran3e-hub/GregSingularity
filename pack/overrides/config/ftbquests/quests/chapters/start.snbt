@@ -2635,7 +2635,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4CA8AC099D33AB3B","491D5107B7A6FFCD","41ECB50771568041"]
-      optional: true
       tasks: [{
         id: "4ECD39AF758EC5A9"
         type: "item"
@@ -2658,7 +2657,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4E16BF50A9F55410","45255327AE91F770","48DC1F680E7618FA","43844A5B69EF8D6D"]
-      optional: true
       tasks: [{
         id: "4E7199E85C2D2C72"
         type: "item"
@@ -3378,7 +3376,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["466EAC305CCCFB8C","4FC4C7F5CC813B3A","4950A05DC49E2608"]
-      optional: true
       tasks: [{
         id: "437DB084C08B6644"
         type: "item"

@@ -129,12 +129,27 @@ ServerEvents.recipes(event => {
     event.remove({ output: planks })
     woodRecipes(wood, planks, logs)
   })
+  function fitSlab(planks, slab, stockId) {
+    event.remove({ id: stockId })
+    event.shaped(slab, ['PPP', ' J '], { P: planks, J: 'kubejs:wooden_peg' }).id(stockId)
+  }
   event.remove({ output: 'gtceu:rubber_planks' })
   woodRecipes('rubber', 'gtceu:rubber_planks', '#gtceu:rubber_logs')
-  if (Item.exists('upgrade_aquatic:driftwood_planks')) {
-    event.remove({ output: 'upgrade_aquatic:driftwood_planks' })
-    woodRecipes('driftwood', 'upgrade_aquatic:driftwood_planks', '#upgrade_aquatic:driftwood_logs')
-  }
+  fitSlab('gtceu:rubber_planks', 'gtceu:rubber_slab', 'gtceu:shaped/rubber_slab')
+  fitSlab('gtceu:treated_wood_planks', 'gtceu:treated_wood_slab', 'gtceu:shaped/treated_slab')
+  ;['horizontal', 'vertical', 'packaged'].forEach(grain => {
+    const plank = 'treated_wood_' + grain
+    fitSlab('immersiveengineering:' + plank, 'immersiveengineering:slab_' + plank,
+      'immersiveengineering:crafting/' + plank + '_to_slab')
+  })
+  ;['driftwood', 'river'].forEach(wood => {
+    const planks = 'upgrade_aquatic:' + wood + '_planks'
+    if (!Item.exists(planks)) return
+    const slab = 'upgrade_aquatic:' + wood + '_slab'
+    event.remove({ output: planks })
+    woodRecipes(wood, planks, '#upgrade_aquatic:' + wood + '_logs')
+    fitSlab(planks, slab, slab)
+  })
   const forestryWood = [
     'acacia_desert', 'balsa', 'baobab', 'beech', 'chestnut', 'citrus', 'cocobolo', 'coconut',
     'dogwood', 'ebony', 'elm', 'feijoa', 'fir', 'giganteum', 'ginkgo', 'greenheart',
@@ -143,16 +158,22 @@ ServerEvents.recipes(event => {
     'pear', 'pewen', 'pine', 'plum', 'poplar', 'sequoia', 'teak', 'walnut',
     'wenge', 'willow', 'zebrawood'
   ]
+  // Create generates extra six-board recipes for both normal and fireproof Forestry logs.
+  event.remove({ id: /^create:cutting\/runtime_generated\/compat\/(?:create\/tag_runtime_generated\/compat\/)?forestry\/[^/]+_to_[a-z_]+_planks$/ })
   forestryWood.forEach(wood => {
     const planks = 'forestry:' + wood + '_planks'
     event.remove({ id: planks })
     woodRecipes('forestry_' + wood, planks, '#forestry:' + wood + '_logs')
+    const slab = 'forestry:' + wood + '_slab'
+    fitSlab(planks, slab, slab)
   })
   const fireproofVanillaWood = ['acacia', 'birch', 'cherry', 'dark_oak', 'jungle', 'oak', 'spruce']
   forestryWood.concat(fireproofVanillaWood).forEach(wood => {
     const planks = 'forestry:' + wood + '_fireproof_planks'
     event.remove({ id: planks })
     woodRecipes('forestry_fireproof_' + wood, planks, '#forestry:fireproof_' + wood + '_logs')
+    const slab = 'forestry:' + wood + '_fireproof_slab'
+    fitSlab(planks, slab, slab)
   })
   shapeless('split_sticks', '2x minecraft:stick', ['#minecraft:planks', knife]).damageIngredient(knife)
   shaped('chest', 'minecraft:chest', ['PPP', 'BHB', 'PPP'], {

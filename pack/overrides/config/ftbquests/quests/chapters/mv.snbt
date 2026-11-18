@@ -879,7 +879,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["488B9F155DA6DC27","4FD53B755911773D","4430AD5B6F8B697E"]
-      optional: true
       tasks: [{
         id: "4483FF4274FCB039"
         type: "item"
@@ -901,7 +900,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["43E99344CDC6D2E3","4B25113973047C11","4B3DB6ABF2594A7E"]
-      optional: true
       tasks: [{
         id: "4BB1BFCE67DC65E7"
         type: "item"
@@ -923,7 +921,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["43E99344CDC6D2E3","48BE6C82182A13BD"]
-      optional: true
       tasks: [{
         id: "4260EE70B539EC4A"
         type: "item"
@@ -945,7 +942,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4AD25FD6425ABA8E","4B25113973047C11","474A8230F5DCBD20","4DC4705F5B9C749D"]
-      optional: true
       tasks: [{
         id: "480C951B0F29C90D"
         type: "item"
@@ -1033,7 +1029,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["481EFC0EEFC2DEF6","46D2E30F8E3FCBF8","4303A0AC3F43FE45"]
-      optional: true
       tasks: [{
         id: "4081A89E0BB25F2F"
         type: "item"
@@ -1414,7 +1409,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["481EFC0EEFC2DEF6","45EADC6EDC7CA91F","42F96AB63F8EABA4"]
-      optional: true
       tasks: [{
         id: "440243C8218825FB"
         type: "item"
@@ -1480,7 +1474,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["420C865AFE04FB9E","4303A0AC3F43FE45","43E99344CDC6D2E3","4FD53B755911773D"]
-      optional: true
       tasks: [{
         id: "4BAD197A1E37F6EE"
         type: "item"
@@ -1891,7 +1884,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["41A5C2604C172D00","4BD0089A872EF36A","401C26D7638E14EC"]
-      optional: true
       tasks: [{
         id: "4D98A07BD9263A5F"
         type: "item"
@@ -1913,7 +1905,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["44539B688C2EE6EC","4427DA1CF541EA57"]
-      optional: true
       tasks: [{
         id: "4EA35F4EB2EAB777"
         type: "item"
@@ -2710,7 +2701,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["40E8A71E8042D10C","40D37A56052D2DB0"]
-      optional: true
       tasks: [{
         id: "459BC2AD85D02FFD"
         type: "item"
@@ -2819,7 +2809,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["40E8A71E8042D10C","4B05471AEE277D36","4B25113973047C11"]
-      optional: true
       tasks: [{
         id: "4D92CA3EC09637CC"
         type: "item"
@@ -3226,7 +3215,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4B05471AEE277D36","4C0DEEC0A157787B"]
-      optional: true
       tasks: [{
         id: "4525FA82F782387A"
         type: "item"
@@ -3249,7 +3237,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4CD83BC8D656543B","40E8A71E8042D10C"]
-      optional: true
       tasks: [{
         id: "4223D4C1744E64B7"
         type: "item"
@@ -3604,7 +3591,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["481EFC0EEFC2DEF6","4F11DE4DB0D705CF","40E8A71E8042D10C"]
-      optional: true
       tasks: [{
         id: "40D18092CDB0E878"
         type: "item"
@@ -4559,7 +4545,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["49CE3A195951A7A9","401C26D7638E14EC"]
-      optional: true
       tasks: [{
         id: "47F70EF3B015AF3A"
         type: "item"
@@ -5139,7 +5124,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4CCFB8C93642F18B","4CA89D8BECA8F870"]
-      optional: true
       tasks: [{
         id: "4E3EA00B29944EA0"
         type: "item"
@@ -5206,7 +5190,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["474A8230F5DCBD20","481EFC0EEFC2DEF6","4799482036E52418"]
-      optional: true
       tasks: [{
         id: "4549E177F3FA8C52"
         type: "item"
@@ -5229,7 +5212,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["48CA1AEE96E14DB0","4D079EB28CD0E265","454ABBCF196FE956"]
-      optional: true
       tasks: [{
         id: "484C7ABD6512665B"
         type: "item"
@@ -5274,7 +5256,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4D3C888709F52562","42D7C12B6E61BDD5","44EEBE34118CD1C4"]
-      optional: true
       tasks: [{
         id: "45C828B6875C1EA3"
         type: "item"

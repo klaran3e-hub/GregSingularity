@@ -538,7 +538,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["42E99CE4711A8261","42DCC7F618DACF0C","42AC3B3C9EE4DF2E"]
-      optional: true
       tasks: [{
         id: "4859A2DBD4E1493D"
         type: "item"
@@ -987,7 +986,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["42E99CE4711A8261","4E5A6C2B09825088"]
-      optional: true
       tasks: [{
         id: "4CFBE995E144644E"
         type: "item"
@@ -1010,7 +1008,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4D97265BECC4C795"]
-      optional: true
       tasks: [{
         id: "4D0E5F0931B31D21"
         type: "item"
@@ -1268,7 +1265,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["42E99CE4711A8261","4672B5B9EEC5D34E","420C865AFE04FB9E"]
-      optional: true
       tasks: [{
         id: "451949D1EE37DE6B"
         type: "item"
@@ -1583,7 +1579,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["43F1AAE1CF9F4272","42E99CE4711A8261","49EB9F2234E10E7C"]
-      optional: true
       tasks: [{
         id: "46D3DF8AB97500AB"
         type: "item"
@@ -1606,7 +1601,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4E0089CF73130929","4672B5B9EEC5D34E"]
-      optional: true
       tasks: [{
         id: "431DD50DB5A34E4E"
         type: "item"
@@ -1629,7 +1623,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4E0089CF73130929","4E5A6C2B09825088","4CCFB8C93642F18B"]
-      optional: true
       tasks: [{
         id: "4C06662E094A0ABE"
         type: "item"
@@ -1652,7 +1645,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4E5DF5449DBC0F6E","48417196439C9B60"]
-      optional: true
       tasks: [{
         id: "49FDE2654DBACC0E"
         type: "item"
@@ -1675,7 +1667,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["48417196439C9B60","4EAAD77F978AA058","4CEBD3A7073E1660"]
-      optional: true
       tasks: [{
         id: "45A09CF3A781835F"
         type: "item"
@@ -1962,7 +1953,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["42E99CE4711A8261","42DCC7F618DACF0C","480624F6B1C193A1"]
-      optional: true
       tasks: [{
         id: "42D56413F9360E3F"
         type: "item"
@@ -2348,7 +2338,9 @@
       tasks: [{
         id: "43DA45961DD6A77D"
         type: "item"
-        item: "gtceu:turbine_rotor"
+        item: { id: "gtceu:turbine_rotor", Count: 1b, tag: {"GT.PartStats":{"Material":"gtceu:steel"}} }
+        match_nbt: true
+        weak_nbt_match: true
       }]
       rewards: [{
         id: "4D08B1B0253D556E"
@@ -2872,7 +2864,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4CA60CD39F173263","45FC710629F4CD87","41A5C2604C172D00"]
-      optional: true
       tasks: [{
         id: "4B42C51D272919CD"
         type: "item"
@@ -2895,7 +2886,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4D7DA36B68C2978A","42A8D706871E0A00"]
-      optional: true
       tasks: [{
         id: "4B3AB8DA88564931"
         type: "item"

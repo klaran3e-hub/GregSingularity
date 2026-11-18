@@ -26,7 +26,6 @@
       shape: "circle"
       size: 1.550d
       dependencies: ["44E5E24E52DC8208","4DD5BD0433FCD2A5","468D4C1249381858"]
-      optional: true
       tasks: [{
         id: "4F7412E898241A08"
         type: "item"
@@ -48,7 +47,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4CD088474AE49C19","47A521E814192495"]
-      optional: true
       tasks: [{
         id: "42E60629D88FA3B3"
         type: "item"
@@ -71,7 +69,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4FD71992F8C53B7D","4E25A659A8E18BF9","48F79DB5C825B40D"]
-      optional: true
       tasks: [{
         id: "4A8BC099A672333A"
         type: "item"
@@ -231,7 +228,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["406FCCBDC3668AE7","4E25A659A8E18BF9","4A969DC8CC61D772"]
-      optional: true
       tasks: [{
         id: "48A316B18BC5B63B"
         type: "item"
@@ -254,7 +250,6 @@
       shape: "circle"
       size: 1.550d
       dependencies: ["4C8D2891EB5DE413"]
-      optional: true
       tasks: [{
         id: "4D4B959C519F4F37"
         type: "item"
@@ -277,7 +272,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["44FCB127F66F0B21","4B9AC55A97FEBAF9"]
-      optional: true
       tasks: [{
         id: "489E593B56054A91"
         type: "item"

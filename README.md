@@ -1,10 +1,10 @@
-# GregTech: Industrial Brain Damage · v0.1.4
+# GT-IBD 0.1.3
 
 Minecraft 1.20.1 · Forge 47.4.28 · Java 17
 
-[Скачать v0.1.4](https://github.com/klaran3e-hub/gregtech-industrial-brain-damage/releases/tag/v0.1.4) · [CurseForge](https://www.curseforge.com/minecraft/modpacks/gregtech-industrial-brain-damage) · [Discord](https://discord.gg/PppDQ2ZE6P)
+[Скачать бету 0.1.3](https://github.com/klaran3e-hub/gregtech-industrial-brain-damage/releases/tag/v0.1.3) · [CurseForge](https://www.curseforge.com/minecraft/modpacks/gregtech-industrial-brain-damage) · [Discord](https://discord.gg/PppDQ2ZE6P)
 
-Для обновления сделай резервную копию мира, импортируй ZIP в новый профиль CurseForge и перенеси сохранение из папки `saves`.
+Для обновления сделай резервную копию мира, импортируй ZIP в новый профиль CurseForge и перенеси сохранение из папки `saves`. На выделенном сервере исключи клиентский мод Oculus из папки `mods`.
 
 Первый титановый слиток получи через обогащение рутила, восстановление и вакуумное охлаждение. Три дополнительных рецепта домны используют готовый титановый слиток как сохраняемый образец. Горячие слитки GregTech затем охлаждаются в химическом реакторе EV с образцом, 1 000 мБ холодного теплоносителя и 150 мБ защитного газа. Реактор возвращает 1 000 мБ нагретого теплоносителя.
 

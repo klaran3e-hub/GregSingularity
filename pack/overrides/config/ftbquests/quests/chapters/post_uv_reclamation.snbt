@@ -331,7 +331,9 @@
       tasks: [{
         id: "43201BFFF87F7F3F"
         type: "item"
-        item: "gtceu:data_orb"
+        item: { id: "gtceu:data_orb", Count: 1b, tag: {"assembly_line_research":{"research_id":"1x_kubejs_reclaim_loop_witness","research_type":"gtceu:assembly_line"}} }
+        match_nbt: true
+        weak_nbt_match: true
       }]
       rewards: [{
         id: "4906E616719729A8"

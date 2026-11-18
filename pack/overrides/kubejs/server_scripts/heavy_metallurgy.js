@@ -10,7 +10,7 @@ ServerEvents.recipes(event => {
   const slag = ie('slag')
   const frame = ks('pressed_steel_frame')
   const lining = ks('furnace_lining_insert')
-  const hammer = ks('stone_hammer')
+  const hammer = gt('flint_hammer')
   const rivet = ks('iron_rivet')
   const lvCircuit = gt('basic_electronic_circuit')
   const pressBlank = ks('steel_press_blank')
@@ -252,17 +252,12 @@ ServerEvents.recipes(event => {
   createProcess('quench_aluminium', 'splashing', ks('hot_aluminium_billet'), [{ item: aluminium }], 200)
   metalPress('roll_aluminium_plate', aluminium, aluminiumPlate, 1)
 
-  // Preserve reversible storage and normalize existing inventories to GregTech materials.
+  // Legacy IE forms have their own conversions in canonical_resources.js.
   ;[['steel', steel], ['aluminium', aluminium]].forEach(([material, ingot]) => {
     const nugget = gt(material + '_nugget')
     const block = gt(material + '_block')
-    const old = material === 'aluminium' ? 'aluminum' : material
     shaped('recover_' + material + '_nuggets', ingot, ['NNN', 'NNN', 'NNN'], { N: nugget })
     event.shapeless('9x ' + ingot, [block]).id(prefix + 'recover_' + material + '_block')
-    event.shapeless(ingot, [ie('ingot_' + old)]).id(prefix + 'recover_ie_' + material + '_ingot')
-    event.shapeless(gt(material + '_plate'), [ie('plate_' + old)]).id(prefix + 'recover_ie_' + material + '_plate')
-    event.shapeless(nugget, [ie('nugget_' + old)]).id(prefix + 'recover_ie_' + material + '_nugget')
-    event.shapeless(block, [ie('storage_' + old)]).id(prefix + 'recover_ie_' + material + '_block')
   })
   shaped('pack_coke', gt('coke_block'), ['CCC', 'CCC', 'CCC'], { C: coke })
   event.shapeless('9x ' + coke, [gt('coke_block')]).id(prefix + 'recover_coke_block')

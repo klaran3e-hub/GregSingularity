@@ -2250,7 +2250,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["412E7A76D0F6B3EC","45857275C3DDD09C"]
-      optional: true
       tasks: [{
         id: "41ACB91E90F00EA8"
         type: "item"
@@ -2273,7 +2272,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["489FED56A4313E69","4B5DA84E3344B566"]
-      optional: true
       tasks: [{
         id: "4984F63230E7E8CC"
         type: "item"
@@ -3117,7 +3115,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4E55479770C889C2","4073F21350281B05","4CA6641D09704403"]
-      optional: true
       tasks: [{
         id: "4BE64E524CF3923A"
         type: "item"
@@ -3442,7 +3439,9 @@
       tasks: [{
         id: "46984A2B3A116624"
         type: "item"
-        item: "gtceu:turbine_rotor"
+        item: { id: "gtceu:turbine_rotor", Count: 1b, tag: {"GT.PartStats":{"Material":"gtceu:rhodium_plated_palladium"}} }
+        match_nbt: true
+        weak_nbt_match: true
         count: 2L
       }]
       rewards: [{
@@ -3595,7 +3594,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4E99E98E9C125AB8","4B985757DDF3C062","45857275C3DDD09C"]
-      optional: true
       tasks: [{
         id: "44A440EBAE23348D"
         type: "item"
@@ -3661,7 +3659,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4D2BCE8F7CCC56F2","4B985757DDF3C062","46C465AE419FC87E"]
-      optional: true
       tasks: [{
         id: "4470F444C7503C9C"
         type: "item"
@@ -3683,7 +3680,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4E60B42DFACBA34F","4174DF17DD9BC683"]
-      optional: true
       tasks: [{
         id: "469B490B72BE42E3"
         type: "item"
@@ -3837,7 +3833,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["45EB2D3D57030754","41024D5F387DD821","40F391F2CA5C40DC"]
-      optional: true
       tasks: [{
         id: "4ADA8CC054F7187F"
         type: "item"

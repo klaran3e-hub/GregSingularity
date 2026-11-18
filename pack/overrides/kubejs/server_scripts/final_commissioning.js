@@ -49,6 +49,10 @@
   const GTCapabilityHelper = Java.loadClass('com.gregtechceu.gtceu.api.capability.GTCapabilityHelper')
   const ItemHandlerHelper = Java.loadClass('net.minecraftforge.items.ItemHandlerHelper')
   const Direction = Java.loadClass('net.minecraft.core.Direction')
+  const Cable = Java.loadClass('com.gregtechceu.gtceu.common.blockentity.CableBlockEntity')
+  const LevelEnergyNet = Java.loadClass('com.gregtechceu.gtceu.common.pipelike.cable.LevelEnergyNet')
+  const Diode = Java.loadClass('com.gregtechceu.gtceu.common.machine.multiblock.part.DiodePartMachine')
+  const Transformer = Java.loadClass('com.gregtechceu.gtceu.common.machine.electric.TransformerMachine')
   const BlockPos = Java.loadClass('net.minecraft.core.BlockPos')
   const CompoundTag = Java.loadClass('net.minecraft.nbt.CompoundTag')
   const UUID = Java.loadClass('java.util.UUID')
@@ -161,6 +165,9 @@
   function machinesReady(site) {
     return production.every(role => !site[role].isAutoOutputItems())
   }
+  function emptyBatterySlots(site) {
+    return production.every(role => site[role].getChargerInventory().getStackInSlot(0).isEmpty())
+  }
   function clearWindows(state) {
     state.putInt('stable', 0)
     const phase = phases[state.getString('phase')]
@@ -182,6 +189,10 @@
   function arm(player, state, site) {
     if (!machinesReady(site)) {
       tell(player, 'Выключи автовывод предметов на трёх станках. Подключай импорт ME к бочкам под ними.')
+      return
+    }
+    if (!emptyBatterySlots(site)) {
+      tell(player, 'Убери аккумуляторы из трёх станков перед испытанием питания.')
       return
     }
     if (site.primary.isWorkingEnabled() || site.reserve.isWorkingEnabled() ||
@@ -352,6 +363,69 @@
   function archivesClear(site) {
     return production.every(role => emptyExports(site[role]))
   }
+  // Follow actual GT cable endpoints and sided EU capabilities back from each consumer.
+  // The two registered banks may share a bus. Their enable and current meters are checked separately.
+  function hasExclusiveFeed(site, selected) {
+    const level = selected.getLevel()
+    const networks = LevelEnergyNet.getOrCreate(level)
+    const selectedPos = selected.getPos()
+    const idlePos = (selected === site.primary ? site.reserve : site.primary).getPos()
+    return production.every(role => {
+      const consumers = [site[role].getPos()]
+      const visited = new Set()
+      const buses = new Set()
+      let supplied = false
+
+      function inspectOutput(pos, face) {
+        if (!level.hasChunkAt(pos)) return true
+        const output = GTCapabilityHelper.getEnergyContainer(level, pos, face)
+        if (output == null || !output.outputsEnergy(face)) return true
+        if (pos.equals(selectedPos)) {
+          supplied = true
+          return true
+        }
+        if (pos.equals(idlePos)) return true
+        const upstream = MetaMachine.getMachine(level, pos)
+        if (!(upstream instanceof Diode || upstream instanceof Transformer)) return false
+        consumers.push(pos)
+        return true
+      }
+
+      while (consumers.length) {
+        var consumer = consumers.pop()
+        var key = String(consumer)
+        if (visited.has(key)) continue
+        visited.add(key)
+        var faces = Direction.values()
+        for (var i = 0; i < faces.length; i++) {
+          var face = faces[i]
+          var input = GTCapabilityHelper.getEnergyContainer(level, consumer, face)
+          if (input == null || !input.inputsEnergy(face)) continue
+          var next = consumer.relative(face)
+          if (!level.hasChunkAt(next)) continue
+          var neighbor = level.getBlockEntity(next)
+          var back = face.getOpposite()
+          if (!(neighbor instanceof Cable)) {
+            if (neighbor != null && !inspectOutput(next, back)) return false
+            continue
+          }
+          if (!neighbor.isConnected(back)) continue
+          var net = networks.getNetFromPos(next)
+          if (net == null || !net.isValid()) return false
+          if (buses.has(net)) continue
+          buses.add(net)
+          var routes = net.getNetData(next)
+          if (routes == null) return false
+          for (var j = 0; j < routes.size(); j++) {
+            var route = routes.get(j)
+            var side = route.getTargetFacing()
+            if (!inspectOutput(route.getTargetPipePos().relative(side), side.getOpposite())) return false
+          }
+        }
+      }
+      return supplied
+    })
+  }
   function countSecond(player, state, phase, site) {
     var primary = site.primary.energyContainer
     var reserve = site.reserve.energyContainer
@@ -369,10 +443,14 @@
       valid = valid && site.primary.isWorkingEnabled() && !site.reserve.isWorkingEnabled() &&
         Number(reserve.getOutputPerSec()) === 0
     }
-    if (!valid) {
+    const batteryFault = valid && !emptyBatterySlots(site)
+    const feedFault = valid && !batteryFault && !hasExclusiveFeed(site, emergency ? site.reserve : site.primary)
+    if (!valid || batteryFault || feedFault) {
       clearWindows(state)
       if (exportsControlled) production.forEach(role => collect(state, role, site[role], site.archives[role], 0, false))
-      state.putString('reason', 'Пауза. Проверь переключатели, входы и выдачу выбранного накопителя.')
+      state.putString('reason', batteryFault ? 'Пауза. Убери аккумуляторы из трёх станков.' : feedFault
+        ? 'Пауза. Подключи три станка к выбранному накопителю кабелями GT. Отключи сторонние источники от линий.'
+        : 'Пауза. Проверь переключатели, входы и выдачу выбранного накопителя.')
       return
     }
     var machineInput = production.reduce((sum, role) => sum + Number(site[role].energyContainer.getInputPerSec()), 0)

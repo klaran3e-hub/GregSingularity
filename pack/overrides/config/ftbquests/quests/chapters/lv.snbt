@@ -1068,7 +1068,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["426E0E49436D4534","4CCC011C50940C3E","443D03067A820986","4FCC63C022147426"]
-      optional: true
       tasks: [{
         id: "4CF7F632CF77BDC4"
         type: "item"
@@ -2240,7 +2239,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["46894CF1BA803E52","49CE3A195951A7A9","4975F2C8A1CEDA75"]
-      optional: true
       tasks: [{
         id: "4E33ED461ACF4B51"
         type: "item"
@@ -2398,7 +2396,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["42FC2F9C0CA18C8C","4274E5A183E3C235","42CA8D93FB0AC26C"]
-      optional: true
       tasks: [{
         id: "45415DFE3AACF1D5"
         type: "item"
@@ -2511,7 +2508,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["42FC2F9C0CA18C8C","42F99A5AA3324E1A","4274E5A183E3C235"]
-      optional: true
       tasks: [{
         id: "4C150255E3DEF034"
         type: "item"
@@ -2534,7 +2530,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4A8108085D35CB03","48EE48FA97FC7401","45F90DBA04E36F7D","48DC1F680E7618FA"]
-      optional: true
       tasks: [{
         id: "414375C3C8BAEC19"
         type: "item"
@@ -2556,7 +2551,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["474A8230F5DCBD20","443D03067A820986","4452A35956333A16","44EEBE34118CD1C4"]
-      optional: true
       tasks: [{
         id: "4EC621B3B3E968C4"
         type: "item"
@@ -3305,7 +3299,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4DC4705F5B9C749D","42FC2F9C0CA18C8C","4B29F52E5A6FAD55"]
-      optional: true
       tasks: [{
         id: "4B01EC5FAA1A6FE2"
         type: "item"
@@ -3680,7 +3673,6 @@
       shape: "circle"
       size: 0.910d
       dependencies: ["4C88F1CBCEEDB806","42FC2F9C0CA18C8C","48EE48FA97FC7401"]
-      optional: true
       tasks: [{
         id: "4BB37612F4F5D68D"
         type: "item"

@@ -29,5 +29,5 @@ PlayerEvents.loggedIn(event => {
 PlayerEvents.inventoryChanged(event => {
   if (!legacyFlintTools[event.item.id]) return
   const inventory = event.player.inventory
-  if (event.slot >= 0 && event.slot < inventory.slots) upgradeLegacyFlintTool(inventory, event.slot)
+  for (let slot = 0; slot < inventory.slots; slot++) upgradeLegacyFlintTool(inventory, slot)
 })

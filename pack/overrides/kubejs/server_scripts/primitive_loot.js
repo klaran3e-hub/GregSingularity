@@ -56,6 +56,17 @@ ServerEvents.genericLootTables(event => {
     'minecraft:netherite_scrap': 'minecraft:ancient_debris'
   }
 
+  // The pack controls the GT entries in Overworld chests. Preserve the drink and offer raw stock.
+  const stock = {
+    'minecraft:chests/spawn_bonus_chest': [['gtceu:purple_drink', 2, 8, 16]],
+    'minecraft:chests/simple_dungeon': [['gtceu:purple_drink', 80, 4, 8], ['gtceu:raw_tin', 20, 1, 3]],
+    'minecraft:chests/desert_pyramid': [['minecraft:raw_gold', 5, 1, 2]],
+    'minecraft:chests/abandoned_mineshaft': [['minecraft:raw_copper', 12, 1, 3]],
+    'minecraft:chests/stronghold_crossing': [['minecraft:raw_iron', 10, 1, 3]],
+    'minecraft:chests/village/village_weaponsmith': [['minecraft:raw_iron', 12, 1, 3], ['gtceu:raw_tin', 8, 1, 2]]
+  }
+  const json = Java.loadClass('com.google.gson.JsonParser')
+
   function replaceEntry(entry, tableReplacements) {
     if (!entry.has('name') || String(entry.get('type').getAsString()) !== 'minecraft:item') return
     const name = String(entry.get('name').getAsString())
@@ -93,6 +104,15 @@ ServerEvents.genericLootTables(event => {
         if (!entries) continue
         for (var entryIndex = 0; entryIndex < entries.size(); entryIndex++) {
           replaceEntry(entries.get(entryIndex).getAsJsonObject(), tableReplacements)
+        }
+      }
+      if (stock[id] && table.pools.size() > 0) {
+        const entries = table.pools.get(0).getAsJsonObject().getAsJsonArray('entries')
+        for (const [name, weight, min, max] of stock[id]) {
+          entries['add(com.google.gson.JsonElement)'](json.parseString(JSON.stringify({
+            type: 'minecraft:item', name: name, weight: weight,
+            functions: [{ function: 'minecraft:set_count', count: { type: 'minecraft:uniform', min: min, max: max } }]
+          })))
         }
       }
     })
