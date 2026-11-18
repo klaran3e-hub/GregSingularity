@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["S S", " F ", "S S"],
+  "key": {
+    "S": {"item": "minecraft:stick"},
+    "F": {"item": "minecraft:string"}
+  },
+  "result": {"item": "gtibdcrops:crop_sticks", "count": 4}
+}

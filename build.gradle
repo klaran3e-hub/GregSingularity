@@ -1,0 +1,55 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev.legacyforge' version '2.0.86'
+}
+
+group = 'gtibd.crops'
+version = '0.1.0'
+
+base { archivesName = 'gregcrops-addon' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+legacyForge {
+    version = '1.20.1-47.4.28'
+    mods {
+        gtibdcrops { sourceSet sourceSets.main }
+    }
+}
+
+def gregTechJar = providers.gradleProperty('gregTechJar').orElse('../../.dev/gen-c/mods/gtceu-1.20.1-7.5.3.jar')
+dependencies {
+    compileOnly files(gregTechJar.map { file(it) })
+}
+
+def assetClasses = layout.buildDirectory.dir('cropAssetClasses')
+def assetsOutput = layout.buildDirectory.dir('generated/cropAssets')
+def recipesOutput = layout.buildDirectory.dir('generated/cropRecipes')
+tasks.register('compileCropAssets', JavaCompile) {
+    source = files('tools/GenerateAssets.java', 'tools/GenerateRecipes.java', 'src/main/java/gtibd/crops/CropCatalog.java')
+    classpath = files()
+    destinationDirectory = assetClasses
+    options.encoding = 'UTF-8'
+    options.release = 17
+}
+
+tasks.register('generateCropAssets', JavaExec) {
+    dependsOn 'compileCropAssets'
+    classpath = files(assetClasses)
+    mainClass = 'gtibd.crops.GenerateAssets'
+    args assetsOutput.get().asFile.absolutePath
+    inputs.files(tasks.named('compileCropAssets'))
+    outputs.dir assetsOutput
+}
+
+tasks.register('generateCropRecipes', JavaExec) {
+    dependsOn 'compileCropAssets'
+    classpath = files(assetClasses)
+    mainClass = 'gtibd.crops.GenerateRecipes'
+    args recipesOutput.get().asFile.absolutePath
+    inputs.files(tasks.named('compileCropAssets'))
+    outputs.dir recipesOutput
+}
+
+sourceSets.main.resources.srcDirs assetsOutput, recipesOutput
+tasks.named('processResources') { dependsOn 'generateCropAssets', 'generateCropRecipes' }
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
