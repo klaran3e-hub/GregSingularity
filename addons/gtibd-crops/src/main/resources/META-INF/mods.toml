@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="gtibdcrops"
+version="0.1.0"
+displayName="GregCrops addon"
+authors="klaran3e"
+description="Crop sticks, selective breeding, and a GregTech-powered LV Crop Harvester. Recipes are included for Forge and GregTech CEu Modern."
+
+[[dependencies.gtibdcrops]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.28,48)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.gtibdcrops]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.gtibdcrops]]
+modId="gtceu"
+mandatory=true
+versionRange="[7.5.3,)"
+ordering="AFTER"
+side="BOTH"
