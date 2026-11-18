@@ -1,6 +1,6 @@
 ServerEvents.recipes(event => {
-  const knife = 'gtceu:flint_knife'
-  const hammer = 'gtceu:flint_hammer'
+  const knife = '#gtceu:tools/crafting_knives'
+  const hammer = '#gtceu:tools/crafting_hammers'
   const drill = 'kubejs:fire_drill'
   const flintTools = ['knife', 'axe', 'pickaxe', 'saw', 'shovel', 'hoe', 'sword', 'mortar', 'hammer']
   flintTools.forEach(tool => event.remove({ output: 'gtceu:flint_' + tool }))
@@ -58,7 +58,7 @@ ServerEvents.recipes(event => {
   shapeless('fibre_from_reeds', 'kubejs:plant_fibre', ['minecraft:sugar_cane', 'minecraft:sugar_cane'])
   shaped('sort_gravel', 'minecraft:flint', ['GG', 'GG'], { G: 'minecraft:gravel' })
   shapeless('knap_flint', 'kubejs:flint_shard', ['minecraft:flint', 'minecraft:flint', 'minecraft:gravel'])
-  shaped('flint_knife', knife, ['FS', 'TB'], {
+  shaped('flint_knife', 'gtceu:flint_knife', ['FS', 'TB'], {
     F: 'kubejs:flint_shard', S: 'minecraft:stick', T: 'minecraft:flint', B: 'kubejs:plant_fibre'
   })
   for (const [id, plant] of [['cane', 'minecraft:sugar_cane'], ['wheat', 'minecraft:wheat'], ['kelp', 'minecraft:kelp']]) {
@@ -103,7 +103,7 @@ ServerEvents.recipes(event => {
   shaped('flint_mortar', 'gtceu:flint_mortar', ['FHF', 'CPC', 'CCC'], {
     F: 'kubejs:flint_shard', H: 'kubejs:tool_handle', C: '#forge:cobblestone', P: 'kubejs:wooden_peg'
   })
-  shaped('stone_hammer', hammer, ['FCF', 'CBC', ' H '], {
+  shaped('stone_hammer', 'gtceu:flint_hammer', ['FCF', 'CBC', ' H '], {
     F: 'kubejs:flint_shard', C: '#forge:cobblestone', B: 'kubejs:tool_binding', H: 'kubejs:tool_handle'
   })
   shaped('stone_hoe', 'minecraft:stone_hoe', ['FCB', ' PH', ' H '], {
@@ -116,7 +116,7 @@ ServerEvents.recipes(event => {
 
   function woodRecipes(id, planks, logs) {
     shapeless('hand_split_' + id, '2x ' + planks, [logs, knife]).damageIngredient(knife)
-    shapeless('hand_saw_' + id, '3x ' + planks, [logs, 'gtceu:flint_saw']).damageIngredient('gtceu:flint_saw')
+    shapeless('hand_saw_' + id, '3x ' + planks, [logs, '#gtceu:tools/crafting_saws']).damageIngredient('#gtceu:tools/crafting_saws')
     event.custom({
       type: 'create:cutting',
       ingredients: [{ tag: logs.substring(1) }],
@@ -196,8 +196,8 @@ ServerEvents.recipes(event => {
     'minecraft:wheat', 'minecraft:wheat', 'minecraft:wheat', hammer
   ]).damageIngredient(hammer)
   shapeless('hand_grind_wheat_mortar', '2x create:wheat_flour', [
-    'minecraft:wheat', 'minecraft:wheat', 'minecraft:wheat', 'gtceu:flint_mortar'
-  ]).damageIngredient('gtceu:flint_mortar')
+    'minecraft:wheat', 'minecraft:wheat', 'minecraft:wheat', '#gtceu:tools/crafting_mortars'
+  ]).damageIngredient('#gtceu:tools/crafting_mortars')
   firing('hearth_bread', 'campfire_cooking', 'create:dough', 'minecraft:bread', 900, 0.1)
   firing('kiln_bread', 'smelting', 'create:dough', 'minecraft:bread', 360, 0.1)
   firing('smoker_bread', 'smoking', 'create:dough', 'minecraft:bread', 180, 0.1)

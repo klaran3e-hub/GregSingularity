@@ -10,7 +10,7 @@ ServerEvents.recipes(event => {
   const slag = ie('slag')
   const frame = ks('pressed_steel_frame')
   const lining = ks('furnace_lining_insert')
-  const hammer = gt('flint_hammer')
+  const hammer = '#gtceu:tools/crafting_hammers'
   const rivet = ks('iron_rivet')
   const lvCircuit = gt('basic_electronic_circuit')
   const pressBlank = ks('steel_press_blank')
@@ -232,8 +232,8 @@ ServerEvents.recipes(event => {
     P: plate, F: frame, V: gt('lv_conveyor_module'), H: gt('lv_machine_hull'), R: rivet, L: lining
   })
   shaped('maintenance_hatch', gt('maintenance_hatch'), ['PHP', 'FIF', 'CLC'], {
-    P: plate, H: ie('hammer'), F: frame, I: gt('lv_machine_hull'), C: lvCircuit, L: lining
-  }).damageIngredient(ie('hammer'))
+    P: plate, H: '#zero_shift:crafting_hammers', F: frame, I: gt('lv_machine_hull'), C: lvCircuit, L: lining
+  }).damageIngredient('#zero_shift:crafting_hammers')
   shaped('lv_muffler_hatch', gt('lv_muffler_hatch'), ['PLP', 'FHF', 'BCB'], {
     P: plate, L: lining, F: frame, H: gt('lv_machine_hull'), B: gt('bronze_small_fluid_pipe'), C: create('encased_fan')
   })

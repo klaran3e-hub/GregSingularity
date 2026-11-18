@@ -2,7 +2,7 @@ ServerEvents.recipes(event => {
   const chisel = 'kubejs:stone_chisel'
   const abrasive = 'kubejs:abrasive_paste'
   const mortar = 'kubejs:clay_mortar'
-  const hammer = 'gtceu:flint_hammer'
+  const hammer = '#gtceu:tools/crafting_hammers'
 
   event.shaped(chisel, [' FS', ' BF', 'H  '], {
     F: 'kubejs:flint_shard', S: 'minecraft:flint', B: 'kubejs:tool_binding', H: 'kubejs:tool_handle'

@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#gtceu:tools/crafting_hammers",
+    "#immersiveengineering:tools/hammers"
+  ]
+}

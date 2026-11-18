@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "immersiveengineering:wirecoil_copper_ins"
+    },
+    {
+      "tag": "zero_shift:crafting_wire_cutters"
+    }
+  ],
+  "result": {
+    "item": "immersiveengineering:wirecoil_copper"
+  }
+}
