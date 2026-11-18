@@ -1,0 +1,24 @@
+modLoader="lowcodefml"
+loaderVersion="[47,48)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="gtibd_core"
+version="0.0.1"
+displayName="GTIBD Core"
+logoFile="logo.png"
+description="Industrial progression, materials, textures and JEI integration for GT-IBD."
+
+[[dependencies.gtibd_core]]
+modId="jei"
+mandatory=true
+versionRange="[15.20.0.129]"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.gtibd_core]]
+modId="kubejs"
+mandatory=true
+versionRange="[2001.6.5-build.26]"
+ordering="AFTER"
+side="BOTH"
