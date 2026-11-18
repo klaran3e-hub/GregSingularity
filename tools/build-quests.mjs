@@ -14,6 +14,8 @@ import { addPostUvChapters } from './quest-expansion-post-uv.mjs'
 import { expandUvFinal } from './quest-expansion-uv-final.mjs'
 import { expandLate } from './quest-expansion-late.mjs'
 import { forestrySections } from './quest-expansion-forestry.mjs'
+import { gregCropsChapter } from './quest-expansion-gregcrops.mjs'
+import { gtxfaChapter } from './quest-expansion-gtxfa.mjs'
 import { createQuestRewardResolver } from './quest-rewards.mjs'
 import { auditQuestDescriptions, questDescription } from './quest-text.mjs'
 import { auditQuestTitles, questTitle } from './quest-titles.mjs'
@@ -94,6 +96,12 @@ chapter('kiln', 'II. Обжиг и металл вручную', mc('furnace'), 
   ['copper_charge', 'Загрузка медной шихты', ks('copper_charge'), 1, ['copper_washed', 'crucible', 'charcoal'], 'Пять единиц концентрата, уголь и тигель.'],
   ['copper', 'Первый медный слиток', mc('copper_ingot'), 1, ['copper_charge'], 'Ручной передел расходует пятнадцать кусков руды на слиток. Мельница сократит расход.'],
   ['strap', 'Медная лента', ks('copper_strap'), 1, ['copper', 'hammer'], 'Расплющи медь молотом. Лента нужна и для крицы, и для втулок.'],
+  ['copper_pickaxe', 'Медная кирка', ks('copper_pickaxe'), 1, ['strap', 'handle', 'binding'], 'Собери кирку из меди, двух лент, рукояти и крепления. Она добывает на том же уровне, что кремнёвая, но служит дольше.', true],
+  ['copper_axe', 'Медный топор', ks('copper_axe'), 1, ['strap', 'handle', 'binding'], 'Посади медное лезвие на рукоять и обожми лентой. Топор быстрее разбирает дерево.', true],
+  ['copper_sword', 'Медный меч', ks('copper_sword'), 1, ['strap', 'handle', 'binding'], 'Соедини две медные заготовки и стяни рукоять двумя лентами.', true],
+  ['copper_hoe', 'Медная мотыга', ks('copper_hoe'), 1, ['strap', 'handle', 'binding'], 'Две медные заготовки и лента держат лезвие, пока готовишь грядки.', true],
+  ['copper_shovel', 'Медная лопата', ks('copper_shovel'), 1, ['strap', 'handle', 'binding'], 'Стяни лопату двумя лентами. Возьми её на добычу глины и гравия.', true],
+  ['copper_mining_hammer', 'Медный шахтёрский молот', ks('copper_mining_hammer'), 1, ['strap', 'handle', 'binding'], 'Собери обух из пяти слитков и стяни его двумя лентами. Молот раскрывает участок 3×3 в плоскости грани, по которой бьёшь.', true],
   ['iron_grit', 'Дробление железа', ks('iron_grit'), 1, ['hammer', 'torches'], 'Ищи гётит, гематит, бурый железняк или магнетит.'],
   ['iron_washed', 'Железный концентрат', ks('washed_iron_grit'), 1, ['iron_grit'], 'Воду можно использовать и для железного концентрата. Хвосты складывай отдельно.'],
   ['iron_charge', 'Загрузка железной шихты', ks('iron_charge'), 1, ['iron_washed', 'strap', 'crucible'], 'Помимо концентрата и угля нужны футеровка и кованая медная лента.'],
@@ -198,7 +206,9 @@ chapter('steam', 'IV. От вращения к пару', gt('lp_steam_solid_boi
   ['steam_wood_drum', 'Бочка для запаса воды', gt('wood_drum'), 1, ['boiler', 'joint', 'rivets', 'resin', 'barrel'], 'Закрепи деревянную бочку обвязкой из досок, заклёпок и липкой смолы. Потом она войдёт в бронзовый барабан.'],
   ['steam_bronze_drum', 'Буфер для пара', gt('bronze_drum'), 1, ['steam_wood_drum', 'bronze_pipe', 'seal', 'converter_mallet'], 'Подведи пар от котла к бронзовому барабану. Трубу на турбину подсоедини снизу. Накопи пар, затем нажми по барабану ПКМ деревянной киянкой GregTech без Shift, чтобы включить выдачу.'],
   ['steam_wide_pipe', 'Магистраль большего сечения', gt('bronze_normal_fluid_pipe'), 2, ['steam_bronze_drum'], 'Собери трубу большего сечения из двух малых труб, пластины, герметичного стыка и заклёпки.', true],
-  ['steam_furnace', 'Печь на паре', gt('lp_steam_furnace'), 1, ['boiler', 'firebox', 'seal'], 'Собери отдельную паровую печь для обжига. Оставь выхлопную сторону открытой и проверь доступ к топке котла.', true],
+  ['steam_furnace', 'Печь на паре', gt('lp_steam_furnace'), 1, ['boiler', 'firebox', 'seal'], 'Подай пар и оставь выхлопную сторону открытой. Для меди, железа, олова и других легкоплавких металлов загружай две дроблёные порции на слиток.', true],
+  ['steam_ore_batch', 'Слитки с паровой линии', mc('copper_ingot'), 8, ['steam_mill', 'steam_furnace'], 'Передроби сырую медь в паровом мацераторе. Переложи результат в паровую печь. Восемь порций сырой меди дают восемь слитков.', true],
+  ['steam_fibre_batch', 'Волокно из урожая', ks('plant_fibre'), 8, ['steam_mill', 'washed'], 'Загрузи в паровую дробилку пшеницу, тростник, ламинарию или волокно конопли IE. Собери восемь порций и оставь их для пакетной промывки.', true],
   ['steam_alloy_smelter', 'Паровая печь сплавов', gt('lp_steam_alloy_smelter'), 1, ['steam_furnace', 'crucible', 'bronze_pipe'], 'Установи обожжённый тигель в усиленную паровую печь. Собери вторую печь, если нужна отдельная линия обжига.', true],
   ['case_reserve', 'Ремонтный резерв', gt('bronze_machine_casing'), 8, ['boiler'], 'Собери отдельный запас из восьми корпусов под восстановление линии.', true],
   ['pipe_reserve', 'Запас труб на разрыв', gt('bronze_small_fluid_pipe'), 32, ['boiler'], 'Держи на складе 32 трубы, чтобы не останавливать выпуск ради ремонта.', true],
@@ -237,7 +247,8 @@ chapter('lv', 'V. Первое электричество', gt('basic_electronic
   ['lv_balanced_rotor', 'Выверка ротора', ks('balanced_turbine_rotor'), 1, ['lv_rotor_blank', 'steam_hammer'], 'Подключи паровой молот к первому котлу и вывери ротор. Лопатки садятся под ударом перед сборкой турбины.'],
   ['turbine', 'Первая электрическая турбина', gt('lv_steam_turbine'), 1, ['lv_hull', 'boiler', 'steam_bronze_drum', 'lv_balanced_rotor', 'lv_hand_circuit', 'motor'], 'Подключи кабель LV или поставь сборщик у передней грани турбины. Она выдаёт 32 EU/t и расходует 640 мБ пара за 10 тиков. Котёл низкого давления на полном нагреве даёт до 60 мБ за то же время. Для коротких запусков копи пар в барабане. Для непрерывной работы нужна подача как минимум от 11 таких котлов.'],
   ['assembler', 'Серийная сборка', gt('lv_assembler'), 1, ['turbine', 'lv_conveyor', 'lv_hand_circuit', 'lv_hull'], 'Сборщик использует один припой на две схемы при 16 EU/t. Подай питание от турбины.'],
-  ['lv_circuit_batch', 'Партия из 16 схем', gt('basic_electronic_circuit'), 16, ['assembler', 'copper_contacts', 'pressed_insulation'], 'На две схемы подай две печатные платы, четыре резистора, две лампы, четыре проволоки, по два припоя, контакта и изоляции. Нужны 250 мБ воды и 20 секунд при 16 EU/t.']
+  ['lv_circuit_batch', 'Партия из 16 схем', gt('basic_electronic_circuit'), 16, ['assembler', 'copper_contacts', 'pressed_insulation'], 'На две схемы подай две печатные платы, четыре резистора, две лампы, четыре проволоки, по два припоя, контакта и изоляции. Нужны 250 мБ воды и 20 секунд при 16 EU/t.'],
+  ['washed_fibre_batch', 'Промывка волокна партиями', ks('washed_fibre'), 8, ['lv_circuit_batch', 'steam_fibre_batch'], 'Загрузи восемь порций волокна в химическую ванну GregTech уровня LV и подай 1000 мБ воды. Готовое волокно можно забирать трубами или через AE2.', true],
 ])
 
 chapter('industrial_supply', 'VI. Кокс, сталь и тяжёлый пресс', ie('blastbrick'), [
@@ -313,7 +324,7 @@ chapter('mv', 'VIII. Среднее напряжение', gt('good_electronic_c
   ['sealed_mv_module', 'Герметичная кассета', ks('sealed_mv_module'), 1, ['phenolic_preform', 'pressure_gasket'], 'Подай заготовку и уплотнение в камеру при 3,5 бар. Кассета должна выйти через второй интерфейс.'],
   ['printed_phenolic', 'Печатная плата MV', gt('phenolic_printed_circuit_board'), 1, ['sealed_mv_module', 'lv_solder'], 'Установи медные выводы и припой в сборщике LV.'],
   ['first_mv_circuit', 'Первая схема среднего напряжения', gt('good_electronic_circuit'), 1, ['printed_phenolic', 'lv_circuit_batch', 'lv_vacuum_tube', 'mv_copper_wire', 'pressure_gasket', 'aluminium_plate', 'mv_gauge_module'], 'Подай в сборщик LV две платы, по четыре схемы LV, резистора и припоя, по две лампы, пластины, проволоки, уплотнения и модуля манометра. Добавь 700 мБ воды. Цикл занимает 78 секунд.'],
-  ['mv_copper_wire', 'Протяжка медной проволоки', gt('copper_single_wire'), 4, ['copper_contacts', 'press'], 'Дожми контактные полосы на прессе Create. Каждая полоса даёт две проволоки.'],
+  ['mv_copper_wire', 'Протяжка медной проволоки', gt('copper_single_wire'), 4, ['copper_contacts', 'press'], 'Дожми контактные полосы на прессе Create. Каждая полоса даёт одну проволоку.'],
   ['mv_copper_cable', 'Кабель на 128 EU', gt('copper_single_cable'), 4, ['mv_copper_wire', 'pressure_gasket'], 'Обожми медь уплотнениями, добавь изоляцию и шнур. Проложи отдельную линию для MV.'],
   ['mv_casing', 'Оболочка MV', gt('mv_machine_casing'), 1, ['aluminium_plate', 'pressed_steel_frame', 'pressure_gasket', 'ie_steel'], 'Сборщик LV соединяет четыре алюминиевых листа, две рамы, два вкладыша, уплотнение и два стальных компонента IE.'],
   ['mv_hull', 'Корпус MV', gt('mv_machine_hull'), 1, ['mv_casing', 'lv_hull', 'mv_copper_cable'], 'Собери оболочку, корпус LV, медный кабель и два уплотнения.'],
@@ -575,7 +586,7 @@ chapter('ev_vacuum', 'XV. Вакуум и титан', gt('vacuum_freezer'), [
   ['vacuum_rutile', 'Промыть рутиловый концентрат', ks('purified_rutile'), 2, ['vacuum_hv_reactor', 'end_separated_gas', 'washed_bauxite'], 'Реактор принимает промытый боксит, эндерняк, дистиллят и защитный газ. Отводи хвосты.'],
   ['vacuum_titanium_charge', 'Загрузить титановую шихту', ks('titanium_reduction_charge'), 2, ['vacuum_rutile', 'hv_mixer', 'vacuum_tile'], 'Смешай рутил, алюминий, хромит и спечённую плитку.'],
   ['vacuum_titanium_hot', 'Плавка титана под аргоном', ks('hot_titanium_billet'), 1, ['vacuum_titanium_charge', 'end_separated_gas', 'nether_kanthal_coils'], 'Домне нужны 2700 К, 480 EU/t и 400 мБ аргона на болванку. Часть горячих болванок отложи на силовые рамы.'],
-  ['vacuum_titanium_ingot', 'Титан после вакуума', gt('titanium_ingot'), 1, ['vacuum_titanium_hot', 'vacuum_controller', 'vacuum_loop_buffers'], 'Камера расходует 1000 мБ холодного теплоносителя и 150 мБ защитного газа. На выходе слиток и 1000 мБ нагретой жидкости.'],
+  ['vacuum_titanium_ingot', 'Титан после вакуума', gt('titanium_ingot'), 1, ['vacuum_titanium_hot', 'vacuum_controller', 'vacuum_loop_buffers'], 'Камера расходует 1000 мБ холодного теплоносителя и 150 мБ защитного газа на первый слиток. Оставь готовый слиток как образец для трёх дополнительных рецептов домны. Горячие слитки из этих рецептов охлаждай в химическом реакторе EV с таким же образцом и теми же жидкостями. Образец сохраняется.'],
   ['vacuum_titanium_plate', 'Первая партия титановых листов', gt('titanium_plate'), 8, ['vacuum_titanium_ingot', 'hv_bender'], 'Прокатай титан на листогибе HV. Листы пойдут в EV-корпуса, схемы и двигатель.'],
   ['vacuum_panel_blank', 'Заготовка чистовой панели', ks('clean_panel_blank'), 4, ['vacuum_tile', 'vacuum_gasket', 'first_polyethylene', 'hv_blaze_burner', 'hv_shop_ie_wire'], 'Спрессуй плитку, полиэтилен, нержавейку, уплотнение и проволоку IE в нагретой чаше Create. Подай 180 мБ защитного газа.'],
   ['vacuum_panel_hot', 'Обжечь панель под защитным газом', ks('hot_clean_panel'), 2, ['vacuum_panel_blank', 'hv_input_hatch', 'end_separated_gas'], 'Обжиг при 2480 К требует 200 мБ защитного газа на панель.'],
@@ -874,7 +885,7 @@ chapter('luv_fusion', 'XXV. Термоядерное кольцо Mk I', gt('luv
   ['luv_turbine_rotor', 'Балансировка палладиевого ротора', gt('turbine_rotor'), 1, ['luv_palladium_plate', 'luv_turbine_holders', 'luv_sensor'], 'Для полноценного ротора сначала изготовь две роторные заготовки. Сбалансируй их на сборщике LuV с осями, листами и датчиками.'],
   ['luv_turbine_power', 'Вывод турбины', gt('luv_energy_output_hatch_4a'), 1, ['luv_hatch_4a', 'luv_cable_4a'], 'Собери вывод на несколько пакетов LuV для плазменного контура и сверь предел напряжения кабеля.'],
   ['luv_turbine', 'Большая плазменная турбина', gt('plasma_large_turbine'), 1, ['luv_turbine_casing', 'luv_turbine_holders', 'luv_turbine_rotor', 'luv_turbine_power', 'luv_plasma_coupon'], 'Подай плазму в собранную турбину. Сохрани газ с её выходного люка для протокола первого зажигания. Перед пуском разгрузи энерговывод.'],
-  ['luv_ignition_report', 'Протокол первого зажигания', ks('luv_ignition_report'), 1, ['luv_turbine', 'luv_plasma_coupon', 'luv_quantum'], 'Сдай восемь испытанных пластин и 1500 мБ отработанного гелия из турбины. Оставь протокол для нагрузочных испытаний и второй записи.'],
+  ['luv_ignition_report', 'Протокол первого зажигания', ks('luv_ignition_report'), 1, ['luv_turbine', 'luv_plasma_coupon', 'luv_quantum'], 'Сдай восемь испытанных пластин и 1500 мБ отработанного гелия из турбины. Переставь палладиевый ротор из турбины в сборщик, он останется целым. Сохрани протокол для нагрузочных испытаний и второй записи.'],
   ['luv_wetware', 'Процессор Wetware', gt('wetware_processor'), 2, ['luv_plasma_coupon', 'luv_crystal', 'luv_quantum', 'luv_hatch_1a'], 'Переведи сборочную линию на LuV. Wetware требует кристаллические сборки, память, инженерные процессоры и две плазменные пробы.'],
   ['luv_load_coupons', 'Нагрузочная серия из 64 образцов', ks('luv_load_coupon'), 64, ['luv_ignition_report', 'luv_magnets', 'luv_busbar'], 'За цикл при 30720 EU/t сборщик испытывает четыре образца с 750 мБ плазмы. Протокол первого зажигания остаётся оснасткой.'],
   ['luv_commissioning', 'Приёмка сети LuV', ks('luv_commissioning_report'), 1, ['luv_load_coupons', 'luv_wetware', 'luv_research_station', 'luv_me_crafting'], 'Запиши протокол зажигания в сферу при 12 CWU/t и 72 000 CWU. Линии нужны ещё два протокола, 64 образца и три жидкости. Базовый цикл десять минут.'],
@@ -1233,6 +1244,7 @@ expandUvFinal(chapters)
 expandLate(chapters)
 addPostUvChapters(chapter)
 chapters.push(...forestrySections())
+chapters.push(gregCropsChapter(), gtxfaChapter())
 const unique = name => {
   const value = '4' + createHash('sha256').update('zero-shift:' + name).digest('hex').slice(0, 15).toUpperCase()
   if (ids.has(value)) throw new Error('Duplicate FTB id for ' + name)
@@ -1341,7 +1353,7 @@ for (const { key, title, icon, sections, milestone, order, group } of orderedCha
     '    order: -1', '  }]', '  quests: ['
   ]
   for (const { row, section, x, y, shape, size } of layout.entries) {
-    const [questKey, , item, count, deps, , optional] = row
+    const [questKey, , item, count, deps, , optional, itemTag] = row
     const { id, task } = quests.get(questKey)
     const reward = rewardFor(questKey)
     if (!/^[a-z0-9_]+:[a-z0-9_/]+$/.test(reward.item) || !Number.isInteger(reward.count) || reward.count < 1 || reward.count > 64) {
@@ -1355,7 +1367,7 @@ for (const { key, title, icon, sections, milestone, order, group } of orderedCha
     if (deps.length) lines.push('      dependencies: ' + q(deps.map(dep => quests.get(dep).id)))
     if (optional) lines.push('      optional: true')
     lines.push('      tasks: [{', '        id: ' + q(task), '        type: "item"')
-    const tag = taskTags[questKey]
+    const tag = itemTag ?? taskTags[questKey]
     if (tag) {
       lines.push('        item: { id: ' + q(item) + ', Count: 1b, tag: ' + q(tag) + ' }',
         '        match_nbt: true', '        weak_nbt_match: true')

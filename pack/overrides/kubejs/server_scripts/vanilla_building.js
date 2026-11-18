@@ -12,9 +12,10 @@ ServerEvents.recipes(event => {
   const binder = ks('tool_binding')
   const oil = gt('lubricant')
   const distilled = gt('distilled_water')
+  const stockRecipes = []
 
   function replace(output) {
-    event.remove({ output: mc(output) })
+    stockRecipes.push({ output: mc(output) })
   }
 
   function shaped(output, count, pattern, keys) {
@@ -194,7 +195,7 @@ ServerEvents.recipes(event => {
     ['cracked_deepslate_tiles', 'deepslate_tiles']
   ].forEach(([output, input]) => {
     if (output === 'stone') {
-      event.remove({ type: 'minecraft:smelting', output: mc(output) })
+      stockRecipes.push({ type: 'minecraft:smelting', output: mc(output) })
     } else {
       replace(output)
     }
@@ -233,7 +234,7 @@ ServerEvents.recipes(event => {
       const slab = panel + '_slab'
       const stairs = panel + '_stairs'
       ;[panel, slab, stairs].forEach(output => {
-        event.remove({ output: mc(output), not: copperUpkeep })
+        stockRecipes.push({ output: mc(output), not: copperUpkeep })
       })
       wetProcess('compacting', panel, [mc(source), abrasive, ks('copper_strap')],
         mc('water'), 100, panel, 1, 240)
@@ -248,4 +249,7 @@ ServerEvents.recipes(event => {
         mc('water'), 125, output, 1, 180)
     })
   })
+
+  // KubeJS filters only the original recipe map, so the replacements remain intact.
+  event.remove(stockRecipes)
 })

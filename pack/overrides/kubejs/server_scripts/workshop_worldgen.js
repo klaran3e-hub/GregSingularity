@@ -1,6 +1,6 @@
 const worldgenBlocks = Java.loadClass('net.minecraftforge.registries.ForgeRegistries').BLOCKS
 const WorldgenBlockId = Java.loadClass('net.minecraft.resources.ResourceLocation')
-const WorldgenBlockPos = Java.loadClass('net.minecraft.core.BlockPos')
+const WorldgenPredicates = Java.loadClass('com.google.common.base.Predicates')
 const workshopReplacementNames = {
   crafting_table: 'oak_wood',
   furnace: 'chiseled_stone_bricks',
@@ -24,7 +24,9 @@ const workshopReplacementNames = {
   damaged_anvil: 'polished_blackstone',
   campfire: 'cobblestone_wall',
   soul_campfire: 'blackstone_wall',
+  gold_block: 'raw_gold_block',
   'forestry:escritoire': 'stripped_birch_wood',
+  'immersiveengineering:craftingtable': 'stripped_dark_oak_wood',
   'immersiveengineering:circuit_table': 'yellow_terracotta',
   'immersiveengineering:turntable': 'polished_andesite',
   'immersiveengineering:workbench': 'stripped_dark_oak_wood'
@@ -36,27 +38,20 @@ Object.entries(workshopReplacementNames).forEach(([from, to]) => {
   if (!worldgenBlocks.containsKey(originalId)) return
   const original = worldgenBlocks.getValue(originalId)
   const decorative = worldgenBlocks.getValue(new WorldgenBlockId('minecraft:' + to))
-  workshopReplacementStates.put(original, decorative.defaultBlockState())
+  const replacement = decorative.defaultBlockState()
+  original.getStateDefinition().getPossibleStates().forEach(state => {
+    workshopReplacementStates.put(state, replacement)
+  })
 })
 
-function replaceGeneratedWorkstations(level, chunk, origin) {
-  const sections = chunk.getSections()
-  const minY = chunk.getMinBuildHeight()
-  for (let index = 0; index < sections.length; index++) {
-    var section = sections[index]
-    if (!section.maybeHas(state => workshopReplacementStates.containsKey(state.getBlock()))) continue
-    for (let y = 0; y < 16; y++) {
-      for (let z = 0; z < 16; z++) {
-        for (let x = 0; x < 16; x++) {
-          var replacement = workshopReplacementStates.get(section.getBlockState(x, y, z).getBlock())
-          if (replacement !== null) {
-            var pos = new WorldgenBlockPos(origin.getMinBlockX() + x, minY + 16 * index + y, origin.getMinBlockZ() + z)
-            level.setBlock(pos, replacement, 2)
-          }
-        }
-      }
-    }
-  }
+// Both palette checks and the block search stay in Java; only matches call back into KubeJS.
+const isGeneratedWorkstation = WorldgenPredicates.in(workshopReplacementStates.keySet())
+
+function replaceGeneratedWorkstations(level, chunk) {
+  chunk.findBlocks(isGeneratedWorkstation, (pos, state) => {
+    // The search reuses one mutable position. Pass an immutable copy to block updates.
+    level.setBlock(pos.immutable(), workshopReplacementStates.get(state), 2)
+  })
 }
 
 ServerEvents.tick(() => {
@@ -67,6 +62,6 @@ ServerEvents.tick(() => {
     var chunk = generated.getChunk()
     var level = generated.getLevel()
     var origin = chunk.getPos()
-    if (level.hasChunk(origin.x, origin.z)) replaceGeneratedWorkstations(level, chunk, origin)
+    if (level.hasChunk(origin.x, origin.z)) replaceGeneratedWorkstations(level, chunk)
   }
 })

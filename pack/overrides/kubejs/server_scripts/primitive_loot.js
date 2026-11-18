@@ -15,7 +15,9 @@ ServerEvents.genericLootTables(event => {
     'minecraft:archaeology/trail_ruins_common', 'minecraft:entities/drowned',
     'minecraft:entities/husk', 'minecraft:entities/iron_golem', 'minecraft:entities/zombie',
     'minecraft:entities/zombie_villager', 'minecraft:gameplay/hero_of_the_village/toolsmith_gift',
-    'minecraft:gameplay/hero_of_the_village/weaponsmith_gift', 'immersiveengineering:chests/engineers_house'
+    'minecraft:gameplay/hero_of_the_village/weaponsmith_gift', 'immersiveengineering:chests/engineers_house',
+    'immersiveengineering:gameplay/hero_of_the_village/engineer',
+    'immersiveengineering:gameplay/hero_of_the_village/machinist'
   ]
   const replacements = {
     'minecraft:iron_ingot': 'minecraft:raw_iron',
@@ -37,20 +39,35 @@ ServerEvents.genericLootTables(event => {
     'minecraft:lava_bucket': 'minecraft:raw_iron',
     'minecraft:flint_and_steel': 'minecraft:flint'
   }
-  const engineersHouse = {
+  const engineeringReplacements = Object.assign({}, replacements, {
     'immersiveengineering:coal_coke': 'minecraft:coal',
     'immersiveengineering:ingot_aluminum': 'gtceu:raw_bauxite',
     'immersiveengineering:stick_aluminum': 'gtceu:raw_bauxite',
+    'immersiveengineering:stick_iron': 'minecraft:raw_iron',
     'immersiveengineering:stick_steel': 'minecraft:raw_iron',
     'immersiveengineering:component_iron': 'kubejs:iron_rivet',
-    'immersiveengineering:component_steel': 'minecraft:raw_iron'
+    'immersiveengineering:component_steel': 'minecraft:raw_iron',
+    'immersiveengineering:nugget_lead': 'gtceu:raw_galena',
+    'immersiveengineering:nugget_nickel': 'gtceu:raw_nickel',
+    'immersiveengineering:nugget_silver': 'gtceu:raw_silver'
+  })
+  const bastionReplacements = {
+    'minecraft:netherite_ingot': 'minecraft:ancient_debris',
+    'minecraft:netherite_scrap': 'minecraft:ancient_debris'
   }
 
   function replaceEntry(entry, tableReplacements) {
     if (!entry.has('name') || String(entry.get('type').getAsString()) !== 'minecraft:item') return
     const name = String(entry.get('name').getAsString())
+    const direct = tableReplacements[name]
+    if (direct === null) {
+      entry.addProperty('type', 'minecraft:empty')
+      entry.remove('name')
+      entry.remove('functions')
+      return
+    }
     const gear = /^minecraft:(wooden|stone|iron|golden)_(axe|pickaxe|shovel|hoe|sword|helmet|chestplate|leggings|boots)$/.exec(name)
-    if (gear) {
+    if (gear && tableReplacements !== bastionReplacements) {
       const material = gear[1]
       const replacement = material === 'iron' ? 'minecraft:raw_iron'
         : material === 'golden' ? 'minecraft:raw_gold' : 'minecraft:flint'
@@ -58,8 +75,8 @@ ServerEvents.genericLootTables(event => {
       entry.remove('functions')
       return
     }
-    const replacement = tableReplacements[name] || replacements[name] ||
-      (/^minecraft:[a-z_]+_planks$/.test(name) ? 'kubejs:rough_slat' : null)
+    const replacement = direct ||
+      (tableReplacements !== bastionReplacements && /^minecraft:[a-z_]+_planks$/.test(name) ? 'kubejs:rough_slat' : null)
     if (!replacement) return
     // Retain the original roll, weight and conditions. Nugget stacks become one piece of raw ore.
     if (name.endsWith('_nugget') || name.endsWith('_planks')) entry.remove('functions')
@@ -68,8 +85,7 @@ ServerEvents.genericLootTables(event => {
 
   // Modify the loaded table so other rewards, probabilities and mod additions survive.
   // The generic loot event sets the type to generic, so retain each original context.
-  function revise(id, type) {
-    const tableReplacements = id === 'immersiveengineering:chests/engineers_house' ? engineersHouse : {}
+  function revise(id, type, tableReplacements) {
     event.modify(id, table => {
       table.type = 'minecraft:' + type
       for (var index = 0; index < table.pools.size(); index++) {
@@ -82,11 +98,28 @@ ServerEvents.genericLootTables(event => {
     })
   }
 
-  chestTables.forEach(id => revise(id, 'chest'))
+  chestTables.forEach(id => revise(id, 'chest', replacements))
+  revise('minecraft:chests/ancient_city', 'chest', {
+    'minecraft:diamond_hoe': null,
+    'minecraft:diamond_leggings': null,
+    'minecraft:iron_leggings': null
+  })
+  revise('minecraft:chests/nether_bridge', 'chest', Object.assign({}, replacements, {
+    'minecraft:iron_horse_armor': 'minecraft:raw_iron',
+    'minecraft:golden_horse_armor': 'minecraft:raw_gold'
+  }))
   otherTables.forEach(id => {
     const type = id.includes(':archaeology/') ? 'archaeology'
       : id.includes(':entities/') ? 'entity'
         : id.includes(':gameplay/') ? 'gift' : 'chest'
-    revise(id, type)
+    revise(id, type, id.startsWith('immersiveengineering:') ? engineeringReplacements : replacements)
+  })
+  ;['bastion_bridge', 'bastion_hoglin_stable', 'bastion_other', 'bastion_treasure'].forEach(name => {
+    revise('minecraft:chests/' + name, 'chest', bastionReplacements)
+  })
+  // Remove the common nugget roll and keep the rare drop as unprocessed gold.
+  revise('minecraft:entities/zombified_piglin', 'entity', {
+    'minecraft:gold_nugget': null,
+    'minecraft:gold_ingot': 'minecraft:raw_gold'
   })
 })

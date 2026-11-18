@@ -131,7 +131,9 @@ const chapterMaterials = {
   forestry_farm: [gt('bronze_plate'), gt('tin_plate'), gt('copper_plate'), gt('iron_plate')],
   forestry_apiculture: [gt('stainless_steel_plate'), gt('polyethylene_plate'), gt('aluminium_plate'), gt('copper_plate')],
   forestry_industry: [gt('steel_plate'), gt('copper_plate'), gt('polyethylene_plate'), gt('stainless_steel_plate')],
-  forestry_genetics: [gt('stainless_steel_plate'), gt('aluminium_plate'), me('quartz_fiber'), gt('polyethylene_plate')]
+  forestry_genetics: [gt('stainless_steel_plate'), gt('aluminium_plate'), me('quartz_fiber'), gt('polyethylene_plate')],
+  gregcrops: ['gtibdcrops:crop_sticks', mc('wheat_seeds'), kube('wooden_peg'), kube('fibre_cord'), gt('iron_plate'), gt('tin_plate')],
+  gtxfa: ['forestry:beeswax', 'forestry:honey_drop', gt('copper_plate'), gt('stainless_steel_plate'), gt('polyethylene_plate')]
 }
 
 const costlyMaterials = new Set([
@@ -173,9 +175,9 @@ function chooseMaterial(key, materials) {
 export function createQuestRewardResolver(chapters) {
   const quests = new Map()
   const timberSources = new Map()
-  for (const { key: chapter, rows } of chapters) {
+  for (const { key: chapter, rows, rewards } of chapters) {
     for (const [key, , item, , deps, , optional] of rows) {
-      quests.set(key, { chapter, item, deps, optional })
+      quests.set(key, { chapter, item, deps, optional, reward: rewards?.[key] })
       if (chapter.startsWith('timber_') && key.endsWith('_logs')) timberSources.set(chapter, item)
     }
   }
@@ -194,14 +196,14 @@ export function createQuestRewardResolver(chapters) {
   }
 
   return key => {
-    const { chapter, item: taskItem, deps, optional } = quests.get(key)
+    const { chapter, item: taskItem, deps, optional, reward } = quests.get(key)
     if (deps.length === 0 && startingRewards[key]) return startingRewards[key]
 
     const available = collectPrerequisiteItems(key)
     const isAvailable = item => item !== taskItem && available.has(item)
     const explicit = timberSources.has(chapter)
       ? timberReward(chapter, key, timberSources.get(chapter))
-      : milestones[key]
+      : reward ?? milestones[key]
     if (explicit) {
       if (!isAvailable(explicit.item)) throw new Error('Quest reward precedes its material: ' + key + ' / ' + explicit.item)
       return explicit

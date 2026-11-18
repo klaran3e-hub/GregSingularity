@@ -139,7 +139,7 @@ ServerEvents.recipes(event => {
   ], mvCircuit, 1560, 28, 700)
 
   custom('draw_copper_wire', {
-    type: 'create:pressing', ingredients: [{ item: foil }], results: [{ item: copper, count: 2 }]
+    type: 'create:pressing', ingredients: [{ item: foil }], results: [{ item: copper }]
   })
   assemble('insulate_mv_cable', ['2x ' + copper, gasket, '2x ' + tape, '2x ' + ks('fibre_cord'), foil],
     '2x ' + cable, 440, 28, 250)

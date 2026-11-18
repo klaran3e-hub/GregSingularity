@@ -32,7 +32,7 @@ ServerEvents.recipes(event => {
   const sealedModule = ks('sealed_hv_module')
   const hvCircuit = gt('advanced_integrated_circuit')
   const pressedInsulation = ks('pressed_insulation')
-  const electrumWire = ie('wire_electrum')
+  const electrumWire = gt('electrum_single_wire')
   const ieCoil = ie('coil_mv')
   const reinforcedTube = 'pneumaticcraft:reinforced_pressure_tube'
   const solder = ks('tin_solder_preform')
@@ -100,6 +100,7 @@ ServerEvents.recipes(event => {
     '2x ' + ie('component_steel')
   ], gt('mv_robot_arm'), 880).inputFluids(Fluid.of(lubricant, 450))
 
+  event.remove({ id: 'gtceu:macerator/macerate_basalt' })
   machine('macerator', 'crush_nether_basalt', ['4x minecraft:basalt'], '2x ' + ks('basalt_grit'), 340, 96)
     .dimension('minecraft:the_nether')
   machine('chemical_bath', 'wash_chromite', ['6x ' + ks('basalt_grit')], ks('chromite_concentrate'), 580, 96)

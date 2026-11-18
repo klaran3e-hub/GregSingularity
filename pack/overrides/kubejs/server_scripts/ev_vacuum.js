@@ -13,6 +13,7 @@ ServerEvents.recipes(event => {
   const stainless = gt('stainless_steel_plate')
   const aluminium = gt('aluminium_plate')
   const titanium = gt('titanium_ingot')
+  const hotTitanium = gt('hot_titanium_ingot')
   const titaniumPlate = gt('titanium_plate')
   const hvCircuit = gt('advanced_integrated_circuit')
   const cold = ks('chilled_vacuum_coolant')
@@ -110,11 +111,34 @@ ServerEvents.recipes(event => {
   machine('electric_blast_furnace', 'blast_titanium', [ks('titanium_reduction_charge')],
     ks('hot_titanium_billet'), 1200, 480).blastFurnaceTemp(2700).inputFluids(Fluid.of(gt('argon'), 400))
   vacuum('quench_titanium', ks('hot_titanium_billet'), titanium, 940)
+
+  // The native routes expand production after the pack's first titanium ingot.
+  function titaniumBlast(id, heat, ticks) {
+    event.remove({ id: gt('electric_blast_furnace/' + id) })
+    return event.recipes.gtceu.electric_blast_furnace(gt(id))
+      .itemOutputs(hotTitanium).duration(ticks).EUt(480).blastFurnaceTemp(heat)
+  }
+  titaniumBlast('blast_titanium_gas', 1941, 1005)
+    .itemInputs(gt('titanium_dust')).circuit(2).notConsumable(titanium)
+    .inputFluids(Fluid.of(gt('helium'), 100))
+  titaniumBlast('titanium_from_tetrachloride', 2141, 800)
+    .itemInputs('2x ' + gt('magnesium_dust')).notConsumable(titanium)
+    .inputFluids(Fluid.of(gt('titanium_tetrachloride'), 1000))
+    .itemOutputs('6x ' + gt('magnesium_chloride_dust'))
+  titaniumBlast('titanium_trifluoride_separation', 1941, 900)
+    .itemInputs('4x ' + gt('titanium_trifluoride_dust')).notConsumable(titanium)
+    .inputFluids(Fluid.of(gt('hydrogen'), 3000))
+    .outputFluids(Fluid.of(gt('hydrofluoric_acid'), 3000))
+  machine('chemical_reactor', 'cool_hot_titanium', [hotTitanium], titanium, 940, 1920)
+    .notConsumable(titanium)
+    .inputFluids(Fluid.of(cold, 1000)).inputFluids(Fluid.of(shieldGas, 150))
+    .outputFluids(Fluid.of(warm, 1000))
+
   machine('bender', 'roll_titanium_plate', [titanium], titaniumPlate, 620, 480)
 
   compact('clean_panel_blank', [
     tile, tile, gt('polyethylene_plate'), gt('polyethylene_plate'), stainless, stainless, gasket,
-    ks('pressed_insulation'), ie('wire_electrum')
+    ks('pressed_insulation'), gt('electrum_single_wire')
   ], ks('clean_panel_blank'), 2, shieldGas, 180)
   machine('electric_blast_furnace', 'fire_clean_panel', [ks('clean_panel_blank')], ks('hot_clean_panel'),
     680, 480).blastFurnaceTemp(2480).inputFluids(Fluid.of(shieldGas, 200))
@@ -140,7 +164,7 @@ ServerEvents.recipes(event => {
   ], ks('laser_mask'), 640)
   assemble('vacuum_wafer_preform', [
     panel, ks('ceramic_hv_substrate'), '2x ' + ks('chorus_dielectric_film'), gt('phenolic_printed_circuit_board'),
-    '2x ' + ks('copper_contact_strip'), ie('wire_electrum'), gasket
+    '2x ' + ks('copper_contact_strip'), gt('electrum_single_wire'), gasket
   ], ks('vacuum_wafer_preform'), 1080).inputFluids(Fluid.of(lubricant, 400))
   vacuum('condition_wafer', ks('vacuum_wafer_preform'), ks('conditioned_wafer'), 620)
   machine('laser_engraver', 'etch_cleanroom_wafer', [ks('conditioned_wafer'), ks('laser_mask')],

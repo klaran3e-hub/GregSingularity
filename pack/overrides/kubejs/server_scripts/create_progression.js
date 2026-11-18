@@ -284,7 +284,6 @@ ServerEvents.recipes(event => {
       type: 'create:splashing', ingredients: [{ item: grit }],
       results: [{ item: 'kubejs:washed_' + metal + '_grit' }, { item: tailings }]
     }).id('zero_shift:create/wash_' + metal)
-    process('milling', 'recover_crushed_' + metal, 'create:crushed_raw_' + metal, [{ item: grit }], 320)
   })
 
   const firstPress = [

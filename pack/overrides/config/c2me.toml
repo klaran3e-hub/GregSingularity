@@ -1,0 +1,20 @@
+version = 3
+
+# Keep modded decorations on the serialized path. C2ME still runs terrain generation concurrently.
+[threadedWorldGen]
+enabled = true
+allowThreadedFeatures = false
+reduceLockRadius = false
+
+[ioSystem]
+replaceImpl = false
+async = false
+recoverFromErrors = false
+chunkStreamVersion = -1
+
+[noTickViewDistance]
+enabled = false
+
+[generalOptimizations.autoSave]
+mode = "VANILLA"
+

@@ -1,0 +1,595 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "gregcrops"
+  group: "468EF37A10F16FBE"
+  icon: "gtibdcrops:stargatium_harvest"
+  title: "Агрокультуры GregCrops"
+  id: "4D42D0CFD7D17099"
+  order_index: 19
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/gregcrops.png"
+    x: 0.0d
+    y: 0.0d
+    width: 30.333d
+    height: 14.454d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "48E4304ABC83A510"
+      title: "Жерди на первой грядке"
+      description: ["Собери два комплекта жердей на верстаке. Поставь часть на влажную пашню рядом с водой и оставь просвет сверху. Держи несколько жердей для второго ряда."]
+      x: -11.500d
+      y: 0.000d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4FCC63C022147426","4F6874E031173E06","44F44EB6168E16BC"]
+      optional: true
+      tasks: [{
+        id: "468FDB3648475CB5"
+        type: "item"
+        item: "gtibdcrops:crop_sticks"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4508F3A1B9A695FC"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4D6EE548DD9D839E"
+      title: "Посев на опытном участке"
+      description: ["Щёлкни семенами пшеницы по одинарным жердям. Оставь растения на свету и проверь, что пашня не пересохла. Двойные жерди пригодятся для скрещивания."]
+      x: -9.391d
+      y: -1.109d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48E4304ABC83A510"]
+      optional: true
+      tasks: [{
+        id: "48771A25F246FF40"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4E00C739B331C35A"
+        type: "item"
+        item: "gtibdcrops:crop_sticks"
+        count: 2
+      }]
+    }
+    {
+      id: "418A9AC15C7E9177"
+      title: "Обрезки для компоста"
+      description: ["Щёлкни по зрелой пшенице пустой рукой. Она останется на жердях и отрастёт снова. Собери две растительные обрезки, лишние отправь в компостер."]
+      x: -8.302d
+      y: 1.566d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D6EE548DD9D839E"]
+      optional: true
+      tasks: [{
+        id: "4139346B8BE527CD"
+        type: "item"
+        item: "gtibdcrops:plant_cuttings"
+        count: 2L
+      }]
+      rewards: [{
+        id: "48D5CEE06059EF5A"
+        type: "item"
+        item: "gtibdcrops:crop_sticks"
+        count: 2
+      }]
+    }
+    {
+      id: "42E8A87A9908D06A"
+      title: "Нож для отбора семян"
+      description: ["Собери нож из трёх железных пластин, вязаного крепления и рукояти. Срезай зрелое растение ножом, чтобы забрать пакет семян с его наследуемыми признаками."]
+      x: -7.622d
+      y: -3.721d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D6EE548DD9D839E","4975F2C8A1CEDA75","45D72E4E790DEE89","468D4C1249381858"]
+      optional: true
+      tasks: [{
+        id: "4B5B778A22582E7E"
+        type: "item"
+        item: "gtibdcrops:pruning_knife"
+      }]
+      rewards: [{
+        id: "44F3FA1AA0A5CFF1"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44D25085CD12E757"
+      title: "Тростник в песчаной грядке"
+      description: ["Подготовь песчаное основание, на него положи землю и вспаши её. Высади сахарный тростник на жерди над пашней и дай ему вырасти."]
+      x: -10.071d
+      y: -2.725d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48E4304ABC83A510"]
+      optional: true
+      tasks: [{
+        id: "444560D5762A851C"
+        type: "item"
+        item: "minecraft:sugar_cane"
+        count: 2L
+      }]
+      rewards: [{
+        id: "41F8489684B89EF6"
+        type: "item"
+        item: "gtibdcrops:crop_sticks"
+        count: 2
+      }]
+    }
+    {
+      id: "4869C81E2ACCD5A0"
+      title: "Кактус для второго ряда"
+      description: ["Высади кактус на отдельные одинарные жерди с песком под пашней. Между кактусом и тростником оставь клетку под скрещивание на таком же основании."]
+      x: -7.796d
+      y: -0.682d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44D25085CD12E757"]
+      optional: true
+      tasks: [{
+        id: "4E658202A2BDED60"
+        type: "item"
+        item: "minecraft:cactus"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4CA090FCB99321A8"
+        type: "item"
+        item: "kubejs:fibre_cord"
+        count: 2
+      }]
+    }
+    {
+      id: "49498D50D2ECCDC4"
+      title: "Семена липкого тростника"
+      description: ["На пустые жерди между взрослыми тростником и кактусом поставь вторые жерди. Не срезай родителей, пока в середине не вырастет липкий тростник. Забери его семена ножом."]
+      x: -6.192d
+      y: -1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["44D25085CD12E757","4869C81E2ACCD5A0","42E8A87A9908D06A"]
+      optional: true
+      tasks: [{
+        id: "48614EA41E2D88A4"
+        type: "item"
+        item: { id: "gtibdcrops:seed_packet", Count: 1b, tag: {"Crop":"stickreed"} }
+        match_nbt: true
+        weak_nbt_match: true
+      }]
+      rewards: [{
+        id: "427C10BE9A1DDE0C"
+        type: "item"
+        item: "gtibdcrops:crop_sticks"
+        count: 4
+      }]
+    }
+    {
+      id: "43142EB8184043DD"
+      title: "Анализатор семян LV"
+      description: ["Выдели сурьму из стибнитовой пыли в центрифуге LV. Смешай шесть порций оловянной пыли, три свинцовой и одну сурьмы на схеме 3. Расплавь припой в экстракторе. В сборщик LV подай 144 мБ припоя, датчик, схему LV, две панели, две оловянные пластины и две полосы изоляции."]
+      x: -6.532d
+      y: -0.039d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E8A87A9908D06A","4FD53B755911773D","44C6968CB492BFB5","4DB524F23D41BB31","49FFA666884CE764","4B29F52E5A6FAD55"]
+      optional: true
+      tasks: [{
+        id: "4946663B1B4CA21C"
+        type: "item"
+        item: "gtibdcrops:crop_analyzer"
+      }]
+      rewards: [{
+        id: "4CBB7FE1DA9AD8CA"
+        type: "item"
+        item: "gtceu:tin_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "40DB434C83124F82"
+      title: "Полный анализ липкого тростника"
+      description: ["Возьми пакет семян липкого тростника во вторую руку. Трижды используй анализатор, чтобы увидеть рост, урожайность и устойчивость. Оставь проверенный пакет для следующей посадки."]
+      x: -4.117d
+      y: -2.467d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49498D50D2ECCDC4","43142EB8184043DD"]
+      optional: true
+      tasks: [{
+        id: "48B233E22B4043C5"
+        type: "item"
+        item: { id: "gtibdcrops:seed_packet", Count: 1b, tag: {"Crop":"stickreed","Analysis":3} }
+        match_nbt: true
+        weak_nbt_match: true
+      }]
+      rewards: [{
+        id: "45CADAB4CC45E2ED"
+        type: "item"
+        item: "gtibdcrops:crop_sticks"
+        count: 4
+      }]
+    }
+    {
+      id: "488D823D0CAE9923"
+      title: "Сборщик урожая на 32 вольта"
+      description: ["Возьми 500 мБ креозота из коксовой печи. Подай креозот в сборщик LV вместе с корпусом, датчиком, манипулятором, моторами, конвейерами, схемами, стальными пластинами и четырьмя жердями. Поставь готовую машину на высоте жердей в центре участка 9×9."]
+      x: -6.192d
+      y: 1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["48E4304ABC83A510","418A9AC15C7E9177","4FD53B755911773D","4CC895B761566224","4D7A8F4C50733F4A","46894CF1BA803E52"]
+      optional: true
+      tasks: [{
+        id: "4FDCDB20E9522D67"
+        type: "item"
+        item: "gtibdcrops:lv_crop_harvester"
+      }]
+      rewards: [{
+        id: "44E36B75B8BB472D"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "40E2F9B3817098E1"
+      title: "Выгрузка с грядки"
+      description: ["Подведи питание LV к машине и подключи предметную трубу к сундуку. Без анализатора сборщик срезает обрезки и в одном случае из четырёх забирает плоды. Проверь, что растения снова отрастают и выход не переполняется."]
+      x: -4.309d
+      y: 3.492d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["488D823D0CAE9923","418A9AC15C7E9177","4CD2C3D6AD0C7C44"]
+      optional: true
+      tasks: [{
+        id: "4FCBD1A425D77EB8"
+        type: "item"
+        item: "gtibdcrops:plant_cuttings"
+        count: 8L
+      }]
+      rewards: [{
+        id: "42694853901A765C"
+        type: "item"
+        item: "gtceu:tin_small_item_pipe"
+        count: 2
+      }]
+    }
+    {
+      id: "4A04F0CB8C2EAA06"
+      title: "Партия сырого латекса"
+      description: ["Пересади проверенный липкий тростник над песком. Щёлкни анализатором по сборщику, чтобы забирать только латекс. Жерди с растением останутся взрослыми, новой порции нужно время созреть."]
+      x: -2.314d
+      y: 0.974d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40DB434C83124F82","40E2F9B3817098E1"]
+      optional: true
+      tasks: [{
+        id: "4D590C27E8BD2B3C"
+        type: "item"
+        item: "gtibdcrops:stickreed_harvest"
+        count: 6L
+      }]
+      rewards: [{
+        id: "44315B2FF7628DEB"
+        type: "item"
+        item: "gtibdcrops:crop_sticks"
+        count: 4
+      }]
+    }
+    {
+      id: "48AA4ED2E1206D25"
+      title: "Смола из грядки LV"
+      description: ["Подай три порции латекса и образец древесной смолы в центрифугу LV. Образец останется в слоте. Прогони две загрузки, чтобы пополнить запас смолы для изоляции."]
+      x: -0.738d
+      y: -4.678d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A04F0CB8C2EAA06","44C6968CB492BFB5","4EDA16293D93081B"]
+      optional: true
+      tasks: [{
+        id: "4335457928A77B61"
+        type: "item"
+        item: "gtceu:sticky_resin"
+        count: 6L
+      }]
+      rewards: [{
+        id: "43E0217FE6B422F9"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4EE10FFB2B3C061B"
+      title: "Лён для линии волокна"
+      description: ["Высади пшеницу и арбуз по сторонам двойных жердей. Вырасти лён и собери его урожай. Для конопли потом скрести этот лён с бамбуком."]
+      x: -2.994d
+      y: -0.973d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D6EE548DD9D839E","42E8A87A9908D06A","40E2F9B3817098E1"]
+      optional: true
+      tasks: [{
+        id: "4D1FC9C174227686"
+        type: "item"
+        item: "gtibdcrops:flax_harvest"
+        count: 3L
+      }]
+      rewards: [{
+        id: "4E142FD24E5144BE"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 2
+      }]
+    }
+    {
+      id: "41686F7C844D8D0A"
+      title: "Коппон для медного порошка"
+      description: ["Скрести лён и липкий тростник над медным блоком под пашней. Сними урожай коппона. Центрифуга MV принимает три порции и оставляет медный слиток в качестве образца."]
+      x: 0.885d
+      y: -2.338d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4EE10FFB2B3C061B","48AA4ED2E1206D25","4490E480B7D13C4B"]
+      optional: true
+      tasks: [{
+        id: "4A8967CF6C1E9201"
+        type: "item"
+        item: "gtibdcrops:coppon_harvest"
+        count: 3L
+      }]
+      rewards: [{
+        id: "4C1603E5FCA41A08"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "429E67332DF5266B"
+      title: "Оловянная линия тина"
+      description: ["Скрести липкий тростник с пшеницей над блоком олова. Отложи пакет семян тина для ферру. Остальной урожай сепарируй на MV с оловянным слитком в слоте оснастки."]
+      x: -4.083d
+      y: -4.471d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49498D50D2ECCDC4","4D6EE548DD9D839E","4490E480B7D13C4B","43DD512594965578"]
+      optional: true
+      tasks: [{
+        id: "4B355C306E1E96EC"
+        type: "item"
+        item: "gtibdcrops:tine_harvest"
+        count: 3L
+      }]
+      rewards: [{
+        id: "4FDA9C0067F75E96"
+        type: "item"
+        item: "gtceu:tin_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "48A573AAA259B974"
+      title: "Ферру на железном основании"
+      description: ["Скрести коппон с тином над железным блоком. Сохрани часть ферру для вывода стальнолиста. Для переработки трёх порций ферру на MV нужен образец железного слитка."]
+      x: 2.314d
+      y: -0.856d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41686F7C844D8D0A","429E67332DF5266B"]
+      optional: true
+      tasks: [{
+        id: "45185BE267136AA5"
+        type: "item"
+        item: "gtibdcrops:ferru_harvest"
+        count: 3L
+      }]
+      rewards: [{
+        id: "446F596E20B0EB4C"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 2
+      }]
+    }
+    {
+      id: "416C3A8F0E48465B"
+      title: "Нефтяник на угольной подложке"
+      description: ["Скрести липкий тростник с коричневым грибом над угольным блоком. На три нефтяные ягоды подай пробу промытой нефти и 1000 мБ сырой нефти как оснастку. Центрифуга MV выдаёт ещё 50 мБ сырой нефти."]
+      x: -0.545d
+      y: 3.527d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A04F0CB8C2EAA06","44539B688C2EE6EC","4490E480B7D13C4B"]
+      optional: true
+      tasks: [{
+        id: "42E84FB4C228AE49"
+        type: "item"
+        item: "gtibdcrops:oilberries_harvest"
+        count: 3L
+      }]
+      rewards: [{
+        id: "4E3C10CB416CC87A"
+        type: "item"
+        item: "gtceu:bronze_small_fluid_pipe"
+        count: 2
+      }]
+    }
+    {
+      id: "4BB3D75663EC4ADC"
+      title: "Стальнолист на ступени HV"
+      description: ["Сначала скрести ферру с кактусом над блоком никеля, чтобы вывести никельбэк. Скрести ферру с никельбэком над стальным блоком. Для получения стальной пыли на HV оставь в слоте стальной слиток."]
+      x: 4.423d
+      y: -1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["48A573AAA259B974","4869C81E2ACCD5A0","4D12F46313F9CA9B","4CF4E868EBAE06D1"]
+      optional: true
+      tasks: [{
+        id: "4B334B0324B3041D"
+        type: "item"
+        item: "gtibdcrops:steeleafranks_harvest"
+        count: 3L
+      }]
+      rewards: [{
+        id: "41FF3BEA7FFF8F6E"
+        type: "item"
+        item: "gtibdcrops:crop_sticks"
+        count: 2
+      }]
+    }
+    {
+      id: "430F7FE1B716E535"
+      title: "Боксия на алюминиевой грядке"
+      description: ["Скрести пшеницу со сладкими ягодами для паучьего цветка. Скрести его с тином над свинцом для плюмбилии. Скрести плюмбилию с коппоном над цинком для гальвании, затем гальванию с тином над алюминием для боксии. На HV нужен образец алюминиевого слитка."]
+      x: 2.617d
+      y: -4.280d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41686F7C844D8D0A","429E67332DF5266B","4D12F46313F9CA9B","4CF4E868EBAE06D1"]
+      optional: true
+      tasks: [{
+        id: "411F9242A0E52F15"
+        type: "item"
+        item: "gtibdcrops:bauxia_harvest"
+        count: 3L
+      }]
+      rewards: [{
+        id: "4B5DB7C9FD9B7B03"
+        type: "item"
+        item: "gtceu:tin_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4312A8E12C938BD3"
+      title: "Титания для проб EV"
+      description: ["Скрести боксию со стальнолистом над титановым блоком. В центрифуге EV из трёх порций титании получается ильменитовая пыль. Одну порцию титана держи как образец для машины."]
+      x: 6.532d
+      y: -3.292d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BB3D75663EC4ADC","430F7FE1B716E535","477F03487DCAB625","463599FF8883FD0D","4B55EA4F05374C6F"]
+      optional: true
+      tasks: [{
+        id: "489D73788E6F4BDF"
+        type: "item"
+        item: "gtibdcrops:titania_harvest"
+        count: 3L
+      }]
+      rewards: [{
+        id: "4CD37F028CA0B1C2"
+        type: "item"
+        item: "gtceu:tin_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "40674F9C6FC8381F"
+      title: "Платина из селекционной линии IV"
+      description: ["Скрести плюмбилию с ферру над серебром для аргентии, затем аргентию с факельником над золотом для аурелии. Скрести титанию с аурелией над блоком платины. Отделяй платиновую пыль в центрифуге IV с образцом слитка."]
+      x: 7.622d
+      y: 0.181d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4312A8E12C938BD3","48A573AAA259B974","40EAC963E3020793","4C4F332D5A35474D","4922E430B7480F7D"]
+      optional: true
+      tasks: [{
+        id: "41C876C9B27F3A26"
+        type: "item"
+        item: "gtibdcrops:platina_harvest"
+        count: 3L
+      }]
+      rewards: [{
+        id: "493534F8640E6995"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "426BAE6B8490459E"
+      title: "Алмазный тростник на ступени IV"
+      description: ["Скрести свёклу с факельником для индиго и с пшеницей над кальцитом для фертилии. Скрести их по отдельности с гальванией над лазуритом и оливином соответственно. Лазулия с оливией над сапфировым блоком дадут сапфирум. Скрести его с нефтяными ягодами над алмазным блоком, урожай переработай на IV с алмазом."]
+      x: 4.423d
+      y: 1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["416C3A8F0E48465B","430F7FE1B716E535","4C4F332D5A35474D","4922E430B7480F7D"]
+      optional: true
+      tasks: [{
+        id: "4FBC9177A6A1E508"
+        type: "item"
+        item: "gtibdcrops:diareed_harvest"
+        count: 3L
+      }]
+      rewards: [{
+        id: "47F0EB1F9A829F4B"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 2
+      }]
+    }
+    {
+      id: "433C581DECA8499F"
+      title: "Квантария для участка LuV"
+      description: ["Скрести платину и алмазный тростник над иридиевым блоком. Оставь одну грядку на семена. Три порции урожая раздели на LuV с иридиевым слитком в слоте оснастки."]
+      x: 9.731d
+      y: 1.657d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["40674F9C6FC8381F","426BAE6B8490459E","46246E20CC8ECB99","40874E15F969F38C"]
+      optional: true
+      tasks: [{
+        id: "4F2613C351D3F399"
+        type: "item"
+        item: "gtibdcrops:quantaria_harvest"
+        count: 3L
+      }]
+      rewards: [{
+        id: "45131CF821A9632C"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 2
+      }]
+    }
+    {
+      id: "451F71F8931CCDBD"
+      title: "Старгатиум на наквадаховой грядке"
+      description: ["Скрести никельбэк с боксией над марганцем для пиролюзиума. Скрести его с титанией над вольфрамом для шеелиниума. Скрести квантарийную линию с шеелиниумом над наквадаховым блоком. На ZPM нужен образец наквадахового слитка."]
+      x: 11.500d
+      y: -1.658d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["433C581DECA8499F","4312A8E12C938BD3","453BEE93E4E1DC53","42C936500C621425"]
+      optional: true
+      tasks: [{
+        id: "42E6E891938C5065"
+        type: "item"
+        item: "gtibdcrops:stargatium_harvest"
+        count: 3L
+      }]
+      rewards: [{
+        id: "435F090E62E8D54A"
+        type: "item"
+        item: "gtibdcrops:crop_sticks"
+        count: 4
+      }]
+    }
+  ]
+}

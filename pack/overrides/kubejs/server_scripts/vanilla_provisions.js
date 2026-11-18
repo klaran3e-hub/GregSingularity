@@ -31,9 +31,10 @@ ServerEvents.recipes(event => {
   const dough = 'create:dough'
   const planks = '#minecraft:planks'
   const water = mc('water')
+  const stockRecipes = []
 
   function clear(names) {
-    names.forEach(name => event.remove({ output: mc(name) }))
+    names.forEach(name => stockRecipes.push({ output: mc(name) }))
   }
   function craft(name, output, inputs) {
     event.shapeless(output, inputs).id(prefix + name)
@@ -63,7 +64,7 @@ ServerEvents.recipes(event => {
   const cooking = [['smelting', 360], ['smoking', 200], ['campfire_cooking', 900]]
   cooked.forEach(([source, output, experience]) => {
     cooking.forEach(([type, ticks]) => {
-      event.remove({ type: mc(type), output: mc(output) })
+      stockRecipes.push({ type: mc(type), output: mc(output) })
       event.custom({
         type: mc(type), category: 'food', ingredient: { item: mc(source) },
         result: mc(output), cookingtime: ticks, experience: experience
@@ -261,4 +262,7 @@ ServerEvents.recipes(event => {
       W: wool, C: cord, S: mc('stick')
     })
   })
+
+  // KubeJS filters only the original recipe map, so the replacements remain intact.
+  event.remove(stockRecipes)
 })

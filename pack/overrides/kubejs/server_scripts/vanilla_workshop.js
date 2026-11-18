@@ -17,13 +17,14 @@ ServerEvents.recipes(event => {
   const glass = mc('glass_pane')
   const dust = mc('redstone')
   const planks = '#minecraft:planks'
+  const stockRecipes = []
 
   function shape(id, count, pattern, keys) {
-    event.remove({ output: mc(id) })
+    stockRecipes.push({ output: mc(id) })
     event.shaped(count + 'x ' + mc(id), pattern, keys).id(prefix + id)
   }
   function assemble(id, ingredients, count, time, power, fluid, amount) {
-    event.remove({ output: mc(id) })
+    stockRecipes.push({ output: mc(id) })
     const recipe = event.recipes.gtceu.assembler(prefix + id)
     ingredients.forEach(ingredient => recipe.itemInputs(ingredient))
     recipe.itemOutputs(count + 'x ' + mc(id)).duration(time).EUt(power)
@@ -332,4 +333,7 @@ ServerEvents.recipes(event => {
       })
     }
   }
+
+  // KubeJS filters only the original recipe map, so the replacements remain intact.
+  event.remove(stockRecipes)
 })

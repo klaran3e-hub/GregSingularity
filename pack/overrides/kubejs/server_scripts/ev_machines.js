@@ -68,7 +68,7 @@ ServerEvents.recipes(event => {
   cableWidths.forEach(([width, strands], index) => {
     const smaller = gt('aluminium_' + (index === 0 ? 'single' : cableWidths[index - 1][0]) + '_wire')
     const wire = gt('aluminium_' + width + '_wire')
-    install('draw_' + width + '_wire', ['2x ' + smaller, harness, '2x ' + ks('hv_switch_contact'), ie('wire_electrum')],
+    install('draw_' + width + '_wire', ['2x ' + smaller, harness, '2x ' + ks('hv_switch_contact'), gt('electrum_single_wire')],
       wire, 820 + strands * 45)
     install('bind_' + width + '_cable', [
       strands + 'x ' + cable, strands + 'x ' + gasket, '2x ' + harness, tile, wire, tube

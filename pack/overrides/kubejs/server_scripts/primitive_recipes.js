@@ -33,12 +33,6 @@ ServerEvents.recipes(event => {
   for (const id of replaced) {
     event.remove({ output: 'minecraft:' + id })
   }
-  for (const id of ['minecraft:copper_ingot', 'minecraft:iron_ingot', 'minecraft:gold_ingot', 'gtceu:tin_ingot', 'gtceu:bronze_ingot']) {
-    for (const type of ['minecraft:smelting', 'minecraft:blasting']) {
-      event.remove({ type: type, output: id })
-    }
-  }
-
   function shaped(id, output, pattern, keys) {
     return event.shaped(output, pattern, keys).id('zero_shift:' + id)
   }
@@ -137,6 +131,10 @@ ServerEvents.recipes(event => {
   })
   event.remove({ output: 'gtceu:rubber_planks' })
   woodRecipes('rubber', 'gtceu:rubber_planks', '#gtceu:rubber_logs')
+  if (Item.exists('upgrade_aquatic:driftwood_planks')) {
+    event.remove({ output: 'upgrade_aquatic:driftwood_planks' })
+    woodRecipes('driftwood', 'upgrade_aquatic:driftwood_planks', '#upgrade_aquatic:driftwood_logs')
+  }
   const forestryWood = [
     'acacia_desert', 'balsa', 'baobab', 'beech', 'chestnut', 'citrus', 'cocobolo', 'coconut',
     'dogwood', 'ebony', 'elm', 'feijoa', 'fir', 'giganteum', 'ginkgo', 'greenheart',
@@ -149,6 +147,12 @@ ServerEvents.recipes(event => {
     const planks = 'forestry:' + wood + '_planks'
     event.remove({ id: planks })
     woodRecipes('forestry_' + wood, planks, '#forestry:' + wood + '_logs')
+  })
+  const fireproofVanillaWood = ['acacia', 'birch', 'cherry', 'dark_oak', 'jungle', 'oak', 'spruce']
+  forestryWood.concat(fireproofVanillaWood).forEach(wood => {
+    const planks = 'forestry:' + wood + '_fireproof_planks'
+    event.remove({ id: planks })
+    woodRecipes('forestry_fireproof_' + wood, planks, '#forestry:fireproof_' + wood + '_logs')
   })
   shapeless('split_sticks', '2x minecraft:stick', ['#minecraft:planks', knife]).damageIngredient(knife)
   shaped('chest', 'minecraft:chest', ['PPP', 'BHB', 'PPP'], {
@@ -189,13 +193,10 @@ ServerEvents.recipes(event => {
   firing('pit_fire_lining', 'campfire_cooking', 'kubejs:wet_lining', 'kubejs:fired_lining', 1800, 0)
   firing('kiln_fire_lining', 'smelting', 'kubejs:wet_lining', 'kubejs:fired_lining', 700, 0.1)
   firing('blast_fire_lining', 'blasting', 'kubejs:wet_lining', 'kubejs:fired_lining', 350, 0.1)
-  event.recipes.gtceu.electric_furnace('zero_shift:gtceu/furnace/industrial_fired_lining')
-    .itemInputs('kubejs:wet_lining')
-    .itemOutputs('kubejs:fired_lining')
-    .duration(1800)
-    .EUt(16)
-  event.recipes.gtceu.electric_furnace('zero_shift:gtceu/furnace/batch_fired_lining')
+  // GregTech's electric furnace already imports the smelting recipe above.
+  event.recipes.gtceu.alloy_smelter('zero_shift:batch_fired_lining')
     .itemInputs('4x kubejs:wet_lining')
+    .notConsumable('kubejs:kiln_grate')
     .itemOutputs('4x kubejs:fired_lining')
     .duration(1800)
     .EUt(30)

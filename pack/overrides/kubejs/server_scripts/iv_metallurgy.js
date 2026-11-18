@@ -124,7 +124,7 @@ ServerEvents.recipes(event => {
     const result = gt('tungsten_' + name + '_cable')
     event.remove({ output: widerWire })
     machine('assembler', 'draw_' + name + '_wire', [
-      '2x ' + previous, ks('iv_busbar_blank'), ie('wire_electrum'), '2x ' + gasket
+      '2x ' + previous, ks('iv_busbar_blank'), gt('electrum_single_wire'), '2x ' + gasket
     ], widerWire, 1200 + size * 50, 1920).inputFluids(Fluid.of(gt('lubricant'), 750))
     event.remove({ output: result })
     machine('assembler', 'bind_' + name + '_cable', [

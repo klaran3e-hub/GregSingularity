@@ -1,2 +1,4 @@
 # The branded resource-loading screen takes over as soon as Minecraft's window opens.
 earlyWindowControl = false
+# Limit early loading workers to reduce registration failures with Create addons.
+maxThreads = 2

@@ -125,7 +125,8 @@ ServerEvents.recipes(event => {
     '8x ' + part('plasma_coupon'), '4x ' + clock, '4x gtceu:neutron_reflector',
     '2x gtceu:luv_sensor', '2x ' + quantum, '2x ae2:cell_component_256k',
     '2x create:content_observer', '2x pneumaticcraft:pressure_gauge_module'
-  ], ignition, 3800, 29696).inputFluids(Fluid.of(exhaust, 1500))
+  ], ignition, 3800, 29696)
+    .notConsumable(rotor.weakNBT()).inputFluids(Fluid.of(exhaust, 1500))
   machine('assembler', 'apply_luv_load', [
     '4x ' + part('plasma_coupon'), '4x ' + magnet, '4x ' + plate, '4x ' + part('busbar'), '2x ' + circuit
   ], '4x ' + coupon, 3100, 30720).notConsumable(Item.of(ignition)).inputFluids(Fluid.of(plasma, 750))

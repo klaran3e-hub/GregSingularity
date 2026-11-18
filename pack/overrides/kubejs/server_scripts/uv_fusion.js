@@ -35,6 +35,13 @@ ServerEvents.recipes(event => {
     'wetware_processor_computer', 'crystal_processor_mainframe', 'network_switch']
     .forEach(id => event.remove({ output: gt(id) }))
 
+  // Keep sulfate recovery available once the Mk III has made the first Naquadria.
+  event.remove({ id: gt('electric_blast_furnace/naquadria_sulfate_separation') })
+  event.recipes.gtceu.electric_blast_furnace(gt('naquadria_sulfate_separation'))
+    .itemInputs('6x gtceu:naquadria_sulfate_dust').notConsumable(Item.of(gt('naquadria_ingot')))
+    .inputFluids(Fluid.of(gt('hydrogen'), 2000)).itemOutputs(gt('hot_naquadria_ingot'))
+    .outputFluids(Fluid.of(gt('sulfuric_acid'), 1000)).blastFurnaceTemp(9000).duration(600).EUt(122880)
+
   machine('assembler', 'wind_field_cassette', [
     '4x gtceu:fusion_coil', '8x ' + tritanium, '4x ' + americium, '4x ' + laminate, '4x ' + shunt,
     '2x gtceu:zpm_field_generator', '4x gtceu:yttrium_barium_cuprate_quadruple_cable',

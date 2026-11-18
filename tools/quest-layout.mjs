@@ -20,7 +20,9 @@ export const questChapters = [
   ['woodworking', 'Деревообработка', [
     'timber_oak', 'timber_spruce', 'timber_birch', 'timber_jungle', 'timber_acacia', 'timber_dark_oak',
     'timber_mangrove', 'timber_cherry', 'timber_bamboo', 'timber_crimson', 'timber_warped'
-  ], 'wood_oak_mill']
+  ], 'wood_oak_mill'],
+  ['gregcrops', 'Агрокультуры GregCrops', ['gregcrops'], 'crop_stargatium'],
+  ['gtxfa', 'Ресурсные пчёлы', ['gtxfa'], 'bee_hv_copper_run']
 ]
 
 const primaryRoutes = {
@@ -46,11 +48,15 @@ const primaryRoutes = {
   masonry: ['chisel', 'stone_bricks', 'stonecutter', 'glass'],
   forestry: ['forest_farm_drive', 'forest_farm_arboretum', 'forest_scoop', 'forest_apiary', 'forest_lab_analyzer',
     'forest_gd_industrial_apiary', 'forest_gd_sampler', 'forest_gd_replicator'],
-  woodworking: ['wood_oak_hand', 'wood_birch_hand', 'wood_dark_oak_hand', 'wood_cherry_hand', 'wood_bamboo_hand', 'wood_crimson_hand']
+  woodworking: ['wood_oak_hand', 'wood_birch_hand', 'wood_dark_oak_hand', 'wood_cherry_hand', 'wood_bamboo_hand', 'wood_crimson_hand'],
+  gregcrops: ['crop_stakes', 'crop_stickreed_seed', 'crop_harvester', 'crop_coppon', 'crop_steel', 'crop_diareed',
+    'crop_quantaria', 'crop_stargatium'],
+  gtxfa: ['bee_hv_apiary', 'bee_carbon_comb', 'bee_water_comb', 'bee_polyethylene_comb', 'bee_hv_copper_run',
+    'bee_iv_carbide_comb', 'bee_naquadah_comb', 'bee_naquadah_alloy_comb', 'bee_uv_run']
 }
 
 const fullDependencyWebs = new Set([
-  'mv', 'hv_foundry', 'ev_power', 'iv_power', 'luv_power', 'zpm_power', 'uv_power', 'post_uv_operations', 'post_uv_reclamation', 'post_uv_distribution', 'final_operation', 'me_network'
+  'mv', 'hv_foundry', 'ev_power', 'iv_power', 'luv_power', 'zpm_power', 'uv_power', 'post_uv_operations', 'post_uv_reclamation', 'post_uv_distribution', 'final_operation', 'me_network', 'gregcrops', 'gtxfa'
 ])
 
 function keyHash(key) {

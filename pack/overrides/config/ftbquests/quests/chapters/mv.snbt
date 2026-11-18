@@ -322,7 +322,7 @@
     {
       id: "46D2E30F8E3FCBF8"
       title: "Протяжка медной проволоки"
-      description: ["Дожми контактные полосы на прессе Create. Каждая полоса даёт две проволоки."]
+      description: ["Дожми контактные полосы на прессе Create. Каждая полоса даёт одну проволоку."]
       x: -35.291d
       y: 2.590d
       shape: "circle"
@@ -5055,7 +5055,7 @@
       tasks: [{
         id: "4D88D9B25177F014"
         type: "item"
-        item: "immersiveengineering:wire_electrum"
+        item: "gtceu:electrum_single_wire"
         count: 8L
       }]
       rewards: [{

@@ -63,30 +63,3 @@ ServerEvents.tags('item', event => {
   ])
   event.add('zero_shift:primitive_ores/gold', '#forge:raw_materials/gold')
 })
-
-ServerEvents.recipes(event => {
-  const canonical = {
-    'create:copper_sheet': 'gtceu:copper_plate',
-    'create:iron_sheet': 'gtceu:iron_plate',
-    'create:golden_sheet': 'gtceu:gold_plate',
-    'create:brass_sheet': 'gtceu:brass_plate',
-    'create:brass_ingot': 'gtceu:brass_ingot',
-    'create:zinc_ingot': 'gtceu:zinc_ingot',
-    'create:zinc_nugget': 'gtceu:zinc_nugget',
-    'immersiveengineering:plate_copper': 'gtceu:copper_plate',
-    'immersiveengineering:plate_iron': 'gtceu:iron_plate',
-    'immersiveengineering:plate_gold': 'gtceu:gold_plate',
-    'immersiveengineering:plate_steel': 'gtceu:steel_plate',
-    'immersiveengineering:ingot_steel': 'gtceu:steel_ingot',
-    'immersiveengineering:ingot_lead': 'gtceu:lead_ingot',
-    'immersiveengineering:ingot_silver': 'gtceu:silver_ingot',
-    'immersiveengineering:ingot_nickel': 'gtceu:nickel_ingot',
-    'immersiveengineering:ingot_aluminum': 'gtceu:aluminium_ingot',
-    'immersiveengineering:ingot_uranium': 'gtceu:uranium_ingot',
-    'immersiveengineering:ingot_electrum': 'gtceu:electrum_ingot'
-  }
-  for (const [duplicate, common] of Object.entries(canonical)) {
-    event.replaceInput({ input: duplicate }, duplicate, common)
-    event.remove({ output: duplicate })
-  }
-})

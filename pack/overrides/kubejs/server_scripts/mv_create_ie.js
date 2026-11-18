@@ -13,7 +13,7 @@ ServerEvents.recipes(event => {
   const precision = create('precision_mechanism')
   const compressedIron = 'pneumaticcraft:ingot_iron_compressed'
   const connector = ie('connector_mv')
-  const wire = ie('wire_electrum')
+  const wire = gt('electrum_single_wire')
   const wireCoil = ie('wirecoil_electrum')
   const insulatedCoil = ie('wirecoil_electrum_ins')
 
@@ -42,8 +42,9 @@ ServerEvents.recipes(event => {
   assemble('stockpile_switch', [observer, tunnel, create('redstone_link'), circuit, ie('component_steel'),
     gt('mv_electric_motor'), seal], create('stockpile_switch'), 1, 720, lubricant, 350)
 
-  event.remove({ output: wire })
   event.remove({ id: ie('metalpress/wire_electrum') })
+  event.remove({ id: /^gtceu:wiremill\/mill_electrum_wire(?:_(?:2|4|8|16|fine))?$/ })
+  event.remove({ id: gt('extruder/extrude_electrum_wire') })
   event.custom({
     type: ie('metal_press'), energy: 14400, mold: ie('mold_wire'),
     input: { item: gt('electrum_ingot') }, result: { item: wire, count: 2 }

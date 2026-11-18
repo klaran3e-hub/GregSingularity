@@ -44,6 +44,8 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'forestry:smelter/bronze_from_raw_materials' })
   event.remove({ type: gt('alloy_smelter'), output: gt('bronze_ingot') })
   event.remove({ type: gt('mixer'), output: gt('bronze_dust') })
+  event.remove({ id: 'gtceu:shapeless/dust_bronze' })
+  event.remove({ id: 'immersiveengineering:arcfurnace/dust_bronze' })
 
   event.custom({
     type: 'create:mixing',

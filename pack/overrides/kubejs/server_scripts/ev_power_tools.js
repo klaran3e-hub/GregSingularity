@@ -10,7 +10,7 @@ ServerEvents.recipes(event => {
     wire_cutter: 'kubejs:ev_harness'
   }
   const pattern = /^gtceu:ev_(.+)_(drill|jackhammer|chainsaw|wrench|screwdriver|wire_cutter)$/
-  let count = 0
+  const tools = []
   items.getKeys().forEach(key => {
     const output = String(key)
     const match = output.match(pattern)
@@ -24,17 +24,22 @@ ServerEvents.recipes(event => {
       console.warn('No lower-tier tool for ' + output)
       return
     }
-    event.remove({ output: output })
-    const recipe = event.recipes.gtceu.assembler('zero_shift:ev_tools/' + suffix)
+    tools.push({ output: output, suffix: suffix, family: family, donor: donor })
+  })
+
+  if (tools.length > 0) {
+    event.remove(tools.map(tool => ({ output: tool.output })))
+  }
+  tools.forEach(tool => {
+    const recipe = event.recipes.gtceu.assembler('zero_shift:ev_tools/' + tool.suffix)
     const components = [
-      donor, 'gtceu:ev_power_unit', families[family], 'immersiveengineering:connector_hv',
+      tool.donor, 'gtceu:ev_power_unit', families[tool.family], 'immersiveengineering:connector_hv',
       '4x gtceu:titanium_plate', '3x kubejs:vacuum_gasket', '2x gtceu:micro_processor_computer',
       'pneumaticcraft:reinforced_pressure_tube'
     ]
     components.forEach(component => recipe.itemInputs(component))
     recipe.inputFluids(Fluid.of('gtceu:lubricant', 1150))
-      .itemOutputs(Item.of(output, '{MaxCharge:10240000L}')).duration(2180).EUt(1536)
-    count++
+      .itemOutputs(Item.of(tool.output, '{MaxCharge:10240000L}')).duration(2180).EUt(1536)
   })
-  console.info('GTIBD Addon EV power tools: ' + count)
+  console.info('GTIBD Addon EV power tools: ' + tools.length)
 })
