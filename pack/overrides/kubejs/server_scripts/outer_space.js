@@ -33,13 +33,21 @@ ServerEvents.recipes(event=>{
     ['uv','freighter','freighter_drive','gtibd_core:courier',k('europa_phase_ceramic'),k('uv_phase_interlock'),'gtceu:tritanium_plate','titan_flight_matrix',507904]
   ]
   stages.forEach(([tier,ship,drive,previous,local,calibration,plate,fuel,eu],i)=>{
-    process('assembler',drive).itemInputs(gt(tier+'_machine_hull'),'2x '+gt(tier+'_electric_pump'),
-      '2x '+gt(tier+'_electric_motor'),'4x '+plate,'2x '+local,calibration,'4x kubejs:vacuum_gasket')
-      .inputFluids(f(gt('soldering_alloy'),864*(i+1))).itemOutputs(k(drive)).duration(1700+420*i).EUt(eu)
-    const line=process('assembly_line',ship)
-    ;[previous,k(drive),'2x '+gt(tier+'_sensor'),'4x '+gt(tier+'_field_generator'),'12x '+plate,
-      '2x '+local,calibration,'4x ad_astra:calorite_tank','4x ad_astra:rocket_fin'].forEach(input=>line.itemInputs(input))
-    line.inputFluids(f(gt('lubricant'),2000+1000*i),f(gt('soldering_alloy'),1728+864*i),f(k(fuel),1000*(i+1)))
-      .itemOutputs('gtibd_core:'+ship).duration(3200+800*i).EUt(eu)
+    const line = process('assembly_line', drive)
+    const inputs = [gt(tier+'_machine_hull'), '2x '+gt(tier+'_electric_pump'), '2x '+gt(tier+'_electric_motor'),
+      '2x '+gt(tier+'_sensor'), '4x '+gt(tier+'_field_generator'), '16x '+plate, '2x '+local,
+      calibration, '4x kubejs:vacuum_gasket']
+    for (const input of inputs) line.itemInputs(input)
+    line.inputFluids(f(gt('lubricant'),2000+1000*i), f(gt('soldering_alloy'),2592+1728*i), f(k(fuel),1000*(i+1)))
+      .itemOutputs(k(drive)).duration(4900+1220*i).EUt(eu)
+
+    const tank = ad('calorite_tank'), fin = ad('rocket_fin')
+    const parts = [ad('rocket_nose_cone'), previous, local, tank, tank, calibration, local,
+      fin, tank, tank, fin, fin, k(drive), fin]
+    event.custom({
+      type: ad('nasa_workbench'),
+      ingredients: parts.map(item => ({item: item})),
+      result: {id: 'gtibd_core:'+ship, count: 1}
+    }).id('zero_shift:outer_space/nasa_'+ship)
   })
 })

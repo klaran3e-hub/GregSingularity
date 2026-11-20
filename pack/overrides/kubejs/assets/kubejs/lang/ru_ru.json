@@ -1,4 +1,6 @@
 {
+  "jei.gtibd_core.machine_smelting": "Промышленная переплавка",
+  "jei.gtibd_core.station_construction": "Строительство орбитальной станции",
   "item.kubejs.mv_coalescer": "Коалесцирующий патрон",
   "item.kubejs.mv_saturated_coalescer": "Насыщенный коалесцирующий патрон",
   "item.kubejs.mv_impregnated_insulation": "Пакет промасленной изоляции",

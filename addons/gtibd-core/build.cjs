@@ -2,7 +2,13 @@ const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_pro
 const root=path.resolve(__dirname,'../..'), src=path.join(root,'pack/overrides/kubejs'), stage=fs.mkdtempSync(path.join(os.tmpdir(),'gtibd-build-'));
 const jdk=process.env.JAVA_HOME||path.resolve(root,'../.tools/ports-toolchains/jdk17/jdk-17.0.20.1+1');
 const mods=process.argv[2]||path.join(root,'.dev/toolbatch-qa/mods');
-const dependencies=['kubejs-forge-','rhino-forge-','ad_astra-forge-','botarium-forge-','resourcefullib-forge-'].map(prefix=>{const match=fs.readdirSync(mods).filter(n=>n.startsWith(prefix)&&n.endsWith('.jar'));if(match.length!==1)throw Error('Expected one '+prefix+' dependency');return path.resolve(mods,match[0])});
+const dependencies=['kubejs-forge-','rhino-forge-','ad_astra-forge-','botarium-forge-','resourcefullib-forge-','gtceu-','jei-'].map(prefix=>{const match=fs.readdirSync(mods).filter(n=>n.startsWith(prefix)&&n.endsWith('.jar'));if(match.length!==1)throw Error('Expected one '+prefix+' dependency');return path.resolve(mods,match[0])});
+const gtJar=dependencies.find(file=>path.basename(file).startsWith('gtceu-'));
+const jarTool=path.join(jdk,'bin/jar'), nestedRoot=fs.mkdtempSync(path.join(os.tmpdir(),'gtibd-deps-'));
+const nested=cp.execFileSync(jarTool,['tf',gtJar],{encoding:'utf8'}).split(/\r?\n/).filter(name=>/^META-INF\/jarjar\/(ldlib-forge-|Registrate-).*\.jar$/.test(name));
+if(nested.length!==2)throw Error('Expected LDLib and Registrate in the pinned GregTech JAR');
+cp.execFileSync(jarTool,['xf',gtJar,...nested],{cwd:nestedRoot});
+dependencies.push(...nested.map(name=>path.join(nestedRoot,name)));
 const forgeLibraries=process.env.FORGE_LIBRARIES||path.join(root,'.dev/server/libraries/net/minecraftforge');
 for(const library of ['forge/1.20.1-47.4.28/forge-1.20.1-47.4.28-universal.jar','eventbus/6.2.33/eventbus-6.2.33.jar']) dependencies.push(path.join(forgeLibraries,library));
 // The included Ad Astra classes use the 1.20.1 Forge (SRG) names.
@@ -23,7 +29,7 @@ for(const folder of ['startup_scripts','server_scripts','client_scripts']){
  for(const name of names){const target=path.join(scripts,folder,name);fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(path.join(src,folder,name),target)}
 }
 const identity=path.join(scripts,'startup_scripts/pack_identity.js');fs.writeFileSync(identity,fs.readFileSync(identity,'utf8').replaceAll('GTIBD Addon','GTIBD Core'));
-cp.execFileSync(path.join(jdk,'bin/javac'),['-proc:none','--release','17','-classpath',dependencies.join(path.delimiter),'-d',stage,path.join(__dirname,'AddonScripts.java'),path.join(__dirname,'ClientFog.java'),path.join(__dirname,'FieldworkSpace.java'),path.join(__dirname,'FieldworkSpaceClient.java'),path.join(__dirname,'StationFreight.java')],{stdio:'inherit'});
+cp.execFileSync(path.join(jdk,'bin/javac'),['-proc:none','--release','17','-classpath',dependencies.join(path.delimiter),'-d',stage,path.join(__dirname,'AddonScripts.java'),path.join(__dirname,'ClientFog.java'),path.join(__dirname,'FieldworkSpace.java'),path.join(__dirname,'FieldworkSpaceClient.java'),path.join(__dirname,'RecipeBrowser.java'),path.join(__dirname,'StationFreight.java')],{stdio:'inherit'});
 const version=fs.readFileSync(path.join(__dirname,'resources/META-INF/mods.toml'),'utf8').match(/^version="([^"]+)"/m)[1];
 const output=path.join(root,'dist','GregSingularity-Core-'+version);fs.mkdirSync(output,{recursive:true});
 // The committed sprites are the finished art. Keep the same resource bytes in the dev profile and the shipped JAR.

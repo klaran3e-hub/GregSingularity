@@ -1,4 +1,7 @@
 {
+  "tooltip.gtibd_core.computercraft.cable.hint": "Для сети ME используй кабель из Applied Energistics 2.",
+  "tooltip.gtibd_core.computercraft.cable.kind": "Проводная сеть · CC:Tweaked",
+  "tooltip.gtibd_core.computercraft.cable.use": "Соединяет проводные модемы CC:Tweaked с компьютерами и периферией.",
   "tooltip.gtibd_core.gtceu.field_bloomery.hint": "Собери шахту, поставь фурму и чашу перед выпуском.",
   "tooltip.gtibd_core.gtceu.field_bloomery.kind": "Полевой горн",
   "tooltip.gtibd_core.gtceu.field_bloomery.use": "Плавит ранние шихты на древесном угле.",

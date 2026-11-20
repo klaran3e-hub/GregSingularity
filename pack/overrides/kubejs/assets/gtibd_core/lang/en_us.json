@@ -1,4 +1,7 @@
 {
+  "tooltip.gtibd_core.computercraft.cable.hint": "Use an Applied Energistics 2 cable for an ME network.",
+  "tooltip.gtibd_core.computercraft.cable.kind": "Wired network · CC:Tweaked",
+  "tooltip.gtibd_core.computercraft.cable.use": "Connects CC:Tweaked wired modems so computers can access networked peripherals.",
   "tooltip.gtibd_core.gtceu.field_bloomery.hint": "Build the shaft and fit the tuyere and casting basin.",
   "tooltip.gtibd_core.gtceu.field_bloomery.kind": "Field bloomery",
   "tooltip.gtibd_core.gtceu.field_bloomery.use": "Smelts early crucible charges with charcoal.",

@@ -1,4 +1,4 @@
-"""Build the importable development profile from the local Core and pinned mods."""
+"""Build an importable profile using pinned CurseForge files or an unpublished development Core."""
 from hashlib import sha256
 import json
 from pathlib import Path
@@ -17,6 +17,9 @@ def package():
     core_meta = (ROOT / 'addons/gtibd-core/resources/META-INF/mods.toml').read_text(encoding='utf-8')
     version = re.search(r'^version="([^"]+)"', core_meta, re.MULTILINE).group(1)
     core = ROOT / 'dist' / ('GregSingularity-Core-' + version) / ('GregSingularity-Core-' + version + '.jar')
+    core_pins = [entry for entry in manifest['files'] if entry['projectID'] == 1815128]
+    if len(core_pins) > 1 or any(not entry['required'] or entry['fileID'] <= 0 for entry in core_pins):
+        raise ValueError('Invalid CurseForge Core dependency')
     output = ROOT / 'dist' / ('GregSingularity-' + revision)
     output.mkdir(parents=True, exist_ok=True)
     target = output / ('GregSingularity-' + revision + '.zip')
@@ -42,12 +45,16 @@ def package():
                 if len(parts) > 1 and parts[0] == 'kubejs' and parts[1] in SCRIPTS:
                     continue
                 out.write(entry, entry.relative_to(PACK).as_posix())
-            out.write(core, 'overrides/mods/' + core.name)
+            if not core_pins:
+                out.write(core, 'overrides/mods/' + core.name)
         with ZipFile(archive) as result:
             if result.testzip() is not None:
                 raise ValueError('Damaged profile ZIP')
             result.getinfo('overrides/config/ftbquests/quests/chapters/steam.snbt')
-            for local in [core, *(overrides / 'mods').glob('*.jar')]:
+            local_mods = list((overrides / 'mods').glob('*.jar'))
+            if not core_pins:
+                local_mods.append(core)
+            for local in local_mods:
                 if sha256(result.read('overrides/mods/' + local.name)).digest() != sha256(local.read_bytes()).digest():
                     raise ValueError('Embedded file differs from ' + local.name)
         archive.replace(target)

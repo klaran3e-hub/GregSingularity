@@ -1,4 +1,6 @@
 # A section defines the short classification. Each item has RU/EN use, then optional RU/EN handling instructions.
+@Проводная сеть · CC:Tweaked|Wired network · CC:Tweaked
+computercraft:cable|Соединяет проводные модемы CC:Tweaked с компьютерами и периферией.|Connects CC:Tweaked wired modems so computers can access networked peripherals.|Для сети ME используй кабель из Applied Energistics 2.|Use an Applied Energistics 2 cable for an ME network.
 @Горное дело · Медь|Mining · Copper
 copper_mining_hammer|Снимает слой породы 3×3 глубиной в один блок.|Mines a 3×3 face one block deep.|Присядь, чтобы добыть один блок.|Sneak to mine a single block.
 @Квантовая память · ZPM|Quantum storage · ZPM

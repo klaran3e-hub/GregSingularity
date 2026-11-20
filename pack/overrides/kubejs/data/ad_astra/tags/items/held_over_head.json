@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "gtibd_core:surveyor",
+    "gtibd_core:courier",
+    "gtibd_core:freighter"
+  ]
+}

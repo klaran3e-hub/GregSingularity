@@ -1,4 +1,6 @@
 {
+  "jei.gtibd_core.machine_smelting": "Industrial Smelting",
+  "jei.gtibd_core.station_construction": "Orbital Station Construction",
   "item.kubejs.mv_coalescer": "Coalescing Cartridge",
   "item.kubejs.mv_saturated_coalescer": "Saturated Coalescing Cartridge",
   "item.kubejs.mv_impregnated_insulation": "Oil-Impregnated Insulation Pack",

@@ -11,9 +11,14 @@
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
   "name": "GregSingularity",
-  "version": "0.2.0",
+  "version": "0.2.0-Hotfix.1",
   "author": "klaran3e",
   "files": [
+    {
+      "projectID": 1814088,
+      "fileID": 9688935,
+      "required": true
+    },
     {
       "projectID": 890405,
       "fileID": 7917773,
@@ -282,6 +287,11 @@
     {
       "projectID": 714059,
       "fileID": 6231176,
+      "required": true
+    },
+    {
+      "projectID": 1815128,
+      "fileID": 9718901,
       "required": true
     }
   ],

@@ -1,112 +1,150 @@
 {
-  "parent": "minecraft:item/generated",
-  "loader": "forge:separate_transforms",
+  "loader": "forge:obj",
+  "model": "gtibd_core:models/vehicle/freighter.obj",
+  "automatic_culling": false,
+  "shade_quads": true,
+  "flip_v": true,
+  "emissive_ambient": false,
+  "gui_light": "front",
   "textures": {
-    "layer0": "gtibd_core:item/freighter",
-    "particle": "gtibd_core:item/freighter"
+    "particle": "gtibd_core:entity/freighter"
   },
-  "base": {
-    "loader": "forge:obj",
-    "model": "gtibd_core:models/vehicle/freighter.obj",
-    "automatic_culling": false,
-    "shade_quads": true,
-    "flip_v": true,
-    "emissive_ambient": false,
-    "display": {
-      "thirdperson_righthand": {
-        "rotation": [
-          0,
-          0,
-          -18
-        ],
-        "translation": [
-          0,
-          0,
-          1
-        ],
-        "scale": [
-          0.17,
-          0.17,
-          0.17
-        ]
-      },
-      "thirdperson_lefthand": {
-        "rotation": [
-          0,
-          0,
-          18
-        ],
-        "translation": [
-          0,
-          0,
-          1
-        ],
-        "scale": [
-          0.17,
-          0.17,
-          0.17
-        ]
-      },
-      "firstperson_righthand": {
-        "rotation": [
-          0,
-          15,
-          -32
-        ],
-        "translation": [
-          1,
-          -0.5,
-          1
-        ],
-        "scale": [
-          0.13,
-          0.13,
-          0.13
-        ]
-      },
-      "firstperson_lefthand": {
-        "rotation": [
-          0,
-          -15,
-          32
-        ],
-        "translation": [
-          -1,
-          -0.5,
-          1
-        ],
-        "scale": [
-          0.13,
-          0.13,
-          0.13
-        ]
-      }
-    }
-  },
-  "perspectives": {
+  "display": {
     "gui": {
-      "parent": "minecraft:item/generated",
-      "textures": {
-        "layer0": "gtibd_core:item/freighter"
-      }
+      "rotation": [
+        -41,
+        -170,
+        -26
+      ],
+      "translation": [
+        1.76,
+        -4.12,
+        2.6
+      ],
+      "scale": [
+        0.1471,
+        0.1471,
+        0.1471
+      ]
     },
-    "fixed": {
-      "parent": "minecraft:item/generated",
-      "textures": {
-        "layer0": "gtibd_core:item/freighter"
-      }
+    "thirdperson_righthand": {
+      "rotation": [
+        -110,
+        0,
+        -90
+      ],
+      "translation": [
+        -21,
+        4.5,
+        -4.5
+      ],
+      "scale": [
+        0.452,
+        0.452,
+        0.452
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -110,
+        0,
+        -90
+      ],
+      "translation": [
+        -21,
+        4.5,
+        -13.5
+      ],
+      "scale": [
+        0.452,
+        0.452,
+        0.452
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        -10,
+        180,
+        90
+      ],
+      "translation": [
+        -17,
+        15,
+        -4
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -10,
+        180,
+        90
+      ],
+      "translation": [
+        -17,
+        10,
+        -4
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
     },
     "ground": {
-      "parent": "minecraft:item/generated",
-      "textures": {
-        "layer0": "gtibd_core:item/freighter"
-      }
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        1.5,
+        0
+      ],
+      "scale": [
+        0.143,
+        0.143,
+        0.143
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        -6.03,
+        0
+      ],
+      "scale": [
+        0.125,
+        0.125,
+        0.125
+      ]
     },
     "head": {
-      "parent": "minecraft:item/generated",
-      "textures": {
-        "layer0": "gtibd_core:item/freighter"
-      }
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        8,
+        0
+      ],
+      "scale": [
+        0.237,
+        0.237,
+        0.237
+      ]
     }
   }
 }
