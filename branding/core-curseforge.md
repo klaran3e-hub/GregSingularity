@@ -12,4 +12,4 @@ Three piloted Ad Astra rockets serve Ceres, Europa and Titan. Each takes a dedic
 
 ![Installation & support](https://raw.githubusercontent.com/klaran3e-hub/GregSingularity/main/branding/public/core-install.gif)
 
-Install the matching [GregSingularity pack](https://www.curseforge.com/minecraft/modpacks/gregsingularity) for its quests and configuration. For manual updates, back up the profile, remove the previous Core JAR and place the new JAR in mods on both client and server. [Release files](https://github.com/klaran3e-hub/GregSingularity/releases) · [Community and bug reports](https://discord.gg/GXNCjUfSdt).
+Install the matching [GregSingularity pack](https://www.curseforge.com/minecraft/modpacks/gregsingularity) for its quests and configuration. For manual updates, back up the profile, remove the previous Core JAR and place the new JAR in mods on both client and server. [Release files](https://github.com/klaran3e-hub/GregSingularity/releases) · [Community and bug reports](https://discord.gg/PppDQ2ZE6P).
