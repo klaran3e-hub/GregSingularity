@@ -47,30 +47,9 @@ vanilla_button {
 
 element {
   element_type = text_v2
-  instance_identifier = gtibd-loading-gt
-  source_mode = direct
-  source = ^^^%n%**GregTech:**%n%^^^
-  parse_markdown = true
-  base_color = #E99A45FF
-  shadow = true
-  scale = 1.4
-  text_border = 2
-  interactable = false
-  enable_scrolling = false
-  auto_line_wrapping = false
-  anchor_point = mid-centered
-  x = -173
-  y = -31
-  width = 346
-  height = 23
-  stay_on_screen = true
-}
-
-element {
-  element_type = text_v2
   instance_identifier = gtibd-loading-title
   source_mode = direct
-  source = ^^^%n%**Industrial Brain Damage**%n%^^^
+  source = ^^^%n%**GregSingularity**%n%^^^
   parse_markdown = true
   base_color = #F6ECE1FF
   shadow = true
@@ -112,7 +91,7 @@ element {
   element_type = text_v2
   instance_identifier = gtibd-loading-tip
   source_mode = direct
-  source = ^^^%n%На механической пиле бревно даёт 4 доски.%n%^^^
+  source = ^^^%n%Распиловочный станок GregTech даёт 6 досок из бревна.%n%^^^
   parse_markdown = true
   base_color = #C6BDB2FF
   shadow = true

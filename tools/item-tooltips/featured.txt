@@ -1,0 +1,13 @@
+# A section defines the short classification. Each item has RU/EN use, then optional RU/EN handling instructions.
+@Горное дело · Медь|Mining · Copper
+copper_mining_hammer|Снимает слой породы 3×3 глубиной в один блок.|Mines a 3×3 face one block deep.|Присядь, чтобы добыть один блок.|Sneak to mine a single block.
+@Квантовая память · ZPM|Quantum storage · ZPM
+zpm_storage_backplane|Плата памяти квантовых сундуков и резервуаров ZPM и UV.|Memory board for ZPM and UV quantum chests and tanks.|Два компонента AE2 по 256k дают две готовые платы.|Two 256k AE2 components make a pair of boards.
+@Грузовая ракета · UV|Cargo rocket · UV
+gtibd_core:freighter|Доставляет груз на Титан и его орбиту.|Carries cargo to Titan and its orbit.|Заправляется лётной матрицей «Титан».|Refuel with Titan Flight Matrix.
+@Межпланетная ракета · ZPM|Transfer rocket · ZPM
+gtibd_core:courier|Доставляет экспедицию на Европу.|Carries an expedition to Europa.|Заправляется перелётной средой «Европа».|Refuel with Europa Transfer Medium.
+@Геодезическая ракета · LuV|Survey rocket · LuV
+gtibd_core:surveyor|Доставляет экспедицию к соляным жилам Цереры.|Carries a survey team to the salt seams on Ceres.|Заправляется геодезическим топливом.|Refuel with Survey Propellant.
+@Обогащение · Марс · EV|Ore processing · Mars · EV
+mill_mars_heavy|Выщелачивается с сырым острумом в реакторе на Марсе.|Leach with raw ostrum in a chemical reactor on Mars.|На одну порцию нужно 625 мБ серной кислоты.|One batch takes 625 mB of sulfuric acid.

@@ -1,7 +1,6 @@
 const gt = id => 'gtceu:' + id
 const ks = id => 'kubejs:' + id
 const me = id => 'ae2:' + id
-const ie = id => 'immersiveengineering:' + id
 const pnc = id => 'pneumaticcraft:' + id
 const create = id => 'create:' + id
 
@@ -13,13 +12,13 @@ export function expandLuVZpm(chapters) {
   }
 
   describe('luv_power', 'luv_package', 'Опрессуй ядро с модулем IV, диэлектриком, инженерным процессором, прокладкой и продвинутой трубой. На ветке камеры поставь клапан на 4,92 бар. Рабочий минимум рецепта 4,9 бар.')
-  describe('luv_fusion', 'luv_fusion_reactor', 'Удлини линию до девяти предметных входов и выходной секции. В девятый вход поставь два накопителя IE высокого напряжения. Вставь записанную сферу, подай газ, смазку и теплоноситель. Цикл идёт при 32000 EU/t. Само кольцо строй по JEI.')
-  describe('luv_fusion', 'luv_commissioning', 'Исследуй протокол зажигания с чистой сферой при 12 CWU/t и 36000 CWU. Вставь запись в линию LuV на девять входов. Последние два накопителя IE подай отдельно от памяти AE2. Нужны 4000 мБ плазмы, 3500 мБ защитного газа и 4000 мБ смазки. Цикл идёт пять минут при 32000 EU/t.')
+  describe('luv_fusion', 'luv_fusion_reactor', 'Удлини линию до девяти предметных входов и выходной секции. В девятый вход поставь два буфера батарей высокого напряжения. Вставь записанную сферу, подай газ, смазку и теплоноситель. Цикл идёт при 32000 EU/t. Само кольцо строй по JEI.')
+  describe('luv_fusion', 'luv_commissioning', 'Исследуй протокол зажигания с чистой сферой при 12 CWU/t и 36000 CWU. Вставь запись в линию LuV на девять входов. Последние два буфера батарей подай отдельно от памяти AE2. Нужны 4000 мБ плазмы, 3500 мБ защитного газа и 4000 мБ смазки. Цикл идёт пять минут при 32000 EU/t.')
   describe('zpm_europium', 'zpm_europium_target', 'При 4,9 бар опрессуй по две порции соли и концентрата, восемь кварца, четыре пробы LuV, два отражателя, четыре прокладки и две продвинутые трубы. Получишь две мишени. Ветку камеры держи за клапаном на 4,92 бар.')
 
   add('luv_alloys', [
     ['luv_alloy_return_control', 'Два холодных поста для трёх сплавов', gt('iv_input_hatch'), 4, ['luv_hssg_plate', 'luv_niobium_hot', 'iv_dual_vacuum_outputs'], 'На каждом посту разведи защитный газ и холодную жидкость по двум люкам. На выходе слиток и тёплая обратка идут в разные буферы.'],
-    ['luv_hssg_drive_stock', 'Оснастка для намотки HSS-G', create('precision_mechanism'), 8, ['luv_hssg_plate', 'luv_hssg_winding'], 'Отложи механизмы Create и восемь изолированных катушек IE на четыре партии обмоток. Старые блоки нихрома подавай отдельной линией.'],
+    ['luv_hssg_drive_stock', 'Оснастка для намотки HSS-G', create('precision_mechanism'), 8, ['luv_hssg_plate', 'luv_hssg_winding'], 'Отложи механизмы Create и восемь изолированных катушек напряжения на четыре партии обмоток. Старые блоки нихрома подавай отдельной линией.'],
     ['luv_end_tailing_sort', 'Отделение хвостов на танталите', ks('ore_tailings'), 16, ['luv_tantalite_concentrate', 'luv_end_buffer'], 'Выведи хвосты центрифуги в отдельный ящик. Две партии концентрата уходят на выщелачивание, часть запаса оставь в Энде для следующей линии.'],
     ['luv_end_buffer', 'Склад у центрифуги в Энде', gt('stainless_steel_crate'), 3, ['luv_centrifuge_iv', 'luv_tantalite_ore'], 'Разнеси дроблёнку, концентрат и хвосты по отдельным ящикам. Подвод защитного газа держи у станка.'],
     ['luv_leach_recycle', 'Отдельная выдача регенерированного раствора', gt('iv_fluid_regulator'), 2, ['luv_niobium_cake', 'luv_pgm_sludge', 'iv_leach_return_tanks'], 'Подай на восстановление 1200 мБ отработанной жидкости. Вернувшиеся 900 мБ смешивай с новой порцией только после фильтрации.'],
@@ -27,7 +26,7 @@ export function expandLuVZpm(chapters) {
   ])
 
   add('luv_power', [
-    ['luv_niobium_bare_bundle', 'Четыре голые жилы', gt('niobium_titanium_quadruple_wire'), 4, ['luv_wire', 'luv_busbar'], 'Сначала собери двойной провод, затем по два двойных в четырёхжильный. Для сборщика нужны стальные катушки IE и смазка.'],
+    ['luv_niobium_bare_bundle', 'Четыре голые жилы', gt('niobium_titanium_quadruple_wire'), 4, ['luv_wire', 'luv_busbar'], 'Сначала собери двойной провод, затем по два двойных в четырёхжильный. Для сборщика нужны стальные катушки напряжения и смазка.'],
     ['luv_niobium_pipe_route', 'Ниобий-титановый трубопровод', gt('niobium_titanium_normal_fluid_pipe'), 12, ['luv_niobium_plate', 'luv_laminate', 'iv_wolfram_fluid_feed'], 'Футеруй вольфрамовые трубы IV с диэлектриком и продвинутой пневмотрубой. Отметь отдельные трассы газа и теплоносителя.'],
     ['luv_niobium_hex', 'Шестнадцатижильная магистраль', gt('niobium_titanium_hex_cable'), 4, ['luv_cable_4a', 'luv_niobium_bare_bundle', 'luv_transformer_bank'], 'Раздели голую скрутку и изоляцию. Для кабеля на 16 пакетов нужны шестнадцать одиночных кабелей и собственная голая скрутка.'],
     ['luv_optics_press_buffer', 'Подача оптики под пресс', create('brass_funnel'), 2, ['luv_waveguide', 'luv_niobium_pipe_route'], 'Первую воронку настрой на оптические заготовки, вторую на готовые волноводы. Не пускай их в общую выдачу прокатного стола.'],
@@ -44,7 +43,7 @@ export function expandLuVZpm(chapters) {
   ])
 
   add('luv_fusion', [
-    ['luv_fusion_capacitor_order', 'Накопители для девятой позиции', ie('capacitor_hv'), 4, ['luv_specimen', 'luv_fusion_casing', 'hv_shop_ie_capacitor'], 'Два накопителя отложи под контроллер и два под протокол. На сборочной линии это отдельный вход после вычислительной памяти.'],
+    ['luv_fusion_capacitor_order', 'Накопители для девятой позиции', 'gtceu:hv_battery_buffer_4x', 4, ['luv_specimen', 'luv_fusion_casing', 'hv_shop_ie_capacitor'], 'Два накопителя отложи под контроллер и два под протокол. На сборочной линии это отдельный вход после вычислительной памяти.'],
     ['luv_fusion_extra_item_bus', 'Девятая предметная шина', gt('ulv_input_bus'), 9, ['iv_line_input_buses', 'luv_fusion_capacitor_order'], 'Добавь девятую входную секцию перед выходом. Одиночная шина ULV принимает один тип детали, поэтому разведи позиции по JEI.'],
     ['luv_isotope_divider', 'Изоляция двух изотопных потоков', gt('luv_fluid_regulator'), 2, ['luv_fuel_separation', 'luv_niobium_pipe_route'], 'На 2250 мБ дейтерия отведи 1250 мБ в обогащение и 1000 мБ прямо в кольцо. Тритий выводи в отдельный дозатор.'],
     ['luv_exhaust_reserve', 'Резерв отработанного гелия', gt('luv_output_hatch'), 2, ['luv_turbine', 'luv_isotope_divider'], 'Дай турбине принять плазму и разгрузи энерговывод. Отложи 1500 мБ отработанного газа на протокол и только потом пускай остаток на рекуперацию.'],
@@ -63,11 +62,11 @@ export function expandLuVZpm(chapters) {
     ['zpm_nether_chlorine_feed', 'Хлорная ветка Нижнего мира', gt('luv_fluid_regulator'), 2, ['zpm_nether_isotope_salt', 'luv_niobium_pipe_route'], 'Поставь отдельные дозаторы хлора и защитного газа. На одну варку соли подай 3400 мБ хлора.'],
     ['zpm_mk1_throughput', 'Дозировка европиевого топлива', gt('luv_input_hatch'), 2, ['zpm_mk1_capacity', 'zpm_europium_mixer', 'luv_isotope_divider'], 'Поставь два люка под 1440 мБ европиевой подачи и 3000 мБ дейтерия. Переключай питание между кольцами только после остановки подачи.'],
     ['zpm_europium_batch', 'Три партии для силовой обвязки', gt('europium_ingot'), 12, ['zpm_europium_ingots', 'zpm_mk1_throughput', 'zpm_nether_chlorine_feed'], 'Выполни три плавки. Подготовь 9600 мБ холодной жидкости на закалку и ёмкость для полного объёма обратки.'],
-    ['zpm_coil_winding_stock', 'Стальные катушки на обмотку домны', ie('wirecoil_steel'), 32, ['zpm_naquadah_heating', 'luv_hssg_drive_stock'], 'На восемь партий наквадаховых катушек отложи 32 стальных катушки IE и 16 механизмов Create. Готовые блоки ставь комплектом.']
+    ['zpm_coil_winding_stock', 'Стальные катушки на обмотку домны', 'gtceu:steel_quadruple_wire', 32, ['zpm_naquadah_heating', 'luv_hssg_drive_stock'], 'На восемь партий наквадаховых катушек отложи 32 стальных катушки напряжения и 16 механизмов Create. Готовые блоки ставь комплектом.']
   ])
 
   add('zpm_components', [
-    ['zpm_laminate_stock', 'Вторая партия нейтронозащиты', ks('zpm_neutron_laminate'), 16, ['zpm_neutron_laminate', 'zpm_europium_batch'], 'На четыре партии подготовь по 16 блоков стекла IE и усиленных труб PneumaticCraft. Пресс Create принимает заготовки по одной.'],
+    ['zpm_laminate_stock', 'Вторая партия нейтронозащиты', ks('zpm_neutron_laminate'), 16, ['zpm_neutron_laminate', 'zpm_europium_batch'], 'На четыре партии подготовь по 16 блоков стекла и усиленных труб PneumaticCraft. Пресс Create принимает заготовки по одной.'],
     ['zpm_heavy_coolant_route', 'Наквадаховая трасса охлаждения', gt('naquadah_normal_fluid_pipe'), 12, ['zpm_laminate_stock', 'luv_niobium_pipe_route', 'zpm_naquadah_plates'], 'Используй ниобий-титановую трубу как основу. Отдельно заготовь трубы на горячую обратку и рабочие жидкости.'],
     ['zpm_pump_pressure_spares', 'Комплект регуляторов на насосы', pnc('advanced_pressure_tube'), 16, ['zpm_pump', 'zpm_heavy_coolant_route'], 'Подготовь шестнадцать труб и восемь предохранительных модулей на четыре насоса ZPM. Два насоса оставь на катушки реактора.'],
     ['zpm_feed_spare_arms', 'Два манипулятора на линию', gt('zpm_robot_arm'), 2, ['zpm_robot', 'zpm_conveyor', 'zpm_pump_pressure_spares'], 'К двум рукам ZPM отложи ещё четыре механические руки Create для следующей партии. Не снимай приводы с работающих конвейеров.']

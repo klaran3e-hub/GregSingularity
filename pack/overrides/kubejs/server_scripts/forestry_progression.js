@@ -1,7 +1,3 @@
-ServerEvents.tags('item', event => {
-  event.add('zero_shift:primitive_ores/tin', 'forestry:raw_tin')
-})
-
 ServerEvents.recipes(event => {
   const forestry = id => 'forestry:' + id
   const gendustry = id => 'gendustry:' + id
@@ -103,10 +99,6 @@ ServerEvents.recipes(event => {
   event.shapeless('9x ' + gt('apatite_gem'), [forestry('resource_storage_apatite')]).id(prefix + 'recover/block_apatite')
   unpackCanonical('apatite', 'apatite', gt('apatite_gem'))
   // Forestry gear IDs remain valid for old recipes and inventories.
-  buildForestry('gear_tin', 2, ['4x ' + tin, '2x ' + ks('iron_rivet'), '2x ' + seal], 680)
-  buildForestry('gear_bronze', 2, ['4x ' + bronze, '2x ' + ks('iron_rivet'), '2x ' + seal], 680)
-  buildForestry('gear_copper', 2, ['4x ' + gt('copper_plate'), '2x ' + ks('iron_rivet'), '2x ' + seal], 680)
-  buildForestry('gear_iron', 2, ['4x ' + gt('iron_plate'), '2x ' + ks('iron_rivet'), '2x ' + seal], 680)
 
   buildForestry('sturdy_machine', 2, ['8x ' + bronze, '4x ' + plate, '2x ' + frame,
     '2x ' + ks('hv_arc_shield'), '2x ' + seal, circuit], 1920, lubricant, 1600)
@@ -123,30 +115,30 @@ ServerEvents.recipes(event => {
   buildForestry('frame_impregnated', 2, ['8x ' + sticks, '4x ' + mc('string'),
     '2x ' + ks('wooden_joint'), '2x ' + seal], 860, oil, 450)
   buildForestry('analyzer', 1, [forestry('portable_alyzer'), housing, '4x ' + tin,
-    '2x ' + forestry('gear_iron'), '2x ' + gt('hv_sensor'), '2x ae2:logic_processor', circuit], 2360, water, 1250)
-  buildForestry('genetic_filter', 1, [housing, '2x ' + forestry('gear_bronze'), '4x ' + glass,
+    '2x ' + gt('iron_gear'), '2x ' + gt('hv_sensor'), '2x ae2:logic_processor', circuit], 2360, water, 1250)
+  buildForestry('genetic_filter', 1, [housing, '2x ' + gt('bronze_gear'), '4x ' + glass,
     '2x ' + ks('strainer_mesh'), '2x ae2:calculation_processor', gt('hv_conveyor_module')], 1780)
 
   const forestryMachines = [
     ['squeezer', ['4x ' + tin, '2x ' + pump, '2x ' + ks('strainer_mesh')]],
     ['carpenter', ['4x ' + gt('copper_plate'), '2x ' + piston, '2x ' + ks('wooden_joint')]],
     ['centrifuge', ['4x ' + bronze, '2x ' + motor, '2x ' + ks('balanced_rail_axle')]],
-    ['fermenter', ['4x ' + plate, '2x ' + pump, '2x ' + forestry('gear_copper')]],
-    ['still', ['4x ' + gt('copper_plate'), '2x ' + pump, '2x ' + forestry('gear_iron')]],
-    ['moistener', ['4x ' + bronze, '2x ' + pump, '2x ' + forestry('gear_bronze')]],
+    ['fermenter', ['4x ' + plate, '2x ' + pump, '2x ' + gt('copper_gear')]],
+    ['still', ['4x ' + gt('copper_plate'), '2x ' + pump, '2x ' + gt('iron_gear')]],
+    ['moistener', ['4x ' + bronze, '2x ' + pump, '2x ' + gt('bronze_gear')]],
     ['bottler', ['4x ' + tin, '2x ' + gt('hv_conveyor_module'), '2x ' + pump]],
     ['fabricator', ['4x ' + gt('gold_plate'), '2x ' + piston, '2x ' + ks('fired_refractory_liner')]],
-    ['rainmaker', ['4x ' + tin, '2x ' + gt('hv_emitter'), '2x ' + forestry('gear_tin')]]
+    ['rainmaker', ['4x ' + tin, '2x ' + gt('hv_emitter'), '2x ' + gt('tin_gear')]]
   ]
   forestryMachines.forEach(([id, items]) => buildForestry(id, 1,
     [housing, circuit, '4x ' + glass, '2x ' + seal].concat(items), 2520, lubricant, 1800))
 
   const engines = [
-    ['engine_clockwork', ['4x ' + gt('copper_plate'), '2x ' + forestry('gear_copper'), mc('clock')]],
-    ['engine_peat', ['4x ' + gt('copper_plate'), '2x ' + forestry('gear_copper'), '2x ' + ks('fired_refractory_liner')]],
-    ['engine_biogas', ['4x ' + bronze, '2x ' + forestry('gear_bronze'), '2x ' + pump]],
+    ['engine_clockwork', ['4x ' + gt('copper_plate'), '2x ' + gt('copper_gear'), mc('clock')]],
+    ['engine_peat', ['4x ' + gt('copper_plate'), '2x ' + gt('copper_gear'), '2x ' + ks('fired_refractory_liner')]],
+    ['engine_biogas', ['4x ' + bronze, '2x ' + gt('bronze_gear'), '2x ' + pump]],
     ['engine_combustion', ['4x ' + plate, '2x ' + pump, '2x ' + ks('hv_winding_pack')]],
-    ['engine_solar', ['4x ' + tin, '2x ' + forestry('gear_tin'), '2x ' + gt('hv_emitter')]]
+    ['engine_solar', ['4x ' + tin, '2x ' + gt('tin_gear'), '2x ' + gt('hv_emitter')]]
   ]
   engines.forEach(([id, items]) => buildForestry(id, 1,
     [housing, circuit, '2x ' + piston, '4x ' + glass].concat(items), 2760, lubricant, 2100))
@@ -206,7 +198,7 @@ ServerEvents.recipes(event => {
   buildGendustry('environmental_processor', 2, ['2x ' + genetics, '2x ' + calc,
     '2x ' + gt('hv_emitter'), '4x ' + gt('gold_plate'), '2x ' + ks('vacuum_gasket'), '2x ' + seal], 2360, 'hv', water, 2300)
   buildGendustry('climate_control_module', 2, ['2x ' + environmental, '2x ' + power,
-    '4x ' + bronze, '2x ' + forestry('gear_bronze'), '2x ' + pump, '2x ' + gt('hv_sensor')], 2420, 'hv', water, 2500)
+    '4x ' + bronze, '2x ' + gt('bronze_gear'), '2x ' + pump, '2x ' + gt('hv_sensor')], 2420, 'hv', water, 2500)
   buildGendustry('labware', 4, ['4x ' + glass, '2x ' + mc('diamond'), '2x ' + receptacle,
     '2x ' + ks('vacuum_gasket'), '2x ' + seal], 1420, 'hv', water, 1200)
   buildGendustry('blank_gene_sample', 4, ['4x ' + tin, '4x ' + mc('redstone'), '2x ' + labware,
@@ -235,7 +227,7 @@ ServerEvents.recipes(event => {
     '4x ' + gt('titanium_plate'), '2x ' + gt('ev_electric_pump'), '2x ' + gt('ev_robot_arm'), '2x ae2:cell_component_64k'],
     4800, 'ev', ks('vacuum_shield_gas'), 4200)
 
-  buildGendustry('upgrade_frame', 2, ['4x ' + plate, '4x ' + bronze, '2x ' + forestry('gear_bronze'),
+  buildGendustry('upgrade_frame', 2, ['4x ' + plate, '4x ' + bronze, '2x ' + gt('bronze_gear'),
     '2x ' + ks('hv_switch_contact'), '2x ' + seal, '2x ' + ks('iron_rivet')], 1620)
   const standardUpgrades = [
     ['automation', [mc('comparator'), gt('hv_conveyor_module'), '2x ' + engineer]],

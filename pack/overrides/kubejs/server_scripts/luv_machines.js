@@ -20,8 +20,8 @@ ServerEvents.recipes(event => {
   const emitter = luv('emitter')
   const sensor = luv('sensor')
   const field = luv('field_generator')
-  const arm = 'create:mechanical_arm'
-  const relay = 'immersiveengineering:connector_hv_relay'
+  const arm = 'gtceu:mv_robot_arm'
+  const relay = 'gtceu:gold_quadruple_cable'
   const tube = 'pneumaticcraft:advanced_pressure_tube'
   const gauge = 'pneumaticcraft:pressure_gauge_module'
   const safety = 'pneumaticcraft:safety_tube_module'
@@ -36,17 +36,21 @@ ServerEvents.recipes(event => {
   }
 
   tier('machine_casing', [iv('machine_casing'), '6x ' + plate, '4x gtceu:hssg_plate', '2x ' + laminate,
-    '2x kubejs:iv_arc_plate', '4x kubejs:vacuum_gasket', '2x immersiveengineering:steel_scaffolding_standard'], 2400, 7360)
-  tier('machine_hull', [iv('machine_hull'), casing, '2x ' + clock, '2x ' + busbar,
-    '4x ' + cable, '2x ' + circuit, '4x ' + laminate], 2600, 7680)
+    '2x kubejs:iv_arc_plate', '4x kubejs:vacuum_gasket', '2x gtceu:steel_frame', 'kubejs:venus_thermal_screen'], 2400, 7360)
+  event.remove({output: hull})
+  event.recipes.gtceu.assembly_line(prefix + 'machine_hull')
+    .itemInputs(iv('machine_hull'), casing, '2x ' + clock, '2x ' + busbar, '4x ' + cable,
+      '2x ' + circuit, '4x ' + laminate, 'kubejs:venus_thermal_screen')
+    .inputFluids(Fluid.of(gt('lubricant'), 1450), Fluid.of(gt('soldering_alloy'), 864), Fluid.of('kubejs:iv_ceramic_suspension', 800))
+    .itemOutputs(hull).duration(2800).EUt(7680)
   tier('electric_motor', [iv('electric_motor'), '2x kubejs:iv_servo_core', '4x ' + plate,
-    '2x ' + circuit, '4x ' + cable, '2x ' + busbar, '2x immersiveengineering:wirecoil_electrum_ins'], 2400, 7360)
+    '2x ' + circuit, '4x ' + cable, '2x ' + busbar, '2x gtceu:electrum_quadruple_cable'], 2400, 7360)
   tier('electric_pump', [iv('electric_pump'), motor, '2x kubejs:iv_cooling_jacket',
     '4x ' + plate, '2x ' + laminate, '2x ' + cable, '4x kubejs:vacuum_gasket', tube, safety], 2480, 7360)
   tier('electric_piston', [iv('electric_piston'), motor, '2x kubejs:iv_servo_core', '4x ' + plate,
-    '4x gtceu:hssg_plate', '2x ' + cable, '2x ' + laminate, '2x create:precision_mechanism', tube], 2480, 7360)
+    '4x gtceu:hssg_plate', '2x ' + cable, '2x ' + laminate, '2x gtceu:lv_robot_arm', tube], 2480, 7360)
   tier('conveyor_module', [iv('conveyor_module'), '2x ' + motor, '2x ' + busbar,
-    '4x ' + plate, '4x ' + laminate, '2x ' + cable, '2x create:brass_funnel', '2x immersiveengineering:conveyor_basic'], 2520, 7680)
+    '4x ' + plate, '4x ' + laminate, '2x ' + cable, '2x gtceu:lv_conveyor_module', '2x kubejs:woven_drive_belt'], 2520, 7680)
   tier('robot_arm', [iv('robot_arm'), motor, piston, '2x ' + clock, '2x ' + circuit,
     '4x ' + plate, '2x ' + cable, arm, gauge], 2900, 7680)
   tier('emitter', [iv('emitter'), '2x ' + optic, '2x ' + clock, '2x ' + circuit,
@@ -86,20 +90,20 @@ ServerEvents.recipes(event => {
     [pump, tube, gauge, ['autoclave', 'brewery', 'canner', 'chemical_bath', 'chemical_reactor', 'distillery', 'electrolyzer',
       'extractor', 'fermenter', 'fisher', 'fluid_heater', 'fluid_passthrough_hatch', 'fluid_regulator',
       'fluid_solidifier', 'gas_collector', 'ore_washer']],
-    [piston, 'create:mechanical_press', safety, ['bender', 'compressor', 'cutter', 'extruder', 'forge_hammer', 'forming_press', 'lathe', 'macerator',
+    [piston, 'kubejs:forging_saddle', safety, ['bender', 'compressor', 'cutter', 'extruder', 'forge_hammer', 'forming_press', 'lathe', 'macerator',
       'rock_crusher', 'wiremill']],
-    [motor, 'create:rotation_speed_controller', safety, ['centrifuge', 'mixer', 'rotor_holder', 'sifter', 'thermal_centrifuge']],
+    [motor, 'gtceu:good_electronic_circuit', safety, ['centrifuge', 'mixer', 'rotor_holder', 'sifter', 'thermal_centrifuge']],
     [busbar, relay, safety, ['alloy_smelter', 'arc_furnace', 'electric_furnace', 'hermetic_casing', 'muffler_hatch']],
-    [conveyor, 'create:smart_chute', 'immersiveengineering:conveyor_basic', ['input_bus', 'item_passthrough_hatch', 'output_bus', 'packer']],
-    [emitter, 'create:content_observer', relay, ['electromagnetic_separator', 'laser_engraver', 'polarizer', 'world_accelerator']],
-    [sensor, 'create:content_observer', gauge, ['scanner', 'solar_panel']],
+    [conveyor, 'gtceu:tin_normal_restrictive_item_pipe', 'kubejs:woven_drive_belt', ['input_bus', 'item_passthrough_hatch', 'output_bus', 'packer']],
+    [emitter, 'gtceu:lv_sensor', relay, ['electromagnetic_separator', 'laser_engraver', 'polarizer', 'world_accelerator']],
+    [sensor, 'gtceu:lv_sensor', gauge, ['scanner', 'solar_panel']],
     [clock, relay, safety, ['battery_hull', 'charger_4x', 'diode', 'voltage_coil', 'battery_buffer_4x', 'battery_buffer_8x',
       'battery_buffer_16x', 'transformer_1a', 'transformer_2a', 'transformer_4a', 'transformer_16a']]
   ]
   devices.forEach(([component, interfacePart, controlPart, family]) => {
     family.forEach(id => {
       tier(id, [iv(id), hull, '2x ' + component, '4x ' + plate, '2x ' + circuit,
-        '4x ' + cable, '4x ' + laminate, interfacePart, controlPart], 2850, 22528)
+        '4x ' + cable, '4x ' + laminate, interfacePart, id.startsWith('transformer_') ? 'kubejs:glacio_reference_crystal' : controlPart], 2850, 22528)
     })
   })
 

@@ -1,0 +1,9 @@
+GTIBD Fieldwork textures and interfaces
+The textures in this build use original, recolored, or recomposed layers of GregTech CEu Modern for Minecraft 1.20.1, version 7.5.3. The upstream project includes art from GregTech: Refreshed, material item textures by TTFTCUTS and Rosethorns, and contributions from the GregTech community.
+Upstream and full credits: https://github.com/GregTechCEu/GregTech-Modern#credited-works
+Upstream license: see LICENSE in this directory.
+The GTIBD hardware silhouettes, original vehicle UV layouts, planetary designs, diagrams, interface illustrations, and color adaptations are part of this development build. The upstream artists have not endorsed it.
+Visual hardware references:
+Kingston Server Premier memory module drawing: https://www.kingston.com/datasheets/KSM32RD4_32HDR.pdf
+Parker Racor pleated element: https://www.parker.com/content/dam/Parker-com/Literature/Racor/Racor_Fuel_Filtration_-_PFF5551_-_RSL0117.pdf
+Sources for the recolored assets and hardware masks: tools/item-art/gregtech-atlas.py, gt-texture-forms.py and hardware-sprites.py in the GTIBD source tree.

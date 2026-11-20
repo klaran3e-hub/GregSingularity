@@ -1,8 +1,7 @@
 ServerEvents.recipes(event => {
   const ks = name => 'kubejs:' + name
   const gt = name => 'gtceu:' + name
-  const create = name => 'create:' + name
-  const ie = name => 'immersiveengineering:' + name
+
   const pnc = name => 'pneumaticcraft:' + name
   const prefix = 'zero_shift:ev/'
   const cleanroom = Java.loadClass('com.gregtechceu.gtceu.api.machine.multiblock.CleanroomType').CLEANROOM
@@ -32,10 +31,10 @@ ServerEvents.recipes(event => {
   const stable = gt('stable_machine_casing')
   const gear = gt('titanium_gearbox')
   const intake = gt('engine_intake_casing')
-  const press = create('mechanical_press')
-  const arm = create('mechanical_arm')
-  const hvCoil = ie('coil_hv')
-  const iePump = ie('fluid_pump')
+  const press = 'kubejs:forging_saddle'
+  const arm = 'gtceu:mv_robot_arm'
+  const hvCoil = 'gtceu:hv_voltage_coil'
+  const iePump = 'gtceu:lv_electric_pump'
   const gauge = pnc('pressure_gauge_module')
   const tube = pnc('reinforced_pressure_tube')
 
@@ -56,7 +55,7 @@ ServerEvents.recipes(event => {
 
   assemble('wire_harness_preform', [
     '6x ' + gt('aluminium_plate'), '2x ' + ks('gold_conductor_blank'), '2x ' + tile,
-    '2x ' + gasket, ks('hv_winding_pack'), ie('wirecoil_electrum_ins'), tube
+    '2x ' + gasket, ks('hv_winding_pack'), 'gtceu:electrum_quadruple_cable', tube
   ], '2x ' + harness, 1080)
   event.remove({ output: gt('aluminium_single_wire') })
   machine('wiremill', 'draw_ev_wire', [harness], '4x ' + gt('aluminium_single_wire'), 560, 384)
@@ -68,7 +67,7 @@ ServerEvents.recipes(event => {
   cableWidths.forEach(([width, strands], index) => {
     const smaller = gt('aluminium_' + (index === 0 ? 'single' : cableWidths[index - 1][0]) + '_wire')
     const wire = gt('aluminium_' + width + '_wire')
-    install('draw_' + width + '_wire', ['2x ' + smaller, harness, '2x ' + ks('hv_switch_contact'), ie('wire_electrum')],
+    install('draw_' + width + '_wire', ['2x ' + smaller, harness, '2x ' + ks('hv_switch_contact'), gt('electrum_single_wire')],
       wire, 820 + strands * 45)
     install('bind_' + width + '_cable', [
       strands + 'x ' + cable, strands + 'x ' + gasket, '2x ' + harness, tile, wire, tube
@@ -78,11 +77,11 @@ ServerEvents.recipes(event => {
 
   assemble('ev_pressure_cage', [
     '2x ' + ks('hot_titanium_billet'), '4x ' + titanium, '2x ' + panel, '2x ' + gasket, gt('hv_hermetic_casing'),
-    ie('heavy_engineering'), pnc('pressure_chamber_wall')
+    'gtceu:steel_frame', pnc('pressure_chamber_wall')
   ], cage, 1260)
   assemble('ev_traction_coil', [
     '4x ' + gt('aluminium_single_wire'), '2x ' + ks('kanthal_winding'), '2x ' + ks('hv_winding_pack'),
-    titanium, gasket, ks('hv_switch_contact'), hvCoil, create('precision_mechanism')
+    titanium, gasket, ks('hv_switch_contact'), hvCoil, 'gtceu:lv_robot_arm'
   ], coil, 1220)
   machine('circuit_assembler', 'ev_phase_relay', [
     module, '2x ' + wafer, gt('hv_emitter'), '2x ' + ks('hv_switch_contact'), titanium, gasket
@@ -94,26 +93,26 @@ ServerEvents.recipes(event => {
 
   install('machine_casing', [
     '6x ' + titanium, cage, '2x ' + panel, gt('hv_machine_casing'), '4x ' + gasket,
-    ie('heavy_engineering'), gauge
+    'gtceu:steel_frame', gauge, 'kubejs:lunar_vacuum_seal'
   ], casing, 1260)
   install('machine_hull', [
     casing, gt('hv_machine_hull'), '2x ' + module, '2x ' + cable,
-    '2x ' + relay, '2x ' + gasket, '2x ' + titanium, ie('connector_hv'), tube
+    '2x ' + relay, '2x ' + gasket, '2x ' + titanium, 'kubejs:lunar_vacuum_seal', tube
   ], hull, 1640)
   install('electric_motor', [
     gt('hv_electric_motor'), '2x ' + coil, '2x ' + titanium, '2x ' + cable, '2x ' + gasket, circuit,
-    create('rotation_speed_controller'), hvCoil
+    'gtceu:good_electronic_circuit', hvCoil
   ], motor, 1300)
   install('electric_piston', [
     gt('hv_electric_piston'), motor, '2x ' + titanium, '2x ' + ks('balanced_rail_axle'), cage, gasket,
-    create('mechanical_piston'), pnc('pressure_chamber_interface')
+    'gtceu:lv_electric_piston', pnc('pressure_chamber_interface')
   ], piston, 1180)
   install('electric_pump', [
     gt('hv_electric_pump'), motor, '2x ' + titanium, '2x ' + gasket, panel, cable, iePump, tube
   ], pump, 1180)
   install('conveyor_module', [
     gt('hv_conveyor_module'), '2x ' + motor, '2x ' + ks('balanced_rail_axle'),
-    '2x ' + titanium, '2x ' + ks('chorus_dielectric_film'), cable, create('brass_tunnel'), ie('conveyor_basic')
+    '2x ' + titanium, '2x ' + ks('chorus_dielectric_film'), cable, 'gtceu:tin_normal_item_pipe', 'kubejs:woven_drive_belt'
   ], conveyor, 1260)
   install('robot_arm', [
     gt('hv_robot_arm'), motor, piston, coil, '2x ' + titanium, '2x ' + circuit, relay, arm, gauge
@@ -129,13 +128,13 @@ ServerEvents.recipes(event => {
   ], gt('ev_field_generator'), 1920, 1536)
   install('assembler', [
     gt('hv_assembler'), hull, '2x ' + robot, conveyor, '3x ' + circuit, '2x ' + panel, '4x ' + cable,
-    arm, ie('heavy_engineering')
+    arm, 'gtceu:steel_frame'
   ], gt('ev_assembler'), 2240)
 
   const energyHatches = [['energy_input_hatch', 'hv_energy_input_hatch'], ['energy_output_hatch', 'hv_energy_output_hatch']]
   energyHatches.forEach(([id, previous]) => {
     install(id, [gt(previous), hull, '2x ' + coil, '2x ' + relay, '4x ' + cable, cage,
-      ie('connector_hv_relay'), tube], gt('ev_' + id), 1620)
+      'gtceu:gold_quadruple_cable', tube], gt('ev_' + id), 1620)
   })
   const fluidHatches = [['input_hatch', 'hv_input_hatch'], ['output_hatch', 'hv_output_hatch']]
   fluidHatches.forEach(([id, previous]) => {
@@ -151,7 +150,7 @@ ServerEvents.recipes(event => {
   ], gear, 1120)
   install('engine_intake', [
     jacket, '2x ' + titanium, '2x ' + gt('filter_casing'), pump, '2x ' + gasket,
-    create('encased_fan'), ie('component_steel')
+    'kubejs:hearth_bellows', 'kubejs:pressed_steel_frame'
   ], '2x ' + intake, 1360)
   install('large_combustion_engine', [
     '2x ' + gt('hv_combustion'), hull, '2x ' + jacket, '2x ' + gear, '4x ' + circuit,
@@ -183,19 +182,19 @@ ServerEvents.recipes(event => {
   ]
   const stationEquipment = [
     [iePump, pnc('regulator_tube_module')],
-    [press, ie('mold_plate')],
-    [create('rotation_speed_controller'), hvCoil],
-    [ie('heavy_engineering'), pnc('heat_sink')],
-    [create('brass_tunnel'), ie('conveyor_basic')],
-    [create('content_observer'), ie('connector_hv_relay')],
-    [gauge, ie('connector_hv')],
-    [hvCoil, ie('capacitor_hv')]
+    [press, 'gtceu:plate_casting_mold'],
+    ['gtceu:good_electronic_circuit', hvCoil],
+    ['gtceu:steel_frame', pnc('heat_sink')],
+    ['gtceu:tin_normal_item_pipe', 'kubejs:woven_drive_belt'],
+    ['gtceu:lv_sensor', 'gtceu:gold_quadruple_cable'],
+    [gauge, 'gtceu:gold_single_cable'],
+    [hvCoil, 'gtceu:hv_battery_buffer_4x']
   ]
   devices.forEach(([part, families], group) => {
     const [tool, support] = stationEquipment[group]
     families.forEach((id, index) => {
       install(id, [gt('hv_' + id), hull, '2x ' + part, '2x ' + circuit, '2x ' + titanium,
-        '2x ' + cable, '2x ' + gasket, tool, support], gt('ev_' + id), 1680 + index * 30, 1536)
+        '2x ' + cable, '2x ' + gasket, tool, id.startsWith('transformer_') ? ks('martian_pressure_liner') : support], gt('ev_' + id), 1680 + index * 30, 1536)
     })
   })
   const pipeSizes = ['tiny', 'small', 'normal', 'large', 'huge', 'quadruple', 'nonuple']
@@ -203,7 +202,7 @@ ServerEvents.recipes(event => {
     const previous = index === 0 ? gt('stainless_steel_tiny_fluid_pipe')
       : gt('titanium_' + (size === 'quadruple' ? 'normal' : pipeSizes[index - 1]) + '_fluid_pipe')
     const id = 'titanium_' + size + '_fluid_pipe'
-    const die = size === 'quadruple' ? ie('mold_wire') : ie('mold_rod')
+    const die = size === 'quadruple' ? 'gtceu:wire_extruder_mold' : 'gtceu:rod_extruder_mold'
     install(id, ['2x ' + previous, '3x ' + titanium, '2x ' + gasket, tube, die],
       (index < 3 ? '2x ' : '') + gt(id), 950 + index * 120, 1536)
   })

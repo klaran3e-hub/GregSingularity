@@ -34,11 +34,9 @@ ServerEvents.recipes(event => {
     }).id(prefix + id)
   }
 
-  event.custom({
-    type: 'immersiveengineering:metal_press', energy: 220000, mold: 'immersiveengineering:mold_plate',
-    input: { base_ingredient: { item: 'kubejs:uv_structural_laminate' }, count: 4 },
-    result: { item: part('heavy_backplane') }
-  }).id(prefix + 'stamp_backplane')
+  event.recipes.gtceu.forming_press(prefix + 'stamp_backplane')
+      .itemInputs('4x kubejs:uv_structural_laminate').notConsumable('gtceu:plate_casting_mold')
+      .itemOutputs(part('heavy_backplane')).duration(500).EUt(122880)
   machine('assembler', 'assemble_breaker_core', [
     '4x ' + part('heavy_backplane'), '8x ' + tritanium, '4x ' + neutronium, '4x gtceu:uv_voltage_coil',
     '4x kubejs:uv_flux_shunt', '8x kubejs:hv_switch_contact', '4x gtceu:uv_electric_piston'

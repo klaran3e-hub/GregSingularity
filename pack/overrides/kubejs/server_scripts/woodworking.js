@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-  const knife = 'gtceu:flint_knife'
+  const knife = '#gtceu:tools/crafting_knives'
   const joint = 'kubejs:wooden_joint'
   const peg = 'kubejs:wooden_peg'
   const hinge = 'kubejs:iron_hinge'
@@ -15,8 +15,8 @@ ServerEvents.recipes(event => {
     P: '#minecraft:planks', K: peg, G: knife, B: binding, F: 'kubejs:fibre_cord'
   }).id('zero_shift:wood/joint').damageIngredient(knife)
   event.shaped(hinge, ['PRP', ' S ', ' H '], {
-    P: 'kubejs:hand_forged_plate', R: 'kubejs:iron_rivet', S: 'kubejs:copper_strap', H: 'gtceu:flint_hammer'
-  }).id('zero_shift:wood/hinge').damageIngredient('gtceu:flint_hammer')
+    P: 'kubejs:hand_forged_plate', R: 'kubejs:iron_rivet', S: 'kubejs:copper_strap', H: '#gtceu:tools/crafting_hammers'
+  }).id('zero_shift:wood/hinge').damageIngredient('#gtceu:tools/crafting_hammers')
   replace('bamboo_block', 1, ['BBB', 'BFB', 'BBB'], { B: 'minecraft:bamboo', F: binding })
 
   woods.forEach(wood => {

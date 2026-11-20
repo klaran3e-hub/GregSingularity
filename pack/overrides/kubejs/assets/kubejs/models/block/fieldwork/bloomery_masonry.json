@@ -1,0 +1,87 @@
+{
+  "parent": "minecraft:block/block",
+  "ambientocclusion": true,
+  "textures": {
+    "particle": "kubejs:block/bloomery_masonry",
+    "masonry": "kubejs:block/bloomery_masonry",
+    "fireclay": "kubejs:block/bloomery_fireclay",
+    "scorched": "kubejs:block/bloomery_scorched",
+    "timber": "kubejs:block/bloomery_timber",
+    "leather": "kubejs:block/bloomery_leather",
+    "cold_coals": "kubejs:block/bloomery_cold_coals",
+    "live_coals": "kubejs:block/bloomery_live_coals",
+    "hearthstone": "kubejs:block/bloomery_hearthstone"
+  },
+  "elements": [
+    {
+      "name": "masonry",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "shade": true,
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#masonry"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#masonry"
+        },
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#masonry"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#masonry"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#masonry"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#masonry"
+        }
+      }
+    }
+  ]
+}

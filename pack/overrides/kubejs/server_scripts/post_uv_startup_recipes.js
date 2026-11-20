@@ -32,7 +32,7 @@ ServerEvents.recipes(event => {
 
   machine('circuit_assembler', 'bus_diagnostic', [
     '2x ' + permit, '4x gtceu:uv_sensor', '4x ' + uv('grid_witness'),
-    '4x gtceu:crystal_processor_mainframe', '4x immersiveengineering:coil_hv',
+    '4x gtceu:crystal_processor_mainframe', '4x gtceu:hv_voltage_coil',
     '4x ae2:me_p2p_tunnel'
   ], '4x ' + diagnostic, 9800, 475136)
     .cleanroom(sterile)
@@ -41,7 +41,7 @@ ServerEvents.recipes(event => {
   machine('assembler', 'reserve_load_matrix', [
     '2x ' + permit, '4x gtceu:uv_naquadria_battery', '4x gtceu:uv_transformer_4a',
     '8x ' + uv('pulse_reserve'), '8x ' + uv('flux_shunt'), '8x kubejs:zpm_reserve_switchgear',
-    '8x gtceu:yttrium_barium_cuprate_hex_cable', '4x create:rotation_speed_controller',
+    '8x gtceu:yttrium_barium_cuprate_hex_cable', '4x gtceu:good_electronic_circuit',
     '8x pneumaticcraft:reinforced_pressure_tube'
   ], '4x ' + reserve, 10600, 491520)
     .inputFluids(Fluid.of(gt('lubricant'), 12000))
@@ -56,7 +56,7 @@ ServerEvents.recipes(event => {
 
   machine('assembler', 'logistics_clock', [
     '2x ' + permit, '4x ' + uv('freight_manifest'), '4x kubejs:zpm_freight_certificate',
-    '4x gtceu:uv_emitter', '4x create:stockpile_switch', '4x ae2:quantum_link',
+    '4x gtceu:uv_emitter', '4x gtceu:mv_sensor', '4x ae2:quantum_link',
     '4x ae2:pattern_provider', '8x kubejs:zpm_end_heavy_concentrate',
     '4x pneumaticcraft:regulator_tube_module'
   ], '4x ' + clock, 11600, 491520)

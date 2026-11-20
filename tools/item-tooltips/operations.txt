@@ -1,0 +1,42 @@
+@Промывка · Начало|Hand washing · Early game
+copper_grit|Промой в воде, чтобы отделить медное сырьё от пустой породы.|Wash in water to separate the copper-bearing material from the tailings.
+iron_grit|Промой в воде перед подготовкой железной шихты.|Wash in water before preparing an iron furnace charge.
+tin_grit|Промой в воде перед подготовкой оловянной шихты.|Wash in water before preparing a tin furnace charge.
+gold_grit|Промой в воде перед подготовкой золотой шихты.|Wash in water before preparing a gold furnace charge.
+@Нефтехимия · MV|Petrochemistry · MV
+seismic_probe|Используй на месте бурения, чтобы проверить подземное месторождение нефти.|Use at the drill site to survey the underground oil deposit.
+washed_oil_sample|Образец для контроля промывки нефти. Отбери его на линии розлива.|A reference sample from the washed-oil canning line.
+mv_coalescer|Отделяет капли воды при подготовке нефти.|Separates entrained water during oil treatment.|Использованный элемент восстанавливается в химической ванне.|Regenerate the spent element in a chemical bath.
+phenolic_preform|Помести заготовку и уплотнение в барокамеру для герметизации модуля MV.|Pressure-seal this blank with a gasket to finish the MV module.
+polymer_seal_preform|Отформуй химически стойкие уплотнения в барокамере при 4 бар.|Form chemical seals in a pressure chamber at 4 bar.
+@Электроника и вакуум|Electronics and vacuum
+hv_circuit_preform|Заготовка для опрессовки управляющего модуля HV.|A blank for pressure-forming an HV control module.
+ev_logic_preform|Герметизируется в барокамере при сборке управляющего модуля EV.|Seal in a pressure chamber to complete an EV control module.
+vacuum_seal_preform|Спрессуй с уплотнителем и сжатым железом в вакуумную прокладку.|Press with a seal and compressed iron to form a vacuum gasket.
+@Допуски и транспорт|Permits and freight
+end_transit_permit|Допуск экспедиции в Край. Собирается из снаряжения предыдущих этапов.|Expedition permit for the End, assembled from earlier expedition equipment.
+nether_transit_seal|Допуск для экспедиции в Нижний мир на этапе HV.|Expedition clearance for the Nether at HV.
+netherite_upgrade_charge|Используй как добавку при незеритовом улучшении в кузнечном столе.|Use as the addition when upgrading to netherite at a smithing table.
+rail_waybill|Оформи груз на станции отправления и предъяви накладную на станции назначения.|Register the freight at departure and present the waybill at its destination.
+rail_delivery_receipt|Подтверждает доставку опломбированного груза на другую станцию.|Records delivery of a sealed shipment to another station.
+distribution_cargo_skeleton|Положи четыре каркаса в барокамеру для сборки транспортного узла.|Load four frames in the pressure chamber for freight assembly.
+reclaim_sintered_membrane|Фильтрующий элемент линии регенерации после UV.|Filter element for the post-UV reclamation line.
+@Пусконаладка · После UV|Commissioning · Post-UV
+final_start_key|Присядь и используй ключ для запуска очередного испытания завода.|Sneak and use the key to start the next commissioning trial.
+final_control_console|Пульт привязки питания и трёх производственных линий к испытаниям.|Links the power supply and three production lines to the commissioning trial.
+final_backup_module|Модуль аварийного питания для испытаний завода.|Emergency power module for factory commissioning.
+final_steel_lot|Контрольная партия со сборочной линии стали. Учитывается в испытании нагрузки.|Steel output counted toward the commissioning load test.
+final_logic_lot|Контрольная партия схем с линии электроники. Учитывается в испытании нагрузки.|Circuit output counted toward the commissioning load test.
+final_polymer_lot|Контрольная партия полимера из химического реактора. Учитывается в испытании нагрузки.|Polymer output from the chemical reactor, counted toward the commissioning load test.
+final_commissioning_report|Выдаётся после завершения испытаний завода и служит итоговым документом.|Issued after the plant completes commissioning. This is the final acceptance record.
+@Агрономия · GregCrops|Crop science · GregCrops
+gtibdcrops:crop_analyzer|Используй на жердочках для проверки культуры, роста и запасов почвы.|Use on crop sticks to inspect the species, growth and soil reserves.
+gtibdcrops:crop_seed_bag|Высади семена на свободные жердочки. Свойства относятся к конкретному пакету.|Plant on empty crop sticks. The traits belong to this seed bag.
+gtibdcrops:weeding_trowel|Удаляет сорняк с жердочек. Количество собранной травы зависит от его возраста.|Clears weeds from crop sticks. The amount collected depends on their age.
+gtibdcrops:hydration_cell|Пополняет запас воды у растения на жердочках.|Replenishes the water reserve of a crop on sticks.
+gtibdcrops:weed_ex_cell|Пополняет запас гербицида в грядке с жердочками.|Replenishes the weed suppressant in a crop bed.
+gtibdcrops:weed_ex_bucket|Ведро средства Weed-EX для ухода за культурами на жердочках.|A bucket of Weed-EX crop treatment.
+gtibdcrops:hops|Созревшие шишки хмеля собирают с жердочек.|Harvest mature hops from crop sticks.
+gtibdcrops:crop_drop_uuaberry|Собирается со зрелого куста UU-а-ягод на жердочках.|Picked from a mature UU-a-berry plant on crop sticks.
+gtibdcrops:terra_wart|Урожай земляного нароста. Его можно съесть.|An edible harvest from a mature terra wart crop.
+gtibdcrops:coffee_mug|Готовый напиток из урожая кофе. Пей из кружки.|A finished drink brewed from the coffee harvest.

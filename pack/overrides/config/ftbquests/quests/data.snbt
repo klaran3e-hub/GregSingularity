@@ -1,5 +1,5 @@
 {
-  title: "GregTech: Industrial Brain Damage"
+  title: "GregSingularity"
   version: 13
   default_consume_items: false
   default_reward_team: true
@@ -8,5 +8,5 @@
   detection_delay: 20
   drop_loot_crates: false
   show_lock_icons: true
-  icon: "create:water_wheel"
+  icon: "gtceu:field_bloomery"
 }

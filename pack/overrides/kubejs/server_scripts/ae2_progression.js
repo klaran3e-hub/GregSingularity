@@ -9,6 +9,8 @@ ServerEvents.recipes(event => {
   const etched = ks('me_etched_foil')
   const pattern = ks('me_pattern_laminate')
   const link = ks('me_optical_link')
+  const oilPaper = ks('mv_impregnated_insulation')
+  const dielectric = ks('mv_dielectric_oil')
   const seal = ks('chemical_grade_seal')
   const steel = gt('steel_plate')
   const frame = ks('pressed_steel_frame')
@@ -64,7 +66,7 @@ ServerEvents.recipes(event => {
 
   event.shaped(a('guide'), ['PC', 'BP'], { P: 'minecraft:paper', C: certus, B: 'minecraft:book' }).id(prefix + 'guide')
   build('meteorite_compass', ['minecraft:compass', gt('basic_electronic_circuit'), ks('magnetic_armature'), contact, seal], 28, 460)
-  assemble('isolation_shell', [gt('mv_machine_casing'), '2x ' + frame, '2x ' + polymer, seal, '2x ' + steel], shell, 600, 96)
+  assemble('isolation_shell', [gt('mv_machine_casing'), '2x ' + frame, '2x ' + polymer, seal, '2x ' + steel, oilPaper], shell, 600, 96)
   assemble('mv_power_converter', [gt('lv_1a_energy_converter'), gt('mv_machine_hull'), '2x ' + circuit,
     '2x ' + copper, gt('mv_electric_motor'), shell, '2x ' + seal], gt('mv_1a_energy_converter'), 860, 120)
   assemble('mv_circuit_assembler', [gt('lv_circuit_assembler'), gt('mv_machine_hull'), '2x ' + circuit,
@@ -74,13 +76,15 @@ ServerEvents.recipes(event => {
   machine('mixer', 'grow_fluix', [a('charged_certus_quartz_crystal'), '2x ' + gt('quartzite_gem'),
     '2x minecraft:redstone', seal], '2x ' + fluix, 560, 96).inputFluids(Fluid.of(water, 500))
   machine('electric_blast_furnace', 'reduce_silicon', ['2x ' + gt('quartzite_dust'), '2x minecraft:charcoal',
-    ks('fired_refractory_liner')], silicon, 760, 96).blastFurnaceTemp(2400)
+    ks('furnace_lining_insert'), gt('calcite_dust')], silicon, 1000, 96)
+    .blastFurnaceTemp(1750).inputFluids(Fluid.of(gt('hydrogen'), 250))
   assemble('quartz_fiber', ['2x ' + certus, '2x minecraft:glass_pane', polymer, ks('strainer_mesh')], '4x ' + fiber, 460, 96)
   event.custom({
     type: 'pneumaticcraft:pressure_chamber', inputs: [{ item: fiber }, { item: seal }, { item: fluix }, { item: polymer }],
     pressure: 4.1, results: [{ item: laminate, count: 2 }]
   }).id(prefix + 'press_piezo_laminate')
-  assemble('memory_foil', ['2x ' + silicon, '2x ' + contact, '2x ' + laminate, ks('gold_conductor_blank'), polymer], foil, 680, 96)
+  assemble('memory_foil', ['2x ' + silicon, '2x ' + contact, '2x ' + laminate, gt('gold_plate'), oilPaper, polymer], foil, 680, 96)
+    .inputFluids(Fluid.of(dielectric, 125))
   build('inscriber', [shell, '2x ' + gt('mv_electric_piston'), circuit, '2x ' + laminate, seal, '2x ' + fiber], 120, 900)
   assemble('press_blank', ['2x ' + steel, frame, ks('abrasive_paste'), gt('aluminium_plate')], ks('me_press_blank'), 480, 96)
   const prints = [
@@ -89,7 +93,8 @@ ServerEvents.recipes(event => {
     ['calculation_processor', 'printed_calculation_processor', foil],
     ['engineering_processor', 'printed_engineering_processor', etched]
   ]
-  assemble('engineering_foil', [foil, '2x ' + certus, ks('ceramic_hv_substrate'), '2x ' + contact, solder], etched, 740, 120)
+  assemble('engineering_foil', [foil, '2x ' + certus, gt('phenolic_printed_circuit_board'), '2x ' + contact, solder, oilPaper], etched, 740, 120)
+    .inputFluids(Fluid.of(dielectric, 125))
   prints.forEach(([name, print, input]) => {
     const press = a(name + '_press')
     inscribe('print_' + name, input, press, a(print))
@@ -163,25 +168,26 @@ ServerEvents.recipes(event => {
       build(storage, [component, a(kind + '_cell_housing'), '2x ' + seal, laminate], power, 520 + power)
       build('portable_' + kind + '_cell_' + size, [a(storage), a('energy_cell'), a('terminal'), shell, seal], power, 680 + power)
     })
-    build(size + '_crafting_storage', [a('crafting_unit'), component, '2x ' + pattern, processor, seal], Math.max(480, power), 840 + power)
+    build(size + '_crafting_storage', [a('crafting_unit'), component, '2x ' + pattern, processor, seal], size === '1k' ? 120 : Math.max(480, power), 840 + power)
   })
   build('view_cell', [a('item_cell_housing'), logic, laminate, '2x minecraft:glass_pane'], 120, 560)
 
-  assemble('pattern_laminate', ['2x ' + foil, '2x ' + ks('ceramic_hv_substrate'), eng,
-    gt('stainless_steel_plate'), gt('advanced_integrated_circuit'), '2x ' + seal], pattern, 980, 480)
+  assemble('pattern_laminate', ['2x ' + foil, '2x ' + oilPaper, eng,
+    gt('phenolic_printed_circuit_board'), circuit, '2x ' + seal], pattern, 980, 120)
+    .inputFluids(Fluid.of(dielectric, 250))
   machine('circuit_assembler', 'align_optical_link', [pattern, '2x ' + ks('conditioned_wafer'), '2x ' + gt('titanium_plate'),
     gt('micro_processor_computer'), '2x ' + fiber], link, 1000, 1536)
     .cleanroom(Java.loadClass('com.gregtechceu.gtceu.api.machine.multiblock.CleanroomType').CLEANROOM)
 
-  build('blank_pattern', [pattern, foil, '2x ' + polymer, contact], 384, 640)
-  build('pattern_provider', [a('interface'), '2x ' + pattern, '2x ' + eng, gt('hv_robot_arm'), '2x ' + seal], 480, 1160)
+  build('blank_pattern', [pattern, foil, '2x ' + polymer, contact], 112, 640)
+  build('pattern_provider', [a('interface'), '2x ' + pattern, '2x ' + eng, gt('mv_robot_arm'), '2x ' + seal, oilPaper], 120, 1160)
   build('cable_pattern_provider', [a('pattern_provider'), a('fluix_smart_cable'), contact, polymer], 384, 540)
-  build('crafting_unit', [shell, '2x ' + pattern, '2x ' + calc, '2x ' + logic, gt('hv_machine_casing'), seal], 480, 1040)
+  build('crafting_unit', [shell, '2x ' + pattern, '2x ' + calc, '2x ' + logic, gt('mv_machine_casing'), seal, oilPaper], 120, 1040)
   build('crafting_accelerator', [a('crafting_unit'), '2x ' + eng, '2x ' + pattern, gt('hv_emitter'), seal], 480, 980)
   build('crafting_monitor', [a('crafting_unit'), a('storage_monitor'), '2x ' + pattern, calc, seal], 480, 800)
   build('molecular_assembler', [shell, a('inscriber'), '2x ' + pattern, '2x ' + formation, '2x ' + annihilation,
-    gt('hv_robot_arm'), '2x ' + seal], 480, 1360)
-  build('pattern_encoding_terminal', [a('crafting_terminal'), a('blank_pattern'), pattern, eng, seal], 480, 900)
+    gt('mv_robot_arm'), '2x ' + seal, oilPaper], 120, 1360)
+  build('pattern_encoding_terminal', [a('crafting_terminal'), a('blank_pattern'), pattern, eng, seal], 120, 900)
   build('pattern_access_terminal', [a('terminal'), a('pattern_provider'), pattern, eng, seal], 480, 840)
 
   build('crank', [ks('shaft_bushing'), ks('tool_handle'), ks('drawer_slide'), steel, certus], 96, 400)
@@ -222,9 +228,18 @@ ServerEvents.recipes(event => {
     '2x ' + a('fluix_smart_dense_cable'), gt('ev_machine_casing'), seal], 1920, 1600)
   build('quantum_link', ['2x ' + link, a('quantum_ring'), '2x ' + gt('micro_processor_computer'),
     a('dense_energy_cell'), ks('ev_calibrated_wafer')], 1920, 1760)
+  const capsule = ks('singularity_pair_capsule')
+  const entangled = a('quantum_entangled_singularity')
   machine('mixer', 'entangle_singularity', [a('singularity'), a('ender_dust'), '2x ' + link,
-    ks('ev_calibrated_wafer')], '2x ' + a('quantum_entangled_singularity'), 1560, 1920)
+    ks('ev_calibrated_wafer')], capsule, 1560, 1920)
     .inputFluids(Fluid.of(ks('vacuum_shield_gas'), 800))
+  // AE2 assigns one fresh frequency to both items when its transform recipe completes.
+  event.custom({ type: 'ae2:transform', circumstance: { type: 'fluid', tag: 'minecraft:water' },
+    ingredients: [{ item: capsule }], result: { item: entangled, count: 2 }
+  }).id(prefix + 'link_singularity_pair')
+  // Previously the mixer returned two plain AE2 items. A bound item carries a frequency tag.
+  const unbound = { type: 'forge:nbt', item: entangled }
+  event.shapeless(capsule, [unbound, unbound]).id(prefix + 'recover_unbound_singularities')
 
   let spatialBase = a('cell_component_64k')
   ;['2', '16', '128'].forEach(size => {

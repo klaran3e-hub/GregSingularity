@@ -1,0 +1,614 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "gtxfa"
+  group: "468EF37A10F16FBE"
+  icon: "gtceu:tiny_copper_dust"
+  title: "Ресурсные пчёлы"
+  id: "437BD02074DC74B0"
+  order_index: 21
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/gtxfa.png"
+    x: 0.0d
+    y: 0.0d
+    width: 28.713d
+    height: 17.759d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "4EBD51C539ECCCBC"
+      title: "Электрическая пасека HV"
+      description: ["Возьми пасеку Forestry, корпус HV и детали из JEI. Подай 900 мБ смазки в сборщик HV. Протокол после сборки останется в станке. Подключи питание и проверь цветы и климат. Подай принцессу и трутня воронкой или из сети ME. После окончания жизни матки забери потомство через предметный выход."]
+      x: -10.800d
+      y: 0.000d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["48A0860B1CFB2E12","4D12F46313F9CA9B","42E99CE4711A8261"]
+      optional: true
+      tasks: [{
+        id: "4E49BD15A1CA275C"
+        type: "item"
+        item: "gtxfa:hv_electric_apiary"
+      }]
+      rewards: [{
+        id: "4B2E9F2120C65334"
+        type: "item"
+        item: "forestry:impregnated_casing"
+        count: 1
+      }]
+    }
+    {
+      id: "412D7A6751BA858E"
+      title: "Первые медные соты"
+      description: ["Скрести Common с Meadows в пасеке. Проверь потомство в анализаторе. Если медный вид остался скрытым, оставь его для следующего скрещивания. От первой рабочей семьи собери четыре соты."]
+      x: -8.440d
+      y: -2.246d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EBD51C539ECCCBC","4D0828A38E946BE2"]
+      optional: true
+      tasks: [{
+        id: "4595B99453D71817"
+        type: "item"
+        item: "gtxfa:copper_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "427F8AC672176F0D"
+        type: "item"
+        item: "forestry:honey_drop"
+        count: 2
+      }]
+    }
+    {
+      id: "4BC24368B296BF40"
+      title: "Железная маточная линия"
+      description: ["Скрести Common и Industrious. Часть железных трутней оставь в племенном архиве, они нужны для углеродной линии. Первые четыре соты держи отдельно."]
+      x: -7.760d
+      y: 2.262d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EBD51C539ECCCBC","4D0828A38E946BE2"]
+      optional: true
+      tasks: [{
+        id: "4E9836F76F3294C1"
+        type: "item"
+        item: "gtxfa:iron_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4025E77350CC6321"
+        type: "item"
+        item: "forestry:honey_drop"
+        count: 2
+      }]
+    }
+    {
+      id: "42E19C0AEC400007"
+      title: "Уголь из монастырской линии"
+      description: ["Соедини Monastic и Cultivated. Отложи угольных трутней для скрещивания с железной линией. Для переработки угольных сот нужен обычный уголь в качестве образца."]
+      x: -8.440d
+      y: 3.710d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EBD51C539ECCCBC","46448CCC6662902F"]
+      optional: true
+      tasks: [{
+        id: "47335EC91DFA91CA"
+        type: "item"
+        item: "gtxfa:coal_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4A18D2697CB467FE"
+        type: "item"
+        item: "forestry:impregnated_casing"
+        count: 1
+      }]
+    }
+    {
+      id: "428ECD9B8599DC3B"
+      title: "Углеродная линия"
+      description: ["Скрести угольную и железную линии. Углеродные трутни нужны для нефтяной, этиленовой и эпоксидной веток. Для центрифуги HV подготовь порцию углеродной пыли GregTech."]
+      x: -5.400d
+      y: -1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["42E19C0AEC400007","4BC24368B296BF40"]
+      optional: true
+      tasks: [{
+        id: "4EF46CE301E6D630"
+        type: "item"
+        item: "gtxfa:carbon_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "467095AB3DFCF2C7"
+        type: "item"
+        item: "forestry:honey_drop"
+        count: 2
+      }]
+    }
+    {
+      id: "442FC0AD65AABBFD"
+      title: "Водные соты из холодной пасеки"
+      description: ["Скрести Embittered и Wintry. Для выращивания потомства сверь климат и цветы в анализаторе. Водных трутней отложи на слизь, водород и эпоксидную линию."]
+      x: -8.100d
+      y: 0.598d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4EBD51C539ECCCBC","4D0828A38E946BE2"]
+      optional: true
+      tasks: [{
+        id: "43EE59684D3958FF"
+        type: "item"
+        item: "gtxfa:water_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4211B229F66F434A"
+        type: "item"
+        item: "forestry:honey_drop"
+        count: 2
+      }]
+    }
+    {
+      id: "492CE7EF4E60ADA6"
+      title: "Слизь из болотной семьи"
+      description: ["Скрести водную пчелу с Marshy. При разделении сот в центрифуге HV оставь шарик слизи как образец. Суммарный выход проверяй после нескольких циклов, часть сот даёт только мёд и воск."]
+      x: -7.406d
+      y: -3.341d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["442FC0AD65AABBFD"]
+      optional: true
+      tasks: [{
+        id: "40C89C7257D2E7FD"
+        type: "item"
+        item: "gtxfa:slime_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "42361ED9FDCD6FE7"
+        type: "item"
+        item: "forestry:honey_drop"
+        count: 2
+      }]
+    }
+    {
+      id: "46E2947F15872D12"
+      title: "Медная пыль из центрифуги HV"
+      description: ["Положи протокол HV рядом с сотами и подай в центрифугу 100 мБ расплавленной меди. Образец остаётся внутри. За цикл выходят 5 мБ меди и 55 мБ мёда, пыль выпадает с шансом. Настрой отвод двух жидкостей по отдельным фильтрам."]
+      x: -3.549d
+      y: -4.994d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["412D7A6751BA858E","4CF4E868EBAE06D1"]
+      optional: true
+      tasks: [{
+        id: "420D30C110367F27"
+        type: "item"
+        item: "gtceu:tiny_copper_dust"
+      }]
+      rewards: [{
+        id: "4A27507521F463EF"
+        type: "item"
+        item: "forestry:impregnated_casing"
+        count: 1
+      }]
+    }
+    {
+      id: "4C913228F19FE7CD"
+      title: "Нефтяная семья и проба из скважины"
+      description: ["Скрести углеродную линию с Modest. Для проверки подай сырую нефть со скважины до промывки. Центрифуга HV с протоколом и 100 мБ сырой нефти даст ещё 20 мБ нефти и 55 мБ мёда с каждой соты."]
+      x: -3.040d
+      y: -1.733d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["428ECD9B8599DC3B","46E2947F15872D12","44539B688C2EE6EC"]
+      optional: true
+      tasks: [{
+        id: "41BB35DB67184D8E"
+        type: "item"
+        item: "gtxfa:oil_comb"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4E14B3031907E6A2"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "48D9487EE88F3535"
+      title: "Водородная семья для синтеза"
+      description: ["Возьми водную принцессу и трутня Austere. Держи под рукой мутатрон, если условия обычной мутации трудно повторить. При переработке держи в центрифуге HV протокол и 100 мБ водорода."]
+      x: -5.740d
+      y: -4.958d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["442FC0AD65AABBFD","4A61624B83E7B4CC"]
+      optional: true
+      tasks: [{
+        id: "441D5E718EFE2CFA"
+        type: "item"
+        item: "gtxfa:hydrogen_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "401B2BB1F7896884"
+        type: "item"
+        item: "gendustry:labware"
+        count: 2
+      }]
+    }
+    {
+      id: "4B91097217E57CF3"
+      title: "Родители этиленовой линии"
+      description: ["Скрести углеродную и водородную линии. Сохрани этиленовых трутней для мутатрона. Первые 100 мБ этилена для центрифуги возьми из нефтехимического цеха."]
+      x: -2.991d
+      y: -0.230d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["428ECD9B8599DC3B","48D9487EE88F3535","4855C424E62059A6"]
+      optional: true
+      tasks: [{
+        id: "4E1AEA6BED40407D"
+        type: "item"
+        item: "gtxfa:ethylene_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "48EBDFBA35EDCC73"
+        type: "item"
+        item: "gendustry:labware"
+        count: 2
+      }]
+    }
+    {
+      id: "4D5DF6F670D902DC"
+      title: "Полиэтиленовая семья из мутатрона"
+      description: ["Загрузи в мутатрон принцессу Industrious, этиленового трутня и ведро мутагена. Рабочую матку перенеси в пасеку. Центрифуге HV для её сот нужны протокол и существующий полиэтилен из реактора."]
+      x: 0.000d
+      y: -1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4B91097217E57CF3","4A61624B83E7B4CC","40E8A71E8042D10C"]
+      optional: true
+      tasks: [{
+        id: "4A9203721EA2C86B"
+        type: "item"
+        item: "gtxfa:polyethylene_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4934FAA7C64878A9"
+        type: "item"
+        item: "gendustry:labware"
+        count: 2
+      }]
+    }
+    {
+      id: "4614B8E7FBD6CE6D"
+      title: "Цветочный модуль электрической пасеки"
+      description: ["Собери пустой модуль в сборщике схем HV с прополисом и 72 мБ припоя. В сборщике EV добавь четыре вакуумные лампы, четыре порции пыльцы и 250 мБ смазки. Установи цветочный модуль в электрическую пасеку, чтобы семья работала без цветов поблизости."]
+      x: 3.040d
+      y: -4.680d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D5DF6F670D902DC","463599FF8883FD0D","430AD4E410D5DF41"]
+      optional: true
+      tasks: [{
+        id: "41286396CF9A35E0"
+        type: "item"
+        item: "gtxfa:flower_module"
+      }]
+      rewards: [{
+        id: "4193EAE42A587230"
+        type: "item"
+        item: "forestry:impregnated_casing"
+        count: 1
+      }]
+    }
+    {
+      id: "4A701ADA0B94085A"
+      title: "Эпоксидная семья EV"
+      description: ["Скрести углеродную линию с водной. Для разделения сот в центрифуге EV приготовь протокол EV и 100 мБ эпоксидной смолы из химического цеха. Мёд отведи по отдельной трубе."]
+      x: -4.667d
+      y: 0.144d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["428ECD9B8599DC3B","442FC0AD65AABBFD","463599FF8883FD0D","4B55EA4F05374C6F"]
+      optional: true
+      tasks: [{
+        id: "4D4BD2DA93456901"
+        type: "item"
+        item: "gtxfa:epoxy_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "45FF3319C13F83B3"
+        type: "item"
+        item: "forestry:honey_drop"
+        count: 2
+      }]
+    }
+    {
+      id: "4814C0A694BEBE99"
+      title: "Вольфрамовая пасека EV"
+      description: ["Подготовь родителей Exotic и марганцевую линию. В продвинутом мутатроне выбери вольфрамовый результат. Для центрифуги EV припаси протокол и 100 мБ уже выплавленного вольфрама."]
+      x: -5.411d
+      y: 4.721d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BC24368B296BF40","4ADDF82695F6CAF7","463599FF8883FD0D","4B55EA4F05374C6F"]
+      optional: true
+      tasks: [{
+        id: "45B6BF013EA8A769"
+        type: "item"
+        item: "gtxfa:tungsten_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4C4D218DC421B8AA"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4A4AA9D2CB18CCE7"
+      title: "Титановая селекция EV"
+      description: ["Подготовь алюминиевую и хромовую линии, затем скрести их. Одного титанового трутня оставь для наквадаха. Первую порцию титана для центрифуги EV отведи с металлургической линии."]
+      x: -6.264d
+      y: 1.261d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BC24368B296BF40","4ADDF82695F6CAF7","448B3023048D20B7"]
+      optional: true
+      tasks: [{
+        id: "4F9FB5F4AEC15BE6"
+        type: "item"
+        item: "gtxfa:titanium_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "40547EE1415CF390"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "40CFE06A4AB7D75D"
+      title: "Карбидная семья IV"
+      description: ["Помести углеродную и вольфрамовую линии в продвинутый мутатрон. Карбидным сотам нужен протокол IV и 100 мБ расплавленного карбида вольфрама. Оставь в линии собственный запас жидкости."]
+      x: -2.700d
+      y: 2.058d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["428ECD9B8599DC3B","4814C0A694BEBE99","4C4F332D5A35474D"]
+      optional: true
+      tasks: [{
+        id: "4FBAEB59AB0CAD4D"
+        type: "item"
+        item: "gtxfa:tungsten_carbide_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "42E548ACE3493C42"
+        type: "item"
+        item: "gtceu:copper_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4664AF65D1C03533"
+      title: "Пыль карбида из сот"
+      description: ["Подай соты в центрифугу IV при 7680 EU/t. Расплав карбида идёт в свой буфер. Мелкие кучки выпадают с шансом, поэтому держи несколько циклов в очереди."]
+      x: 0.340d
+      y: -3.312d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40CFE06A4AB7D75D","4922E430B7480F7D"]
+      optional: true
+      tasks: [{
+        id: "41DDCEBE6AD66DBD"
+        type: "item"
+        item: "gtceu:tiny_tungsten_carbide_dust"
+      }]
+      rewards: [{
+        id: "47C615FC704E817A"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4BBC8CE4890A0738"
+      title: "Иридиевая семья IV"
+      description: ["Скрести платиновую и вольфрамовую линии. Иридиевых трутней оставь для осмия и осмиридия. Для выпуска из сот приготовь обычный иридий и расплавь 100 мБ на образец центрифуге IV."]
+      x: -2.360d
+      y: 6.105d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4814C0A694BEBE99","40EAC963E3020793","4C4F332D5A35474D","4922E430B7480F7D"]
+      optional: true
+      tasks: [{
+        id: "435525307B407FF9"
+        type: "item"
+        item: "gtxfa:iridium_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4A6596AA26B63DEB"
+        type: "item"
+        item: "forestry:honey_drop"
+        count: 2
+      }]
+    }
+    {
+      id: "4408BD648501C124"
+      title: "Осмиридиевая ветка IV"
+      description: ["Скрести осмиевую линию с иридиевой. Держи семью отдельно, она нужна для наквадахового сплава. Соты идут в центрифугу IV с протоколом и осмиридиевым образцом."]
+      x: 2.369d
+      y: 0.141d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BBC8CE4890A0738","4664AF65D1C03533"]
+      optional: true
+      tasks: [{
+        id: "41F325E9C54F5FD8"
+        type: "item"
+        item: "gtxfa:osmiridium_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4855A98AC65406D8"
+        type: "item"
+        item: "gtceu:polyethylene_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4FA5967F8A4E8C4A"
+      title: "Плутониевая семья LuV"
+      description: ["Скрести урановую и ториевую линии. Потомство сохрани для наквадаха и нейтрония. Для обработки сот понадобится 100 мБ плутония из GregTech и протокол LuV."]
+      x: -2.404d
+      y: -3.115d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["46E2947F15872D12","4ADDF82695F6CAF7","46246E20CC8ECB99","40874E15F969F38C"]
+      optional: true
+      tasks: [{
+        id: "44612698C63500E1"
+        type: "item"
+        item: "gtxfa:plutonium_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4255B91D74892F3D"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "448C80B5EE7951AE"
+      title: "Наквадаховая племенная пара"
+      description: ["Соедини плутониевую и титановую линии. Отложи две группы наквадаховых трутней, для сплава и нейтрония. Соты обрабатывай на LuV с протоколом и образцом жидкого наквадаха."]
+      x: 0.000d
+      y: 1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4FA5967F8A4E8C4A","4A4AA9D2CB18CCE7"]
+      optional: true
+      tasks: [{
+        id: "49456B88704526C3"
+        type: "item"
+        item: "gtxfa:naquadah_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "42602003C8E65AC8"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "492FE2BFC0EA0BC1"
+      title: "Соты наквадахового сплава ZPM"
+      description: ["Скрести осмиридий и наквадах. Подай в центрифугу ZPM протокол и 100 мБ наквадахового сплава из заводской партии. Часть потомства понадобится при выборе наквадрии."]
+      x: 5.400d
+      y: -1.658d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4408BD648501C124","448C80B5EE7951AE","453BEE93E4E1DC53","45B48414E910697C","42C936500C621425"]
+      optional: true
+      tasks: [{
+        id: "41E8626B74EF3F79"
+        type: "item"
+        item: "gtxfa:naquadah_alloy_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "46EAAD3850FA6FF4"
+        type: "item"
+        item: "gtceu:stainless_steel_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "431EC286262F9F56"
+      title: "Наквадрия из генетической лаборатории"
+      description: ["Выбери в продвинутом мутатроне наквадрию из пары наквадахового сплава и наквадаха. В обычной пасеке эта пара даёт 2% на мутацию в Крае на высоте Y=128 и выше. Для сот нужны протокол UV и образец жидкой наквадрии."]
+      x: 8.440d
+      y: -3.907d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["492FE2BFC0EA0BC1","4ADDF82695F6CAF7","411E437603289ED3","4901380DFC8E746C"]
+      optional: true
+      tasks: [{
+        id: "4AE41D129549D8EC"
+        type: "item"
+        item: "gtxfa:naquadria_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4CDD91C3EC648DEF"
+        type: "item"
+        item: "gendustry:labware"
+        count: 2
+      }]
+    }
+    {
+      id: "459F42BB257CE660"
+      title: "Нейтрониевая племенная семья"
+      description: ["Скрести наквадаховую и плутониевую линии. Проверь потомство в анализаторе и держи запас родителей. Первую партию нейтрония готовь в кольце Mk III, она нужна как образец для сот."]
+      x: 3.040d
+      y: 1.700d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["448C80B5EE7951AE","4FA5967F8A4E8C4A","4369F016352A66ED","4901380DFC8E746C"]
+      optional: true
+      tasks: [{
+        id: "46A5CA50B3CFBC61"
+        type: "item"
+        item: "gtxfa:neutronium_comb"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4515A5AACA87B1C4"
+        type: "item"
+        item: "gendustry:labware"
+        count: 2
+      }]
+    }
+    {
+      id: "4FD9A3F428A7BF75"
+      title: "Два выхода пасечной центрифуги UV"
+      description: ["Собери центрифугу UV. Подай протокол и 100 мБ нейтрония на вход, поставь раздельные буферы мёда и металла. На 491520 EU/t одна нейтрониевая сота даёт 5 мБ нейтрония и 55 мБ мёда. Для наквадрии освободи входной бак и подай новый образец."]
+      x: 10.800d
+      y: -2.057d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["459F42BB257CE660","431EC286262F9F56","44126B584B873E79"]
+      optional: true
+      tasks: [{
+        id: "483F5E6521C52BAB"
+        type: "item"
+        item: "gtceu:uv_centrifuge"
+      }]
+      rewards: [{
+        id: "4C3CECC126084031"
+        type: "item"
+        item: "gendustry:labware"
+        count: 2
+      }]
+    }
+  ]
+}

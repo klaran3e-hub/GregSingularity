@@ -303,6 +303,19 @@ export default function drawFactoryItems({ item, poly, rect, ellipse, line, px }
     rect(10, 14, 10, 2, brightSteel)
   })
 
+  item('singularity_pair_capsule', () => {
+    metalCase(3, 10, 25, 13, 2)
+    for (const x of [6, 17]) {
+      rect(x, 12, 8, 8, deepSteel, 'edge')
+      rect(x + 2, 14, 4, 4, '#72578d')
+      rect(x + 2, 14, 2, 2, '#c3a8e2')
+    }
+    rect(14, 10, 3, 13, shadedSteel)
+    rect(14, 12, 3, 2, brightSteel)
+    rect(6, 22, 5, 2, copperShade)
+    rect(21, 22, 5, 2, copperShade)
+  })
+
   function freightCrate(accepted) {
     box(3, 9, 20, 20, 3, '#8c5633', '#a57045', '#603d2b')
     line(4, 15, 21, 15, 'oak')

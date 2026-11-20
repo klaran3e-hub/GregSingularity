@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "zero_shift:ore_asteroid",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 6,
+    "separation": 3,
+    "salt": 71822419
+  }
+}

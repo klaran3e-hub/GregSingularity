@@ -1,0 +1,31 @@
+{
+  "has_precipitation": false,
+  "temperature": 0,
+  "downfall": 0,
+  "effects": {
+    "fog_color": 1514018,
+    "sky_color": 592658,
+    "water_color": 5531764,
+    "water_fog_color": 1648179
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {
+    "air": []
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "zero_shift:ceres_salt_lens",
+      "zero_shift:ceres_sapphire",
+      "zero_shift:ceres_almandine",
+      "zero_shift:ceres_pyrope",
+      "zero_shift:ceres_green_sapphire"
+    ]
+  ]
+}

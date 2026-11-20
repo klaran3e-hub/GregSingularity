@@ -63,17 +63,16 @@ ServerEvents.recipes(event => {
   machine('assembler', 'lay_up_structural_laminate', [
     '8x ' + tritanium, '4x ' + americium, '8x kubejs:zpm_neutron_laminate',
     '4x gtceu:laminated_glass', '8x kubejs:sintered_vacuum_tile', '4x kubejs:iv_bulkhead',
-    '2x immersiveengineering:coil_hv', '2x pneumaticcraft:reinforced_pressure_tube'
+    '2x gtceu:hv_voltage_coil', '2x pneumaticcraft:reinforced_pressure_tube'
   ], '4x ' + part('laminate_preform'), 6100, 122880).inputFluids(Fluid.of(shield, 6400))
-  event.custom({
-    type: 'create:compacting', heatRequirement: 'heated', processingTime: 300,
+  global.fieldworkProcess(event, 'zero_shift:uv_materials/press_structural_laminate', 'assembler', { processingTime: 300,
     ingredients: [{ item: part('laminate_preform') }, { item: 'kubejs:vacuum_gasket' }, { fluid: shield, amount: 450 }],
     results: [{ item: laminate }]
-  }).id('zero_shift:uv_materials/press_structural_laminate')
+  }, 32768)
   machine('assembler', 'braze_flux_shunt', [
     '6x ' + tritanium, '4x ' + americium, '4x kubejs:zpm_flux_busbar',
     '4x ' + laminate, '8x gtceu:vanadium_gallium_quadruple_cable', '4x kubejs:hv_switch_contact',
-    '2x immersiveengineering:connector_hv_relay'
+    '2x gtceu:gold_quadruple_cable'
   ], '2x ' + shunt, 6200, 122880).inputFluids(Fluid.of(gt('soldering_alloy'), 5600))
   machine('circuit_assembler', 'calibrate_phase_interlock', [
     '4x gtceu:wetware_processor_assembly', '4x gtceu:crystal_processor_computer',

@@ -1,0 +1,10 @@
+{
+  "dimension": "zero_shift:ceres",
+  "gravity": 0.28,
+  "orbit": "zero_shift:ceres_orbit",
+  "oxygen": false,
+  "solar_power": 6,
+  "solar_system": "ad_astra:solar_system",
+  "temperature": -90,
+  "tier": 5
+}

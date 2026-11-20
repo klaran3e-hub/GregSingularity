@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "zero_shift:ceres_salt_basins",
+    "zero_shift:europa_fractures",
+    "zero_shift:titan_dunes"
+  ]
+}

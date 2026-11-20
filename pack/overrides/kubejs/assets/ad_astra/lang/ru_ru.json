@@ -1,0 +1,10 @@
+{
+  "entity.ad_astra.tier_1_rocket": "Ракета Tier I",
+  "item.ad_astra.tier_1_rocket": "Ракета Tier I",
+  "entity.ad_astra.tier_2_rocket": "Ракета Tier II",
+  "item.ad_astra.tier_2_rocket": "Ракета Tier II",
+  "entity.ad_astra.tier_3_rocket": "Ракета Tier III",
+  "item.ad_astra.tier_3_rocket": "Ракета Tier III",
+  "entity.ad_astra.tier_4_rocket": "Ракета Tier IV",
+  "item.ad_astra.tier_4_rocket": "Ракета Tier IV"
+}

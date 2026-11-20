@@ -1,0 +1,38 @@
+modLoader="javafml"
+loaderVersion="[47,48)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="gtibd_core"
+version="0.1.0"
+displayName="GregSingularity Core"
+logoFile="logo.png"
+description="Field metallurgy, planetary production, spacecraft and JEI integration for GregSingularity."
+
+[[dependencies.gtibd_core]]
+modId="jei"
+mandatory=true
+versionRange="[15.20.0.129]"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.gtibd_core]]
+modId="kubejs"
+mandatory=true
+versionRange="[2001.6.5-build.26]"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.gtibd_core]]
+modId="ad_astra"
+mandatory=true
+versionRange="[1.15.21,1.16)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.gtibd_core]]
+modId="gtceu"
+mandatory=true
+versionRange="[7.5.3]"
+ordering="AFTER"
+side="BOTH"

@@ -1,0 +1,16 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:single",
+      "resource": "gtibd_core:entity/surveyor"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtibd_core:entity/courier"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtibd_core:entity/freighter"
+    }
+  ]
+}

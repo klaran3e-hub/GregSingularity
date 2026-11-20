@@ -2,3 +2,6 @@ compat:
   energy:
     nativeEUToFE: false
     enableFEConverters: true
+worldgen:
+  # GT's dungeon hook injects finished materials after datapack loot edits.
+  addLoot: false

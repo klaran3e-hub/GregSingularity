@@ -7,7 +7,9 @@ StartupEvents.registry('item', event => {
     'iv_sterile_mask', 'iv_masked_wafer', 'iv_exposed_wafer', 'iv_clean_die', 'iv_sealed_processor',
     'iv_clock_backplane', 'iv_arc_plate', 'iv_servo_core', 'iv_switch_stack', 'iv_grid_regulator',
     'iv_cooling_jacket', 'iv_bulkhead', 'iv_reference_module', 'iv_calibration_rig', 'iv_stress_coupon',
-    'iv_commissioning_report'
+    'iv_commissioning_report',
+    'iv_layered_billet', 'iv_bonded_billet', 'iv_indexed_rail', 'iv_index_fixture',
+    'iv_line_datum', 'iv_mars_refractory_grain', 'iv_venus_panel_blank'
   ]
   materials.forEach(id => event.create(id).texture('kubejs:item/' + id))
 })

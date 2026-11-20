@@ -17,8 +17,7 @@ ServerEvents.recipes(event => {
   const catalyst = ks('iv_fuel_catalyst')
   const spentCatalyst = ks('iv_spent_fuel_catalyst')
   const firstCircuit = gt('micro_processor_mainframe')
-  const ie = id => 'immersiveengineering:' + id
-  const create = id => 'create:' + id
+
   const pnc = id => 'pneumaticcraft:' + id
 
   ;['micro_processor_mainframe', 'nano_processor', 'nano_processor_computer', 'quantum_processor_assembly', 'crystal_processor'].forEach(id => {
@@ -51,7 +50,7 @@ ServerEvents.recipes(event => {
 
   machine('assembler', 'pack_resist_ampoule', [
     ks('sample_ampoule'), '2x ' + ks('paraffin_cake'), ks('chorus_dielectric_film'),
-    '2x ' + platinum, gasket, ie('wire_electrum')
+    '2x ' + platinum, gasket, gt('electrum_single_wire')
   ], ks('iv_photoresist_ampoule'), 1320, 1536).inputFluids(Fluid.of(gt('distilled_water'), 600))
   event.recipes.gtceu.chemical_reactor(prefix + 'prepare_photoresist')
     .itemInputs(ks('iv_photoresist_ampoule')).inputFluids(Fluid.of(gt('naphtha'), 750))
@@ -63,7 +62,7 @@ ServerEvents.recipes(event => {
   machine('assembler', 'prepare_sterile_mask', [
     ks('ev_etching_mask'), ks('ev_commissioning_report'), '2x ' + ks('me_optical_link'),
     '2x ' + platinum, gt('cleanroom_glass'), '2x ' + gasket,
-    create('precision_mechanism'), ie('connector_hv')
+    'gtceu:lv_robot_arm', 'gtceu:gold_single_cable', ks('martian_pressure_liner')
   ], ks('iv_sterile_mask'), 2180).inputFluids(Fluid.of(shield, 700))
   machine('chemical_bath', 'coat_iv_wafer', [wafer], ks('iv_masked_wafer'), 760, 1536)
     .inputFluids(Fluid.of(resist, 250))
@@ -76,7 +75,7 @@ ServerEvents.recipes(event => {
     inputs: [
       { item: die }, { item: ks('ev_control_module') }, { item: gasket },
       { item: pnc('ingot_iron_compressed') }, { item: pnc('reinforced_pressure_tube') },
-      { item: 'immersiveengineering:insulating_glass' }
+      { item: 'gtceu:tempered_glass' }
     ],
     pressure: 4.85,
     results: [{ item: packagePart }]

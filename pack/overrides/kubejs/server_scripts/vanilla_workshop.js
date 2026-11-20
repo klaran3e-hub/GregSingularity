@@ -17,23 +17,28 @@ ServerEvents.recipes(event => {
   const glass = mc('glass_pane')
   const dust = mc('redstone')
   const planks = '#minecraft:planks'
+  const stockRecipes = []
+
+  event.recipes.gtceu.cutter(prefix + 'slice_whole_melon')
+    .itemInputs(mc('melon')).inputFluids(Fluid.of(mc('water'), 100))
+    .itemOutputs('9x minecraft:melon_slice').duration(160).EUt(16)
 
   function shape(id, count, pattern, keys) {
-    event.remove({ output: mc(id) })
+    stockRecipes.push({ output: mc(id) })
     event.shaped(count + 'x ' + mc(id), pattern, keys).id(prefix + id)
   }
   function assemble(id, ingredients, count, time, power, fluid, amount) {
-    event.remove({ output: mc(id) })
+    stockRecipes.push({ output: mc(id) })
     const recipe = event.recipes.gtceu.assembler(prefix + id)
     ingredients.forEach(ingredient => recipe.itemInputs(ingredient))
     recipe.itemOutputs(count + 'x ' + mc(id)).duration(time).EUt(power)
     if (fluid) recipe.inputFluids(Fluid.of(fluid, amount))
   }
   function process(type, id, ingredients, count, time, heated) {
-    const recipe = { type: 'create:' + type, ingredients: ingredients, results: [{ item: mc(id), count: count }] }
-    if (time) recipe.processingTime = time
-    if (heated) recipe.heatRequirement = 'heated'
-    event.custom(recipe).id(prefix + id)
+    const machine = type === 'mixing' ? 'mixer' : type === 'cutting' ? 'cutter' : 'assembler'
+    global.fieldworkProcess(event, prefix + id, machine, {
+      ingredients: ingredients, results: [{item: mc(id), count: count}], processingTime: time || 160
+    }, heated ? 28 : 24)
   }
   function repeated(item, count) {
     const ingredients = []
@@ -285,7 +290,6 @@ ServerEvents.recipes(event => {
       for (const furnace of ['smelting', 'blasting']) {
         event.remove({ id: mc(output + '_from_' + furnace + '_' + vanillaOre) })
       }
-      event.remove({ id: 'create:crushing/' + vanillaOre })
       event.recipes.gtceu.chemical_bath(prefix + 'wash_' + vanillaOre)
         .itemInputs(mc(vanillaOre)).inputFluids(Fluid.of('gtceu:distilled_water', 250))
         .itemOutputs(gt(vanillaOre)).duration(240).EUt(24)
@@ -293,7 +297,6 @@ ServerEvents.recipes(event => {
   }
   event.remove({ id: mc('quartz') })
   event.remove({ id: mc('quartz_from_blasting') })
-  event.remove({ id: 'create:crushing/nether_quartz_ore' })
   event.recipes.gtceu.chemical_bath(prefix + 'wash_nether_quartz_ore')
     .itemInputs(mc('nether_quartz_ore')).inputFluids(Fluid.of('gtceu:distilled_water', 250))
     .itemOutputs(gt('nether_quartz_ore')).duration(240).EUt(24)
@@ -332,4 +335,7 @@ ServerEvents.recipes(event => {
       })
     }
   }
+
+  // KubeJS filters only the original recipe map, so the replacements remain intact.
+  event.remove(stockRecipes)
 })

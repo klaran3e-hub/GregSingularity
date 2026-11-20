@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "size": 8,
+    "discard_chance_on_air_exposure": 0.55,
+    "targets": [
+      {
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "ad_astra:mars_stone_replaceables"
+        },
+        "state": {
+          "Name": "kubejs:mars_ostrum_breccia"
+        }
+      }
+    ]
+  }
+}

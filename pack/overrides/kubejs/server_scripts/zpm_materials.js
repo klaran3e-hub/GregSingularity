@@ -63,7 +63,7 @@ ServerEvents.recipes(event => {
   machine('assembler', 'wind_naquadah_coil', [
     '2x gtceu:hssg_coil_block', '8x gtceu:naquadah_plate', '4x kubejs:luv_magnet_module',
     '4x kubejs:luv_dielectric_laminate', '4x kubejs:iv_cooling_jacket', '4x kubejs:vacuum_gasket',
-    '4x immersiveengineering:wirecoil_steel', '2x create:precision_mechanism'
+    '4x gtceu:steel_quadruple_wire', '2x gtceu:lv_robot_arm'
   ], '2x gtceu:naquadah_coil_block', 4400, 30720)
     .notConsumable(Item.of(permit)).inputFluids(Fluid.of(cold, 3600))
   event.remove({ output: alloy })
@@ -96,17 +96,16 @@ ServerEvents.recipes(event => {
 
   machine('assembler', 'lay_up_neutron_shield', [
     '4x ' + europium, '8x ' + alloy, '4x kubejs:luv_dielectric_laminate',
-    '4x kubejs:sintered_vacuum_tile', '4x kubejs:vacuum_gasket', '4x immersiveengineering:insulating_glass',
+    '4x kubejs:sintered_vacuum_tile', '4x kubejs:vacuum_gasket', '4x gtceu:tempered_glass',
     '4x pneumaticcraft:reinforced_pressure_tube'
   ], '4x ' + part('laminate_preform'), 3700, 29696).inputFluids(Fluid.of(shield, 2600))
-  event.custom({
-    type: 'create:pressing',
+  global.fieldworkProcess(event, prefix + 'press_neutron_laminate', 'forming_press', {
     ingredients: [{ item: part('laminate_preform') }],
     results: [{ item: part('neutron_laminate') }]
-  }).id(prefix + 'press_neutron_laminate')
+  }, 8192)
   machine('assembler', 'braze_flux_busbar', [
     '4x ' + europium, '6x ' + alloy, '4x kubejs:luv_busbar', '4x gtceu:vanadium_gallium_single_wire',
-    '2x ' + part('neutron_laminate'), '4x kubejs:hv_switch_contact', '2x immersiveengineering:connector_hv_relay'
+    '2x ' + part('neutron_laminate'), '4x kubejs:hv_switch_contact', '2x gtceu:gold_quadruple_cable'
   ], '2x ' + part('flux_busbar'), 4000, 30720).inputFluids(Fluid.of(lubricant, 2800))
   machine('circuit_assembler', 'calibrate_phase_module', [
     '4x gtceu:wetware_processor', '4x gtceu:crystal_processor_assembly', '4x kubejs:luv_clock_matrix',
@@ -115,7 +114,7 @@ ServerEvents.recipes(event => {
   machine('assembler', 'wire_diesel_reserve', [
     gt('extreme_combustion_engine'), '2x gtceu:luv_transformer_4a', '4x kubejs:iv_grid_regulator',
     '4x ' + part('flux_busbar'), '4x ' + part('phase_module'), '4x ' + part('neutron_laminate'),
-    '2x gtceu:luv_energy_output_hatch_4a', '2x immersiveengineering:capacitor_hv', '2x pneumaticcraft:advanced_liquid_compressor'
+    '2x gtceu:luv_energy_output_hatch_4a', '2x gtceu:hv_battery_buffer_4x', '2x pneumaticcraft:advanced_liquid_compressor'
   ], '2x ' + part('reserve_switchgear'), 4600, 32000).inputFluids(Fluid.of(gt('cetane_boosted_diesel'), 6000))
 
   const pipeSizes = ['tiny', 'small', 'normal', 'large', 'huge', 'quadruple', 'nonuple']

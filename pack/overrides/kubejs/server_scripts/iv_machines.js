@@ -3,8 +3,7 @@ ServerEvents.recipes(event => {
   const gt = id => 'gtceu:' + id
   const iv = id => gt('iv_' + id)
   const ev = id => gt('ev_' + id)
-  const ie = id => 'immersiveengineering:' + id
-  const create = id => 'create:' + id
+
   const pnc = id => 'pneumaticcraft:' + id
   const prefix = 'zero_shift:iv_machines/'
   const plate = gt('tungsten_steel_plate')
@@ -31,10 +30,10 @@ ServerEvents.recipes(event => {
   const robust = gt('robust_machine_casing')
   const gearbox = gt('tungstensteel_gearbox')
   const intake = gt('extreme_engine_intake_casing')
-  const arm = create('mechanical_arm')
+  const arm = 'gtceu:mv_robot_arm'
   const gauge = pnc('pressure_gauge_module')
-  const ieCoil = ie('coil_hv')
-  const iePump = ie('fluid_pump')
+  const ieCoil = 'gtceu:hv_voltage_coil'
+  const iePump = 'gtceu:lv_electric_pump'
   const tube = pnc('reinforced_pressure_tube')
 
   function assemble(id, output, items, ticks, power, liquid, amount) {
@@ -56,23 +55,22 @@ ServerEvents.recipes(event => {
 
   assemble('laminate_bulkhead', '2x ' + bulkhead, [
     '4x ' + plate, '2x ' + ks('vacuum_treated_panel'), ks('ev_pressure_cage'),
-    '2x ' + ks('iv_cable_jacket'), '2x ' + gasket, ie('heavy_engineering'), pnc('pressure_chamber_wall')
+    '2x ' + ks('iv_cable_jacket'), '2x ' + gasket, 'gtceu:steel_frame', pnc('pressure_chamber_wall')
   ], 1640, 1920)
-  event.custom({
-    type: ie('metal_press'), energy: 80000, mold: ie('mold_plate'),
-    input: { item: bulkhead }, result: { item: arcPlate, count: 2 }
-  }).id(prefix + 'stamp_arc_plate')
+  event.recipes.gtceu.forming_press(prefix + 'stamp_arc_plate')
+      .itemInputs(bulkhead).notConsumable('gtceu:plate_casting_mold')
+      .itemOutputs(Item.of(arcPlate, 2)).duration(360).EUt(1920)
   assemble('wind_servo_core', '2x ' + servo, [
     ev('electric_motor'), '2x ' + ks('ev_traction_coil'), '2x ' + plate,
-    '2x ' + ks('balanced_rail_axle'), '2x ' + cable, '2x ' + gasket, create('rotation_speed_controller'), ieCoil
+    '2x ' + ks('balanced_rail_axle'), '2x ' + cable, '2x ' + gasket, 'gtceu:good_electronic_circuit', ieCoil
   ], 1620, 1920)
   assemble('assemble_switch_stack', '2x ' + switchStack, [
     '2x ' + ks('ev_phase_relay'), '2x ' + platinum, arcPlate, ks('me_optical_link'),
-    '2x ' + cable, circuit, gauge, ie('connector_hv_relay')
+    '2x ' + cable, circuit, gauge, 'gtceu:gold_quadruple_cable'
   ], 1820, 1920)
   assemble('assemble_grid_regulator', regulator, [
     '2x ' + switchStack, '2x ' + ev('emitter'), '2x ' + platinum,
-    '2x ' + ks('iv_busbar_blank'), circuit, '2x ' + cable, create('content_observer'), ie('capacitor_hv')
+    '2x ' + ks('iv_busbar_blank'), circuit, '2x ' + cable, 'gtceu:lv_sensor', 'gtceu:hv_battery_buffer_4x'
   ], 1980, 1920)
   assemble('assemble_cooling_jacket', jacket, [
     '2x ' + ks('ev_engine_jacket'), '2x ' + ev('electric_pump'), '4x ' + plate,
@@ -81,15 +79,15 @@ ServerEvents.recipes(event => {
 
   tier('machine_casing', [
     ev('machine_casing'), '4x ' + plate, '2x ' + bulkhead, '2x ' + arcPlate, '4x ' + gasket,
-    ie('heavy_engineering'), gauge
+    'gtceu:steel_frame', gauge, 'kubejs:martian_pressure_liner'
   ], 1820, 1920)
   tier('machine_hull', [
     ev('machine_hull'), casing, '2x ' + switchStack, '2x ' + arcPlate, '4x ' + cable, '2x ' + circuit,
-    '2x ' + ie('connector_hv'), tube
+    '2x ' + 'gtceu:gold_single_cable', tube, ks('martian_pressure_liner')
   ], 2120, 1920)
   tier('electric_motor', [
     ev('electric_motor'), '2x ' + servo, '2x ' + plate, '2x ' + cable, circuit, '2x ' + gasket,
-    '2x ' + ieCoil, create('precision_mechanism')
+    '2x ' + ieCoil, 'gtceu:lv_robot_arm'
   ], 1680, 1920)
   tier('electric_pump', [
     ev('electric_pump'), motor, jacket, '2x ' + plate, '2x ' + cable, '2x ' + gasket,
@@ -97,11 +95,11 @@ ServerEvents.recipes(event => {
   ], 1840, 1920)
   tier('electric_piston', [
     ev('electric_piston'), motor, servo, '2x ' + plate, '2x ' + ks('balanced_rail_axle'), arcPlate,
-    pnc('pressure_chamber_interface'), create('mechanical_piston')
+    pnc('pressure_chamber_interface'), 'gtceu:lv_electric_piston'
   ], 1760, 1920)
   tier('conveyor_module', [
     ev('conveyor_module'), '2x ' + motor, '2x ' + plate, '2x ' + ks('iv_cable_jacket'),
-    '2x ' + ks('balanced_rail_axle'), cable, create('brass_tunnel'), ie('conveyor_basic')
+    '2x ' + ks('balanced_rail_axle'), cable, 'gtceu:tin_normal_item_pipe', 'kubejs:woven_drive_belt'
   ], 1820, 1920)
   tier('robot_arm', [
     ev('robot_arm'), motor, piston, '2x ' + servo, switchStack, '2x ' + circuit, '2x ' + plate, arm, gauge
@@ -171,13 +169,13 @@ ServerEvents.recipes(event => {
   ]
   const stationEquipment = [
     [iePump, pnc('regulator_tube_module')],
-    [create('mechanical_press'), ie('mold_plate')],
-    [create('rotation_speed_controller'), ieCoil],
-    [ie('heavy_engineering'), pnc('heat_sink')],
-    [create('brass_tunnel'), ie('conveyor_basic')],
-    [create('content_observer'), ie('connector_hv_relay')],
-    [gauge, ie('connector_hv')],
-    [ieCoil, ie('capacitor_hv')]
+    ['kubejs:forging_saddle', 'gtceu:plate_casting_mold'],
+    ['gtceu:good_electronic_circuit', ieCoil],
+    ['gtceu:steel_frame', pnc('heat_sink')],
+    ['gtceu:tin_normal_item_pipe', 'kubejs:woven_drive_belt'],
+    ['gtceu:lv_sensor', 'gtceu:gold_quadruple_cable'],
+    [gauge, 'gtceu:gold_single_cable'],
+    [ieCoil, 'gtceu:hv_battery_buffer_4x']
   ]
   devices.forEach(([part, family], group) => {
     const [tool, support] = stationEquipment[group]
@@ -193,7 +191,7 @@ ServerEvents.recipes(event => {
       event.remove({ id: gt(recycler + 'iv_' + id) })
     })
     tier(id, [ev(id), hull, '2x ' + regulator, '2x ' + circuit, '2x ' + plate,
-      '4x ' + cable, '2x gtceu:niobium_titanium_single_cable', '2x kubejs:luv_dielectric_laminate'], 2360 + 80 * amps, 7680)
+      '4x ' + cable, '2x gtceu:niobium_titanium_single_cable', 'kubejs:venus_thermal_screen'], 2360 + 80 * amps, 7680)
       .notConsumable(Item.of(ks('iv_commissioning_report')))
   })
 
@@ -239,7 +237,7 @@ ServerEvents.recipes(event => {
     const previous = index === 0 ? gt('titanium_tiny_fluid_pipe')
       : gt('tungsten_steel_' + (size === 'quadruple' ? 'normal' : fluidSizes[index - 1]) + '_fluid_pipe')
     const id = 'tungsten_steel_' + size + '_fluid_pipe'
-    const die = size === 'quadruple' ? ie('mold_wire') : ie('mold_rod')
+    const die = size === 'quadruple' ? 'gtceu:wire_extruder_mold' : 'gtceu:rod_extruder_mold'
     install(id, (index < 3 ? '2x ' : '') + gt(id), [
       '2x ' + previous, '3x ' + plate, '2x ' + gasket, tube, die, arcPlate
     ], 1360 + index * 170, 6144)
@@ -249,10 +247,10 @@ ServerEvents.recipes(event => {
     const pipe = gt('platinum_' + size + '_item_pipe')
     const previous = index === 0 ? gt('electrum_small_item_pipe') : gt('platinum_' + itemSizes[index - 1] + '_item_pipe')
     install('platinum_' + size + '_item_pipe', (index < 2 ? '2x ' : '') + pipe, [
-      '2x ' + previous, '2x ' + platinum, conveyor, create('brass_funnel'), ie('conveyor_basic'), gasket
+      '2x ' + previous, '2x ' + platinum, conveyor, 'gtceu:lv_conveyor_module', 'kubejs:woven_drive_belt', gasket
     ], 1440 + index * 190, 6144)
     install('platinum_' + size + '_restrictive_item_pipe', gt('platinum_' + size + '_restrictive_item_pipe'), [
-      pipe, gt('electrum_' + size + '_restrictive_item_pipe'), create('filter'), gauge, regulator, arcPlate
+      pipe, gt('electrum_' + size + '_restrictive_item_pipe'), 'kubejs:woven_drive_belt', gauge, regulator, arcPlate
     ], 1480 + index * 190, 6144)
   })
 })

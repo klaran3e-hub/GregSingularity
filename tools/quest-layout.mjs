@@ -1,8 +1,9 @@
 export const questChapters = [
-  ['start', 'Начало', ['workshop', 'kiln', 'kinetics', 'steam'], 'boiler'],
+  ['start', 'Начало', ['workshop', 'kiln', 'kinetics'], 'bronze'],
+  ['steam', 'Паровой век', ['steam'], 'boiler'],
   ['lv', 'LV', ['lv', 'industrial_supply', 'blast_furnace'], 'lv_circuit_batch'],
   ['mv', 'MV', ['mv', 'oilfield', 'petrochem', 'nether_foundry', 'yard'], 'mv_circuit_batch'],
-  ['hv_foundry', 'HV', ['hv_foundry', 'end_expedition'], 'hv_foundry_accepted'],
+  ['hv_foundry', 'HV', ['hv_foundry', 'end_expedition'], 'space_lunar_seal'],
   ['ev_power', 'EV', ['ev_vacuum', 'ev_cleanroom', 'ev_power'], 'ev_foundry_accepted'],
   ['iv_power', 'IV', ['iv_metallurgy', 'iv_microelectronics', 'iv_power', 'iv_assembly_line'], 'iv_commissioning'],
   ['luv_power', 'LuV', ['luv_alloys', 'luv_power', 'luv_computation', 'luv_fusion', 'luv_workshop'], 'luv_commissioning'],
@@ -20,16 +21,20 @@ export const questChapters = [
   ['woodworking', 'Деревообработка', [
     'timber_oak', 'timber_spruce', 'timber_birch', 'timber_jungle', 'timber_acacia', 'timber_dark_oak',
     'timber_mangrove', 'timber_cherry', 'timber_bamboo', 'timber_crimson', 'timber_warped'
-  ], 'wood_oak_mill']
+  ], 'wood_oak_mill'],
+  ['gregcrops', 'Агрокультуры GregCrops', ['gregcrops'], 'crop_stargatium'],
+  ['gtxfa', 'Ресурсные пчёлы', ['gtxfa'], 'bee_hv_copper_run']
 ]
 
 const primaryRoutes = {
-  start: ['knife', 'bench', 'kiln', 'millstone', 'mixer', 'boiler'],
+  start: ['knife', 'bench', 'kiln', 'field_trough', 'field_bloomery', 'bronze'],
+  steam: ['seal', 'bronze_pipe', 'field_bank', 'test_valve', 'boiler', 'steam_hammer', 'steam_mill', 'steam_alloy_smelter'],
   lv: ['turbine', 'assembler', 'lv_circuit_batch', 'first_coke', 'first_steel', 'pressed_steel_frame', 'ebf_controller', 'first_aluminium'],
   mv: ['pressure_gasket', 'first_mv_circuit', 'mv_circuit_batch', 'oil_drilling_rig', 'washed_oil_sample',
     'refinery_outputs', 'activated_carrier', 'process_commissioning', 'nether_kanthal_coils', 'yard_accept_batch'],
   hv_foundry: ['hv_ceramic_substrate', 'hv_circuit', 'hv_hull', 'hv_generator', 'hv_assembler',
-    'hv_trial_billet', 'hv_foundry_accepted', 'end_pass', 'end_grit', 'end_separated_gas', 'end_dielectric'],
+    'hv_trial_billet', 'hv_foundry_accepted', 'end_pass', 'end_grit', 'end_separated_gas', 'end_dielectric',
+    'space_frame', 'space_bench', 'space_rocket', 'space_moon', 'space_lunar_seal'],
   ev_power: ['vacuum_controller', 'vacuum_panel', 'cleanroom_controller', 'cleanroom_first_ev_circuit', 'ev_foundry_accepted'],
   iv_power: ['iv_tungstensteel_plate', 'iv_platinum_plate', 'iv_first_mainframe', 'iv_power_engine', 'iv_commissioning'],
   luv_power: ['luv_hssg_plate', 'luv_first_circuit', 'luv_research_station', 'luv_ignition_report', 'luv_commissioning'],
@@ -46,11 +51,15 @@ const primaryRoutes = {
   masonry: ['chisel', 'stone_bricks', 'stonecutter', 'glass'],
   forestry: ['forest_farm_drive', 'forest_farm_arboretum', 'forest_scoop', 'forest_apiary', 'forest_lab_analyzer',
     'forest_gd_industrial_apiary', 'forest_gd_sampler', 'forest_gd_replicator'],
-  woodworking: ['wood_oak_hand', 'wood_birch_hand', 'wood_dark_oak_hand', 'wood_cherry_hand', 'wood_bamboo_hand', 'wood_crimson_hand']
+  woodworking: ['wood_oak_hand', 'wood_birch_hand', 'wood_dark_oak_hand', 'wood_cherry_hand', 'wood_bamboo_hand', 'wood_crimson_hand'],
+  gregcrops: ['crop_stakes', 'crop_stickreed_seed', 'crop_harvester', 'crop_coppon', 'crop_steel', 'crop_diareed',
+    'crop_quantaria', 'crop_stargatium'],
+  gtxfa: ['bee_hv_apiary', 'bee_carbon_comb', 'bee_water_comb', 'bee_polyethylene_comb', 'bee_hv_copper_run',
+    'bee_iv_carbide_comb', 'bee_naquadah_comb', 'bee_naquadah_alloy_comb', 'bee_uv_run']
 }
 
 const fullDependencyWebs = new Set([
-  'mv', 'hv_foundry', 'ev_power', 'iv_power', 'luv_power', 'zpm_power', 'uv_power', 'post_uv_operations', 'post_uv_reclamation', 'post_uv_distribution', 'final_operation', 'me_network'
+  'steam', 'lv', 'mv', 'hv_foundry', 'ev_power', 'iv_power', 'luv_power', 'zpm_power', 'uv_power', 'post_uv_operations', 'post_uv_reclamation', 'post_uv_distribution', 'final_operation', 'me_network', 'gregcrops', 'gtxfa'
 ])
 
 function keyHash(key) {
@@ -361,7 +370,7 @@ export function drawWeb({ entries, lines }) {
     const dx = (to.x - from.x) * resolution
     const dy = (to.y - from.y) * resolution
     const steps = Math.ceil(Math.hypot(dx, dy))
-    const color = main ? [195, 158, 105, 165] : [120, 161, 172, 130]
+    const color = main ? [201, 150, 101, 178] : [185, 185, 201, 134]
     for (let step = 0; step <= steps; step++) {
       const px = Math.round(x + dx * step / steps)
       const py = Math.round(y + dy * step / steps)

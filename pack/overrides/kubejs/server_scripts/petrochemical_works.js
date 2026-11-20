@@ -13,8 +13,7 @@ ServerEvents.recipes(event => {
   const ks = name => 'kubejs:' + name
   const gt = name => 'gtceu:' + name
   const pnc = name => 'pneumaticcraft:' + name
-  const ie = name => 'immersiveengineering:' + name
-  const create = name => 'create:' + name
+
   const prefix = 'zero_shift:petrochem/'
   const steel = gt('steel_plate')
   const aluminium = gt('aluminium_plate')
@@ -63,8 +62,7 @@ ServerEvents.recipes(event => {
     tank, pnc('refinery'), pnc('refinery_output'), pnc('thermopneumatic_processing_plant'),
     pnc('vortex_tube'), pnc('heat_pipe'), pnc('heat_sink'), pnc('liquid_compressor'),
     pnc('reinforced_pressure_tube'), pnc('advanced_pressure_tube'), pnc('fluid_mixer'),
-    pnc('empty_pcb'), pnc('etching_tank'), polymerPlate, pnc('plastic'),
-    ie('fluid_pump'), ie('light_engineering')
+    pnc('empty_pcb'), pnc('etching_tank'), polymerPlate, pnc('plastic')
   ]
   replacedOutputs.forEach(output => event.remove({ output: output }))
   event.replaceInput({ input: pnc('plastic') }, pnc('plastic'), polymerPlate)
@@ -79,8 +77,6 @@ ServerEvents.recipes(event => {
     'pneumaticcraft_fuels/crude_oil'
   ]
   replacedPneumaticRecipes.forEach(id => event.remove({ id: pnc(id) }))
-  event.remove({ id: ie('refinery/biodiesel') })
-  event.remove({ id: ie('generator_fuel/biodiesel') })
 
   const originalOilVariants = ['oil', 'oil_light', 'oil_medium', 'oil_heavy']
   const rawOilRecipes = [
@@ -120,11 +116,10 @@ ServerEvents.recipes(event => {
     results: [{ item: output, count: count }]
   })
 
-  custom('strainer_mesh', {
-    type: create('compacting'),
+  global.fieldworkProcess(event, prefix + 'strainer_mesh', 'forming_press', {
     ingredients: [foil, foil, gt('charcoal_dust'), ks('pressed_insulation'), steel].map(item => ({ item: item })),
     results: [{ item: mesh, count: 2 }]
-  })
+  }, 28)
   shaped('seismic_probe', ks('seismic_probe'), ['FRF', 'CSP', 'ABA'], {
     F: foil, R: 'minecraft:redstone', C: circuit, S: ks('sealed_mv_module'),
     P: oldSeal, A: aluminium, B: cable
@@ -136,11 +131,8 @@ ServerEvents.recipes(event => {
   assembly('mv_energy_input_hatch', [hull, gt('lv_energy_input_hatch'), '2x ' + circuit, '2x ' + cable, oldSeal], gt('mv_energy_input_hatch'), 360)
   assembly('mv_output_hatch', [hull, pump, steelCasing, '2x ' + cable, '2x ' + oldSeal], gt('mv_output_hatch'), 380)
   pressure('compress_drill_head', [ks('balanced_turbine_rotor'), frame, oldSeal, pressedIron], drillHead, 1, 4.0)
-  assembly('ie_fluid_pump', [
-    ie('component_steel'), pump, '4x ' + ie('fluid_pipe'), create('mechanical_pump'), '2x ' + oldSeal, '2x ' + aluminium
-  ], ie('fluid_pump'), 540)
   assembly('fluid_drilling_rig', [
-    hull, '2x ' + pump, ie('fluid_pump'), '2x ' + drillHead, '4x ' + steelCasing, '2x ' + circuit, '2x ' + cable
+    hull, '2x ' + pump, 'gtceu:lv_electric_pump', '2x ' + drillHead, '4x ' + steelCasing, '2x ' + circuit, '2x ' + cable
   ], gt('mv_fluid_drilling_rig'), 960)
 
   shaped('drum_liner', ks('drum_liner'), ['PSP', 'FGF', 'PSP'], {
@@ -163,8 +155,25 @@ ServerEvents.recipes(event => {
 
   machine('chemical_reactor', 'wash_crude', {
     items: [cartridge], fluids: [[distilled, 250]], outputs: [spent],
-    liquids: [[cleanOil, 800], [brine, 400]], ticks: 420
+    liquids: [[ks('desalted_crude'), 800], [brine, 400]], ticks: 420
   }).inputFluids('#zero_shift:raw_oil 1000')
+  const coalescer = ks('mv_coalescer')
+  const saturated = ks('mv_saturated_coalescer')
+  const dielectric = ks('mv_dielectric_oil')
+  machine('assembler', 'pack_coalescer', {
+    items: [ks('drum_liner'), '2x ' + mesh, ks('furnace_lining_insert'), '2x ' + foil, oldSeal],
+    fluids: [[gt('tin'), 144]], outputs: [coalescer], ticks: 360
+  })
+  custom('dewater_crude', {
+    type: pnc('thermo_plant'), exothermic: false, pressure: 3.25,
+    temperature: { min_temp: 398 }, item_input: { item: coalescer },
+    fluid_input: pncFluid(ks('desalted_crude'), 800),
+    fluid_output: fluidStack(cleanOil, 750), item_output: { item: saturated }
+  })
+  machine('chemical_bath', 'regenerate_coalescer', {
+    items: [saturated], fluids: [[distilled, 200]], outputs: [coalescer],
+    liquids: [[brine, 150]], ticks: 320, power: 96
+  })
   assembly('mv_chemical_bath', [hull, pump, tank, '2x ' + oldSeal, '2x ' + mesh, circuit], gt('mv_chemical_bath'), 480)
   machine('chemical_bath', 'rinse_wash_cartridge', {
     items: [spent], fluids: [[distilled, 200]], outputs: [mesh],
@@ -174,17 +183,13 @@ ServerEvents.recipes(event => {
     fluids: [[brine, 400]], outputs: [gt('salt_dust')], liquids: [['minecraft:water', 200]], ticks: 440
   })
 
-  custom('refinery_tray', {
-    type: ie('metal_press'), mold: ie('mold_plate'), energy: 14400,
-    input: { item: ks('drum_liner') }, result: { item: tray, count: 2 }
-  })
+  event.recipes.gtceu.forming_press(prefix + 'refinery_tray')
+    .itemInputs(ks('drum_liner')).notConsumable('gtceu:plate_casting_mold')
+    .itemOutputs(Item.of(tray, 2)).duration(240).EUt(96)
   assembly('heat_exchange_core', [
     '2x ' + tray, '2x ' + aluminium, '2x ' + ks('heater_ribbon'), frame,
-    create('precision_mechanism'), ie('component_steel'), oldSeal
+    'gtceu:lv_robot_arm', 'kubejs:pressed_steel_frame', oldSeal
   ], exchanger, 620)
-  assembly('ie_light_engineering', [
-    tray, frame, ie('component_steel'), circuit, oldSeal, '2x ' + aluminium
-  ], '2x ' + ie('light_engineering'), 540)
   shaped(pnc('refinery'), pnc('refinery'), ['PFP', 'CHT', 'BEB'], {
     P: pressedIron, F: frame, C: circuit, H: hull, T: tank, B: tray, E: exchanger
   })
@@ -220,10 +225,9 @@ ServerEvents.recipes(event => {
     [cleanOil, 'washed_oil_sample'], [heavyFuel, 'heavy_fuel_sample'], [lightFuel, 'light_fuel_sample'],
     [naphtha, 'naphtha_sample'], [refineryGas, 'refinery_gas_sample'], [diesel, 'diesel_sample']
   ]
-  samples.forEach(([fluid, name]) => custom(name, {
-    type: create('filling'), ingredients: [{ item: ampoule }, fluidStack(fluid, 100)],
+  samples.forEach(([fluid, name]) => global.fieldworkProcess(event, prefix + name, 'canner', { ingredients: [{ item: ampoule }, fluidStack(fluid, 100)],
     results: [{ item: ks(name) }]
-  }))
+  }, 28))
 
   machine('assembler', 'activate_cracking_catalyst', {
     items: ['2x ' + ks('nickel_concentrate'), '2x ' + gt('charcoal_dust'), mesh, ks('furnace_lining_insert')],
@@ -256,15 +260,20 @@ ServerEvents.recipes(event => {
     items: [catalyst], fluids: [[lightFuel, 500], [gt('hydrogen'), 100]],
     outputs: [gt('sulfur_dust')], liquids: [[conditionedFuel, 500]], ticks: 560
   })
-  custom('finish_diesel', {
-    type: ie('refinery'), energy: 480,
-    input0: { tag: prefix + 'conditioned_light_fuel', amount: 10 },
-    input1: { tag: prefix + 'refinery_gas', amount: 5 },
-    catalyst: { item: carrier }, result: fluidStack(diesel, 12)
+  machine('chemical_reactor', 'finish_diesel', {
+    fluids: [[conditionedFuel, 1000], [refineryGas, 500]], liquids: [[diesel, 1200]], ticks: 240
+  }).notConsumable(carrier)
+
+  machine('chemical_reactor', 'refine_dielectric_oil', {
+    items: [wax], fluids: [[lubricant, 200], [conditionedFuel, 400]],
+    liquids: [[dielectric, 500]], ticks: 500, power: 112
   })
-  custom('ie_diesel_fuel', {
-    type: ie('generator_fuel'), fluidTag: 'forge:diesel', burnTime: 250
+  custom('impregnate_insulation', {
+    type: pnc('thermo_plant'), exothermic: false, pressure: 4.0,
+    temperature: { min_temp: 333 }, item_input: { item: ks('pressed_insulation') },
+    fluid_input: pncFluid(dielectric, 250), item_output: { item: ks('mv_impregnated_insulation') }
   })
+
   machine('assembler', 'polymer_seal_preform', {
     items: ['2x ' + polymerPlate, oldSeal, wax, foil], fluids: [[lubricant, 150]],
     outputs: [ks('polymer_seal_preform')], ticks: 320
@@ -277,10 +286,10 @@ ServerEvents.recipes(event => {
     liquids: [[pnc('etching_acid'), 1000]], ticks: 620
   })
   assembly('etching_tank', [
-    tank, '2x ' + pnc('pressure_chamber_glass'), '2x ' + seal, '2x ' + polymerPlate, ie('fluid_pipe'), tray
+    tank, '2x ' + pnc('pressure_chamber_glass'), '2x ' + seal, '2x ' + polymerPlate, 'gtceu:steel_small_fluid_pipe', tray
   ], pnc('etching_tank'), 480)
   assembly('pneumatic_fluid_mixer', [
-    '2x ' + tank, '2x ' + seal, exchanger, pnc('turbine_rotor'), '2x ' + tube, ie('fluid_pump')
+    '2x ' + tank, '2x ' + seal, exchanger, pnc('turbine_rotor'), '2x ' + tube, 'gtceu:lv_electric_pump'
   ], pnc('fluid_mixer'), 680)
   custom(pnc('fluid_mixer/biodiesel'), {
     type: pnc('fluid_mixer'), input1: { type: pnc('fluid'), tag: 'forge:plantoil', amount: 100 },

@@ -1,3 +1,11 @@
+import { connectMvRefinery } from './quest-mv-refinery.mjs'
+import { connectOuterSpace } from './quest-outer-space.mjs'
+import { connectIvVenus } from './quest-iv-venus.mjs'
+import { connectEvProcess } from './quest-ev-process.mjs'
+import { connectOrbitalWorks } from './quest-orbital.mjs'
+import { connectLvWorkshop } from './quest-lv-workshop.mjs'
+import { connectFoundryQuests } from './quest-foundry.mjs'
+import { applyFieldworkQuests } from './quest-fieldwork.mjs'
 import { createHash } from 'node:crypto'
 import { mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
@@ -14,6 +22,8 @@ import { addPostUvChapters } from './quest-expansion-post-uv.mjs'
 import { expandUvFinal } from './quest-expansion-uv-final.mjs'
 import { expandLate } from './quest-expansion-late.mjs'
 import { forestrySections } from './quest-expansion-forestry.mjs'
+import { gregCropsChapter } from './quest-expansion-gregcrops.mjs'
+import { gtxfaChapter } from './quest-expansion-gtxfa.mjs'
 import { createQuestRewardResolver } from './quest-rewards.mjs'
 import { auditQuestDescriptions, questDescription } from './quest-text.mjs'
 import { auditQuestTitles, questTitle } from './quest-titles.mjs'
@@ -24,7 +34,6 @@ const ks = id => 'kubejs:' + id
 const mc = id => 'minecraft:' + id
 const create = id => 'create:' + id
 const gt = id => 'gtceu:' + id
-const ie = id => 'immersiveengineering:' + id
 const pnc = id => 'pneumaticcraft:' + id
 const drawers = id => 'storagedrawers:' + id
 const me = id => 'ae2:' + id
@@ -34,7 +43,14 @@ const researchTag = researchId => ({
   assembly_line_research: { research_id: researchId, research_type: 'gtceu:assembly_line' }
 })
 const taskTags = {
+  hv_shop_steel_rotor: { 'GT.PartStats': { Material: 'gtceu:steel' } },
+  luv_crystal_orb: researchTag('1x_kubejs_glacio_reference_crystal'),
+  europa_hull_research: researchTag('1x_kubejs_zpm_europa_datum'),
   luv_turbine_rotor: { 'GT.PartStats': { Material: 'gtceu:rhodium_plated_palladium' } },
+  late_turbine_rotor_replacement: { 'GT.PartStats': { Material: 'gtceu:rhodium_plated_palladium' } },
+  post_uv_archive_record: researchTag('1x_kubejs_post_uv_supply_sync_record'),
+  reclaim_line_research: researchTag('1x_kubejs_reclaim_loop_witness'),
+  distribution_research: researchTag('1x_kubejs_distribution_load_fingerprint'),
   zpm_hpca_32: researchTag('1x_kubejs_zpm_irradiated_cask'),
   final_report_research: researchTag('1x_kubejs_final_test_load')
 }
@@ -94,6 +110,12 @@ chapter('kiln', 'II. Обжиг и металл вручную', mc('furnace'), 
   ['copper_charge', 'Загрузка медной шихты', ks('copper_charge'), 1, ['copper_washed', 'crucible', 'charcoal'], 'Пять единиц концентрата, уголь и тигель.'],
   ['copper', 'Первый медный слиток', mc('copper_ingot'), 1, ['copper_charge'], 'Ручной передел расходует пятнадцать кусков руды на слиток. Мельница сократит расход.'],
   ['strap', 'Медная лента', ks('copper_strap'), 1, ['copper', 'hammer'], 'Расплющи медь молотом. Лента нужна и для крицы, и для втулок.'],
+  ['copper_pickaxe', 'Медная кирка', ks('copper_pickaxe'), 1, ['strap', 'handle', 'binding'], 'Собери кирку из меди, двух лент, рукояти и крепления. Она добывает на том же уровне, что кремнёвая, но служит дольше.', true],
+  ['copper_axe', 'Медный топор', ks('copper_axe'), 1, ['strap', 'handle', 'binding'], 'Посади медное лезвие на рукоять и обожми лентой. Топор быстрее разбирает дерево.', true],
+  ['copper_sword', 'Медный меч', ks('copper_sword'), 1, ['strap', 'handle', 'binding'], 'Соедини две медные заготовки и стяни рукоять двумя лентами.', true],
+  ['copper_hoe', 'Медная мотыга', ks('copper_hoe'), 1, ['strap', 'handle', 'binding'], 'Две медные заготовки и лента держат лезвие, пока готовишь грядки.', true],
+  ['copper_shovel', 'Медная лопата', ks('copper_shovel'), 1, ['strap', 'handle', 'binding'], 'Стяни лопату двумя лентами. Возьми её на добычу глины и гравия.', true],
+  ['copper_mining_hammer', 'Медный шахтёрский молот', ks('copper_mining_hammer'), 1, ['strap', 'handle', 'binding'], 'Собери обух из пяти слитков и стяни его двумя лентами. Молот раскрывает участок 3×3 в плоскости грани, по которой бьёшь.', true],
   ['iron_grit', 'Дробление железа', ks('iron_grit'), 1, ['hammer', 'torches'], 'Ищи гётит, гематит, бурый железняк или магнетит.'],
   ['iron_washed', 'Железный концентрат', ks('washed_iron_grit'), 1, ['iron_grit'], 'Воду можно использовать и для железного концентрата. Хвосты складывай отдельно.'],
   ['iron_charge', 'Загрузка железной шихты', ks('iron_charge'), 1, ['iron_washed', 'strap', 'crucible'], 'Помимо концентрата и угля нужны футеровка и кованая медная лента.'],
@@ -198,7 +220,9 @@ chapter('steam', 'IV. От вращения к пару', gt('lp_steam_solid_boi
   ['steam_wood_drum', 'Бочка для запаса воды', gt('wood_drum'), 1, ['boiler', 'joint', 'rivets', 'resin', 'barrel'], 'Закрепи деревянную бочку обвязкой из досок, заклёпок и липкой смолы. Потом она войдёт в бронзовый барабан.'],
   ['steam_bronze_drum', 'Буфер для пара', gt('bronze_drum'), 1, ['steam_wood_drum', 'bronze_pipe', 'seal', 'converter_mallet'], 'Подведи пар от котла к бронзовому барабану. Трубу на турбину подсоедини снизу. Накопи пар, затем нажми по барабану ПКМ деревянной киянкой GregTech без Shift, чтобы включить выдачу.'],
   ['steam_wide_pipe', 'Магистраль большего сечения', gt('bronze_normal_fluid_pipe'), 2, ['steam_bronze_drum'], 'Собери трубу большего сечения из двух малых труб, пластины, герметичного стыка и заклёпки.', true],
-  ['steam_furnace', 'Печь на паре', gt('lp_steam_furnace'), 1, ['boiler', 'firebox', 'seal'], 'Собери отдельную паровую печь для обжига. Оставь выхлопную сторону открытой и проверь доступ к топке котла.', true],
+  ['steam_furnace', 'Печь на паре', gt('lp_steam_furnace'), 1, ['boiler', 'firebox', 'seal'], 'Подай пар и оставь выхлопную сторону открытой. Для меди, железа, олова и других легкоплавких металлов загружай две дроблёные порции на слиток.', true],
+  ['steam_ore_batch', 'Слитки с паровой линии', mc('copper_ingot'), 8, ['steam_mill', 'steam_furnace'], 'Передроби сырую медь в паровом мацераторе. Переложи результат в паровую печь. Восемь порций сырой меди дают восемь слитков.', true],
+  ['steam_fibre_batch', 'Волокно из урожая', ks('plant_fibre'), 8, ['steam_mill', 'washed'], 'Загрузи в паровую дробилку пшеницу, тростник, ламинарию или бамбук. Собери восемь порций и оставь их для пакетной промывки.', true],
   ['steam_alloy_smelter', 'Паровая печь сплавов', gt('lp_steam_alloy_smelter'), 1, ['steam_furnace', 'crucible', 'bronze_pipe'], 'Установи обожжённый тигель в усиленную паровую печь. Собери вторую печь, если нужна отдельная линия обжига.', true],
   ['case_reserve', 'Ремонтный резерв', gt('bronze_machine_casing'), 8, ['boiler'], 'Собери отдельный запас из восьми корпусов под восстановление линии.', true],
   ['pipe_reserve', 'Запас труб на разрыв', gt('bronze_small_fluid_pipe'), 32, ['boiler'], 'Держи на складе 32 трубы, чтобы не останавливать выпуск ради ремонта.', true],
@@ -237,41 +261,42 @@ chapter('lv', 'V. Первое электричество', gt('basic_electronic
   ['lv_balanced_rotor', 'Выверка ротора', ks('balanced_turbine_rotor'), 1, ['lv_rotor_blank', 'steam_hammer'], 'Подключи паровой молот к первому котлу и вывери ротор. Лопатки садятся под ударом перед сборкой турбины.'],
   ['turbine', 'Первая электрическая турбина', gt('lv_steam_turbine'), 1, ['lv_hull', 'boiler', 'steam_bronze_drum', 'lv_balanced_rotor', 'lv_hand_circuit', 'motor'], 'Подключи кабель LV или поставь сборщик у передней грани турбины. Она выдаёт 32 EU/t и расходует 640 мБ пара за 10 тиков. Котёл низкого давления на полном нагреве даёт до 60 мБ за то же время. Для коротких запусков копи пар в барабане. Для непрерывной работы нужна подача как минимум от 11 таких котлов.'],
   ['assembler', 'Серийная сборка', gt('lv_assembler'), 1, ['turbine', 'lv_conveyor', 'lv_hand_circuit', 'lv_hull'], 'Сборщик использует один припой на две схемы при 16 EU/t. Подай питание от турбины.'],
-  ['lv_circuit_batch', 'Партия из 16 схем', gt('basic_electronic_circuit'), 16, ['assembler', 'copper_contacts', 'pressed_insulation'], 'На две схемы подай две печатные платы, четыре резистора, две лампы, четыре проволоки, по два припоя, контакта и изоляции. Нужны 250 мБ воды и 20 секунд при 16 EU/t.']
+  ['lv_circuit_batch', 'Партия из 16 схем', gt('basic_electronic_circuit'), 16, ['assembler', 'copper_contacts', 'pressed_insulation'], 'На две схемы подай две печатные платы, четыре резистора, две лампы, четыре проволоки, по два припоя, контакта и изоляции. Нужны 250 мБ воды и 20 секунд при 16 EU/t.'],
+  ['washed_fibre_batch', 'Промывка волокна партиями', ks('washed_fibre'), 8, ['lv_circuit_batch', 'steam_fibre_batch'], 'Загрузи восемь порций волокна в химическую ванну GregTech уровня LV и подай 1000 мБ воды. Готовое волокно можно забирать трубами или через AE2.', true],
 ])
 
-chapter('industrial_supply', 'VI. Кокс, сталь и тяжёлый пресс', ie('blastbrick'), [
-  ['ie_iron', 'Стык трёх производств', ie('component_iron'), 1, ['lv_hull', 'gearbox', 'iron_plate'], 'Корпус GregTech, редуктор Create и стандартные железные пластины дают компонент Immersive Engineering.'],
-  ['ie_hammer', 'Молот инженера', ie('hammer'), 1, ['ie_iron', 'hammer'], 'Прокуй железную голову с железным компонентом IE. Этим молотом собираются коксовая печь, домна IE и тяжёлый пресс.'],
+chapter('industrial_supply', 'VI. Кокс, сталь и тяжёлый пресс', 'gtceu:firebricks', [
+  ['ie_iron', 'Стык трёх производств', 'gtceu:iron_gear', 1, ['lv_hull', 'gearbox', 'iron_plate'], 'Корпус GregTech, редуктор Create и стандартные железные пластины дают компонент.'],
+  ['ie_hammer', 'Молот инженера', 'gtceu:flint_hammer', 1, ['ie_iron', 'hammer'], 'Прокуй железную голову с железным компонентом. Этим молотом собираются коксовая печь, домна и тяжёлый пресс.'],
   ['fireclay_charge', 'Шамотная масса', ks('fireclay_charge'), 4, ['lining', 'tailings', 'temper'], 'Вымеси глину с песчаным отощителем, толчёной футеровкой и рудными хвостами.'],
   ['coke_brick_blank', 'Прессование сырца', ks('coke_brick_blank'), 8, ['fireclay_charge', 'press'], 'Пресс Create даёт два сырца из порции массы. Часть отложи на доменный кирпич.'],
-  ['coke_bricks', 'Кладка коксовой печи', ie('cokebrick'), 27, ['coke_brick_blank', 'ie_hammer', 'kiln'], 'Обожги сырцы и собери куб 3×3×3. Ударь инженерным молотом по центру передней грани. Оставь отвод под креозот.'],
+  ['coke_bricks', 'Кладка коксовой печи', 'gtceu:coke_oven_bricks', 27, ['coke_brick_blank', 'ie_hammer', 'kiln'], 'Обожги сырцы и собери куб 3×3×3. Ударь инженерным молотом по центру передней грани. Оставь отвод под креозот.'],
   ['foundry_coal', 'Топливо из шахты', mc('coal'), 12, ['coke_bricks'], 'Найди угольную жилу. Древесный уголь понадобится в виде порошка, каменный пойдёт в шихту.'],
   ['coking_charge', 'Шихта для коксования', ks('coking_charge'), 2, ['foundry_coal', 'lv_charcoal_powder', 'insulating_gum', 'basin', 'press'], 'Поставь чашу под пресс Create. Уплотни три куска каменного угля, две порции древесноугольного порошка и связующее.'],
-  ['first_coke', 'Первый кокс', ie('coal_coke'), 4, ['coking_charge', 'coke_bricks'], 'Цикл коксования занимает две минуты и даёт два куска кокса и 750 мБ креозота. Откачивай жидкость, чтобы печь продолжала работать.'],
-  ['lv_creosote', 'Отвод креозота', ie('creosote_bucket'), 1, ['first_coke', 'create_water_pump'], 'Наполни ведро из коксовой печи. Для постоянной подачи выдели насос Create, отдельную трубу и ёмкость. Креозот пригодится при замесе футеровки.'],
-  ['coke_buffer', 'Склад кокса', ie('coal_coke'), 32, ['first_coke'], 'Держи отдельные запасы кокса для шихты и топки. Партия пригодится при первом пуске стальной линии.', true],
+  ['first_coke', 'Первый кокс', 'gtceu:coke_gem', 4, ['coking_charge', 'coke_bricks'], 'Цикл коксования занимает две минуты и даёт два куска кокса и 750 мБ креозота. Откачивай жидкость, чтобы печь продолжала работать.'],
+  ['lv_creosote', 'Отвод креозота', 'gtceu:creosote_bucket', 1, ['first_coke', 'create_water_pump'], 'Наполни ведро из коксовой печи. Для постоянной подачи выдели насос Create, отдельную трубу и ёмкость. Креозот пригодится при замесе футеровки.'],
+  ['coke_buffer', 'Склад кокса', 'gtceu:coke_gem', 32, ['first_coke'], 'Держи отдельные запасы кокса для шихты и топки. Партия пригодится при первом пуске стальной линии.', true],
   ['calcite', 'Кальцит на флюс', mc('calcite'), 8, ['millstone'], 'Проверь кольца аметистовых жеод и каменные горные склоны. Для флюса также подходит сырой кальцит GregTech.', true],
   ['lime_flux', 'Размол известкового флюса', ks('lime_flux'), 8, ['millstone', 'first_coke'], 'На мельнице Create блок кальцита даёт две порции флюса, а кусок сырого кальцита одну.'],
   ['refractory_brick_blank', 'Плотный доменный сырец', ks('refractory_brick_blank'), 8, ['coke_brick_blank', 'lime_flux', 'mortar'], 'Добавь известковый флюс, шамот и раствор. Обожги сырец при более длительном цикле.'],
-  ['blast_bricks', 'Первая домна IE', ie('blastbrick'), 27, ['refractory_brick_blank', 'ie_hammer'], 'Сложи второй куб 3×3×3 и ударь инженерным молотом по центру передней грани. Это домна на коксе.'],
+  ['blast_bricks', 'Первая домна', 'gtceu:firebricks', 27, ['refractory_brick_blank', 'ie_hammer'], 'Сложи второй куб 3×3×3 и ударь инженерным молотом по центру передней грани. Это домна на коксе.'],
   ['steel_charge', 'Подготовка стальной шихты', ks('steel_furnace_charge'), 1, ['bloom', 'iron', 'lime_flux', 'first_coke', 'crucible'], 'Загрузи крицу, два слитка железа, угольный порошок, флюс и кокс в обожжённый тигель.'],
   ['first_steel', 'Первая стальная плавка', gt('steel_ingot'), 1, ['steel_charge', 'blast_bricks'], 'Один тигель шихты даёт один стальной слиток и шлак. На цикл уходит 110 секунд и почти два куска кокса в топке.'],
-  ['foundry_slag', 'Приёмка доменного шлака', ie('slag'), 4, ['first_steel'], 'Отложи шлак для шамотных вкладышей. Следи, чтобы выходной слот домны не был забит.'],
+  ['foundry_slag', 'Приёмка доменного шлака', 'gtceu:dark_ash_dust', 4, ['first_steel'], 'Отложи шлак для шамотных вкладышей. Следи, чтобы выходной слот домны не был забит.'],
   ['steel_press_blank', 'Ковка заготовки', ks('steel_press_blank'), 2, ['first_steel', 'rivets', 'iron_plate'], 'На одну заготовку идут два слитка, два железных листа и заклёпка. Кремнёвый молот изнашивается.'],
   ['steel_plate', 'Первые стальные листы', gt('steel_plate'), 4, ['steel_press_blank', 'press'], 'Лёгкий пресс Create выдаёт две пластины из кованой заготовки. Они нужны, чтобы построить тяжёлый пресс.'],
-  ['ie_steel', 'Тяжёлый стальной компонент', ie('component_steel'), 1, ['ie_iron', 'steel_plate', 'seal'], 'Железный компонент, стальные листы, втулки и котельное соединение обрабатываются на молоте.'],
-  ['ie_scaffolding', 'Станина тяжёлого пресса', ie('steel_scaffolding_standard'), 2, ['steel_plate', 'shaft'], 'Собери стальные леса под станину. Для точной схемы открой инженерное руководство IE.'],
+  ['ie_steel', 'Тяжёлый стальной компонент', 'kubejs:pressed_steel_frame', 1, ['ie_iron', 'steel_plate', 'seal'], 'Железный компонент, стальные листы, втулки и котельное соединение обрабатываются на молоте.'],
+  ['ie_scaffolding', 'Станина тяжёлого пресса', 'gtceu:steel_frame', 2, ['steel_plate', 'shaft'], 'Собери стальные леса под станину. Для точной схемы открой инженерное руководство.'],
   ['ie_press_piston', 'Рабочий ход', mc('piston'), 1, ['iron_plate', 'bushing', 'shaft', 'joint'], 'Подготовь поршень с железным штоком и втулками. В прессе поршень смотрит вниз.'],
-  ['ie_conveyor', 'Подача на матрицу', ie('conveyor_basic'), 2, ['lv_conveyor', 'steel_plate'], 'Один модуль GregTech и ремни дают три транспортёра. Два идут в пресс.'],
-  ['ie_redstone_control', 'Управление ходом пресса', ie('rs_engineering'), 1, ['lv_hand_circuit', 'ie_iron', 'copper_contacts'], 'Собери блок управления с платой LV. Не оставляй на входе активный сигнал, если пресс остановился.'],
-  ['ie_press_body', 'Тяжёлый силовой блок', ie('heavy_engineering'), 1, ['ie_steel', 'lv_hull', 'ie_redstone_control', 'gearbox'], 'Посади редукторы и стальной компонент IE на корпус GregTech. Это силовой блок пресса.'],
-  ['ie_press_mold', 'Матрица под лист и раму', ie('mold_plate'), 1, ['steel_press_blank', 'steel_plate', 'bushing'], 'Собери матрицу. Она будет формовать рамы и железные заготовки в одном станке.'],
+  ['ie_conveyor', 'Подача на матрицу', 'kubejs:woven_drive_belt', 2, ['lv_conveyor', 'steel_plate'], 'Один модуль GregTech и ремни дают три транспортёра. Два идут в пресс.'],
+  ['ie_redstone_control', 'Управление ходом пресса', 'gtceu:basic_electronic_circuit', 1, ['lv_hand_circuit', 'ie_iron', 'copper_contacts'], 'Собери блок управления с платой LV. Не оставляй на входе активный сигнал, если пресс остановился.'],
+  ['ie_press_body', 'Тяжёлый силовой блок', 'gtceu:steel_frame', 1, ['ie_steel', 'lv_hull', 'ie_redstone_control', 'gearbox'], 'Посади редукторы и штампованную стальную раму на корпус GregTech. Это силовой блок пресса.'],
+  ['ie_press_mold', 'Матрица под лист и раму', 'gtceu:plate_casting_mold', 1, ['steel_press_blank', 'steel_plate', 'bushing'], 'Собери матрицу. Она будет формовать рамы и железные заготовки в одном станке.'],
   ['converter_mallet', 'Деревянная киянка GregTech', gt('wood_mallet'), 1, ['joint', 'pressed_insulation'], 'Собери киянку из досок, деревянного соединения, вязаного крепления и изоляции. Киянкой можно включить вывод пара из барабана и переключить режим преобразователя.'],
   ['ie_fe_converter', 'Питание тяжёлого пресса', gt('lv_1a_energy_converter'), 1, ['turbine', 'ie_redstone_control', 'steel_plate', 'converter_mallet'], 'Киянкой GregTech переключи преобразователь в режим EU → FE. Подведи LV к входу, а сторону выхода FE соедини с энергетическим портом пресса.'],
-  ['pressed_steel_frame', 'Первый удар тяжёлого пресса', ks('pressed_steel_frame'), 1, ['ie_press_body', 'ie_press_mold', 'ie_fe_converter', 'ie_conveyor', 'ie_scaffolding', 'ie_press_piston'], 'Собери пресс по руководству IE и активируй его молотом. Установи матрицу пластин и подай кованую заготовку. На одну раму уйдёт 6000 FE.'],
+  ['pressed_steel_frame', 'Первый удар тяжёлого пресса', ks('pressed_steel_frame'), 1, ['ie_press_body', 'ie_press_mold', 'ie_fe_converter', 'ie_conveyor', 'ie_scaffolding', 'ie_press_piston'], 'Собери пресс по руководству и активируй его молотом. Установи матрицу пластин и подай кованую заготовку. На одну раму уйдёт 6000 FE.'],
   ['foundry_frame_batch', 'Партия рам для горячего цеха', ks('pressed_steel_frame'), 32, ['pressed_steel_frame'], 'Оставь запас: на 16 нагревателей уйдут 32 рамы, а корпус и люки домны потребуют ещё.', true],
-  ['ie_reserve', 'Склад тяжёлого цеха', ie('component_steel'), 8, ['ie_steel'], 'Отдельная партия под ремонт компрессорной станции.', true]
+  ['ie_reserve', 'Склад тяжёлого цеха', 'kubejs:pressed_steel_frame', 8, ['ie_steel'], 'Отдельная партия под ремонт компрессорной станции.', true]
 ])
 
 chapter('blast_furnace', 'VII. Электрическая домна', gt('electric_blast_furnace'), [
@@ -294,14 +319,14 @@ chapter('blast_furnace', 'VII. Электрическая домна', gt('elect
   ['alumina_charge', 'Глинозёмная шихта', ks('alumina_charge'), 1, ['washed_bauxite', 'lime_flux', 'first_coke', 'furnace_lining_insert', 'assembler'], 'Подай в сборщик четыре концентрата, флюс, кокс, тигель, вкладыш и 250 мБ воды. Сборщик работает на 24 EU/t.'],
   ['hot_aluminium_billet', 'Первая плавка в 1700 K', ks('hot_aluminium_billet'), 1, ['ebf_controller', 'alumina_charge'], 'Пропусти шихту через электрическую домну: 28 EU/t, 70 секунд. На выходе горячая болванка и шлак.'],
   ['first_aluminium', 'Охлаждение болванки', gt('aluminium_ingot'), 1, ['hot_aluminium_billet', 'fan'], 'Вода с вентилятором Create охлаждает болванку. Забери алюминиевый слиток.'],
-  ['aluminium_plate', 'Прокат алюминия', gt('aluminium_plate'), 4, ['first_aluminium', 'pressed_steel_frame', 'ie_press_mold'], 'Подай охлаждённый слиток на тяжёлый пресс IE с матрицей пластин. На лист уходит 6000 FE.'],
+  ['aluminium_plate', 'Прокат алюминия', gt('aluminium_plate'), 4, ['first_aluminium', 'pressed_steel_frame', 'ie_press_mold'], 'Подай охлаждённый слиток на тяжёлый формовочный пресс с матрицей пластин. На лист уходит 6000 FE.'],
   ['aluminium_stock', 'Сменный запас алюминия', gt('aluminium_plate'), 16, ['aluminium_plate'], 'Отложи 16 пластин, прежде чем разбирать LV линию. Они уйдут на электронику и новые корпуса.', true]
 ])
 
 chapter('mv', 'VIII. Среднее напряжение', gt('good_electronic_circuit'), [
   ['air_compressor', 'Пневматический передел', pnc('air_compressor'), 1, ['mv_pressure_stone_base', 'mv_pressure_gear', 'lv_create_precision', 'lv_shop_piston', 'lv_shop_furnace'], 'Собери компрессор на каменном основании. Добавь шестерню, механику Create, поршень, электропечь LV и воздушные трубы.'],
   ['iron_pressure_slug', 'Заготовка для плотного железа', ks('iron_pressure_slug'), 2, ['iron_plate', 'lining', 'hammer'], 'Набери четыре железных листа на огнеупорной опоре и прокуй их.'],
-  ['pressed_iron', 'Железо без взрывов', pnc('ingot_iron_compressed'), 4, ['iron_pressure_slug', 'pressed_steel_frame'], 'Тяжёлый пресс IE с той же матрицей даёт два слитка с заготовки. Взрывные рецепты сжатого железа сняты.'],
+  ['pressed_iron', 'Железо без взрывов', pnc('ingot_iron_compressed'), 4, ['iron_pressure_slug', 'pressed_steel_frame'], 'Тяжёлый формовочный пресс с той же матрицей даёт два слитка с заготовки. Взрывные рецепты сжатого железа сняты.'],
   ['pressure_tubes', 'Разводка воздуха', pnc('pressure_tube'), 8, ['pressed_iron', 'bronze_pipe'], 'Собери две партии труб. Часть уйдёт в сам компрессор, остальные протяни от него к камере.'],
   ['pressure_walls', 'Стены камеры давления', pnc('pressure_chamber_wall'), 24, ['pressed_iron', 'pressed_steel_frame', 'furnace_lining_insert'], 'Собери оболочку камеры 3×3×3. Внутри оставь одну пустую клетку. Клапан и интерфейсы заменят часть стен.'],
   ['pressure_glass', 'Смотровые окна', pnc('pressure_chamber_glass'), 2, ['pressure_walls', 'panes', 'pressed_insulation'], 'Вставь стёкла и изоляцию в две секции стен. Через окна можно видеть, что осталось в камере.', true],
@@ -313,9 +338,9 @@ chapter('mv', 'VIII. Среднее напряжение', gt('good_electronic_c
   ['sealed_mv_module', 'Герметичная кассета', ks('sealed_mv_module'), 1, ['phenolic_preform', 'pressure_gasket'], 'Подай заготовку и уплотнение в камеру при 3,5 бар. Кассета должна выйти через второй интерфейс.'],
   ['printed_phenolic', 'Печатная плата MV', gt('phenolic_printed_circuit_board'), 1, ['sealed_mv_module', 'lv_solder'], 'Установи медные выводы и припой в сборщике LV.'],
   ['first_mv_circuit', 'Первая схема среднего напряжения', gt('good_electronic_circuit'), 1, ['printed_phenolic', 'lv_circuit_batch', 'lv_vacuum_tube', 'mv_copper_wire', 'pressure_gasket', 'aluminium_plate', 'mv_gauge_module'], 'Подай в сборщик LV две платы, по четыре схемы LV, резистора и припоя, по две лампы, пластины, проволоки, уплотнения и модуля манометра. Добавь 700 мБ воды. Цикл занимает 78 секунд.'],
-  ['mv_copper_wire', 'Протяжка медной проволоки', gt('copper_single_wire'), 4, ['copper_contacts', 'press'], 'Дожми контактные полосы на прессе Create. Каждая полоса даёт две проволоки.'],
+  ['mv_copper_wire', 'Протяжка медной проволоки', gt('copper_single_wire'), 4, ['copper_contacts', 'press'], 'Дожми контактные полосы на прессе Create. Каждая полоса даёт одну проволоку.'],
   ['mv_copper_cable', 'Кабель на 128 EU', gt('copper_single_cable'), 4, ['mv_copper_wire', 'pressure_gasket'], 'Обожми медь уплотнениями, добавь изоляцию и шнур. Проложи отдельную линию для MV.'],
-  ['mv_casing', 'Оболочка MV', gt('mv_machine_casing'), 1, ['aluminium_plate', 'pressed_steel_frame', 'pressure_gasket', 'ie_steel'], 'Сборщик LV соединяет четыре алюминиевых листа, две рамы, два вкладыша, уплотнение и два стальных компонента IE.'],
+  ['mv_casing', 'Оболочка MV', gt('mv_machine_casing'), 1, ['aluminium_plate', 'pressed_steel_frame', 'pressure_gasket', 'ie_steel'], 'Сборщик LV соединяет четыре алюминиевых листа, две рамы, два вкладыша, уплотнение и два штампованные стальные рамы.'],
   ['mv_hull', 'Корпус MV', gt('mv_machine_hull'), 1, ['mv_casing', 'lv_hull', 'mv_copper_cable'], 'Собери оболочку, корпус LV, медный кабель и два уплотнения.'],
   ['mv_rotor_core', 'Сердечник двигателя', ks('mv_rotor_core'), 1, ['motor', 'lv_armature', 'aluminium_plate', 'pressure_gasket'], 'Подай двигатель LV, якорь, алюминий, контакты, раму и уплотнение в сборщик.'],
   ['mv_motor', 'Двигатель MV', gt('mv_electric_motor'), 1, ['mv_rotor_core', 'first_mv_circuit', 'mv_copper_cable'], 'Добавь схему MV, два алюминиевых листа, кабели и уплотнение.'],
@@ -323,7 +348,7 @@ chapter('mv', 'VIII. Среднее напряжение', gt('good_electronic_c
   ['mv_assembler', 'Новая сборочная линия', gt('mv_assembler'), 1, ['mv_hull', 'mv_motor', 'first_mv_circuit', 'lv_create_precision'], 'На LV собери первую машину MV из запасного сборщика LV, корпуса, двух моторов, трёх новых схем и двух механизмов Create. Подай 800 мБ воды. Всего на сборщик и его моторы уйдёт пять схем MV начальной серии.'],
   ['mv_circuit_batch', 'Серия из 16 схем MV', gt('good_electronic_circuit'), 16, ['mv_assembler', 'mv_turbine'], 'В новом сборщике MV закладывай 400 мБ воды на партию. Базовый цикл занимает 38 секунд при 96 EU/t.'],
   ['mv_pump', 'Герметичный насос MV', gt('mv_electric_pump'), 1, ['mv_assembler', 'mv_motor', 'pressure_tubes', 'lv_balanced_rotor', 'lv_shop_pump', 'create_water_pump'], 'Соедини насосы LV и Create с двигателем MV, выверенным ротором и прокладками. Подай на сборку 96 EU/t.'],
-  ['mv_chemical_reactor', 'Пуск химического цеха', gt('mv_chemical_reactor'), 1, ['mv_assembler', 'mv_pump', 'mv_circuit_batch', 'pressure_valve', 'mv_pressure_regulator'], 'Перенеси реактор LV на корпус MV. Установи два насоса, клапан, регулятор давления и тяжёлый блок IE. На сборку подай 96 EU/t.']
+  ['mv_chemical_reactor', 'Пуск химического цеха', gt('mv_chemical_reactor'), 1, ['mv_assembler', 'mv_pump', 'mv_circuit_batch', 'pressure_valve', 'mv_pressure_regulator'], 'Перенеси реактор LV на корпус MV. Установи два насоса, клапан, регулятор давления и стальную раму. На сборку подай 96 EU/t.']
 ])
 
 chapter('oilfield', 'IX. Скважины и нефтеперегонка', gt('mv_fluid_drilling_rig'), [
@@ -333,7 +358,7 @@ chapter('oilfield', 'IX. Скважины и нефтеперегонка', gt('
   ['oil_energy_hatch', 'Подстанция скважины', gt('mv_energy_input_hatch'), 1, ['mv_hull', 'mv_turbine', 'ebf_energy'], 'Сборщик соединяет люк LV с корпусом, кабелями и схемами MV. Подключи к буровой 128 EU.'],
   ['oil_output_hatch', 'Приём нефти из скважины', gt('mv_output_hatch'), 1, ['mv_pump', 'mv_hull', 'oil_casings'], 'Сделай жидкостный выход MV. Отведи из него нефть в резервуар.'],
   ['drill_seal_head', 'Опрессовка бурового узла', ks('drill_seal_head'), 2, ['lv_balanced_rotor', 'pressed_steel_frame', 'pressed_iron', 'pressure_interfaces'], 'На 4 бар опрессуй ротор, раму, уплотнение и сжатое железо. Контроллеру нужны два узла.'],
-  ['oil_drilling_rig', 'Пуск буровой', gt('mv_fluid_drilling_rig'), 1, ['oil_probe', 'oil_frames', 'oil_output_hatch', 'oil_energy_hatch', 'drill_seal_head', 'mv_ie_fluid_pump'], 'Добавь насос IE в контроллер. Поставь его в чанке с залежью и собери вышку 3×7×3 с энергетическим входом и жидкостным выходом.'],
+  ['oil_drilling_rig', 'Пуск буровой', gt('mv_fluid_drilling_rig'), 1, ['oil_probe', 'oil_frames', 'oil_output_hatch', 'oil_energy_hatch', 'drill_seal_head', 'mv_ie_fluid_pump'], 'Добавь насос в контроллер. Поставь его в чанке с залежью и собери вышку 3×7×3 с энергетическим входом и жидкостным выходом.'],
   ['strainer_mesh', 'Фильтровальная сетка', ks('strainer_mesh'), 4, ['copper_contacts', 'lv_charcoal_powder', 'steel_plate', 'pressed_insulation', 'mv_filter_basin'], 'Загрузи в чашу под прессом Create контактные ленты, порошок, сталь и изоляцию. Сетки расходуются при очистке.'],
   ['oil_wash_cartridge', 'Промывочная кассета', ks('oil_wash_cartridge'), 2, ['strainer_mesh', 'lime_flux', 'pressure_gasket'], 'Собери сменную кассету с флюсом, двумя сетками и герметичными стыками.'],
   ['drum_liner', 'Вкладыш резервуара', ks('drum_liner'), 4, ['steel_plate', 'pressure_gasket', 'panes'], 'Проверь внутренний вкладыш и смотровое стекло. Подготовь вкладыши для бочек GregTech и баков PneumaticCraft.'],
@@ -345,8 +370,8 @@ chapter('oilfield', 'IX. Скважины и нефтеперегонка', gt('
   ['mv_chemical_bath', 'Ванна для промывки кассет', gt('mv_chemical_bath'), 1, ['water_distillery', 'process_tank', 'mv_pump'], 'Собери отдельную ванну с насосом, баком и фильтровальной сеткой.', true],
   ['spent_oil_cartridge', 'Запас восстановленных сеток', ks('strainer_mesh'), 4, ['washed_oil_sample', 'mv_chemical_bath'], 'Промой отработанную кассету в химической ванне с 200 мБ дистиллированной воды. Забери сетку и отведи 150 мБ рассола на переработку. Квест проверяет наличие четырёх готовых сеток.', true],
   ['recovered_salt', 'Разгрузка рассола', gt('salt_dust'), 4, ['washed_oil_sample', 'water_distillery'], 'Дистиллятор на 96 EU/t принимает рассол после промывки нефти или восстановления сеток. На 400 мБ получишь соль и 200 мБ воды, которую можно вернуть на очистку.', true],
-  ['refinery_tray', 'Тарелки колонны', ks('refinery_tray'), 10, ['strainer_mesh', 'drum_liner', 'pressed_iron', 'ie_press_mold'], 'Установи форму пластины на тяжёлый пресс IE. Штампуй тарелки для ступеней колонны и теплообменников из подготовленных вкладышей.'],
-  ['refinery_exchanger', 'Сердечник теплообменника', ks('heat_exchange_core'), 5, ['refinery_tray', 'heater_ribbon', 'mv_assembler', 'lv_create_precision', 'ie_steel'], 'Собери теплообменники из тарелок, алюминия, нагревателей, стальных компонентов IE и прецизионной механики Create.'],
+  ['refinery_tray', 'Тарелки колонны', ks('refinery_tray'), 10, ['strainer_mesh', 'drum_liner', 'pressed_iron', 'ie_press_mold'], 'Установи форму пластины на тяжёлый формовочный пресс. Штампуй тарелки для ступеней колонны и теплообменников из подготовленных вкладышей.'],
+  ['refinery_exchanger', 'Сердечник теплообменника', ks('heat_exchange_core'), 5, ['refinery_tray', 'heater_ribbon', 'mv_assembler', 'lv_create_precision', 'ie_steel'], 'Собери теплообменники из тарелок, алюминия, нагревателей, стальных компонентов и прецизионной механики Create.'],
   ['refinery_base', 'Основание колонны', pnc('refinery'), 1, ['refinery_exchanger', 'process_tank', 'mv_hull'], 'Подай промытую нефть в основание PneumaticCraft. Прогрей его хотя бы до 403 К, примерно 130 °C.'],
   ['refinery_outputs', 'Четыре ступени отбора', pnc('refinery_output'), 4, ['refinery_base', 'refinery_tray', 'process_tank'], 'Поставь четыре выхода один над другим над основанием. Подключи к каждой ступени свою ёмкость.'],
   ['fraction_drums', 'Раздельные ёмкости', gt('steel_drum'), 4, ['refinery_outputs', 'oil_drum'], 'Выдели четыре бочки под тяжёлую и лёгкую фракции, нафту и нефтяной газ. Подключи жидкостные трубы Create с насосами и проверь свободное место в буферах.'],
@@ -368,7 +393,7 @@ chapter('petrochem', 'X. Полимеры и топливо', gt('polyethylene_p
   ['first_polyethylene', 'Первый лист полиэтилена', gt('polyethylene_plate'), 1, ['activated_carrier', 'mv_electrolyzer', 'mv_chemical_reactor'], 'Реактор при 96 EU/t объединяет этилен, кислород и носитель. Подай 288 мБ полимера в холодную установку при 2,5 бар и температуре не выше 283 К.'],
   ['polyethylene_batch', 'Серия листов', gt('polyethylene_plate'), 16, ['first_polyethylene', 'mv_sink_stock'], 'Выпусти 16 листов на химстойкие детали и пневматическую электронику. Следи, чтобы ёмкость этилена не переполнялась.', true],
   ['paraffin_cake', 'Смазка и парафиновый осадок', ks('paraffin_cake'), 2, ['heavy_fraction_sample', 'strainer_mesh', 'water_distillery'], 'В реактор подай тяжёлую фракцию, дистиллят и сетку. Раздельно выведи смазку и рассол, забери парафиновый осадок.'],
-  ['diesel_sample', 'Первая партия дизеля', ks('diesel_sample'), 1, ['mv_ie_refinery', 'light_fraction_sample', 'refinery_gas_sample', 'mv_electrolyzer', 'cracking_catalyst', 'activated_carrier'], 'Обработай лёгкую фракцию водородом в реакторе GregTech. Подай продукт и нефтяной газ в НПЗ IE, установи активированный носитель. Отбери пробу через носик Create.'],
+  ['diesel_sample', 'Первая партия дизеля', ks('diesel_sample'), 1, ['mv_ie_refinery', 'light_fraction_sample', 'refinery_gas_sample', 'mv_electrolyzer', 'cracking_catalyst', 'activated_carrier'], 'Обработай лёгкую фракцию водородом в реакторе GregTech. Подай продукт и нефтяной газ в НПЗ, установи активированный носитель. Отбери пробу через носик Create.'],
   ['polymer_seal_preform', 'Парафинированная заготовка', ks('polymer_seal_preform'), 1, ['first_polyethylene', 'paraffin_cake', 'pressure_gasket'], 'Сборщик принимает смазку и соединяет листы полиэтилена, парафин, прокладку и медную ленту.'],
   ['chemical_grade_seal', 'Химстойкие уплотнения', ks('chemical_grade_seal'), 2, ['polymer_seal_preform', 'pressure_interfaces', 'pressed_iron'], 'На 4 бар обожми заготовку вместе с железом и прокладкой. Два новых уплотнения пойдут в оборудование цеха.'],
   ['reinforced_process_tube', 'Трубки с полимерным покрытием', pnc('reinforced_pressure_tube'), 4, ['first_polyethylene', 'thermopneumatic_plants', 'pressure_tubes'], 'Термопневматическая установка наносит полиэтилен на трубку. Нужны 3,5 бар и минимум 393 К.', true],
@@ -379,7 +404,7 @@ chapter('petrochem', 'X. Полимеры и топливо', gt('polyethylene_p
 ])
 
 chapter('nether_foundry', 'XI. Нижний мир и огнеупоры', ks('nether_transit_seal'), [
-  ['nether_transit', 'Допуск к порталу', ks('nether_transit_seal'), 1, ['process_commissioning', 'mv_diesel_generator', 'lv_create_precision'], 'Подай наладочный комплект, теплообменник, две рамы IE, механику Create и 500 мБ смазки. Держи готовый пропуск в инвентаре при входе в Нижний мир.'],
+  ['nether_transit', 'Допуск к порталу', ks('nether_transit_seal'), 1, ['process_commissioning', 'mv_diesel_generator', 'lv_create_precision'], 'Подай наладочный комплект, теплообменник, две рамы, механику Create и 500 мБ смазки. Держи готовый пропуск в инвентаре при входе в Нижний мир.'],
   ['nether_igniter', 'Стальное огниво', mc('flint_and_steel'), 1, ['nether_transit', 'steel_plate'], 'Собери огниво с кованой пластиной, шарниром и креплением. Им можно зажечь портал. Пропуск нужен в том числе для старых порталов.'],
   ['nether_field_power', 'Электричество за порталом', gt('mv_combustion'), 1, ['nether_transit', 'mv_diesel_generator'], 'Подготовь дизельный генератор для Нижнего мира. Подвези топливо в бочке и подключи мацератор медным кабелем.'],
   ['nether_field_drum', 'Топливо для выезда', gt('steel_drum'), 2, ['nether_field_power', 'oil_drum'], 'Выдели одну бочку под выездное топливо, другую оставь в резерве для следующей партии.', true],
@@ -392,7 +417,7 @@ chapter('nether_foundry', 'XI. Нижний мир и огнеупоры', ks('n
   ['nether_mv_mixer', 'Смеситель тяжёлой шихты', gt('mv_mixer'), 1, ['mv_assembler', 'mixer', 'paraffin_cake'], 'Используй смеситель Create, теплообменник, два мотора MV и смазку.'],
   ['nether_soul_sand', 'Песок душ для огнеупоров', mc('soul_sand'), 8, ['nether_transit'], 'Набери песок душ. Смеситель использует его вместе с базальтом и огнеупорной шихтой.'],
   ['nether_refractory_mix', 'Замес футеровки', ks('refractory_mix'), 4, ['nether_grit', 'nether_soul_sand', 'nether_mv_mixer'], 'В смеситель MV подай базальтовый концентрат, песок душ, огнеупорную шихту и дистиллят.'],
-  ['nether_refractory_cast', 'Прессование огнеупоров', ks('refractory_cast'), 4, ['nether_refractory_mix', 'pressed_steel_frame'], 'На прессе Immersive Engineering поставь форму пластины. Каждую порцию смеси спрессуй отдельно.'],
+  ['nether_refractory_cast', 'Прессование огнеупоров', ks('refractory_cast'), 4, ['nether_refractory_mix', 'pressed_steel_frame'], 'в формовочном прессе поставь форму пластины. Каждую порцию смеси спрессуй отдельно.'],
   ['nether_refractory_liner', 'Партия обожжённых вкладышей', ks('fired_refractory_liner'), 8, ['nether_refractory_cast'], 'Обжиг одной заготовки занимает 46 секунд. Вкладыши расходуются на катушки, путь и грузовые ящики.'],
   ['nether_furnace_inlet', 'Кислородный ввод домны', gt('mv_input_hatch'), 1, ['nether_refractory_liner', 'mv_electrolyzer', 'oil_energy_hatch', 'pressure_tubes'], 'Собери жидкостный вход с клапаном Create, пневмотрубками и смазкой. Поставь его вместо блока кожуха домны и подключи кислород электролизёра.'],
   ['nether_kanthal_charge', 'Шихта для первой плавки', ks('kanthal_charge'), 2, ['nether_chromite', 'nether_refractory_liner', 'nether_mv_mixer', 'aluminium_plate'], 'Смешай сталь, алюминий, хромит и обожжённый вкладыш. Одна загрузка даёт две порции шихты.'],
@@ -400,7 +425,7 @@ chapter('nether_foundry', 'XI. Нижний мир и огнеупоры', ks('n
   ['nether_cold_kanthal', 'Охлаждение кантала', gt('kanthal_ingot'), 1, ['nether_hot_kanthal', 'mv_chemical_bath'], 'Пропусти горячую болванку через химическую ванну с 500 мБ дистиллированной воды.'],
   ['nether_mv_wiremill', 'Волочильный стан MV', gt('mv_wiremill'), 1, ['mv_assembler', 'press', 'paraffin_cake'], 'Пресс Create, стальная заготовка и два двигателя MV входят в стан. Перед запуском подай смазку.'],
   ['nether_kanthal_winding', 'Две намотки из слитка', ks('kanthal_winding'), 4, ['nether_cold_kanthal', 'nether_mv_wiremill'], 'Волочильный стан MV превращает один канталовый слиток в две намотки.'],
-  ['nether_kanthal_coils', 'Два кольца канталовых катушек', gt('kanthal_coil_block'), 16, ['nether_kanthal_winding', 'nether_refractory_liner', 'ebf_coils', 'mv_ie_lv_coil'], 'На две катушки нужны шесть намоток, медно-никелевая катушка, горячая канталовая болванка, обмотка IE и 450 мБ смазки. Замени оба кольца домны.'],
+  ['nether_kanthal_coils', 'Два кольца канталовых катушек', gt('kanthal_coil_block'), 16, ['nether_kanthal_winding', 'nether_refractory_liner', 'ebf_coils', 'mv_ie_lv_coil'], 'На две катушки нужны шесть намоток, медно-никелевая катушка, горячая канталовая болванка, катушка напряжения и 450 мБ смазки. Замени оба кольца домны.'],
   ['nether_stainless_charge', 'Шихта нержавеющей стали', ks('stainless_charge'), 4, ['nether_chromite', 'nickel_concentrate', 'nether_refractory_liner'], 'Загрузи в смеситель сталь, никелевый и хромитовый концентраты и огнеупор.'],
   ['nether_hot_stainless', 'Домна на 2450 К', ks('hot_stainless_billet'), 1, ['nether_stainless_charge', 'nether_kanthal_coils', 'nether_furnace_inlet'], 'Для плавки нужны канталовые катушки, 120 EU/t и 400 мБ кислорода. Поставь генератор рядом с входным люком, чтобы сохранить напряжение.'],
   ['nether_stainless_ingot', 'Закалённая нержавеющая сталь', gt('stainless_steel_ingot'), 1, ['nether_hot_stainless', 'mv_chemical_bath'], 'Охлади болванку в химической ванне с 650 мБ дистиллята.'],
@@ -432,7 +457,7 @@ chapter('me_network', 'MV. Цифровой склад', me('controller'), [
   ['me_silicon_print', 'Кремниевые оттиски', me('printed_silicon'), 4, ['me_inscriber', 'me_silicon', 'me_press_silicon'], 'Верхний слот держит матрицу, средний принимает очищенный кремний.'],
   ['me_logic_print', 'Логические оттиски', me('printed_logic_processor'), 2, ['me_inscriber', 'me_foil', 'me_press_logic'], 'Вставь матрицу логики и ламинированную фольгу.'],
   ['me_calc_print', 'Вычислительные оттиски', me('printed_calculation_processor'), 2, ['me_inscriber', 'me_foil', 'me_press_calc'], 'Та же фольга под другой матрицей даёт вычислительную дорожку.'],
-  ['me_engineering_foil', 'Фольга инженерных схем', ks('me_etched_foil'), 2, ['me_foil', 'hv_ceramic_substrate'], 'Подложка делается прессом IE и доступна на MV. Добавь сертиус, контакты и припой.'],
+  ['me_engineering_foil', 'Фольга инженерных схем', ks('me_etched_foil'), 2, ['me_foil', 'hv_ceramic_substrate'], 'Подложка делается прессом и доступна на MV. Добавь сертиус, контакты и припой.'],
   ['me_eng_print', 'Инженерные оттиски', me('printed_engineering_processor'), 2, ['me_inscriber', 'me_engineering_foil', 'me_press_engineer'], 'Инженерную фольгу оттисни под соответствующей матрицей.'],
   ['me_circuit_machine', 'Сборщик схем на MV', gt('mv_circuit_assembler'), 1, ['mv_assembler', 'nether_mv_conveyor', 'mv_circuit_batch'], 'Перенеси головку со сборщика схем LV. Добавь корпус MV, две схемы, два конвейера, герметичный модуль и контакты.'],
   ['me_logic', 'Логический процессор', me('logic_processor'), 4, ['me_logic_print', 'me_silicon_print', 'me_circuit_machine'], 'При 120 EU/t спаяй два оттиска, схему MV, контакт и редстоун.'],
@@ -457,19 +482,19 @@ chapter('yard', 'XII. Приёмка и трубопроводы', ks('received_
   ['yard_item_pipe', 'Оловянные предметные трубы', gt('tin_normal_item_pipe'), 8, ['assembler', 'rivets'], 'Сборщик LV сшивает оловянные листы заклёпками и изолирует стыки. На стороне склада поставь конвейер GregTech в режиме выдачи. Соедини трубы ключом.', true],
   ['yard_fluid_pipe', 'Обвязка приёмки', gt('bronze_small_fluid_pipe'), 16, ['bronze_pipe', 'mv_pump'], 'Веди дистиллят по отдельной трубе. Поставь насос на выходе бака и оставь доступ к стыкам. Огнеупоры поступают через предметный вход.', true],
   ['rail_fastener_blank', 'Заготовки креплений', ks('rail_fastener_blank'), 2, ['steel_press_blank', 'steel_plate'], 'Собери стальную заготовку с листами и заклёпками. Эта оснастка идёт на пресс.'],
-  ['rail_fasteners', 'Партия креплений', ks('rail_fastener'), 16, ['rail_fastener_blank', 'pressed_steel_frame'], 'Штампуй крепления на прессе IE. За цикл выходят восемь штук.'],
+  ['rail_fasteners', 'Партия креплений', ks('rail_fastener'), 16, ['rail_fastener_blank', 'pressed_steel_frame'], 'Штампуй крепления в формовочном прессе. За цикл выходят восемь штук.'],
   ['rail_axle_blank', 'Заготовка оси', ks('axle_blank'), 2, ['nether_stainless_plates', 'rail_fasteners'], 'Сложи заготовку из стали, нержавейки, рамы и заклёпок.'],
   ['rail_balanced_axle', 'Выверенная ось', ks('balanced_rail_axle'), 2, ['rail_axle_blank', 'nether_mv_lathe'], 'Обработай заготовку на токарном станке MV. Оси нужны поршням, транспортёрам и тяговым приводам.'],
-  ['rail_gold_blank', 'Заготовка для контактов', ks('gold_conductor_blank'), 1, ['nether_refractory_liner', 'copper_contacts', 'mv_ie_electrum_wire'], 'Отштампуй керамику в IE. В чаше Create спрессуй её с золотом, электрумовой проволокой, контактами и изоляцией. Подай смазку.'],
+  ['rail_gold_blank', 'Заготовка для контактов', ks('gold_conductor_blank'), 1, ['nether_refractory_liner', 'copper_contacts', 'mv_ie_electrum_wire'], 'Отштампуй керамику в. В чаше Create спрессуй её с золотом, электрумовой проволокой, контактами и изоляцией. Подай смазку.'],
   ['rail_switch_contacts', 'Точёные контакты реле', ks('hv_switch_contact'), 2, ['rail_gold_blank', 'nether_mv_lathe'], 'Токарный станок MV делает два контакта из золотой заготовки.'],
   ['rail_signal_relay', 'Сигнальное реле', ks('signal_relay'), 1, ['rail_switch_contacts', 'nether_refractory_liner', 'mv_circuit_batch'], 'Собери реле из точёных контактов, медных полос, кабеля, схемы MV и пары вкладышей.'],
   ['yard_sealed_batch', 'Упаковать огнеупоры', ks('sealed_refractory_crate'), 4, ['nether_refractory_liner', 'nether_stainless_plates', 'chemical_grade_seal'], 'Сборщик MV упаковывает восемь вкладышей в четыре ящика. Добавь пропитанное волокно, рамы, нержавейку и 250 мБ смазки.'],
-  ['yard_accept_batch', 'Входной контроль огнеупоров', ks('received_refractory_crate'), 3, ['yard_sealed_batch', 'mv_assembler', 'mv_ie_insulated_wire'], 'Подай четыре ящика, разъём IE, два изолированных мотка, бумагу, уплотнение и 1000 мБ дистиллята в сборщик MV. Один ящик уходит на контроль. Три получат допуск к монтажу.']
+  ['yard_accept_batch', 'Входной контроль огнеупоров', ks('received_refractory_crate'), 3, ['yard_sealed_batch', 'mv_assembler', 'mv_ie_insulated_wire'], 'Подай четыре ящика, кабель, два изолированных мотка, бумагу, уплотнение и 1000 мБ дистиллята в сборщик MV. Один ящик уходит на контроль. Три получат допуск к монтажу.']
 ])
 
 chapter('railway', 'Дополнительно. Железная дорога', create('track_station'), [
   ['rail_profile_blank', 'Стальная заготовка пути', ks('rail_profile_blank'), 4, ['nether_stainless_plates', 'nether_refractory_liner'], 'Сохрани часть горячих болванок после домны. Собери заготовку из болванки, стальных и нержавеющих листов и огнеупора.'],
-  ['rail_profile', 'Прокат на прессе IE', ks('rolled_rail'), 8, ['rail_profile_blank', 'pressed_steel_frame'], 'Поставь форму пластины и штампуй профили на тяжёлом прессе Immersive Engineering.'],
+  ['rail_profile', 'Прокат в формовочном прессе', ks('rolled_rail'), 8, ['rail_profile_blank', 'pressed_steel_frame'], 'Поставь форму пластины и штампуй профили на тяжёлом формовочном прессе.'],
   ['rail_sleepers', 'Пропитать шпалы', ks('treated_sleeper'), 8, ['paraffin_cake', 'mv_assembler'], 'Подай дубовые доски, волокно, нагели, сталь и смазку в сборщик MV.'],
   ['rail_first_track', 'Первые секции пути', create('track'), 16, ['rail_profile', 'rail_sleepers', 'rail_fasteners'], 'Сборщик MV выпускает 16 секций из четырёх профилей, четырёх шпал, восьми креплений и двух вкладышей. Подай 450 мБ смазки.'],
   ['rail_bulk_track', 'Запас на прямой перегон', create('track'), 192, ['rail_first_track'], 'Для 192 прямых секций нужны 12 циклов сборщика. Повороты, уклоны и станции увеличивают расход пути.', true],
@@ -492,30 +517,30 @@ chapter('railway', 'Дополнительно. Железная дорога', 
 ])
 
 chapter('hv_foundry', 'XIII. Высокое напряжение', gt('hv_machine_hull'), [
-  ['hv_ceramic_substrate', 'Керамическая подложка', ks('ceramic_hv_substrate'), 1, ['nether_refractory_liner', 'pressed_steel_frame'], 'Пресс Immersive Engineering формует подложку из обожжённого вкладыша. На один цикл уходит 24 000 FE.'],
+  ['hv_ceramic_substrate', 'Керамическая подложка', ks('ceramic_hv_substrate'), 1, ['nether_refractory_liner', 'pressed_steel_frame'], 'формовочный пресс формует подложку из обожжённого вкладыша. На один цикл уходит 24 000 FE.'],
   ['hv_circuit_preform', 'Собрать модуль HV', ks('hv_circuit_preform'), 1, ['hv_blaze_burner', 'nether_kanthal_winding', 'printed_phenolic', 'chemical_grade_seal', 'mv_ie_electrum_wire'], 'Спрессуй в нагретой чаше Create керамику, фенольную плату, две схемы MV, две канталовые намотки, медь, электрум и уплотнение.'],
-  ['hv_sealed_module', 'Опрессовать при 4,5 бар', ks('sealed_hv_module'), 1, ['hv_circuit_preform', 'liquid_process_compressor', 'first_polyethylene', 'reinforced_process_tube', 'mv_safety_module', 'mv_ie_connector'], 'Загрузи заготовку, полиэтилен, усиленную трубу, два уплотнения и соединитель MV от IE. Поставь предохранитель на воздушной линии и контролируй по манометру 4,5 бар.'],
+  ['hv_sealed_module', 'Опрессовать при 4,5 бар', ks('sealed_hv_module'), 1, ['hv_circuit_preform', 'liquid_process_compressor', 'first_polyethylene', 'reinforced_process_tube', 'mv_safety_module', 'mv_ie_connector'], 'Загрузи заготовку, полиэтилен, усиленную трубу, два уплотнения и соединитель MV от. Поставь предохранитель на воздушной линии и контролируй по манометру 4,5 бар.'],
   ['hv_circuit', 'Первая схема HV на MV', gt('advanced_integrated_circuit'), 1, ['hv_board_assembler', 'rail_gold_blank', 'nether_stainless_plates'], 'В сборщик схем MV загрузи два герметичных модуля, по четыре схемы MV, резистора и припоя, два золотых контакта и два листа нержавейки. Подай 600 мБ смазки. Базовый цикл 144 секунды.'],
   ['hv_gold_wire', 'Волочение золотого провода', gt('gold_single_wire'), 4, ['rail_gold_blank', 'nether_mv_wiremill'], 'Одна золотая заготовка даёт два провода в волочильном стане MV.'],
   ['hv_gold_cable', 'Кабель на 512 EU', gt('gold_single_cable'), 4, ['hv_gold_wire', 'first_polyethylene', 'chemical_grade_seal', 'reinforced_process_tube'], 'Подай четыре провода, полиэтилен, изоляцию, уплотнения, пневмотрубу и 350 мБ смазки. Держи первый ввод HV рядом с генератором.'],
-  ['hv_winding', 'Пакет золотых и канталовых обмоток', ks('hv_winding_pack'), 2, ['hv_ie_field_coil', 'nether_kanthal_winding', 'nether_stainless_plates'], 'Сборщик MV соединяет провод и кантал с обмоткой IE. Подай 450 мБ смазки на пару пакетов.'],
-  ['hv_arc_shield', 'Дугогашение', ks('hv_arc_shield'), 2, ['hv_ceramic_substrate', 'nether_stainless_plates', 'pressed_iron'], 'Добавь к керамике нержавейку, горячую болванку, футеровку, раму IE и прессованное железо. На пару деталей подай 500 мБ дистиллята.'],
-  ['hv_casing', 'Оболочка HV', gt('hv_machine_casing'), 1, ['hv_arc_shield', 'nether_stainless_plates', 'pressure_walls'], 'Собери оболочку из нержавейки, огнеупоров, тяжёлого блока IE и стенки камеры PneumaticCraft.'],
-  ['hv_hull', 'Корпус с принятыми огнеупорами', gt('hv_machine_hull'), 1, ['hv_casing', 'yard_accept_batch', 'hv_gold_cable', 'rail_switch_contacts', 'mv_ie_connector'], 'На один корпус расходуется ящик огнеупоров после входного контроля. Добавь корпус MV, разъём IE и усиленную пневмотрубу.'],
-  ['hv_motor', 'Электродвигатель HV', gt('hv_electric_motor'), 1, ['hv_circuit', 'hv_winding', 'hv_gold_cable', 'lv_create_precision'], 'Установи пакеты обмоток вокруг двигателя MV. Добавь обмотку IE и прецизионный механизм Create.'],
+  ['hv_winding', 'Пакет золотых и канталовых обмоток', ks('hv_winding_pack'), 2, ['hv_ie_field_coil', 'nether_kanthal_winding', 'nether_stainless_plates'], 'Сборщик MV соединяет провод и кантал с обмоткой. Подай 450 мБ смазки на пару пакетов.'],
+  ['hv_arc_shield', 'Дугогашение', ks('hv_arc_shield'), 2, ['hv_ceramic_substrate', 'nether_stainless_plates', 'pressed_iron'], 'Добавь к керамике нержавейку, горячую болванку, футеровку, раму и прессованное железо. На пару деталей подай 500 мБ дистиллята.'],
+  ['hv_casing', 'Оболочка HV', gt('hv_machine_casing'), 1, ['hv_arc_shield', 'nether_stainless_plates', 'pressure_walls'], 'Собери оболочку из нержавейки, огнеупоров, стальной рамы и стенки камеры PneumaticCraft.'],
+  ['hv_hull', 'Корпус с принятыми огнеупорами', gt('hv_machine_hull'), 1, ['hv_casing', 'yard_accept_batch', 'hv_gold_cable', 'rail_switch_contacts', 'mv_ie_connector'], 'На один корпус расходуется ящик огнеупоров после входного контроля. Добавь корпус MV, кабель и усиленную пневмотрубу.'],
+  ['hv_motor', 'Электродвигатель HV', gt('hv_electric_motor'), 1, ['hv_circuit', 'hv_winding', 'hv_gold_cable', 'lv_create_precision'], 'Установи пакеты обмоток вокруг двигателя MV. Добавь обмотку и прецизионный механизм Create.'],
   ['hv_piston', 'Силовой поршень HV', gt('hv_electric_piston'), 1, ['hv_motor', 'nether_mv_piston', 'rail_balanced_axle', 'pressure_interfaces'], 'Подготовь мотор, оси, механический поршень Create и интерфейс камеры. Перенеси рабочую часть старого поршня MV.'],
-  ['hv_pump', 'Герметичный насос HV', gt('hv_electric_pump'), 2, ['hv_motor', 'mv_pump', 'hv_arc_shield', 'mv_ie_fluid_pump'], 'Соедини насосы MV и IE, двигатель и дугогаситель. Для герметизации добавь усиленную пневмотрубу и прокладки.'],
-  ['hv_conveyor', 'Транспортёр HV', gt('hv_conveyor_module'), 1, ['hv_motor', 'nether_mv_conveyor', 'rail_balanced_axle', 'mv_create_brass_funnel'], 'Подготовь полимерную передачу, воронку Create и конвейер IE. Поставь их на старый модуль MV вместе с двигателями и осями.'],
+  ['hv_pump', 'Герметичный насос HV', gt('hv_electric_pump'), 2, ['hv_motor', 'mv_pump', 'hv_arc_shield', 'mv_ie_fluid_pump'], 'Соедини насосы MV и, двигатель и дугогаситель. Для герметизации добавь усиленную пневмотрубу и прокладки.'],
+  ['hv_conveyor', 'Транспортёр HV', gt('hv_conveyor_module'), 1, ['hv_motor', 'nether_mv_conveyor', 'rail_balanced_axle', 'mv_create_brass_funnel'], 'Подготовь полимерную передачу, воронку Create и тканый ремень. Поставь их на старый модуль MV вместе с двигателями и осями.'],
   ['hv_robot', 'Сборочный манипулятор HV', gt('hv_robot_arm'), 2, ['hv_piston', 'hv_motor', 'hv_winding', 'hv_create_arm'], 'На каждый манипулятор нужны привод MV, рука Create, мотор, поршень, обмотки и схема.'],
   ['hv_generator', 'Первый дизельный генератор HV', gt('hv_combustion'), 1, ['hv_hull', 'hv_pump', 'hv_motor', 'mv_diesel_generator', 'liquid_process_compressor'], 'Подготовь жидкотопливный компрессор и наладочный комплект. На сборку подай 1400 мБ дизеля и 120 EU/t. Оставь отдельный генератор MV на прежней линии.'],
-  ['hv_input_hatch', 'Ввод высокого напряжения', gt('hv_energy_input_hatch'), 1, ['hv_hull', 'oil_energy_hatch', 'hv_winding', 'mv_ie_relay', 'hv_solder_bucket'], 'Собери ввод с реле IE и 550 мБ припоя. Подключи домну через люк HV, а генератор поставь рядом. Испытательная плавка потребляет 480 EU/t.'],
+  ['hv_input_hatch', 'Ввод высокого напряжения', gt('hv_energy_input_hatch'), 1, ['hv_hull', 'oil_energy_hatch', 'hv_winding', 'mv_ie_relay', 'hv_solder_bucket'], 'Собери ввод с четырёхжильные кабели и 550 мБ припоя. Подключи домну через люк HV, а генератор поставь рядом. Испытательная плавка потребляет 480 EU/t.'],
   ['hv_assembler', 'Сборщик 512 EU', gt('hv_assembler'), 1, ['hv_hull', 'hv_robot', 'hv_conveyor', 'hv_generator', 'hv_create_arm'], 'Один сборщик MV и механическая рука Create уйдут в новую машину. На цикл подай 1200 мБ смазки и 120 EU/t. Оставь второй сборщик MV для комплектующих.'],
   ['hv_mixer', 'Смеситель испытательных шихт', gt('hv_mixer'), 1, ['hv_assembler', 'hv_generator', 'nether_mv_mixer'], 'На 384 EU/t собери смеситель HV из предыдущей машины, нового корпуса, двигателей, схем и кабеля.'],
   ['hv_quench', 'Ванна для испытательной плавки', gt('hv_chemical_bath'), 1, ['hv_assembler', 'hv_pump', 'mv_chemical_bath'], 'Запитай ванну на 512 EU и подключи буфер дистиллята. На каждый образец уйдёт 1000 мБ.'],
-  ['hv_trial_charge', 'Загрузка на испытательную смену', ks('hv_trial_charge'), 16, ['hv_mixer', 'nether_chromite', 'nether_stainless_ingot', 'first_steel'], 'Смеситель HV готовит четыре порции из нержавейки, никеля, хромита, футеровки, шлака IE и угольного порошка. Подай 750 мБ дистиллята.'],
+  ['hv_trial_charge', 'Загрузка на испытательную смену', ks('hv_trial_charge'), 16, ['hv_mixer', 'nether_chromite', 'nether_stainless_ingot', 'first_steel'], 'Смеситель HV готовит четыре порции из нержавейки, никеля, хромита, футеровки, тёмной золы и угольного порошка. Подай 750 мБ дистиллята.'],
   ['hv_trial_billet', 'Испытание на 2550 К', ks('hot_hv_trial_billet'), 1, ['hv_trial_charge', 'hv_input_hatch', 'nether_kanthal_coils', 'hv_generator', 'mv_electrolyzer'], 'На одну болванку выдели 1200 мБ кислорода и 90 секунд работы при 480 EU/t. Используй канталовые катушки.'],
   ['hv_trial_coupon', 'Серия из 16 образцов', ks('hv_alloy_coupon'), 16, ['hv_trial_billet', 'hv_quench'], 'Проведи всю партию через домну и закалочную ванну. Собери 16 образцов для сдачи цеха.'],
-  ['hv_foundry_accepted', 'Принять металлургическую смену', ks('hv_commissioning_report'), 1, ['hv_trial_coupon', 'hv_assembler', 'yard_accept_batch', 'rail_signal_relay', 'hv_arc_shield', 'mv_create_observer', 'hv_ie_field_coil', 'mv_pressure_regulator'], 'Загрузи 16 образцов, два принятых ящика, три схемы HV, два сигнальных реле, два дугогасителя и четыре листа нержавейки. Добавь наблюдатель Create, обмотку IE, регулятор PneumaticCraft и 1500 мБ дистиллята. Протокол нужен для пропуска в Энд.'],
+  ['hv_foundry_accepted', 'Принять металлургическую смену', ks('hv_commissioning_report'), 1, ['hv_trial_coupon', 'hv_assembler', 'yard_accept_batch', 'rail_signal_relay', 'hv_arc_shield', 'mv_create_observer', 'hv_ie_field_coil', 'mv_pressure_regulator'], 'Загрузи 16 образцов, два принятых ящика, три схемы HV, два сигнальных реле, два дугогасителя и четыре листа нержавейки. Добавь наблюдатель Create, обмотку, регулятор PneumaticCraft и 1500 мБ дистиллята. Протокол нужен для пропуска в Энд.'],
   ['hv_bender', 'Серийный листогиб HV', gt('hv_bender'), 1, ['hv_assembler', 'hv_piston', 'nether_mv_bender'], 'Перенеси рабочий узел MV на новый корпус и два силовых поршня.', true],
   ['hv_macerator', 'Промышленное дробление HV', gt('hv_macerator'), 1, ['hv_assembler', 'hv_piston', 'nether_mv_macerator'], 'Используй запасной мацератор MV. Полевую машину оставь на линии снабжения базальтом.', true],
   ['hv_thermal_centrifuge', 'Термическое разделение HV', gt('hv_thermal_centrifuge'), 1, ['hv_assembler', 'hv_motor'], 'Установи два двигателя в новый корпус и добавь термоцентрифугу MV.', true],
@@ -531,8 +556,8 @@ chapter('hv_foundry', 'XIII. Высокое напряжение', gt('hv_machin
 ])
 
 chapter('end_expedition', 'XIV. Экспедиция в Энд', ks('end_transit_permit'), [
-  ['end_pass', 'Промышленный допуск', ks('end_transit_permit'), 1, ['hv_foundry_accepted', 'hv_assembler', 'yard_accept_batch', 'early_hv_foundry_hv_sensors', 'hv_sealed_module', 'mv_ie_insulated_wire'], 'Подай протокол, датчики, дугогасители, принятые огнеупоры, герметичный модуль и изолированный моток IE. Держи пропуск в инвентаре при входе в Энд.'],
-  ['end_optic', 'Оптическая вставка', ks('ender_optical_insert'), 2, ['hv_assembler', 'hv_ceramic_substrate', 'rail_gold_blank', 'hv_pressing_basin'], 'Спрессуй в чаше Create жемчуг, стекло, керамику IE, золотую заготовку, точёный контакт и изоляцию. Получишь две вставки.'],
+  ['end_pass', 'Промышленный допуск', ks('end_transit_permit'), 1, ['hv_foundry_accepted', 'hv_assembler', 'yard_accept_batch', 'early_hv_foundry_hv_sensors', 'hv_sealed_module', 'mv_ie_insulated_wire'], 'Подай протокол, датчики, дугогасители, принятые огнеупоры, герметичный модуль и изолированный электрумовый кабель. Держи пропуск в инвентаре при входе в Энд.'],
+  ['end_optic', 'Оптическая вставка', ks('ender_optical_insert'), 2, ['hv_assembler', 'hv_ceramic_substrate', 'rail_gold_blank', 'hv_pressing_basin'], 'Спрессуй в чаше Create жемчуг, стекло, керамику, золотую заготовку, точёный контакт и изоляцию. Получишь две вставки.'],
   ['end_first_eye', 'Стабилизировать око', mc('ender_eye'), 1, ['end_optic', 'chemical_grade_seal', 'liquid_process_compressor', 'hv_gold_wire'], 'Подай вставку, огненный порошок, уплотнение и золотой провод в камеру PneumaticCraft. Требуется 4,55 бар.'],
   ['end_portal_eyes', 'Запас на поиск крепости', mc('ender_eye'), 16, ['end_first_eye'], 'Подготовь запас очей для поиска крепости и заполнения рамок. Для входа в уже активный портал тоже понадобится пропуск.', true],
   ['end_field_power', 'Выездная дизельная станция HV', gt('hv_combustion'), 1, ['end_pass', 'hv_generator'], 'Перевези генератор, дизель и кабель HV. Выдели площадку под резак, газосборник и ёмкость для вывоза смеси.'],
@@ -541,7 +566,7 @@ chapter('end_expedition', 'XIV. Экспедиция в Энд', ks('end_transit
   ['end_stone_stock', 'Партия эндерняка', mc('end_stone'), 32, ['end_pass', 'end_first_eye'], 'Добывай эндерняк для первой партии. Сохрани часть блоков для кладки.'],
   ['end_grit', 'Распил эндерняка на месте', ks('endstone_grit'), 16, ['end_field_macerator', 'end_stone_stock', 'paraffin_cake'], 'Четыре блока эндерняка и 300 мБ смазки дают две порции концентрата при 384 EU/t. Резак выполняет эту операцию только в Энде.'],
   ['end_collector', 'Газосборник HV', gt('hv_gas_collector'), 1, ['end_field_power', 'hv_pump', 'hv_hull'], 'Перенеси газосборник MV на корпус HV и добавь насосы, схемы и кабель. Поставь машину в Энде.'],
-  ['end_filter_mesh', 'Сетка газовой кассеты', ks('end_filter_blank'), 4, ['end_field_power', 'nether_stainless_plates', 'rail_switch_contacts', 'refinery_tray', 'hv_pressing_basin'], 'Спрессуй в чаше Create две сетки, нержавейку, тарелку IE, медную полосу, изоляцию и точёный контакт.'],
+  ['end_filter_mesh', 'Сетка газовой кассеты', ks('end_filter_blank'), 4, ['end_field_power', 'nether_stainless_plates', 'rail_switch_contacts', 'refinery_tray', 'hv_pressing_basin'], 'Спрессуй в чаше Create две сетки, нержавейку, тарелку, медную полосу, изоляцию и точёный контакт.'],
   ['end_sample_filter', 'Заправить газовую кассету', ks('end_sampling_filter'), 2, ['end_filter_mesh', 'activated_carrier', 'paraffin_cake', 'hv_sealed_module'], 'Обожми сетку с носителем, парафином, уплотнением и прессованным железом при 4,25 бар. Отправь готовую кассету в газосборник.'],
   ['end_centrifuge', 'Центрифуга для разделения газов', gt('hv_centrifuge'), 1, ['hv_assembler', 'hv_motor', 'hv_hull'], 'Собери машину HV из центрифуги MV, двух моторов и нового корпуса. Отведи два жидкостных выхода в отдельные буферы.'],
   ['end_separated_gas', 'Разделить первую газовую пробу', ks('spent_end_filter'), 1, ['end_collector', 'end_sample_filter', 'end_grit', 'end_centrifuge'], 'Газосборник в Энде даёт 1200 мБ сырой смеси на кассету. Добавь к смеси сетку и две порции концентрата. Центрифуга выдаст 800 мБ защитного газа, 400 мБ аргона и отработанный фильтр.'],
@@ -550,9 +575,9 @@ chapter('end_expedition', 'XIV. Экспедиция в Энд', ks('end_transit
   ['end_popped_chorus', 'Сушить хорус под газом', mc('popped_chorus_fruit'), 4, ['end_separated_gas', 'end_chorus_crop', 'thermopneumatic_plants'], 'Подай три плода и 160 мБ защитного газа в горячую установку PneumaticCraft при 423 К и 4 бар. На выходе два сушёных плода.'],
   ['end_dielectric', 'Диэлектрическая плёнка', ks('chorus_dielectric_film'), 2, ['end_popped_chorus', 'hv_quench'], 'Три порции сушёного хоруса промой в ванне HV с 650 мБ дистиллята. Плёнка нужна вакуумным подложкам.'],
   ['end_brick_supply', 'Кладка из эндерняка', mc('end_stone_bricks'), 4, ['end_grit', 'vacuum_tile', 'end_separated_gas'], 'В чаше Create спрессуй эндерняк, концентрат, плитку и раствор. Подай 200 мБ защитного газа. Плиты и ограждения проходят отдельную сборку.', true],
-  ['end_purpur_supply', 'Пурпурный композит', mc('purpur_block'), 4, ['end_dielectric', 'vacuum_tile', 'hv_pressing_basin'], 'Отпрессуй сушёный хорус с диэлектриком, концентратом и керамикой. Подай 300 мБ защитного газа. Для колонн подготовь плитки, вакуумные уплотнения и стальной компонент IE.', true],
+  ['end_purpur_supply', 'Пурпурный композит', mc('purpur_block'), 4, ['end_dielectric', 'vacuum_tile', 'hv_pressing_basin'], 'Отпрессуй сушёный хорус с диэлектриком, концентратом и керамикой. Подай 300 мБ защитного газа. Для колонн подготовь плитки, вакуумные уплотнения и штампованную стальную раму.', true],
   ['end_rod_batch', 'Светильники экспедиции', mc('end_rod'), 4, ['end_dielectric', 'vacuum_tile'], 'Для стержней нужны огненные стержни, плёнка, стекло, керамика и золотая проволока. Подай защитный газ.', true],
-  ['end_field_cache', 'Сундук для второй площадки', mc('ender_chest'), 1, ['end_first_eye', 'vacuum_tile', 'end_separated_gas', 'mv_create_observer'], 'Добавь к обсидиану два ока, вакуумную плитку, уплотнения, наблюдатель Create и разъём IE. Подай защитный газ.', true],
+  ['end_field_cache', 'Сундук для второй площадки', mc('ender_chest'), 1, ['end_first_eye', 'vacuum_tile', 'end_separated_gas', 'mv_create_observer'], 'Добавь к обсидиану два ока, вакуумную плитку, уплотнения, наблюдатель Create и кабель. Подай защитный газ.', true],
   ['end_shell_storage', 'Герметичный шалкеровый ящик', mc('shulker_box'), 1, ['end_pass', 'vacuum_tile', 'end_dielectric', 'mv_create_brass_funnel'], 'Собери ящик из панцирей, сундука, плитки, уплотнений, воронки Create, пропитанной древесины и оси. Подай смазку.', true]
 ])
 
@@ -560,7 +585,7 @@ chapter('ev_vacuum', 'XV. Вакуум и титан', gt('vacuum_freezer'), [
   ['vacuum_seal_preform', 'Вакуумная заготовка', ks('vacuum_seal_preform'), 2, ['end_grit', 'first_polyethylene', 'chemical_grade_seal'], 'Смешай полиэтилен, алюминий, эндерняк, сетку и химстойкие прокладки. Сборщик принимает смазку.'],
   ['vacuum_gasket', 'Опрессовать вакуумные уплотнения', ks('vacuum_gasket'), 4, ['vacuum_seal_preform', 'liquid_process_compressor', 'pressed_iron'], 'В камеру подай заготовку, химстойкое уплотнение и прессованное железо. Нужны 4,5 бар.'],
   ['vacuum_tile_mix', 'Эндерняковая шихта', ks('vacuum_tile_mix'), 4, ['end_grit', 'hv_mixer', 'nether_refractory_mix', 'nether_chromite'], 'Замеси концентрат, огнеупорную смесь, хромит и изоляцию в смесителе с дистиллятом.'],
-  ['vacuum_tile_blank', 'Прессование керамики', ks('vacuum_tile_blank'), 4, ['vacuum_tile_mix', 'pressed_steel_frame'], 'Спрессуй каждую порцию на тяжёлом прессе Immersive Engineering с формой пластины.'],
+  ['vacuum_tile_blank', 'Прессование керамики', ks('vacuum_tile_blank'), 4, ['vacuum_tile_mix', 'pressed_steel_frame'], 'Спрессуй каждую порцию на тяжёлом формовочном прессе с формой пластины.'],
   ['vacuum_tile', 'Спекание вакуумной плитки', ks('sintered_vacuum_tile'), 4, ['vacuum_tile_blank', 'end_separated_gas', 'hv_input_hatch'], 'Спекай плитку в домне при 2500 К и 480 EU/t. На порцию уходят 250 мБ защитного газа.'],
   ['vacuum_pump_core', 'Насосный блок', ks('vacuum_pump_core'), 2, ['vacuum_tile', 'vacuum_gasket', 'hv_pump'], 'На один блок идут два насоса HV, двигатель, бочка, уплотнения, керамика и защитные детали.'],
   ['vacuum_casings', 'Алюминиевые холодостойкие корпуса', gt('frostproof_machine_casing'), 20, ['vacuum_tile', 'vacuum_gasket', 'aluminium_plate'], 'Сборщик HV выпускает по два корпуса из алюминия, керамики, уплотнений, стальных рам и листа нержавейки.'],
@@ -575,9 +600,9 @@ chapter('ev_vacuum', 'XV. Вакуум и титан', gt('vacuum_freezer'), [
   ['vacuum_rutile', 'Промыть рутиловый концентрат', ks('purified_rutile'), 2, ['vacuum_hv_reactor', 'end_separated_gas', 'washed_bauxite'], 'Реактор принимает промытый боксит, эндерняк, дистиллят и защитный газ. Отводи хвосты.'],
   ['vacuum_titanium_charge', 'Загрузить титановую шихту', ks('titanium_reduction_charge'), 2, ['vacuum_rutile', 'hv_mixer', 'vacuum_tile'], 'Смешай рутил, алюминий, хромит и спечённую плитку.'],
   ['vacuum_titanium_hot', 'Плавка титана под аргоном', ks('hot_titanium_billet'), 1, ['vacuum_titanium_charge', 'end_separated_gas', 'nether_kanthal_coils'], 'Домне нужны 2700 К, 480 EU/t и 400 мБ аргона на болванку. Часть горячих болванок отложи на силовые рамы.'],
-  ['vacuum_titanium_ingot', 'Титан после вакуума', gt('titanium_ingot'), 1, ['vacuum_titanium_hot', 'vacuum_controller', 'vacuum_loop_buffers'], 'Камера расходует 1000 мБ холодного теплоносителя и 150 мБ защитного газа. На выходе слиток и 1000 мБ нагретой жидкости.'],
+  ['vacuum_titanium_ingot', 'Титан после вакуума', gt('titanium_ingot'), 1, ['vacuum_titanium_hot', 'vacuum_controller', 'vacuum_loop_buffers'], 'Камера расходует 1000 мБ холодного теплоносителя и 150 мБ защитного газа на первый слиток. Оставь готовый слиток как образец для трёх дополнительных рецептов домны. Горячие слитки из этих рецептов охлаждай в химическом реакторе EV с таким же образцом и теми же жидкостями. Образец сохраняется.'],
   ['vacuum_titanium_plate', 'Первая партия титановых листов', gt('titanium_plate'), 8, ['vacuum_titanium_ingot', 'hv_bender'], 'Прокатай титан на листогибе HV. Листы пойдут в EV-корпуса, схемы и двигатель.'],
-  ['vacuum_panel_blank', 'Заготовка чистовой панели', ks('clean_panel_blank'), 4, ['vacuum_tile', 'vacuum_gasket', 'first_polyethylene', 'hv_blaze_burner', 'hv_shop_ie_wire'], 'Спрессуй плитку, полиэтилен, нержавейку, уплотнение и проволоку IE в нагретой чаше Create. Подай 180 мБ защитного газа.'],
+  ['vacuum_panel_blank', 'Заготовка чистовой панели', ks('clean_panel_blank'), 4, ['vacuum_tile', 'vacuum_gasket', 'first_polyethylene', 'hv_blaze_burner', 'hv_shop_ie_wire'], 'Спрессуй плитку, полиэтилен, нержавейку, уплотнение и проволоку в нагретой чаше Create. Подай 180 мБ защитного газа.'],
   ['vacuum_panel_hot', 'Обжечь панель под защитным газом', ks('hot_clean_panel'), 2, ['vacuum_panel_blank', 'hv_input_hatch', 'end_separated_gas'], 'Обжиг при 2480 К требует 200 мБ защитного газа на панель.'],
   ['vacuum_panel', 'Панель из вакуумной камеры', ks('vacuum_treated_panel'), 4, ['vacuum_panel_hot', 'vacuum_controller', 'vacuum_loop_buffers'], 'Прогони горячие панели через камеру. Верни нагретый теплоноситель в PneumaticCraft.'],
   ['vacuum_panel_stock', 'Серия панелей для лаборатории', ks('vacuum_treated_panel'), 32, ['vacuum_panel'], 'Поддерживай расход газа и отвод теплоносителя, пока камера готовит панели для стен и фильтров.', true]
@@ -599,7 +624,7 @@ chapter('ev_cleanroom', 'XVI. Чистая комната', gt('cleanroom'), [
   ['cleanroom_wafer_series', 'Серия подложек до сборки', ks('etched_cleanroom_wafer'), 16, ['cleanroom_wafer_etched'], 'Приготовь запас масок. Поддерживай чистоту и возвращай теплоноситель, пока гравёр делает серию.', true],
   ['cleanroom_circuit_machine', 'Сборщик схем HV', gt('hv_circuit_assembler'), 1, ['cleanroom_controller', 'hv_assembler', 'hv_circuit'], 'Поставь сборщик схем рядом с гравёром и проложи линию защитного газа.'],
   ['cleanroom_logic_preform', 'Сложить логику EV', ks('ev_logic_preform'), 1, ['cleanroom_wafer_etched', 'cleanroom_circuit_machine', 'hv_sealed_module', 'end_dielectric'], 'В чистой комнате соедини подложку, герметичный модуль HV, плёнку, контакты, припой и уплотнение. Подай 100 мБ газа.'],
-  ['cleanroom_ev_module', 'Опрессовка модуля EV', ks('ev_control_module'), 1, ['cleanroom_logic_preform', 'vacuum_gasket', 'liquid_process_compressor', 'hv_shop_ie_relay', 'reinforced_process_tube'], 'Опрессуй модуль, уплотнение, прессованное железо, усиленную трубу и реле HV от IE при 4,6 бар в PneumaticCraft.'],
+  ['cleanroom_ev_module', 'Опрессовка модуля EV', ks('ev_control_module'), 1, ['cleanroom_logic_preform', 'vacuum_gasket', 'liquid_process_compressor', 'hv_shop_ie_relay', 'reinforced_process_tube'], 'Опрессуй модуль, уплотнение, прессованное железо, усиленную трубу и четырёхжильный золотой кабель при 4,6 бар в PneumaticCraft.'],
   ['cleanroom_first_ev_circuit', 'Первая схема EV на HV', gt('micro_processor_computer'), 1, ['cleanroom_ev_module', 'cleanroom_circuit_machine', 'vacuum_titanium_plate'], 'В чистой комнате подай два модуля, по четыре гравированные подложки и схемы HV, по два золотых контакта и титановых листа, четыре детали припоя и 400 мБ защитного газа. Базовый цикл 136 секунд.'],
   ['cleanroom_circuit_stock', 'Серийный запас схем EV', gt('micro_processor_computer'), 16, ['cleanroom_first_ev_circuit'], 'Нарасти выпуск подложек и модулей. Схемы расходуются на двигатель, кабельные вводы и станки.', true]
 ])
@@ -654,7 +679,7 @@ chapter('me_automation', 'HV–EV. Автосборка ME', me('pattern_provide
   ['me_ingredient_buffer', 'Буфер предметов и жидкостей', 'expatternprovider:ingredient_buffer', 1, ['me_recipe_return', 'me_optical_link', 'ev_foundry_accepted'], 'Поставь поставщик шаблонов вплотную к буферу ExtendedAE. Выводы направь к входам станков с фильтрами по каждому виду сырья. На новом маршруте сначала выполни один заказ.'],
   ['me_line_distribution', 'Раздельные входы сборочной линии', gt('ulv_input_bus'), 8, ['me_ingredient_buffer', 'iv_line_controller'], 'Поставь предметные шины по порядку рецепта от контроллера. Из буфера отправляй в каждую шину один нужный предмет и в каждый жидкостный люк одну жидкость. Исследовательский носитель оставь в люке данных.'],
   ['me_pnc_process', 'Подача на термопневматическую установку', 'pneumaticcraft:thermopneumatic_processing_plant', 1, ['me_recipe_return', 'activated_carrier'], 'Подай катализатор и нафту одним шаблоном. На установке выдержи давление и температуру из JEI. Верни активированный носитель и этилен в сеть через выходные стороны.'],
-  ['me_refinery_catalyst', 'Подача жидкостей на НПЗ', 'immersiveengineering:refinery', 1, ['me_recipe_return', 'process_commissioning'], 'Установи многоразовый носитель в НПЗ через его меню. В шаблон внеси только расходуемые жидкости. Подключи поставщик к одному из жидкостных входов и шину импорта к выходу дизеля.'],
+  ['me_refinery_catalyst', 'Сборка НПЗ для сети ME', 'gtceu:mv_chemical_reactor', 1, ['me_recipe_return', 'process_commissioning'], 'Собери НПЗ по чертежу из справочника инженера и сформируй его молотом. Вставь многоразовый носитель через меню установки. Подведи поставщик шаблонов к жидкостному входу и шину импорта к выходу дизеля.'],
   ['me_accel', 'Параллельная сборка', me('crafting_accelerator'), 1, ['me_cpu_storage', 'me_eng'], 'Поставь сопроцессор рядом с вычислительной секцией. Для нескольких шагов подготовь отдельные машины.'],
   ['me_16k', 'Память хранения 16k', me('item_storage_cell_16k'), 1, ['me_4k', 'me_pattern_laminate'], 'Три компонента 4k и два инженерных процессора проходят ещё одну сборку на HV.'],
   ['me_wireless', 'Терминал без кабеля', me('wireless_terminal'), 1, ['me_interface', 'me_pattern_laminate'], 'Собери приёмник из жемчуга, оптики и эмиттера. Для связи нужна отдельная точка доступа.'],
@@ -662,7 +687,7 @@ chapter('me_automation', 'HV–EV. Автосборка ME', me('pattern_provide
   ['me_optical_link', 'Сборка оптического узла', ks('me_optical_link'), 2, ['me_pattern_laminate', 'ev_circuit_assembler', 'vacuum_titanium_plate', 'cleanroom_controller'], 'Сборщик схем EV соединяет подложки и волокно в чистой комнате. Титан и процессор EV входят в каждый узел.'],
   ['me_64k', 'Память хранения 64k', me('item_storage_cell_64k'), 1, ['me_optical_link', 'me_16k', 'ev_assembler'], 'На компонент уходят три предыдущих модуля, инженерные процессоры и два оптических узла.'],
   ['me_256k', 'Серийная память 256k', me('item_storage_cell_256k'), 1, ['me_64k', 'ev_wafer_acceptance'], 'Компонент 256k требует три компонента 64k, схемы EV и калиброванные подложки.'],
-  ['me_quantum', 'Квантовый мост EV', me('quantum_link'), 2, ['me_p2p', 'me_optical_link', 'ev_wafer_acceptance'], 'На мосты уйдут два готовых кольца и оптика. Пару сингулярностей свяжи в смесителе EV под защитным газом.', true],
+  ['me_quantum', 'Квантовый мост EV', me('quantum_link'), 2, ['me_p2p', 'me_optical_link', 'ev_wafer_acceptance'], 'Изготовь контейнер пары в смесителе EV под защитным газом и брось его в источник воды. Вставь по одной сингулярности из полученной пары в камеры двух запитанных колец. Две старые сингулярности без частоты можно упаковать в контейнер в сетке крафта.', true],
   ['me_spatial', 'Пространственный порт', me('spatial_io_port'), 1, ['me_64k', 'ev_foundry_accepted'], 'Пересобери порт ввода-вывода на раме EV. Добавь оптику, манипуляторы и протокол. Пилоны и ячейки собираются отдельно.', true]
 ])
 
@@ -706,7 +731,7 @@ chapter('iv_microelectronics', 'XIX. Стерильная фотолитогра
   ['iv_masked_wafer', 'Нанести фоторезист', ks('iv_masked_wafer'), 4, ['iv_photoresist_ampoule', 'ev_wafer_acceptance', 'iv_bath_ev'], 'Покрой подложку EV в химической ванне. На каждую требуется 250 мБ фоторезиста.'],
   ['iv_exposed_wafer', 'Экспозиция при 1920 EU/t', ks('iv_exposed_wafer'), 4, ['iv_masked_wafer', 'iv_sterile_mask', 'iv_sterile_laser'], 'Загрузи подложку и фотомаску в гравёр. Дождись нужной чистоты в стерильной комнате.'],
   ['iv_clean_die', 'Проявить кристалл', ks('iv_clean_die'), 4, ['iv_exposed_wafer', 'iv_bath_ev'], 'Прояви подложку с 500 мБ дистиллята. Собирай отработанный фоторезист. Из 1000 мБ реактор возвращает 750 мБ рабочего раствора.'],
-  ['iv_sealed_processor', 'Опрессовка процессора', ks('iv_sealed_processor'), 4, ['iv_clean_die', 'cleanroom_ev_module', 'liquid_process_compressor', 'reinforced_process_tube'], 'Добавь модуль EV, уплотнение, прессованное железо, усиленную трубу и теплоизоляционное стекло IE. Камера PneumaticCraft должна держать 4,85 бар.'],
+  ['iv_sealed_processor', 'Опрессовка процессора', ks('iv_sealed_processor'), 4, ['iv_clean_die', 'cleanroom_ev_module', 'liquid_process_compressor', 'reinforced_process_tube'], 'Добавь модуль EV, уплотнение, прессованное железо, усиленную трубу и закалённое стекло. Камера PneumaticCraft должна держать 4,85 бар.'],
   ['iv_first_mainframe', 'Первая схема IV на EV', gt('micro_processor_mainframe'), 1, ['iv_sealed_processor', 'iv_sterile_circuit_machine', 'iv_busbar_blank', 'cleanroom_first_ev_circuit', 'ev_phase_relay', 'iv_platinum_plate', 'lv_solder'], 'В стерильный сборщик схем подай четыре герметичных процессора, шесть компьютеров EV, четыре реле EV, четыре платиновых пластины, два шинных вкладыша, восемь заготовок припоя и 1700 мБ защитного газа.'],
   ['iv_nano_base', 'Нанопроцессор EV', gt('nano_processor'), 2, ['ev_wafer_acceptance', 'ev_circuit_assembler'], 'В обычной чистой комнате соедини схему HV, калиброванные подложки, модули, керамику и титан. Этот процессор идёт в следующую сборку.'],
   ['iv_nano_assembly_base', 'Наносборка EV', gt('nano_processor_assembly'), 2, ['iv_nano_base', 'ev_wafer_acceptance'], 'Один процессор, две подложки, реле и модуль EV дают две наносборки.'],
@@ -725,7 +750,7 @@ chapter('iv_power', 'XX. Промышленная сеть IV', gt('extreme_comb
   ['iv_cable', 'Магистраль 8192 EU', gt('tungsten_single_cable'), 8, ['iv_wire', 'iv_cable_jacket'], 'Изолируй провод в сборщике на EV. Первую магистраль проложи короткой, чтобы хватило напряжения для испытательного цикла на 8000 EU/t.'],
   ['iv_quad_cable', 'Магистраль на четыре ампера', gt('tungsten_quadruple_cable'), 4, ['iv_cable', 'iv_busbar_blank'], 'Для четырёх жил настрой схему 4. Магистрали на 8 и 16 ампер требуют пропорционально больше кабеля и оболочек.', true],
   ['iv_bulkhead', 'Многослойная броня', ks('iv_bulkhead'), 4, ['iv_tungstensteel_plate', 'iv_cable_jacket', 'ev_pressure_cage'], 'Пакет из стали, вакуумных панелей, рамы и диэлектрика собирается при 1920 EU/t.'],
-  ['iv_arc_plate', 'Штамповка дугозащитной плиты', ks('iv_arc_plate'), 8, ['iv_bulkhead', 'pressed_steel_frame'], 'Поставь матрицу пластин на пресс IE. Одна бронепанель и 80 000 FE дают две плиты.'],
+  ['iv_arc_plate', 'Штамповка дугозащитной плиты', ks('iv_arc_plate'), 8, ['iv_bulkhead', 'pressed_steel_frame'], 'Поставь матрицу пластин в формовочный пресс. Одна бронепанель и 80 000 FE дают две плиты.'],
   ['iv_servo_core', 'Сердечник сервопривода', ks('iv_servo_core'), 4, ['iv_tungstensteel_plate', 'ev_motor', 'iv_cable'], 'Возьми мотор EV, две силовые обмотки, выверенные оси, кабель и вольфрамовую сталь.'],
   ['iv_switch_stack', 'Силовые ключи', ks('iv_switch_stack'), 4, ['iv_first_mainframe', 'iv_arc_plate', 'me_optical_link'], 'Пара реле EV, платина, оптика и новая схема дают два пакета ключей.'],
   ['iv_grid_regulator', 'Регулятор магистрали', ks('iv_grid_regulator'), 2, ['iv_switch_stack', 'ev_phase_relay', 'iv_busbar_blank'], 'Добавь два излучателя EV, две шинные заготовки, платину, кабель и схему IV. Регулятор нужен люкам, сборщику и двигателю.'],
@@ -874,7 +899,7 @@ chapter('luv_fusion', 'XXV. Термоядерное кольцо Mk I', gt('luv
   ['luv_turbine_rotor', 'Балансировка палладиевого ротора', gt('turbine_rotor'), 1, ['luv_palladium_plate', 'luv_turbine_holders', 'luv_sensor'], 'Для полноценного ротора сначала изготовь две роторные заготовки. Сбалансируй их на сборщике LuV с осями, листами и датчиками.'],
   ['luv_turbine_power', 'Вывод турбины', gt('luv_energy_output_hatch_4a'), 1, ['luv_hatch_4a', 'luv_cable_4a'], 'Собери вывод на несколько пакетов LuV для плазменного контура и сверь предел напряжения кабеля.'],
   ['luv_turbine', 'Большая плазменная турбина', gt('plasma_large_turbine'), 1, ['luv_turbine_casing', 'luv_turbine_holders', 'luv_turbine_rotor', 'luv_turbine_power', 'luv_plasma_coupon'], 'Подай плазму в собранную турбину. Сохрани газ с её выходного люка для протокола первого зажигания. Перед пуском разгрузи энерговывод.'],
-  ['luv_ignition_report', 'Протокол первого зажигания', ks('luv_ignition_report'), 1, ['luv_turbine', 'luv_plasma_coupon', 'luv_quantum'], 'Сдай восемь испытанных пластин и 1500 мБ отработанного гелия из турбины. Оставь протокол для нагрузочных испытаний и второй записи.'],
+  ['luv_ignition_report', 'Протокол первого зажигания', ks('luv_ignition_report'), 1, ['luv_turbine', 'luv_plasma_coupon', 'luv_quantum'], 'Сдай восемь испытанных пластин и 1500 мБ отработанного гелия из турбины. Переставь палладиевый ротор из турбины в сборщик, он останется целым. Сохрани протокол для нагрузочных испытаний и второй записи.'],
   ['luv_wetware', 'Процессор Wetware', gt('wetware_processor'), 2, ['luv_plasma_coupon', 'luv_crystal', 'luv_quantum', 'luv_hatch_1a'], 'Переведи сборочную линию на LuV. Wetware требует кристаллические сборки, память, инженерные процессоры и две плазменные пробы.'],
   ['luv_load_coupons', 'Нагрузочная серия из 64 образцов', ks('luv_load_coupon'), 64, ['luv_ignition_report', 'luv_magnets', 'luv_busbar'], 'За цикл при 30720 EU/t сборщик испытывает четыре образца с 750 мБ плазмы. Протокол первого зажигания остаётся оснасткой.'],
   ['luv_commissioning', 'Приёмка сети LuV', ks('luv_commissioning_report'), 1, ['luv_load_coupons', 'luv_wetware', 'luv_research_station', 'luv_me_crafting'], 'Запиши протокол зажигания в сферу при 12 CWU/t и 72 000 CWU. Линии нужны ещё два протокола, 64 образца и три жидкости. Базовый цикл десять минут.'],
@@ -967,7 +992,7 @@ chapter('zpm_fusion', 'XXX. Термоядерное кольцо Mk II', gt('zp
 
 chapter('zpm_commissioning', 'XXXI. Приёмка сети ZPM', ks('zpm_commissioning_report'), [
   ['zpm_freight_link', 'Квантовые узлы для двух маршрутов', me('quantum_link'), 2, ['me_quantum', 'zpm_end_heavy_concentrate', 'zpm_nether_isotope_salt'], 'Подготовь компоненты AE2 для проверки грузов. Для автоматической доставки собери квантовые мосты по обе стороны маршрута, запитай их и оставь загруженными нужные чанки.'],
-  ['zpm_freight_buffer', 'Жидкостный резерв приёмного цеха', gt('zpm_quantum_tank'), 1, ['zpm_assembler', 'zpm_freight_link', 'luv_bulk_tank'], 'Квантовый танк принимает жидкость после выгрузки в цехе. Для твёрдого груза можно поставить отдельный сундук и фильтровать партии шиной ME.', true],
+  ['zpm_freight_buffer', 'Жидкостный резерв приёмного цеха', gt('zpm_quantum_tank'), 1, ['zpm_assembler', 'zpm_freight_link', 'luv_bulk_tank'], 'Изготовь квантовый жидкостный резервуар ZPM на большой сборочной фабрике GregTech. На этой же фабрике можно собрать квантовый сундук. Подведи питание ZPM. При ручной подаче выдели десять предметных слотов и отдельный жидкостный люк. Четыре ячейки ME занимают по одному слоту. Для заказа из сети установи ME Pattern Buffer в стенку фабрики.', true],
   ['zpm_freight_certificate', 'Сверка образцов из трёх миров', ks('zpm_freight_certificate'), 1, ['zpm_freight_link', 'zpm_phase_module', 'zpm_americium_coupon'], 'В обычном мире сдай по 12 образцов из Энда и Нижнего мира, четыре охлаждённые пластины, две тары и узлы AE2. Груз можно привезти вручную, через мосты или подать со склада по трубам.'],
   ['zpm_bulk_centrifuge', 'Центрифуга для выемки образцов', gt('zpm_centrifuge'), 1, ['zpm_assembler', 'zpm_motor', 'zpm_upshift'], 'Выдели отдельный станок для поточного производства. Подключи сортировку на выдаче для горячих образцов и пустых контейнеров.'],
   ['zpm_wetware', 'Сборка Wetware ZPM', gt('wetware_processor_assembly'), 4, ['zpm_americium_coupon', 'zpm_power_1a', 'luv_wetware', 'luv_me_crafting'], 'Собери два комплекта на линии ZPM при 98304 EU/t. Добавь Wetware, охлаждённые образцы, фазовые модули и память 256k. Подай защитный газ и смазку.'],
@@ -975,7 +1000,7 @@ chapter('zpm_commissioning', 'XXXI. Приёмка сети ZPM', ks('zpm_commis
   ['zpm_quantum', 'Квантовый мейнфрейм ZPM', gt('quantum_processor_mainframe'), 4, ['zpm_americium_coupon', 'zpm_power_1a', 'luv_quantum', 'iv_line_controller'], 'Собери на линии ZPM квантовые мейнфреймы при 110592 EU/t. Подготовь компьютеры LuV, европий, охлаждённые образцы и узлы P2P. Разведи входы по порядку из JEI.'],
   ['zpm_hpca_32', 'Сфера для итоговой записи', gt('data_orb'), 1, ['zpm_hpca_24', 'zpm_irradiated_cask', 'luv_advanced_data', 'zpm_power_1a'], 'Исследуй облучённую кассету на чистую сферу. Для записи нужны 98304 EU/t на станции ZPM, 32 CWU/t и суммарно 96000 CWU. Оставь HPCA отдельную линию с устойчивой подачей от 262144 EU/t и запасом охлаждения.'],
   ['zpm_americium_acceptance_crate', 'Контейнер на 32 резервные пробы', ks('zpm_americium_acceptance_crate'), 1, ['zpm_americium_coupon', 'zpm_shielded_cask', 'zpm_flux_busbar'], 'Сборщик ZPM опечатывает 32 пробы, четыре контейнера и четыре шины с 6200 мБ защитного газа. Упакованный комплект идёт на отдельную позицию линии.'],
-  ['zpm_commissioning', 'Приёмка термоядерной сети ZPM', ks('zpm_commissioning_report'), 1, ['zpm_hpca_32', 'zpm_americium_acceptance_crate', 'zpm_freight_certificate', 'zpm_flux_busbar', 'hv_shop_ie_winding', 'zpm_reserve_switchgear', 'zpm_wetware', 'zpm_crystal', 'zpm_quantum', 'zpm_buffer'], 'Собери 96 проб, две накладные, четыре щита, четыре лапотронных блока, восемь шин и восемь катушек IE. Подай 64 пробы россыпью, ещё 32 запечатай в приёмочном контейнере. Подай 7200 мБ плазмы, 12 000 мБ газа и 16 000 мБ дизеля. Базовый цикл 16 минут, запись требует 192 000 CWU.']
+  ['zpm_commissioning', 'Приёмка термоядерной сети ZPM', ks('zpm_commissioning_report'), 1, ['zpm_hpca_32', 'zpm_americium_acceptance_crate', 'zpm_freight_certificate', 'zpm_flux_busbar', 'hv_shop_ie_winding', 'zpm_reserve_switchgear', 'zpm_wetware', 'zpm_crystal', 'zpm_quantum', 'zpm_buffer'], 'Собери 96 проб, две накладные, четыре щита, четыре лапотронных блока, восемь шин и восемь катушек напряжения. Подай 64 пробы россыпью, ещё 32 запечатай в приёмочном контейнере. Подай 7200 мБ плазмы, 12 000 мБ газа и 16 000 мБ дизеля. Базовый цикл 16 минут, запись требует 192 000 CWU.']
 ])
 
 chapter('uv_materials', 'XXXII. Дюраний и тританий', ks('uv_duranium_target'), [
@@ -988,9 +1013,9 @@ chapter('uv_materials', 'XXXII. Дюраний и тританий', ks('uv_dura
   ['uv_zpm_bender', 'Прокат для высокотемпературного цеха', gt('zpm_bender'), 1, ['uv_tritanium_ingot', 'zpm_assembler', 'zpm_power_1a'], 'Перенеси два прокатных станка LuV в узел ZPM. Подведи питание и оставь свободный слот под протокол приёмки ZPM.'],
   ['uv_tritanium_plate', 'Тритановые листы', gt('tritanium_plate'), 8, ['uv_tritanium_ingot', 'uv_zpm_bender'], 'Прокат при 106496 EU/t превращает два слитка в один лист. Для большой серии увеличь подачу титана и охлаждение обоих проходов.'],
   ['uv_americium_plate', 'Прокат америция', gt('americium_plate'), 4, ['uv_zpm_bender', 'zpm_irradiated_cask'], 'Сконденсируй 720 мБ плазмы в четыре америциевых слитка. Прокат двух слитков при 106496 EU/t даёт один лист. Протокол ZPM держи в станке как оснастку.'],
-  ['uv_laminate_preform', 'Набор слоёв силовой обшивки', ks('uv_laminate_preform'), 4, ['uv_tritanium_plate', 'uv_americium_plate', 'zpm_neutron_laminate', 'hv_shop_ie_winding', 'reinforced_process_tube'], 'Добавь обмотки IE и пневмотрубки к листам тритания, америция, экранам, стеклу, плитке и переборкам. На четыре пакета подай 6400 мБ защитного газа.'],
+  ['uv_laminate_preform', 'Набор слоёв силовой обшивки', ks('uv_laminate_preform'), 4, ['uv_tritanium_plate', 'uv_americium_plate', 'zpm_neutron_laminate', 'hv_shop_ie_winding', 'reinforced_process_tube'], 'Добавь катушки напряжения и пневмотрубки к листам тритания, америция, экранам, стеклу, плитке и переборкам. На четыре пакета подай 6400 мБ защитного газа.'],
   ['uv_structural_laminate', 'Уплотнение на прессе Create', ks('uv_structural_laminate'), 8, ['uv_hot_basin'], 'Спрессуй пакет с вакуумным уплотнением в нагретой чаше Create. На каждый лист подай 450 мБ защитного газа.'],
-  ['uv_flux_shunt', 'Пайка силовых шунтов', ks('uv_flux_shunt'), 4, ['uv_structural_laminate', 'uv_americium_plate', 'zpm_flux_busbar', 'uv_plate_relay_supply', 'hv_solder_bucket'], 'Собери шунты из листов, шин, ламината, ванадий-галлиевого кабеля, контактов и реле IE. На два шунта подай 5600 мБ жидкого припоя.']
+  ['uv_flux_shunt', 'Пайка силовых шунтов', ks('uv_flux_shunt'), 4, ['uv_structural_laminate', 'uv_americium_plate', 'zpm_flux_busbar', 'uv_plate_relay_supply', 'hv_solder_bucket'], 'Собери шунты из листов, шин, ламината, ванадий-галлиевого кабеля, контактов и четырёхжильные кабели. На два шунта подай 5600 мБ жидкого припоя.']
 ])
 
 chapter('uv_power', 'XXXIII. Магистраль и резерв UV', gt('uv_energy_input_hatch'), [
@@ -1010,7 +1035,7 @@ chapter('uv_power', 'XXXIII. Магистраль и резерв UV', gt('uv_en
 ])
 
 chapter('uv_factory', 'XXXIV. Сборочные цеха UV', gt('uv_assembler'), [
-  ['uv_casing', 'Тритановые кожухи UV', gt('uv_machine_casing'), 4, ['uv_tritanium_plate', 'uv_americium_plate', 'uv_structural_laminate', 'zpm_casing'], 'Усиль два кожуха ZPM тританием, америцием, ламинатом, экранами, вакуумными уплотнениями, блоками IE и пневмотрубками. Подай 6000 мБ холодного теплоносителя.'],
+  ['uv_casing', 'Тритановые кожухи UV', gt('uv_machine_casing'), 4, ['uv_tritanium_plate', 'uv_americium_plate', 'uv_structural_laminate', 'zpm_casing'], 'Усиль два кожуха ZPM тританием, америцием, ламинатом, экранами, вакуумными уплотнениями, блоками и пневмотрубками. Подай 6000 мБ холодного теплоносителя.'],
   ['uv_hull', 'Первый силовой корпус UV', gt('uv_machine_hull'), 1, ['uv_casing', 'uv_phase_interlock', 'zpm_hull'], 'Подай два корпуса ZPM, кожух UV, четыре фазовых блока, шесть сборок Wetware, шунты, проволоку и ламинат. Сборщик работает при 122880 EU/t и расходует 5400 мБ смазки.'],
   ['uv_motor', 'Приводы для сборочного цеха', gt('uv_electric_motor'), 4, ['uv_phase_interlock', 'uv_flux_shunt', 'zpm_motor'], 'Мотор собирается из двух приводов ZPM, шунтов, тритания, америция, проволоки и ламината. Разведи выдачу на насосы, поршни и конвейеры.'],
   ['uv_pump', 'Насос для люков и охлаждения', gt('uv_electric_pump'), 2, ['uv_motor', 'uv_structural_laminate', 'zpm_pump'], 'Перебери два насоса ZPM с моторами UV, охлаждающими рубашками, ламинатом и прокладками. Подай 6200 мБ холодного теплоносителя.'],
@@ -1022,11 +1047,11 @@ chapter('uv_factory', 'XXXIV. Сборочные цеха UV', gt('uv_assembler'
   ['uv_assembler', 'Первый сборщик UV', gt('uv_assembler'), 1, ['uv_hull', 'uv_robot', 'uv_conveyor', 'uv_energy_input', 'hv_create_arm'], 'Подай два сборщика ZPM, корпус, манипуляторы, конвейеры, фазу, Wetware и две руки Create. Для сборки подай 7600 мБ смазки при 126976 EU/t.'],
   ['uv_bender', 'Прокат для нейтрония', gt('uv_bender'), 1, ['uv_assembler', 'uv_piston', 'uv_cuprate_cable'], 'Поставь отдельный прокат UV и оставь слот для контрольного узла сети. Он понадобится как несгораемая оснастка при прокате нейтрониевых листов.'],
   ['uv_lapotronic_battery', 'Резервные батареи UV', gt('uv_lapotronic_battery'), 4, ['uv_assembler', 'uv_pulse_reserve', 'uv_voltage_coil', 'zpm_battery'], 'Собери корпуса и обнови батареи ZPM. Четыре готовые батареи отложи для итоговой приёмки. Отдельную партию используй в энергетическом буфере.'],
-  ['uv_quantum_tank', 'Квантовый жидкостный склад UV', gt('uv_quantum_tank'), 1, ['uv_assembler', 'uv_pump', 'zpm_freight_buffer', 'uv_wetware'], 'Поставь квантовый танк на одной из линий подачи, если нужен объём под длительные серии. Для разных жидкостей используй раздельные резервуары.', true]
+  ['uv_quantum_tank', 'Квантовый жидкостный склад UV', gt('uv_quantum_tank'), 1, ['uv_assembler', 'uv_pump', 'zpm_freight_buffer', 'uv_wetware'], 'Собери квантовый жидкостный резервуар UV на большой сборочной фабрике GregTech. На этой же фабрике можно собрать квантовый сундук. Подведи питание UV. При ручной подаче выдели двенадцать предметных слотов и отдельный жидкостный люк. Шесть ячеек ME занимают по одному слоту. Для заказа из сети установи ME Pattern Buffer в стенку фабрики.', true]
 ])
 
 chapter('uv_fusion', 'XXXV. Термоядерное кольцо Mk III', gt('uv_fusion_reactor'), [
-  ['uv_field_cassette', 'Кассеты обмоток Mk III', ks('uv_field_cassette'), 8, ['uv_cuprate_trunk', 'uv_flux_shunt', 'zpm_mk2_coils'], 'Для двух кассет добавь к катушкам Mk II и шунтам четыре обмотки высокого напряжения IE и два регулятора скорости Create. Подай 7200 мБ холодного теплоносителя.'],
+  ['uv_field_cassette', 'Кассеты обмоток Mk III', ks('uv_field_cassette'), 8, ['uv_cuprate_trunk', 'uv_flux_shunt', 'zpm_mk2_coils'], 'Для двух кассет добавь к катушкам Mk II и шунтам четыре обмотки высокого напряжения и два регулятора скорости Create. Подай 7200 мБ холодного теплоносителя.'],
   ['uv_mk3_casing', 'Секции кожуха Mk III', gt('fusion_casing_mk3'), 64, ['uv_field_cassette', 'uv_structural_laminate', 'zpm_mk2_shell'], 'Пересобери четыре кожуха Mk II с кассетами обмоток, тританием, ламинатом, стальной обшивкой и усиленными трубами PneumaticCraft. Отдельно отложи 16 секций для контроллера.'],
   ['uv_spare_mk2', 'Запасной контроллер Mk II', gt('zpm_fusion_reactor'), 2, ['uv_mk3_casing', 'zpm_mk2_controller', 'zpm_reactor_standard'], 'Собери второй контроллер Mk II с запасным эталоном и записанной сферой. Возьми оба контроллера в инвентарь, чтобы подтвердить запас. Один пойдёт на Mk III, второй верни в кольцо для америция и тритания.'],
   ['uv_hpca_48_coolers', 'Активное охлаждение массива на 48 CWU/t', gt('hpca_active_cooler_component'), 6, ['zpm_hpca_32', 'luv_cooling_active'], 'Для трёх усиленных процессоров поставь шесть активных охладителей. Веди штатный теплоноситель печатных плат в отдельный жидкостный вход HPCA с подачей 48 мБ за тик.'],
@@ -1045,7 +1070,7 @@ chapter('uv_commissioning', 'XXXVI. Приёмка сети UV', ks('uv_commissi
   ['uv_naquadria_capsule', 'Экранированные капсулы Энда', ks('uv_naquadria_capsule'), 8, ['uv_structural_laminate', 'uv_americium_plate', 'zpm_shielded_cask', 'zpm_end_heavy_concentrate'], 'Собери капсулы на ZPM только в Энде. На две нужны восемь порций обогащённой наквадаховой пыли, четыре концентрата, четыре ламината, четыре америциевых листа, четыре контейнера и четыре инженерных процессора AE2. Протокол ZPM остаётся в станке.'],
   ['uv_nether_feed_reactor', 'Реактор подготовки подачи в Нижнем мире', gt('zpm_chemical_reactor'), 1, ['uv_naquadria_capsule', 'zpm_isotope_reactor', 'zpm_power_1a'], 'В Нижнем мире подай две капсулы, 3200 мБ радона и 3600 мБ дейтерия. При 126976 EU/t получишь 1440 мБ нейтрониевой подачи. Подключи фильтрованный выход к транспортному буферу.'],
   ['uv_neutronium_coupon', 'Четыре пробы первого нейтрония', ks('uv_neutronium_coupon'), 4, ['uv_mk3_power', 'uv_mk3_output', 'uv_nether_feed_reactor', 'vacuum_controller'], 'Подай по 1440 мБ нейтрониевой подачи и америция в заряженное кольцо. При 262144 EU/t выйдут 720 мБ нейтрония. В вакуумной камере UV испытай четыре тритановых листа с этой порцией нейтрония и 8400 мБ холодного теплоносителя.'],
-  ['uv_quench_cassette', 'Сменные кассеты вакуумного охлаждения', ks('uv_quench_cassette'), 2, ['uv_assembler', 'uv_pump', 'uv_field_cassette', 'vacuum_loop_buffers'], 'Две кассеты требуют насосов UV и IE, радиаторов PneumaticCraft, рубашек IV, ламината и кассет поля. Подай 9200 мБ холодного теплоносителя.'],
+  ['uv_quench_cassette', 'Сменные кассеты вакуумного охлаждения', ks('uv_quench_cassette'), 2, ['uv_assembler', 'uv_pump', 'uv_field_cassette', 'vacuum_loop_buffers'], 'Две кассеты требуют насосов UV и LV, радиаторов PneumaticCraft, рубашек IV, ламината и кассет поля. Подай 9200 мБ холодного теплоносителя.'],
   ['uv_neutronium_ingot', 'Конденсация жидкого нейтрония', gt('neutronium_ingot'), 4, ['uv_neutronium_coupon', 'uv_quench_cassette'], 'Установи кассету в вакуумную камеру UV как оснастку. Из 720 мБ жидкого нейтрония и 9600 мБ холодного теплоносителя получишь четыре слитка при 442368 EU/t. Отводи нагретый теплоноситель.'],
   ['uv_grid_witness', 'Контрольные узлы силовой сети', ks('uv_grid_witness'), 4, ['uv_neutronium_coupon', 'uv_energy_output_4a', 'uv_pulse_reserve', 'uv_phase_interlock'], 'Восемь нейтрониевых проб, четыре фазовых блока, четыре накопителя, четыре шунта, четыре катушки и два вывода UV 4A идут на два контрольных узла. Добавь компоненты памяти 256k и 8200 мБ смазки.'],
   ['uv_neutronium_plate', 'Прокат нейтрониевых листов', gt('neutronium_plate'), 8, ['uv_neutronium_ingot', 'uv_grid_witness', 'uv_bender'], 'Загрузи два слитка и контрольный узел сети в прокат UV. Узел остаётся в станке. Понадобятся дополнительные листы для двух серий электроники.'],
@@ -1064,10 +1089,10 @@ chapter('uv_commissioning', 'XXXVI. Приёмка сети UV', ks('uv_commissi
 
 chapter('final_foundation', 'XXXVII. Оснастка главного завода', factory('heavy_backplane'), [
   ['final_uv_permit', 'Допуск к главному заводу', ks('uv_commissioning_report'), 1, ['uv_commissioning'], 'Положи протокол приёмки UV в отдельный слот оснастки там, где его показывает JEI. Он подтверждает допуск к финальным переделам. Для работающей линии оставь отдельный экземпляр.'],
-  ['final_press_tools', 'Тяжёлый пресс для переборок', ie('mold_plate'), 1, ['final_uv_permit', 'ie_press_mold', 'uv_structural_laminate'], 'Подготовь рабочий тяжёлый пресс Immersive Engineering с формой пластины, отдельной подачей FE и свободной выдачей. Сними с линии конкурирующие заказы на обычный прокат.'],
+  ['final_press_tools', 'Тяжёлый пресс для переборок', 'gtceu:plate_casting_mold', 1, ['final_uv_permit', 'ie_press_mold', 'uv_structural_laminate'], 'Подготовь рабочий тяжёлый формовочный пресс с формой пластины, отдельной подачей FE и свободной выдачей. Сними с линии конкурирующие заказы на обычный прокат.'],
   ['final_neutronium_stock', 'Запас нейтрониевых листов', gt('neutronium_plate'), 32, ['final_uv_permit', 'uv_neutronium_plate', 'uv_mk3_power'], 'Отведи жидкий нейтроний в отдельный буфер, проведи закалку и прокат. Держи эти листы в отдельном складе от партии, отложенной на приёмку UV.'],
-  ['final_laminate_stock', 'Запас силового ламината', ks('uv_structural_laminate'), 32, ['final_uv_permit', 'uv_structural_laminate', 'uv_hot_basin'], 'Готовь ламинат в нагретой чаше Create с защитным газом. Выдавай листы дозами на пресс IE и сборку аварийного оборудования.'],
-  ['final_heavy_backplane', 'Штампованная силовая панель', factory('heavy_backplane'), 8, ['final_press_tools', 'final_laminate_stock'], 'Пресс IE расходует четыре ламината UV и 220000 FE на панель. Используй форму пластины, освобождай выдачу после каждого цикла.'],
+  ['final_laminate_stock', 'Запас силового ламината', ks('uv_structural_laminate'), 32, ['final_uv_permit', 'uv_structural_laminate', 'uv_hot_basin'], 'Готовь ламинат в нагретой чаше Create с защитным газом. Выдавай листы дозами в формовочный пресс и сборку аварийного оборудования.'],
+  ['final_heavy_backplane', 'Штампованная силовая панель', factory('heavy_backplane'), 8, ['final_press_tools', 'final_laminate_stock'], 'формовочный пресс расходует четыре ламината UV и 220000 FE на панель. Используй форму пластины, освобождай выдачу после каждого цикла.'],
   ['final_uv_workbench', 'Сборщик главного цеха', gt('uv_assembler'), 1, ['final_uv_permit', 'uv_assembler', 'uv_energy_input'], 'Подготовь сборщик UV с постоянной выдачей в раздельные буферы. Для силовых комплектующих и товарных партий отведи разные задания AE2.'],
   ['final_breaker_core', 'Сердечник силового выключателя', factory('breaker_core'), 4, ['final_heavy_backplane', 'final_neutronium_stock', 'final_uv_workbench'], 'На пару сердечников подай четыре панели, восемь тритановых и четыре нейтрониевых листа, по четыре катушки, шунта и поршня UV, восемь контактов HV и 7800 мБ смазки.'],
   ['final_cuprate_trunk', 'Запас магистрального купрата', gt('yttrium_barium_cuprate_quadruple_cable'), 16, ['final_uv_permit', 'uv_cuprate_trunk'], 'Подготовь провода и изоляцию для разводки UV. На пусковой части линии соблюдай предел пропуска пакетов каждого кабеля и ставь узлы там, где есть доступ для обслуживания.'],
@@ -1233,6 +1258,15 @@ expandUvFinal(chapters)
 expandLate(chapters)
 addPostUvChapters(chapter)
 chapters.push(...forestrySections())
+chapters.push(gregCropsChapter(), gtxfaChapter())
+applyFieldworkQuests(chapters)
+connectFoundryQuests(chapters)
+connectLvWorkshop(chapters)
+connectMvRefinery(chapters)
+connectOrbitalWorks(chapters)
+connectEvProcess(chapters)
+connectIvVenus(chapters)
+connectOuterSpace(chapters)
 const unique = name => {
   const value = '4' + createHash('sha256').update('zero-shift:' + name).digest('hex').slice(0, 15).toUpperCase()
   if (ids.has(value)) throw new Error('Duplicate FTB id for ' + name)
@@ -1258,9 +1292,52 @@ function checkDependencies(key, trail = new Set()) {
   trail.delete(key)
   visited.add(key)
 }
+checkDependencies('iv_power_hull')
+for (const step of ['ev_wafer_rinse','ev_liner_blank','space_mars_land','ev_mercury_insert','space_mars_part']) {
+  if (!visited.has(step)) throw Error('Missing step before the IV hull: '+step)
+}
+visited.clear()
+checkDependencies('space_mars_rocket')
+if (visited.has('iv_power_hull') || visited.has('ev_mercury_insert') || visited.has('space_mars_part')) {
+  throw Error('The tier 2 rocket requires cargo from its own destination')
+}
+visited.clear()
+checkDependencies('luv_hull')
+for (const step of ['iv_billet_bath','iv_cut_datum','iv_mars_grain','iv_laminated_blank','space_venus_land','space_venus_part','luv_tantalite_concentrate','iv_hull_pattern']) {
+  if (!visited.has(step)) throw Error('Missing step before the LuV hull: '+step)
+}
+visited.clear()
+checkDependencies('space_venus_rocket')
+for(const step of ['iv_venus_calorite','space_venus_part','luv_hull']) {
+  if(visited.has(step)) throw Error('The tier 3 rocket requires Venus cargo: '+step)
+}
+visited.clear()
+for (const [end,steps] of [['ev_hull',['mill_moon_assay']],['iv_power_hull',['mill_mercury_assay','mill_mars_assay']],['luv_hull',['mill_venus_assay','mill_mars_assay']],['zpm_hull',['mill_glacio_assay','mill_ceres_assay','ceres_assay','luv_mercury_optics','luv_mars_cartridge','luv_crystal_orb','space_glacio_part']],['uv_hull',['mill_europa_assay','europa_ceramic','courier_rocket','europa_ceres_brine','europa_glacio_lamella','europa_reference_pair','europa_tested_frame','europa_hull_research','europa_hull_ports']],['uv_commissioning',['mill_titan_assay','titan_standard','freighter_rocket','titan_orbital_station','titan_radiators']],['reclaim_reclamation_certificate',['titan_refinery_delivery','titan_orbital_stock']]]) {
+  visited.clear();checkDependencies(end)
+  for(const step of steps)if(!visited.has(step))throw Error('Missing orbital step '+step+' before '+end)
+}
+for (const [rocket,land] of [['survey_rocket','ceres_land'],['courier_rocket','europa_land'],['freighter_rocket','titan_land']]) {
+  visited.clear();checkDependencies(rocket);if(visited.has(land))throw Error(rocket+' requires its own destination')
+}
+visited.clear()
+checkDependencies('final_commissioning_report')
+const requiredForFinal = new Set(visited)
+for (const milestone of ['space_moon','space_lunar_seal','ev_liner_blank','ev_mercury_land','ev_mercury_insert','space_mars_part','space_venus_part','space_glacio_part']) {
+  if(!requiredForFinal.has(milestone)) throw Error('Missing planetary dependency of final commissioning: '+milestone)
+}
+for (const row of chapters.find(s=>s.key==='railway').rows) {
+  if(requiredForFinal.has(row[0])) throw Error('Rail service became mandatory: '+row[0])
+}
 for (const key of quests.keys()) checkDependencies(key)
+for (const key of Object.keys(taskTags)) {
+  if (!quests.has(key)) throw new Error('Unknown NBT task ' + key)
+}
 
 const q = JSON.stringify
+function formatTaskTag(item, tag) {
+  if (item !== 'gtibdcrops:crop_seed_bag' || tag.scan === undefined) return q(tag)
+  return '{' + Object.entries(tag).map(([key, value]) => q(key) + ':' + q(value) + (key === 'scan' ? 'b' : '')).join(',') + '}'
+}
 const check = process.argv.includes('--check')
 function writeGenerated(file, content) {
   if (check) {
@@ -1306,6 +1383,20 @@ const orderedChapters = questChapters.map(([key, title, sectionKeys, milestone],
   return { key, title, sections, order, group: order < mainChapterCount ? mainGroup : branchesGroup, icon: milestoneRow[2], milestone }
 })
 if (groupedSections.size !== chapters.length) throw new Error('Some quest sections have no chapter')
+// The first working ME network must be reachable before the high-voltage chapters.
+const mvOrder = orderedChapters.find(chapter => chapter.key === 'mv').order
+const laterQuests = new Set(orderedChapters
+  .filter(chapter => chapter.group === mainGroup && chapter.order > mvOrder)
+  .flatMap(chapter => chapter.sections.flatMap(section => section.rows.map(row => row[0]))))
+const accessibleInMv = new Set()
+function checkMvUnlock(key) {
+  if (accessibleInMv.has(key)) return
+  if (laterQuests.has(key)) throw new Error('MV autocrafting requires a later quest: ' + key)
+  for (const dependency of quests.get(key).deps) checkMvUnlock(dependency)
+  accessibleInMv.add(key)
+}
+for (const key of ['me_mv_automation_parts', 'me_molecular', 'me_mv_oil_order']) checkMvUnlock(key)
+
 outputFile('chapter_groups.snbt', groupLines)
 
 const chapterDir = join(output, 'chapters')
@@ -1317,10 +1408,10 @@ for (const file of readdirSync(chapterDir)) {
 }
 
 outputFile('data.snbt', [
-  '{', '  title: "GregTech: Industrial Brain Damage"', '  version: 13', '  default_consume_items: false',
+  '{', '  title: "GregSingularity"', '  version: 13', '  default_consume_items: false',
   '  default_reward_team: true', '  default_autoclaim_rewards: "disabled"',
   '  default_quest_disable_jei: false', '  detection_delay: 20', '  drop_loot_crates: false',
-  '  show_lock_icons: true', '  icon: "create:water_wheel"', '}'
+  '  show_lock_icons: true', '  icon: "gtceu:field_bloomery"', '}'
 ])
 
 for (const { key, title, icon, sections, milestone, order, group } of orderedChapters) {
@@ -1341,7 +1432,7 @@ for (const { key, title, icon, sections, milestone, order, group } of orderedCha
     '    order: -1', '  }]', '  quests: ['
   ]
   for (const { row, section, x, y, shape, size } of layout.entries) {
-    const [questKey, , item, count, deps, , optional] = row
+    const [questKey, , item, count, deps, , optional, itemTag, fluidTask] = row
     const { id, task } = quests.get(questKey)
     const reward = rewardFor(questKey)
     if (!/^[a-z0-9_]+:[a-z0-9_/]+$/.test(reward.item) || !Number.isInteger(reward.count) || reward.count < 1 || reward.count > 64) {
@@ -1353,16 +1444,27 @@ for (const { key, title, icon, sections, milestone, order, group } of orderedCha
       '      x: ' + decimal(x), '      y: ' + decimal(y), '      shape: ' + q(shape), '      size: ' + decimal(size)
     )
     if (deps.length) lines.push('      dependencies: ' + q(deps.map(dep => quests.get(dep).id)))
-    if (optional) lines.push('      optional: true')
-    lines.push('      tasks: [{', '        id: ' + q(task), '        type: "item"')
-    const tag = taskTags[questKey]
-    if (tag) {
-      lines.push('        item: { id: ' + q(item) + ', Count: 1b, tag: ' + q(tag) + ' }',
+    if (optional && !requiredForFinal.has(questKey)) lines.push('      optional: true')
+    lines.push('      tasks: [{', '        id: ' + q(task))
+    const tag = itemTag ?? taskTags[questKey]
+    if (fluidTask?.structure) {
+      if (!/^[a-z0-9_]+:[a-z0-9_/]+$/.test(fluidTask.structure)) throw Error('Invalid structure for '+questKey)
+      lines.push('        type: "structure"', '        structure: ' + q(fluidTask.structure))
+    } else if (fluidTask?.dimension) {
+      if (!/^[a-z0-9_]+:[a-z0-9_/]+$/.test(fluidTask.dimension)) throw Error('Invalid dimension for ' + questKey)
+      lines.push('        type: "dimension"', '        dimension: ' + q(fluidTask.dimension))
+    } else if (fluidTask) {
+      if (!Number.isSafeInteger(fluidTask.amount) || fluidTask.amount < 1 || !/^[a-z0-9_]+:[a-z0-9_/]+$/.test(fluidTask.fluid)) {
+        throw new Error('Invalid fluid task for ' + questKey)
+      }
+      lines.push('        type: "fluid"', '        fluid: ' + q(fluidTask.fluid), '        amount: ' + fluidTask.amount + 'L')
+    } else if (tag) {
+      lines.push('        type: "item"', '        item: { id: ' + q(item) + ', Count: 1b, tag: ' + formatTaskTag(item, tag) + ' }',
         '        match_nbt: true', '        weak_nbt_match: true')
     } else {
-      lines.push('        item: ' + q(item))
+      lines.push('        type: "item"', '        item: ' + q(item))
     }
-    if (count > 1) lines.push('        count: ' + count + 'L')
+    if (!fluidTask && count > 1) lines.push('        count: ' + count + 'L')
     lines.push(
       '      }]', '      rewards: [{', '        id: ' + q(unique('reward/' + questKey)), '        type: "item"',
       '        item: ' + q(reward.item), '        count: ' + reward.count, '      }]', '    }'

@@ -52,7 +52,7 @@ ServerEvents.recipes(event => {
   machine('assembler', 'wind_hssg_coil', [
     '4x ' + hss, '2x kubejs:iv_coil_core', '2x kubejs:vacuum_treated_panel',
     '4x kubejs:iv_cable_jacket', '2x gtceu:iv_electric_motor',
-    '2x immersiveengineering:wirecoil_electrum_ins', '2x create:precision_mechanism'
+    '2x gtceu:electrum_quadruple_cable', '2x gtceu:lv_robot_arm'
   ], '2x ' + part('coil_winding'), 1880, 7360).inputFluids(Fluid.of(gt('lubricant'), 1000))
   machine('assembler', 'upgrade_hssg_coil', [
     '2x gtceu:nichrome_coil_block', '2x ' + part('coil_winding'), '4x ' + hss,
@@ -62,7 +62,7 @@ ServerEvents.recipes(event => {
   machine('centrifuge', 'concentrate_tantalite', ['4x gtceu:crushed_tantalite_ore'],
     '2x ' + part('tantalite_concentrate'), 2200, 6144)
     .notConsumable(Item.of(permit)).inputFluids(Fluid.of(shield, 750))
-    .itemOutputs(ks('ore_tailings')).dimension('minecraft:the_end')
+    .itemOutputs(ks('ore_tailings')).dimension('ad_astra:venus')
   machine('chemical_reactor', 'prepare_niobium_leach', [ks('lime_flux'), filter], '', 1750, 6144)
     .inputFluids(Fluid.of(ks('tungsten_leach_solution'), 1000)).inputFluids(Fluid.of(gt('distilled_water'), 600))
     .outputFluids(Fluid.of(leach, 1600))
@@ -90,7 +90,7 @@ ServerEvents.recipes(event => {
   machine('wiremill', 'draw_niobium_wire', [gt('niobium_titanium_ingot')], '4x ' + wire, 1920, 7360)
   machine('assembler', 'press_busbar', [
     '4x ' + conductor, '2x kubejs:iv_busbar_blank', '2x ' + part('dielectric_laminate'), '2x gtceu:platinum_plate',
-    '2x immersiveengineering:connector_hv_relay', '2x create:precision_mechanism'
+    '2x gtceu:gold_quadruple_cable', '2x gtceu:lv_robot_arm'
   ], '4x ' + part('busbar'), 1940, 7360).inputFluids(Fluid.of(gt('lubricant'), 1250))
   machine('assembler', 'insulate_niobium_wire', [
     '4x ' + wire, '2x ' + part('busbar'), '4x ' + part('dielectric_laminate'), '2x kubejs:vacuum_gasket',
@@ -104,7 +104,7 @@ ServerEvents.recipes(event => {
     event.remove({ output: uninsulated })
     machine('assembler', 'bind_' + width + '_wire', [
       '2x ' + gt('niobium_titanium_' + previous + '_wire'), cores / 2 + 'x ' + part('busbar'),
-      '2x immersiveengineering:wirecoil_steel'
+      '2x gtceu:steel_quadruple_wire'
     ], uninsulated, 1400 + 70 * cores, 7360).inputFluids(Fluid.of(gt('lubricant'), 640 + 80 * cores))
     machine('assembler', 'bind_' + width + '_cable', [
       cores + 'x ' + cable, uninsulated, cores + 'x ' + part('dielectric_laminate'), '2x ' + part('busbar'),
@@ -119,7 +119,7 @@ ServerEvents.recipes(event => {
     event.remove({ output: gt(id) })
     machine('assembler', 'line_' + id, [
       '2x gtceu:tungsten_steel_' + size + '_fluid_pipe', '4x ' + conductor, '2x ' + part('dielectric_laminate'),
-      '2x ' + tube, '2x immersiveengineering:fluid_pipe', '2x kubejs:vacuum_gasket'
+      '2x ' + tube, '2x gtceu:steel_small_fluid_pipe', '2x kubejs:vacuum_gasket'
     ], (index < 3 ? '2x ' : '') + gt(id), 1960 + index * 230, 7680)
       .inputFluids(Fluid.of(gt('lubricant'), 1000 + index * 250))
   })

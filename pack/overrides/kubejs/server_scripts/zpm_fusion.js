@@ -20,7 +20,7 @@ ServerEvents.recipes(event => {
   const coupon = part('americium_coupon')
   const tube = 'pneumaticcraft:advanced_pressure_tube'
   const gauge = 'pneumaticcraft:pressure_gauge_module'
-  const relay = 'immersiveengineering:connector_hv_relay'
+  const relay = 'gtceu:gold_quadruple_cable'
 
   function machine(type, id, items, output, ticks, power) {
     const recipe = event.recipes.gtceu[type](prefix + id)
@@ -48,12 +48,12 @@ ServerEvents.recipes(event => {
   machine('assembler', 'build_fusion_coil', [
     '2x gtceu:superconducting_coil', '2x ' + coil, '4x ' + phase, '8x ' + alloy,
     '4x ' + europium, '4x ' + laminate, '2x gtceu:zpm_sensor',
-    '2x create:precision_mechanism', '2x pneumaticcraft:safety_tube_module'
+    '2x gtceu:lv_robot_arm', '2x pneumaticcraft:safety_tube_module'
   ], '2x gtceu:fusion_coil', 5400, 32000).inputFluids(Fluid.of(cold, 5200))
   machine('assembler', 'build_fusion_casing', [
     '4x gtceu:fusion_casing', '8x ' + alloy, '4x ' + laminate, '4x ' + busbar,
     '2x ' + coil, '4x kubejs:iv_arc_plate', '4x kubejs:vacuum_gasket',
-    '4x immersiveengineering:steel_scaffolding_standard', '4x ' + tube
+    '4x gtceu:steel_frame', '4x ' + tube
   ], '4x gtceu:fusion_casing_mk2', 5200, 32000).inputFluids(Fluid.of(lubricant, 4200))
   machine('assembler', 'make_reactor_standard', [
     '4x ' + coil, '4x ' + phase, '4x gtceu:neutron_reflector', '4x gtceu:zpm_sensor',
@@ -113,7 +113,7 @@ ServerEvents.recipes(event => {
   machine('assembler', 'certify_cross_dimension_freight', [
     '12x ' + part('end_heavy_concentrate'), '12x ' + part('nether_isotope_salt'), '4x ' + phase,
     '2x ae2:quantum_link', '4x ae2:me_p2p_tunnel', '4x ae2:cell_component_256k',
-    '4x ' + coupon, '2x ' + cask, '4x create:content_observer'
+    '4x ' + coupon, '2x ' + cask, part('europa_reticle')
   ], part('freight_certificate'), 6300, 106496).inputFluids(Fluid.of(shield, 5200))
     .dimension('minecraft:overworld')
   machine('assembler', 'pack_americium_acceptance_crate', [
@@ -123,7 +123,7 @@ ServerEvents.recipes(event => {
     '64x ' + coupon, '2x ' + part('freight_certificate'), '4x ' + part('reserve_switchgear'),
     '8x gtceu:wetware_processor_assembly', '8x gtceu:crystal_processor_computer',
     '8x gtceu:quantum_processor_mainframe', '8x ae2:256k_crafting_storage', '16x ' + phase,
-    '4x gtceu:zpm_lapotronic_battery', '8x ' + part('flux_busbar'), '8x immersiveengineering:coil_hv', part('americium_acceptance_crate')
+    '4x gtceu:zpm_lapotronic_battery', '8x ' + part('flux_busbar'), '4x ' + part('tempered_frame'), part('americium_acceptance_crate')
   ], part('commissioning_report'), 19200, 126976)
     .inputFluids(Fluid.of(plasma, 7200)).inputFluids(Fluid.of(shield, 12000))
     .inputFluids(Fluid.of(gt('cetane_boosted_diesel'), 16000)).dimension('minecraft:overworld')

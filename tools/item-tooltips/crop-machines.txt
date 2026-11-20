@@ -1,0 +1,16 @@
+@Сбор урожая · LV|Harvesting · LV
+gtibdcrops:lv_crop_manager|Обслуживает жердочки на участке 11×11 блоков.|Tends crop sticks across a 11×11 block plot.|Внутренний бак вмещает 32 вёдер воды.|The internal tank holds 32 buckets of water.
+@Сбор урожая · MV|Harvesting · MV
+gtibdcrops:mv_crop_manager|Обслуживает жердочки на участке 15×15 блоков.|Tends crop sticks across a 15×15 block plot.|Внутренний бак вмещает 64 вёдер воды.|The internal tank holds 64 buckets of water.
+@Сбор урожая · HV|Harvesting · HV
+gtibdcrops:hv_crop_manager|Обслуживает жердочки на участке 19×19 блоков.|Tends crop sticks across a 19×19 block plot.|Внутренний бак вмещает 96 вёдер воды.|The internal tank holds 96 buckets of water.
+@Сбор урожая · EV|Harvesting · EV
+gtibdcrops:ev_crop_manager|Обслуживает жердочки на участке 23×23 блоков.|Tends crop sticks across a 23×23 block plot.|Внутренний бак вмещает 128 вёдер воды.|The internal tank holds 128 buckets of water.
+@Сбор урожая · IV|Harvesting · IV
+gtibdcrops:iv_crop_manager|Обслуживает жердочки на участке 27×27 блоков.|Tends crop sticks across a 27×27 block plot.|Внутренний бак вмещает 160 вёдер воды.|The internal tank holds 160 buckets of water.
+@Сбор урожая · LuV|Harvesting · LuV
+gtibdcrops:luv_crop_manager|Обслуживает жердочки на участке 31×31 блоков.|Tends crop sticks across a 31×31 block plot.|Внутренний бак вмещает 192 вёдер воды.|The internal tank holds 192 buckets of water.
+@Сбор урожая · ZPM|Harvesting · ZPM
+gtibdcrops:zpm_crop_manager|Обслуживает жердочки на участке 35×35 блоков.|Tends crop sticks across a 35×35 block plot.|Внутренний бак вмещает 224 вёдер воды.|The internal tank holds 224 buckets of water.
+@Сбор урожая · UV|Harvesting · UV
+gtibdcrops:uv_crop_manager|Обслуживает жердочки на участке 39×39 блоков.|Tends crop sticks across a 39×39 block plot.|Внутренний бак вмещает 256 вёдер воды.|The internal tank holds 256 buckets of water.

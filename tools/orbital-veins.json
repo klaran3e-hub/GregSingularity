@@ -1,0 +1,468 @@
+[
+  {
+    "id": "apatite_vein",
+    "layer": "STONE",
+    "weight": 40,
+    "ore": [
+      [
+        "apatite",
+        3
+      ],
+      [
+        "tricalcium_phosphate",
+        2
+      ],
+      [
+        "pyrochlore",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "cassiterite_vein",
+    "layer": "STONE",
+    "weight": 80,
+    "ore": [
+      [
+        "tin",
+        4
+      ],
+      [
+        "cassiterite",
+        2
+      ]
+    ]
+  },
+  {
+    "id": "coal_vein",
+    "layer": "STONE",
+    "weight": 80,
+    "ore": [
+      [
+        "coal",
+        3
+      ]
+    ]
+  },
+  {
+    "id": "copper_tin_vein",
+    "layer": "STONE",
+    "weight": 50,
+    "ore": [
+      [
+        "chalcopyrite",
+        5
+      ],
+      [
+        "zeolite",
+        2
+      ],
+      [
+        "cassiterite",
+        2
+      ],
+      [
+        "realgar",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "copper_vein",
+    "layer": "DEEPSLATE",
+    "weight": 80,
+    "ore": [
+      [
+        "chalcopyrite",
+        5
+      ],
+      [
+        "iron",
+        2
+      ],
+      [
+        "pyrite",
+        2
+      ],
+      [
+        "copper",
+        2
+      ]
+    ]
+  },
+  {
+    "id": "diamond_vein",
+    "layer": "DEEPSLATE",
+    "weight": 40,
+    "ore": [
+      [
+        "graphite",
+        4
+      ],
+      [
+        "graphite",
+        3
+      ],
+      [
+        "diamond",
+        3
+      ],
+      [
+        "coal",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "galena_vein",
+    "layer": "STONE",
+    "weight": 40,
+    "ore": [
+      [
+        "galena",
+        3
+      ],
+      [
+        "silver",
+        2
+      ],
+      [
+        "lead",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "garnet_tin_vein",
+    "layer": "STONE",
+    "weight": 80,
+    "ore": [
+      [
+        "cassiterite_sand",
+        3
+      ],
+      [
+        "garnet_sand",
+        2
+      ],
+      [
+        "asbestos",
+        2
+      ],
+      [
+        "diatomite",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "garnet_vein",
+    "layer": "STONE",
+    "weight": 40,
+    "ore": [
+      [
+        "red_garnet",
+        3
+      ],
+      [
+        "yellow_garnet",
+        2
+      ],
+      [
+        "amethyst",
+        2
+      ],
+      [
+        "opal",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "iron_vein",
+    "layer": "STONE",
+    "weight": 120,
+    "ore": [
+      [
+        "goethite",
+        5
+      ],
+      [
+        "yellow_limonite",
+        2
+      ],
+      [
+        "hematite",
+        2
+      ],
+      [
+        "malachite",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "lapis_vein",
+    "layer": "DEEPSLATE",
+    "weight": 40,
+    "ore": [
+      [
+        "lazurite",
+        3
+      ],
+      [
+        "sodalite",
+        2
+      ],
+      [
+        "lapis",
+        2
+      ],
+      [
+        "calcite",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "lubricant_vein",
+    "layer": "STONE",
+    "weight": 40,
+    "ore": [
+      [
+        "soapstone",
+        3
+      ],
+      [
+        "talc",
+        2
+      ],
+      [
+        "glauconite_sand",
+        2
+      ],
+      [
+        "pentlandite",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "magnetite_vein_ow",
+    "layer": "STONE",
+    "weight": 80,
+    "ore": [
+      [
+        "magnetite",
+        3
+      ],
+      [
+        "vanadium_magnetite",
+        2
+      ],
+      [
+        "gold",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "manganese_vein_ow",
+    "layer": "DEEPSLATE",
+    "weight": 20,
+    "ore": [
+      [
+        "grossular",
+        3
+      ],
+      [
+        "spessartine",
+        2
+      ],
+      [
+        "pyrolusite",
+        2
+      ],
+      [
+        "tantalite",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "mica_vein",
+    "layer": "DEEPSLATE",
+    "weight": 20,
+    "ore": [
+      [
+        "kyanite",
+        3
+      ],
+      [
+        "mica",
+        2
+      ],
+      [
+        "bauxite",
+        2
+      ],
+      [
+        "pollucite",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "mineral_sand_vein",
+    "layer": "STONE",
+    "weight": 80,
+    "ore": [
+      [
+        "basaltic_mineral_sand",
+        3
+      ],
+      [
+        "granitic_mineral_sand",
+        2
+      ],
+      [
+        "fullers_earth",
+        2
+      ],
+      [
+        "gypsum",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "nickel_vein",
+    "layer": "STONE",
+    "weight": 40,
+    "ore": [
+      [
+        "garnierite",
+        3
+      ],
+      [
+        "nickel",
+        2
+      ],
+      [
+        "cobaltite",
+        2
+      ],
+      [
+        "pentlandite",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "oilsands_vein",
+    "layer": "STONE",
+    "weight": 40,
+    "ore": [
+      [
+        "oilsands",
+        3
+      ],
+      [
+        "oilsands",
+        2
+      ],
+      [
+        "oilsands",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "olivine_vein",
+    "layer": "DEEPSLATE",
+    "weight": 20,
+    "ore": [
+      [
+        "bentonite",
+        3
+      ],
+      [
+        "magnesite",
+        2
+      ],
+      [
+        "olivine",
+        2
+      ],
+      [
+        "glauconite_sand",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "redstone_vein_ow",
+    "layer": "DEEPSLATE",
+    "weight": 60,
+    "ore": [
+      [
+        "redstone",
+        3
+      ],
+      [
+        "ruby",
+        2
+      ],
+      [
+        "cinnabar",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "salts_vein",
+    "layer": "STONE",
+    "weight": 50,
+    "ore": [
+      [
+        "rock_salt",
+        3
+      ],
+      [
+        "salt",
+        2
+      ],
+      [
+        "lepidolite",
+        1
+      ],
+      [
+        "spodumene",
+        1
+      ]
+    ]
+  },
+  {
+    "id": "sapphire_vein",
+    "layer": "DEEPSLATE",
+    "weight": 60,
+    "ore": [
+      [
+        "almandine",
+        3
+      ],
+      [
+        "pyrope",
+        2
+      ],
+      [
+        "sapphire",
+        1
+      ],
+      [
+        "green_sapphire",
+        1
+      ]
+    ]
+  }
+]

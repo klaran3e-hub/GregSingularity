@@ -1,0 +1,98 @@
+{
+  "fieldwork.knap": {
+    "subtitle": "subtitles.kubejs.fieldwork.knap",
+    "sounds": [
+      {
+        "name": "kubejs:fieldwork/default_dig_cracky_1",
+        "volume": 0.7
+      },
+      {
+        "name": "kubejs:fieldwork/default_dig_cracky_2",
+        "volume": 0.7
+      }
+    ]
+  },
+  "fieldwork.wash": {
+    "subtitle": "subtitles.kubejs.fieldwork.wash",
+    "sounds": [
+      {
+        "name": "kubejs:fieldwork/default_water_footstep_1",
+        "volume": 0.7
+      },
+      {
+        "name": "kubejs:fieldwork/default_water_footstep_2",
+        "volume": 0.7
+      }
+    ]
+  },
+  "fieldwork.fire": {
+    "subtitle": "subtitles.kubejs.fieldwork.fire",
+    "sounds": [
+      {
+        "name": "kubejs:fieldwork/fire_small",
+        "volume": 0.38
+      }
+    ]
+  },
+  "fieldwork.ram": {
+    "subtitle": "subtitles.kubejs.fieldwork.ram",
+    "sounds": [
+      {
+        "name": "kubejs:fieldwork/default_dig_crumbly",
+        "volume": 0.7
+      }
+    ]
+  },
+  "fieldwork.mill": {
+    "subtitle": "subtitles.kubejs.fieldwork.mill",
+    "sounds": [
+      {
+        "name": "kubejs:fieldwork/default_dig_cracky_3",
+        "volume": 0.7
+      },
+      {
+        "name": "kubejs:fieldwork/default_dig_crumbly",
+        "volume": 0.7
+      }
+    ]
+  },
+  "fieldwork.cut": {
+    "subtitle": "subtitles.kubejs.fieldwork.cut",
+    "sounds": [
+      {
+        "name": "kubejs:fieldwork/chop",
+        "volume": 0.7
+      },
+      {
+        "name": "kubejs:fieldwork/knifeslice",
+        "volume": 0.7
+      }
+    ]
+  },
+  "fieldwork.lash": {
+    "subtitle": "subtitles.kubejs.fieldwork.lash",
+    "sounds": [
+      {
+        "name": "kubejs:fieldwork/cloth1",
+        "volume": 0.7
+      },
+      {
+        "name": "kubejs:fieldwork/cloth3",
+        "volume": 0.7
+      }
+    ]
+  },
+  "fieldwork.strike": {
+    "subtitle": "subtitles.kubejs.fieldwork.strike",
+    "sounds": [
+      {
+        "name": "kubejs:fieldwork/metalclick",
+        "volume": 0.7
+      },
+      {
+        "name": "kubejs:fieldwork/metalpot2",
+        "volume": 0.7
+      }
+    ]
+  }
+}

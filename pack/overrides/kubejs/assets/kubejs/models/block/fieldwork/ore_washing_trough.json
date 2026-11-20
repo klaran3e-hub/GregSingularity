@@ -1,0 +1,788 @@
+{
+  "parent": "minecraft:block/block",
+  "ambientocclusion": true,
+  "textures": {
+    "particle": "minecraft:block/spruce_planks",
+    "masonry": "kubejs:block/bloomery_masonry",
+    "fireclay": "kubejs:block/bloomery_fireclay",
+    "scorched": "kubejs:block/bloomery_scorched",
+    "timber": "kubejs:block/bloomery_timber",
+    "leather": "kubejs:block/bloomery_leather",
+    "cold_coals": "kubejs:block/bloomery_cold_coals",
+    "live_coals": "kubejs:block/bloomery_live_coals",
+    "hearthstone": "kubejs:block/bloomery_hearthstone",
+    "plank": "minecraft:block/spruce_planks"
+  },
+  "elements": [
+    {
+      "name": "foot_a",
+      "from": [
+        0,
+        0,
+        2
+      ],
+      "to": [
+        16,
+        2,
+        5
+      ],
+      "shade": true,
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            3
+          ],
+          "texture": "#plank"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            3
+          ],
+          "texture": "#plank"
+        },
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            2
+          ],
+          "texture": "#plank"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            2
+          ],
+          "texture": "#plank"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            3,
+            2
+          ],
+          "texture": "#plank"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            3,
+            2
+          ],
+          "texture": "#plank"
+        }
+      }
+    },
+    {
+      "name": "foot_b",
+      "from": [
+        0,
+        0,
+        11
+      ],
+      "to": [
+        16,
+        2,
+        14
+      ],
+      "shade": true,
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            3
+          ],
+          "texture": "#plank"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            3
+          ],
+          "texture": "#plank"
+        },
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            2
+          ],
+          "texture": "#plank"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            2
+          ],
+          "texture": "#plank"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            3,
+            2
+          ],
+          "texture": "#plank"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            3,
+            2
+          ],
+          "texture": "#plank"
+        }
+      }
+    },
+    {
+      "name": "floor",
+      "from": [
+        1,
+        2,
+        1
+      ],
+      "to": [
+        15,
+        4,
+        15
+      ],
+      "shade": true,
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            0,
+            14,
+            14
+          ],
+          "texture": "#plank"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            14,
+            14
+          ],
+          "texture": "#plank"
+        },
+        "north": {
+          "uv": [
+            0,
+            0,
+            14,
+            2
+          ],
+          "texture": "#plank"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            14,
+            2
+          ],
+          "texture": "#plank"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            14,
+            2
+          ],
+          "texture": "#plank"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            14,
+            2
+          ],
+          "texture": "#plank"
+        }
+      }
+    },
+    {
+      "name": "wall_front",
+      "from": [
+        0,
+        4,
+        0
+      ],
+      "to": [
+        16,
+        9,
+        2
+      ],
+      "shade": true,
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            2
+          ],
+          "texture": "#plank"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            2
+          ],
+          "texture": "#plank"
+        },
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            5
+          ],
+          "texture": "#plank"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            5
+          ],
+          "texture": "#plank"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            2,
+            5
+          ],
+          "texture": "#plank"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            2,
+            5
+          ],
+          "texture": "#plank"
+        }
+      }
+    },
+    {
+      "name": "wall_back",
+      "from": [
+        0,
+        4,
+        14
+      ],
+      "to": [
+        16,
+        9,
+        16
+      ],
+      "shade": true,
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            2
+          ],
+          "texture": "#plank"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            2
+          ],
+          "texture": "#plank"
+        },
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            5
+          ],
+          "texture": "#plank"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            5
+          ],
+          "texture": "#plank"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            2,
+            5
+          ],
+          "texture": "#plank"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            2,
+            5
+          ],
+          "texture": "#plank"
+        }
+      }
+    },
+    {
+      "name": "wall_left",
+      "from": [
+        0,
+        4,
+        2
+      ],
+      "to": [
+        2,
+        9,
+        14
+      ],
+      "shade": true,
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            0,
+            2,
+            12
+          ],
+          "texture": "#plank"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            2,
+            12
+          ],
+          "texture": "#plank"
+        },
+        "north": {
+          "uv": [
+            0,
+            0,
+            2,
+            5
+          ],
+          "texture": "#plank"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            2,
+            5
+          ],
+          "texture": "#plank"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            12,
+            5
+          ],
+          "texture": "#plank"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            12,
+            5
+          ],
+          "texture": "#plank"
+        }
+      }
+    },
+    {
+      "name": "wall_right",
+      "from": [
+        14,
+        4,
+        2
+      ],
+      "to": [
+        16,
+        9,
+        14
+      ],
+      "shade": true,
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            0,
+            2,
+            12
+          ],
+          "texture": "#plank"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            2,
+            12
+          ],
+          "texture": "#plank"
+        },
+        "north": {
+          "uv": [
+            0,
+            0,
+            2,
+            5
+          ],
+          "texture": "#plank"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            2,
+            5
+          ],
+          "texture": "#plank"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            12,
+            5
+          ],
+          "texture": "#plank"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            12,
+            5
+          ],
+          "texture": "#plank"
+        }
+      }
+    },
+    {
+      "name": "sluice_4",
+      "from": [
+        2,
+        4,
+        4
+      ],
+      "to": [
+        14,
+        5,
+        5
+      ],
+      "shade": true,
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "north": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "texture": "#plank"
+        }
+      }
+    },
+    {
+      "name": "sluice_7",
+      "from": [
+        2,
+        4,
+        7
+      ],
+      "to": [
+        14,
+        5,
+        8
+      ],
+      "shade": true,
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "north": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "texture": "#plank"
+        }
+      }
+    },
+    {
+      "name": "sluice_10",
+      "from": [
+        2,
+        4,
+        10
+      ],
+      "to": [
+        14,
+        5,
+        11
+      ],
+      "shade": true,
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "north": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "texture": "#plank"
+        }
+      }
+    },
+    {
+      "name": "sluice_13",
+      "from": [
+        2,
+        4,
+        13
+      ],
+      "to": [
+        14,
+        5,
+        14
+      ],
+      "shade": true,
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "north": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "texture": "#plank"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "texture": "#plank"
+        }
+      }
+    }
+  ]
+}

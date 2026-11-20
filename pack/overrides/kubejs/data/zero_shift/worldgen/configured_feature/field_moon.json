@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "size": 10,
+    "discard_chance_on_air_exposure": 0.55,
+    "targets": [
+      {
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "ad_astra:moon_stone_replaceables"
+        },
+        "state": {
+          "Name": "kubejs:moon_desh_breccia"
+        }
+      }
+    ]
+  }
+}

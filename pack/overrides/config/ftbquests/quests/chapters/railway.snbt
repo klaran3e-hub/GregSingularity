@@ -6,14 +6,14 @@
   icon: "kubejs:rail_delivery_receipt"
   title: "Железная дорога"
   id: "4307DF0AEB1A048B"
-  order_index: 15
+  order_index: 16
   quest_links: []
   images: [{
     image: "kubejs:textures/quests/web/railway.png"
     x: 0.0d
     y: 0.0d
-    width: 23.204d
-    height: 20.093d
+    width: 26.380d
+    height: 16.139d
     order: -1
   }]
   quests: [
@@ -21,8 +21,8 @@
       id: "43D133081DB54121"
       title: "Стальная заготовка пути"
       description: ["Сохрани часть горячих болванок после домны. Собери заготовку из болванки, стальных и нержавеющих листов и огнеупора."]
-      x: -8.440d
-      y: 1.959d
+      x: -9.110d
+      y: 3.585d
       shape: "circle"
       size: 1.090d
       dependencies: ["49003E4C43790D16","48213B64C43AC340"]
@@ -42,9 +42,9 @@
     {
       id: "47DB4A84865DF907"
       title: "Прокат рельсового профиля"
-      description: ["Поставь форму пластины и штампуй профили на тяжёлом прессе Immersive Engineering."]
-      x: -5.060d
-      y: -4.085d
+      description: ["Положи заготовку профиля в гибочный станок MV. За 12 секунд выйдут два рельсовых профиля."]
+      x: -6.410d
+      y: -1.859d
       shape: "circle"
       size: 1.090d
       dependencies: ["43D133081DB54121","42FC2F9C0CA18C8C"]
@@ -65,8 +65,8 @@
       id: "43C8DEB0F7C8AB16"
       title: "Пропитка шпал"
       description: ["Подай дубовые доски, волокно, нагели, сталь и смазку в сборщик MV."]
-      x: -7.760d
-      y: -4.555d
+      x: -9.110d
+      y: -0.703d
       shape: "circle"
       size: 1.090d
       dependencies: ["4100CCF0CB377266","481EFC0EEFC2DEF6"]
@@ -85,18 +85,18 @@
     }
     {
       id: "40D0767422E1249C"
-      title: "Первые секции пути"
-      description: ["Сборщик MV выпускает 16 секций из четырёх профилей, четырёх шпал, восьми креплений и двух вкладышей. Подай 450 мБ смазки."]
-      x: -2.700d
-      y: -1.500d
+      title: "Путь из прокатного рельса"
+      description: ["Собери восемь секций пути из катаного рельса, шпалы и крепежа."]
+      x: -4.050d
+      y: 0.000d
       shape: "circle"
       size: 1.550d
       dependencies: ["47DB4A84865DF907","43C8DEB0F7C8AB16","4E0D45706FC6A121"]
       tasks: [{
         id: "4CBEFB4B5CA34078"
         type: "item"
-        item: "create:track"
-        count: 16L
+        item: "minecraft:rail"
+        count: 8L
       }]
       rewards: [{
         id: "4CC3C9AF5854C4B1"
@@ -107,10 +107,10 @@
     }
     {
       id: "474063D887DA246B"
-      title: "Запас на прямой перегон"
-      description: ["Для 192 прямых секций нужны 12 циклов сборщика. Повороты, уклоны и станции увеличивают расход пути."]
-      x: -0.340d
-      y: -5.073d
+      title: "Основание грузовой линии"
+      description: ["Заготовь 64 секции обычного рельса для длинного перегона."]
+      x: -1.010d
+      y: -2.023d
       shape: "circle"
       size: 0.910d
       dependencies: ["40D0767422E1249C"]
@@ -118,8 +118,8 @@
       tasks: [{
         id: "43314BCFB1F31B1B"
         type: "item"
-        item: "create:track"
-        count: 192L
+        item: "minecraft:rail"
+        count: 64L
       }]
       rewards: [{
         id: "414BEBA32F62EF32"
@@ -130,10 +130,10 @@
     }
     {
       id: "4D60D05BAF857AC3"
-      title: "Тяговый корпус"
-      description: ["Сборщик соединяет две оси с листами, рамами и жаростойким вкладышем. Корпус нужен станции и локомотиву."]
-      x: -7.760d
-      y: -1.357d
+      title: "Ходовая рама вагонетки"
+      description: ["Соедини две оси с листами, каркасами и жаростойким вкладышем. Рама входит в рецепт вагонетки."]
+      x: -9.110d
+      y: 1.443d
       shape: "circle"
       size: 1.090d
       dependencies: ["4D06EB526892D424","4799482036E52418"]
@@ -150,40 +150,18 @@
       }]
     }
     {
-      id: "46CA5251931CEC0D"
-      title: "Коробка станционных механизмов"
-      description: ["На тяговом корпусе собери два кожуха из листов нержавейки, креплений и вкладышей."]
-      x: -5.261d
-      y: 1.493d
-      shape: "circle"
-      size: 1.090d
-      dependencies: ["4D60D05BAF857AC3","4E0D45706FC6A121"]
-      tasks: [{
-        id: "474E2AA1B1B820EE"
-        type: "item"
-        item: "create:railway_casing"
-        count: 2L
-      }]
-      rewards: [{
-        id: "4A6A8970903DC8CB"
-        type: "item"
-        item: "gtceu:stainless_steel_plate"
-        count: 1
-      }]
-    }
-    {
       id: "4B68CC0CBE01C563"
-      title: "Станции отправления и приёмки"
-      description: ["Размести станции вдоль одного связного пути. Расстояние между блоками станций по горизонтали должно составлять не менее 192 блоков."]
-      x: 0.000d
+      title: "Два рельса-датчика"
+      description: ["Уложи рельс-датчик в пункте отправления и ещё один у получателя. Расстояние между ними должно быть не меньше 192 блоков."]
+      x: -1.350d
       y: 2.482d
       shape: "circle"
       size: 1.550d
-      dependencies: ["40D0767422E1249C","46CA5251931CEC0D","440E8E81A8CE044C"]
+      dependencies: ["40D0767422E1249C","440E8E81A8CE044C"]
       tasks: [{
         id: "48A00CF211D70EC1"
         type: "item"
-        item: "create:track_station"
+        item: "minecraft:detector_rail"
         count: 2L
       }]
       rewards: [{
@@ -194,187 +172,11 @@
       }]
     }
     {
-      id: "475942777780EDC2"
-      title: "Управление составом"
-      description: ["Собери пульт на тяговом корпусе с двумя реле, двумя моторами, осями и контактами."]
-      x: -5.060d
-      y: 3.933d
-      shape: "circle"
-      size: 1.090d
-      dependencies: ["4D60D05BAF857AC3","440E8E81A8CE044C","4F11DE4DB0D705CF"]
-      tasks: [{
-        id: "4C652AC5242611DD"
-        type: "item"
-        item: "create:controls"
-      }]
-      rewards: [{
-        id: "43F2A8972633B2D9"
-        type: "item"
-        item: "gtceu:steel_plate"
-        count: 1
-      }]
-    }
-    {
-      id: "4545F6B622CB5E08"
-      title: "Клей для состава"
-      description: ["Соедини смолу, полимер, парафин и уплотнение. Нанеси клей на блоки локомотива и вагона перед сборкой."]
-      x: -7.760d
-      y: 0.310d
-      shape: "circle"
-      size: 1.090d
-      dependencies: ["40E8A71E8042D10C","4100CCF0CB377266","4799482036E52418"]
-      tasks: [{
-        id: "4599FA959C0202F5"
-        type: "item"
-        item: "create:super_glue"
-      }]
-      rewards: [{
-        id: "48799F8B63258BED"
-        type: "item"
-        item: "gtceu:iron_plate"
-        count: 3
-      }]
-    }
-    {
-      id: "47F14BDD4A685438"
-      title: "Инвентарь вагона"
-      description: ["Приклей хранилище к раме состава и собери поезд у станции. Груз должен лежать в хранилище самого поезда."]
-      x: -2.700d
-      y: 1.500d
-      shape: "circle"
-      size: 1.550d
-      dependencies: ["46CA5251931CEC0D","4545F6B622CB5E08"]
-      tasks: [{
-        id: "45B6BEEFEC2C7083"
-        type: "item"
-        item: "create:item_vault"
-      }]
-      rewards: [{
-        id: "46E87F8E68007DD8"
-        type: "item"
-        item: "gtceu:iron_plate"
-        count: 3
-      }]
-    }
-    {
-      id: "451391277F36ABAA"
-      title: "Расписание состава"
-      description: ["Собери расписание. Для автоматического рейса назначь две остановки и положи расписание водителю."]
-      x: 3.040d
-      y: -0.077d
-      shape: "circle"
-      size: 0.910d
-      dependencies: ["440E8E81A8CE044C","4B68CC0CBE01C563"]
-      optional: true
-      tasks: [{
-        id: "48BCE3F0F9276348"
-        type: "item"
-        item: "create:schedule"
-      }]
-      rewards: [{
-        id: "4DF3186911A359B1"
-        type: "item"
-        item: "gtceu:stainless_steel_plate"
-        count: 1
-      }]
-    }
-    {
-      id: "428C2235259F3C95"
-      title: "Сигналы на маршруте"
-      description: ["Разметь участки пути перед встречным движением. Для первого рейса допустима одна линия и один состав."]
-      x: 3.040d
-      y: 2.716d
-      shape: "circle"
-      size: 0.910d
-      dependencies: ["440E8E81A8CE044C","4B68CC0CBE01C563"]
-      optional: true
-      tasks: [{
-        id: "4EC5D57A86619F7B"
-        type: "item"
-        item: "create:track_signal"
-        count: 2L
-      }]
-      rewards: [{
-        id: "4BA8BFE230C19803"
-        type: "item"
-        item: "gtceu:bronze_plate"
-        count: 2
-      }]
-    }
-    {
-      id: "43F966E4C2D77C84"
-      title: "Контроль прибытия"
-      description: ["Поставь наблюдатель на путь и выведи сигнал прибытия к приёмному складу."]
-      x: 2.360d
-      y: 7.096d
-      shape: "circle"
-      size: 0.910d
-      dependencies: ["440E8E81A8CE044C","4B68CC0CBE01C563"]
-      optional: true
-      tasks: [{
-        id: "471BAAC659D051FB"
-        type: "item"
-        item: "create:track_observer"
-      }]
-      rewards: [{
-        id: "40FE33B00A1DC20F"
-        type: "item"
-        item: "gtceu:iron_plate"
-        count: 2
-      }]
-    }
-    {
-      id: "44A167F6688A5AD3"
-      title: "Грузовые интерфейсы разгрузки"
-      description: ["Один интерфейс едет в составе, второй стоит у приёмки. Ящики первой партии оставь в вагоне до предъявления накладной."]
-      x: 0.340d
-      y: -2.166d
-      shape: "circle"
-      size: 0.910d
-      dependencies: ["47F14BDD4A685438","41AF8F5C14E516BE"]
-      optional: true
-      tasks: [{
-        id: "45466254C9099941"
-        type: "item"
-        item: "create:portable_storage_interface"
-        count: 2L
-      }]
-      rewards: [{
-        id: "4BB64C0F5B4E1D4B"
-        type: "item"
-        item: "gtceu:stainless_steel_plate"
-        count: 1
-      }]
-    }
-    {
-      id: "434A7CDFA259A594"
-      title: "Двери грузового вагона"
-      description: ["Собери двери из нержавейки, двух осей, шарниров и уплотнений."]
-      x: -8.440d
-      y: 6.950d
-      shape: "circle"
-      size: 0.910d
-      dependencies: ["4D06EB526892D424","42F96AB63F8EABA4"]
-      optional: true
-      tasks: [{
-        id: "40BFB23F9998206A"
-        type: "item"
-        item: "create:train_door"
-        count: 2L
-      }]
-      rewards: [{
-        id: "41509779F37827E8"
-        type: "item"
-        item: "gtceu:copper_plate"
-        count: 2
-      }]
-    }
-    {
       id: "4AB148067459DFF0"
       title: "Путевая вагонетка"
       description: ["Тяговый корпус, оси и крепления нужны даже обычной вагонетке. Добавь сундук и уплотнения."]
-      x: -0.340d
-      y: -0.940d
+      x: -1.690d
+      y: 0.406d
       shape: "circle"
       size: 0.910d
       dependencies: ["4D60D05BAF857AC3","40D0767422E1249C"]
@@ -395,11 +197,11 @@
       id: "42F104BD2B146A1C"
       title: "Восемь ящиков на рейс"
       description: ["Два цикла сборщика упакуют 16 вкладышей. Загрузи восемь опломбированных ящиков в приклеенное хранилище."]
-      x: -0.340d
-      y: 0.683d
+      x: 1.690d
+      y: -1.670d
       shape: "circle"
       size: 1.090d
-      dependencies: ["47F14BDD4A685438","49101C0EF60D3F63"]
+      dependencies: ["4AB148067459DFF0","49101C0EF60D3F63"]
       tasks: [{
         id: "4EED245F704C7AC2"
         type: "item"
@@ -415,13 +217,13 @@
     }
     {
       id: "4EF12C9F608B9D9F"
-      title: "Накладная отправления"
-      description: ["Держа накладную, нажми ПКМ по станции, у которой стоит загруженный поезд. Накладная запомнит состав и координаты."]
-      x: 2.360d
-      y: 1.321d
+      title: "Накладная на вагонетку"
+      description: ["Останови вагонетку с восемью опломбированными ящиками на рельсе-датчике. Нажми по рельсу накладной."]
+      x: 3.845d
+      y: 1.825d
       shape: "circle"
       size: 1.090d
-      dependencies: ["4B68CC0CBE01C563","475942777780EDC2","42F104BD2B146A1C"]
+      dependencies: ["4B68CC0CBE01C563","42F104BD2B146A1C","4AB148067459DFF0"]
       tasks: [{
         id: "47A67C698E0C28BA"
         type: "item"
@@ -436,13 +238,13 @@
     }
     {
       id: "4D7BEFD3CE932B12"
-      title: "Приёмка первого груза"
-      description: ["Довези состав до второй станции и предъяви накладную. Станция примет восемь ящиков из вагона и выдаст квитанцию."]
-      x: 5.400d
-      y: -2.338d
+      title: "Приёмка вагонетки"
+      description: ["Доставь ту же вагонетку с восемью ящиками на другой рельс-датчик за 192 блока. Предъяви ту же накладную."]
+      x: 6.750d
+      y: 0.598d
       shape: "circle"
       size: 1.900d
-      dependencies: ["4EF12C9F608B9D9F","47F14BDD4A685438","4545F6B622CB5E08"]
+      dependencies: ["4EF12C9F608B9D9F"]
       tasks: [{
         id: "48095C99D70332F5"
         type: "item"
@@ -459,8 +261,8 @@
       id: "42383999A08CB602"
       title: "Вторая смена поставок"
       description: ["Оформи новый бланк и отвези вторую партию. Запас пригодится при серийной сборке корпусов HV."]
-      x: 8.440d
-      y: -6.371d
+      x: 9.790d
+      y: -1.841d
       shape: "circle"
       size: 0.910d
       dependencies: ["4D7BEFD3CE932B12"]
@@ -481,9 +283,9 @@
     {
       id: "4C76290595DB25BC"
       title: "Профили на длинный участок пути"
-      description: ["Прокатай двадцать четыре профиля на прессе IE. Сложи их у места сборки пути вместе со шпалами."]
-      x: -0.340d
-      y: -7.102d
+      description: ["Прокатай двадцать четыре профиля на гибочном станке MV. Отложи их для сборки пути вместе с крепежом."]
+      x: -1.690d
+      y: -4.162d
       shape: "circle"
       size: 0.910d
       dependencies: ["47DB4A84865DF907","40D0767422E1249C"]
@@ -505,8 +307,8 @@
       id: "4F203B8715C44062"
       title: "Шпалы со стальным крепежом"
       description: ["Подай в сборщик MV дубовые доски, волокно, нагели, сталь и смазку. Держи двадцать четыре готовые шпалы у рельсовых профилей."]
-      x: 2.360d
-      y: -3.471d
+      x: 1.010d
+      y: 2.787d
       shape: "circle"
       size: 0.910d
       dependencies: ["43C8DEB0F7C8AB16","474063D887DA246B"]
@@ -526,19 +328,19 @@
     }
     {
       id: "4A99438279F57B3D"
-      title: "Запас пути на разъезд"
-      description: ["Подготовь девяносто шесть секций пути. Часть уложи на обходной участок для обслуживания составов."]
-      x: 2.360d
-      y: -5.000d
+      title: "Разъезд для вагонеток"
+      description: ["Продли линию и оставь место для второй вагонетки с сундуком."]
+      x: 1.568d
+      y: -5.397d
       shape: "circle"
       size: 0.910d
-      dependencies: ["40D0767422E1249C","4B68CC0CBE01C563"]
+      dependencies: ["474063D887DA246B"]
       optional: true
       tasks: [{
         id: "41495CF8FBE671A1"
         type: "item"
-        item: "create:track"
-        count: 96L
+        item: "minecraft:rail"
+        count: 64L
       }]
       rewards: [{
         id: "4A20E335052BD7F5"
@@ -548,126 +350,11 @@
       }]
     }
     {
-      id: "4D79E4029BAFD5FD"
-      title: "Станции для трёх точек маршрута"
-      description: ["Подготовь три станции. Назначь имена отправлению, приёмке и запасной точке."]
-      x: 5.060d
-      y: 6.010d
-      shape: "circle"
-      size: 0.910d
-      dependencies: ["4B68CC0CBE01C563","451391277F36ABAA"]
-      optional: true
-      tasks: [{
-        id: "44E4ECF3E1B48AC4"
-        type: "item"
-        item: "create:track_station"
-        count: 3L
-      }]
-      rewards: [{
-        id: "40786AA6E1E61D3B"
-        type: "item"
-        item: "gtceu:bronze_plate"
-        count: 2
-      }]
-    }
-    {
-      id: "4ED3698ED60044B9"
-      title: "Сигналы для двух направлений"
-      description: ["Собери шесть сигналов. Поставь их по направлениям и проверь остановку перед занятым участком."]
-      x: 5.478d
-      y: -4.437d
-      shape: "circle"
-      size: 0.910d
-      dependencies: ["428C2235259F3C95","4A99438279F57B3D"]
-      optional: true
-      tasks: [{
-        id: "41538D8DAC3A4A41"
-        type: "item"
-        item: "create:track_signal"
-        count: 6L
-      }]
-      rewards: [{
-        id: "49892D6BF74D682C"
-        type: "item"
-        item: "gtceu:copper_plate"
-        count: 2
-      }]
-    }
-    {
-      id: "4ACBAE4D3C7004E3"
-      title: "Грузовые хранилища второго вагона"
-      description: ["Собери четыре секции грузового хранилища. Выдели разгрузку для запечатанных ящиков."]
-      x: 2.360d
-      y: 4.156d
-      shape: "circle"
-      size: 0.910d
-      dependencies: ["47F14BDD4A685438","44A167F6688A5AD3"]
-      optional: true
-      tasks: [{
-        id: "4FB0C86FF9584805"
-        type: "item"
-        item: "create:item_vault"
-        count: 4L
-      }]
-      rewards: [{
-        id: "49D12BD2A8595B22"
-        type: "item"
-        item: "gtceu:steel_plate"
-        count: 1
-      }]
-    }
-    {
-      id: "4CBCA6B734F87B9B"
-      title: "Четыре интерфейса для двух станций"
-      description: ["Раздели интерфейсы на две пары. На каждой станции сведи интерфейс вагона с неподвижной частью разгрузки."]
-      x: 5.395d
-      y: 1.129d
-      shape: "circle"
-      size: 0.910d
-      dependencies: ["44A167F6688A5AD3","4ACBAE4D3C7004E3"]
-      optional: true
-      tasks: [{
-        id: "4F728FBDD947DDFD"
-        type: "item"
-        item: "create:portable_storage_interface"
-        count: 4L
-      }]
-      rewards: [{
-        id: "49B77ACF8416B536"
-        type: "item"
-        item: "gtceu:iron_plate"
-        count: 2
-      }]
-    }
-    {
-      id: "492CF819755DE911"
-      title: "Наблюдатели для станции и разъезда"
-      description: ["Собери четыре наблюдателя. Оставь одну пару для разгрузки и вторую у разъезда."]
-      x: 5.740d
-      y: 4.437d
-      shape: "circle"
-      size: 0.910d
-      dependencies: ["43F966E4C2D77C84","428C2235259F3C95"]
-      optional: true
-      tasks: [{
-        id: "4E5265D14887FC26"
-        type: "item"
-        item: "create:track_observer"
-        count: 4L
-      }]
-      rewards: [{
-        id: "495FC9437B821599"
-        type: "item"
-        item: "gtceu:bronze_plate"
-        count: 2
-      }]
-    }
-    {
       id: "4D12B423FF144A42"
       title: "Накладные на повторные рейсы"
       description: ["Подготовь три чистые накладные. Оформляй новую на каждую отправку по готовому маршруту."]
-      x: 8.194d
-      y: 0.569d
+      x: 9.110d
+      y: 2.935d
       shape: "circle"
       size: 0.910d
       dependencies: ["4EF12C9F608B9D9F","4D7BEFD3CE932B12"]
@@ -689,11 +376,11 @@
       id: "4EA21D6B4FB2B632"
       title: "Вагонетки для осмотра путей"
       description: ["Собери две путевые вагонетки. Оставь их по обе стороны перегона для осмотра и ремонта."]
-      x: 7.760d
-      y: -2.855d
+      x: 1.178d
+      y: 0.818d
       shape: "circle"
       size: 0.910d
-      dependencies: ["4AB148067459DFF0","4ED3698ED60044B9"]
+      dependencies: ["4AB148067459DFF0","4B68CC0CBE01C563"]
       optional: true
       tasks: [{
         id: "4CA6F53D79D60573"

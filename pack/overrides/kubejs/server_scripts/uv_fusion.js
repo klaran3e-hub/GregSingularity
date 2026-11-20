@@ -35,15 +35,22 @@ ServerEvents.recipes(event => {
     'wetware_processor_computer', 'crystal_processor_mainframe', 'network_switch']
     .forEach(id => event.remove({ output: gt(id) }))
 
+  // Keep sulfate recovery available once the Mk III has made the first Naquadria.
+  event.remove({ id: gt('electric_blast_furnace/naquadria_sulfate_separation') })
+  event.recipes.gtceu.electric_blast_furnace(gt('naquadria_sulfate_separation'))
+    .itemInputs('6x gtceu:naquadria_sulfate_dust').notConsumable(Item.of(gt('naquadria_ingot')))
+    .inputFluids(Fluid.of(gt('hydrogen'), 2000)).itemOutputs(gt('hot_naquadria_ingot'))
+    .outputFluids(Fluid.of(gt('sulfuric_acid'), 1000)).blastFurnaceTemp(9000).duration(600).EUt(122880)
+
   machine('assembler', 'wind_field_cassette', [
     '4x gtceu:fusion_coil', '8x ' + tritanium, '4x ' + americium, '4x ' + laminate, '4x ' + shunt,
     '2x gtceu:zpm_field_generator', '4x gtceu:yttrium_barium_cuprate_quadruple_cable',
-    '4x immersiveengineering:coil_hv', '2x create:rotation_speed_controller'
+    '4x gtceu:hv_voltage_coil', '2x gtceu:good_electronic_circuit'
   ], '2x ' + field, 7000, 126976).inputFluids(Fluid.of(cold, 7200))
   machine('assembler', 'build_fusion_casing_mk3', [
     '4x gtceu:fusion_casing_mk2', '8x ' + tritanium, '6x ' + laminate, '2x ' + field, '4x ' + americium,
     '4x kubejs:zpm_neutron_laminate', '4x kubejs:iv_arc_plate',
-    '4x pneumaticcraft:reinforced_pressure_tube', '4x immersiveengineering:sheetmetal_steel'
+    '4x pneumaticcraft:reinforced_pressure_tube', '4x gtceu:double_steel_plate'
   ], '4x gtceu:fusion_casing_mk3', 6900, 126976).inputFluids(Fluid.of(lubricant, 6400))
   machine('assembler', 'calibrate_reactor_standard', [
     '4x ' + field, '4x ' + interlock, '4x ' + shunt, '4x gtceu:zpm_sensor', '4x gtceu:crystal_processor_computer',
@@ -69,7 +76,7 @@ ServerEvents.recipes(event => {
     '4x ' + americium, '4x kubejs:zpm_shielded_cask', '4x ae2:engineering_processor'
   ], '2x ' + capsule, 6200, 122880).notConsumable(Item.of(permit))
     .inputFluids(Fluid.of(shield, 5400)).dimension('minecraft:the_end')
-  machine('chemical_reactor', 'prepare_neutronium_feed', ['2x ' + capsule], '', 5800, 126976)
+  machine('chemical_reactor', 'prepare_neutronium_feed', ['2x ' + capsule, 'kubejs:titan_radiator_core'], '', 5800, 126976)
     .inputFluids(Fluid.of(gt('radon'), 3200)).inputFluids(Fluid.of(gt('deuterium'), 3600))
     .outputFluids(Fluid.of(part('neutronium_feed'), 1440)).dimension('minecraft:the_nether')
   machine('fusion_reactor', 'synthesize_neutronium', [], '', 1080, 262144)
@@ -82,7 +89,7 @@ ServerEvents.recipes(event => {
   machine('assembler', 'build_quench_cassette', [
     '8x ' + tritanium, '4x ' + americium, '4x ' + laminate, '4x ' + field, '4x kubejs:iv_cooling_jacket',
     '2x gtceu:uv_electric_pump', '8x kubejs:vacuum_gasket',
-    '2x pneumaticcraft:heat_sink', '2x immersiveengineering:fluid_pump'
+    '2x pneumaticcraft:heat_sink', '2x kubejs:titan_radiator_core'
   ], '2x ' + coolantCassette, 7300, 393216).inputFluids(Fluid.of(cold, 9200))
   machine('vacuum_freezer', 'test_neutronium_coupon', ['4x ' + tritanium], '4x ' + coupon, 6400, 393216)
     .inputFluids(Fluid.of(neutronium, 720))
@@ -115,7 +122,7 @@ ServerEvents.recipes(event => {
     '64x ' + coupon, '4x ' + coolantCassette, '4x ' + part('phase_interlock')
   ], part('neutronium_acceptance_crate'), 11600, 507904).inputFluids(Fluid.of(cold, 9600))
   const report = machine('assembly_line', 'close_uv_shift', [
-    '64x ' + coupon, '2x ' + part('freight_manifest'), '8x ' + witness, '8x ' + reserve, '16x ' + interlock,
+    '2x kubejs:titan_load_standard', '64x ' + coupon, '2x ' + part('freight_manifest'), '8x ' + witness, '8x ' + reserve, '16x ' + interlock,
     '8x gtceu:wetware_processor_computer', '8x gtceu:crystal_processor_mainframe', '8x gtceu:uv_lapotronic_battery',
     '16x gtceu:neutronium_plate', '8x ae2:256k_crafting_storage', '8x ' + coolantCassette, '8x expatternprovider:ingredient_buffer', part('neutronium_acceptance_crate')
   ], part('commissioning_report'), 28800, 507904)

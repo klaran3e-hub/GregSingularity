@@ -1,0 +1,11 @@
+{
+  "type": "zero_shift:titan",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "zero_shift:titan_dunes"
+    },
+    "settings": "zero_shift:titan"
+  }
+}

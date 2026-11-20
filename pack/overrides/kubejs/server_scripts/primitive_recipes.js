@@ -1,6 +1,6 @@
 ServerEvents.recipes(event => {
-  const knife = 'gtceu:flint_knife'
-  const hammer = 'gtceu:flint_hammer'
+  const knife = '#gtceu:tools/crafting_knives'
+  const hammer = '#gtceu:tools/crafting_hammers'
   const drill = 'kubejs:fire_drill'
   const flintTools = ['knife', 'axe', 'pickaxe', 'saw', 'shovel', 'hoe', 'sword', 'mortar', 'hammer']
   flintTools.forEach(tool => event.remove({ output: 'gtceu:flint_' + tool }))
@@ -33,12 +33,6 @@ ServerEvents.recipes(event => {
   for (const id of replaced) {
     event.remove({ output: 'minecraft:' + id })
   }
-  for (const id of ['minecraft:copper_ingot', 'minecraft:iron_ingot', 'minecraft:gold_ingot', 'gtceu:tin_ingot', 'gtceu:bronze_ingot']) {
-    for (const type of ['minecraft:smelting', 'minecraft:blasting']) {
-      event.remove({ type: type, output: id })
-    }
-  }
-
   function shaped(id, output, pattern, keys) {
     return event.shaped(output, pattern, keys).id('zero_shift:' + id)
   }
@@ -63,17 +57,12 @@ ServerEvents.recipes(event => {
   shapeless('fibre_from_saplings', 'kubejs:plant_fibre', ['#minecraft:saplings', '#minecraft:saplings', 'minecraft:gravel'])
   shapeless('fibre_from_reeds', 'kubejs:plant_fibre', ['minecraft:sugar_cane', 'minecraft:sugar_cane'])
   shaped('sort_gravel', 'minecraft:flint', ['GG', 'GG'], { G: 'minecraft:gravel' })
-  shapeless('knap_flint', 'kubejs:flint_shard', ['minecraft:flint', 'minecraft:flint', 'minecraft:gravel'])
-  shaped('flint_knife', knife, ['FS', 'TB'], {
-    F: 'kubejs:flint_shard', S: 'minecraft:stick', T: 'minecraft:flint', B: 'kubejs:plant_fibre'
-  })
   for (const [id, plant] of [['cane', 'minecraft:sugar_cane'], ['wheat', 'minecraft:wheat'], ['kelp', 'minecraft:kelp']]) {
     shapeless('fibre_from_' + id, '2x kubejs:plant_fibre', [plant, plant, knife]).damageIngredient(knife)
   }
   shaped('braid_cord', 'kubejs:fibre_cord', ['WW', 'WW'], { W: 'kubejs:washed_fibre' })
   shapeless('tool_binding', 'kubejs:tool_binding', ['kubejs:fibre_cord', 'kubejs:fibre_cord', 'kubejs:washed_fibre'])
   shapeless('twisted_string', 'minecraft:string', ['kubejs:fibre_cord', 'kubejs:washed_fibre', knife]).damageIngredient(knife)
-  shapeless('carve_handle', 'kubejs:tool_handle', ['minecraft:stick', 'minecraft:stick', knife]).damageIngredient(knife)
   shapeless('split_slat', 'kubejs:rough_slat', ['minecraft:stick', 'minecraft:stick', 'minecraft:stick', knife]).damageIngredient(knife)
   shapeless('carve_peg', '2x kubejs:wooden_peg', ['minecraft:stick', knife]).damageIngredient(knife)
   shaped('workbench_frame', 'kubejs:workbench_frame', ['HP', 'BH'], {
@@ -83,11 +72,11 @@ ServerEvents.recipes(event => {
     S: 'kubejs:rough_slat', B: 'kubejs:tool_binding'
   })
   shaped('workbench', 'minecraft:crafting_table', ['TP', 'FB'], {
-    T: 'kubejs:workbench_top', P: 'kubejs:wooden_peg', F: 'kubejs:workbench_frame', B: 'kubejs:tool_binding'
+    T: 'kubejs:workbench_top', P: 'kubejs:wedged_tenon', F: 'kubejs:workbench_frame', B: 'kubejs:tool_binding'
   })
 
-  shaped('pick_head', 'kubejs:pick_head', ['FFF', ' G '], { F: 'kubejs:flint_shard', G: 'minecraft:gravel' })
-  shaped('axe_head', 'kubejs:axe_head', ['FF', 'FG'], { F: 'kubejs:flint_shard', G: 'minecraft:gravel' })
+  shaped('pick_head', 'kubejs:pick_head', ['FFF', ' G '], { F: 'kubejs:lapped_edge', G: 'minecraft:gravel' })
+  shaped('axe_head', 'kubejs:axe_head', ['FF', 'FG'], { F: 'kubejs:lapped_edge', G: 'minecraft:gravel' })
   for (const kind of ['pickaxe', 'axe']) {
     shaped('haft_flint_' + kind, 'gtceu:flint_' + kind, ['BHB', ' P ', ' S '], {
       B: 'kubejs:tool_binding', H: kind === 'pickaxe' ? 'kubejs:pick_head' : 'kubejs:axe_head',
@@ -109,7 +98,7 @@ ServerEvents.recipes(event => {
   shaped('flint_mortar', 'gtceu:flint_mortar', ['FHF', 'CPC', 'CCC'], {
     F: 'kubejs:flint_shard', H: 'kubejs:tool_handle', C: '#forge:cobblestone', P: 'kubejs:wooden_peg'
   })
-  shaped('stone_hammer', hammer, ['FCF', 'CBC', ' H '], {
+  shaped('stone_hammer', 'gtceu:flint_hammer', ['FCF', 'CBC', ' H '], {
     F: 'kubejs:flint_shard', C: '#forge:cobblestone', B: 'kubejs:tool_binding', H: 'kubejs:tool_handle'
   })
   shaped('stone_hoe', 'minecraft:stone_hoe', ['FCB', ' PH', ' H '], {
@@ -122,21 +111,32 @@ ServerEvents.recipes(event => {
 
   function woodRecipes(id, planks, logs) {
     shapeless('hand_split_' + id, '2x ' + planks, [logs, knife]).damageIngredient(knife)
-    shapeless('hand_saw_' + id, '3x ' + planks, [logs, 'gtceu:flint_saw']).damageIngredient('gtceu:flint_saw')
-    event.custom({
-      type: 'create:cutting',
-      ingredients: [{ tag: logs.substring(1) }],
-      processingTime: 160,
-      results: [{ item: planks, count: 4 }]
-    }).id('zero_shift:create/saw_planks_' + id)
+    shapeless('hand_saw_' + id, '3x ' + planks, [logs, '#gtceu:tools/crafting_saws']).damageIngredient('#gtceu:tools/crafting_saws')
+    event.recipes.gtceu.cutter('zero_shift:timber/cut_' + id)
+      .itemInputs(logs).inputFluids(Fluid.of('minecraft:water', 50))
+      .itemOutputs(Item.of(planks, 6)).duration(120).EUt(24)
   }
   Object.entries(woods).forEach(([wood, logs]) => {
     const planks = 'minecraft:' + wood + '_planks'
     event.remove({ output: planks })
     woodRecipes(wood, planks, logs)
   })
+  function fitSlab(planks, slab, stockId) {
+    event.remove({ id: stockId })
+    event.shaped(slab, ['PPP', ' J '], { P: planks, J: 'kubejs:wooden_peg' }).id(stockId)
+  }
   event.remove({ output: 'gtceu:rubber_planks' })
   woodRecipes('rubber', 'gtceu:rubber_planks', '#gtceu:rubber_logs')
+  fitSlab('gtceu:rubber_planks', 'gtceu:rubber_slab', 'gtceu:shaped/rubber_slab')
+  fitSlab('gtceu:treated_wood_planks', 'gtceu:treated_wood_slab', 'gtceu:shaped/treated_slab')
+  ;['driftwood', 'river'].forEach(wood => {
+    const planks = 'upgrade_aquatic:' + wood + '_planks'
+    if (!Item.exists(planks)) return
+    const slab = 'upgrade_aquatic:' + wood + '_slab'
+    event.remove({ output: planks })
+    woodRecipes(wood, planks, '#upgrade_aquatic:' + wood + '_logs')
+    fitSlab(planks, slab, slab)
+  })
   const forestryWood = [
     'acacia_desert', 'balsa', 'baobab', 'beech', 'chestnut', 'citrus', 'cocobolo', 'coconut',
     'dogwood', 'ebony', 'elm', 'feijoa', 'fir', 'giganteum', 'ginkgo', 'greenheart',
@@ -149,6 +149,16 @@ ServerEvents.recipes(event => {
     const planks = 'forestry:' + wood + '_planks'
     event.remove({ id: planks })
     woodRecipes('forestry_' + wood, planks, '#forestry:' + wood + '_logs')
+    const slab = 'forestry:' + wood + '_slab'
+    fitSlab(planks, slab, slab)
+  })
+  const fireproofVanillaWood = ['acacia', 'birch', 'cherry', 'dark_oak', 'jungle', 'oak', 'spruce']
+  forestryWood.concat(fireproofVanillaWood).forEach(wood => {
+    const planks = 'forestry:' + wood + '_fireproof_planks'
+    event.remove({ id: planks })
+    woodRecipes('forestry_fireproof_' + wood, planks, '#forestry:fireproof_' + wood + '_logs')
+    const slab = 'forestry:' + wood + '_fireproof_slab'
+    fitSlab(planks, slab, slab)
   })
   shapeless('split_sticks', '2x minecraft:stick', ['#minecraft:planks', knife]).damageIngredient(knife)
   shaped('chest', 'minecraft:chest', ['PPP', 'BHB', 'PPP'], {
@@ -166,36 +176,32 @@ ServerEvents.recipes(event => {
     D: drill, S: 'minecraft:stick', T: 'kubejs:plant_fibre', L: '#minecraft:logs_that_burn'
   }).damageIngredient(drill)
 
-  event.remove({ id: 'create:crafting/appliances/dough' })
-  shapeless('hand_grind_wheat', 'create:wheat_flour', [
+  shapeless('hand_grind_wheat', 'kubejs:coarse_flour', [
     'minecraft:wheat', 'minecraft:wheat', 'minecraft:wheat', hammer
   ]).damageIngredient(hammer)
-  shapeless('hand_grind_wheat_mortar', '2x create:wheat_flour', [
-    'minecraft:wheat', 'minecraft:wheat', 'minecraft:wheat', 'gtceu:flint_mortar'
-  ]).damageIngredient('gtceu:flint_mortar')
-  firing('hearth_bread', 'campfire_cooking', 'create:dough', 'minecraft:bread', 900, 0.1)
-  firing('kiln_bread', 'smelting', 'create:dough', 'minecraft:bread', 360, 0.1)
-  firing('smoker_bread', 'smoking', 'create:dough', 'minecraft:bread', 180, 0.1)
+  shapeless('hand_grind_wheat_mortar', '2x kubejs:coarse_flour', [
+    'minecraft:wheat', 'minecraft:wheat', 'minecraft:wheat', '#gtceu:tools/crafting_mortars'
+  ]).damageIngredient('#gtceu:tools/crafting_mortars')
+  firing('hearth_bread', 'campfire_cooking', 'kubejs:camp_dough', 'minecraft:bread', 900, 0.1)
+  firing('kiln_bread', 'smelting', 'kubejs:camp_dough', 'minecraft:bread', 360, 0.1)
+  firing('smoker_bread', 'smoking', 'kubejs:camp_dough', 'minecraft:bread', 180, 0.1)
 
   shapeless('temper_sand', '2x kubejs:sand_temper', ['#minecraft:sand', 'minecraft:gravel', hammer]).damageIngredient(hammer)
-  shaped('wet_lining', 'kubejs:wet_lining', ['CC', 'SF'], {
-    C: 'minecraft:clay_ball', S: 'kubejs:sand_temper', F: 'kubejs:washed_fibre'
+  shaped('wet_lining', '2x kubejs:wet_lining', ['CC', 'SF'], {
+    C: 'kubejs:ramming_mix', S: 'kubejs:sand_temper', F: 'kubejs:washed_fibre'
   })
   shaped('unfired_clay_bucket', 'kubejs:unfired_clay_bucket', ['C C', 'CSC', ' C '], {
-    C: 'minecraft:clay_ball', S: 'kubejs:sand_temper'
+    C: 'kubejs:clay_slip_cake', S: 'kubejs:sand_temper'
   })
   firing('pit_fire_clay_bucket', 'campfire_cooking', 'kubejs:unfired_clay_bucket', 'kubejs:clay_bucket', 1600, 0)
   firing('kiln_fire_clay_bucket', 'smelting', 'kubejs:unfired_clay_bucket', 'kubejs:clay_bucket', 620, 0.1)
   firing('pit_fire_lining', 'campfire_cooking', 'kubejs:wet_lining', 'kubejs:fired_lining', 1800, 0)
   firing('kiln_fire_lining', 'smelting', 'kubejs:wet_lining', 'kubejs:fired_lining', 700, 0.1)
   firing('blast_fire_lining', 'blasting', 'kubejs:wet_lining', 'kubejs:fired_lining', 350, 0.1)
-  event.recipes.gtceu.electric_furnace('zero_shift:gtceu/furnace/industrial_fired_lining')
-    .itemInputs('kubejs:wet_lining')
-    .itemOutputs('kubejs:fired_lining')
-    .duration(1800)
-    .EUt(16)
-  event.recipes.gtceu.electric_furnace('zero_shift:gtceu/furnace/batch_fired_lining')
+  // GregTech's electric furnace already imports the smelting recipe above.
+  event.recipes.gtceu.alloy_smelter('zero_shift:batch_fired_lining')
     .itemInputs('4x kubejs:wet_lining')
+    .notConsumable('kubejs:kiln_grate')
     .itemOutputs('4x kubejs:fired_lining')
     .duration(1800)
     .EUt(30)
@@ -216,7 +222,7 @@ ServerEvents.recipes(event => {
   })
   firing('kiln_brick', 'smelting', 'minecraft:clay_ball', 'minecraft:brick', 340, 0.15)
   shaped('unfired_crucible', 'kubejs:unfired_crucible', ['C C', 'CSC'], {
-    C: 'minecraft:clay_ball', S: 'kubejs:sand_temper'
+    C: 'kubejs:ramming_mix', S: 'kubejs:sand_temper'
   })
   firing('kiln_crucible', 'smelting', 'kubejs:unfired_crucible', 'kubejs:fired_crucible', 560, 0.2)
 
@@ -228,20 +234,17 @@ ServerEvents.recipes(event => {
   shaped('copper_charge', 'kubejs:copper_charge', ['WWW', 'WCW', ' T '], {
     W: 'kubejs:washed_copper_grit', C: 'kubejs:fired_crucible', T: 'minecraft:charcoal'
   })
-  firing('kiln_copper', 'smelting', 'kubejs:copper_charge', 'minecraft:copper_ingot', 800, 0.7)
   for (const [metal, ingot] of [['tin', 'gtceu:tin_ingot'], ['gold', 'minecraft:gold_ingot']]) {
     shaped(metal + '_charge', 'kubejs:' + metal + '_charge', ['WWW', 'TCT', ' L '], {
       W: 'kubejs:washed_' + metal + '_grit', T: 'minecraft:charcoal',
       C: 'kubejs:fired_crucible', L: 'kubejs:fired_lining'
     })
-    firing('kiln_' + metal, 'smelting', 'kubejs:' + metal + '_charge', ingot, 1000, 0.7)
   }
   shapeless('hammer_copper_strap', 'kubejs:copper_strap', ['minecraft:copper_ingot', hammer]).damageIngredient(hammer)
   shaped('iron_charge', 'kubejs:iron_charge', ['WWW', 'TCT', 'LSL'], {
     W: 'kubejs:washed_iron_grit', T: 'minecraft:charcoal', C: 'kubejs:fired_crucible',
     L: 'kubejs:fired_lining', S: 'kubejs:copper_strap'
   })
-  firing('kiln_bloom', 'smelting', 'kubejs:iron_charge', 'kubejs:iron_bloom', 1200, 0.7)
   shaped('forge_bloom', 'minecraft:iron_ingot', ['H', 'B', 'C'], {
     H: hammer, B: 'kubejs:iron_bloom', C: 'minecraft:charcoal'
   }).damageIngredient(hammer)

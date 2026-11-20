@@ -1,0 +1,45 @@
+ServerEvents.recipes(event => {
+  const gt = id => 'gtceu:' + id
+  const part = id => 'kubejs:luv_' + id
+  const cold = part('optical_coolant'), warm = part('warm_optical_coolant')
+  const prefix = 'zero_shift:luv_ceres/'
+  const machine = (type, name) => event.recipes.gtceu[type](prefix + name)
+
+  machine('forming_press','press_prism_blank')
+    .itemInputs('2x gtceu:quartzite_gem','ad_astra:calorite_plate','2x ad_astra:mercury_cobblestone')
+    .itemOutputs('2x ' + part('prism_blank')).duration(660).EUt(12288)
+  machine('arc_furnace','anneal_mercury_mount').itemInputs(part('prism_blank'))
+    .inputFluids(Fluid.of(gt('oxygen'),250)).itemOutputs(part('annealed_mount'))
+    .dimension('ad_astra:mercury').duration(900).EUt(22528)
+  machine('laser_engraver','align_venus_prism').itemInputs(part('annealed_mount'))
+    .notConsumable('kubejs:iv_line_datum').itemOutputs('2x ' + part('venus_timing_prism'))
+    .dimension('ad_astra:venus').duration(960).EUt(24576)
+  machine('assembler','seal_mars_cartridge')
+    .itemInputs('2x kubejs:iv_mars_refractory_grain','kubejs:ev_filter_pleat',
+      '2x gtceu:niobium_titanium_plate','kubejs:vacuum_gasket')
+    .inputFluids(Fluid.of(gt('soldering_alloy'),288)).itemOutputs(part('cryo_cartridge'))
+    .dimension('ad_astra:mars').duration(1080).EUt(22528)
+  machine('mixer','blend_optical_coolant').itemInputs('gtceu:quartzite_dust','kubejs:ev_filter_pleat')
+    .inputFluids(Fluid.of('kubejs:chilled_vacuum_coolant',750),Fluid.of(gt('helium'),250))
+    .outputFluids(Fluid.of(cold,1000)).duration(840).EUt(24576)
+  machine('chemical_reactor','recover_optical_coolant').notConsumable(part('cryo_cartridge'))
+    .inputFluids(Fluid.of(warm,1000),Fluid.of(gt('helium'),250))
+    .outputFluids(Fluid.of(cold,1000)).duration(540).EUt(22528)
+  machine('lathe','turn_rotor_spindle').itemInputs('2x gtceu:hssg_ingot')
+    .itemOutputs(part('rotor_spindle')).duration(750).EUt(16384)
+  machine('forming_press','press_witness_blank')
+    .itemInputs('2x gtceu:rhodium_plated_palladium_plate','gtceu:neutron_reflector')
+    .notConsumable('gtceu:plate_casting_mold').itemOutputs('2x ' + part('witness_blank'))
+    .duration(960).EUt(24576)
+  machine('chemical_reactor','leach_ceres_salt').itemInputs('kubejs:mill_ceres_assay')
+    .notConsumable('gtceu:sapphire_gem').inputFluids(Fluid.of(gt('distilled_water'),400)).itemOutputs('2x ' + part('ceres_salt_concentrate'))
+    .dimension('zero_shift:ceres').duration(820).EUt(24576)
+  machine('chemical_bath','cut_glacio_seed').itemInputs('kubejs:mill_glacio_assay')
+    .inputFluids(Fluid.of(cold,1000)).itemOutputs('2x ' + part('glacio_seed'))
+    .outputFluids(Fluid.of(warm,1000)).dimension('ad_astra:glacio').duration(1000).EUt(24576)
+
+  event.custom({type:'ad_astra:space_station_recipe',dimension:'zero_shift:ceres_orbit',structure:'ad_astra:space_station',
+    ingredients:[['gtceu:hssg_plate',32],['kubejs:venus_thermal_screen',4],['ad_astra:large_gas_tank',4],
+      ['kubejs:vacuum_gasket',8]].map(row=>({ingredient:{item:row[0]},count:row[1]}))
+  }).id('zero_shift:space/ceres_station')
+})

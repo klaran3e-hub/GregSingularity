@@ -28,12 +28,13 @@ ServerEvents.recipes(event => {
   const slat = part('rough_slat')
   const strap = part('copper_strap')
   const binding = part('tool_binding')
-  const dough = 'create:dough'
+  const dough = 'kubejs:camp_dough'
   const planks = '#minecraft:planks'
   const water = mc('water')
+  const stockRecipes = []
 
   function clear(names) {
-    names.forEach(name => event.remove({ output: mc(name) }))
+    names.forEach(name => stockRecipes.push({ output: mc(name) }))
   }
   function craft(name, output, inputs) {
     event.shapeless(output, inputs).id(prefix + name)
@@ -45,12 +46,10 @@ ServerEvents.recipes(event => {
     return id.startsWith('#') ? { tag: id.slice(1) } : { item: id }
   }
   function basin(operation, name, inputs, fluid, amount, output, count, ticks) {
-    event.custom({
-      type: 'create:' + operation,
-      ingredients: inputs.map(item).concat({ fluid: fluid, amount: amount }),
-      results: [{ item: output, count: count }],
-      processingTime: ticks
-    }).id(prefix + name)
+    global.fieldworkProcess(event, prefix + name, operation === 'mixing' ? 'mixer' : 'assembler', {
+      ingredients: inputs.map(item).concat({fluid: fluid, amount: amount}),
+      results: [{item: output, count: count}], processingTime: ticks
+    }, 24)
   }
 
   const cooked = [
@@ -63,7 +62,7 @@ ServerEvents.recipes(event => {
   const cooking = [['smelting', 360], ['smoking', 200], ['campfire_cooking', 900]]
   cooked.forEach(([source, output, experience]) => {
     cooking.forEach(([type, ticks]) => {
-      event.remove({ type: mc(type), output: mc(output) })
+      stockRecipes.push({ type: mc(type), output: mc(output) })
       event.custom({
         type: mc(type), category: 'food', ingredient: { item: mc(source) },
         result: mc(output), cookingtime: ticks, experience: experience
@@ -77,7 +76,6 @@ ServerEvents.recipes(event => {
   const cane = mc('sugar_cane')
   craft('filter_cane_sugar', sugar, [cane, cane, fibre])
   craft('filter_honey_sugar', '2x ' + sugar, [mc('honey_bottle'), fibre, fibre])
-  event.remove({ id: 'create:milling/sugar_cane' })
   basin('mixing', 'wash_sugar_crystals', [cane, cane, cane, cane, fibre], water, 200, sugar, 3, 260)
 
   shaped('layer_cake', mc('cake'), [' M ', 'SES', 'DDD'], {
@@ -160,10 +158,8 @@ ServerEvents.recipes(event => {
   craft('recover_letter_paper', mc('paper'), [letter, letter, letter, fibre])
   ;['diamond', 'golden', 'iron', 'leather'].forEach(material => {
     const armor = material + '_horse_armor'
-    event.remove({ id: 'create:crushing/' + armor })
     basin('mixing', 'recover_' + armor + '_lining', [mc(armor), temper], water, 250, mc('leather'), 1, 200)
   })
-  event.remove({ id: 'create:milling/saddle' })
   basin('mixing', 'recover_saddle_lining', [mc('saddle'), temper], water, 250, mc('leather'), 1, 200)
 
   clear(['honey_block', 'honey_bottle', 'honeycomb_block', 'beehive'])
@@ -177,11 +173,10 @@ ServerEvents.recipes(event => {
   shaped('frame_hive', mc('beehive'), ['PCP', 'HHH', 'PFP'], {
     P: planks, H: honeycomb, C: strap, F: fibre
   })
-  basin('compacting', 'press_fluid_honey', [honeycomb, fibre], 'create:honey', 1000, honeyBlock, 1, 220)
-  event.custom({
-    type: 'create:filling', ingredients: [{ item: bottle }, { fluid: 'create:honey', amount: 300 }],
+  basin('compacting', 'press_fluid_honey', [honeycomb, fibre], 'forestry:honey', 1000, honeyBlock, 1, 220)
+  global.fieldworkProcess(event, prefix + 'fill_honey_bottle', 'canner', { ingredients: [{ item: bottle }, { fluid: 'forestry:honey', amount: 300 }],
     results: [{ item: honey }]
-  }).id(prefix + 'fill_honey_bottle')
+  }, 24)
 
   craft('bottle_forestry_honey', honey, [bottle, 'forestry:honey_drop', 'forestry:honey_drop',
     'forestry:honey_drop', fibre])
@@ -207,20 +202,13 @@ ServerEvents.recipes(event => {
   const tall = ['lilac', 'sunflower', 'peony', 'rose_bush', 'pitcher_plant']
   Object.entries(pigments).forEach(([color, sources]) => {
     sources.forEach(source => {
-      event.remove({ id: 'create:milling/' + source })
       const raw = mc(source)
       const yieldCount = tall.includes(source) ? 2 : 1
       craft('grind_' + source, yieldCount + 'x ' + dye(color), [raw, temper, fibre])
       basin('mixing', 'extract_' + source, [raw, raw, temper], water, 100, dye(color), yieldCount * 2, 180)
     })
   })
-  event.remove({ id: /^immersiveengineering:(?:crusher\/(?:black|blue|white)_dye|crafting\/lead_white|smelting\/lead_red)$/ })
   event.remove({ id: 'pneumaticcraft:assembly/red_dye' })
-  event.remove({ id: 'create:milling/bone' })
-  event.remove({ id: 'create:milling/calcite' })
-  event.remove({ id: 'create:milling/coal' })
-  event.remove({ id: 'create:milling/fern' })
-  event.remove({ id: 'create:milling/large_fern' })
   basin('mixing', 'sift_beet_seeds', [mc('beetroot'), mc('beetroot'), fibre], water, 100, mc('beetroot_seeds'), 1, 180)
   ;[['fern', 1], ['large_fern', 2]].forEach(([source, count]) => {
     basin('mixing', 'sort_' + source + '_seeds', [mc(source), mc(source), fibre], water, 100, mc('wheat_seeds'), count, 180)
@@ -261,4 +249,7 @@ ServerEvents.recipes(event => {
       W: wool, C: cord, S: mc('stick')
     })
   })
+
+  // KubeJS filters only the original recipe map, so the replacements remain intact.
+  event.remove(stockRecipes)
 })

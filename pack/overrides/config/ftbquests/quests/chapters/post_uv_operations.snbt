@@ -6,7 +6,7 @@
   icon: "kubejs:post_uv_operations_certificate"
   title: "Эксплуатация после UV"
   id: "4FA9B89ED1A1E937"
-  order_index: 9
+  order_index: 10
   quest_links: []
   images: [{
     image: "kubejs:textures/quests/web/post_uv_operations.png"
@@ -84,8 +84,8 @@
     }
     {
       id: "4DFB2F837B93BCCE"
-      title: "Измерительные катушки IE для шин UV"
-      description: ["Отведи партию катушек Immersive Engineering в стерильный цех. На каждой шине измерительная обмотка и силовой медный ввод выполняют разные задачи."]
+      title: "Измерительные катушки напряжения для шин UV"
+      description: ["Отведи партию катушек напряжения в стерильный цех. На каждой шине измерительная обмотка и силовой медный ввод выполняют разные задачи."]
       x: -1.654d
       y: 1.650d
       shape: "circle"
@@ -94,7 +94,7 @@
       tasks: [{
         id: "4B8D26C1B8DCE818"
         type: "item"
-        item: "immersiveengineering:coil_hv"
+        item: "gtceu:hv_voltage_coil"
         count: 4L
       }]
       rewards: [{
@@ -107,7 +107,7 @@
     {
       id: "42D25FCC04C94E52"
       title: "Диагностика нагрузки на шинах"
-      description: ["Соедини датчики UV, катушки IE, P2P-туннели и кристаллические мейнфреймы. Сборщику схем в стерильной комнате нужно свободное место для партии из четырёх блоков."]
+      description: ["Соедини датчики UV, катушки напряжения, P2P-туннели и кристаллические мейнфреймы. Сборщику схем в стерильной комнате нужно свободное место для партии из четырёх блоков."]
       x: 1.314d
       y: 2.482d
       shape: "circle"
@@ -128,8 +128,8 @@
     }
     {
       id: "41F1D1FF9C8A891B"
-      title: "Регуляторы для испытания привода"
-      description: ["Подготовь четыре регулятора оборотов Create для нагрузочной сборки. Добавь их к аккумуляторам, трансформаторам и шинам в сборщике UV."]
+      title: "Аварийное питание / схема MV"
+      description: ["Схема MV входит в регулятор резервной линии."]
       x: -1.654d
       y: -4.105d
       shape: "circle"
@@ -138,7 +138,7 @@
       tasks: [{
         id: "481B5FEDE7D1153E"
         type: "item"
-        item: "create:rotation_speed_controller"
+        item: "gtceu:good_electronic_circuit"
         count: 4L
       }]
       rewards: [{
@@ -238,7 +238,7 @@
     {
       id: "412397AA89017BDA"
       title: "Эталон времени грузовой сети"
-      description: ["Изготовь часы в Энде. Сборщик UV принимает концентрат, накладные обеих ступеней, датчики уровня Create и детали ME."]
+      description: ["Для операции «Эталон времени грузовой сети» подготовь рабочее место в сборщике GregTech. В состав загрузки входят «Допуск к эксплуатации», «Грузовая накладная комплекса UV», «Межпространственная грузовая накладная»."]
       x: 1.445d
       y: -4.658d
       shape: "circle"
@@ -335,7 +335,9 @@
       tasks: [{
         id: "48EE4869F1E00636"
         type: "item"
-        item: "gtceu:data_orb"
+        item: { id: "gtceu:data_orb", Count: 1b, tag: {"assembly_line_research":{"research_id":"1x_kubejs_post_uv_supply_sync_record","research_type":"gtceu:assembly_line"}} }
+        match_nbt: true
+        weak_nbt_match: true
       }]
       rewards: [{
         id: "41EBBC9929C2CE8D"

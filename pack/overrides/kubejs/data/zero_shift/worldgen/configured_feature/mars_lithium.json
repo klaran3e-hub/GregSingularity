@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "size": 7,
+    "discard_chance_on_air_exposure": 0.18,
+    "targets": [
+      {
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "ad_astra:mars_stone_replaceables"
+        },
+        "state": {
+          "Name": "gtceu:lithium_ore"
+        }
+      }
+    ]
+  }
+}

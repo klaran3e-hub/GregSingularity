@@ -1,35 +1,36 @@
-# GregTech: Industrial Brain Damage · Beta 1.0.1
+# GregSingularity
 
-Версия сборки для Minecraft 1.20.1, Forge 47.4.28 и Java 17.
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="branding/public/cover.jpg">
+  <img src="branding/public/cover.gif" alt="GregSingularity">
+</picture>
 
-[Скачать Beta 1.0.1](https://github.com/klaran3e-hub/gregtech-industrial-brain-damage/releases/tag/v1.0.1-beta) · [Discord сборки](https://discord.gg/PppDQ2ZE6P)
+The first furnace is a field bloomery you build yourself. The last shift asks for a working factory, reserve power and deliveries from three dimensions. GregSingularity is an expert industrial pack for Minecraft 1.20.1, Forge and Java 17.
 
-В Discord можно обсудить завод и прохождение, сообщить о баге или предложить доработку.
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="branding/public/workshop.jpg">
+  <img src="branding/public/workshop.gif" alt="The first bronze">
+</picture>
 
-В Minecraft проверены отдельные переходы и финальная сборочная линия с подачей предметов и жидкостей через AE2. Полное прохождение в одном мире выживания ожидает подтверждения.
+Cut timber with GregTech tools, wash crushed ore and prepare clay crucibles. Build the elongated bloomery and cast your first bronze. Steam machines take over crushing and smelting when the workshop can feed a boiler.
 
-## Установка и обновление
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="branding/public/automation.jpg">
+  <img src="branding/public/automation.gif" alt="Factory automation">
+</picture>
 
-Импортируй `GregTech-Industrial-Brain-Damage-1.0.1-beta.zip` через **Import** в CurseForge. Для проверки всей прогрессии начни новый мир. В новых чанках отключены поверхностные нефтяные источники GregTech. Залежи доступны для буровой. При первом входе получишь книгу FTB Quests. Книга также открывается кнопкой из инвентаря. В JEI наведи курсор на предмет и нажми **R**, чтобы увидеть рецепты, или **U**, чтобы увидеть применения. Собственные предметы находятся на вкладке **GTIBD Addon** в творческом инвентаре.
+Start an ME network at MV. Encode processing patterns for parts and fluids, connect GregTech and PneumaticCraft equipment, and keep the refinery supplied. The quest book connects the workshop, voltage tiers and optional branches across 22 chapters.
 
-При запуске виден экран распределительной камеры с анимацией и фактическим процентом загрузки ресурсов. Главное меню и пауза оформлены как пост управления литейным цехом.
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="branding/public/space.jpg">
+  <img src="branding/public/space.gif" alt="Off-world industry">
+</picture>
 
-В книге 2126 заданий в 19 главах. Основная прогрессия идёт от ручной мастерской, Create и пара через LV, MV, HV, EV, IV, LuV, ZPM и UV через три производственные ступени после UV к приёмке главного завода. У AE2, складских ящиков, железной дороги, камня и стекла, Forestry с Gendustry и деревообработки есть свои главы.
+Space opens the path to EV. Build a supply route through Mars and Venus, then fly Tier V to Ceres, Tier VI to Europa and Tier VII to Titan. Each of these three rockets takes its own fuel. Eight sites have ore-processing lines that begin on the body where the deposit was mined.
 
-Крупные узлы на карте обозначают важные операции и переходы. Ветки сходятся там, где оборудование или материал участвует в следующей операции. Полный список условий виден в карточке. Награду забирают вручную, один раз на команду.
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="branding/public/community.jpg">
+  <img src="branding/public/community.gif" alt="Community & support">
+</picture>
 
-Древесная ферма Forestry открывается на LV. Пасеки и оборудование Gendustry начинают с HV. В ExtendedAE расширенные узлы сети требуют EV, резак и расширенный молекулярный сборщик требуют IV, матрица автосборки требует LuV.
-
-Перед переносом мира из alpha.16 сделай резервную копию. Если использовал оборудование прежнего дополнения AE2, выгрузи предметы и жидкости из его ячеек и демонтируй его блоки в alpha.16. После этого перенеси мир в новую версию.
-
-В alpha.19 незавершённые прецизионные механизмы из старого рецепта нужно изготовить заново. Для новой серии положи раму IE на ленту. Укладчики устанавливают шестерню, изоляцию и схему LV, затем деталь проходит через пресс Create. Повтори эти четыре операции дважды.
-
-В alpha.20 отключены дома механика PneumaticCraft с готовым компрессором и добавление деталей мода в сундуки подземелий. В новых сделках механика остаётся чертёж платы. Ранее созданные дома и сделки уже появившихся механиков сохраняются.
-
-Для обновления с v0.0.1 выйди из игры, сохрани резервную копию профиля и импортируй ZIP в новый профиль CurseForge. Перенеси папку нужного мира из `saves` старого профиля в `saves` нового. Настройки клавиш можно перенести файлом `options.txt`. На сервере обнови моды и содержимое `overrides`, сохранив папку мира. Набор модов на клиенте и сервере должен соответствовать новой версии.
-
-В старых мирах кремнёвые инструменты GTIBD в инвентаре заменятся при входе. Печи и верстаки, уже созданные в мире, останутся на месте. Замена рабочих блоков на декоративные применяется при генерации новых чанков.
-
-## Текстуры
-
-Для 347 предметов GTIBD Addon нарисованы спрайты **16 × 16** в стиле GTCEu. Глиняные вёдра используют тонированную ванильную текстуру и отдельный слой воды. В alpha.15 добавлены 30 предметов приёмочной смены и две жидкости. Исходники находятся в `tools/item-art` и собираются командой `node tools/draw-items.mjs`.
+[Download the pack](https://www.curseforge.com/minecraft/modpacks/gregsingularity) · [GregSingularity Core](https://www.curseforge.com/minecraft/mc-mods/gregsingularity-core) · [GitHub releases](https://github.com/klaran3e-hub/GregSingularity/releases) · [Community Discord](https://discord.gg/GXNCjUfSdt). Share factory layouts or report a bug with your version and reproduction steps. Back up your save and import 0.2.0 into a fresh profile. The early progression and world generation were redesigned.

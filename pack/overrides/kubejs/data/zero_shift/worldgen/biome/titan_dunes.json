@@ -1,0 +1,31 @@
+{
+  "has_precipitation": false,
+  "temperature": 0,
+  "downfall": 0,
+  "effects": {
+    "fog_color": 8149824,
+    "sky_color": 8149824,
+    "water_color": 5531764,
+    "water_fog_color": 1648179
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {
+    "air": []
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "zero_shift:titan_seam_core",
+      "zero_shift:titan_cassiterite_sand",
+      "zero_shift:titan_garnet_sand",
+      "zero_shift:titan_asbestos",
+      "zero_shift:titan_diatomite"
+    ]
+  ]
+}

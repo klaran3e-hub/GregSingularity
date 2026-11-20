@@ -28,11 +28,10 @@ ServerEvents.recipes(event => {
     return event.recipes.gtceu[type](id(name)).duration(duration).EUt(voltage)
   }
 
-  event.custom({
-    type: 'create:pressing',
+  global.fieldworkProcess(event, id('press_membrane_frame'), 'forming_press', {
     ingredients: [{ item: 'kubejs:final_heavy_backplane' }],
     results: [{ item: frame }]
-  }).id(id('press_membrane_frame'))
+  }, 126976)
 
   machine('autoclave', 'sinter_membranes', 9600, 458752)
     .itemInputs('8x ' + frame, '8x kubejs:uv_structural_laminate')
@@ -53,7 +52,7 @@ ServerEvents.recipes(event => {
 
   machine('assembler', 'build_separation_manifold', 14400, 507904)
     .itemInputs('2x ' + cartridge, '8x gtceu:tritanium_plate', '4x expatternprovider:ex_pattern_provider',
-      '4x gtceu:uv_electric_pump', '8x immersiveengineering:heavy_engineering', '8x kubejs:final_telemetry_unit')
+      '4x gtceu:uv_electric_pump', '8x gtceu:steel_frame', '8x kubejs:final_telemetry_unit')
     .notConsumable(Item.of(operations))
     .inputFluids(Fluid.of(shield, 12800))
     .itemOutputs(manifold)
@@ -78,7 +77,7 @@ ServerEvents.recipes(event => {
 
   machine('chemical_reactor', 'cure_purge_adsorbent', 9200, 475136)
     .itemInputs('16x gtceu:carbon_dust', '8x gtceu:boron_dust')
-    .inputFluids(Fluid.of(brine, 2000))
+    .inputFluids(Fluid.of(brine, 2000), Fluid.of('kubejs:titan_orbital_coolant', 500))
     .itemOutputs('4x ' + adsorbent)
     .outputFluids(Fluid.of(depletedBrine, 1600))
 

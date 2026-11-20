@@ -35,16 +35,15 @@ ServerEvents.recipes(event => {
   }
 
   function press(id, input, output, count) {
-    event.custom({
-      type: 'create:pressing',
+    global.fieldworkProcess(event, 'zero_shift:lv/' + id, 'forge_hammer', {
       ingredients: [{ item: input }],
       results: [{ item: output, count: count }]
-    }).id('zero_shift:lv/' + id)
+    }, 4)
   }
 
-  shaped('steam_compressor', 'gtceu:lp_steam_compressor', ['PSP', 'VCV', 'BFB'], {
-    P: 'gtceu:bronze_plate', S: seal, V: pipe,
-    C: 'gtceu:bronze_machine_casing', B: bronzeBlank, F: 'create:mechanical_press'
+  shaped('steam_compressor', 'gtceu:lp_steam_compressor', ['PSP', 'VCT', 'BFB'], {
+    P: 'gtceu:bronze_plate', S: seal, V: pipe, T: 'kubejs:packed_steam_valve',
+    C: 'gtceu:bronze_machine_casing', B: bronzeBlank, F: 'kubejs:forging_saddle'
   })
 
   event.recipes.gtceu.extractor('zero_shift:lv/steam_extract_resin')
@@ -109,30 +108,30 @@ ServerEvents.recipes(event => {
     P: ironPlate, B: bronzeBlank, I: tape
   })
   shaped('wind_stator', 'kubejs:wound_stator', ['FIF', 'PSP', 'FIF'], {
-    F: foil, I: tape, P: ironPlate, S: 'create:shaft'
+    F: foil, I: tape, P: ironPlate, S: 'kubejs:turned_spindle'
   })
   shaped('magnetize_armature', 'kubejs:magnetic_armature', ['RPR', 'BSB', 'RPR'], {
-    R: 'minecraft:redstone', P: ironPlate, B: bronzeBlank, S: 'create:shaft'
+    R: 'minecraft:redstone', P: ironPlate, B: bronzeBlank, S: 'kubejs:turned_spindle'
   })
   shaped('lv_electric_motor', motor, ['PCP', 'SAR', 'PCP'], {
     P: ironPlate, C: tinCable, S: 'kubejs:wound_stator',
     A: 'kubejs:magnetic_armature', R: rivet
   })
   shaped('lv_conveyor_module', conveyor, ['BIB', 'SMS', 'PCP'], {
-    B: 'kubejs:woven_drive_belt', I: tape, S: 'create:shaft',
+    B: 'kubejs:woven_drive_belt', I: tape, S: 'kubejs:turned_spindle',
     M: motor, P: ironPlate, C: tinCable
   })
   shaped('turbine_rotor_blank', 'kubejs:turbine_rotor_blank', ['BRB', 'RSR', 'BRB'], {
-    B: bronzeBlank, R: rivet, S: 'create:shaft'
+    B: bronzeBlank, R: rivet, S: 'kubejs:turned_spindle'
   })
   event.recipes.gtceu.forge_hammer('zero_shift:lv/balance_turbine_rotor')
     .itemInputs('kubejs:turbine_rotor_blank')
     .itemOutputs('kubejs:balanced_turbine_rotor')
     .duration(200)
     .EUt(4)
-  shaped('lv_steam_turbine', 'gtceu:lv_steam_turbine', ['SRS', 'PHM', 'ICI'], {
-    S: seal, R: 'kubejs:balanced_turbine_rotor', P: pipe,
-    H: hull, M: motor, I: ironPlate, C: circuit
+  shaped('lv_steam_turbine', 'gtceu:lv_steam_turbine', ['SRT', 'PHM', 'ICI'], {
+    S: seal, R: 'kubejs:balanced_turbine_rotor', P: pipe, T: 'kubejs:packed_steam_valve',
+    H: hull, M: motor, I: 'gtceu:steel_plate', C: circuit
   })
   // GregTech small generators trim all fluid outputs during recipe execution.
   event.remove({ id: 'gtceu:steam_turbine/steam' })
@@ -145,8 +144,8 @@ ServerEvents.recipes(event => {
   })
   event.recipes.gtceu.assembler('zero_shift:lv/series_circuit')
     .itemInputs('2x ' + printed, '4x ' + resistor, '2x ' + tube, '4x ' + tinWire,
-      '2x ' + solder, '2x ' + foil, '2x ' + tape)
-    .inputFluids(Fluid.of('minecraft:water', 250))
+      '2x ' + foil, '2x ' + tape)
+    .inputFluids(Fluid.of('gtceu:tin', 144))
     .itemOutputs('2x ' + circuit)
     .duration(400)
     .EUt(16)

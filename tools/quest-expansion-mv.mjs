@@ -1,7 +1,6 @@
 const gt = id => 'gtceu:' + id
 const mv = id => gt('mv_' + id)
 const create = id => 'create:' + id
-const ie = id => 'immersiveengineering:' + id
 const pnc = id => 'pneumaticcraft:' + id
 const kube = id => 'kubejs:' + id
 
@@ -11,7 +10,7 @@ export function expandMv(chapters) {
 
   section('mv').push(
     ['mv_pressure_gear', 'Шестерня компрессора', pnc('compressed_iron_gear'), 1, ['pressed_iron', 'ie_steel', 'bushing'], 'В сборщике соедини стальную шестерню с прессованным железом, заклёпками и втулками.'],
-    ['mv_pressure_stone', 'Камень для основания', pnc('reinforced_stone'), 4, ['pressed_iron', 'pressed_steel_frame', 'furnace_lining_insert'], 'Усиль обычный камень прессованным железом, футеровкой и рамой IE.'],
+    ['mv_pressure_stone', 'Камень для основания', pnc('reinforced_stone'), 4, ['pressed_iron', 'pressed_steel_frame', 'furnace_lining_insert'], 'Усиль обычный камень прессованным железом, футеровкой и штампованной стальной рамой.'],
     ['mv_pressure_stone_base', 'Основание компрессора', pnc('stone_base'), 1, ['mv_pressure_stone', 'pressure_tubes'], 'Поставь две усиленные секции на раму. Добавь воздушную трубу, заклёпки и уплотнение.']
   )
   add('mv', [
@@ -40,16 +39,16 @@ export function expandMv(chapters) {
     ['mv_machine_centrifuge', 'Раздельная выгрузка из центрифуги', mv('centrifuge'), 1, ['mv_assembler', 'lv_balanced_rotor', 'mv_motor'], 'Отведи продукты в отдельные ячейки. Оставь свободный выход для побочных фракций.'],
     ['mv_machine_sifter', 'Просев дроблёной породы', mv('sifter'), 1, ['mv_assembler', 'strainer_mesh', 'nether_mv_macerator'], 'Подай продукт дробилки в просеиватель. Поставь фильтр перед складом концентратов.'],
     ['mv_machine_cutter', 'Резка с подачей смазки', mv('cutter'), 1, ['mv_assembler', 'saw', 'nether_mv_piston'], 'Установи пилу Create, запасные зубья и поршень MV. При резке подай жидкость, указанную в выбранном рецепте.'],
-    ['mv_machine_fluid_solidifier', 'Литьё в сменную форму', mv('fluid_solidifier'), 1, ['mv_pump', 'mv_sample_spout', 'ie_press_mold'], 'Собери формовщик с носиком Create, насосом и матрицей IE. На рабочей линии проверь, что выход принимает отливку.'],
+    ['mv_machine_fluid_solidifier', 'Литьё в сменную форму', mv('fluid_solidifier'), 1, ['mv_pump', 'mv_sample_spout', 'ie_press_mold'], 'Собери формовщик с носиком Create, насосом и матрицей. На рабочей линии проверь, что выход принимает отливку.'],
     ['mv_machine_pack', 'Упаковка деталей по партиям', mv('packer'), 1, ['nether_mv_conveyor', 'mv_assembler'], 'Поставь упаковщик между складом и сборочным участком. Оставь место под возврат материалов с выходной стороны.'],
     ['mv_work_sensor', 'Датчик с медной обмоткой', mv('sensor'), 1, ['mv_voltage_coil', 'mv_circuit_batch', 'mv_pressure_gauge', 'lv_shop_sensor'], 'Собери датчик MV с катушкой, манометром и двумя стеклянными колбами. Отложи второй экземпляр под схемы управления.'],
-    ['mv_work_emitter', 'Передатчик сигнала MV', mv('emitter'), 1, ['mv_voltage_coil', 'mv_circuit_batch', 'lv_shop_emitter', 'lv_create_precision'], 'Перенеси эмиттер LV на новую обмотку, добавь схему MV, механику Create и блок управления IE. Храни передатчики рядом с датчиками и схемами.'],
+    ['mv_work_emitter', 'Передатчик сигнала MV', mv('emitter'), 1, ['mv_voltage_coil', 'mv_circuit_batch', 'lv_shop_emitter', 'lv_create_precision'], 'Перенеси эмиттер LV на новую обмотку, добавь схему MV, механику Create и блок управления. Храни передатчики рядом с датчиками и схемами.'],
     ['mv_work_power_unit', 'Силовой блок ручного инструмента', mv('power_unit'), 1, ['mv_sodium_battery', 'chemical_grade_seal', 'mv_motor', 'paraffin_cake'], 'Собери новый силовой блок на натриевой батарее. Перед работой заряди его в заряднике GregTech.'],
     ['mv_work_drill', 'Электробур с редуктором MV', mv('steel_drill'), 1, ['mv_work_power_unit', 'nether_mv_piston', 'drill_seal_head'], 'Перенеси стальную головку на силовой блок MV. Оставь сменный комплект деталей у зарядника.']
   ])
 
   section('oilfield').push(
-    ['mv_ie_fluid_pump', 'Насос буровой IE', ie('fluid_pump'), 1, ['mv_pump', 'lv_ie_pipe', 'create_water_pump', 'ie_steel'], 'Собери насос из насоса MV, четырёх труб IE, насоса Create и уплотнений. Один уйдёт в контроллер буровой.'],
+    ['mv_ie_fluid_pump', 'Насос буровой', 'gtceu:lv_electric_pump', 1, ['mv_pump', 'lv_ie_pipe', 'create_water_pump', 'ie_steel'], 'Собери насос из насоса MV, четырёх труб, насоса Create и уплотнений. Один уйдёт в контроллер буровой.'],
     ['mv_filter_basin', 'Чаша для прессования фильтра', create('basin'), 1, ['press', 'mixer', 'copper_contacts'], 'Установи чашу под прессом Create. При подаче смеси оставь свободным выход для готовых сеток.'],
     ['mv_sample_spout', 'Розлив проб через носик Create', create('spout'), 1, ['sample_ampoules', 'mv_pump', 'create_water_pump'], 'Поставь носик над депо или лентой. Подключи ёмкость с выбранной фракцией и поставь пустую ампулу под носик.'],
     ['mv_oil_pumps', 'Подача из четырёх буферов', create('mechanical_pump'), 4, ['fraction_drums', 'mv_sample_spout'], 'Поставь по насосу на отдельную линию. Перед отбором проверь направление вращения и промой линию после смены жидкости.', true],
@@ -64,16 +63,16 @@ export function expandMv(chapters) {
     ['mv_sink_stock', 'Теплоотводы вокруг холодной установки', pnc('heat_sink'), 8, ['mv_vortex_redundancy', 'first_polyethylene'], 'Оставь вокруг радиаторов открытое место. Под нагрузкой проверь температуру холодной установки ещё раз.'],
     ['mv_hot_tube_run', 'Отдельная воздушная ветка к крекингу', pnc('reinforced_pressure_tube'), 12, ['activated_carrier', 'reinforced_process_tube'], 'Подведи воздух к горячей установке отдельными трубками. Сверь давление во время подачи нафты.'],
     ['mv_thermal_compressor', 'Сжатый воздух от перепада температур', pnc('thermal_compressor'), 1, ['chemical_grade_seal', 'heat_pipes', 'refinery_exchanger', 'reinforced_process_tube'], 'Собери тепловой компрессор для резервной ветки. Разведи горячую и холодную стороны по отдельным теплоотводам.'],
-    ['mv_pnc_etching_tank', 'Ванна для пневматических плат', pnc('etching_tank'), 1, ['first_pnc_board', 'pressure_glass', 'mv_ie_fluid_pump'], 'Собери травильную ванну из бака, стекла, уплотнений, полимера и тарелки. Подведи трубу IE для кислоты.'],
+    ['mv_pnc_etching_tank', 'Ванна для пневматических плат', pnc('etching_tank'), 1, ['first_pnc_board', 'pressure_glass', 'mv_ie_fluid_pump'], 'Собери травильную ванну из бака, стекла, уплотнений, полимера и тарелки. Подведи стальную трубу для кислоты.'],
     ['mv_pnc_etching_acid', 'Кислота для травления', pnc('etching_acid_bucket'), 1, ['first_polyethylene', 'mv_electrolyzer', 'mv_chemical_reactor'], 'Подай в реактор полиэтилен, соль, 500 мБ дистиллята и 500 мБ серной кислоты. Отбери 1000 мБ травильной кислоты.'],
-    ['mv_pnc_fluid_mixer', 'Пневматический смеситель жидкостей', pnc('fluid_mixer'), 1, ['mv_ie_fluid_pump', 'chemical_grade_seal', 'refinery_exchanger'], 'Собери смеситель с двумя баками, теплообменником и насосом IE. Разведи входы растительного масла и этанола.'],
+    ['mv_pnc_fluid_mixer', 'Пневматический смеситель жидкостей', pnc('fluid_mixer'), 1, ['mv_ie_fluid_pump', 'chemical_grade_seal', 'refinery_exchanger'], 'Собери смеситель с двумя баками, теплообменником и электронасосом LV. Разведи входы растительного масла и этанола.'],
     ['mv_pnc_glycerol', 'Глицерин из растительного сырья', pnc('glycerol'), 2, ['mv_pnc_fluid_mixer', 'liquid_process_compressor'], 'Подай масло и этанол по разным входам при 3,5 бар. Забери глицерин и освободи выход для биодизеля.'],
     ['mv_seal_replacement', 'Запас уплотнений у топливного блока', kube('chemical_grade_seal'), 8, ['chemical_grade_seal', 'liquid_process_compressor'], 'Опрессуй сменные уплотнения и оставь их у компрессора. Проверь подачу дизеля из выделенной ёмкости.'],
     ['mv_feed_ampoules', 'Тара под сменный отбор проб', kube('sample_ampoule'), 12, ['mv_sample_spout', 'process_commissioning'], 'Подготовь двенадцать пустых ампул для отбора с двух смен. Держи полные ампулы рядом с этикетками каждой фракции.'],
     ['mv_chemical_receipts', 'Комплекты на повторный пуск', kube('process_commissioning_kit'), 3, ['process_commissioning', 'mv_reactor_pair', 'mv_feed_ampoules'], 'Подготовь три комплекта из новых проб. Один оставь на резервную машину, остальные отложи для поставок в следующие цеха.']
   ])
   section('petrochem').push(
-    ['mv_ie_refinery', 'Собрать топливный блок IE', ie('light_engineering'), 2, ['mv_assembler', 'mv_ie_connector', 'refinery_exchanger', 'activated_carrier'], 'Подготовь лёгкие блоки для НПЗ и собери установку по руководству IE. Подведи FE и разведи входы лёгкой фракции и газа. В слот катализатора поставь активированный носитель.']
+    ['mv_ie_refinery', 'Собрать топливный блок', 'gtceu:aluminium_frame', 2, ['mv_assembler', 'mv_ie_connector', 'refinery_exchanger', 'activated_carrier'], 'Подготовь лёгкие блоки для НПЗ и собери установку по руководству. Подведи FE и разведи входы лёгкой фракции и газа. В слот катализатора поставь активированный носитель.']
   )
 
   add('nether_foundry', [
@@ -87,14 +86,14 @@ export function expandMv(chapters) {
 
   section('yard').push(
     ['mv_steel_fluid_line', 'Стальная труба для цеха', gt('steel_small_fluid_pipe'), 8, ['mv_assembler', 'pressure_tubes', 'yard_fluid_pipe'], 'Собери стальную магистраль с бронзовой основой, пневмотрубками и уплотнением. Оставь разборный участок перед входом в аппарат.', true],
-    ['mv_ie_lv_coil', 'Обмотка IE для кантала', ie('coil_lv'), 1, ['mv_copper_wire', 'ie_steel'], 'Подготовь обмотку низкого напряжения IE. По одной обмотке уходит на каждую пару канталовых катушек.'],
-    ['mv_ie_electrum_wire', 'Прессование электрумовой проволоки', ie('wire_electrum'), 8, ['pressed_steel_frame', 'mv_assembler'], 'Поставь проволочную матрицу в тяжёлый пресс IE и загрузи слитки электрума. Проволока нужна для разъёмов и мотков.'],
-    ['mv_ie_connector', 'Разъём на стороне FE', ie('connector_mv'), 1, ['mv_assembler', 'ie_fe_converter', 'mv_ie_electrum_wire'], 'Собери разъём из двух клемм LV, электрумовой проволоки, керамики, прессованного железа и прокладок.'],
-    ['mv_ie_wire', 'Электрумовая линия IE', ie('wirecoil_electrum'), 2, ['mv_ie_electrum_wire', 'paraffin_cake', 'lv_treated_wood'], 'Собери мотки из проволоки, прессованного железа, медной полосы и пропитанной древесины. Подай смазку.'],
-    ['mv_ie_insulated_wire', 'Изолированные мотки на приёмку', ie('wirecoil_electrum_ins'), 2, ['mv_ie_wire', 'mv_ie_connector', 'first_polyethylene'], 'Изолируй электрумовые мотки полиэтиленом. Отложи пару и разъём для контроля поставки огнеупоров.'],
-    ['mv_ie_relay', 'Промежуточное реле IE', ie('connector_mv_relay'), 2, ['mv_ie_connector', 'mv_ie_wire'], 'Поставь реле на повороте трассы. Проверь, что конечный разъём подключён к стороне FE преобразователя.', true],
-    ['mv_ie_capacitor', 'Резерв FE у тяжёлого пресса', ie('capacitor_mv'), 1, ['mv_ie_insulated_wire', 'mv_battery_buffer', 'pressed_steel_frame'], 'Установи конденсатор перед прессом. Настрой сторону входа со стороны преобразователя и сторону выдачи к прессу.', true],
-    ['mv_ie_transformer', 'Переход между сетями IE', ie('transformer'), 1, ['mv_ie_relay', 'mv_ie_capacitor', 'mv_voltage_coil'], 'Соедини линии IE через трансформатор. Разведи клеммы разных напряжений по сторонам, указанным в руководстве IE.', true],
+    ['mv_ie_lv_coil', 'катушка напряжения для кантала', 'gtceu:lv_voltage_coil', 1, ['mv_copper_wire', 'ie_steel'], 'Подготовь обмотку низкого напряжения. По одной обмотке уходит на каждую пару канталовых катушек.'],
+    ['mv_ie_electrum_wire', 'Прессование электрумовой проволоки', gt('electrum_single_wire'), 8, ['pressed_steel_frame', 'mv_assembler'], 'Поставь проволочную матрицу в тяжёлый формовочный пресс и загрузи слитки электрума. Проволока нужна для разъёмов и мотков.'],
+    ['mv_ie_connector', 'Разъём на стороне FE', 'gtceu:copper_single_cable', 1, ['mv_assembler', 'ie_fe_converter', 'mv_ie_electrum_wire'], 'Собери разъём из двух клемм LV, электрумовой проволоки, керамики, прессованного железа и прокладок.'],
+    ['mv_ie_wire', 'Электрумовая линия', 'gtceu:electrum_quadruple_wire', 2, ['mv_ie_electrum_wire', 'paraffin_cake', 'lv_treated_wood'], 'Собери мотки из проволоки, прессованного железа, медной полосы и пропитанной древесины. Подай смазку.'],
+    ['mv_ie_insulated_wire', 'Изолированные мотки на приёмку', 'gtceu:electrum_quadruple_cable', 2, ['mv_ie_wire', 'mv_ie_connector', 'first_polyethylene'], 'Изолируй электрумовые мотки полиэтиленом. Отложи пару и разъём для контроля поставки огнеупоров.'],
+    ['mv_ie_relay', 'Промежуточное четырёхжильные кабели', 'gtceu:copper_quadruple_cable', 2, ['mv_ie_connector', 'mv_ie_wire'], 'Поставь реле на повороте трассы. Проверь, что конечный разъём подключён к стороне FE преобразователя.', true],
+    ['mv_ie_capacitor', 'Резерв FE у тяжёлого пресса', 'gtceu:mv_battery_buffer_4x', 1, ['mv_ie_insulated_wire', 'mv_battery_buffer', 'pressed_steel_frame'], 'Установи конденсатор перед прессом. Настрой сторону входа со стороны преобразователя и сторону выдачи к прессу.', true],
+    ['mv_ie_transformer', 'Переход между сетями', 'gtceu:mv_transformer_1a', 1, ['mv_ie_relay', 'mv_ie_capacitor', 'mv_voltage_coil'], 'Соедини линии через трансформатор. Разведи клеммы разных напряжений по сторонам, указанным в руководстве.', true],
     ['mv_create_brass_funnel', 'Латунная воронка на выгрузку', create('brass_funnel'), 2, ['lv_create_precision', 'mv_assembler', 'chemical_grade_seal'], 'Поставь фильтр на выход ленты. Отдели пустые ампулы от готовых проб и кассет.', true],
     ['mv_create_brass_tunnel', 'Развилка для кассет', create('brass_tunnel'), 2, ['mv_create_brass_funnel', 'oil_wash_cartridge', 'spent_oil_cartridge'], 'Настрой один отвод под чистые кассеты, другой под отработанные. Проверь разделение на небольшой партии.', true],
     ['mv_create_smart_chute', 'Фильтруемый жёлоб у ванны', create('smart_chute'), 1, ['mv_create_brass_funnel', 'mv_distillate_bath'], 'Установи жёлоб над входом ванны. В фильтр положи отработанную кассету и проверь направление подачи.', true],

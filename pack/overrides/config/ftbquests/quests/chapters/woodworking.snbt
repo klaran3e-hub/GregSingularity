@@ -6,7 +6,7 @@
   icon: "minecraft:oak_planks"
   title: "Деревообработка"
   id: "4B82FFDB51111657"
-  order_index: 18
+  order_index: 19
   quest_links: []
   images: [{
     image: "kubejs:textures/quests/web/woodworking.png"
@@ -66,12 +66,12 @@
     {
       id: "456814B22847B1CB"
       title: "Запас досок из дуба"
-      description: ["Подай заготовки из дуба на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      description: ["Подай заготовки из дуба на режущий станок GregTech с подачей воды. Из каждой получишь четыре доски. Накопи 64 доски."]
       x: 28.430d
       y: 1.657d
       shape: "circle"
       size: 1.900d
-      dependencies: ["4200891568251C35","45EADC6EDC7CA91F"]
+      dependencies: ["4200891568251C35","4CA6ADB18CCFF965"]
       optional: true
       tasks: [{
         id: "4B8C3A52D038FFB2"
@@ -409,12 +409,12 @@
     {
       id: "41CBDDC5ECE8FFD5"
       title: "Запас досок из ели"
-      description: ["Подай заготовки из ели на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      description: ["Подай заготовки из ели на режущий станок GregTech с подачей воды. Из каждой получишь четыре доски. Накопи 64 доски."]
       x: -4.027d
       y: -2.419d
       shape: "circle"
       size: 0.910d
-      dependencies: ["4F9E7A5AF4DBD654","45EADC6EDC7CA91F"]
+      dependencies: ["4F9E7A5AF4DBD654","4CA6ADB18CCFF965"]
       optional: true
       tasks: [{
         id: "405B015EC0627EA9"
@@ -752,12 +752,12 @@
     {
       id: "4ED9D4C9ACFFDF9D"
       title: "Запас досок из берёзы"
-      description: ["Подай заготовки из берёзы на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      description: ["Подай заготовки из берёзы на режущий станок GregTech с подачей воды. Из каждой получишь четыре доски. Накопи 64 доски."]
       x: -16.929d
       y: 4.229d
       shape: "circle"
       size: 0.910d
-      dependencies: ["48A994819245876B","45EADC6EDC7CA91F"]
+      dependencies: ["48A994819245876B","4CA6ADB18CCFF965"]
       optional: true
       tasks: [{
         id: "46F5BB4686044001"
@@ -1095,12 +1095,12 @@
     {
       id: "453B4F18305282AD"
       title: "Запас досок из тропического дерева"
-      description: ["Подай заготовки из тропического дерева на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      description: ["Подай заготовки из тропического дерева на режущий станок GregTech с подачей воды. Из каждой получишь четыре доски. Накопи 64 доски."]
       x: 11.135d
       y: -1.716d
       shape: "circle"
       size: 0.910d
-      dependencies: ["44BB6409EA88E12D","45EADC6EDC7CA91F"]
+      dependencies: ["44BB6409EA88E12D","4CA6ADB18CCFF965"]
       optional: true
       tasks: [{
         id: "4ED3285B49F8B22E"
@@ -1438,12 +1438,12 @@
     {
       id: "46B75EC9DDF218FB"
       title: "Запас досок из акации"
-      description: ["Подай заготовки из акации на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      description: ["Подай заготовки из акации на режущий станок GregTech с подачей воды. Из каждой получишь четыре доски. Накопи 64 доски."]
       x: 15.110d
       y: 9.879d
       shape: "circle"
       size: 0.910d
-      dependencies: ["4AD4EC378DF1265F","45EADC6EDC7CA91F"]
+      dependencies: ["4AD4EC378DF1265F","4CA6ADB18CCFF965"]
       optional: true
       tasks: [{
         id: "427567254FA2891A"
@@ -1781,12 +1781,12 @@
     {
       id: "4A2B42AD58354479"
       title: "Запас досок из тёмного дуба"
-      description: ["Подай заготовки из тёмного дуба на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      description: ["Подай заготовки из тёмного дуба на режущий станок GregTech с подачей воды. Из каждой получишь четыре доски. Накопи 64 доски."]
       x: -9.589d
       y: 3.416d
       shape: "circle"
       size: 0.910d
-      dependencies: ["4EB6B389A0057ED9","45EADC6EDC7CA91F"]
+      dependencies: ["4EB6B389A0057ED9","4CA6ADB18CCFF965"]
       optional: true
       tasks: [{
         id: "48E780E8675E2E23"
@@ -2124,12 +2124,12 @@
     {
       id: "4888AA303CE59673"
       title: "Запас досок из мангрового дерева"
-      description: ["Подай заготовки из мангрового дерева на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      description: ["Подай заготовки из мангрового дерева на режущий станок GregTech с подачей воды. Из каждой получишь четыре доски. Накопи 64 доски."]
       x: -9.995d
       y: -2.248d
       shape: "circle"
       size: 0.910d
-      dependencies: ["40FF21C8DCB9BBBD","45EADC6EDC7CA91F"]
+      dependencies: ["40FF21C8DCB9BBBD","4CA6ADB18CCFF965"]
       optional: true
       tasks: [{
         id: "4454AF366A613C39"
@@ -2467,12 +2467,12 @@
     {
       id: "48BA627B5A2E3F1E"
       title: "Запас досок из вишни"
-      description: ["Подай заготовки из вишни на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      description: ["Подай заготовки из вишни на режущий станок GregTech с подачей воды. Из каждой получишь четыре доски. Накопи 64 доски."]
       x: 2.287d
       y: -6.295d
       shape: "circle"
       size: 0.910d
-      dependencies: ["40D0336A9C610479","45EADC6EDC7CA91F"]
+      dependencies: ["40D0336A9C610479","4CA6ADB18CCFF965"]
       optional: true
       tasks: [{
         id: "44B64C8D8EF2FC74"
@@ -2810,12 +2810,12 @@
     {
       id: "4A553107E9D8516E"
       title: "Запас досок из бамбука"
-      description: ["Подай заготовки из бамбука на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      description: ["Подай заготовки из бамбука на режущий станок GregTech с подачей воды. Из каждой получишь четыре доски. Накопи 64 доски."]
       x: 11.739d
       y: 3.864d
       shape: "circle"
       size: 0.910d
-      dependencies: ["4F47103784CAA0D4","45EADC6EDC7CA91F"]
+      dependencies: ["4F47103784CAA0D4","4CA6ADB18CCFF965"]
       optional: true
       tasks: [{
         id: "48A648CB7E13E5F2"
@@ -3222,12 +3222,12 @@
     {
       id: "4A20A8A1B9395A60"
       title: "Запас досок из багрового стебля"
-      description: ["Подай заготовки из багрового стебля на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      description: ["Подай заготовки из багрового стебля на режущий станок GregTech с подачей воды. Из каждой получишь четыре доски. Накопи 64 доски."]
       x: 17.257d
       y: 4.105d
       shape: "circle"
       size: 0.910d
-      dependencies: ["4F7F6F15A6F68784","45EADC6EDC7CA91F"]
+      dependencies: ["4F7F6F15A6F68784","4CA6ADB18CCFF965"]
       optional: true
       tasks: [{
         id: "4392DAC27D4572C6"
@@ -3521,12 +3521,12 @@
     {
       id: "471A1CB42C19CC75"
       title: "Запас досок из искажённого стебля"
-      description: ["Подай заготовки из искажённого стебля на механическую пилу Create. Из каждой получишь четыре доски. Накопи 64 доски."]
+      description: ["Подай заготовки из искажённого стебля на режущий станок GregTech с подачей воды. Из каждой получишь четыре доски. Накопи 64 доски."]
       x: 22.823d
       y: 6.947d
       shape: "circle"
       size: 0.910d
-      dependencies: ["42001D80FED23DDF","45EADC6EDC7CA91F"]
+      dependencies: ["42001D80FED23DDF","4CA6ADB18CCFF965"]
       optional: true
       tasks: [{
         id: "47BA177F0FF4F5E8"

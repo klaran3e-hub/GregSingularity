@@ -1,8 +1,7 @@
 ServerEvents.recipes(event => {
   const ks = name => 'kubejs:' + name
   const gt = name => 'gtceu:' + name
-  const create = name => 'create:' + name
-  const ie = name => 'immersiveengineering:' + name
+
   const pnc = name => 'pneumaticcraft:' + name
   const prefix = 'zero_shift:end/'
   const stainless = gt('stainless_steel_plate')
@@ -31,11 +30,10 @@ ServerEvents.recipes(event => {
     return machine('assembler', id, items, output, ticks, 480)
   }
   function compact(id, items, output, count) {
-    return event.custom({
-      type: create('compacting'),
+    return global.fieldworkProcess(event, prefix + id, 'assembler', {
       ingredients: items.map(item => ({ item: item })),
       results: [{ item: output, count: count }]
-    }).id(prefix + id)
+    }, 120)
   }
   function pressure(id, items, output, bar) {
     return event.custom({
@@ -48,7 +46,7 @@ ServerEvents.recipes(event => {
   assemble('end_transit_permit', [
     ks('hv_commissioning_report'), '2x ' + gt('hv_sensor'), '2x ' + ks('hv_arc_shield'),
     '6x ' + stainless, '2x ' + hvCircuit, '2x ' + seal, ks('received_refractory_crate'),
-    '2x ' + ie('wirecoil_electrum_ins'), ks('sealed_hv_module')
+    '2x ' + 'gtceu:electrum_quadruple_cable', ks('sealed_hv_module')
   ], ks('end_transit_permit'), 1820).inputFluids(Fluid.of(lubricant, 750))
 
   event.remove({ output: 'minecraft:ender_eye' })

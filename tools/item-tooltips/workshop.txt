@@ -1,0 +1,97 @@
+@Волокно и дерево|Fibre and timber
+plant_fibre|Свяжи два волокна в пучок и вымочи его в воде.|Tie two fibres into a bundle and soak it in water.
+retting_bundle|Погрузи связку в воду, чтобы размочить стебли.|Dip the bundle in water to soften its stalks.|Shift + ПКМ обрабатывает до четырёх связок.|Sneak-use to soak up to four bundles.
+retted_bundle|Расчеши вымоченные стебли ножом и отдели волокно.|Comb the soaked stalks with a knife to free the fibres.
+washed_fibre|Из чистых волокон плетут шнур и обмотку инструментов.|Twist the cleaned fibres into cord or tool bindings.
+fibre_cord|Стягивает деревянные соединения и кожаные мехи.|Lashes wooden joints and secures the leather bellows.
+tool_binding|Крепит рабочую часть инструмента к рукояти.|Binds a tool head to its handle.
+rough_slat|Из реек набирают столешницу верстака и стенки жёлоба.|Forms the workbench top and the sides of a washing trough.
+wooden_peg|Фиксирует шип в гнезде и соединяет детали жёлоба.|Pins a tenon in its socket and joins trough sections.
+haft_blank|Обработай ножом с песком и волокном, чтобы сделать рукоять.|Finish with a knife, sand and fibre to make a handle.
+tool_handle|Готовая рукоять для медных инструментов и деревянных валов.|Fits copper tool heads and forms the core of a wooden spindle.
+wedged_tenon|Соединяет раму верстака со столешницей.|Locks the workbench frame to the top.
+wooden_joint|Соединяет рейки промывочного жёлоба и раму мехов.|Joins the slats of a washing trough and the bellows frame.
+workbench_frame|Основание первого верстака. Добавь столешницу и шип.|Base of the first crafting table. Fit the top and tenon.
+workbench_top|Закрепи на раме шипом и обвязкой, чтобы собрать верстак.|Fasten to the frame with a tenon and binding to finish the table.
+wheel_segment|Две наборные секции образуют борта промывочного жёлоба.|Two slatted sections form the sides of a washing trough.
+@Инструмент · Начало|Workshop tool · Primitive
+scored_flint_core|Расколи по насечке, чтобы получить кремнёвые осколки.|Split along the score to obtain flint shards.
+flint_shard|Заготовка для режущей кромки и каменного резца.|Shape into a cutting edge or fit to a stone chisel.
+lapped_edge|Заточенная кромка для кремнёвых рабочих частей.|Honed cutting edge for flint tool heads.
+stone_chisel|Ручной резец для работы с камнем и деревянными заготовками.|Hand chisel for dressing stone and shaping wooden blanks.
+fire_drill|Служит для сборки обычного костра и костра душ.|Used to make a campfire or a soul campfire.
+@Медный инструмент|Copper tool
+copper_pickaxe|Добывает камень и руду подходящего уровня.|Mines stone and ores within its harvest tier.
+copper_axe|Рубит брёвна и обрабатывает деревянные блоки.|Fells logs and works wooden blocks.
+copper_shovel|Быстро снимает землю, песок и гравий.|Quickly clears dirt, sand and gravel.
+copper_hoe|Подготавливает грядки для посева.|Tills soil into farmland for planting.
+copper_sword|Медный клинок для ближнего боя и расчистки паутины.|Copper blade for close combat and clearing cobwebs.
+@Старая оснастка|Legacy tooling
+flint_knife|В действующих рецептах используй нож GregTech.|Use a GregTech knife for current workshop recipes.
+flint_pickaxe|В ранней мастерской её заменила кремнёвая кирка GregTech.|The early workshop now uses the GregTech flint pickaxe.
+flint_axe|В ранней мастерской его заменил кремнёвый топор GregTech.|The early workshop now uses the GregTech flint axe.
+stone_hammer|Для дробления и ковки используй молот GregTech.|Use a GregTech hammer for crushing and forging.
+pick_head|Кремнёвая рабочая часть кирки ранней мастерской.|Flint pick head from the early workshop.
+axe_head|Кремнёвая рабочая часть топора ранней мастерской.|Flint axe head from the early workshop.
+@Лагерная кухня|Camp kitchen
+coarse_flour|Замеси с водой из глиняного ведра, чтобы получить тесто.|Mix with water from a clay bucket to make dough.
+camp_dough|Испеки хлеб или возьми как основу для печенья.|Bake into bread or use as the base for cookies.
+@Гончарное дело|Pottery
+clay_slip_cake|Обезвоженная глина для сырых вёдер и набивной массы.|Dewatered clay for unfired buckets and ramming mix.
+sand_temper|Добавь к глине и шамоту для набивки огнеупорных деталей.|Mix with clay and grog to mould refractory parts.
+kiln_biscuit|Раздроби обожжённую керамику молотом или в ступке на шамот.|Crush the fired ceramic with a hammer or mortar to make grog.
+chamotte|Огнеупорный наполнитель для набивной массы и шихты.|Refractory aggregate for ramming mix and crucible charges.
+ramming_mix|Из пластичной массы формуют фурму и изложницу для слитков.|Shape the mix into a tuyere or an ingot mould.
+unfired_clay_bucket|Обожги перед первым наполнением водой.|Fire the bucket before filling it with water.
+clay_bucket|Набери воду из источника для лагерных рецептов.|Fill at a water source for camp recipes.
+clay_water_bucket|Даёт воду для замеса теста. Пустое ведро возвращается.|Supplies water for dough. The empty bucket is returned.
+unfired_crucible|Обожги высушенную заготовку перед загрузкой металла.|Fire the clay body before charging it with metal.
+fired_crucible|Загрузи промытую крупку и шамот для плавки в горне.|Load washed grit and grog for smelting in the bloomery.
+clay_mortar|Связывает огнеупорную смесь и футеровочные вставки.|Binds refractory mix and furnace lining inserts.
+wet_lining|Обожги на костре. Готовая футеровка нужна для печи.|Fire over a campfire. Use the fired lining to build a furnace.
+fired_lining|Термостойкая облицовка печи и уплотнение котельных узлов.|Lines furnaces and insulates steam boiler joints.
+@Полевой горн|Field bloomery
+gtceu:field_bloomery|Плавит ранние шихты на древесном угле.|Smelts early crucible charges with charcoal.|Собери шахту, поставь фурму и чашу перед выпуском.|Build the shaft and fit the tuyere and casting basin.
+bloomery_masonry|Образует огнеупорные стены полевого горна.|Forms the refractory walls of the field bloomery.
+bloomery_shoulder|Секция с фурмой под оголовком шахты.|Tuyere section directly below the shaft crown.
+bloomery_stack|Оголовок горна. Ставится над секцией с фурмой.|Shaft crown. Install above the tuyere section.
+bloomery_casting_basin|Ставится спереди горна у выпускного отверстия.|Place at the front of the bloomery below the tap hole.
+green_tuyere|Обожги, прежде чем встраивать воздушный канал в горн.|Fire before fitting the air passage into the bloomery.
+fired_tuyere|Вставка воздушного канала в заплечиках горна.|Lines the air inlet in the shoulder of the bloomery.
+green_ingot_mould|Обожги форму перед разливкой металла.|Fire the mould before casting metal.
+ingot_mould|Оснастка горна для разливки металла в слитки.|Bloomery tooling for casting metal into ingots.
+bronze_mould_frame|Удерживает изложницу при разливке бронзы в горне.|Holds the mould while bronze is cast in the bloomery.
+hearth_bellows|Подают воздух к фурме. Нужны для сборки горна.|Feed air to the tuyere. Used to assemble the bloomery.
+kiln_grate|Образует колосник печи и нижнюю часть узла горна.|Forms the grate in a furnace or bloomery assembly.
+ore_washing_trough|Поставь рядом с источником воды и нажми ПКМ с крупкой.|Place next to a water source and use it with a handful of grit.|При нажатом Shift промывает до восьми порций.|Sneak-use to wash up to eight portions.
+ore_tailings|Остаток промывки. Входит в шихту для огнеупорной глины.|Washing residue used to prepare a fireclay charge.
+copper_charge|В полевом горне из шихты выплавляется медь.|Smelt in the field bloomery to recover copper.
+tin_charge|В полевом горне из шихты выплавляется олово.|Smelt in the field bloomery to recover tin.
+iron_charge|В полевом горне восстанавливается до железной крицы.|Reduce in the bloomery to obtain an iron bloom.
+gold_charge|В полевом горне из шихты выплавляется золото.|Smelt in the field bloomery to recover gold.
+bronze_charge|Сперва обожги медно-оловянную шихту в полевом горне.|Roast the mixed copper and tin charge in the bloomery first.
+roasted_alloy_feed|Верни в горн с оснасткой для отливки бронзы.|Return to the bloomery with casting tooling to obtain bronze.
+iron_bloom|Прокуй крицу в слиток или используй в шихте для стали.|Forge into an iron ingot or add it to a steel charge.
+@Кузница и пар|Forge and steam
+copper_strap|Скрепляет втулки валов и трубные регистры котла.|Binds shaft bushings and boiler tube registers.
+hand_forged_plate|Лист для зубьев пилы, пильного полотна и ковочной оправки.|Stock for saw teeth, a saw blade or a forging saddle.
+iron_rivet|Соединяет полосы металла на котле и клеммных колодках.|Fastens metal straps on boilers and terminal blocks.
+iron_hinge|Шарнир для выдвижных механизмов и картриджей ящиков.|Pivot for drawer mechanisms and storage cartridges.
+five_tube_register|Группа из пяти труб для котельного пучка.|Five joined tubes for a boiler tube bank.
+boiler_tube_bank|Поверхность нагрева первого твердотопливного парового котла.|Heating surface for the first solid-fuel steam boiler.
+forging_saddle|Опора для ручной ковки пластин и шпинделей клапана.|Supports plates and valve spindles during hand forging.
+stamped_bronze_blank|Штампованная деталь для сборки бронзовых механизмов.|Stamped stock used to build bronze machinery.
+sealed_boiler_joint|Уплотняет соединения труб и деталей парового котла.|Seals tube connections and steam boiler fittings.
+shaft_bushing|Опора вала в передаточных механизмах и насосах.|Supports shafts inside drives and pumps.
+turned_spindle|Вал для статора, ручного насоса и зубчатого венца.|Shaft stock for stators, hand pumps and gear rims.
+grinding_runner|Рабочий жернов с посадочным местом под вал.|Grinding stone with a central shaft seat.
+gear_rim|Зубчатый венец для редукторов и приводов станков.|Toothed rim for gearboxes and machine drives.
+hand_pump_barrel|Корпус ручного насоса для жидкостных люков и станков.|Pump barrel used in fluid hatches and canning machinery.
+saw_teeth|Заклепай зубья на кованой пластине, чтобы собрать полотно.|Rivet the teeth to a forged plate to assemble the blade.
+saw_blade|Рабочий диск для промышленной резки и распиловки.|Cutting disc for industrial saw assemblies.
+woven_drive_belt|Передаёт вращение в приводе и идёт на конвейерные модули.|Transfers motion in drives and conveyor modules.
+valve_spindle_blank|Прокуй заготовку в бронзовый шпиндель клапана.|Swage the blank into a bronze valve spindle.
+bronze_valve_spindle|Шпиндель для сборки корпуса парового клапана.|Fits inside the steam valve body.
+unseated_steam_valve|Поставь набивку и осади её молотом, чтобы уплотнить клапан.|Fit braided packing and seat it with a hammer.
+braided_valve_packing|Набивка вокруг шпинделя устраняет утечку пара.|Packing seals the steam valve around its spindle.
+packed_steam_valve|Готовый клапан для парового котла и механизмов низкого давления.|Sealed valve for boilers and low-pressure steam machinery.

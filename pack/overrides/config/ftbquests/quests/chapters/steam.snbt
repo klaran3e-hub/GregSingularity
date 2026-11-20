@@ -1,0 +1,1404 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "steam"
+  group: "49C57C767912BC15"
+  icon: "gtceu:lp_steam_solid_boiler"
+  title: "Паровой век"
+  id: "44EDC4A9FA1CF254"
+  order_index: 1
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/steam.png"
+    x: 0.0d
+    y: 0.0d
+    width: 46.148d
+    height: 30.463d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "4950A05DC49E2608"
+      title: "Герметичный стык"
+      description: ["Уплотни в чаше четыре штампа, две футеровки, два шнура и заклёпку. Подай 500 мБ воды."]
+      x: -18.256d
+      y: -1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["490956E7FD293643","4A969DC8CC61D772","4650DF862BB30C74","469A55FCA93CAF3C"]
+      tasks: [{
+        id: "42FEF1FB53C0C4AB"
+        type: "item"
+        item: "kubejs:sealed_boiler_joint"
+      }]
+      rewards: [{
+        id: "4384FBD6FE768663"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "489F63BB524E3929"
+      title: "Бронзовый корпус для пара"
+      description: ["Детали после пресса и герметичный стык образуют корпус."]
+      x: -15.887d
+      y: -2.966d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4950A05DC49E2608","48F933CA7A837F03"]
+      tasks: [{
+        id: "4B21B9E89F4488D3"
+        type: "item"
+        item: "gtceu:bronze_machine_casing"
+      }]
+      rewards: [{
+        id: "4E65516EDB34FAC0"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 3
+      }]
+    }
+    {
+      id: "4FC4C7F5CC813B3A"
+      title: "Топочная камера"
+      description: ["Топочная камера требует две футерованные печи."]
+      x: -13.859d
+      y: 2.317d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["489F63BB524E3929","406FCCBDC3668AE7"]
+      tasks: [{
+        id: "45AFF01EE8D24621"
+        type: "item"
+        item: "gtceu:bronze_firebox_casing"
+      }]
+      rewards: [{
+        id: "40D8998FF958C69E"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "49CE3A195951A7A9"
+      title: "Паропровод"
+      description: ["Шесть бронзовых пластин, штамп и заклёпка дают две трубы. Восемь труб уйдут на котёл и четыре станка. Остальные оставь на обвязку."]
+      x: -18.256d
+      y: 1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["48F933CA7A837F03","490956E7FD293643","4650DF862BB30C74"]
+      tasks: [{
+        id: "494EB0997560BE78"
+        type: "item"
+        item: "gtceu:bronze_small_fluid_pipe"
+        count: 12L
+      }]
+      rewards: [{
+        id: "43D95DD6D3D4DE98"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "466EAC305CCCFB8C"
+      title: "Первый пар в коллекторе"
+      description: ["Собери топку, корпус, два трубных пакета и клапан с набивкой с четырьмя бронзовыми пластинами. Заполни холодный котёл водой и только потом дай топливо."]
+      x: -10.142d
+      y: -1.162d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["4FC4C7F5CC813B3A","4E42998E4E2365FF","4CDD3F29C174B932"]
+      tasks: [{
+        id: "42761575FE67A1AF"
+        type: "item"
+        item: "gtceu:lp_steam_solid_boiler"
+      }]
+      rewards: [{
+        id: "433F48F9E400E181"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 4
+      }]
+    }
+    {
+      id: "4EF35DA6AEE11365"
+      title: "Первое машинное дробление"
+      description: ["Установи каменный бегун и втулки в бронзовый корпус дробилки. Подведи пар от котла."]
+      x: -8.114d
+      y: 1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["466EAC305CCCFB8C","45C9218EEB66F981","4CDD3F29C174B932"]
+      tasks: [{
+        id: "4EF44F85FE907B97"
+        type: "item"
+        item: "gtceu:lp_steam_macerator"
+      }]
+      rewards: [{
+        id: "48B94F59F184EB71"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "44E8E284B41365EF"
+      title: "Пар за ковочным бойком"
+      description: ["Встрой ковочную подкладку в станок. На паре один слиток даёт целую пластину."]
+      x: -8.114d
+      y: -1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["466EAC305CCCFB8C","469A55FCA93CAF3C","4CDD3F29C174B932"]
+      tasks: [{
+        id: "47A42A5D60DCB35E"
+        type: "item"
+        item: "gtceu:lp_steam_forge_hammer"
+      }]
+      rewards: [{
+        id: "440354D8168E534A"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "4D80CF78A8709C72"
+      title: "Первый паровой экстрактор"
+      description: ["Вложи кузнечные мехи в медно-бронзовый узел экстрактора. Освободи выход и подключи пар."]
+      x: -8.454d
+      y: 0.069d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["466EAC305CCCFB8C","4E67249290D79101","4CA8AC099D33AB3B","4950A05DC49E2608","4CDD3F29C174B932"]
+      tasks: [{
+        id: "44D73550664D08AC"
+        type: "item"
+        item: "gtceu:lp_steam_extractor"
+      }]
+      rewards: [{
+        id: "4C3186081A741F28"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "45BDF33A1B33E59F"
+      title: "Рабочая камера компрессора"
+      description: ["Установи подкладку в бронзовый корпус с трубами, штампованными заготовками и уплотнением."]
+      x: -8.454d
+      y: -4.913d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["466EAC305CCCFB8C","469A55FCA93CAF3C","4950A05DC49E2608","4CDD3F29C174B932"]
+      tasks: [{
+        id: "4753619690EE52C9"
+        type: "item"
+        item: "gtceu:lp_steam_compressor"
+      }]
+      rewards: [{
+        id: "4867A2BB066170DE"
+        type: "item"
+        item: "kubejs:stamped_bronze_blank"
+        count: 1
+      }]
+    }
+    {
+      id: "444055F8AB6BDA34"
+      title: "Бочка для запаса воды"
+      description: ["Закрепи деревянную бочку обвязкой из досок, заклёпок и липкой смолы. Потом она войдёт в бронзовый барабан."]
+      x: -8.454d
+      y: -3.283d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["466EAC305CCCFB8C","493BCB782DD7F53E","4650DF862BB30C74","4EDA16293D93081B","4C5EDD8F82704B98"]
+      tasks: [{
+        id: "4C69CD1598FAFD93"
+        type: "item"
+        item: "gtceu:wood_drum"
+      }]
+      rewards: [{
+        id: "4CFFC286BBD9F0C0"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "43EB83B93075B898"
+      title: "Буфер для пара"
+      description: ["Подведи пар от котла к бронзовому барабану. Трубу на турбину подсоедини снизу. Накопи пар, затем нажми по барабану ПКМ деревянной киянкой GregTech без Shift, чтобы включить выдачу."]
+      x: -6.425d
+      y: -4.478d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["444055F8AB6BDA34","49CE3A195951A7A9","4950A05DC49E2608","44B3F4EF29DA51F3"]
+      tasks: [{
+        id: "451757E81407319E"
+        type: "item"
+        item: "gtceu:bronze_drum"
+      }]
+      rewards: [{
+        id: "4705EB1DE061CE8C"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "4FE2E8ED8D030C6C"
+      title: "Магистраль большего сечения"
+      description: ["Собери трубу большего сечения из двух малых труб, пластины, герметичного стыка и заклёпки."]
+      x: -4.629d
+      y: -4.355d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43EB83B93075B898"]
+      optional: true
+      tasks: [{
+        id: "4D68EC4D6C24B959"
+        type: "item"
+        item: "gtceu:bronze_normal_fluid_pipe"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4A28D4621DB3D827"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "4CCC011C50940C3E"
+      title: "Печь на паре"
+      description: ["Подай пар и оставь выхлопную сторону открытой. Для меди, железа, олова и других легкоплавких металлов загружай две дроблёные порции на слиток."]
+      x: -8.454d
+      y: 2.916d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["466EAC305CCCFB8C","4FC4C7F5CC813B3A","4950A05DC49E2608","4CDD3F29C174B932"]
+      tasks: [{
+        id: "437DB084C08B6644"
+        type: "item"
+        item: "gtceu:lp_steam_furnace"
+      }]
+      rewards: [{
+        id: "42A9E328B06E5B62"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 2
+      }]
+    }
+    {
+      id: "4D25FC37C0AF2589"
+      title: "Слитки с паровой линии"
+      description: ["Передроби сырую медь в паровом мацераторе. Переложи результат в паровую печь. Восемь порций сырой меди дают восемь слитков."]
+      x: -3.717d
+      y: -1.233d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EF35DA6AEE11365","4CCC011C50940C3E","41378211F1D01951"]
+      optional: true
+      tasks: [{
+        id: "47ACACD14B529BEC"
+        type: "item"
+        item: "minecraft:copper_ingot"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4499F366EE0B05AD"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 2
+      }]
+    }
+    {
+      id: "4A4E3F94BB6C6B58"
+      title: "Волокно из урожая"
+      description: ["Загрузи в паровую дробилку пшеницу, тростник, ламинарию или бамбук. Собери восемь порций и оставь их для пакетной промывки."]
+      x: -9.893d
+      y: 2.794d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EF35DA6AEE11365","47A521E814192495"]
+      optional: true
+      tasks: [{
+        id: "4D2A401B023C5E41"
+        type: "item"
+        item: "kubejs:plant_fibre"
+        count: 8L
+      }]
+      rewards: [{
+        id: "423BCB08B349C649"
+        type: "item"
+        item: "kubejs:stamped_bronze_blank"
+        count: 1
+      }]
+    }
+    {
+      id: "40B38C87F17348FB"
+      title: "Паровая печь сплавов"
+      description: ["Установи обожжённый тигель в усиленную паровую печь. Собери вторую печь, если нужна отдельная линия обжига."]
+      x: -10.273d
+      y: 4.911d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4CCC011C50940C3E","4F91B6A200BBB092","49CE3A195951A7A9","4CDD3F29C174B932"]
+      optional: true
+      tasks: [{
+        id: "4C0904ED34B10FA0"
+        type: "item"
+        item: "gtceu:lp_steam_alloy_smelter"
+      }]
+      rewards: [{
+        id: "4A7E82C071245592"
+        type: "item"
+        item: "kubejs:stamped_bronze_blank"
+        count: 1
+      }]
+    }
+    {
+      id: "4904A3AD04D1BF7B"
+      title: "Ремонтный запас паровых корпусов"
+      description: ["Собери отдельный запас из восьми корпусов под восстановление линии."]
+      x: -8.454d
+      y: 5.067d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["466EAC305CCCFB8C"]
+      optional: true
+      tasks: [{
+        id: "42086D8EC2ED3241"
+        type: "item"
+        item: "gtceu:bronze_machine_casing"
+        count: 8L
+      }]
+      rewards: [{
+        id: "40D2DCEA1BF933B0"
+        type: "item"
+        item: "kubejs:stamped_bronze_blank"
+        count: 1
+      }]
+    }
+    {
+      id: "44B76CCBB23497AD"
+      title: "Ремонтный запас паровых труб"
+      description: ["Держи на складе 32 трубы, чтобы не останавливать выпуск ради ремонта."]
+      x: -8.454d
+      y: -6.552d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["466EAC305CCCFB8C"]
+      optional: true
+      tasks: [{
+        id: "4063CE4D934F34DD"
+        type: "item"
+        item: "gtceu:bronze_small_fluid_pipe"
+        count: 32L
+      }]
+      rewards: [{
+        id: "4AB8766B621CC9F2"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 2
+      }]
+    }
+    {
+      id: "4B407E07C82B9A62"
+      title: "Партия штампованных заготовок LV"
+      description: ["Накопи 32 штампованные бронзовые заготовки для корпусов и тяжёлых компонентов."]
+      x: -6.337d
+      y: -1.792d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["490956E7FD293643","44E8E284B41365EF","489F63BB524E3929"]
+      optional: true
+      tasks: [{
+        id: "438A6B2A882E59DA"
+        type: "item"
+        item: "kubejs:stamped_bronze_blank"
+        count: 32L
+      }]
+      rewards: [{
+        id: "487856B8C9B41FC0"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4A81444574745923"
+      title: "Резервный котёл парового ряда"
+      description: ["Собери второй котёл. Подведи к нему воду отдельной веткой, чтобы ремонт первого не остановил весь цех."]
+      x: -6.425d
+      y: 2.151d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["466EAC305CCCFB8C","4EF35DA6AEE11365","44E8E284B41365EF"]
+      optional: true
+      tasks: [{
+        id: "422A5B0A699E4223"
+        type: "item"
+        item: "gtceu:lp_steam_solid_boiler"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4175C6B7A597DCAC"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 2
+      }]
+    }
+    {
+      id: "4659112F0411B70C"
+      title: "Бронзовые трубы на раздельные отводы"
+      description: ["Отложи шестнадцать малых бронзовых труб на линии дробилки, экстрактора и компрессора."]
+      x: -12.024d
+      y: 1.872d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49CE3A195951A7A9","4D80CF78A8709C72","45BDF33A1B33E59F"]
+      optional: true
+      tasks: [{
+        id: "4B1F5A7C80AB0F25"
+        type: "item"
+        item: "gtceu:bronze_small_fluid_pipe"
+        count: 16L
+      }]
+      rewards: [{
+        id: "41B0A925F9DDB106"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 2
+      }]
+    }
+    {
+      id: "49367304AB341896"
+      title: "Бронзовые корпуса для парового ряда"
+      description: ["Подготовь четыре корпуса. Распредели запас между котлами и ремонтом паровых станков."]
+      x: -8.454d
+      y: -8.114d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["489F63BB524E3929","466EAC305CCCFB8C"]
+      optional: true
+      tasks: [{
+        id: "4F19711D84824BE0"
+        type: "item"
+        item: "gtceu:bronze_machine_casing"
+        count: 4L
+      }]
+      rewards: [{
+        id: "43C3011EC921833A"
+        type: "item"
+        item: "kubejs:stamped_bronze_blank"
+        count: 1
+      }]
+    }
+    {
+      id: "4EF8AE026E8F795C"
+      title: "Герметичные стыки на расширение пара"
+      description: ["Подай в чашу по четыре штампа, две футеровки, два шнура, заклёпку и 500 мБ воды на стык."]
+      x: -6.425d
+      y: -7.429d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4950A05DC49E2608","45BDF33A1B33E59F"]
+      optional: true
+      tasks: [{
+        id: "46F8C56C514960CE"
+        type: "item"
+        item: "kubejs:sealed_boiler_joint"
+        count: 6L
+      }]
+      rewards: [{
+        id: "4D1874628A5E610F"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "4AD57A929EE2449D"
+      title: "Топочные камеры на второй котёл"
+      description: ["Отложи две топочные камеры. Для каждой заранее приготовь футерованные печи."]
+      x: -3.447d
+      y: 3.572d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4FC4C7F5CC813B3A","4A81444574745923"]
+      optional: true
+      tasks: [{
+        id: "46759123466005B5"
+        type: "item"
+        item: "gtceu:bronze_firebox_casing"
+        count: 2L
+      }]
+      rewards: [{
+        id: "47925C2B3185AAD0"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "41CA5E6C74969E40"
+      title: "Паровая дробилка для угля"
+      description: ["Поставь вторую паровую дробилку. На ней измельчай древесный уголь, пока первая занята рудой."]
+      x: -3.717d
+      y: 5.939d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EF35DA6AEE11365","451F856DC6658D9F"]
+      optional: true
+      tasks: [{
+        id: "4686F4F5A35380A7"
+        type: "item"
+        item: "gtceu:lp_steam_macerator"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4A8D0C36C0649C76"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "48E6FA70FB290F41"
+      title: "Раздельное прессование волокна"
+      description: ["Собери второй паровой компрессор и выдели ему подачу пропитанного волокна."]
+      x: -5.745d
+      y: -8.718d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45BDF33A1B33E59F","424C54CDC38321AB"]
+      optional: true
+      tasks: [{
+        id: "4B301F1B54DB07DB"
+        type: "item"
+        item: "gtceu:lp_steam_compressor"
+        count: 2L
+      }]
+      rewards: [{
+        id: "44A319ABC8DCFF30"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "46C20FE4285EC45A"
+      title: "Оловянные листы для паровой мастерской"
+      description: ["Прокатай десять оловянных листов. Оставь их рядом с зубилом для заготовок проволоки."]
+      x: -12.949d
+      y: -4.325d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["43DD512594965578","44E8E284B41365EF"]
+      optional: true
+      tasks: [{
+        id: "403202DB83BD8602"
+        type: "item"
+        item: "gtceu:tin_plate"
+        count: 10L
+      }]
+      rewards: [{
+        id: "4EE3BC83B4D0E484"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "49F43286183B13B0"
+      title: "Смола для непрерывной вытяжки"
+      description: ["Собери двенадцать порций смолы и подавай их в экстрактор. Готовое связующее складывай рядом с волокном."]
+      x: -6.425d
+      y: -0.182d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EDA16293D93081B","4D80CF78A8709C72"]
+      optional: true
+      tasks: [{
+        id: "423CB88B8ECEE631"
+        type: "item"
+        item: "gtceu:sticky_resin"
+        count: 12L
+      }]
+      rewards: [{
+        id: "4D9F0AD7AECC29C5"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "4B689393F6A67236"
+      title: "Связующее на изоляцию и платы"
+      description: ["Получи шестнадцать порций связующего из смолы. Отдели часть на изоляцию, остальное оставь для основ плат."]
+      x: -6.972d
+      y: 6.223d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4020C4C97BCB96C8","4D80CF78A8709C72","424C54CDC38321AB","4349BCAC49332D0F"]
+      optional: true
+      tasks: [{
+        id: "4B006603E9449BA0"
+        type: "item"
+        item: "kubejs:insulating_gum"
+        count: 16L
+      }]
+      rewards: [{
+        id: "4FCF6C4A9DDEC6E4"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 2
+      }]
+    }
+    {
+      id: "4E0074393BD755A9"
+      title: "Топливо на долгую работу котлов"
+      description: ["Собери шестьдесят четыре куска древесного угля. Раздели запас между котлами перед запуском парового ряда."]
+      x: -4.625d
+      y: 2.132d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49F90E9F2AFFA0DD","4A81444574745923"]
+      optional: true
+      tasks: [{
+        id: "480117A8F186E518"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 64L
+      }]
+      rewards: [{
+        id: "43274D281ADD685F"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 2
+      }]
+    }
+    {
+      id: "46734844A190B6D9"
+      title: "Пять труб на стяжках"
+      description: ["Подготовь пять малых бронзовых труб. Стяни их медными полосами и заклёпками."]
+      x: -16.567d
+      y: -4.434d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["49CE3A195951A7A9","491D5107B7A6FFCD","4650DF862BB30C74"]
+      tasks: [{
+        id: "4A722243F89685C0"
+        type: "item"
+        item: "kubejs:five_tube_register"
+      }]
+      rewards: [{
+        id: "4556EFA33C1A341F"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4E42998E4E2365FF"
+      title: "Пакет котельных труб"
+      description: ["На один пакет идут два пятитрубных регистра. Подготовь два пакета на котёл, всего двадцать малых труб."]
+      x: -14.199d
+      y: 0.598d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["46734844A190B6D9","4950A05DC49E2608","490956E7FD293643"]
+      tasks: [{
+        id: "41A36E40EA9C8B71"
+        type: "item"
+        item: "kubejs:boiler_tube_bank"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4823F9B1CD96D72B"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "463A16F2DE321651"
+      title: "Набивка для сальника"
+      description: ["Сплети кольцо из шнура и трёх порций промытого волокна. Кольцо уплотняет шток клапана под крышкой корпуса."]
+      x: -17.916d
+      y: -7.358d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["44F44EB6168E16BC","47A521E814192495"]
+      tasks: [{
+        id: "493D24F53F285114"
+        type: "item"
+        item: "kubejs:braided_valve_packing"
+      }]
+      rewards: [{
+        id: "4E1654017E1D2713"
+        type: "item"
+        item: "minecraft:gravel"
+        count: 3
+      }]
+    }
+    {
+      id: "469738733D41C500"
+      title: "Припуск на золотник"
+      description: ["Собери заготовку из двух слитков бронзы и медной полосы. Пока молот работает от руки, одной заготовки хватает на один золотник."]
+      x: -17.916d
+      y: 8.767d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["48D37EA483665B88","491D5107B7A6FFCD"]
+      tasks: [{
+        id: "4C3B83A030DFCECC"
+        type: "item"
+        item: "kubejs:valve_spindle_blank"
+      }]
+      rewards: [{
+        id: "45B9B99C83762469"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "4D17D2FEA3A38DD1"
+      title: "Притирка золотника"
+      description: ["Положи заготовку на ковочную подкладку с песком и пройди молотом. Подкладку можно использовать снова."]
+      x: -16.045d
+      y: 7.086d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["469738733D41C500","469A55FCA93CAF3C"]
+      tasks: [{
+        id: "4EBC1CCB6FF8E4B3"
+        type: "item"
+        item: "kubejs:bronze_valve_spindle"
+      }]
+      rewards: [{
+        id: "4A36B98526B31BC4"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 3
+      }]
+    }
+    {
+      id: "4699EC6CDDA6914D"
+      title: "Клапан в сборе"
+      description: ["Поставь золотник между двумя малыми трубами. Втулка направляет шток, пластины и заклёпка стягивают корпус."]
+      x: -14.539d
+      y: 4.114d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4D17D2FEA3A38DD1","49CE3A195951A7A9","427909B3358090BF"]
+      tasks: [{
+        id: "4AF8F7F7FD6DEED5"
+        type: "item"
+        item: "kubejs:unseated_steam_valve"
+      }]
+      rewards: [{
+        id: "466D0B02C9334C0C"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 3
+      }]
+    }
+    {
+      id: "4CDD3F29C174B932"
+      title: "Уплотнение парового клапана"
+      description: ["Уложи плетёное кольцо в корпус клапана и осади крышку молотом. Собери один клапан для котла, затем по одному для каждого парового станка."]
+      x: -12.170d
+      y: -2.338d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4699EC6CDDA6914D","463A16F2DE321651","4CD088474AE49C19"]
+      tasks: [{
+        id: "4227524872D673F5"
+        type: "item"
+        item: "kubejs:packed_steam_valve"
+      }]
+      rewards: [{
+        id: "49011B637D8D896B"
+        type: "item"
+        item: "kubejs:stamped_bronze_blank"
+        count: 1
+      }]
+    }
+    {
+      id: "46E58BE9E2D11FCB"
+      title: "Два золотника за ход молота"
+      description: ["Подай заготовку в паровой молот. За один ход он даст пару золотников. Заготовки на расширение мастерской расходуются вдвое экономнее."]
+      x: -6.425d
+      y: 10.028d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44E8E284B41365EF","469738733D41C500"]
+      optional: true
+      tasks: [{
+        id: "4278C1BBD5192B85"
+        type: "item"
+        item: "kubejs:bronze_valve_spindle"
+        count: 2L
+      }]
+      rewards: [{
+        id: "420394AF49DCA566"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4A38E6A64489AB97"
+      title: "Набивка на четыре клапана"
+      description: ["Положи две инструментальные обвязки в компрессор. Одной партии хватит на четыре клапана."]
+      x: -6.425d
+      y: -11.532d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45BDF33A1B33E59F","463A16F2DE321651"]
+      optional: true
+      tasks: [{
+        id: "489137EC4E1EEAF2"
+        type: "item"
+        item: "kubejs:braided_valve_packing"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4F3D8645C36FA3E9"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 2
+      }]
+    }
+    {
+      id: "41378211F1D01951"
+      title: "Дроблёная медь для печи"
+      description: ["Переработай сырую медь в паровой дробилке. Собери два куска дроблёной руды и подай их в паровую печь."]
+      x: -5.745d
+      y: 0.976d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4EF35DA6AEE11365"]
+      tasks: [{
+        id: "4471372FCA202D45"
+        type: "item"
+        item: "gtceu:crushed_copper_ore"
+        count: 2L
+      }]
+      rewards: [{
+        id: "44A519EDF32BB556"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4EDA16293D93081B"
+      title: "Липкая смола"
+      description: ["Найди каучуковое дерево и собери липкую смолу для пробной партии."]
+      x: -4.007d
+      y: -8.428d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["469A83EB7EBD443A"]
+      tasks: [{
+        id: "45BB5C0C4D834169"
+        type: "item"
+        item: "gtceu:sticky_resin"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4BEC0B0DE83702C6"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 3
+      }]
+    }
+    {
+      id: "4020C4C97BCB96C8"
+      title: "Паровая вытяжка связующего"
+      description: ["Экстрактор превращает одну липкую смолу в две порции связующего."]
+      x: -6.425d
+      y: 4.508d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4EDA16293D93081B","4D80CF78A8709C72"]
+      tasks: [{
+        id: "4815099625AFC482"
+        type: "item"
+        item: "kubejs:insulating_gum"
+        count: 4L
+      }]
+      rewards: [{
+        id: "48269AA400F2DCD9"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "451F856DC6658D9F"
+      title: "Порошок для резисторов"
+      description: ["Измельчи древесный уголь в паровой дробилке."]
+      x: -5.745d
+      y: 3.363d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4EF35DA6AEE11365","49F90E9F2AFFA0DD"]
+      tasks: [{
+        id: "4A895BFDAADE6935"
+        type: "item"
+        item: "gtceu:charcoal_dust"
+        count: 2L
+      }]
+      rewards: [{
+        id: "41F0E4A4A72139E7"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "472701EC1D15BDB8"
+      title: "Шамотная масса"
+      description: ["Вымеси глину с песчаным отощителем, толчёной футеровкой и рудными хвостами."]
+      x: -5.745d
+      y: -3.287d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4A969DC8CC61D772","48755B9C008253F9","48F79DB5C825B40D","44E8E284B41365EF"]
+      tasks: [{
+        id: "45073ADBBD047CFF"
+        type: "item"
+        item: "kubejs:fireclay_charge"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4F84AFD5E34E70C0"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "4A16557691F39E55"
+      title: "Прессование сырца"
+      description: ["Положи шамотную массу в паровой молот. За один ход получишь два кирпича-сырца."]
+      x: -3.717d
+      y: 0.269d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["472701EC1D15BDB8","44E8E284B41365EF"]
+      tasks: [{
+        id: "4F297FFDFE407BDA"
+        type: "item"
+        item: "kubejs:coke_brick_blank"
+        count: 8L
+      }]
+      rewards: [{
+        id: "46A9242B67D82D53"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "414518A1D4027DAA"
+      title: "Кладка коксовой печи"
+      description: ["Обожги сырец, затем сложи по четыре кирпича в блок кладки. На стенки первой печи отложи 25 блоков. Ещё четыре понадобятся в рецепте контроллера."]
+      x: -1.688d
+      y: -3.551d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4A16557691F39E55","406FCCBDC3668AE7"]
+      tasks: [{
+        id: "41FEFA9695FD45AC"
+        type: "item"
+        item: "gtceu:coke_oven_bricks"
+        count: 25L
+      }]
+      rewards: [{
+        id: "4B1512A0780B9CAA"
+        type: "item"
+        item: "kubejs:stamped_bronze_blank"
+        count: 1
+      }]
+    }
+    {
+      id: "4BA212969D59C9CD"
+      title: "Каменный уголь для коксования"
+      description: ["Найди угольную жилу. Древесный уголь понадобится в виде порошка, каменный пойдёт в шихту."]
+      x: 0.340d
+      y: 1.186d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["414518A1D4027DAA"]
+      tasks: [{
+        id: "4A5AAB7A87CCE740"
+        type: "item"
+        item: "minecraft:coal"
+        count: 12L
+      }]
+      rewards: [{
+        id: "42E6284306BCABA7"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "4EE43D0188B10D77"
+      title: "Шихта для коксования"
+      description: ["На верстаке уплотни молотом три куска угля, две порции древесноугольной пыли и изоляционную массу."]
+      x: 1.688d
+      y: 4.312d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4BA212969D59C9CD","451F856DC6658D9F","4020C4C97BCB96C8","4CD088474AE49C19"]
+      tasks: [{
+        id: "43B54206763A68AF"
+        type: "item"
+        item: "kubejs:coking_charge"
+        count: 2L
+      }]
+      rewards: [{
+        id: "4EC26626288C755D"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 3
+      }]
+    }
+    {
+      id: "4362DEF98D611195"
+      title: "Первый кокс"
+      description: ["Загрузи шихту в коксовую печь. Через две минуты выгрузи два куска кокса и 750 мБ креозота. Для четырёх кусков проведи два цикла."]
+      x: 4.216d
+      y: 1.069d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4EE43D0188B10D77","45C8798D6BE126C1"]
+      tasks: [{
+        id: "427D517462726432"
+        type: "item"
+        item: "gtceu:coke_gem"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4EBDFF377EFF7898"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "46894CF1BA803E52"
+      title: "Отвод креозота"
+      description: ["Накопи креозот за два цикла, забери ведро. Под постоянный отвод жидкости выдели люк коксовой печи и резервуар."]
+      x: 5.745d
+      y: -1.162d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4362DEF98D611195","49CE3A195951A7A9"]
+      tasks: [{
+        id: "464971FF1F58290F"
+        type: "item"
+        item: "gtceu:creosote_bucket"
+      }]
+      rewards: [{
+        id: "48ED12BC90CB3ED5"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 3
+      }]
+    }
+    {
+      id: "42E54E197350EFAF"
+      title: "Склад кокса"
+      description: ["Держи отдельные запасы кокса для шихты и топки. Партия пригодится при первом пуске стальной линии."]
+      x: 5.745d
+      y: -3.635d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4362DEF98D611195"]
+      optional: true
+      tasks: [{
+        id: "4B17339A5FAC5763"
+        type: "item"
+        item: "gtceu:coke_gem"
+        count: 32L
+      }]
+      rewards: [{
+        id: "460AEE145D08C460"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 2
+      }]
+    }
+    {
+      id: "4C07C522BD53ABA0"
+      title: "Кальцит на флюс"
+      description: ["Проверь кольца аметистовых жеод и каменные горные склоны. Для флюса также подходит сырой кальцит GregTech."]
+      x: -5.745d
+      y: 7.178d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4EF35DA6AEE11365"]
+      tasks: [{
+        id: "4DCDEEFF05C91AD1"
+        type: "item"
+        item: "minecraft:calcite"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4E8926DE171C7428"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 2
+      }]
+    }
+    {
+      id: "43898C25BC7A3A29"
+      title: "Размол известкового флюса"
+      description: ["Раздроби блок кальцита в пыль GregTech. Повторный проход пыли даёт две порции флюса, а отдельная загрузка сырого кальцита одну."]
+      x: 5.745d
+      y: 4.229d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C07C522BD53ABA0","4EF35DA6AEE11365","4362DEF98D611195"]
+      tasks: [{
+        id: "4D3D1F0391906CB5"
+        type: "item"
+        item: "kubejs:lime_flux"
+        count: 8L
+      }]
+      rewards: [{
+        id: "444D8E3E040141E1"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "47A2340544A22D30"
+      title: "Плотный доменный сырец"
+      description: ["Добавь известковый флюс, шамот и раствор. Обожги сырец при более длительном цикле."]
+      x: 7.774d
+      y: 0.070d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4A16557691F39E55","43898C25BC7A3A29","4DB9F7C628654BD1"]
+      tasks: [{
+        id: "47E0ACF553562DCB"
+        type: "item"
+        item: "kubejs:refractory_brick_blank"
+        count: 8L
+      }]
+      rewards: [{
+        id: "499241610FCB812A"
+        type: "item"
+        item: "kubejs:fired_lining"
+        count: 3
+      }]
+    }
+    {
+      id: "4772488180D794D8"
+      title: "Кладка шахты домны"
+      description: ["Обожги огнеупорные кирпичи и собирай их по четыре. На стенки домны 3×3 высотой в четыре блока нужны 32 блока кладки. Ещё четыре отложи на контроллер."]
+      x: 10.482d
+      y: -2.002d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["47A2340544A22D30","406FCCBDC3668AE7"]
+      tasks: [{
+        id: "496F2D295C082E37"
+        type: "item"
+        item: "gtceu:firebricks"
+        count: 32L
+      }]
+      rewards: [{
+        id: "47728367414A42B1"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "4F43B89BB0B1AF62"
+      title: "Подготовка стальной шихты"
+      description: ["Загрузи крицу, два слитка железа, угольный порошок, флюс и кокс в обожжённый тигель."]
+      x: 7.774d
+      y: 2.718d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4883609C0C4D3B4D","43C4612F0F6292A1","43898C25BC7A3A29","4362DEF98D611195","4F91B6A200BBB092","451F856DC6658D9F"]
+      tasks: [{
+        id: "46FADC803678CA5C"
+        type: "item"
+        item: "kubejs:steel_furnace_charge"
+      }]
+      rewards: [{
+        id: "4F72218AF7D3FA4D"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 3
+      }]
+    }
+    {
+      id: "42D1A0C15E16EC1D"
+      title: "Первая стальная плавка"
+      description: ["На одну стальную шихту положи в домну два куска кокса. Через 110 секунд забери слиток стали и тёмную золу."]
+      x: 13.910d
+      y: 0.579d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4F43B89BB0B1AF62","49CE0DA97699364D"]
+      tasks: [{
+        id: "4C3116F25C4C6D47"
+        type: "item"
+        item: "gtceu:steel_ingot"
+      }]
+      rewards: [{
+        id: "4D2C54FDF963CC97"
+        type: "item"
+        item: "gtceu:coke_gem"
+        count: 4
+      }]
+    }
+    {
+      id: "4EE2EEA5641ACA04"
+      title: "Тёмная зола из топки"
+      description: ["Доменная плавка оставляет тёмную золу во втором выходном слоте. Сохрани её для футеровочных вставок электрической печи."]
+      x: 16.567d
+      y: 3.321d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42D1A0C15E16EC1D"]
+      tasks: [{
+        id: "4B32EBAD59033978"
+        type: "item"
+        item: "gtceu:dark_ash_dust"
+        count: 4L
+      }]
+      rewards: [{
+        id: "41C91024F8A6DF94"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "4C471E33EE8BDB2B"
+      title: "Ковка заготовки"
+      description: ["На одну заготовку идут два слитка, два железных листа и заклёпка. Кремнёвый молот изнашивается."]
+      x: 16.260d
+      y: -2.624d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["42D1A0C15E16EC1D","4650DF862BB30C74","4975F2C8A1CEDA75"]
+      tasks: [{
+        id: "476D95DB66BFC95A"
+        type: "item"
+        item: "kubejs:steel_press_blank"
+        count: 2L
+      }]
+      rewards: [{
+        id: "428340DDB0E8ACDC"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+    {
+      id: "4D7A8F4C50733F4A"
+      title: "Прокат первой стали"
+      description: ["Пропусти кованую стальную заготовку через паровой молот. Из одной выходят две пластины. Первая пара пойдёт в турбину LV."]
+      x: 17.916d
+      y: -0.296d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C471E33EE8BDB2B","44E8E284B41365EF"]
+      tasks: [{
+        id: "4B4770BE867E3B0A"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4C4403617839550F"
+        type: "item"
+        item: "gtceu:bronze_plate"
+        count: 3
+      }]
+    }
+    {
+      id: "42FC2F9C0CA18C8C"
+      title: "Штамповка стальной рамы"
+      description: ["Положи кованую стальную заготовку в паровой компрессор. Полученную раму используй для промышленной оснастки и жердей GregCrops."]
+      x: 17.916d
+      y: -5.538d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4C471E33EE8BDB2B","45BDF33A1B33E59F"]
+      tasks: [{
+        id: "45647AFECE45FD53"
+        type: "item"
+        item: "kubejs:pressed_steel_frame"
+      }]
+      rewards: [{
+        id: "4D43E32555387E18"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "45C8798D6BE126C1"
+      title: "Камера коксования"
+      description: ["Сложи полую печь 3×3×3 из 25 блоков кладки и контроллера. Контроллер ставится в центре передней стенки. Камеру в центре оставь пустой."]
+      x: 0.002d
+      y: -1.096d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["414518A1D4027DAA","4CCC011C50940C3E","4F91B6A200BBB092","48F933CA7A837F03"]
+      tasks: [{
+        id: "4349FF15DC3D1025"
+        type: "item"
+        item: "gtceu:coke_oven"
+      }]
+      rewards: [{
+        id: "48BDF58FD47B4C39"
+        type: "item"
+        item: "gtceu:bronze_ingot"
+        count: 2
+      }]
+    }
+    {
+      id: "49CE0DA97699364D"
+      title: "Домна на коксе"
+      description: ["Собери контроллер из паровой печи, огнеупорной кладки, двух фурм, тигля и котельного стыка. Поставь его на втором слое спереди. За ним оставь топочную шахту."]
+      x: 11.830d
+      y: 1.562d
+      shape: "circle"
+      size: 1.090d
+      dependencies: ["4772488180D794D8","4CCC011C50940C3E","4BFC2689B5584A03","4950A05DC49E2608","4F91B6A200BBB092"]
+      tasks: [{
+        id: "44D6BFC50ADD8823"
+        type: "item"
+        item: "gtceu:primitive_blast_furnace"
+      }]
+      rewards: [{
+        id: "4B24886337752895"
+        type: "item"
+        item: "minecraft:charcoal"
+        count: 3
+      }]
+    }
+  ]
+}

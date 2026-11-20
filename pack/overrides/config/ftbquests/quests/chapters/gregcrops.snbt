@@ -1,0 +1,749 @@
+{
+  default_hide_dependency_lines: true
+  default_quest_shape: ""
+  filename: "gregcrops"
+  group: "468EF37A10F16FBE"
+  icon: "gtibdcrops:crop_drop_naquadah"
+  title: "Агрокультуры GregCrops"
+  id: "4D42D0CFD7D17099"
+  order_index: 20
+  quest_links: []
+  images: [{
+    image: "kubejs:textures/quests/web/gregcrops.png"
+    x: 0.0d
+    y: 0.0d
+    width: 33.898d
+    height: 21.778d
+    order: -1
+  }]
+  quests: [
+    {
+      id: "48E4304ABC83A510"
+      title: "Жерди на первой грядке"
+      description: ["Натяни шнур и закрепи палки нагелем на стальной раме. Рама остаётся на верстаке. Поставь жерди на вспаханную землю рядом с водой."]
+      x: -13.011d
+      y: 0.000d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["42FC2F9C0CA18C8C","4F6874E031173E06","44F44EB6168E16BC"]
+      optional: true
+      tasks: [{
+        id: "468FDB3648475CB5"
+        type: "item"
+        item: "gtibdcrops:crop_stick"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4508F3A1B9A695FC"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "4D6EE548DD9D839E"
+      title: "Пшеница на опытной делянке"
+      description: ["Высади семена пшеницы на одинарные жерди. Оставь соседнюю клетку для второго взрослого растения."]
+      x: -10.669d
+      y: -1.153d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48E4304ABC83A510"]
+      optional: true
+      tasks: [{
+        id: "48771A25F246FF40"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4E00C739B331C35A"
+        type: "item"
+        item: "gtibdcrops:crop_stick"
+        count: 2
+      }]
+    }
+    {
+      id: "418A9AC15C7E9177"
+      title: "Первый обмолот на жердях"
+      description: ["Дождись зрелого колоса и собери урожай правой кнопкой. Оставь пшеницу на жердях до следующей жатвы."]
+      x: -9.347d
+      y: 1.056d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D6EE548DD9D839E"]
+      optional: true
+      tasks: [{
+        id: "4139346B8BE527CD"
+        type: "item"
+        item: "minecraft:wheat"
+        count: 4L
+      }]
+      rewards: [{
+        id: "48D5CEE06059EF5A"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 2
+      }]
+    }
+    {
+      id: "42E8A87A9908D06A"
+      title: "Совок для прополки"
+      description: ["Закрепи три железные пластины на рукояти. Вынимая совком сорняки, ты сохраняешь жерди для нового посева."]
+      x: -8.667d
+      y: -3.727d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D6EE548DD9D839E","4975F2C8A1CEDA75","45D72E4E790DEE89","468D4C1249381858"]
+      optional: true
+      tasks: [{
+        id: "4B5B778A22582E7E"
+        type: "item"
+        item: "gtibdcrops:weeding_trowel"
+      }]
+      rewards: [{
+        id: "44F3FA1AA0A5CFF1"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 1
+      }]
+    }
+    {
+      id: "44D25085CD12E757"
+      title: "Тростник для маточного ряда"
+      description: ["Посади сахарный тростник на свободные одинарные жерди. У зрелых растений можно получить потомство."]
+      x: -11.349d
+      y: -2.928d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48E4304ABC83A510"]
+      optional: true
+      tasks: [{
+        id: "444560D5762A851C"
+        type: "item"
+        item: "minecraft:sugar_cane"
+        count: 2L
+      }]
+      rewards: [{
+        id: "41F8489684B89EF6"
+        type: "item"
+        item: "gtibdcrops:crop_stick"
+        count: 2
+      }]
+    }
+    {
+      id: "4869C81E2ACCD5A0"
+      title: "Свободные жерди для скрещивания"
+      description: ["Поставь вторую пару жердей в клетку между взрослыми растениями. Оставь пересечение свободным и пропалывай его до появления всхода."]
+      x: -9.347d
+      y: 2.564d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["44D25085CD12E757","4D6EE548DD9D839E"]
+      optional: true
+      tasks: [{
+        id: "4E658202A2BDED60"
+        type: "item"
+        item: "gtibdcrops:crop_stick"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4CA090FCB99321A8"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 2
+      }]
+    }
+    {
+      id: "49498D50D2ECCDC4"
+      title: "Семена смолистого тростника"
+      description: ["Отбирай потомство на двойных жердях. Дождись зрелости нужного растения и выбей его, чтобы получить мешочек семян. Цвет и стадия помогут отличить липкий тростник от обычного."]
+      x: -7.006d
+      y: -1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4869C81E2ACCD5A0","42E8A87A9908D06A"]
+      optional: true
+      tasks: [{
+        id: "48614EA41E2D88A4"
+        type: "item"
+        item: { id: "gtibdcrops:crop_seed_bag", Count: 1b, tag: {"owner":"ic2","id":"sticky_reed"} }
+        match_nbt: true
+        weak_nbt_match: true
+      }]
+      rewards: [{
+        id: "427C10BE9A1DDE0C"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 2
+      }]
+    }
+    {
+      id: "43142EB8184043DD"
+      title: "Анализатор семян LV"
+      description: ["Подай в сборщик LV датчик, электронную схему, стеклянные панели, оловянные пластины и изоляцию. На пайку уйдёт 144 мБ припоя. Для анализа заряди прибор."]
+      x: -7.346d
+      y: -0.044d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E8A87A9908D06A","4FD53B755911773D","4FCC63C022147426","4DB524F23D41BB31","49FFA666884CE764","4B29F52E5A6FAD55"]
+      optional: true
+      tasks: [{
+        id: "4946663B1B4CA21C"
+        type: "item"
+        item: "gtibdcrops:crop_analyzer"
+      }]
+      rewards: [{
+        id: "4CBB7FE1DA9AD8CA"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 2
+      }]
+    }
+    {
+      id: "40DB434C83124F82"
+      title: "Паспорт смолистого тростника"
+      description: ["Пропусти мешочек через анализатор четыре раза. Для последней ступени нужны 9000 EU. Сохрани полностью изученный образец для маточной грядки."]
+      x: -5.171d
+      y: -2.586d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49498D50D2ECCDC4","43142EB8184043DD"]
+      optional: true
+      tasks: [{
+        id: "48B233E22B4043C5"
+        type: "item"
+        item: { id: "gtibdcrops:crop_seed_bag", Count: 1b, tag: {"owner":"ic2","id":"sticky_reed","scan":4b} }
+        match_nbt: true
+        weak_nbt_match: true
+      }]
+      rewards: [{
+        id: "45CADAB4CC45E2ED"
+        type: "item"
+        item: "gtibdcrops:crop_stick"
+        count: 4
+      }]
+    }
+    {
+      id: "488D823D0CAE9923"
+      title: "Сборщик для участка 11×11"
+      description: ["В сборщике LV соедини корпус, приводы, датчик, манипулятор, схему и четыре жерди с 500 мБ креозота. Машину ставь в центре поля. Она достаёт на пять блоков по горизонтали и на два вверх и вниз."]
+      x: -7.006d
+      y: 1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["48E4304ABC83A510","418A9AC15C7E9177","4FD53B755911773D","4CC895B761566224","46894CF1BA803E52"]
+      optional: true
+      tasks: [{
+        id: "4FDCDB20E9522D67"
+        type: "item"
+        item: "gtibdcrops:lv_crop_manager"
+      }]
+      rewards: [{
+        id: "44E36B75B8BB472D"
+        type: "item"
+        item: "gtceu:steel_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "40E2F9B3817098E1"
+      title: "Отвод первого урожая"
+      description: ["Подключи к машине EU и воду. Поставь конвейер на предметную трубу и забери в сундук первую партию пшеницы."]
+      x: -5.344d
+      y: 4.068d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["488D823D0CAE9923","418A9AC15C7E9177","4CD2C3D6AD0C7C44"]
+      optional: true
+      tasks: [{
+        id: "4FCBD1A425D77EB8"
+        type: "item"
+        item: "minecraft:wheat"
+        count: 24L
+      }]
+      rewards: [{
+        id: "42694853901A765C"
+        type: "item"
+        item: "gtceu:tin_small_item_pipe"
+        count: 2
+      }]
+    }
+    {
+      id: "4A04F0CB8C2EAA06"
+      title: "Смола со зрелого побега"
+      description: ["Дай липкому тростнику полностью созреть. На промежуточной стадии он даст стебли, на последней можно собрать липкую смолу."]
+      x: -2.662d
+      y: 1.716d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["40DB434C83124F82","40E2F9B3817098E1"]
+      optional: true
+      tasks: [{
+        id: "4D590C27E8BD2B3C"
+        type: "item"
+        item: "gtceu:sticky_resin"
+        count: 3L
+      }]
+      rewards: [{
+        id: "44315B2FF7628DEB"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 2
+      }]
+    }
+    {
+      id: "48AA4ED2E1206D25"
+      title: "Запас смолы с опытной делянки"
+      description: ["Оставь ряд липкого тростника для регулярных сборов. Первую партию смолы отложи для изоляции."]
+      x: -1.066d
+      y: -4.168d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A04F0CB8C2EAA06","4EDA16293D93081B"]
+      optional: true
+      tasks: [{
+        id: "4335457928A77B61"
+        type: "item"
+        item: "gtceu:sticky_resin"
+        count: 16L
+      }]
+      rewards: [{
+        id: "43E0217FE6B422F9"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4EE10FFB2B3C061B"
+      title: "Льняная нить"
+      description: ["Сохрани семена льна из селекционной грядки. Взрослые растения дают нить для ремесленных работ."]
+      x: -3.342d
+      y: -1.773d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4D6EE548DD9D839E","42E8A87A9908D06A","40E2F9B3817098E1"]
+      optional: true
+      tasks: [{
+        id: "4D1FC9C174227686"
+        type: "item"
+        item: "minecraft:string"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4E142FD24E5144BE"
+        type: "item"
+        item: "gtibdcrops:crop_stick"
+        count: 2
+      }]
+    }
+    {
+      id: "41686F7C844D8D0A"
+      title: "Медный хлопок для реактора MV"
+      description: ["Собери медный хлопок. В химическом реакторе сверь рецепт для выбранной медной руды и подай дроблёную руду вместе с урожаем."]
+      x: 1.001d
+      y: -2.338d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["4EE10FFB2B3C061B","48AA4ED2E1206D25","4785BDDC7D73AFB0"]
+      optional: true
+      tasks: [{
+        id: "4A8967CF6C1E9201"
+        type: "item"
+        item: "gtibdcrops:crop_drop_coppon"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4C1603E5FCA41A08"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "429E67332DF5266B"
+      title: "Оловянный урожай"
+      description: ["Отложи отдельно оловянный урожай и касситерит. Совместную переработку веди на линии MV."]
+      x: -4.664d
+      y: -4.925d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["49498D50D2ECCDC4","4D6EE548DD9D839E","4785BDDC7D73AFB0","43DD512594965578"]
+      optional: true
+      tasks: [{
+        id: "4B355C306E1E96EC"
+        type: "item"
+        item: "gtibdcrops:crop_drop_tine"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4FDA9C0067F75E96"
+        type: "item"
+        item: "gtceu:tin_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "48A573AAA259B974"
+      title: "Сбор ферру"
+      description: ["Устрой грядку для ферру и собери зрелые плоды. Отправь их в линию очистки железной руды."]
+      x: 3.165d
+      y: -3.195d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41686F7C844D8D0A","429E67332DF5266B"]
+      optional: true
+      tasks: [{
+        id: "45185BE267136AA5"
+        type: "item"
+        item: "gtibdcrops:crop_drop_ferru"
+        count: 4L
+      }]
+      rewards: [{
+        id: "446F596E20B0EB4C"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 2
+      }]
+    }
+    {
+      id: "416C3A8F0E48465B"
+      title: "Масло из нефтяных ягод"
+      description: ["Ягоды накапливай в предметном буфере. В экстракторе MV выдели из них жидкость и отведи её в отдельную ёмкость."]
+      x: -0.661d
+      y: 2.486d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A04F0CB8C2EAA06","44539B688C2EE6EC","4A0DD16444443297"]
+      optional: true
+      tasks: [{
+        id: "42E84FB4C228AE49"
+        type: "item"
+        item: "gtibdcrops:crop_drop_oil_berry"
+        count: 8L
+      }]
+      rewards: [{
+        id: "4E3C10CB416CC87A"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 2
+      }]
+    }
+    {
+      id: "4BB3D75663EC4ADC"
+      title: "Стальнолист для металлургического цеха"
+      description: ["Выдели ряд для стальнолиста. Зрелые листья дают стальную пыль, иногда со сбором попадается готовый слиток."]
+      x: 5.004d
+      y: -1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["48A573AAA259B974","42D1A0C15E16EC1D","4D12F46313F9CA9B"]
+      optional: true
+      tasks: [{
+        id: "4B334B0324B3041D"
+        type: "item"
+        item: "gtceu:steel_dust"
+        count: 4L
+      }]
+      rewards: [{
+        id: "41FF3BEA7FFF8F6E"
+        type: "item"
+        item: "gtibdcrops:crop_stick"
+        count: 2
+      }]
+    }
+    {
+      id: "430F7FE1B716E535"
+      title: "Бауксия для алюминиевой линии"
+      description: ["Собери плоды бауксии. На линии HV выбери в JEI нужную бокситовую руду и приготовь партию к переработке."]
+      x: 2.662d
+      y: -5.048d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["41686F7C844D8D0A","429E67332DF5266B","4D12F46313F9CA9B"]
+      optional: true
+      tasks: [{
+        id: "411F9242A0E52F15"
+        type: "item"
+        item: "gtibdcrops:crop_drop_bauxite"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4B5DB7C9FD9B7B03"
+        type: "item"
+        item: "gtceu:tin_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4312A8E12C938BD3"
+      title: "Ильменит с титановой грядки"
+      description: ["Подготовь подходящую опору под пашней и дождись созревания титании. На переработку ильменитового урожая выдели реактор EV."]
+      x: 7.346d
+      y: -3.962d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BB3D75663EC4ADC","430F7FE1B716E535","477F03487DCAB625","463599FF8883FD0D"]
+      optional: true
+      tasks: [{
+        id: "489D73788E6F4BDF"
+        type: "item"
+        item: "gtibdcrops:crop_drop_ilmenite"
+        count: 4L
+      }]
+      rewards: [{
+        id: "4CD37F028CA0B1C2"
+        type: "item"
+        item: "gtceu:tin_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "40674F9C6FC8381F"
+      title: "Платиновый урожай для реактора IV"
+      description: ["Оставь семенной ряд платины. Часть плодов отправь на линию IV вместе с подходящей дроблёной рудой."]
+      x: 8.667d
+      y: -1.244d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4312A8E12C938BD3","48A573AAA259B974","40EAC963E3020793","4C4F332D5A35474D"]
+      optional: true
+      tasks: [{
+        id: "41C876C9B27F3A26"
+        type: "item"
+        item: "gtibdcrops:crop_drop_platinum"
+        count: 4L
+      }]
+      rewards: [{
+        id: "493534F8640E6995"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "426BAE6B8490459E"
+      title: "Алмазная пыль с тростника"
+      description: ["Чтобы тростник созрел, подложи алмазную опору под грядку. Основной урожай пылевидный, иногда встречается целый алмаз."]
+      x: 5.004d
+      y: 1.500d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["416C3A8F0E48465B","430F7FE1B716E535","4C4F332D5A35474D"]
+      optional: true
+      tasks: [{
+        id: "4FBC9177A6A1E508"
+        type: "item"
+        item: "gtceu:diamond_dust"
+        count: 4L
+      }]
+      rewards: [{
+        id: "47F0EB1F9A829F4B"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 2
+      }]
+    }
+    {
+      id: "433C581DECA8499F"
+      title: "Иридиевые плоды квантарии"
+      description: ["Высади квантарии на участке с иридиевым основанием. Собери четыре порции иридиевых плодов для переработки на LuV."]
+      x: 11.009d
+      y: 1.657d
+      shape: "circle"
+      size: 1.550d
+      dependencies: ["40674F9C6FC8381F","426BAE6B8490459E","46246E20CC8ECB99"]
+      optional: true
+      tasks: [{
+        id: "4F2613C351D3F399"
+        type: "item"
+        item: "gtibdcrops:crop_drop_iridium"
+        count: 4L
+      }]
+      rewards: [{
+        id: "45131CF821A9632C"
+        type: "item"
+        item: "minecraft:wheat_seeds"
+        count: 2
+      }]
+    }
+    {
+      id: "451F71F8931CCDBD"
+      title: "Наквадах со старгатиума"
+      description: ["Подготовь наквадаховое основание. Вместе с обычным урожаем старгатиум изредка даёт наквадаховые плоды. Их переработка требует UV."]
+      x: 13.011d
+      y: -1.658d
+      shape: "circle"
+      size: 1.900d
+      dependencies: ["433C581DECA8499F","4312A8E12C938BD3","4A4A9297E08ADEE0"]
+      optional: true
+      tasks: [{
+        id: "42E6E891938C5065"
+        type: "item"
+        item: "gtibdcrops:crop_drop_naquadah"
+        count: 4L
+      }]
+      rewards: [{
+        id: "435F090E62E8D54A"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4A0DD16444443297"
+      title: "Поле 15×15 на MV"
+      description: ["Перенеси предыдущий сборщик в сборочную машину MV. Добавь корпус и приводы этого напряжения. После установки оставь по 7 блоков от машины до края поля."]
+      x: -4.664d
+      y: 2.449d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["488D823D0CAE9923","481EFC0EEFC2DEF6"]
+      optional: true
+      tasks: [{
+        id: "4D068C5942610443"
+        type: "item"
+        item: "gtibdcrops:mv_crop_manager"
+      }]
+      rewards: [{
+        id: "45B2768E1C702632"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4BEF5732D407F3B7"
+      title: "Поле 19×19 на HV"
+      description: ["Перенеси предыдущий сборщик в сборочную машину HV. Добавь корпус и приводы этого напряжения. После установки оставь по 9 блоков от машины до края поля."]
+      x: -2.662d
+      y: 0.240d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4A0DD16444443297","4D12F46313F9CA9B"]
+      optional: true
+      tasks: [{
+        id: "4E193B6F429C0057"
+        type: "item"
+        item: "gtibdcrops:hv_crop_manager"
+      }]
+      rewards: [{
+        id: "4E40FE5F170D01A4"
+        type: "item"
+        item: "gtceu:tin_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "48077379EA93C73F"
+      title: "Поле 23×23 на EV"
+      description: ["Перенеси предыдущий сборщик в сборочную машину EV. Добавь корпус и приводы этого напряжения. После установки оставь по 11 блоков от машины до края поля."]
+      x: -1.153d
+      y: 5.310d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["4BEF5732D407F3B7","463599FF8883FD0D"]
+      optional: true
+      tasks: [{
+        id: "4C50BC1C3156EEAB"
+        type: "item"
+        item: "gtibdcrops:ev_crop_manager"
+      }]
+      rewards: [{
+        id: "43E08447AAF9B003"
+        type: "item"
+        item: "kubejs:wooden_peg"
+        count: 2
+      }]
+    }
+    {
+      id: "488BD2A93E4CD291"
+      title: "Поле 27×27 на IV"
+      description: ["Перенеси предыдущий сборщик в сборочную машину IV. Добавь корпус и приводы этого напряжения. После установки оставь по 13 блоков от машины до края поля."]
+      x: 0.661d
+      y: 7.818d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["48077379EA93C73F","4C4F332D5A35474D"]
+      optional: true
+      tasks: [{
+        id: "4BAD4ABD4329D277"
+        type: "item"
+        item: "gtibdcrops:iv_crop_manager"
+      }]
+      rewards: [{
+        id: "47153FB98DAD4995"
+        type: "item"
+        item: "gtibdcrops:crop_stick"
+        count: 2
+      }]
+    }
+    {
+      id: "45C8036723C253E7"
+      title: "Поле 31×31 на LuV"
+      description: ["Перенеси предыдущий сборщик в сборочную машину LuV. Добавь корпус и приводы этого напряжения. После установки оставь по 15 блоков от машины до края поля."]
+      x: 3.342d
+      y: 7.120d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["488BD2A93E4CD291","46246E20CC8ECB99"]
+      optional: true
+      tasks: [{
+        id: "45BDF6C54E2A48CE"
+        type: "item"
+        item: "gtibdcrops:luv_crop_manager"
+      }]
+      rewards: [{
+        id: "45E772AA07BBA791"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "42E2C24EB00D6724"
+      title: "Поле 35×35 на ZPM"
+      description: ["Перенеси предыдущий сборщик в сборочную машину ZPM. Добавь корпус и приводы этого напряжения. После установки оставь по 17 блоков от машины до края поля."]
+      x: 5.344d
+      y: 4.880d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["45C8036723C253E7","453BEE93E4E1DC53"]
+      optional: true
+      tasks: [{
+        id: "411DBC3769FA3DB8"
+        type: "item"
+        item: "gtibdcrops:zpm_crop_manager"
+      }]
+      rewards: [{
+        id: "4B16E7B8D3DF88D3"
+        type: "item"
+        item: "gtceu:iron_plate"
+        count: 2
+      }]
+    }
+    {
+      id: "4A4A9297E08ADEE0"
+      title: "Поле 39×39 на UV"
+      description: ["Перенеси предыдущий сборщик в сборочную машину UV. Добавь корпус и приводы этого напряжения. После установки оставь по 19 блоков от машины до края поля."]
+      x: 7.346d
+      y: 1.553d
+      shape: "circle"
+      size: 0.910d
+      dependencies: ["42E2C24EB00D6724","4BF9760115D64AF5"]
+      optional: true
+      tasks: [{
+        id: "4F1F67CDC15E2C33"
+        type: "item"
+        item: "gtibdcrops:uv_crop_manager"
+      }]
+      rewards: [{
+        id: "408067D18F122496"
+        type: "item"
+        item: "gtibdcrops:crop_stick"
+        count: 2
+      }]
+    }
+  ]
+}

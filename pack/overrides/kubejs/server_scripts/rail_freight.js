@@ -1,84 +1,102 @@
-const freightCrate = 'kubejs:sealed_refractory_crate'
-const freightBatchSize = 8
-const freightDistance = 192
-
-function findFreight(train) {
-  const cargo = []
-  let needed = freightBatchSize
-  let inventory
-  let amount
-  for (let car = 0; car < train.carriages.size() && needed > 0; car++) {
-    inventory = train.carriages.get(car).storage.getAllItems()
-    if (!inventory) continue
-    for (let slot = 0; slot < inventory.getSlots() && needed > 0; slot++) {
-      if (inventory.getStackInSlot(slot).id !== freightCrate) continue
-      amount = inventory.extractItem(slot, needed, true).getCount()
-      if (amount === 0) continue
-      cargo.push({ inventory: inventory, slot: slot, amount: amount })
-      needed -= amount
-    }
-  }
-  return needed === 0 ? cargo : null
+const FreightCart = Java.loadClass('net.minecraft.world.entity.vehicle.MinecartChest')
+const FreightBounds = Java.loadClass('net.minecraft.world.phys.AABB')
+const FreightUuid = Java.loadClass('java.util.UUID')
+const freightCargo = 'kubejs:sealed_refractory_crate'
+const freightKey = 'GTIBDShipment'
+const freightBatch = 8
+function cargoSeal(stack) {
+  return stack.nbt ? String(stack.nbt.getString(freightKey)) : ''
 }
-
-BlockEvents.rightClicked('create:track_station', event => {
-  const waybill = event.item
-  if (waybill.id !== 'kubejs:rail_waybill' || event.level.isClientSide()) return
+function manifestSlots(cart, seal) {
+  let needed = freightBatch
+  const slots = []
+  for (let i = 0; i < cart.getContainerSize() && needed > 0; i++) {
+    var stack = cart.getItem(i)
+    if (String(stack.id) !== freightCargo || (seal && cargoSeal(stack) !== seal)) continue
+    var amount = Math.min(needed, stack.count)
+    slots.push([i,amount])
+    needed -= amount
+  }
+  return needed === 0 ? slots : null
+}
+function releaseCart(cart) {
+  for (let i = 0; i < cart.getContainerSize(); i++) {
+    var stack = cart.getItem(i)
+    if (String(stack.id) === freightCargo && cargoSeal(stack)) stack.removeTagKey(freightKey)
+  }
+  cart.persistentData.remove('GTIBDWaybill')
+  cart.setChanged()
+}
+// Only a dispatched, loaded cart needs its seal checked. Unloading pauses checks until the cart returns.
+const activeFreightChecks = new Map()
+function watchFreight(cart) {
+  if (!cart.persistentData.contains('GTIBDWaybill') || cart.level.isClientSide()) return
+  const key = String(cart.uuid)
+  if (activeFreightChecks.get(key) === cart) return
+  activeFreightChecks.set(key, cart)
+  const poll = () => {
+    if (activeFreightChecks.get(key) !== cart) return
+    if (cart.isRemoved() || !cart.persistentData.contains('GTIBDWaybill')) {
+      activeFreightChecks.delete(key)
+      return
+    }
+    const route = cart.persistentData.getCompound('GTIBDWaybill')
+    if (!manifestSlots(cart, String(route.getString('seal')))) {
+      activeFreightChecks.delete(key)
+      releaseCart(cart)
+      return
+    }
+    cart.level.server.scheduleInTicks(10, poll)
+  }
+  cart.level.server.scheduleInTicks(10, poll)
+}
+EntityEvents.spawned('minecraft:chest_minecart', event => watchFreight(event.entity))
+PlayerEvents.inventoryChanged(freightCargo, event => {
+  if (cargoSeal(event.item)) {
+    event.item.removeTagKey(freightKey)
+    event.player.getInventory().setChanged()
+  }
+})
+BlockEvents.rightClicked('minecraft:detector_rail', event => {
+  if (event.level.isClientSide() || String(event.item.id) !== 'kubejs:rail_waybill') return
   event.cancel()
-  const player = event.player
+  const player = event.player, pos = event.block.pos, waybill = event.item
   const tell = key => player.tell(Text.translate('message.zero_shift.rail_' + key))
-  if (String(event.level.dimension) !== 'minecraft:overworld') {
-    tell('overworld_only')
-    return
-  }
-
-  const stationBlock = event.block.getEntity()
-  const station = stationBlock == null ? null : stationBlock.getStation()
-  const train = station == null ? null : station.getPresentTrain()
-  if (train == null) {
-    tell('train_required')
-    return
-  }
-  const pos = event.block.getPos()
-  const trainId = String(train.id)
-  const tag = waybill.getOrCreateTag()
-  const dispatchedTrain = tag.getString('ZeroShiftTrain')
-  if (dispatchedTrain && dispatchedTrain !== trainId) {
-    tell('different_train')
-    return
-  }
-  const dx = pos.getX() - tag.getInt('ZeroShiftOriginX')
-  const dz = pos.getZ() - tag.getInt('ZeroShiftOriginZ')
-  if (dispatchedTrain && dx * dx + dz * dz < freightDistance * freightDistance) {
-    tell('station_too_close')
-    return
-  }
-
-  const cargo = findFreight(train)
-  if (!cargo) {
-    tell('cargo_required')
-    return
-  }
-  if (!dispatchedTrain) {
-    tag.putString('ZeroShiftTrain', trainId)
-    tag.putInt('ZeroShiftOriginX', pos.getX())
-    tag.putInt('ZeroShiftOriginZ', pos.getZ())
+  if (String(event.level.dimension) !== 'minecraft:overworld') return tell('overworld_only')
+  const carts = event.level.getEntitiesOfClass(FreightCart, new FreightBounds(pos).inflate(0,0.75,0))
+  if (carts.size() !== 1) return tell('train_required')
+  const cart = carts.get(0), data = cart.persistentData, form = waybill.getOrCreateTag()
+  const route = data.getCompound('GTIBDWaybill'), uuid = String(cart.uuid)
+  const seal = String(route.getString('seal')), owner = String(player.uuid)
+  if (!seal || String(form.getString(freightKey)) !== seal) {
+    if (seal && !(player.isShiftKeyDown() && String(route.getString('owner')) === owner &&
+      pos.x === route.getInt('x') && pos.z === route.getInt('z'))) return tell('already_dispatched')
+    const slots = manifestSlots(cart, '')
+    if (!slots) return tell('cargo_required')
+    if (seal) releaseCart(cart)
+    const fresh = String(FreightUuid.randomUUID())
+    slots.forEach(pair => cart.getItem(pair[0]).getOrCreateTag().putString(freightKey,fresh))
+    route.putString('seal',fresh)
+    route.putString('owner',owner)
+    route.putInt('x',pos.x)
+    route.putInt('z',pos.z)
+    data.put('GTIBDWaybill',route)
+    watchFreight(cart)
+    form.putString(freightKey,fresh)
+    form.putString('ZeroShiftTrain',uuid)
+    cart.setChanged()
     player.getInventory().setChanged()
-    tell('dispatched')
-    return
+    return tell('dispatched')
   }
-
-  let unloaded = 0
-  cargo.forEach(load => {
-    unloaded += load.inventory.extractItem(load.slot, load.amount, false).getCount()
-  })
-  if (unloaded !== freightBatchSize) {
-    if (unloaded > 0) player.give(Item.of(freightCrate, unloaded))
-    tell('cargo_required')
-    return
-  }
+  if (String(form.getString('ZeroShiftTrain')) !== uuid) return tell('different_train')
+  const dx = pos.x-route.getInt('x'), dz = pos.z-route.getInt('z')
+  if (dx*dx+dz*dz < 192*192) return tell('station_too_close')
+  const slots = manifestSlots(cart,seal)
+  if (!slots) {releaseCart(cart); return tell('cargo_required')}
+  slots.forEach(pair => cart.removeItem(pair[0],pair[1]))
+  releaseCart(cart)
   waybill.shrink(1)
-  player.give(Item.of('kubejs:received_refractory_crate', freightBatchSize))
-  player.give(Item.of('kubejs:rail_delivery_receipt'))
+  player.give(Item.of('kubejs:received_refractory_crate',freightBatch))
+  player.give('kubejs:rail_delivery_receipt')
   tell('accepted')
 })

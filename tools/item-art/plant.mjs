@@ -403,6 +403,16 @@ export default function drawPlant({ item, poly, rect, ellipse, line, px, cuboid 
     line(9, 23, 27, 11, '#ddb279')
     line(18, 17, 20, 18, '#7f6037')
   })
+  item('hv_steel_coil_preform', () => {
+    ellipse(5, 9, 22, 18, '#44474d', '#292c32')
+    ellipse(4, 5, 23, 17, '#828995', '#30343d')
+    ellipse(8, 8, 15, 11, '#626977', '#bcc3ca')
+    ellipse(12, 11, 7, 5, '#242632', '#33343c')
+    line(21, 19, 26, 17, '#9b643e', 2)
+    line(21, 20, 24, 24, '#ba8553', 2)
+    line(7, 16, 7, 22, '#a9afb6')
+  })
+
   item('hv_winding_pack', () => {
     rect(4, 5, 24, 23, 'iron', 'edge')
     rect(6, 7, 20, 19, '#ae7245', 'edge')

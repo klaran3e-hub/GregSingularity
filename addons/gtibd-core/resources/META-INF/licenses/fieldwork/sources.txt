@@ -1,0 +1,13 @@
+Audio used in GregSingularity Core
+Kenney: RPG Audio, CC0. chop, knifeSlice, cloth1, cloth3, metalClick, metalPot2.
+https://kenney.nl/assets/rpg-audio
+https://opengameart.org/content/50-rpg-sound-effects
+Minetest Game (Luanti project): https://github.com/luanti-org/minetest_game
+Benboncan: default_dig_cracky.1-3. CC BY 3.0. https://freesound.org/people/Benboncan/sounds/71823/
+AGFX: default_water_footstep.1-2. CC BY 3.0. https://freesound.org/people/AGFX/packs/1253/
+dobroide: fire_small. CC BY 3.0. https://freesound.org/people/dobroide/sounds/4211/
+Mito551: default_dig_crumbly. CC BY-SA 3.0.
+https://creativecommons.org/licenses/by/3.0/
+https://creativecommons.org/licenses/by-sa/3.0/
+https://creativecommons.org/publicdomain/zero/1.0/
+Original licenses retained. The six Kenney samples were mixed to mono for positional playback. Filenames normalized for Minecraft.

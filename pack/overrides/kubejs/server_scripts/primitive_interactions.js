@@ -18,23 +18,3 @@ BlockEvents.broken(event => {
   event.cancel()
 })
 
-const washedMaterials = {
-  'kubejs:plant_fibre': 'kubejs:washed_fibre',
-  'kubejs:copper_grit': 'kubejs:washed_copper_grit',
-  'kubejs:iron_grit': 'kubejs:washed_iron_grit',
-  'kubejs:tin_grit': 'kubejs:washed_tin_grit',
-  'kubejs:gold_grit': 'kubejs:washed_gold_grit',
-  'create:wheat_flour': 'create:dough'
-}
-
-Object.entries(washedMaterials).forEach(([raw, washed]) => {
-  ItemEvents.rightClicked(raw, event => {
-    const hit = event.player.rayTrace(5, true)
-    if (!hit.block || hit.block.id !== 'minecraft:water') return
-    const amount = Math.min(event.item.count, event.player.isShiftKeyDown() ? 4 : 1)
-    event.item.shrink(amount)
-    event.player.give(Item.of(washed, amount))
-    if (raw.endsWith('_grit')) event.player.give(Item.of('kubejs:ore_tailings', amount))
-    event.cancel()
-  })
-})

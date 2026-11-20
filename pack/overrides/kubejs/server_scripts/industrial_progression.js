@@ -6,7 +6,7 @@ ServerEvents.recipes(event => {
   const pipe = 'gtceu:bronze_small_fluid_pipe'
   const lining = 'kubejs:fired_lining'
   const rivet = 'kubejs:iron_rivet'
-  const hammer = 'gtceu:flint_hammer'
+  const hammer = '#gtceu:tools/crafting_hammers'
   const gt = name => 'gtceu:' + name
   const ks = name => 'kubejs:' + name
   const furnace = 'minecraft:furnace'
@@ -18,9 +18,10 @@ ServerEvents.recipes(event => {
   const plank = '#minecraft:planks'
   const joint = ks('wooden_joint')
   const lvCircuit = gt('basic_electronic_circuit')
-  const press = 'create:mechanical_press'
-  const pump = 'create:mechanical_pump'
+  const press = 'kubejs:forging_saddle'
+  const pump = 'kubejs:hand_pump_barrel'
   const bronzeDrum = gt('bronze_drum')
+  const valve = ks('packed_steam_valve')
 
   function workshop(id, count, pattern, keys) {
     const output = gt(id)
@@ -37,47 +38,16 @@ ServerEvents.recipes(event => {
       .itemOutputs(Item.of(output, count)).duration(ticks).EUt(28)
   }
 
-  // Bronze begins with the Create concentrate charge and remains the same furnace recipe on steam.
-  event.remove({ id: 'immersiveengineering:alloysmelter/bronze' })
-  event.remove({ id: 'immersiveengineering:arcfurnace/alloy_bronze' })
+  // The field bloomery is the first source of bronze.
   event.remove({ id: 'forestry:smelter/bronze_from_ingots' })
   event.remove({ id: 'forestry:smelter/bronze_from_raw_materials' })
   event.remove({ type: gt('alloy_smelter'), output: gt('bronze_ingot') })
   event.remove({ type: gt('mixer'), output: gt('bronze_dust') })
-
-  event.custom({
-    type: 'create:mixing',
-    ingredients: [
-      { item: 'kubejs:washed_copper_grit' }, { item: 'kubejs:washed_copper_grit' },
-      { item: 'kubejs:washed_copper_grit' }, { item: 'kubejs:washed_tin_grit' },
-      { item: 'minecraft:charcoal' }, { item: 'kubejs:fired_crucible' },
-      { fluid: 'minecraft:water', amount: 500 }
-    ],
-    results: [{ item: 'kubejs:bronze_charge' }]
-  }).id('zero_shift:create/bronze_charge')
-  event.custom({
-    type: 'minecraft:smelting', ingredient: { item: 'kubejs:bronze_charge' },
-    result: 'gtceu:bronze_ingot', experience: 0.7, cookingtime: 2400
-  }).id('zero_shift:gtceu/first_bronze')
-  event.custom({
-    type: 'create:compacting',
-    ingredients: [{ item: plate }, { item: plate }, { fluid: 'minecraft:water', amount: 250 }],
-    results: [{ item: stampedBlank }]
-  }).id('zero_shift:create/stamped_bronze_blank')
-  event.custom({
-    type: 'create:compacting',
-    ingredients: [
-      { item: stampedBlank }, { item: stampedBlank }, { item: stampedBlank }, { item: stampedBlank },
-      { item: lining }, { item: lining }, { item: 'kubejs:fibre_cord' }, { item: 'kubejs:fibre_cord' }, { item: rivet },
-      { fluid: 'minecraft:water', amount: 500 }
-    ],
-    results: [{ item: seal }]
-  }).id('zero_shift:gtceu/boiler_joint')
+  event.remove({ id: 'gtceu:shapeless/dust_bronze' })
 
   const replaced = [
     casing, pipe, 'gtceu:bronze_firebox_casing', 'gtceu:lp_steam_solid_boiler',
-    'gtceu:lp_steam_macerator', 'gtceu:lp_steam_forge_hammer', 'gtceu:lp_steam_extractor', 'gtceu:lv_machine_hull',
-    'immersiveengineering:component_iron', 'immersiveengineering:component_steel'
+    'gtceu:lp_steam_macerator', 'gtceu:lp_steam_forge_hammer', 'gtceu:lp_steam_extractor', 'gtceu:lv_machine_hull'
   ]
   for (const output of replaced) event.remove({ output: output })
 
@@ -91,25 +61,25 @@ ServerEvents.recipes(event => {
     P: plate, B: stampedBlank, H: hammer, R: rivet
   }).id('zero_shift:gtceu/small_bronze_fluid_pipe').damageIngredient(hammer)
   event.shaped('gtceu:lp_steam_solid_boiler', ['PSP', 'VCV', 'PFP'], {
-    P: plate, S: seal, V: pipe, C: casing, F: 'gtceu:bronze_firebox_casing'
+    P: plate, S: valve, V: ks('boiler_tube_bank'), C: casing, F: firebox
   }).id('zero_shift:gtceu/first_boiler')
-  event.shaped('gtceu:lp_steam_macerator', ['SDS', 'BCB', 'PVP'], {
-    S: stampedBlank, D: 'create:millstone', B: 'kubejs:shaft_bushing',
+  event.shaped('gtceu:lp_steam_macerator', ['SDT', 'BCB', 'PVP'], {
+    S: stampedBlank, D: 'kubejs:grinding_runner', T: valve, B: 'kubejs:shaft_bushing',
     C: casing, P: plate, V: pipe
   }).id('zero_shift:gtceu/steam_macerator')
-  event.shaped('gtceu:lp_steam_forge_hammer', ['PHP', 'BCB', 'SVS'], {
-    P: plate, H: 'create:mechanical_press', B: stampedBlank,
-    C: casing, S: seal, V: pipe
+  event.shaped('gtceu:lp_steam_forge_hammer', ['PHP', 'BCB', 'SVT'], {
+    P: plate, H: 'kubejs:forging_saddle', B: stampedBlank,
+    C: casing, S: seal, V: pipe, T: valve
   }).id('zero_shift:gtceu/steam_forge_hammer')
-  event.shaped('gtceu:lp_steam_extractor', ['PSP', 'VCV', 'PFP'], {
-    P: 'gtceu:copper_plate', S: seal, V: pipe, C: casing, F: 'create:encased_fan'
+  event.shaped('gtceu:lp_steam_extractor', ['PSP', 'VCT', 'PFP'], {
+    P: 'gtceu:copper_plate', S: seal, V: pipe, T: valve, C: casing, F: 'kubejs:hearth_bellows'
   }).id('zero_shift:gtceu/steam_extractor')
 
-  workshop('lp_steam_furnace', 1, ['PBP', 'VFV', 'SCS'], {
-    P: plate, B: stampedBlank, V: pipe, F: furnace, S: seal, C: firebox
+  workshop('lp_steam_furnace', 1, ['PBP', 'VFV', 'SCT'], {
+    P: plate, B: stampedBlank, V: pipe, F: furnace, S: seal, C: firebox, T: valve
   })
-  workshop('lp_steam_alloy_smelter', 1, ['BCB', 'SFS', 'PVP'], {
-    B: stampedBlank, C: 'kubejs:fired_crucible', S: seal, F: gt('lp_steam_furnace'), P: plate, V: pipe
+  workshop('lp_steam_alloy_smelter', 1, ['BCB', 'SFT', 'PVP'], {
+    B: stampedBlank, C: 'kubejs:fired_crucible', S: seal, F: gt('lp_steam_furnace'), T: valve, P: plate, V: pipe
   })
 
   workshop('wood_drum', 1, ['PJP', 'RBR', 'PSP'], {
@@ -150,7 +120,7 @@ ServerEvents.recipes(event => {
     liquid_boiler: gt('lv_electric_pump'),
     solar_boiler: 'minecraft:glass_pane',
     furnace: lining,
-    macerator: 'create:millstone',
+    macerator: 'kubejs:grinding_runner',
     forge_hammer: press,
     extractor: pump,
     compressor: press,
@@ -178,7 +148,7 @@ ServerEvents.recipes(event => {
     '2x ' + rivet, gt('lv_conveyor_module')], 900, 500)
   assemble('steam_input_hatch', 1, [gt('steam_machine_casing'), bronzeDrum, pump, '2x ' + pipe,
     '2x ' + seal], 900, 500)
-  assemble('steam_grinder', 1, [gt('hp_steam_macerator'), '2x ' + gt('steam_machine_casing'), '2x create:millstone',
+  assemble('steam_grinder', 1, [gt('hp_steam_macerator'), '2x ' + gt('steam_machine_casing'), '2x kubejs:grinding_runner',
     '2x ' + gt('bronze_pipe_casing'), '2x ' + lvCircuit, '2x ' + seal], 1600, 1250)
   assemble('steam_oven', 1, [gt('hp_steam_furnace'), '2x ' + gt('steam_machine_casing'), '2x ' + firebox,
     '2x ' + gt('bronze_pipe_casing'), '2x ' + lvCircuit, '2x ' + seal], 1600, 1250)
@@ -186,9 +156,6 @@ ServerEvents.recipes(event => {
     '4x ' + gt('bronze_pipe_casing'), '2x ' + bronzeDrum, '2x ' + lvCircuit, steelFrame], 1850, 1500)
   assemble('steel_large_boiler', 1, [gt('bronze_large_boiler'), gt('hp_steam_liquid_boiler'),
     '4x ' + gt('steel_firebox_casing'), '4x ' + steel, '2x ' + steelFrame, '2x ' + lvCircuit], 2200, 2000)
-  assemble('primitive_blast_furnace', 1, [gt('lp_steam_furnace'), '4x ' + gt('bronze_brick_casing'),
-    '2x ' + firebox, '4x ' + lining, steelFrame, '2x ' + seal], 1500, 1250)
-
   workshop('wooden_multiblock_tank', 1, ['PJP', 'TDT', 'PSP'], {
     P: plank, J: joint, T: gt('wooden_tank_valve'), D: gt('wood_drum'), S: seal
   })
@@ -201,15 +168,8 @@ ServerEvents.recipes(event => {
     '2x ' + stampedBlank, '2x ' + seal], 900, 500)
 
   event.shaped('gtceu:lv_machine_hull', ['BRB', 'WCW', 'BRB'], {
-    B: stampedBlank, R: rivet, W: 'gtceu:tin_single_cable', C: 'gtceu:lv_machine_casing'
+    B: stampedBlank, R: 'kubejs:lv_terminal_block', W: 'gtceu:tin_single_cable', C: 'gtceu:lv_machine_casing'
   }).id('zero_shift:gtceu/lv_machine_hull')
 
-  event.shaped('immersiveengineering:component_iron', ['PRP', 'BHB', 'PSP'], {
-    P: 'gtceu:iron_plate', R: rivet, B: stampedBlank,
-    H: 'gtceu:lv_machine_hull', S: 'create:gearbox'
-  }).id('zero_shift:ie/component_iron')
-  event.shaped('immersiveengineering:component_steel', ['PHP', 'BIB', 'PVP'], {
-    P: 'gtceu:steel_plate', H: hammer, B: 'kubejs:shaft_bushing',
-    I: 'immersiveengineering:component_iron', V: seal
-  }).id('zero_shift:ie/component_steel').damageIngredient(hammer)
+
 })

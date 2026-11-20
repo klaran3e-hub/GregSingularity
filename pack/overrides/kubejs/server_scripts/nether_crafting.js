@@ -2,7 +2,6 @@ ServerEvents.recipes(event => {
   const ks = name => 'kubejs:' + name
   const gt = name => 'gtceu:' + name
   const mc = name => 'minecraft:' + name
-  const create = name => 'create:' + name
   const prefix = 'zero_shift:nether/'
   const grit = ks('basalt_grit')
   const liner = ks('fired_refractory_liner')
@@ -51,13 +50,12 @@ ServerEvents.recipes(event => {
   shaped('flint_and_steel', mc('flint_and_steel'), [' SF', 'PHS', ' B '], {
     F: mc('flint'), S: steel, P: ks('hand_forged_plate'), H: ks('iron_hinge'), B: ks('tool_binding')
   })
-  event.custom({
-    type: create('mixing'), processingTime: 520,
+  global.fieldworkProcess(event, prefix + 'nether_brick_blank', 'mixer', { processingTime: 520,
     ingredients: [mc('netherrack'), mc('netherrack'), mc('netherrack'), mc('netherrack'),
       mortar, mortar, grit, ks('fireclay_charge')].map(item => ({ item: item }))
       .concat({ fluid: distilled, amount: 500 }),
     results: [{ item: ks('nether_brick_blank'), count: 2 }]
-  }).id(prefix + 'nether_brick_blank')
+  }, 96)
   fire('fire_nether_brick', ks('nether_brick_blank'), mc('nether_brick'), 640)
   assemble('lay_nether_bricks', ['4x ' + mc('nether_brick'), '2x ' + mortar, liner, seal],
     '2x ' + mc('nether_bricks'), 560).inputFluids(Fluid.of(distilled, 300))
@@ -92,12 +90,12 @@ ServerEvents.recipes(event => {
     }).damageIngredient(chisel)
   }
   assemble('nether_brick_fence', ['4x ' + mc('nether_bricks'), '2x ' + mc('nether_brick'),
-    '4x ' + ks('iron_rivet'), steel, liner, 'immersiveengineering:component_steel'],
+    '4x ' + ks('iron_rivet'), steel, liner, 'kubejs:pressed_steel_frame'],
     '2x ' + mc('nether_brick_fence'), 580).inputFluids(Fluid.of(distilled, 250))
-  assemble('blackstone_button', ['2x ' + mc('polished_blackstone'), liner, create('redstone_contact'),
+  assemble('blackstone_button', ['2x ' + mc('polished_blackstone'), liner, 'kubejs:copper_contact_strip',
     'pneumaticcraft:ingot_iron_compressed', ks('pressure_gasket')], mc('polished_blackstone_button'), 560)
     .inputFluids(Fluid.of(lubricant, 150))
-  assemble('blackstone_pressure_plate', ['3x ' + mc('polished_blackstone'), liner, '2x ' + create('redstone_contact'),
+  assemble('blackstone_pressure_plate', ['3x ' + mc('polished_blackstone'), liner, '2x ' + 'kubejs:copper_contact_strip',
     gt('mv_sensor'), ks('pressure_gasket')], mc('polished_blackstone_pressure_plate'), 680)
     .inputFluids(Fluid.of(lubricant, 200))
 
@@ -121,7 +119,7 @@ ServerEvents.recipes(event => {
   assemble('magma_blocks', ['4x ' + mc('magma_cream'), '2x ' + grit, liner, mortar],
     '2x ' + mc('magma_block'), 600).inputFluids(Fluid.of(distilled, 300))
   assemble('brewing_stand', [mc('blaze_rod'), '2x ' + stainless, '2x ' + ks('glass_tube_blank'), '2x ' + seal,
-    liner, create('spout')], mc('brewing_stand'), 760).inputFluids(Fluid.of(distilled, 500))
+    liner, 'gtceu:bronze_small_fluid_pipe'], mc('brewing_stand'), 760).inputFluids(Fluid.of(distilled, 500))
   assemble('respawn_anchor', ['6x ' + mc('crying_obsidian'), '3x ' + mc('glowstone'), '2x ' + liner,
     ks('hv_arc_shield'), gt('advanced_integrated_circuit')], mc('respawn_anchor'), 960, 384)
   assemble('lodestone', ['6x ' + mc('chiseled_stone_bricks'), '2x ' + stainless, mc('netherite_ingot'),

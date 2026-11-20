@@ -34,9 +34,8 @@ ServerEvents.recipes(event => {
   shaped('runner_blank', blank, ['IRI', 'ABA', 'IRI'], {
     I: ks('hand_forged_plate'), R: rivet, A: ks('abrasive_paste'), B: ks('shaft_bushing')
   })
-  event.custom({
-    type: 'create:pressing', ingredients: [{ item: blank }], results: [{ item: slide, count: 2 }]
-  }).id(prefix + 'press_slides')
+  global.fieldworkProcess(event, prefix + 'press_slides', 'forge_hammer', { ingredients: [{ item: blank }], results: [{ item: slide, count: 2 }]
+  }, 4)
   shaped('cartridge', carrier, ['PSP', 'FCF', 'PHP'], {
     P: peg, S: slide, F: '#minecraft:planks', C: ks('fibre_cord'), H: hinge
   })

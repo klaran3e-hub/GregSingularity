@@ -24,13 +24,9 @@ ServerEvents.recipes(event => {
   ], '4x ' + p('distribution_license'), 840, 507904,
   [[shield, 18000], [recovered, 24000], [lubricant, 18000]]).dimension(surface)
 
-  event.custom({
-    type: 'immersiveengineering:metal_press',
-    energy: 320000,
-    mold: 'immersiveengineering:mold_plate',
-    input: { base_ingredient: { item: 'kubejs:final_heavy_backplane' }, count: 4 },
-    result: { item: p('cargo_skeleton'), count: 4 }
-  }).id('zero_shift:post_uv_distribution/cargo_skeleton')
+  event.recipes.gtceu.bender('zero_shift:post_uv_distribution/cargo_skeleton')
+      .itemInputs('4x kubejs:final_heavy_backplane')
+      .itemOutputs(Item.of(p('cargo_skeleton'), 4)).duration(600).EUt(491520)
 
   event.custom({
     type: 'pneumaticcraft:pressure_chamber', pressure: 4.9,

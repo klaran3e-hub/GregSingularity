@@ -6,7 +6,7 @@
   icon: "forestry:farm_gearbox_brick"
   title: "Forestry и Gendustry"
   id: "4DE93D4C8A5848F4"
-  order_index: 17
+  order_index: 18
   quest_links: []
   images: [{
     image: "kubejs:textures/quests/web/forestry.png"
@@ -336,12 +336,12 @@
     {
       id: "4585A2F4C077938A"
       title: "Древесина для лесопилки"
-      description: ["Подай воду, удобрение, почву и саженцы. Освободи выход для древесины, верни саженцы в посадочный отсек и передай брёвна на пилу Create."]
+      description: ["Для операции «Древесина для лесопилки» подготовь рабочее место в центрифуге. Назначь вход и освободи выход для следующей партии."]
       x: -7.608d
       y: 2.721d
       shape: "circle"
       size: 0.910d
-      dependencies: ["4900EC47F6DD1AD9","4A30E97A04DB5B1B","43D7893EF52B2774","45EADC6EDC7CA91F"]
+      dependencies: ["4900EC47F6DD1AD9","4A30E97A04DB5B1B","43D7893EF52B2774","4CA6ADB18CCFF965"]
       optional: true
       tasks: [{
         id: "494D809950FD345F"

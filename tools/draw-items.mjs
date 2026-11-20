@@ -20,9 +20,10 @@ const art = drawItems([workshop, plant, factory, precision, zpm, uv, final, post
 const translations = JSON.parse(readFileSync(join(assets, 'assets', 'kubejs', 'lang', 'ru_ru.json'), 'utf8'))
 // These three item models reuse the Minecraft bucket texture with runtime tints.
 const tintedBucketModels = new Set(['unfired_clay_bucket', 'clay_bucket', 'clay_water_bucket'])
+const recoloredToolSprites = new Set(['copper_pickaxe', 'copper_axe', 'copper_sword', 'copper_hoe', 'copper_shovel', 'copper_mining_hammer'])
 const names = Object.keys(translations)
   .filter(key => key.startsWith('item.kubejs.')).map(key => key.slice(12))
-  .filter(id => !tintedBucketModels.has(id))
+  .filter(id => !tintedBucketModels.has(id) && !recoloredToolSprites.has(id))
 const expected = new Set(names)
 const missing = names.filter(id => !art.has(id))
 const extra = [...art.keys()].filter(id => !expected.has(id))

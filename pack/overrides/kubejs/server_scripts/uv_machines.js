@@ -34,7 +34,7 @@ ServerEvents.recipes(event => {
   const materialData = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.ItemMaterialData')
   const materialKeys = Java.loadClass('java.util.Map').__javaObject__.getMethod('keySet', [])
 
-  function upgrade(id, parts, ticks, power, fluid, volume) {
+  function clearPrevious(id) {
     const output = uv(id)
     event.remove({ output: output })
     // The stock composition would let pre-fusion machines recycle into fusion products.
@@ -44,6 +44,11 @@ ServerEvents.recipes(event => {
     event.remove({ id: gt('macerator/macerate_uv_' + id) })
     event.remove({ id: gt('arc_furnace/arc_uv_' + id) })
     event.remove({ id: gt('extractor/extract_uv_' + id) })
+  }
+
+  function upgrade(id, parts, ticks, power, fluid, volume) {
+    clearPrevious(id)
+    const output = uv(id)
     const recipe = event.recipes.gtceu.assembler(prefix + id)
     recipe.itemInputs('2x ' + zpm(id))
     parts.forEach(item => recipe.itemInputs(item))
@@ -53,10 +58,18 @@ ServerEvents.recipes(event => {
 
   // The first UV factory and its power interfaces are produced on ZPM.
   upgrade('machine_casing', ['12x ' + plate, '8x ' + americium, '6x ' + laminate,
-    '4x kubejs:zpm_neutron_laminate', '12x ' + gasket, '2x immersiveengineering:heavy_engineering',
-    '4x pneumaticcraft:reinforced_pressure_tube'], 5900, 106496, coolant, 6000)
-  upgrade('machine_hull', [uv('machine_casing'), '4x ' + interlock, '6x ' + shunt,
-    '12x ' + winding, '6x ' + zpmCircuit, '6x ' + laminate], 6500, 122880)
+    '4x kubejs:zpm_neutron_laminate', '12x ' + gasket, '2x gtceu:steel_frame',
+    '4x pneumaticcraft:reinforced_pressure_tube', 'kubejs:zpm_glacio_lamella'], 5900, 106496, coolant, 6000)
+  clearPrevious('machine_hull')
+  const hullLine = event.recipes.gtceu.assembly_line(prefix + 'machine_hull')
+  const hullInputs = ['2x ' + zpm('machine_hull'), uv('machine_casing'), '4x ' + interlock,
+    '6x ' + shunt, '12x ' + winding, '6x ' + zpmCircuit, '6x ' + laminate,
+    'kubejs:zpm_europa_datum', '2x kubejs:zpm_tempered_frame']
+  hullInputs.forEach(stack => hullLine.itemInputs(stack))
+  hullLine.inputFluids(Fluid.of(lubricant, 5400), Fluid.of(gt('soldering_alloy'), 2304),
+    Fluid.of('kubejs:zpm_ceres_brine', 2000)).itemOutputs(hull).duration(7200).EUt(122880)
+    .stationResearch(b => b.researchStack(Item.of('kubejs:zpm_europa_datum'))
+      .dataStack(Item.of(gt('data_orb'))).CWUt(24, 48000).EUt(114688))
   upgrade('electric_motor', ['6x ' + shunt, '8x ' + plate, '6x ' + americium,
     '12x ' + winding, '4x ' + interlock, '6x ' + laminate], 5100, 114688)
   upgrade('electric_pump', ['2x ' + motor, '6x kubejs:iv_cooling_jacket', '8x ' + plate,
@@ -74,7 +87,7 @@ ServerEvents.recipes(event => {
   upgrade('field_generator', ['2x ' + emitter, '8x ' + shunt, '6x ' + interlock, '6x ' + zpmCircuit,
     '8x ' + plate, '8x ' + laminate], 7300, 126976, coolant, 7600)
   upgrade('assembler', [hull, '2x ' + robot, '2x ' + conveyor, '6x ' + interlock,
-    '6x ' + zpmCircuit, '12x ' + winding, '6x ' + laminate, '2x create:mechanical_arm'], 7700, 126976, lubricant, 7600)
+    '6x ' + zpmCircuit, '12x ' + winding, '6x ' + laminate, '2x gtceu:mv_robot_arm'], 7700, 126976, lubricant, 7600)
   upgrade('circuit_assembler', [hull, '2x ' + emitter, '2x ' + sensor, '6x ' + interlock,
     '6x ' + zpmCircuit, '6x ' + optics, '6x ' + shunt], 7100, 126976, shield, 6800)
   upgrade('voltage_coil', ['10x ' + winding, '6x ' + shunt, '6x ' + americium,
@@ -111,12 +124,12 @@ ServerEvents.recipes(event => {
     [pump, 'pneumaticcraft:regulator_tube_module', coolant, 7800, ['autoclave', 'brewery', 'canner', 'chemical_bath', 'distillery', 'electrolyzer',
       'extractor', 'fermenter', 'fluid_heater', 'fluid_passthrough_hatch', 'fluid_regulator',
       'fluid_solidifier', 'gas_collector', 'ore_washer']],
-    [piston, 'create:mechanical_press', lubricant, 7600, ['bender', 'compressor', 'cutter', 'extruder', 'forge_hammer', 'forming_press',
+    [piston, 'kubejs:zpm_die_cartridge', lubricant, 7600, ['bender', 'compressor', 'cutter', 'extruder', 'forge_hammer', 'forming_press',
       'lathe', 'macerator', 'rock_crusher', 'wiremill']],
-    [motor, 'create:rotation_speed_controller', lubricant, 8400, ['mixer', 'rotor_holder', 'sifter', 'thermal_centrifuge']],
-    [shunt, 'immersiveengineering:furnace_heater', shield, 8000, ['alloy_smelter', 'arc_furnace', 'electric_furnace', 'hermetic_casing', 'muffler_hatch']],
-    [conveyor, 'create:stockpile_switch', lubricant, 6900, ['item_passthrough_hatch', 'packer']],
-    [emitter, 'immersiveengineering:coil_hv', gt('soldering_alloy'), 8200, ['electromagnetic_separator', 'laser_engraver', 'polarizer', 'world_accelerator']],
+    [motor, 'gtceu:good_electronic_circuit', lubricant, 8400, ['mixer', 'rotor_holder', 'sifter', 'thermal_centrifuge']],
+    [shunt, 'kubejs:heater_ribbon', shield, 8000, ['alloy_smelter', 'arc_furnace', 'electric_furnace', 'hermetic_casing', 'muffler_hatch']],
+    [conveyor, 'gtceu:mv_sensor', lubricant, 6900, ['item_passthrough_hatch', 'packer']],
+    [emitter, 'gtceu:hv_voltage_coil', gt('soldering_alloy'), 8200, ['electromagnetic_separator', 'laser_engraver', 'polarizer', 'world_accelerator']],
     [sensor, 'pneumaticcraft:pressure_gauge_module', gt('soldering_alloy'), 7600, ['scanner', 'solar_panel']]
   ]
   families.forEach(([component, tooling, fluid, volume, machines]) => {
@@ -140,7 +153,7 @@ ServerEvents.recipes(event => {
   ;[[1, 'transformer_1a'], [4, 'transformer_4a'], [8, 'voltage_coil'], [16, 'transformer_16a']].forEach(([amps, core]) => {
     const id = amps + 'a_energy_converter'
     upgrade(id, [uv(core), hull, (3 * amps) + 'x ' + shunt, (3 * amps) + 'x ' + cable,
-      '6x ' + interlock, '6x ' + reserve, '6x ' + laminate, '2x immersiveengineering:connector_hv'],
+      '6x ' + interlock, '6x ' + reserve, '6x ' + laminate, '2x gtceu:gold_single_cable'],
     6600 + 170 * amps, 393216, coolant, 7400)
   })
 
@@ -176,7 +189,7 @@ ServerEvents.recipes(event => {
   upgrade('parallel_hatch', [hull, '4x ' + robot, '8x ' + interlock, '6x ' + uvCircuit,
     '6x ae2:pattern_provider', '6x ' + quadCable], 8000, 393216)
   upgrade('quantum_chest', [hull, '4x ' + conveyor, '8x ' + interlock, '6x ' + uvCircuit,
-    '6x ae2:item_storage_cell_256k', '6x ae2:storage_bus'], 7600, 393216, shield, 7800)
+    '6x kubejs:zpm_storage_backplane', '6x ae2:storage_bus'], 7600, 393216, shield, 7800)
   upgrade('quantum_tank', [hull, '4x ' + pump, '8x ' + laminate, '8x ' + interlock,
-    '6x ae2:fluid_storage_cell_256k', '6x ae2:storage_bus'], 7700, 393216, coolant, 7800)
+    '6x kubejs:zpm_storage_backplane', '6x ae2:storage_bus'], 7700, 393216, coolant, 7800)
 })

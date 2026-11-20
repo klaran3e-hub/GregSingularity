@@ -6,7 +6,7 @@
   icon: "storagedrawers:controller"
   title: "Складские ящики"
   id: "4A6C700642AA8D7B"
-  order_index: 14
+  order_index: 15
   quest_links: []
   images: [{
     image: "kubejs:textures/quests/web/drawers.png"
@@ -34,19 +34,19 @@
       rewards: [{
         id: "4B47557135A95793"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "kubejs:wooden_peg"
         count: 3
       }]
     }
     {
       id: "42479D8BE5CE4B21"
       title: "Прокат направляющих"
-      description: ["Пресс Create выдаёт две направляющие за удар. Поставь рядом отдельное депо для заготовок."]
+      description: ["Для операции «Прокат направляющих» подготовь рабочее место в паровом или электрическом молоте. В состав загрузки входят «Заготовка направляющих ящика»."]
       x: -9.110d
       y: 0.668d
       shape: "circle"
       size: 1.090d
-      dependencies: ["45522306E2761FAD","45F90DBA04E36F7D"]
+      dependencies: ["45522306E2761FAD","469A55FCA93CAF3C"]
       tasks: [{
         id: "40E977DF1E58DFE7"
         type: "item"
@@ -239,7 +239,7 @@
       y: 5.231d
       shape: "circle"
       size: 1.090d
-      dependencies: ["49C678786C5356E0","45EADC6EDC7CA91F","42479D8BE5CE4B21"]
+      dependencies: ["49C678786C5356E0","4CA6ADB18CCFF965","42479D8BE5CE4B21"]
       tasks: [{
         id: "428960AFD77FDA67"
         type: "item"

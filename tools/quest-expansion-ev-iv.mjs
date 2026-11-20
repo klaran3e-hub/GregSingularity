@@ -2,7 +2,6 @@ const gt = id => 'gtceu:' + id
 const ev = id => gt('ev_' + id)
 const iv = id => gt('iv_' + id)
 const ks = id => 'kubejs:' + id
-const ie = id => 'immersiveengineering:' + id
 const pnc = id => 'pneumaticcraft:' + id
 const create = id => 'create:' + id
 const me = id => 'ae2:' + id
@@ -14,19 +13,19 @@ export function expandEvIv(chapters) {
   rows('ev_vacuum').push(...optional([
     ['ev_return_drums', 'Раздельные баки теплоносителя', gt('stainless_steel_drum'), 3, ['vacuum_loop_buffers', 'vacuum_pump_core'], 'Поставь отдельные баки под горячую обратку, охлаждённый поток и защитный газ. Для холодной линии проверь допустимую температуру каждого участка.'],
     ['ev_return_dosers', 'Дозаторы вакуумного контура', gt('hv_fluid_regulator'), 3, ['ev_return_drums', 'vacuum_controller'], 'Веди газ к отдельному входу. Настрой дозаторы холодной подачи и обратки так, чтобы нагретый теплоноситель успевал уходить из камеры.'],
-    ['ev_vacuum_thermal_post', 'Резервный охладитель возврата', pnc('thermopneumatic_processing_plant'), 2, ['ev_return_dosers', 'vacuum_titanium_ingot'], 'Разведи охлаждение на две установки. Держи холодную сторону ниже 278 К, а давление выше 3,25 бар.'],
+    ['ev_vacuum_thermal_post', 'Резервный охладитель возврата', pnc('thermopneumatic_processing_plant'), 2, ['ev_return_dosers', 'vacuum_titanium_ingot'], 'Разведи охлаждение на две установки. Держи холодную сторону при 275 К или ниже. Подавай отфильтрованный теплоноситель при давлении от 3,75 бар.'],
     ['ev_vacuum_plate_spares', 'Керамика на ремонт вакуумного поста', ks('sintered_vacuum_tile'), 12, ['vacuum_panel', 'vacuum_casings'], 'Подготовь запас из двенадцати плиток. Для их обжига оставь отдельный выход защитного газа, чтобы он не просаживал контур закалки.'],
-    ['ev_vacuum_press_feed', 'Подача сырой плитки под пресс IE', ie('conveyor_basic'), 8, ['vacuum_tile_blank', 'ev_vacuum_plate_spares'], 'Подай керамическую заготовку конвейером на пресс IE. Сортируй плитку после штамповки отдельно от горячего выхода домны.'],
+    ['ev_vacuum_press_feed', 'Подача сырой плитки под формовочный пресс', 'kubejs:woven_drive_belt', 8, ['vacuum_tile_blank', 'ev_vacuum_plate_spares'], 'Подай керамическую заготовку конвейером в формовочный пресс. Сортируй плитку после штамповки отдельно от горячего выхода домны.'],
     ['ev_vacuum_heated_basin', 'Чаша для горячей формовки панелей', create('blaze_burner'), 2, ['vacuum_panel_blank', 'ev_return_drums'], 'Подведи защитный газ к чаше и поставь под ней горелку. На две заготовки требуется 180 мБ газа. Вторую горелку держи у запасного поста.'],
     ['ev_vacuum_extra_rutile', 'Запас рутила на сменную плавку', ks('purified_rutile'), 18, ['vacuum_titanium_charge', 'ev_vacuum_press_feed'], 'Отложи рутил на шесть загрузок смесителя. Держи отдельные запасы промытого боксита и дистиллята у реактора.'],
     ['ev_vacuum_panel_cell', 'Ячейка для возврата теплоносителя', me('fluid_storage_cell_16k'), 1, ['ev_return_dosers', 'vacuum_panel', 'me_16k'], 'Подключи жидкостную ячейку и выдели отсек только под горячий возврат. Холодную жидкость храни отдельно, чтобы фильтр выдачи не блокировал охладитель.']
   ]))
 
   rows('ev_cleanroom').push(...optional([
-    ['ev_room_filter_reserve', 'Пакеты на смену потолочных фильтров', ks('cleanroom_filter_pack'), 16, ['cleanroom_filters', 'ev_vacuum_plate_spares'], 'Отложи пакеты под запасные фильтры. К каждой партии подготовь сетки Энда, тарелки IE, вакуумную плитку и усиленную трубу.'],
+    ['ev_room_filter_reserve', 'Пакеты на смену потолочных фильтров', ks('cleanroom_filter_pack'), 16, ['cleanroom_filters', 'ev_vacuum_plate_spares'], 'Отложи пакеты под запасные фильтры. К каждой партии подготовь сетки Энда, формовочные матрицы, вакуумную плитку и усиленную трубу.'],
     ['ev_room_ceiling_stock', 'Комплект фильтров на вторую комнату', gt('filter_casing'), 8, ['ev_room_filter_reserve', 'cleanroom_controller'], 'Выдели восемь потолочных блоков на запасной отсек. Не вынимай рабочий комплект во время обработки подложек.'],
     ['ev_room_dual_feed', 'Раздельная выдача двух подложек', me('import_bus'), 2, ['cleanroom_wafer_etched', 'cleanroom_circuit_machine', 'me_import'], 'Настрой один импорт на гравёр, второй на сборщик. К каждому подключи собственную промежуточную выдачу.'],
-    ['ev_room_fe_reserve', 'Резервная шина питания чистого поста', ie('capacitor_hv'), 2, ['cleanroom_power_feed', 'cleanroom_first_ev_circuit', 'hv_shop_ie_capacitor'], 'Выдели накопитель на пресс IE и отдельный на автоматику чистого участка. Подвод питания станков GregTech оставь на EU.'],
+    ['ev_room_fe_reserve', 'Резервная шина питания чистого поста', 'gtceu:hv_battery_buffer_4x', 2, ['cleanroom_power_feed', 'cleanroom_first_ev_circuit', 'hv_shop_ie_capacitor'], 'Выдели накопитель в формовочный пресс и отдельный на автоматику чистого участка. Подвод питания станков GregTech оставь на EU.'],
     ['ev_room_second_laser', 'Два поста гравировки', gt('hv_laser_engraver'), 2, ['ev_room_dual_feed', 'cleanroom_wafer_series'], 'Раздели запас масок между двумя гравёрами. Подложки подавай по отдельности и собери выдачу в один фильтрованный буфер.'],
     ['ev_room_logic_rack', 'Пакет плат под опрессовку', ks('ev_logic_preform'), 12, ['ev_room_second_laser', 'cleanroom_ev_module'], 'Подготовь двенадцать заготовок и по одной усиленной трубке на каждую. Раздели вход и выход камеры, чтобы кассеты не вернулись на подачу.']
   ]))
@@ -39,7 +38,7 @@ export function expandEvIv(chapters) {
     ['ev_ev_booster_hatch', 'Дополнительный силовой ввод EV', ev('energy_input_hatch_4a'), 1, ['ev_engine', 'ev_assembler', 'ev_wide_cable'], 'Разведи энерговвод и выход по разным сторонам. Четырёхамперная шина нужна для отдельной линии станков.'],
     ['ev_station_battery', 'Лапотронный накопитель резерва', ev('lapotronic_battery'), 2, ['ev_ev_booster_hatch', 'ev_phase_relay'], 'Собери два накопителя из литиевых батарей HV. Заряд держи на отдельном посту до развёртывания палладиевой подстанции.'],
     ['ev_vanadium_drive', 'Силовой блок с ванадиевой батареей', ev('power_unit'), 1, ['ev_engine', 'ev_motor', 'ev_assembler'], 'Установи ванадиевую батарею EV, мотор, реле, механическую руку и пневматический манометр. Подай 1000 мБ смазки.'],
-    ['ev_air_scrubber', 'Фильтрация отсека подготовки', ev('air_scrubber'), 1, ['ev_engine', 'ev_assembler', 'ev_room_ceiling_stock'], 'Собери фильтрующий пост из машины HV, двух насосов, регулятора и насоса IE. Оставь место под выдачу кассет.']
+    ['ev_air_scrubber', 'Фильтрация отсека подготовки', ev('air_scrubber'), 1, ['ev_engine', 'ev_assembler', 'ev_room_ceiling_stock'], 'Собери фильтрующий пост из машины HV, двух насосов, регулятора и электронасоса LV. Оставь место под выдачу кассет.']
   ]))
 
   rows('iv_metallurgy').push(...optional([

@@ -12,7 +12,7 @@ export function expandUvFinal(chapters) {
     ['uv_argon_buffer', 'Аргон на смесь дюрания', gt('argon_bucket'), 3, ['uv_duranium_mixer', 'hv_end_argon'], 'Накопи минимум 2400 мБ аргона на цикл. Подай его в смеситель отдельным вводом от защитного газа.'],
     ['uv_hot_basin', 'Чаша для силового ламината', 'create:basin', 1, ['uv_laminate_preform', 'hv_blaze_burner'], 'Подведи к нагретой чаше защитный газ и положи в буфер уплотнения. Поставь отдельный выход для готовых листов.'],
     ['uv_laminate_run', 'Ламинат для корпусов и катушек', ks('uv_structural_laminate'), 24, ['uv_hot_basin', 'uv_structural_laminate'], 'На каждый проход пресса отведи 450 мБ защитного газа. Раздели готовую партию между кожухами, шунтами и магистралью.'],
-    ['uv_plate_relay_supply', 'Реле IE для партии шунтов', 'immersiveengineering:connector_hv_relay', 8, ['uv_laminate_run', 'hv_shop_ie_relay'], 'Подготовь восемь реле. Паяй шунты в отдельном сборщике с жидким припоем.'],
+    ['uv_plate_relay_supply', 'четырёхжильные кабели для партии шунтов', 'gtceu:gold_quadruple_cable', 8, ['uv_laminate_run', 'hv_shop_ie_relay'], 'Подготовь восемь реле. Паяй шунты в отдельном сборщике с жидким припоем.'],
     ['uv_tritanium_cold_loop', 'Две ёмкости тританового контура', gt('stainless_steel_drum'), 2, ['uv_tritanium_ingot', 'hv_shop_stainless_drum'], 'Раздели холодный и нагретый теплоносители. Для вакуумного литья и отжига держи разные шаблоны и общий возврат на охладитель.']
   ])
   append('uv_power', [

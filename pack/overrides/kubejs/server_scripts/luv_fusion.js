@@ -22,7 +22,7 @@ ServerEvents.recipes(event => {
   const winding = 'kubejs:luv_coil_winding'
   const tube = 'pneumaticcraft:advanced_pressure_tube'
   const regulator = 'pneumaticcraft:safety_tube_module'
-  const hvRelay = 'immersiveengineering:connector_hv_relay'
+  const hvRelay = 'gtceu:gold_quadruple_cable'
 
   ;[deuterium, tritium].forEach(fluid => event.remove({ output: Fluid.of(fluid, 1) }))
   event.remove({ type: 'gtceu:fusion_reactor', output: Fluid.of(plasma, 1) })
@@ -52,17 +52,17 @@ ServerEvents.recipes(event => {
   ], '2x ' + magnet, 3100, 24576).inputFluids(Fluid.of(coolant, 1800))
   install('superconducting_coil', [
     '2x ' + magnet, '4x ' + plate, '2x ' + clock, '2x gtceu:hssg_coil_block',
-    '2x gtceu:luv_electric_pump', '4x kubejs:vacuum_gasket', '2x create:precision_mechanism', '2x ' + regulator
+    '2x gtceu:luv_electric_pump', '4x kubejs:vacuum_gasket', '2x gtceu:lv_robot_arm', '2x ' + regulator
   ], 2, 3600, 27648, coolant, 2400)
   install('fusion_casing', [
     '2x gtceu:robust_machine_casing', '4x ' + plate, '4x ' + laminate,
     '4x gtceu:hssg_plate', '2x ' + magnet, '4x kubejs:vacuum_gasket',
-    '2x immersiveengineering:steel_scaffolding_standard', '2x ' + tube
+    '2x gtceu:steel_frame', '2x ' + tube
   ], 4, 3060, 24576, lubricant, 1800)
   install('fusion_glass', [
     '4x gtceu:laminated_glass', '4x gtceu:cleanroom_glass', '4x ' + laminate,
     '2x ' + part('optical_core'), '4x ' + plate, '4x kubejs:vacuum_gasket',
-    '2x create:framed_glass', '2x pneumaticcraft:pressure_chamber_glass'
+    '2x gtceu:tempered_glass', '2x pneumaticcraft:pressure_chamber_glass'
   ], 4, 2900, 24576, shield, 1700)
   install('neutron_reflector', [
     '4x ' + plate, '4x gtceu:tungsten_steel_plate', '2x kubejs:sintered_vacuum_tile',
@@ -71,14 +71,14 @@ ServerEvents.recipes(event => {
   machine('assembler', 'make_fusion_specimen', [
     '2x gtceu:neutron_reflector', '2x ' + magnet, '2x ' + clock, '4x ' + plate,
     '2x ' + quantum, '2x gtceu:luv_sensor', '2x ae2:cell_component_256k',
-    '2x create:content_observer', '2x pneumaticcraft:pressure_gauge_module'
+    '2x gtceu:lv_sensor', '2x pneumaticcraft:pressure_gauge_module'
   ], specimen, 3600, 28672).inputFluids(Fluid.of(shield, 1750))
 
   event.remove({ output: gt('luv_fusion_reactor') })
   const reactor = machine('assembly_line', 'build_fusion_reactor', [
     gt('luv_machine_hull'), specimen, '8x gtceu:fusion_casing', '4x gtceu:superconducting_coil',
     '4x gtceu:luv_field_generator', '4x ' + quantum, '4x gtceu:luv_robot_arm', '4x ae2:256k_crafting_storage',
-    '2x immersiveengineering:capacitor_hv'
+    '2x gtceu:hv_battery_buffer_4x'
   ], gt('luv_fusion_reactor'), 5200, 32000).inputFluids(Fluid.of(shield, 3200))
     .inputFluids(Fluid.of(lubricant, 3000)).inputFluids(Fluid.of(coolant, 3500))
   research(reactor, specimen, 8, 16000, 24576)
@@ -103,14 +103,14 @@ ServerEvents.recipes(event => {
   ], 4, 2400, 7680, lubricant, 1400)
   install('rhodium_plated_palladium_rotor', [
     '4x gtceu:tungsten_steel_plate', '8x ' + plate, '2x gtceu:luv_electric_motor',
-    '2x kubejs:balanced_rail_axle', '2x ' + part('busbar')
+    '2x kubejs:luv_rotor_spindle', '2x ' + part('busbar')
   ], 1, 3550, 27648, lubricant, 1950)
   event.remove({ id: 'gtceu:assembler/assemble_rhodium_plated_palladium_turbine_blade' })
   const rotor = Item.of(gt('turbine_rotor'), '{"GT.PartStats":{Material:"gtceu:rhodium_plated_palladium"}}')
   machine('assembler', 'balance_plasma_turbine_rotor', [
-    '2x gtceu:rhodium_plated_palladium_rotor', '4x ' + plate, '2x kubejs:balanced_rail_axle',
+    '2x gtceu:rhodium_plated_palladium_rotor', '4x ' + plate, '2x kubejs:luv_rotor_spindle',
     '2x ' + part('busbar'), '4x gtceu:hssg_plate', '2x gtceu:luv_sensor',
-    '2x pneumaticcraft:turbine_rotor', '2x create:precision_mechanism'
+    '2x pneumaticcraft:turbine_rotor', '2x gtceu:lv_robot_arm'
   ], rotor, 4400, 29696).inputFluids(Fluid.of(lubricant, 2100))
   install('plasma_large_turbine', [
     gt('luv_machine_hull'), '4x gtceu:tungstensteel_turbine_casing', '2x gtceu:tungstensteel_gearbox',
@@ -118,14 +118,15 @@ ServerEvents.recipes(event => {
     '2x ' + hvRelay, '2x ' + regulator
   ], 1, 4100, 29696, lubricant, 2400)
 
-  machine('vacuum_freezer', 'test_plasma_coupon', [plate], '2x ' + part('plasma_coupon'), 2100, 28672)
-    .inputFluids(Fluid.of(plasma, 500)).inputFluids(Fluid.of(coolant, 2400))
-    .outputFluids(Fluid.of('kubejs:warm_vacuum_coolant', 2400))
+  machine('vacuum_freezer', 'test_plasma_coupon', [part('witness_blank')], '2x ' + part('plasma_coupon'), 2100, 28672)
+    .inputFluids(Fluid.of(plasma, 500)).inputFluids(Fluid.of(part('optical_coolant'), 1000))
+    .outputFluids(Fluid.of(part('warm_optical_coolant'), 1000))
   machine('assembler', 'record_first_ignition', [
     '8x ' + part('plasma_coupon'), '4x ' + clock, '4x gtceu:neutron_reflector',
     '2x gtceu:luv_sensor', '2x ' + quantum, '2x ae2:cell_component_256k',
-    '2x create:content_observer', '2x pneumaticcraft:pressure_gauge_module'
-  ], ignition, 3800, 29696).inputFluids(Fluid.of(exhaust, 1500))
+    '2x gtceu:lv_sensor', '2x pneumaticcraft:pressure_gauge_module'
+  ], ignition, 3800, 29696)
+    .notConsumable(rotor.weakNBT()).inputFluids(Fluid.of(exhaust, 1500))
   machine('assembler', 'apply_luv_load', [
     '4x ' + part('plasma_coupon'), '4x ' + magnet, '4x ' + plate, '4x ' + part('busbar'), '2x ' + circuit
   ], '4x ' + coupon, 3100, 30720).notConsumable(Item.of(ignition)).inputFluids(Fluid.of(plasma, 750))
@@ -133,7 +134,7 @@ ServerEvents.recipes(event => {
   const report = machine('assembly_line', 'close_luv_shift', [
     '64x ' + coupon, '2x ' + ignition, '8x ' + magnet, '8x ' + clock, '8x gtceu:crystal_processor_assembly',
     '8x gtceu:wetware_processor', '4x gtceu:luv_field_generator', '4x ae2:256k_crafting_storage',
-    '4x immersiveengineering:capacitor_hv'
+    '4x gtceu:hv_battery_buffer_4x'
   ], part('commissioning_report'), 12000, 32000).inputFluids(Fluid.of(plasma, 8000))
     .inputFluids(Fluid.of(shield, 7000)).inputFluids(Fluid.of(lubricant, 8000))
   research(report, ignition, 12, 72000, 28672)

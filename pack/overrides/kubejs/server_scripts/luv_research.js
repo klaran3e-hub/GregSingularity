@@ -14,9 +14,9 @@ ServerEvents.recipes(event => {
   const quantum = gt('quantum_processor_computer')
   const cryo = 'kubejs:chilled_vacuum_coolant'
   const shield = 'kubejs:vacuum_shield_gas'
-  const observer = 'create:content_observer'
+  const observer = 'gtceu:lv_sensor'
   const gauge = 'pneumaticcraft:pressure_gauge_module'
-  const relay = 'immersiveengineering:connector_hv_relay'
+  const relay = 'gtceu:gold_quadruple_cable'
   const materialData = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.ItemMaterialData')
   const materialKeys = Java.loadClass('java.util.Map').__javaObject__.getMethod('keySet', [])
 
@@ -45,7 +45,7 @@ ServerEvents.recipes(event => {
 
   make('computer_casing', [
     gt('assembly_line_casing'), '4x ' + plate, '2x ' + laminate, '2x ' + part('busbar'),
-    '2x gtceu:hssg_plate', '2x kubejs:iv_bulkhead', '2x immersiveengineering:steel_scaffolding_standard'
+    '2x gtceu:hssg_plate', '2x kubejs:iv_bulkhead', '2x gtceu:steel_frame'
   ], 4, 2400, 7680, gt('lubricant'))
   make('advanced_computer_casing', [
     '2x ' + casing, '2x ' + optics, '2x ' + clock, '4x ' + plate, '4x gtceu:laminated_glass', circuit,
@@ -53,7 +53,7 @@ ServerEvents.recipes(event => {
   ], 2, 2700, 7680, shield)
   make('computer_heat_vent', [
     '2x ' + casing, '2x kubejs:iv_cooling_jacket', '4x gtceu:hssg_plate', '2x gtceu:iv_electric_motor',
-    '2x gtceu:iv_electric_pump', '2x create:encased_fan', '2x pneumaticcraft:heat_sink'
+    '2x gtceu:iv_electric_pump', '2x kubejs:hearth_bellows', '2x pneumaticcraft:heat_sink'
   ], 4, 2500, 7680, cryo)
   make('normal_optical_pipe', [
     '2x ' + optics, '4x ' + laminate, '4x ae2:fluix_smart_dense_cable',
@@ -76,7 +76,7 @@ ServerEvents.recipes(event => {
   })
   make('object_holder', [
     advanced, gt('luv_robot_arm'), '2x gtceu:luv_sensor', '4x ' + optics,
-    '2x ' + clock, '4x ' + plate, '4x kubejs:vacuum_gasket', '2x create:mechanical_arm', '2x ' + gauge
+    '2x ' + clock, '4x ' + plate, '4x kubejs:vacuum_gasket', '2x gtceu:mv_robot_arm', '2x ' + gauge
   ], 1, 3200, 24576, gt('lubricant'))
   make('research_station', [
     gt('luv_machine_hull'), '4x ' + advanced, gt('object_holder'), gt('advanced_data_access_hatch'),
@@ -88,7 +88,7 @@ ServerEvents.recipes(event => {
   ], 3, 2460, 7680, gt('lubricant'))
   make('hpca_computation_component', [
     gt('hpca_empty_component'), '4x ' + clock, '4x ' + pack, '2x ' + quantum,
-    '4x ae2:cell_component_256k', '2x ' + optics
+    '4x ae2:cell_component_256k', '2x ' + optics, part('venus_timing_prism')
   ], 1, 3400, 28672, shield)
   make('hpca_heat_sink_component', [
     gt('hpca_empty_component'), '2x gtceu:computer_heat_vent', '4x gtceu:hssg_plate',
@@ -97,7 +97,7 @@ ServerEvents.recipes(event => {
   make('high_performance_computation_array', [
     gt('luv_machine_hull'), '4x ' + advanced, gt('hpca_computation_component'), '2x gtceu:hpca_heat_sink_component',
     '4x ' + quantum, '4x ' + optics, '2x ae2:256k_crafting_storage', '4x ' + cable,
-    '2x immersiveengineering:capacitor_hv'
+    '2x gtceu:hv_battery_buffer_4x'
   ], 1, 4600, 30720, shield)
   make('hpca_advanced_computation_component', [
     '2x gtceu:hpca_computation_component', '4x gtceu:wetware_processor', '4x gtceu:crystal_processor_assembly',
