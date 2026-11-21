@@ -1,150 +1,110 @@
 {
-  "loader": "forge:obj",
-  "model": "gtibd_core:models/vehicle/surveyor.obj",
-  "automatic_culling": false,
-  "shade_quads": true,
-  "flip_v": true,
-  "emissive_ambient": false,
+  "loader": "forge:separate_transforms",
   "gui_light": "front",
   "textures": {
-    "particle": "gtibd_core:entity/surveyor"
+    "particle": "gtibd_core:item/surveyor"
   },
-  "display": {
+  "base": {
+    "loader": "forge:obj",
+    "model": "gtibd_core:models/vehicle/surveyor.obj",
+    "automatic_culling": false,
+    "shade_quads": true,
+    "flip_v": true,
+    "emissive_ambient": false,
+    "textures": {
+      "particle": "gtibd_core:entity/surveyor"
+    },
+    "display": {
+      "thirdperson_righthand": {
+        "rotation": [
+          -110,
+          0,
+          -90
+        ],
+        "translation": [
+          -27.79,
+          6.58,
+          -10.47
+        ],
+        "scale": [
+          0.542,
+          0.542,
+          0.542
+        ]
+      },
+      "thirdperson_lefthand": {
+        "rotation": [
+          -110,
+          0,
+          -90
+        ],
+        "translation": [
+          -27.79,
+          6.58,
+          -10.47
+        ],
+        "scale": [
+          0.542,
+          0.542,
+          0.542
+        ]
+      },
+      "ground": {
+        "translation": [
+          0,
+          1.5,
+          0
+        ],
+        "scale": [
+          0.172,
+          0.172,
+          0.172
+        ]
+      },
+      "fixed": {
+        "translation": [
+          0,
+          -5.83,
+          0
+        ],
+        "scale": [
+          0.15,
+          0.15,
+          0.15
+        ]
+      },
+      "head": {
+        "translation": [
+          0,
+          8,
+          0
+        ],
+        "scale": [
+          0.283,
+          0.283,
+          0.283
+        ]
+      }
+    }
+  },
+  "perspectives": {
     "gui": {
-      "rotation": [
-        -41,
-        -170,
-        -26
-      ],
-      "translation": [
-        1.51,
-        -3.96,
-        2.43
-      ],
-      "scale": [
-        0.1747,
-        0.1747,
-        0.1747
-      ]
-    },
-    "thirdperson_righthand": {
-      "rotation": [
-        -110,
-        0,
-        -90
-      ],
-      "translation": [
-        -21,
-        4.5,
-        -4.5
-      ],
-      "scale": [
-        0.542,
-        0.542,
-        0.542
-      ]
-    },
-    "thirdperson_lefthand": {
-      "rotation": [
-        -110,
-        0,
-        -90
-      ],
-      "translation": [
-        -21,
-        4.5,
-        -13.5
-      ],
-      "scale": [
-        0.542,
-        0.542,
-        0.542
-      ]
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "gtibd_core:item/surveyor"
+      }
     },
     "firstperson_righthand": {
-      "rotation": [
-        -10,
-        180,
-        90
-      ],
-      "translation": [
-        -17,
-        15,
-        -4
-      ],
-      "scale": [
-        0.3,
-        0.3,
-        0.3
-      ]
+      "elements": [],
+      "textures": {
+        "particle": "gtibd_core:item/surveyor"
+      }
     },
     "firstperson_lefthand": {
-      "rotation": [
-        -10,
-        180,
-        90
-      ],
-      "translation": [
-        -17,
-        10,
-        -4
-      ],
-      "scale": [
-        0.3,
-        0.3,
-        0.3
-      ]
-    },
-    "ground": {
-      "rotation": [
-        0,
-        0,
-        0
-      ],
-      "translation": [
-        0,
-        1.5,
-        0
-      ],
-      "scale": [
-        0.172,
-        0.172,
-        0.172
-      ]
-    },
-    "fixed": {
-      "rotation": [
-        0,
-        0,
-        0
-      ],
-      "translation": [
-        0,
-        -5.83,
-        0
-      ],
-      "scale": [
-        0.15,
-        0.15,
-        0.15
-      ]
-    },
-    "head": {
-      "rotation": [
-        0,
-        0,
-        0
-      ],
-      "translation": [
-        0,
-        8,
-        0
-      ],
-      "scale": [
-        0.283,
-        0.283,
-        0.283
-      ]
+      "elements": [],
+      "textures": {
+        "particle": "gtibd_core:item/surveyor"
+      }
     }
   }
 }

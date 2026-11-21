@@ -1,150 +1,110 @@
 {
-  "loader": "forge:obj",
-  "model": "gtibd_core:models/vehicle/courier.obj",
-  "automatic_culling": false,
-  "shade_quads": true,
-  "flip_v": true,
-  "emissive_ambient": false,
+  "loader": "forge:separate_transforms",
   "gui_light": "front",
   "textures": {
-    "particle": "gtibd_core:entity/courier"
+    "particle": "gtibd_core:item/courier"
   },
-  "display": {
+  "base": {
+    "loader": "forge:obj",
+    "model": "gtibd_core:models/vehicle/courier.obj",
+    "automatic_culling": false,
+    "shade_quads": true,
+    "flip_v": true,
+    "emissive_ambient": false,
+    "textures": {
+      "particle": "gtibd_core:entity/courier"
+    },
+    "display": {
+      "thirdperson_righthand": {
+        "rotation": [
+          -110,
+          0,
+          -90
+        ],
+        "translation": [
+          -28.07,
+          6.32,
+          -9.59
+        ],
+        "scale": [
+          0.505,
+          0.505,
+          0.505
+        ]
+      },
+      "thirdperson_lefthand": {
+        "rotation": [
+          -110,
+          0,
+          -90
+        ],
+        "translation": [
+          -28.07,
+          6.32,
+          -9.59
+        ],
+        "scale": [
+          0.505,
+          0.505,
+          0.505
+        ]
+      },
+      "ground": {
+        "translation": [
+          0,
+          1.5,
+          0
+        ],
+        "scale": [
+          0.16,
+          0.16,
+          0.16
+        ]
+      },
+      "fixed": {
+        "translation": [
+          0,
+          -5.91,
+          0
+        ],
+        "scale": [
+          0.14,
+          0.14,
+          0.14
+        ]
+      },
+      "head": {
+        "translation": [
+          0,
+          8,
+          0
+        ],
+        "scale": [
+          0.264,
+          0.264,
+          0.264
+        ]
+      }
+    }
+  },
+  "perspectives": {
     "gui": {
-      "rotation": [
-        -41,
-        -170,
-        -26
-      ],
-      "translation": [
-        1.72,
-        -4.36,
-        2.64
-      ],
-      "scale": [
-        0.1671,
-        0.1671,
-        0.1671
-      ]
-    },
-    "thirdperson_righthand": {
-      "rotation": [
-        -110,
-        0,
-        -90
-      ],
-      "translation": [
-        -21,
-        4.5,
-        -4.5
-      ],
-      "scale": [
-        0.505,
-        0.505,
-        0.505
-      ]
-    },
-    "thirdperson_lefthand": {
-      "rotation": [
-        -110,
-        0,
-        -90
-      ],
-      "translation": [
-        -21,
-        4.5,
-        -13.5
-      ],
-      "scale": [
-        0.505,
-        0.505,
-        0.505
-      ]
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "gtibd_core:item/courier"
+      }
     },
     "firstperson_righthand": {
-      "rotation": [
-        -10,
-        180,
-        90
-      ],
-      "translation": [
-        -17,
-        15,
-        -4
-      ],
-      "scale": [
-        0.28,
-        0.28,
-        0.28
-      ]
+      "elements": [],
+      "textures": {
+        "particle": "gtibd_core:item/courier"
+      }
     },
     "firstperson_lefthand": {
-      "rotation": [
-        -10,
-        180,
-        90
-      ],
-      "translation": [
-        -17,
-        10,
-        -4
-      ],
-      "scale": [
-        0.28,
-        0.28,
-        0.28
-      ]
-    },
-    "ground": {
-      "rotation": [
-        0,
-        0,
-        0
-      ],
-      "translation": [
-        0,
-        1.5,
-        0
-      ],
-      "scale": [
-        0.16,
-        0.16,
-        0.16
-      ]
-    },
-    "fixed": {
-      "rotation": [
-        0,
-        0,
-        0
-      ],
-      "translation": [
-        0,
-        -5.91,
-        0
-      ],
-      "scale": [
-        0.14,
-        0.14,
-        0.14
-      ]
-    },
-    "head": {
-      "rotation": [
-        0,
-        0,
-        0
-      ],
-      "translation": [
-        0,
-        8,
-        0
-      ],
-      "scale": [
-        0.264,
-        0.264,
-        0.264
-      ]
+      "elements": [],
+      "textures": {
+        "particle": "gtibd_core:item/courier"
+      }
     }
   }
 }

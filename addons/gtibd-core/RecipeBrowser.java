@@ -7,8 +7,10 @@ import com.gregtechceu.gtceu.integration.jei.recipe.GTRecipeJEICategory;
 import earth.terrarium.adastra.common.recipes.SpaceStationRecipe;
 import earth.terrarium.adastra.common.registry.ModRecipeTypes;
 import java.util.Arrays;
+import java.util.List;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
@@ -17,6 +19,7 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import mezz.jei.api.registration.IIngredientAliasRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
@@ -51,6 +54,23 @@ public final class RecipeBrowser implements IModPlugin {
         registration.addRecipes(furnaces, recipes.m_44013_(GTRecipeTypes.FURNACE_RECIPES).stream()
             .filter(recipe -> recipe.m_6423_().m_135827_().equals("zero_shift")).toList());
         registration.addRecipes(STATIONS, recipes.m_44013_(ModRecipeTypes.SPACE_STATION_RECIPE.get()));
+    }
+
+    @Override public void registerIngredientAliases(IIngredientAliasRegistration registration) {
+        for (int tier = 1; tier <= 4; tier++) {
+            var id = new ResourceLocation("ad_astra", "tier_" + tier + "_rocket");
+            addRocketAliases(registration, new ItemStack(ForgeRegistries.ITEMS.getValue(id)), tier);
+        }
+        for (var ship : FieldworkSpace.Ship.values()) {
+            addRocketAliases(registration, new ItemStack(ship.item.get()), ship.tier);
+        }
+    }
+
+    private static void addRocketAliases(IIngredientAliasRegistration registration, ItemStack stack, int tier) {
+        registration.addAliases(VanillaTypes.ITEM_STACK, stack, List.of(
+            "rocket", "rockets", "ракета", "ракеты", "tier " + tier,
+            "rocket " + tier, "ракета " + tier, "ракета tier " + tier
+        ));
     }
 
     @Override public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {

@@ -238,6 +238,47 @@ def freighter(ship):
     ship.lathe(-2.8,2.1,[(111,.7,'silver'),(115,.5,'enamel')],5)
 
 
+# Keep the original carry scale and center the hull above Ad Astra's raised arms.
+# Minecraft mirrors this transform for the left hand.
+OVERHEAD_DISPLAY = {
+    'surveyor': ([-27.79, 6.58, -10.47], 0.542),
+    'courier': ([-28.07, 6.32, -9.59], 0.505),
+    'freighter': ([-28.46, 6.64, -10.48], 0.452),
+}
+DISPLAY_FRAMING = {
+    'surveyor': (0.172, -5.83, 0.15, 0.283),
+    'courier': (0.16, -5.91, 0.14, 0.264),
+    'freighter': (0.143, -6.03, 0.125, 0.237),
+}
+
+
+def item_model(name, mesh):
+    icon = f'gtibd_core:item/{name}'
+    origin, scale = OVERHEAD_DISPLAY[name]
+    ground, frame_height, frame, head = DISPLAY_FRAMING[name]
+    overhead = {'rotation': [-110, 0, -90], 'translation': origin, 'scale': [scale] * 3}
+    display = {
+        'thirdperson_righthand': overhead,
+        'thirdperson_lefthand': overhead,
+        'ground': {'translation': [0, 1.5, 0], 'scale': [ground] * 3},
+        'fixed': {'translation': [0, frame_height, 0], 'scale': [frame] * 3},
+        'head': {'translation': [0, 8, 0], 'scale': [head] * 3},
+    }
+    # Render an empty model in first person rather than transforming the world mesh.
+    hidden = {'elements': [], 'textures': {'particle': icon}}
+    return {
+        'loader': 'forge:separate_transforms',
+        'gui_light': 'front',
+        'textures': {'particle': icon},
+        'base': {**mesh, 'textures': {'particle': f'gtibd_core:entity/{name}'}, 'display': display},
+        'perspectives': {
+            'gui': {'parent': 'minecraft:item/generated', 'textures': {'layer0': icon}},
+            'firstperson_righthand': hidden,
+            'firstperson_lefthand': hidden,
+        },
+    }
+
+
 def build():
     folder=ASSETS/'gtibd_core/models/vehicle'
     folder.mkdir(parents=True,exist_ok=True)
@@ -246,14 +287,7 @@ def build():
         obj={'loader':'forge:obj','model':f'gtibd_core:models/vehicle/{name}.obj',
              'automatic_culling':False,'shade_quads':True,'flip_v':True,'emissive_ambient':False}
         (folder/f'{name}.json').write_text(json.dumps(obj,indent=2)+'\n',encoding='utf8')
-        icon={'parent':'minecraft:item/generated','textures':{'layer0':f'gtibd_core:item/{name}'}}
-        held={key:{'rotation':rot,'translation':pos,'scale':[scale]*3}
-              for key,rot,pos,scale in (
-                 ('thirdperson_righthand',[0,0,-18],[0,0,1],.17),('thirdperson_lefthand',[0,0,18],[0,0,1],.17),
-                 ('firstperson_righthand',[0,15,-32],[1,-.5,1],.13),('firstperson_lefthand',[0,-15,32],[-1,-.5,1],.13))}
-        model={'parent':'minecraft:item/generated','loader':'forge:separate_transforms',
-               'textures':{'layer0':f'gtibd_core:item/{name}','particle':f'gtibd_core:item/{name}'},
-               'base':{**obj,'display':held},'perspectives':{k:icon for k in ('gui','fixed','ground','head')}}
+        model = item_model(name, obj)
         (ASSETS/f'gtibd_core/models/item/{name}.json').write_text(json.dumps(model,indent=2)+'\n',encoding='utf8')
         print(name,len(ship.faces),'faces;',len(ship.points),'welded vertices')
     atlas=ASSETS/'minecraft/atlases/blocks.json'

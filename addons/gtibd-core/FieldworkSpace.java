@@ -28,11 +28,13 @@ public final class FieldworkSpace {
     enum Ship {
         SURVEYOR("surveyor", 5, 6.0f), COURIER("courier", 6, 6.7f), FREIGHTER("freighter", 7, 7.4f);
         final String name;
+        final int tier;
         final TagKey<Fluid> fuel;
         final RegistryObject<EntityType<Rocket>> entity;
         final RegistryObject<Item> item;
         Ship(String name, int tier, float height) {
             this.name = name;
+            this.tier = tier;
             this.fuel = TagKey.m_203882_(Registries.f_256808_, id(name + "_fuel"));
             this.entity = ENTITIES.register(name, () -> EntityType.Builder.<Rocket>m_20704_(
                 (type, level) -> new Rocket(type, level, new Rocket.RocketProperties(tier, rocketItem(), 1.7f, fuel)),
