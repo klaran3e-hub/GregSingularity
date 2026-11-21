@@ -1,10 +1,11 @@
 ServerEvents.recipes(event=>{
   gtibdAstraOriginalIds.forEach(id=>event.remove({id:'ad_astra:'+id}))
   var g=id=>'gtceu:'+id,k=id=>'kubejs:'+id,a=id=>'ad_astra:'+id
-  gtibdAstraRoutes.forEach(([key,kind,ingredients,out,count])=>{
+  gtibdAstraRoutes.forEach(([key,kind,ingredients,out,count,settings])=>{
     var machine={equipment:'assembler',fixture:'assembler',cut:'cutter',saw:'cutter',packing:'packer',ore:'macerator',fire:'alloy_smelter'}[kind]
     var recipe=event.recipes.gtceu[machine]('zero_shift:astral_workshop/'+key)
     ingredients.forEach(([id,n])=>recipe.itemInputs(n===1?id:n+'x '+id))
+    if(settings && settings.circuit) recipe.circuit(settings.circuit)
     var high=/jet_suit|calorite|glacio/.test(key),martian=/ostrum|mars|permafrost/.test(key)
     var power=martian?1536:384,ticks=martian?420:260
     if(kind==='equipment'){
@@ -15,8 +16,9 @@ ServerEvents.recipes(event=>{
     }else if(kind==='fixture'){
       recipe.itemInputs(g('steel_screw')).inputFluids(Fluid.of(g('lubricant'),72))
     }else if(kind==='cut'||kind==='saw'){
-      recipe.inputFluids(Fluid.of(g('lubricant'),kind==='saw'?40:72))
-    }else if(kind==='packing'){recipe.circuit(1);power=120}
+      var fluid=settings && settings.fluid ? settings.fluid : g('lubricant')
+      recipe.inputFluids(Fluid.of(fluid,kind==='saw'?40:72))
+    }else if(kind==='packing'){power=120}
     else if(kind==='fire'){recipe.notConsumable(k('fired_refractory_liner'))}
     recipe.itemOutputs(Item.of(out,count)).duration(ticks).EUt(power)
   })

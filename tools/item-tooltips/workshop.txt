@@ -31,8 +31,9 @@ flint_knife|В действующих рецептах используй нож
 flint_pickaxe|В ранней мастерской её заменила кремнёвая кирка GregTech.|The early workshop now uses the GregTech flint pickaxe.
 flint_axe|В ранней мастерской его заменил кремнёвый топор GregTech.|The early workshop now uses the GregTech flint axe.
 stone_hammer|Для дробления и ковки используй молот GregTech.|Use a GregTech hammer for crushing and forging.
-pick_head|Кремнёвая рабочая часть кирки ранней мастерской.|Flint pick head from the early workshop.
-axe_head|Кремнёвая рабочая часть топора ранней мастерской.|Flint axe head from the early workshop.
+@Сборка кремнёвого инструмента|Flint tool assembly
+pick_head|Закрепи головку на рукояти обвязкой, чтобы собрать кремнёвую кирку GregTech.|Bind the head to a handle to assemble a GregTech flint pickaxe.
+axe_head|Закрепи лезвие на рукояти обвязкой, чтобы собрать кремнёвый топор GregTech.|Bind the blade to a handle to assemble a GregTech flint axe.
 @Лагерная кухня|Camp kitchen
 coarse_flour|Замеси с водой из глиняного ведра, чтобы получить тесто.|Mix with water from a clay bucket to make dough.
 camp_dough|Испеки хлеб или возьми как основу для печенья.|Bake into bread or use as the base for cookies.

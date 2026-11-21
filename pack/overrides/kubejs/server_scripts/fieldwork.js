@@ -80,6 +80,9 @@ ServerEvents.recipes(event => {
   shape('forging_saddle', k('forging_saddle'), ['SHS', 'CIC', 'LLL'], {
     S: 'minecraft:stone', H: hammer, C: k('copper_strap'), I: k('hand_forged_plate'), L: lining
   }).damageIngredient(hammer)
+  for (const metal of ['tin', 'bronze']) {
+    event.remove({id:'gtceu:forge_hammer/hammer_' + metal + '_to_plate'})
+  }
   for (const [metal, ingot] of [['iron','minecraft:iron_ingot'],['copper','minecraft:copper_ingot'],['gold','minecraft:gold_ingot'],['tin','gtceu:tin_ingot'],['bronze','gtceu:bronze_ingot']]) {
     var plate = 'gtceu:' + metal + '_plate'
     shape('hand_plate_' + metal, plate, [' H ', 'II ', ' S '], {H: hammer, I: ingot, S: k('forging_saddle')})

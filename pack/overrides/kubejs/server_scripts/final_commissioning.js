@@ -61,7 +61,7 @@
   let ticks = 0
 
   function tell(player, message) {
-    player.tell(Text.of('[GTIBD] ' + message))
+    player.tell(Text.of('[GregSingularity] ' + message))
   }
   function stateOf(player) {
     return player.persistentData.getCompound(rootKey)
@@ -183,6 +183,10 @@
     production.forEach(role => {
       state.putInt(role + '_count', 0)
       state.putInt(role + '_recipe_progress', 0)
+      state.putInt(role + '_cycle_ticks', 0)
+      state.putInt(role + '_recipe_series', 0)
+      state.putInt(role + '_pending', 0)
+      state.putInt(role + '_qualified_pending', 0)
       state.putBoolean(role + '_seen', false)
     })
   }
@@ -336,6 +340,7 @@
     const handler = machine.exportItems
     const countKey = role + '_count'
     const pendingKey = role + '_pending'
+    const qualifiedKey = role + '_qualified_pending'
     let observed = 0
     let pending = 0
     for (let slot = 0; slot < handler.getSlots(); slot++) {
@@ -354,11 +359,16 @@
       }
       pending += size
     }
-    if (accepted) {
-      let fresh = Math.max(0, observed - state.getInt(pendingKey))
-      state.putInt(countKey, Math.min(required, state.getInt(countKey) + fresh))
-    }
+    // Only a successful transfer into the barrel earns credit. Retain witnessed items when it is full.
+    const previous = state.getInt(pendingKey)
+    let qualified = required > 0 ? Math.min(observed, previous, state.getInt(qualifiedKey)) : 0
+    const fresh = Math.max(0, observed - previous)
+    if (accepted) qualified += fresh
+    const delivered = Math.min(qualified, observed - pending)
+    if (delivered > 0) state.putInt(countKey, Math.min(required, state.getInt(countKey) + delivered))
+    state.putInt(qualifiedKey, qualified - delivered)
     state.putInt(pendingKey, pending)
+    return fresh
   }
   function archivesClear(site) {
     return production.every(role => emptyExports(site[role]))
@@ -462,20 +472,27 @@
     state.putInt('stable', stable)
     var eligible = stable === settleSeconds
     var activeLines = {}
+    var matchedRecipes = {}
     production.forEach(role => {
       var logic = site[role].recipeLogic
       var last = logic.getLastRecipe()
-      activeLines[role] = logic.isWorking() && last != null && String(last.id) === recipes[role]
+      matchedRecipes[role] = last != null && String(last.id) === recipes[role]
+      activeLines[role] = logic.isWorking() && matchedRecipes[role]
     })
     var together = eligible && production.every(role => activeLines[role])
     var elapsed = state.getInt('elapsed')
-    if (simultaneous && elapsed < spec.seconds) {
-      elapsed = together ? elapsed + 1 : 0
+    var qualifiedNow = false
+    if (simultaneous) {
+      // A saved or interrupted trial can have elapsed time without any unfinished witnessed cycle.
+      var outstanding = production.filter(role => state.getInt(role + '_count') < spec.lots)
+      if (elapsed >= spec.seconds && outstanding.length &&
+          outstanding.every(role => !state.getBoolean(role + '_armed') && !state.getInt(role + '_qualified_pending'))) elapsed = 0
+      if (elapsed < spec.seconds) {
+        elapsed = together ? elapsed + 1 : 0
+        qualifiedNow = elapsed === spec.seconds
+      }
       state.putInt('elapsed', elapsed)
     }
-    var reachedOverlap = simultaneous && elapsed >= spec.seconds
-    var bankStillSupplies = Number(bank.getOutputPerSec()) >= Math.max(
-      minimumOutput, machineInput - meterTolerance)
     var working = false
     for (var index = 0; index < production.length; index++) {
       var role = production[index]
@@ -486,18 +503,24 @@
       var armed = state.getBoolean(role + '_armed')
       var progress = machine.recipeLogic.getProgress()
       var priorProgress = state.getInt(role + '_recipe_progress')
-      var newCycle = active && progress < priorProgress
-      var accepts = simultaneous
-        ? armed && bankStillSupplies && (!active || newCycle)
-        : armed && (eligible || finished)
-      collect(state, role, machine, site.archives[role], spec.lots, accepts)
+      var series = machine.recipeLogic.getConsecutiveRecipes()
+      var finishedInSeries = series > state.getInt(role + '_recipe_series')
+      var rolledBack = active && progress < priorProgress
+      // Work can finish between meter readings. A power dip can also move progress back without making a lot.
+      var possibleFinish = finishedInSeries || rolledBack || !matchedRecipes[role] || (!active && progress === 0)
+      var accepts = simultaneous ? armed && possibleFinish : armed && (eligible || finished)
+      var fresh = collect(state, role, machine, site.archives[role], spec.lots, accepts)
+      var newCycle = finishedInSeries || (rolledBack && fresh > 0)
       state.putInt(role + '_recipe_progress', progress)
+      state.putInt(role + '_recipe_series', series)
       if (eligible && active) {
         working = true
         state.putBoolean(role + '_seen', true)
       }
+      if (qualifiedNow && active) state.putInt(role + '_cycle_ticks', machine.recipeLogic.getDuration())
+      var sameCycle = matchedRecipes[role] && (active || progress > 0) && !newCycle
       state.putBoolean(role + '_armed', simultaneous
-        ? active && ((together && reachedOverlap) || (armed && bankStillSupplies && !newCycle))
+        ? (qualifiedNow && active) || (armed && sameCycle)
         : eligible && active)
     }
     if (working && !simultaneous) {
@@ -510,6 +533,7 @@
       var archiveWait = exportsCleared ? 0 : state.getInt('archiveWait') + 1
       state.putInt('archiveWait', Math.min(archiveWait, maxArchiveWait))
       state.putString('reason', archiveWait >= maxArchiveWait ? 'Проверь свободное место в бочках выдачи и выходы станков.' :
+        simultaneous && elapsed >= spec.seconds ? 'Ожидание выдачи подтверждённых партий трёх линий.' :
         !measured ? 'Пауза. Недостаточная выдача выбранного накопителя.' :
           !eligible ? 'Стабилизация показаний питания.' : simultaneous && !together && elapsed < spec.seconds ?
           'Все три линии должны работать одновременно без остановок.' : !working ? 'Жду работающую линию партии UV.' : '')
@@ -529,16 +553,30 @@
   }
   function sample(player, now) {
     if (player instanceof FakePlayer || !player.isAlive()) return
-    const state = stateOf(player)
-    const phase = state.getString('phase')
+    var state = stateOf(player)
+    var phase = state.getString('phase')
     if (!phases[phase] || state.getString('ready')) return
+    var level = player.level
+    // KubeJS exposes the persistent world tick counter as getTime, including on dedicated servers.
+    var gameTime = Number(level.getTime())
     if (String(state.getString('clock')) !== clock || now - Number(state.getLong('lastSample')) !== 20) {
-      clearWindows(state)
+      var sampleGap = gameTime - Number(state.getLong('lastWorldTick'))
+      if (phases[phase].overlap && state.getInt('elapsed') >= phases[phase].seconds &&
+          state.contains('lastWorldTick') && sampleGap >= 0) {
+        // Less than one complete cycle can have passed. A fresh lot can only belong to the witnessed run.
+        state.putInt('stable', 0)
+        for (var i = 0; i < production.length; i++) {
+          var role = production[i]
+          if (sampleGap >= state.getInt(role + '_cycle_ticks')) state.putBoolean(role + '_armed', false)
+        }
+      } else {
+        clearWindows(state)
+      }
       state.putString('clock', clock)
     }
     state.putLong('lastSample', now)
-    const level = player.level
-    const site = String(level.dimension) === 'minecraft:overworld' && state.contains('primary') &&
+    state.putLong('lastWorldTick', gameTime)
+    var site = String(level.dimension) === 'minecraft:overworld' && state.contains('primary') &&
       player.getDistanceSq(position(state, 'primary')) <= 4096 ? readSite(level, state) : { reason: 'Пауза. Вернись к заводу.' }
     if (site.reason) {
       clearWindows(state)

@@ -1,0 +1,20 @@
+{
+  "message.gregsingularity.drain_rocket_fuel": "Drain the tank before placing this rocket. It uses a different fuel.",
+  "dimension.gregsingularity.earth_orbit": "Earth Orbit",
+  "dimension.gregsingularity.moon": "Moon",
+  "dimension.gregsingularity.moon_orbit": "Lunar Orbit",
+  "dimension.gregsingularity.mars": "Mars",
+  "dimension.gregsingularity.mars_orbit": "Mars Orbit",
+  "dimension.gregsingularity.mercury": "Mercury",
+  "dimension.gregsingularity.mercury_orbit": "Mercury Orbit",
+  "dimension.gregsingularity.venus": "Venus",
+  "dimension.gregsingularity.venus_orbit": "Venus Orbit",
+  "dimension.gregsingularity.glacio": "Glacio",
+  "dimension.gregsingularity.glacio_orbit": "Glacio Orbit",
+  "dimension.gregsingularity.ceres": "Ceres",
+  "dimension.gregsingularity.ceres_orbit": "Ceres Orbit",
+  "dimension.gregsingularity.europa": "Europa",
+  "dimension.gregsingularity.europa_orbit": "Europa Orbit",
+  "dimension.gregsingularity.titan": "Titan",
+  "dimension.gregsingularity.titan_orbit": "Titan Orbit"
+}

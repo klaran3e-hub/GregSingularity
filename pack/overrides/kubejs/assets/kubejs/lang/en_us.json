@@ -1,4 +1,12 @@
 {
+  "itemGroup.gregsingularity.workshop": "GregSingularity Core · Workshop",
+  "itemGroup.gregsingularity.tools": "GregSingularity Core · Tools",
+  "itemGroup.gregsingularity.industry": "GregSingularity Core · Industry",
+  "itemGroup.gregsingularity.electronics": "GregSingularity Core · Electronics",
+  "itemGroup.gregsingularity.chemistry": "GregSingularity Core · Chemistry",
+  "itemGroup.gregsingularity.space": "GregSingularity Core · Space",
+  "itemGroup.gregsingularity.logistics": "GregSingularity Core · Logistics",
+  "itemGroup.gregsingularity.factory": "GregSingularity Core · Commissioning",
   "jei.gtibd_core.machine_smelting": "Industrial Smelting",
   "jei.gtibd_core.station_construction": "Orbital Station Construction",
   "item.kubejs.mv_coalescer": "Coalescing Cartridge",

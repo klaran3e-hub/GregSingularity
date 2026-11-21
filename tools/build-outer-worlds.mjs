@@ -19,6 +19,15 @@ function ore(key,state,host,size,count,low,high) {
   const placed=get(data+'worldgen/placed_feature/ceres_salt_lens')
   placed.feature='zero_shift:'+key;placed.placement[0].count=count
   placed.placement[2].height.min_inclusive.absolute=low;placed.placement[2].height.max_inclusive.absolute=high
+  if (key === 'titan_seam_core') {
+    // The two fixed-biome worlds share the ore decoration seed. Vary only Titan's seam centers.
+    const biomeFilter = placed.placement.findIndex(modifier => modifier.type === 'minecraft:biome')
+    placed.placement.splice(biomeFilter, 0, {
+      type: 'minecraft:random_offset',
+      xz_spread: {type: 'minecraft:uniform', value: {min_inclusive: -8, max_inclusive: 8}},
+      y_spread: 0
+    })
+  }
   save(data+'worldgen/placed_feature/'+key,placed)
 }
 const ceresBiome=get(data+'worldgen/biome/ceres_salt_basins')

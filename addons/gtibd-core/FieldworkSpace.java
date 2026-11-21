@@ -3,7 +3,6 @@ package gtibd.addon;
 import earth.terrarium.adastra.common.entities.vehicles.Rocket;
 import earth.terrarium.adastra.common.items.vehicles.RocketItem;
 import earth.terrarium.botarium.common.fluid.FluidConstants;
-import earth.terrarium.botarium.common.fluid.impl.SimpleFluidContainer;
 import earth.terrarium.botarium.common.fluid.impl.WrappedItemFluidContainer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -40,8 +39,7 @@ public final class FieldworkSpace {
                 MobCategory.MISC).m_20719_().m_20702_(10).m_20699_(1.35f, height).m_20712_(id(name).toString()));
             this.item = ITEMS.register(name, () -> new RocketItem(entity::get, new Item.Properties().m_41487_(1)) {
                 @Override public WrappedItemFluidContainer getFluidContainer(ItemStack stack) {
-                    var tank = new SimpleFluidContainer(FluidConstants.fromMillibuckets(3000), 1,
-                        (slot, fluid) -> fluid.is(fuel));
+                    var tank = RocketFuel.tierTank(FluidConstants.fromMillibuckets(3000), fuel);
                     return new WrappedItemFluidContainer(stack, tank);
                 }
             });

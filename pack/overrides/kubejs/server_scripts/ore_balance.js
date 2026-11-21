@@ -40,5 +40,22 @@ ServerEvents.recipes(event => {
     }
   }
 
+  // GT also names its raw ore furnace recipes "to_ingot" when they make clean dust or a gem.
+  // Keep ordinary coal, redstone and vanilla gems available before the first steam machines.
+  event.remove({
+    id: /^gtceu:(?:smelting|blasting)\/smelt_[a-z0-9_]+_ore_to_ingot$/,
+    output: /^gtceu:[a-z0-9_]+_(?:dust|gem)$/
+  })
+
+  // GregTech can omit this recycling recipe on a cold start. Keep its original ID for saved patterns.
+  const reservoirRecycling = 'gtceu:arc_furnace/arc_reservoir_hatch'
+  event.remove({ id: reservoirRecycling })
+  event.recipes.gtceu.arc_furnace('gtceu:arc_reservoir_hatch')
+    .category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
+    .itemInputs('gtceu:reservoir_hatch')
+    .inputFluids('#forge:oxygen 2599')
+    .itemOutputs('gtceu:stainless_steel_block', 'gtceu:steel_block', '8x gtceu:electrum_ingot', '7x gtceu:wrought_iron_ingot')
+    .duration(2599).EUt(30)
+
   event.remove({ id: 'pneumaticcraft:pressure_chamber/coal_to_diamond' })
 })

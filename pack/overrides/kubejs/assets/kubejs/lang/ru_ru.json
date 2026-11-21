@@ -1,4 +1,12 @@
 {
+  "itemGroup.gregsingularity.workshop": "GregSingularity Core · Мастерская",
+  "itemGroup.gregsingularity.tools": "GregSingularity Core · Инструменты",
+  "itemGroup.gregsingularity.industry": "GregSingularity Core · Индустрия",
+  "itemGroup.gregsingularity.electronics": "GregSingularity Core · Электроника",
+  "itemGroup.gregsingularity.chemistry": "GregSingularity Core · Химия",
+  "itemGroup.gregsingularity.space": "GregSingularity Core · Космос",
+  "itemGroup.gregsingularity.logistics": "GregSingularity Core · Логистика",
+  "itemGroup.gregsingularity.factory": "GregSingularity Core · Пуск завода",
   "jei.gtibd_core.machine_smelting": "Промышленная переплавка",
   "jei.gtibd_core.station_construction": "Строительство орбитальной станции",
   "item.kubejs.mv_coalescer": "Коалесцирующий патрон",
