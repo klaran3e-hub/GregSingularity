@@ -4,6 +4,7 @@ import earth.terrarium.adastra.common.entities.vehicles.Rocket;
 import earth.terrarium.adastra.common.items.vehicles.RocketItem;
 import earth.terrarium.botarium.common.fluid.FluidConstants;
 import earth.terrarium.botarium.common.fluid.impl.WrappedItemFluidContainer;
+import java.util.List;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -26,18 +27,20 @@ public final class FieldworkSpace {
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD);
 
     enum Ship {
-        SURVEYOR("surveyor", 5, 6.0f), COURIER("courier", 6, 6.7f), FREIGHTER("freighter", 7, 7.4f);
+        SURVEYOR("surveyor", 5, 6.0f, 2.85f),
+        COURIER("courier", 6, 6.7f, 3.35f),
+        FREIGHTER("freighter", 7, 7.4f, 4.10f);
         final String name;
         final int tier;
         final TagKey<Fluid> fuel;
         final RegistryObject<EntityType<Rocket>> entity;
         final RegistryObject<Item> item;
-        Ship(String name, int tier, float height) {
+        Ship(String name, int tier, float height, float seatHeight) {
             this.name = name;
             this.tier = tier;
             this.fuel = TagKey.m_203882_(Registries.f_256808_, id(name + "_fuel"));
             this.entity = ENTITIES.register(name, () -> EntityType.Builder.<Rocket>m_20704_(
-                (type, level) -> new Rocket(type, level, new Rocket.RocketProperties(tier, rocketItem(), 1.7f, fuel)),
+                (type, level) -> new Rocket(type, level, new Rocket.RocketProperties(tier, rocketItem(), seatHeight, fuel)),
                 MobCategory.MISC).m_20719_().m_20702_(10).m_20699_(1.35f, height).m_20712_(id(name).toString()));
             this.item = ITEMS.register(name, () -> new RocketItem(entity::get, new Item.Properties().m_41487_(1)) {
                 @Override public WrappedItemFluidContainer getFluidContainer(ItemStack stack) {
@@ -47,6 +50,11 @@ public final class FieldworkSpace {
             });
         }
         private Item rocketItem() { return item.get(); }
+    }
+
+    static List<String> rocketSearchAliases(int tier) {
+        return List.of("rocket", "rockets", "ракета", "ракеты", "tier " + tier,
+            "rocket " + tier, "ракета " + tier, "ракета tier " + tier);
     }
 
     static ResourceLocation id(String path) { return new ResourceLocation(MOD, path); }

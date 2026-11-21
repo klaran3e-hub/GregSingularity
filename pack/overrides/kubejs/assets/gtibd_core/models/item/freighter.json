@@ -2,7 +2,7 @@
   "loader": "forge:separate_transforms",
   "gui_light": "front",
   "textures": {
-    "particle": "gtibd_core:item/freighter"
+    "particle": "gtibd_core:entity/freighter"
   },
   "base": {
     "loader": "forge:obj",
@@ -11,10 +11,28 @@
     "shade_quads": true,
     "flip_v": true,
     "emissive_ambient": false,
+    "gui_light": "front",
     "textures": {
       "particle": "gtibd_core:entity/freighter"
     },
     "display": {
+      "gui": {
+        "rotation": [
+          -41,
+          -170,
+          -26
+        ],
+        "translation": [
+          1.76,
+          -4.12,
+          2.6
+        ],
+        "scale": [
+          0.1471,
+          0.1471,
+          0.1471
+        ]
+      },
       "thirdperson_righthand": {
         "rotation": [
           -110,
@@ -88,22 +106,16 @@
     }
   },
   "perspectives": {
-    "gui": {
-      "parent": "minecraft:item/generated",
-      "textures": {
-        "layer0": "gtibd_core:item/freighter"
-      }
-    },
     "firstperson_righthand": {
       "elements": [],
       "textures": {
-        "particle": "gtibd_core:item/freighter"
+        "particle": "gtibd_core:entity/freighter"
       }
     },
     "firstperson_lefthand": {
       "elements": [],
       "textures": {
-        "particle": "gtibd_core:item/freighter"
+        "particle": "gtibd_core:entity/freighter"
       }
     }
   }

@@ -1,0 +1,15 @@
+{
+  "loader": "forge:obj",
+  "model": "gtibd_core:models/vehicle/surveyor.obj",
+  "automatic_culling": false,
+  "shade_quads": true,
+  "flip_v": true,
+  "emissive_ambient": false,
+  "visibility": {
+    "access_hatch": false,
+    "engine_core": false
+  },
+  "textures": {
+    "particle": "gtibd_core:entity/surveyor"
+  }
+}

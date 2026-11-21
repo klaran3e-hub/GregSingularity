@@ -11,6 +11,22 @@
     {
       "type": "minecraft:single",
       "resource": "gtibd_core:entity/freighter"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtibd_core:entity/tier_1_rocket"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtibd_core:entity/tier_2_rocket"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtibd_core:entity/tier_3_rocket"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtibd_core:entity/tier_4_rocket"
     }
   ]
 }

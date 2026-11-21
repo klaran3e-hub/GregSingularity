@@ -2,7 +2,7 @@
   "loader": "forge:separate_transforms",
   "gui_light": "front",
   "textures": {
-    "particle": "gtibd_core:item/surveyor"
+    "particle": "gtibd_core:entity/surveyor"
   },
   "base": {
     "loader": "forge:obj",
@@ -11,10 +11,28 @@
     "shade_quads": true,
     "flip_v": true,
     "emissive_ambient": false,
+    "gui_light": "front",
     "textures": {
       "particle": "gtibd_core:entity/surveyor"
     },
     "display": {
+      "gui": {
+        "rotation": [
+          -41,
+          -170,
+          -26
+        ],
+        "translation": [
+          1.51,
+          -3.96,
+          2.43
+        ],
+        "scale": [
+          0.1747,
+          0.1747,
+          0.1747
+        ]
+      },
       "thirdperson_righthand": {
         "rotation": [
           -110,
@@ -88,22 +106,16 @@
     }
   },
   "perspectives": {
-    "gui": {
-      "parent": "minecraft:item/generated",
-      "textures": {
-        "layer0": "gtibd_core:item/surveyor"
-      }
-    },
     "firstperson_righthand": {
       "elements": [],
       "textures": {
-        "particle": "gtibd_core:item/surveyor"
+        "particle": "gtibd_core:entity/surveyor"
       }
     },
     "firstperson_lefthand": {
       "elements": [],
       "textures": {
-        "particle": "gtibd_core:item/surveyor"
+        "particle": "gtibd_core:entity/surveyor"
       }
     }
   }

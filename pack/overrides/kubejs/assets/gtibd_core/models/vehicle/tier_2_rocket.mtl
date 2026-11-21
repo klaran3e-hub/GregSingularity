@@ -1,0 +1,3 @@
+newmtl hull
+Kd 1 1 1
+map_Kd gtibd_core:entity/tier_2_rocket

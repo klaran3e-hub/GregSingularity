@@ -7,6 +7,13 @@ AIRFRAMES=runpy.run_path(str(Path(__file__).with_name('rocket-airframes.py')))
 ACCENTS={'surveyor':(133,82,133),'courier':(78,121,80),'freighter':(37,125,134)}
 SECOND={'surveyor':(186,140,75),'courier':(179,186,112),'freighter':(219,158,78)}
 METALS={'surveyor':(184,184,179),'courier':(187,196,198),'freighter':(153,162,160)}
+EARLY_PALETTES={
+    'tier_1_rocket':(METALS['surveyor'],SECOND['surveyor'],ACCENTS['surveyor']),
+    'tier_2_rocket':(METALS['courier'],ACCENTS['courier'],SECOND['courier']),
+    'tier_3_rocket':(METALS['freighter'],ACCENTS['freighter'],SECOND['freighter']),
+    'tier_4_rocket':(METALS['surveyor'],ACCENTS['surveyor'],SECOND['surveyor']),
+}
+SECOND.update({name:colors[2] for name,colors in EARLY_PALETTES.items()})
 
 
 def mix(c,b,t):
@@ -26,7 +33,8 @@ def tile(name,material,metal,accent):
           'glass_edge':(59,71,78),'hatch':(120,132,137),'cargo':mix(metal,accent,.43),
           'latch':(109,124,125),'amber':gold,'mark':metal,'vents':ink,
           'foil':(182,148,92),'cap':silver,'heatshield':(79,76,75),'label':warm,
-          'warning':gold,'port':(80,91,95),'spine':(118,131,138),'radiator':(95,110,111)}[material]
+          'warning':gold,'port':(80,91,95),'spine':(118,131,138),'radiator':(95,110,111),
+          'engine_core':(108,67,43)}[material]
     im=Image.new('RGB',(16,16),base);d=ImageDraw.Draw(im)
     hi=mix(base,warm,.32);lo=shade(base,.78);deep=shade(base,.55)
     def rivets(points):
@@ -53,6 +61,12 @@ def tile(name,material,metal,accent):
             d.rectangle((0,0,15,8),fill=(35,32,38));d.line((0,9,15,9),fill=(77,61,57))
         if material=='heatshield':
             d.line((0,8,15,8),fill=deep);d.line((7,0,7,7),fill=deep)
+    elif material=='engine_core':
+        d.rectangle((0,0,15,15),fill=(65,51,54))
+        d.rectangle((0,6,15,11),fill=(134,69,41))
+        d.line((0,7,15,7),fill=(208,123,58))
+        d.line((0,8,15,8),fill=(235,163,80))
+        d.line((0,10,15,10),fill=(169,91,47))
     elif material in ('graphite','silver','cap'):
         d.line((0,0,15,0),fill=hi);d.line((15,0,15,15),fill=lo)
     elif material=='hatch':
@@ -83,7 +97,11 @@ def tile(name,material,metal,accent):
     elif material=='mark':
         d.rectangle((1,1,14,14),fill=shade(accent,.70))
         d.line((2,2,13,2),fill=mix(accent,warm,.45));d.line((2,13,13,13),fill=gold)
-        strokes={'surveyor':[(4,5,7,10),(7,10,10,5)],
+        strokes={'tier_1_rocket':[(7,5,7,10)],
+                 'tier_2_rocket':[(6,5,6,10),(9,5,9,10)],
+                 'tier_3_rocket':[(4,5,4,10),(7,5,7,10),(10,5,10,10)],
+                 'tier_4_rocket':[(4,5,4,10),(6,5,9,10),(9,10,12,5)],
+                 'surveyor':[(4,5,7,10),(7,10,10,5)],
                  'courier':[(3,5,5,10),(5,10,8,5),(11,5,11,10)],
                  'freighter':[(2,5,4,10),(4,10,7,5),(9,5,9,10),(12,5,12,10)]}
         for line in strokes[name]:d.line(line,fill=warm)
@@ -124,7 +142,25 @@ def paint(name,rel,src,texture,ref):
     samples=sorted((p[:3] for p in native.get_flattened_data() if p[3]),key=sum)
     metal=mix(METALS[name],samples[len(samples)*7//10],.11)
     if '/item/' in rel:return icon(name,metal,ACCENTS[name])
+    return atlas(name,metal,ACCENTS[name])
+
+
+def atlas(name,metal,accent):
     im=Image.new('RGBA',(160,160),(59,65,69,255))
     for i,mat in enumerate(AIRFRAMES['MATERIALS']):
-        im.paste(tile(name,mat,metal,ACCENTS[name]),(16*(i%10),16*(i//10)))
+        im.paste(tile(name,mat,metal,accent),(16*(i%10),16*(i//10)))
     return im
+
+
+if __name__=='__main__':
+    folder=AIRFRAMES['ASSETS']/'gtibd_core/textures/entity'
+    folder.mkdir(parents=True,exist_ok=True)
+    for name,(metal,accent,_) in EARLY_PALETTES.items():
+        atlas(name,metal,accent).save(folder/f'{name}.png')
+    cell=AIRFRAMES['MATERIALS'].index('engine_core')
+    for name in METALS:
+        file=folder/f'{name}.png'
+        with Image.open(file) as source:
+            skin=source.convert('RGBA')
+        skin.paste(tile(name,'engine_core',METALS[name],ACCENTS[name]),(16*(cell%10),16*(cell//10)))
+        skin.save(file)

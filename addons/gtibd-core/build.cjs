@@ -13,8 +13,9 @@ const forgeLibraries=process.env.FORGE_LIBRARIES||path.join(root,'.dev/server/li
 for(const library of ['forge/1.20.1-47.4.28/forge-1.20.1-47.4.28-universal.jar','eventbus/6.2.33/eventbus-6.2.33.jar']) dependencies.push(path.join(forgeLibraries,library));
 // The included Ad Astra classes use the 1.20.1 Forge (SRG) names.
 const clientLibraries=process.env.FORGE_CLIENT_LIBRARIES||path.join(root,'.dev/client/libraries');
+const forgeClient=path.join(clientLibraries,'net/minecraftforge/forge/1.20.1-47.4.28/forge-1.20.1-47.4.28-client.jar');
 const clientSrg=path.join(clientLibraries,'net/minecraft/client/1.20.1-20230612.114412/client-1.20.1-20230612.114412-srg.jar');
-dependencies.push(clientSrg);
+dependencies.push(forgeClient,clientSrg);
 const compileLibs=/^(?:mergetool|fmlcore|fmlloader|javafmllanguage|forgespi|datafixerupper|brigadier|fastutil|guava|authlib|joml|slf4j-api|jsr305|annotations|gson|logging|sponge-mixin|mixin)-[0-9].*\.jar$/;
 for(const rel of fs.readdirSync(clientLibraries,{recursive:true})){
  if(compileLibs.test(path.basename(rel)))dependencies.push(path.join(clientLibraries,rel));

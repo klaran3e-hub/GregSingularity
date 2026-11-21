@@ -4,7 +4,7 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="gtibd_core"
-version="0.2.0-hotfix.3"
+version="0.2.1"
 displayName="GregSingularity Core"
 logoFile="logo.png"
 description="Field metallurgy, planetary production, spacecraft and JEI integration for GregSingularity."

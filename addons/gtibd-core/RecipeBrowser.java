@@ -7,7 +7,6 @@ import com.gregtechceu.gtceu.integration.jei.recipe.GTRecipeJEICategory;
 import earth.terrarium.adastra.common.recipes.SpaceStationRecipe;
 import earth.terrarium.adastra.common.registry.ModRecipeTypes;
 import java.util.Arrays;
-import java.util.List;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
@@ -67,10 +66,7 @@ public final class RecipeBrowser implements IModPlugin {
     }
 
     private static void addRocketAliases(IIngredientAliasRegistration registration, ItemStack stack, int tier) {
-        registration.addAliases(VanillaTypes.ITEM_STACK, stack, List.of(
-            "rocket", "rockets", "ракета", "ракеты", "tier " + tier,
-            "rocket " + tier, "ракета " + tier, "ракета tier " + tier
-        ));
+        registration.addAliases(VanillaTypes.ITEM_STACK, stack, FieldworkSpace.rocketSearchAliases(tier));
     }
 
     @Override public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {

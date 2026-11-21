@@ -1,0 +1,122 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "textures": {
+    "particle": "gtibd_core:entity/tier_1_rocket"
+  },
+  "base": {
+    "loader": "forge:obj",
+    "model": "gtibd_core:models/vehicle/tier_1_rocket.obj",
+    "automatic_culling": false,
+    "shade_quads": true,
+    "flip_v": true,
+    "emissive_ambient": false,
+    "gui_light": "front",
+    "textures": {
+      "particle": "gtibd_core:entity/tier_1_rocket"
+    },
+    "display": {
+      "gui": {
+        "rotation": [
+          -41,
+          -170,
+          -26
+        ],
+        "translation": [
+          1.4,
+          -3.25,
+          2.18
+        ],
+        "scale": [
+          0.239,
+          0.239,
+          0.239
+        ]
+      },
+      "thirdperson_righthand": {
+        "rotation": [
+          -110,
+          0,
+          -90
+        ],
+        "translation": [
+          -24.95,
+          6.52,
+          -10.14
+        ],
+        "scale": [
+          0.65,
+          0.65,
+          0.65
+        ]
+      },
+      "thirdperson_lefthand": {
+        "rotation": [
+          -110,
+          0,
+          -90
+        ],
+        "translation": [
+          -24.95,
+          6.52,
+          -10.14
+        ],
+        "scale": [
+          0.65,
+          0.65,
+          0.65
+        ]
+      },
+      "ground": {
+        "translation": [
+          0,
+          1.5,
+          0
+        ],
+        "scale": [
+          0.221,
+          0.221,
+          0.221
+        ]
+      },
+      "fixed": {
+        "translation": [
+          0,
+          -5.27,
+          0
+        ],
+        "scale": [
+          0.192,
+          0.192,
+          0.192
+        ]
+      },
+      "head": {
+        "translation": [
+          0,
+          8,
+          0
+        ],
+        "scale": [
+          0.329,
+          0.329,
+          0.329
+        ]
+      }
+    }
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "elements": [],
+      "textures": {
+        "particle": "gtibd_core:entity/tier_1_rocket"
+      }
+    },
+    "firstperson_lefthand": {
+      "elements": [],
+      "textures": {
+        "particle": "gtibd_core:entity/tier_1_rocket"
+      }
+    }
+  }
+}
