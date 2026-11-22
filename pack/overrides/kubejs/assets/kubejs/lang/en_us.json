@@ -606,5 +606,11 @@
   "item.kubejs.mill_titan_heavy": "Titan heavy concentrate",
   "item.kubejs.mill_titan_crystal": "Titan precipitated crystals",
   "item.kubejs.mill_titan_assay": "Titan calcined concentrate",
-  "fluid.kubejs.mill_titan_liquor": "Titan pregnant liquor"
+  "fluid.kubejs.mill_titan_liquor": "Titan pregnant liquor",
+  "gui.gregsingularity.bloomery.charge": "Loaded crucible",
+  "gui.gregsingularity.bloomery.fuel": "Coal or charcoal",
+  "gui.gregsingularity.bloomery.mould": "Reusable ingot mould",
+  "gui.gregsingularity.bloomery.casting": "Metal casting",
+  "gui.gregsingularity.bloomery.crucible": "Empty crucible",
+  "gui.gregsingularity.bloomery.roasted": "Roasted crucible charge"
 }

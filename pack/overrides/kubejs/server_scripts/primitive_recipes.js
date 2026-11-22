@@ -227,21 +227,21 @@ ServerEvents.recipes(event => {
   firing('kiln_crucible', 'smelting', 'kubejs:unfired_crucible', 'kubejs:fired_crucible', 560, 0.2)
 
   for (const metal of ['copper', 'iron', 'tin', 'gold']) {
-    shaped('crush_' + metal, 'kubejs:' + metal + '_grit', ['RR', 'RH'], {
+    shaped('crush_' + metal, 'kubejs:' + metal + '_grit', ['RH'], {
       R: '#zero_shift:primitive_ores/' + metal, H: hammer
     }).damageIngredient(hammer)
   }
-  shaped('copper_charge', 'kubejs:copper_charge', ['WWW', 'WCW', ' T '], {
+  shaped('copper_charge', 'kubejs:copper_charge', ['W W', ' C ', ' T '], {
     W: 'kubejs:washed_copper_grit', C: 'kubejs:fired_crucible', T: 'minecraft:charcoal'
   })
-  for (const [metal, ingot] of [['tin', 'gtceu:tin_ingot'], ['gold', 'minecraft:gold_ingot']]) {
-    shaped(metal + '_charge', 'kubejs:' + metal + '_charge', ['WWW', 'TCT', ' L '], {
+  for (const metal of ['tin', 'gold']) {
+    shaped(metal + '_charge', 'kubejs:' + metal + '_charge', ['W W', ' C ', 'TLT'], {
       W: 'kubejs:washed_' + metal + '_grit', T: 'minecraft:charcoal',
       C: 'kubejs:fired_crucible', L: 'kubejs:fired_lining'
     })
   }
   shapeless('hammer_copper_strap', 'kubejs:copper_strap', ['minecraft:copper_ingot', hammer]).damageIngredient(hammer)
-  shaped('iron_charge', 'kubejs:iron_charge', ['WWW', 'TCT', 'LSL'], {
+  shaped('iron_charge', 'kubejs:iron_charge', ['W W', 'TCT', ' LS'], {
     W: 'kubejs:washed_iron_grit', T: 'minecraft:charcoal', C: 'kubejs:fired_crucible',
     L: 'kubejs:fired_lining', S: 'kubejs:copper_strap'
   })

@@ -102,16 +102,27 @@ ServerEvents.recipes(event => {
 
   buildForestry('sturdy_machine', 2, ['8x ' + bronze, '4x ' + plate, '2x ' + frame,
     '2x ' + ks('hv_arc_shield'), '2x ' + seal, circuit], 1920, lubricant, 1600)
-  buildForestry('scoop', 1, ['2x ' + gt('steel_rod'), '2x ' + ks('tool_binding'),
-    '2x ' + ks('strainer_mesh'), '#minecraft:wool', ks('tool_handle')], 900, lubricant, 500)
-  buildForestry('bee_house', 1, ['4x #minecraft:planks', '4x #minecraft:wooden_slabs',
-    '2x #forestry:combs', '2x ' + ks('wooden_joint'), '2x ' + ks('iron_hinge'), '2x ' + seal], 1360, oil, 750)
-  buildForestry('apiary', 1, [forestry('bee_house'), '2x ' + casing, '4x #minecraft:wooden_slabs',
-    '2x ' + ks('wooden_joint'), '2x ' + ks('iron_hinge'), '2x ' + seal, '2x ' + bronze], 2180, oil, 1400)
+  // Hand-built equipment for collecting wild bees and breeding the first colonies.
+  function early(id, pattern, ingredients) {
+    const output = forestry(id)
+    event.remove({ output: output })
+    event.shaped(output, pattern, ingredients).id(prefix + 'early/' + id)
+  }
+
+  early('scoop', ['CWC', 'CFC', ' H '], {
+    C: ks('fibre_cord'), W: '#minecraft:wool', F: ks('washed_fibre'), H: ks('tool_handle')
+  })
+  early('bee_house', ['SSS', 'PCP', 'JPJ'], {
+    S: '#minecraft:wooden_slabs', P: '#minecraft:planks', C: '#forestry:combs', J: ks('wooden_joint')
+  })
+  early('apiary', ['SFS', 'JBJ', 'SFS'], {
+    S: '#minecraft:wooden_slabs', F: forestry('frame_untreated'), J: ks('wooden_joint'), B: forestry('bee_house')
+  })
+  early('frame_untreated', ['PHP', 'C C', 'PHP'], {
+    P: mc('stick'), H: ks('rough_slat'), C: ks('fibre_cord')
+  })
   buildForestry('bee_chest', 1, [mc('chest'), '2x #forestry:combs', '4x ' + glass,
     '2x ' + ks('iron_hinge'), '2x ' + seal], 980, lubricant, 700)
-  buildForestry('frame_untreated', 2, ['8x ' + mc('stick'), '4x ' + mc('string'),
-    '2x ' + ks('wooden_joint'), '2x ' + ks('tool_binding')], 680, lubricant, 400)
   buildForestry('frame_impregnated', 2, ['8x ' + sticks, '4x ' + mc('string'),
     '2x ' + ks('wooden_joint'), '2x ' + seal], 860, oil, 450)
   buildForestry('analyzer', 1, [forestry('portable_alyzer'), housing, '4x ' + tin,

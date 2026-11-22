@@ -50,27 +50,27 @@ ServerEvents.recipes(event => {
     L: lining, T: k('fired_tuyere'), B: k('hearth_bellows'), G: k('kiln_grate'),
     F: 'minecraft:furnace', C: '#forge:cobblestone'
   })
-  const charge = (name, items, cast, output, ticks) => {
-    const recipe = bronze.field_bloomery(id(name))
-    items.forEach(item => recipe.itemInputs(item))
-    if (cast) recipe.notConsumable(k('ingot_mould'))
-    return recipe.itemOutputs(output).duration(ticks)
+  const crucible = k('fired_crucible')
+  const cast = (name, loadedCrucible, fuel, mould, metal, ticks) => {
+    return bronze.field_bloomery(id(name))
+      .itemInputs(k(loadedCrucible), fuel).notConsumable(k(mould))
+      .itemOutputs(crucible, metal).duration(ticks)
   }
   for (const [metal, output] of [['copper','minecraft:copper_ingot'],['iron',k('iron_bloom')],
     ['tin','gtceu:tin_ingot'],['gold','minecraft:gold_ingot']]) {
-    charge('reduce_' + metal, [k(metal + '_charge'), '2x minecraft:charcoal'], true, output, 360)
+    cast('reduce_' + metal, metal + '_charge', '2x #zero_shift:bloomery_fuels', 'ingot_mould', output, 360)
   }
-  shape('blend_bronze', k('bronze_charge'), ['CCC', 'TFT', ' A '], {
+  shape('blend_bronze', k('bronze_charge'), ['C C', 'TFT', ' A '], {
     C: k('washed_copper_grit'), T: k('chamotte'), F: k('fired_crucible'), A: k('washed_tin_grit')
   })
-  charge('roast_alloy', [k('bronze_charge'), 'minecraft:charcoal'], false, k('roasted_alloy_feed'), 200)
-  charge('pour_bronze', [k('roasted_alloy_feed'), '2x minecraft:charcoal'], true, 'gtceu:bronze_ingot', 360)
+  bronze.field_bloomery(id('roast_alloy'))
+    .itemInputs(k('bronze_charge'), '#zero_shift:bloomery_fuels').notConsumable(k('ingot_mould'))
+    .itemOutputs(k('roasted_alloy_feed')).duration(200)
+  cast('pour_bronze', 'roasted_alloy_feed', '2x #zero_shift:bloomery_fuels', 'ingot_mould', 'gtceu:bronze_ingot', 360)
   shape('reinforce_cast', k('bronze_mould_frame'), ['PCP','RMR',' P '], {
     P:'gtceu:bronze_plate', C:k('copper_strap'), R:k('iron_rivet'), M:k('ingot_mould')
   })
-  bronze.field_bloomery(id('paired_bronze_cast'))
-    .itemInputs(k('roasted_alloy_feed'), '3x minecraft:charcoal').notConsumable(k('bronze_mould_frame'))
-    .itemOutputs('2x gtceu:bronze_ingot').duration(440)
+  cast('paired_bronze_cast', 'roasted_alloy_feed', '3x #zero_shift:bloomery_fuels', 'bronze_mould_frame', '2x gtceu:bronze_ingot', 440)
   shape('five_tubes', k('five_tube_register'), ['PTP','TTT','RTR'], {
     T:'gtceu:bronze_small_fluid_pipe', P:k('copper_strap'), R:k('iron_rivet')
   })

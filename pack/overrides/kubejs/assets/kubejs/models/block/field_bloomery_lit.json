@@ -14,76 +14,6 @@
   },
   "elements": [
     {
-      "name": "back",
-      "from": [
-        0,
-        0,
-        5
-      ],
-      "to": [
-        16,
-        16,
-        16
-      ],
-      "shade": true,
-      "faces": {
-        "down": {
-          "uv": [
-            0,
-            0,
-            16,
-            11
-          ],
-          "texture": "#masonry"
-        },
-        "up": {
-          "uv": [
-            0,
-            0,
-            16,
-            11
-          ],
-          "texture": "#masonry"
-        },
-        "north": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#masonry"
-        },
-        "south": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#masonry"
-        },
-        "west": {
-          "uv": [
-            0,
-            0,
-            11,
-            16
-          ],
-          "texture": "#masonry"
-        },
-        "east": {
-          "uv": [
-            0,
-            0,
-            11,
-            16
-          ],
-          "texture": "#masonry"
-        }
-      }
-    },
-    {
       "name": "sill",
       "from": [
         0,
@@ -375,7 +305,7 @@
         4,
         6
       ],
-      "shade": false,
+      "shade": true,
       "faces": {
         "down": {
           "uv": [
@@ -384,11 +314,7 @@
             10,
             3
           ],
-          "texture": "#live_coals",
-          "forge_data": {
-            "block_light": 15,
-            "sky_light": 15
-          }
+          "texture": "#live_coals"
         },
         "up": {
           "uv": [
@@ -397,11 +323,7 @@
             10,
             3
           ],
-          "texture": "#live_coals",
-          "forge_data": {
-            "block_light": 15,
-            "sky_light": 15
-          }
+          "texture": "#live_coals"
         },
         "north": {
           "uv": [
@@ -410,11 +332,7 @@
             10,
             1
           ],
-          "texture": "#live_coals",
-          "forge_data": {
-            "block_light": 15,
-            "sky_light": 15
-          }
+          "texture": "#live_coals"
         },
         "south": {
           "uv": [
@@ -423,11 +341,7 @@
             10,
             1
           ],
-          "texture": "#live_coals",
-          "forge_data": {
-            "block_light": 15,
-            "sky_light": 15
-          }
+          "texture": "#live_coals"
         },
         "west": {
           "uv": [
@@ -436,11 +350,7 @@
             3,
             1
           ],
-          "texture": "#live_coals",
-          "forge_data": {
-            "block_light": 15,
-            "sky_light": 15
-          }
+          "texture": "#live_coals"
         },
         "east": {
           "uv": [
@@ -449,11 +359,7 @@
             3,
             1
           ],
-          "texture": "#live_coals",
-          "forge_data": {
-            "block_light": 15,
-            "sky_light": 15
-          }
+          "texture": "#live_coals"
         }
       }
     },
@@ -469,7 +375,7 @@
         12,
         5
       ],
-      "shade": false,
+      "shade": true,
       "faces": {
         "down": {
           "uv": [
@@ -478,11 +384,7 @@
             10,
             1
           ],
-          "texture": "#live_coals",
-          "forge_data": {
-            "block_light": 15,
-            "sky_light": 15
-          }
+          "texture": "#live_coals"
         },
         "up": {
           "uv": [
@@ -491,11 +393,7 @@
             10,
             1
           ],
-          "texture": "#live_coals",
-          "forge_data": {
-            "block_light": 15,
-            "sky_light": 15
-          }
+          "texture": "#live_coals"
         },
         "north": {
           "uv": [
@@ -504,11 +402,7 @@
             16,
             16
           ],
-          "texture": "#live_coals",
-          "forge_data": {
-            "block_light": 15,
-            "sky_light": 15
-          }
+          "texture": "#live_coals"
         },
         "south": {
           "uv": [
@@ -517,11 +411,7 @@
             10,
             8
           ],
-          "texture": "#live_coals",
-          "forge_data": {
-            "block_light": 15,
-            "sky_light": 15
-          }
+          "texture": "#live_coals"
         },
         "west": {
           "uv": [
@@ -530,11 +420,7 @@
             1,
             8
           ],
-          "texture": "#live_coals",
-          "forge_data": {
-            "block_light": 15,
-            "sky_light": 15
-          }
+          "texture": "#live_coals"
         },
         "east": {
           "uv": [
@@ -543,11 +429,7 @@
             1,
             8
           ],
-          "texture": "#live_coals",
-          "forge_data": {
-            "block_light": 15,
-            "sky_light": 15
-          }
+          "texture": "#live_coals"
         }
       }
     },
@@ -1808,6 +1690,567 @@
             4
           ],
           "texture": "#timber"
+        }
+      }
+    },
+    {
+      "name": "inner_wall",
+      "from": [
+        0,
+        0,
+        5
+      ],
+      "to": [
+        16,
+        3,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "#fireclay"
+        },
+        "up": {
+          "texture": "#fireclay"
+        },
+        "north": {
+          "texture": "#fireclay"
+        },
+        "south": {
+          "texture": "#fireclay"
+        },
+        "west": {
+          "texture": "#fireclay"
+        },
+        "east": {
+          "texture": "#fireclay"
+        }
+      }
+    },
+    {
+      "name": "arch_ceiling",
+      "from": [
+        0,
+        13,
+        6
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "#masonry"
+        },
+        "up": {
+          "texture": "#masonry"
+        },
+        "north": {
+          "texture": "#masonry"
+        },
+        "south": {
+          "texture": "#masonry"
+        },
+        "west": {
+          "texture": "#masonry"
+        },
+        "east": {
+          "texture": "#masonry"
+        }
+      }
+    },
+    {
+      "name": "firebrick_mantle",
+      "from": [
+        -12,
+        16.2,
+        0
+      ],
+      "to": [
+        28,
+        18.2,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "#hearthstone"
+        },
+        "up": {
+          "texture": "#hearthstone"
+        },
+        "north": {
+          "texture": "#hearthstone"
+        },
+        "south": {
+          "texture": "#hearthstone"
+        },
+        "west": {
+          "texture": "#hearthstone"
+        },
+        "east": {
+          "texture": "#hearthstone"
+        }
+      }
+    },
+    {
+      "name": "mantle_left",
+      "from": [
+        -16,
+        13.2,
+        -1
+      ],
+      "to": [
+        0,
+        15.2,
+        1
+      ],
+      "faces": {
+        "down": {
+          "texture": "#scorched"
+        },
+        "up": {
+          "texture": "#scorched"
+        },
+        "north": {
+          "texture": "#scorched"
+        },
+        "south": {
+          "texture": "#scorched"
+        },
+        "west": {
+          "texture": "#scorched"
+        },
+        "east": {
+          "texture": "#scorched"
+        }
+      }
+    },
+    {
+      "name": "mantle_right",
+      "from": [
+        16,
+        13.2,
+        -1
+      ],
+      "to": [
+        32,
+        15.2,
+        1
+      ],
+      "faces": {
+        "down": {
+          "texture": "#scorched"
+        },
+        "up": {
+          "texture": "#scorched"
+        },
+        "north": {
+          "texture": "#scorched"
+        },
+        "south": {
+          "texture": "#scorched"
+        },
+        "west": {
+          "texture": "#scorched"
+        },
+        "east": {
+          "texture": "#scorched"
+        }
+      }
+    },
+    {
+      "name": "firebrick_shelf",
+      "from": [
+        2,
+        1,
+        16
+      ],
+      "to": [
+        14,
+        3,
+        31
+      ],
+      "faces": {
+        "down": {
+          "texture": "#fireclay"
+        },
+        "up": {
+          "texture": "#fireclay"
+        },
+        "north": {
+          "texture": "#fireclay"
+        },
+        "south": {
+          "texture": "#fireclay"
+        },
+        "west": {
+          "texture": "#fireclay"
+        },
+        "east": {
+          "texture": "#fireclay"
+        }
+      }
+    },
+    {
+      "name": "inner_wall_left",
+      "from": [
+        0,
+        3,
+        16
+      ],
+      "to": [
+        2,
+        15,
+        32
+      ],
+      "faces": {
+        "down": {
+          "texture": "#fireclay"
+        },
+        "up": {
+          "texture": "#fireclay"
+        },
+        "north": {
+          "texture": "#fireclay"
+        },
+        "south": {
+          "texture": "#fireclay"
+        },
+        "west": {
+          "texture": "#fireclay"
+        },
+        "east": {
+          "texture": "#fireclay"
+        }
+      }
+    },
+    {
+      "name": "inner_wall_right",
+      "from": [
+        14,
+        3,
+        16
+      ],
+      "to": [
+        16,
+        15,
+        32
+      ],
+      "faces": {
+        "down": {
+          "texture": "#fireclay"
+        },
+        "up": {
+          "texture": "#fireclay"
+        },
+        "north": {
+          "texture": "#fireclay"
+        },
+        "south": {
+          "texture": "#fireclay"
+        },
+        "west": {
+          "texture": "#fireclay"
+        },
+        "east": {
+          "texture": "#fireclay"
+        }
+      }
+    },
+    {
+      "name": "chamber_rail_left",
+      "from": [
+        3,
+        3,
+        17
+      ],
+      "to": [
+        4,
+        4,
+        31
+      ],
+      "faces": {
+        "down": {
+          "texture": "#scorched"
+        },
+        "up": {
+          "texture": "#scorched"
+        },
+        "north": {
+          "texture": "#scorched"
+        },
+        "south": {
+          "texture": "#scorched"
+        },
+        "west": {
+          "texture": "#scorched"
+        },
+        "east": {
+          "texture": "#scorched"
+        }
+      }
+    },
+    {
+      "name": "chamber_rail_right",
+      "from": [
+        12,
+        3,
+        17
+      ],
+      "to": [
+        13,
+        4,
+        31
+      ],
+      "faces": {
+        "down": {
+          "texture": "#scorched"
+        },
+        "up": {
+          "texture": "#scorched"
+        },
+        "north": {
+          "texture": "#scorched"
+        },
+        "south": {
+          "texture": "#scorched"
+        },
+        "west": {
+          "texture": "#scorched"
+        },
+        "east": {
+          "texture": "#scorched"
+        }
+      }
+    },
+    {
+      "name": "crucible_foot",
+      "from": [
+        5,
+        4,
+        20
+      ],
+      "to": [
+        11,
+        5,
+        26
+      ],
+      "faces": {
+        "down": {
+          "texture": "#scorched"
+        },
+        "up": {
+          "texture": "#scorched"
+        },
+        "north": {
+          "texture": "#scorched"
+        },
+        "south": {
+          "texture": "#scorched"
+        },
+        "west": {
+          "texture": "#scorched"
+        },
+        "east": {
+          "texture": "#scorched"
+        }
+      }
+    },
+    {
+      "name": "crucible_body",
+      "from": [
+        4,
+        5,
+        19
+      ],
+      "to": [
+        12,
+        8,
+        27
+      ],
+      "faces": {
+        "down": {
+          "texture": "#fireclay"
+        },
+        "up": {
+          "texture": "#fireclay"
+        },
+        "north": {
+          "texture": "#fireclay"
+        },
+        "south": {
+          "texture": "#fireclay"
+        },
+        "west": {
+          "texture": "#fireclay"
+        },
+        "east": {
+          "texture": "#fireclay"
+        }
+      }
+    },
+    {
+      "name": "crucible_lip",
+      "from": [
+        3.5,
+        8,
+        18.5
+      ],
+      "to": [
+        12.5,
+        9,
+        27.5
+      ],
+      "faces": {
+        "down": {
+          "texture": "#scorched"
+        },
+        "up": {
+          "texture": "#scorched"
+        },
+        "north": {
+          "texture": "#scorched"
+        },
+        "south": {
+          "texture": "#scorched"
+        },
+        "west": {
+          "texture": "#scorched"
+        },
+        "east": {
+          "texture": "#scorched"
+        }
+      }
+    },
+    {
+      "name": "crucible_coals",
+      "from": [
+        4,
+        9,
+        19
+      ],
+      "to": [
+        12,
+        9.25,
+        27
+      ],
+      "faces": {
+        "down": {
+          "texture": "#live_coals"
+        },
+        "up": {
+          "texture": "#live_coals"
+        },
+        "north": {
+          "texture": "#live_coals"
+        },
+        "south": {
+          "texture": "#live_coals"
+        },
+        "west": {
+          "texture": "#live_coals"
+        },
+        "east": {
+          "texture": "#live_coals"
+        }
+      }
+    },
+    {
+      "name": "basin_link_left",
+      "from": [
+        5,
+        1,
+        -16
+      ],
+      "to": [
+        6,
+        3,
+        -8
+      ],
+      "faces": {
+        "down": {
+          "texture": "#fireclay"
+        },
+        "up": {
+          "texture": "#fireclay"
+        },
+        "north": {
+          "texture": "#fireclay"
+        },
+        "south": {
+          "texture": "#fireclay"
+        },
+        "west": {
+          "texture": "#fireclay"
+        },
+        "east": {
+          "texture": "#fireclay"
+        }
+      }
+    },
+    {
+      "name": "basin_link_right",
+      "from": [
+        10,
+        1,
+        -16
+      ],
+      "to": [
+        11,
+        3,
+        -8
+      ],
+      "faces": {
+        "down": {
+          "texture": "#fireclay"
+        },
+        "up": {
+          "texture": "#fireclay"
+        },
+        "north": {
+          "texture": "#fireclay"
+        },
+        "south": {
+          "texture": "#fireclay"
+        },
+        "west": {
+          "texture": "#fireclay"
+        },
+        "east": {
+          "texture": "#fireclay"
+        }
+      }
+    },
+    {
+      "name": "basin_link_bed",
+      "from": [
+        6,
+        1,
+        -16
+      ],
+      "to": [
+        10,
+        2,
+        -8
+      ],
+      "faces": {
+        "down": {
+          "texture": "#fireclay"
+        },
+        "up": {
+          "texture": "#fireclay"
+        },
+        "north": {
+          "texture": "#fireclay"
+        },
+        "south": {
+          "texture": "#fireclay"
+        },
+        "west": {
+          "texture": "#fireclay"
+        },
+        "east": {
+          "texture": "#fireclay"
         }
       }
     }

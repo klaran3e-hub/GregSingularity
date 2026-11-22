@@ -606,5 +606,11 @@
   "item.kubejs.mill_titan_heavy": "Тяжёлый концентрат Титана",
   "item.kubejs.mill_titan_crystal": "Кристаллизат Титана",
   "item.kubejs.mill_titan_assay": "Прокалённый концентрат Титана",
-  "fluid.kubejs.mill_titan_liquor": "Продуктивный раствор Титана"
+  "fluid.kubejs.mill_titan_liquor": "Продуктивный раствор Титана",
+  "gui.gregsingularity.bloomery.charge": "Тигель с шихтой",
+  "gui.gregsingularity.bloomery.fuel": "Каменный или древесный уголь",
+  "gui.gregsingularity.bloomery.mould": "Многоразовая изложница",
+  "gui.gregsingularity.bloomery.casting": "Отливка металла",
+  "gui.gregsingularity.bloomery.crucible": "Пустой тигель",
+  "gui.gregsingularity.bloomery.roasted": "Тигель с прокалённой шихтой"
 }

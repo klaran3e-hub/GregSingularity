@@ -2,7 +2,7 @@
   const permit = 'kubejs:hv_commissioning_report'
   const permitKey = 'GTIBDForestryPermit'
   const controlled = [
-    'forestry:apiary', 'forestry:bee_house', 'forestry:bee_chest', 'forestry:analyzer',
+    'forestry:bee_chest', 'forestry:analyzer',
     'forestry:carpenter', 'forestry:centrifuge', 'forestry:squeezer', 'forestry:fermenter',
     'forestry:bottler', 'forestry:moistener', 'forestry:fabricator', 'forestry:rainmaker',
     'forestry:alveary_plain', 'forestry:alveary_fan', 'forestry:alveary_heater',
@@ -28,7 +28,4 @@
   }
 
   controlled.forEach(id => BlockEvents.rightClicked(id, check))
-  BlockEvents.broken(event => {
-    if (String(event.block.id).startsWith('forestry:beehive_')) check(event)
-  })
 })()

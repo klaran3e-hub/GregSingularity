@@ -364,7 +364,7 @@
       y: 0.598d
       shape: "circle"
       size: 1.550d
-      dependencies: ["4D12F46313F9CA9B","42E99CE4711A8261","4D7DA36B68C2978A"]
+      dependencies: ["468D4C1249381858"]
       optional: true
       tasks: [{
         id: "4ACDB329A86F1D60"
@@ -374,7 +374,7 @@
       rewards: [{
         id: "4ACD3F6EDD4A2444"
         type: "item"
-        item: "gtceu:aluminium_plate"
+        item: "kubejs:fibre_cord"
         count: 1
       }]
     }
@@ -397,7 +397,7 @@
       rewards: [{
         id: "4F4464249F700BDF"
         type: "item"
-        item: "gtceu:polyethylene_plate"
+        item: "kubejs:washed_fibre"
         count: 2
       }]
     }
@@ -420,7 +420,7 @@
       rewards: [{
         id: "47CA03FA3EA75A81"
         type: "item"
-        item: "gtceu:polyethylene_plate"
+        item: "kubejs:washed_fibre"
         count: 2
       }]
     }
@@ -443,7 +443,7 @@
       rewards: [{
         id: "4CB783984269D2D2"
         type: "item"
-        item: "gtceu:polyethylene_plate"
+        item: "kubejs:washed_fibre"
         count: 2
       }]
     }
@@ -455,7 +455,7 @@
       y: -1.608d
       shape: "circle"
       size: 0.910d
-      dependencies: ["4B1FC3A982E00C91","4CCC1631D6D45C24","4489880BDE49A20C"]
+      dependencies: ["4B1FC3A982E00C91"]
       optional: true
       tasks: [{
         id: "4C52DEC3003DD0FA"
@@ -465,7 +465,7 @@
       rewards: [{
         id: "4D21F2C8418661B8"
         type: "item"
-        item: "gtceu:copper_plate"
+        item: "kubejs:wooden_joint"
         count: 2
       }]
     }
@@ -487,7 +487,7 @@
       rewards: [{
         id: "471BA14ADEA34F22"
         type: "item"
-        item: "gtceu:polyethylene_plate"
+        item: "kubejs:washed_fibre"
         count: 2
       }]
     }
@@ -522,7 +522,7 @@
       y: 1.500d
       shape: "circle"
       size: 1.550d
-      dependencies: ["46448CCC6662902F","4CDF30AA9C1ED4EC"]
+      dependencies: ["46448CCC6662902F"]
       optional: true
       tasks: [{
         id: "485BBC0CF89BF18D"
@@ -532,7 +532,7 @@
       rewards: [{
         id: "4D84563000B098A4"
         type: "item"
-        item: "gtceu:stainless_steel_plate"
+        item: "forestry:frame_untreated"
         count: 1
       }]
     }

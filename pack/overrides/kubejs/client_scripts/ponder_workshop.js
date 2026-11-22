@@ -75,7 +75,7 @@
         instruction(scene,94,'Разверни топочное окно к чаше. За контроллером оставь воздух.',[2.5,2.5,1.1])
       }
       if(y===2)instruction(scene,68,'Следующие четыре блока кладки обступают пустую камеру с четырёх сторон.',[2.5,3.2,2.5])
-      if(y===4)instruction(scene,60,'Над камерой поставь переход шахты и венец. Проверь сборку в контроллере.',[2.5,5,2.5])
+      if(y===4)instruction(scene,60,'Над камерой поставь переход шахты и венец. Щёлкни правой кнопкой по топочному окну собранного горна.',[2.5,5,2.5])
     }
     fireAndPour(scene)
   }
@@ -92,20 +92,20 @@
     const clear = tokens => tokens.forEach(t => scene.world.removeEntity(t))
 
     scene.showControls(62, mouth, PonderPointing.DOWN).rightClick().withItem('kubejs:bronze_charge')
-    const raw = [token([2.16, 2.8, 0.8], 'kubejs:bronze_charge'), token([2.83, 2.8, 0.8], 'minecraft:charcoal')]
-    instruction(scene, 60, 'Положи во вход горна шихту и один древесный уголь. Прокаливание длится 10 секунд.', mouth)
+    const raw = [token([2.16, 2.8, 0.8], 'kubejs:bronze_charge'), token([2.83, 2.8, 0.8], 'minecraft:charcoal'), token([3.1, 2.8, 0.8], 'kubejs:ingot_mould')]
+    instruction(scene, 60, 'Загрузи тигель с шихтой, один уголь и изложницу в три входных слота. Прокаливание длится 10 секунд.', mouth)
     clear(raw)
     sound(scene, 'fire')
     emit([2.5, 6.02, 2.5], particles.SMOKE, [0, 0.055, 0], 0.35, 54)
     emit(mouth, particles.SMALL_FLAME, [0, 0.025, 0], 0.3, 36)
     const roasted = token([2.5, 2.58, 0.7], 'kubejs:roasted_alloy_feed')
-    instruction(scene, 62, 'Забери прокалённую шихту из выхода. Переложи её обратно во вход.', mouth)
+    instruction(scene, 62, 'Забери тигель с прокалённой шихтой из третьего выхода. Переложи её обратно во вход.', mouth)
     clear([roasted])
 
     scene.showControls(64, mouth, PonderPointing.DOWN).withItem('kubejs:ingot_mould')
     const mould = token([3.00, 2.7, 0.60], 'kubejs:ingot_mould')
     const fuel = token([2.16, 2.7, 0.82], '2x minecraft:charcoal')
-    instruction(scene, 64, 'Добавь изложницу и два древесных угля. Плавка займёт 18 секунд.', mouth)
+    instruction(scene, 64, 'Оставь изложницу на месте и добавь два угля. Плавка займёт 18 секунд.', mouth)
     clear([fuel])
     sound(scene, 'fire')
     emit(mouth, particles.SMALL_FLAME, [0, 0.025, 0], 0.35, 30)
@@ -115,8 +115,9 @@
       scene.idle(4)
     }
     const ingot = token(basin, 'gtceu:bronze_ingot')
-    instruction(scene, 69, 'Забери бронзовый слиток из выходного слота. Изложницу оставь в горне для следующей плавки.', basin)
-    clear([mould, ingot])
+    const crucible = token([2.87, 2.43, 0.62], 'kubejs:fired_crucible')
+    instruction(scene, 69, 'Забери бронзовый слиток и пустой тигель из отдельных выходов. Изложница остаётся в горне.', basin)
+    clear([mould, ingot, crucible])
   }
   Ponder.registry(event=>{
     const section=(items,id,title,callback)=>event.create(items).scene('gtibd_field_'+id,title,callback)
@@ -135,7 +136,7 @@
     section(['kubejs:ore_washing_trough','kubejs:ore_tailings','kubejs:copper_grit','kubejs:tin_grit','kubejs:iron_grit','kubejs:gold_grit'],'wash','Руда и течение воды',washing)
     section(['gtceu:field_bloomery','kubejs:bloomery_masonry','kubejs:bloomery_shoulder','kubejs:bloomery_stack','kubejs:bloomery_casting_basin','kubejs:hearth_bellows','kubejs:bronze_charge'],'shaft','Кладка полевого горна',bloomery)
     section(['kubejs:roasted_alloy_feed','kubejs:bronze_mould_frame'],'cast','Второй способ литья',demo('gtceu:field_bloomery',[
-      [['kubejs:bronze_charge','minecraft:charcoal'],'kubejs:roasted_alloy_feed','Прокали шихту отдельным циклом. Для второй операции выбери обычную или усиленную изложницу.'],
+      [['kubejs:bronze_charge','minecraft:charcoal','kubejs:ingot_mould'],'kubejs:roasted_alloy_feed','Прокали шихту отдельным циклом. Для второй операции выбери обычную или усиленную изложницу.'],
       [['kubejs:roasted_alloy_feed','kubejs:bronze_mould_frame','3x minecraft:charcoal'],'2x gtceu:bronze_ingot','Три угля и парная изложница дают два слитка из одной прокалённой шихты.']]))
     section(['kubejs:forging_saddle','kubejs:stamped_bronze_blank','gtceu:lp_steam_forge_hammer'],'plate','Ковка вручную и под паром',demo('minecraft:crafting_table',[
       [['2x gtceu:bronze_ingot','gtceu:flint_hammer','kubejs:forging_saddle'],'gtceu:bronze_plate','На подкладке два слитка дают одну пластину. Молот изнашивается, подкладка остаётся.'],

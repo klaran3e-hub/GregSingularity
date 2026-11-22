@@ -4,7 +4,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
   const resource = Java.loadClass('net.minecraft.resources.ResourceLocation')
   const blocks = Java.loadClass('net.minecraft.sounds.SoundSource').BLOCKS
   const firing = new ExistingSound(Sound.createVariableRangeEvent(new resource('kubejs:fieldwork.fire')), blocks)
-  event.create('field_bloomery').setSound(firing).category('primitive').setMaxIOSize(3, 2, 0, 0).setEUIO('none')
+  event.create('field_bloomery').setSound(firing).category('primitive').setMaxIOSize(3, 3, 0, 0).setEUIO('none')
 })
 
 GTCEuStartupEvents.registry('gtceu:machine', event => {
@@ -13,7 +13,9 @@ GTCEuStartupEvents.registry('gtceu:machine', event => {
   const brick = id => Predicates.blocks(registry.getValue(new Id('kubejs', id)))
   const props = Java.loadClass('com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties')
   const logic = Java.loadClass('com.gregtechceu.gtceu.api.machine.trait.RecipeLogic$Status')
-  event.create('field_bloomery', 'primitive')
+  const FieldBloomery = Java.loadClass('gtibd.addon.FieldBloomery')
+  FieldBloomery.configureModel(event.create('field_bloomery', 'primitive'))
+    .machine(holder => new FieldBloomery(holder))
     .rotationState(RotationState.NON_Y_AXIS)
     .recipeType('gtceu:field_bloomery')
     .appearanceBlock(() => Blocks.TERRACOTTA)
@@ -34,7 +36,11 @@ GTCEuStartupEvents.registry('gtceu:machine', event => {
     .model((context, provider, model) => {
       const File = Java.loadClass('net.minecraftforge.client.model.generators.ModelFile$UncheckedModelFile')
       const cold = new File['(java.lang.String)']('kubejs:block/field_bloomery_cold')
+      const formed = new File['(java.lang.String)']('kubejs:block/field_bloomery_formed')
       const lit = new File['(java.lang.String)']('kubejs:block/field_bloomery_lit')
-      model.forAllStatesModels(state => state.getValue(props.RECIPE_LOGIC_STATUS) === logic.WORKING ? lit : cold)
+      model.forAllStatesModels(state => {
+        if (String(state.getValue(props.IS_FORMED)) !== 'true') return cold
+        return state.getValue(props.RECIPE_LOGIC_STATUS) === logic.WORKING ? lit : formed
+      })
     })
 })
