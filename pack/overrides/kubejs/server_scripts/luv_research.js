@@ -1,6 +1,6 @@
 ServerEvents.recipes(event => {
   const gt = id => 'gtceu:' + id
-  const part = id => 'kubejs:luv_' + id
+  const part = id => global.gsItemId('luv_' + id)
   const prefix = 'zero_shift:luv_research/'
   const plate = gt('rhodium_plated_palladium_plate')
   const cable = gt('niobium_titanium_single_cable')
@@ -45,15 +45,15 @@ ServerEvents.recipes(event => {
 
   make('computer_casing', [
     gt('assembly_line_casing'), '4x ' + plate, '2x ' + laminate, '2x ' + part('busbar'),
-    '2x gtceu:hssg_plate', '2x kubejs:iv_bulkhead', '2x gtceu:steel_frame'
+    '2x gtceu:hssg_plate', '2x gtceu:gregsingularity_iv_bulkhead', '2x gtceu:steel_frame'
   ], 4, 2400, 7680, gt('lubricant'))
   make('advanced_computer_casing', [
     '2x ' + casing, '2x ' + optics, '2x ' + clock, '4x ' + plate, '4x gtceu:laminated_glass', circuit,
     '2x ' + observer, '2x ' + relay
   ], 2, 2700, 7680, shield)
   make('computer_heat_vent', [
-    '2x ' + casing, '2x kubejs:iv_cooling_jacket', '4x gtceu:hssg_plate', '2x gtceu:iv_electric_motor',
-    '2x gtceu:iv_electric_pump', '2x kubejs:hearth_bellows', '2x pneumaticcraft:heat_sink'
+    '2x ' + casing, '2x gtceu:gregsingularity_iv_cooling_jacket', '4x gtceu:hssg_plate', '2x gtceu:iv_electric_motor',
+    '2x gtceu:iv_electric_pump', '2x gtceu:gregsingularity_hearth_bellows', '2x pneumaticcraft:heat_sink'
   ], 4, 2500, 7680, cryo)
   make('normal_optical_pipe', [
     '2x ' + optics, '4x ' + laminate, '4x ae2:fluix_smart_dense_cable',
@@ -76,7 +76,7 @@ ServerEvents.recipes(event => {
   })
   make('object_holder', [
     advanced, gt('luv_robot_arm'), '2x gtceu:luv_sensor', '4x ' + optics,
-    '2x ' + clock, '4x ' + plate, '4x kubejs:vacuum_gasket', '2x gtceu:mv_robot_arm', '2x ' + gauge
+    '2x ' + clock, '4x ' + plate, '4x gtceu:gregsingularity_vacuum_gasket', '2x gtceu:mv_robot_arm', '2x ' + gauge
   ], 1, 3200, 24576, gt('lubricant'))
   make('research_station', [
     gt('luv_machine_hull'), '4x ' + advanced, gt('object_holder'), gt('advanced_data_access_hatch'),
@@ -92,7 +92,7 @@ ServerEvents.recipes(event => {
   ], 1, 3400, 28672, shield)
   make('hpca_heat_sink_component', [
     gt('hpca_empty_component'), '2x gtceu:computer_heat_vent', '4x gtceu:hssg_plate',
-    '4x ' + plate, '2x kubejs:iv_cooling_jacket'
+    '4x ' + plate, '2x gtceu:gregsingularity_iv_cooling_jacket'
   ], 2, 2800, 22528, cryo)
   make('high_performance_computation_array', [
     gt('luv_machine_hull'), '4x ' + advanced, gt('hpca_computation_component'), '2x gtceu:hpca_heat_sink_component',
@@ -104,8 +104,8 @@ ServerEvents.recipes(event => {
     '4x ' + optics, '4x ae2:cell_component_256k', part('ignition_report')
   ], 1, 4500, 32000, shield)
   make('hpca_active_cooler_component', [
-    '2x gtceu:hpca_heat_sink_component', '2x gtceu:luv_electric_pump', '4x kubejs:iv_cooling_jacket',
-    '4x ' + plate, '4x ' + clock, '4x kubejs:vacuum_gasket',
+    '2x gtceu:hpca_heat_sink_component', '2x gtceu:luv_electric_pump', '4x gtceu:gregsingularity_iv_cooling_jacket',
+    '4x ' + plate, '4x ' + clock, '4x gtceu:gregsingularity_vacuum_gasket',
     '2x pneumaticcraft:advanced_pressure_tube', '2x pneumaticcraft:heat_sink', '2x ' + gauge
   ], 1, 3520, 28672, cryo)
   make('hpca_bridge_component', [

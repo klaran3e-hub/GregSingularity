@@ -16,12 +16,12 @@ if (typeof Ponder !== 'undefined') Ponder.registry(event => {
     scene.idle(86)
   }
   global.gtibdPlanetaryMills.forEach(site => {
-    const k=form=>'kubejs:mill_'+site.id+'_'+form
+    const k=form=>global.gsItemId('mill_' + site.id + '_' + form)
     const gt=name=>'gtceu:'+tiers[site.eu]+'_'+name
-    event.create(['kubejs:'+site.ore,k('grit'),k('washed'),k('heavy'),k('crystal'),k('assay')])
+    event.create([global.gsItemId(site.ore),k('grit'),k('washed'),k('heavy'),k('crystal'),k('assay')])
       .scene('gtibd_mill_'+site.id,names[site.id]+'. От жилы до концентрата',scene=>{
         scene.showBasePlate()
-        reveal(scene,[0,1,1],'kubejs:'+site.ore);reveal(scene,[0,1,2],gt('macerator'))
+        reveal(scene,[0,1,1],global.gsItemId(site.ore));reveal(scene,[0,1,2],gt('macerator'))
         caption(scene,[0.5,2,2.5],names[site.id]+'. Добудь '+site.count+' блоков породы для одной партии. Раздроби их на месте и забери обе пробы.',k('grit'),'mill')
         reveal(scene,[1,1,2],gt(site.wash))
         caption(scene,[1.5,2,2.5],'Промой обе пробы. В шаблоне обработки укажи '+250*site.count+' мБ промывочной жидкости. Вид жидкости указан в JEI этого станка.',k('washed'),'wash')

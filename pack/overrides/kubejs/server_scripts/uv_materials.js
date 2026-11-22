@@ -1,7 +1,7 @@
 ServerEvents.recipes(event => {
   const gt = id => 'gtceu:' + id
-  const part = id => 'kubejs:uv_' + id
-  const permit = 'kubejs:zpm_commissioning_report'
+  const part = id => global.gsItemId('uv_' + id)
+  const permit = 'gtceu:gregsingularity_zpm_commissioning_report'
   const shield = 'kubejs:vacuum_shield_gas'
   const cold = 'kubejs:chilled_vacuum_coolant'
   const warm = 'kubejs:warm_vacuum_coolant'
@@ -29,10 +29,10 @@ ServerEvents.recipes(event => {
   event.custom({
     type: 'pneumaticcraft:pressure_chamber',
     inputs: [
-      { type: 'pneumaticcraft:stacked_item', item: 'kubejs:zpm_americium_coupon', count: 4 },
-      { type: 'pneumaticcraft:stacked_item', item: 'kubejs:zpm_neutron_laminate', count: 4 },
+      { type: 'pneumaticcraft:stacked_item', item: 'gtceu:gregsingularity_zpm_americium_coupon', count: 4 },
+      { type: 'pneumaticcraft:stacked_item', item: 'gtceu:gregsingularity_zpm_neutron_laminate', count: 4 },
       { type: 'pneumaticcraft:stacked_item', item: gt('gallium_dust'), count: 8 },
-      { type: 'pneumaticcraft:stacked_item', item: 'kubejs:chemical_grade_seal', count: 4 }
+      { type: 'pneumaticcraft:stacked_item', item: 'gtceu:gregsingularity_chemical_grade_seal', count: 4 }
     ],
     pressure: 4.9,
     results: [{ item: part('duranium_target'), count: 2 }]
@@ -61,25 +61,25 @@ ServerEvents.recipes(event => {
     .outputFluids(Fluid.of(gt('americium'), 720))
 
   machine('assembler', 'lay_up_structural_laminate', [
-    '8x ' + tritanium, '4x ' + americium, '8x kubejs:zpm_neutron_laminate',
-    '4x gtceu:laminated_glass', '8x kubejs:sintered_vacuum_tile', '4x kubejs:iv_bulkhead',
+    '8x ' + tritanium, '4x ' + americium, '8x gtceu:gregsingularity_zpm_neutron_laminate',
+    '4x gtceu:laminated_glass', '8x gtceu:gregsingularity_sintered_vacuum_tile', '4x gtceu:gregsingularity_iv_bulkhead',
     '2x gtceu:hv_voltage_coil', '2x pneumaticcraft:reinforced_pressure_tube'
   ], '4x ' + part('laminate_preform'), 6100, 122880).inputFluids(Fluid.of(shield, 6400))
   global.fieldworkProcess(event, 'zero_shift:uv_materials/press_structural_laminate', 'assembler', { processingTime: 300,
-    ingredients: [{ item: part('laminate_preform') }, { item: 'kubejs:vacuum_gasket' }, { fluid: shield, amount: 450 }],
+    ingredients: [{ item: part('laminate_preform') }, { item: 'gtceu:gregsingularity_vacuum_gasket' }, { fluid: shield, amount: 450 }],
     results: [{ item: laminate }]
   }, 32768)
   machine('assembler', 'braze_flux_shunt', [
-    '6x ' + tritanium, '4x ' + americium, '4x kubejs:zpm_flux_busbar',
-    '4x ' + laminate, '8x gtceu:vanadium_gallium_quadruple_cable', '4x kubejs:hv_switch_contact',
+    '6x ' + tritanium, '4x ' + americium, '4x gtceu:gregsingularity_zpm_flux_busbar',
+    '4x ' + laminate, '8x gtceu:vanadium_gallium_quadruple_cable', '4x gtceu:gregsingularity_hv_switch_contact',
     '2x gtceu:gold_quadruple_cable'
   ], '2x ' + shunt, 6200, 122880).inputFluids(Fluid.of(gt('soldering_alloy'), 5600))
   machine('circuit_assembler', 'calibrate_phase_interlock', [
     '4x gtceu:wetware_processor_assembly', '4x gtceu:crystal_processor_computer',
-    '4x kubejs:zpm_phase_module', '4x ae2:cell_component_256k', '2x ' + laminate, '2x ' + shunt
+    '4x gtceu:gregsingularity_zpm_phase_module', '4x ae2:cell_component_256k', '2x ' + laminate, '2x ' + shunt
   ], '2x ' + part('phase_interlock'), 6300, 126976).cleanroom(sterile).inputFluids(Fluid.of(shield, 6400))
   machine('assembler', 'assemble_pulse_reserve', [
-    '4x gtceu:zpm_lapotronic_battery', '4x kubejs:zpm_reserve_switchgear', '4x ' + part('phase_interlock'),
+    '4x gtceu:zpm_lapotronic_battery', '4x gtceu:gregsingularity_zpm_reserve_switchgear', '4x ' + part('phase_interlock'),
     '4x ' + shunt, '4x ' + laminate, '2x gtceu:zpm_energy_output_hatch_4a'
   ], '2x ' + part('pulse_reserve'), 6600, 126976).inputFluids(Fluid.of(cold, 6800))
 
@@ -98,7 +98,7 @@ ServerEvents.recipes(event => {
       machine('assembler', 'bundle_cuprate_' + size, ['2x ' + previous, strands + 'x ' + laminate],
         wire, 3200 + strands * 120, 114688).inputFluids(Fluid.of(lubricant, strands * 224))
     }
-    machine('assembler', 'insulate_cuprate_' + size, [wire, '2x ' + laminate, '2x kubejs:chemical_grade_seal'],
+    machine('assembler', 'insulate_cuprate_' + size, [wire, '2x ' + laminate, '2x gtceu:gregsingularity_chemical_grade_seal'],
       cable, 3600 + strands * 120, 122880).inputFluids(Fluid.of(gt('silicone_rubber'), 576 + strands * 144))
   })
 })

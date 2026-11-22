@@ -3,7 +3,7 @@
   default_quest_shape: ""
   filename: "post_uv_reclamation"
   group: "49C57C767912BC15"
-  icon: "kubejs:reclaim_reclamation_certificate"
+  icon: "gtceu:gregsingularity_reclaim_reclamation_certificate"
   title: "Регенерация"
   id: "43A88D4425C41E02"
   order_index: 11
@@ -50,7 +50,7 @@
       tasks: [{
         id: "4987EB18BA32F7C2"
         type: "item"
-        item: "kubejs:reclaim_membrane_frame"
+        item: "gtceu:gregsingularity_reclaim_membrane_frame"
         count: 8L
       }]
       rewards: [{
@@ -93,7 +93,7 @@
       tasks: [{
         id: "4CCE4A66CC8C330D"
         type: "item"
-        item: "kubejs:reclaim_sintered_membrane"
+        item: "gtceu:gregsingularity_reclaim_sintered_membrane"
         count: 4L
       }]
       rewards: [{
@@ -115,7 +115,7 @@
       tasks: [{
         id: "437E6774DCC54104"
         type: "item"
-        item: "kubejs:reclaim_membrane_cartridge"
+        item: "gtceu:gregsingularity_reclaim_membrane_cartridge"
         count: 2L
       }]
       rewards: [{
@@ -137,7 +137,7 @@
       tasks: [{
         id: "447ACA6DEE17DEBE"
         type: "item"
-        item: "kubejs:reclaim_separation_manifold"
+        item: "gtceu:gregsingularity_reclaim_separation_manifold"
       }]
       rewards: [{
         id: "4BF739EFF939E930"
@@ -179,7 +179,7 @@
       tasks: [{
         id: "49336A76D413D349"
         type: "item"
-        item: "kubejs:reclaim_etched_collector"
+        item: "gtceu:gregsingularity_reclaim_etched_collector"
         count: 8L
       }]
       rewards: [{
@@ -265,7 +265,7 @@
       tasks: [{
         id: "4B1282AD112F09CD"
         type: "item"
-        item: "kubejs:reclaim_purge_adsorbent"
+        item: "gtceu:gregsingularity_reclaim_purge_adsorbent"
         count: 4L
       }]
       rewards: [{
@@ -287,7 +287,7 @@
       tasks: [{
         id: "4811E038B73F4539"
         type: "item"
-        item: "kubejs:reclaim_recovered_collector"
+        item: "gtceu:gregsingularity_reclaim_recovered_collector"
         count: 8L
       }]
       rewards: [{
@@ -309,7 +309,7 @@
       tasks: [{
         id: "400BBF5850ACEF9A"
         type: "item"
-        item: "kubejs:reclaim_loop_witness"
+        item: "gtceu:gregsingularity_reclaim_loop_witness"
         count: 10L
       }]
       rewards: [{
@@ -354,7 +354,7 @@
       tasks: [{
         id: "42454FF438EF9890"
         type: "item"
-        item: "kubejs:reclaim_reclamation_certificate"
+        item: "gtceu:gregsingularity_reclaim_reclamation_certificate"
       }]
       rewards: [{
         id: "4CA8E8AD54A0BE7E"

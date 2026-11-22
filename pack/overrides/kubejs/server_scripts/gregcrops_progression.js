@@ -2,16 +2,16 @@ if (Platform.isLoaded('gtibdcrops')) {
   ServerEvents.recipes(event => {
     const crop = id => 'gtibdcrops:' + id
     const id = path => 'zero_shift:gregcrops/' + path
-    const frame = 'kubejs:pressed_steel_frame'
+    const frame = 'gtceu:gregsingularity_pressed_steel_frame'
     for (const name of ['crop_stick', 'crop_analyzer', 'weeding_trowel']) event.remove({ output: crop(name) })
     event.shaped('4x ' + crop('crop_stick'), ['SPS', ' F ', 'SJS'], {
-      S:'minecraft:stick', P:'kubejs:wooden_peg', F:'kubejs:fibre_cord', J:frame
+      S:'minecraft:stick', P:'gtceu:gregsingularity_wooden_peg', F:'gtceu:gregsingularity_fibre_cord', J:frame
     }).keepIngredient(frame).id(id('crop_sticks'))
     event.shaped(crop('weeding_trowel'), [' PP',' LP','H  '], {
-      P:'gtceu:iron_plate', L:'kubejs:tool_binding', H:'kubejs:tool_handle'
+      P:'gtceu:iron_plate', L:'gtceu:gregsingularity_tool_binding', H:'gtceu:gregsingularity_tool_handle'
     }).id(id('weeding_trowel'))
     event.recipes.gtceu.assembler(id('crop_analyzer')).itemInputs('gtceu:lv_sensor', 'gtceu:basic_electronic_circuit',
-      '2x minecraft:glass_pane','2x gtceu:tin_plate','2x kubejs:pressed_insulation')
+      '2x minecraft:glass_pane','2x gtceu:tin_plate','2x gtceu:gregsingularity_pressed_insulation')
       .inputFluids(Fluid.of('gtceu:soldering_alloy',144)).itemOutputs(crop('crop_analyzer')).duration(840).EUt(28)
     const tiers = ['lv','mv','hv','ev','iv','luv','zpm','uv']
     const voltages = [28,112,448,1792,7168,28672,114688,458752]

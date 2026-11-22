@@ -2,7 +2,7 @@ ServerEvents.recipes(event => {
   const gt = name => 'gtceu:' + name
   const mv = name => gt('mv_' + name)
   const lv = name => gt('lv_' + name)
-  const ks = name => 'kubejs:' + name
+  const ks = name => global.gsItemId(name)
 
   const pnc = name => 'pneumaticcraft:' + name
   const prefix = 'zero_shift:mv_equipment/'
@@ -29,7 +29,7 @@ ServerEvents.recipes(event => {
   const bushing = ks('shaft_bushing')
   const precision = 'gtceu:lv_robot_arm'
   const control = 'gtceu:basic_electronic_circuit'
-  const steelComponent = 'kubejs:pressed_steel_frame'
+  const steelComponent = 'gtceu:gregsingularity_pressed_steel_frame'
   const heavyEngineering = 'gtceu:steel_frame'
   const pressureTube = pnc('pressure_tube')
   const pressureGauge = pnc('pressure_gauge')
@@ -67,21 +67,21 @@ ServerEvents.recipes(event => {
   const machineShop = [
     ['electric_furnace', lv('electric_furnace'), coil, '2x ' + liner, steelComponent],
     ['alloy_smelter', gt('lp_steam_alloy_smelter'), coil, '2x ' + liner, heavyEngineering],
-    ['forge_hammer', lv('forge_hammer'), piston, 'kubejs:forging_saddle', 'gtceu:plate_casting_mold'],
+    ['forge_hammer', lv('forge_hammer'), piston, 'gtceu:gregsingularity_forging_saddle', 'gtceu:plate_casting_mold'],
     ['compressor', lv('compressor'), piston, safety, '2x ' + steelComponent],
-    ['extractor', lv('extractor'), pump, 'kubejs:hand_pump_barrel', pnc('pressure_chamber_valve')],
+    ['extractor', lv('extractor'), pump, 'gtceu:gregsingularity_hand_pump_barrel', pnc('pressure_chamber_valve')],
     ['forming_press', lv('forming_press'), piston, 'gtceu:gear_casting_mold', '2x ' + precision],
-    ['cutter', lv('cutter'), piston, 'kubejs:saw_blade', '2x ' + ks('saw_teeth')],
+    ['cutter', lv('cutter'), piston, 'gtceu:gregsingularity_saw_blade', '2x ' + ks('saw_teeth')],
     ['extruder', lv('extruder'), piston, 'gtceu:rod_extruder_mold', '2x ' + gt('double_steel_plate')],
     ['scanner', lv('scanner'), sensor, 'minecraft:compass', precision],
     ['laser_engraver', lv('laser_engraver'), emitter, '2x ' + ks('glass_tube_blank'), control],
     ['polarizer', lv('polarizer'), coil, '2x ' + ks('magnetic_armature'), precision],
     ['arc_furnace', lv('arc_furnace'), coil, '2x ' + liner, heavyEngineering],
     ['electromagnetic_separator', lv('electromagnetic_separator'), mv('polarizer'), sensor, '2x ' + tape],
-    ['packer', lv('packer'), conveyor, 'kubejs:forging_saddle', 'kubejs:woven_drive_belt'],
-    ['sifter', lv('sifter'), motor, 'kubejs:hearth_bellows', '2x ' + ks('strainer_mesh')],
-    ['rock_crusher', lv('rock_crusher'), piston, 'kubejs:grinding_runner', '2x ' + steelComponent],
-    ['block_breaker', lv('block_breaker'), piston, 'kubejs:grinding_runner', '2x ' + bushing],
+    ['packer', lv('packer'), conveyor, 'gtceu:gregsingularity_forging_saddle', 'gtceu:gregsingularity_woven_drive_belt'],
+    ['sifter', lv('sifter'), motor, 'gtceu:gregsingularity_hearth_bellows', '2x ' + ks('strainer_mesh')],
+    ['rock_crusher', lv('rock_crusher'), piston, 'gtceu:gregsingularity_grinding_runner', '2x ' + steelComponent],
+    ['block_breaker', lv('block_breaker'), piston, 'gtceu:gregsingularity_grinding_runner', '2x ' + bushing],
     ['miner', lv('miner'), piston, 'gtceu:lv_electric_piston', ks('drill_seal_head')]
   ]
   machineShop.forEach(([name, previous, drive, tooling, housing], index) => {
@@ -97,8 +97,8 @@ ServerEvents.recipes(event => {
     ['fluid_heater', lv('fluid_heater'), coil, '2x ' + ks('heater_ribbon'), ks('heat_exchange_core')],
     ['autoclave', lv('autoclave'), pump, pnc('pressure_chamber_valve'), pnc('pressure_chamber_interface')],
     ['fluid_solidifier', lv('fluid_solidifier'), pump, 'gtceu:bronze_small_fluid_pipe', 'gtceu:plate_casting_mold'],
-    ['canner', lv('canner'), pump, 'kubejs:hand_pump_barrel', pnc('small_tank')],
-    ['gas_collector', lv('gas_collector'), pump, 'kubejs:hearth_bellows', pressureGauge],
+    ['canner', lv('canner'), pump, 'gtceu:gregsingularity_hand_pump_barrel', pnc('small_tank')],
+    ['gas_collector', lv('gas_collector'), pump, 'gtceu:gregsingularity_hearth_bellows', pressureGauge],
     ['air_scrubber', lv('air_scrubber'), mv('gas_collector'), '2x ' + ks('strainer_mesh'), safety],
     ['brewery', lv('brewery'), pump, 'gtceu:bronze_small_fluid_pipe', '2x ' + ks('glass_tube_blank')],
     ['fermenter', lv('fermenter'), mv('brewery'), 'gtceu:bronze_drum', pnc('small_tank')]
@@ -116,18 +116,18 @@ ServerEvents.recipes(event => {
     840, water, 500)
   install('energy_output_hatch', [lv('energy_output_hatch'), coil, control, '2x ' + contact],
     960, water, 550)
-  install('muffler_hatch', [lv('muffler_hatch'), motor, 'kubejs:hearth_bellows', '2x ' + liner],
+  install('muffler_hatch', [lv('muffler_hatch'), motor, 'gtceu:gregsingularity_hearth_bellows', '2x ' + liner],
     920, distilled, 600)
   install('hermetic_casing', [lv('hermetic_casing'), mv('machine_casing'), '2x ' + steelComponent, chemicalSeal],
     980, lubricant, 550)
-  install('item_passthrough_hatch', [mv('input_bus'), mv('output_bus'), conveyor, 'kubejs:woven_drive_belt'],
+  install('item_passthrough_hatch', [mv('input_bus'), mv('output_bus'), conveyor, 'gtceu:gregsingularity_woven_drive_belt'],
     1080, lubricant, 650)
   install('fluid_passthrough_hatch', [mv('input_hatch'), mv('output_hatch'), mv('fluid_regulator'), chemicalSeal],
     1120, lubricant, 650)
-  install('fisher', [lv('fisher'), conveyor, 'kubejs:woven_drive_belt', '2x ' + bushing], 980, distilled, 550)
+  install('fisher', [lv('fisher'), conveyor, 'gtceu:gregsingularity_woven_drive_belt', '2x ' + bushing], 980, distilled, 550)
   install('item_collector', [lv('item_collector'), conveyor, sensor, 'gtceu:lv_conveyor_module'],
     980, lubricant, 550)
-  install('buffer', [lv('buffer'), conveyor, 'kubejs:forging_saddle', 'kubejs:woven_drive_belt'], 950, lubricant, 550)
+  install('buffer', [lv('buffer'), conveyor, 'gtceu:gregsingularity_forging_saddle', 'gtceu:gregsingularity_woven_drive_belt'], 950, lubricant, 550)
   install('super_chest', [lv('super_chest'), mv('buffer'), conveyor, 'gtceu:mv_sensor'],
     1160, lubricant, 600)
   install('super_tank', [lv('super_tank'), gt('steel_drum'), pump, pnc('reinforced_pressure_tube')],
@@ -166,7 +166,7 @@ ServerEvents.recipes(event => {
 
   const widths = ['single', 'double', 'quadruple', 'octal', 'hex']
   const annealed = gt('annealed_copper_single_wire')
-  replace(annealed, ['2x ' + gt('annealed_copper_plate'), '2x ' + wire, contact, 'kubejs:turned_spindle', steelComponent],
+  replace(annealed, ['2x ' + gt('annealed_copper_plate'), '2x ' + wire, contact, 'gtceu:gregsingularity_turned_spindle', steelComponent],
     460, distilled, 350, 2)
   replace(gt('annealed_copper_single_cable'), ['2x ' + annealed, '2x ' + tape, polymer, chemicalSeal,
     '2x ' + ks('fibre_cord')], 540, lubricant, 350, 2)
@@ -223,7 +223,7 @@ ServerEvents.recipes(event => {
     replace(pipe, ['2x ' + narrow, '3x ' + gt('magnalium_plate'), '2x ' + rivet, '2x ' + tape,
       conveyor, steelComponent], 520 + index * 120, lubricant, 350 + index * 100, index < 2 ? 2 : 1)
     replace(gt('magnalium_' + size + '_restrictive_item_pipe'), [
-      pipe, gt('tin_' + size + '_restrictive_item_pipe'), 'kubejs:woven_drive_belt', '2x ' + contact,
+      pipe, gt('tin_' + size + '_restrictive_item_pipe'), 'gtceu:gregsingularity_woven_drive_belt', '2x ' + contact,
       polymer, chemicalSeal
     ], 620 + index * 120, lubricant, 450 + index * 100)
   })

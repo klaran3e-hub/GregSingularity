@@ -1,6 +1,6 @@
 ;['grass', 'tall_grass', 'fern', 'large_fern', 'dead_bush'].forEach(plant => {
   BlockEvents.broken('minecraft:' + plant, event => {
-    if (!event.player.isCreative() && Math.random() < 0.35) event.block.popItem('kubejs:plant_fibre')
+    if (!event.player.isCreative() && Math.random() < 0.35) event.block.popItem('gtceu:gregsingularity_plant_fibre')
   })
 })
 

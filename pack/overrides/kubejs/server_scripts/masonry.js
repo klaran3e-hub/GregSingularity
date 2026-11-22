@@ -1,20 +1,20 @@
 ServerEvents.recipes(event => {
-  const chisel = 'kubejs:stone_chisel'
-  const abrasive = 'kubejs:abrasive_paste'
-  const mortar = 'kubejs:clay_mortar'
+  const chisel = 'gtceu:gregsingularity_stone_chisel'
+  const abrasive = 'gtceu:gregsingularity_abrasive_paste'
+  const mortar = 'gtceu:gregsingularity_clay_mortar'
   const hammer = '#gtceu:tools/crafting_hammers'
 
   event.shaped(chisel, [' FS', ' BF', 'H  '], {
-    F: 'kubejs:flint_shard', S: 'minecraft:flint', B: 'kubejs:tool_binding', H: 'kubejs:tool_handle'
+    F: 'gtceu:gregsingularity_flint_shard', S: 'minecraft:flint', B: 'gtceu:gregsingularity_tool_binding', H: 'gtceu:gregsingularity_tool_handle'
   }).id('zero_shift:masonry/stone_chisel')
-  event.shapeless(abrasive, ['minecraft:gravel', '#minecraft:sand', 'kubejs:washed_fibre', hammer])
+  event.shapeless(abrasive, ['minecraft:gravel', '#minecraft:sand', 'gtceu:gregsingularity_washed_fibre', hammer])
     .id('zero_shift:masonry/abrasive').damageIngredient(hammer)
   event.shaped('2x ' + mortar, ['CC', 'SA'], {
-    C: 'minecraft:clay_ball', S: 'kubejs:sand_temper', A: abrasive
+    C: 'minecraft:clay_ball', S: 'gtceu:gregsingularity_sand_temper', A: abrasive
   }).id('zero_shift:masonry/mortar')
   event.remove({ output: 'minecraft:stonecutter' })
   event.shaped('minecraft:stonecutter', [' T ', 'PVP', 'BBB'], {
-    T: 'kubejs:saw_blade', P: 'gtceu:iron_plate', V: 'kubejs:shaft_bushing', B: 'minecraft:stone_bricks'
+    T: 'gtceu:gregsingularity_saw_blade', P: 'gtceu:iron_plate', V: 'gtceu:gregsingularity_shaft_bushing', B: 'minecraft:stone_bricks'
   }).id('zero_shift:masonry/stonecutter')
 
   const families = [
@@ -58,11 +58,11 @@ ServerEvents.recipes(event => {
   }).id('zero_shift:masonry/bricks')
 
   event.remove({ output: 'minecraft:glass' })
-  event.shaped('kubejs:glass_batch', ['SSS', 'ALA', ' T '], {
-    S: '#minecraft:sand', A: abrasive, L: 'kubejs:fired_lining', T: 'minecraft:charcoal'
+  event.shaped('gtceu:gregsingularity_glass_batch', ['SSS', 'ALA', ' T '], {
+    S: '#minecraft:sand', A: abrasive, L: 'gtceu:gregsingularity_fired_lining', T: 'minecraft:charcoal'
   }).id('zero_shift:masonry/glass_batch')
   event.custom({
-    type: 'minecraft:smelting', ingredient: { item: 'kubejs:glass_batch' },
+    type: 'minecraft:smelting', ingredient: { item: 'gtceu:gregsingularity_glass_batch' },
     result: 'minecraft:glass', cookingtime: 600, experience: 0.15
   }).id('zero_shift:masonry/fired_glass')
   event.remove({ output: 'minecraft:glass_pane' })

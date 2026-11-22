@@ -4,10 +4,10 @@ ServerEvents.recipes(event => {
   const families = {
     drill: 'gtceu:ev_electric_piston',
     jackhammer: 'gtceu:ev_electric_piston',
-    chainsaw: 'kubejs:ev_traction_coil',
+    chainsaw: 'gtceu:gregsingularity_ev_traction_coil',
     wrench: 'gtceu:ev_robot_arm',
-    screwdriver: 'kubejs:ev_phase_relay',
-    wire_cutter: 'kubejs:ev_harness'
+    screwdriver: 'gtceu:gregsingularity_ev_phase_relay',
+    wire_cutter: 'gtceu:gregsingularity_ev_harness'
   }
   const pattern = /^gtceu:ev_(.+)_(drill|jackhammer|chainsaw|wrench|screwdriver|wire_cutter)$/
   const tools = []
@@ -34,7 +34,7 @@ ServerEvents.recipes(event => {
     const recipe = event.recipes.gtceu.assembler('zero_shift:ev_tools/' + tool.suffix)
     const components = [
       tool.donor, 'gtceu:ev_power_unit', families[tool.family], 'gtceu:gold_single_cable',
-      '4x gtceu:titanium_plate', '3x kubejs:vacuum_gasket', '2x gtceu:micro_processor_computer',
+      '4x gtceu:titanium_plate', '3x gtceu:gregsingularity_vacuum_gasket', '2x gtceu:micro_processor_computer',
       'pneumaticcraft:reinforced_pressure_tube'
     ]
     components.forEach(component => recipe.itemInputs(component))

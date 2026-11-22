@@ -1,5 +1,5 @@
 if (typeof Ponder !== 'undefined') Ponder.registry(event => {
-  const k = id => 'kubejs:titan_' + id
+  const k = id => global.gsItemId('titan_' + id)
   const gt = id => 'gtceu:' + id
   const amber = [0.88, 0.48, 0.17], cold = [0.40, 0.80, 0.86], spent = [0.55, 0.57, 0.34]
   function show(scene, pos, id) {
@@ -25,7 +25,7 @@ if (typeof Ponder !== 'undefined') Ponder.registry(event => {
     scene.text(94, text, at).placeNearTarget().attachKeyFrame()
     scene.idle(104)
   }
-  event.create([k('wick'), 'kubejs:zpm_europa_membrane', k('seam_core')])
+  event.create([k('wick'), 'ad_astra:gregsingularity_zpm_europa_membrane', k('seam_core')])
     .scene('gtibd_titan_extraction', 'От ледовой мембраны до конденсата Титана', scene => {
       scene.showBasePlate()
       show(scene,[0,1,2],gt('zpm_chemical_bath'))
@@ -33,13 +33,13 @@ if (typeof Ponder !== 'undefined') Ponder.registry(event => {
       explain(scene,[0.5,2,2.5],'Европа. Промой одну мембрану в 500 мБ чистого рассола Цереры. Вынь две сорбционные вставки.',k('wick'),'wash')
       show(scene,[2,1,2],k('seam_core'))
       show(scene,[3,1,2],gt('uv_chemical_reactor'))
-      explain(scene,[2.5,2,2.5],'На Титане извлеки концентрат из восьми кернов. В реактор подай прокалённый концентрат, одну вставку и 500 мБ азота.','kubejs:mill_titan_assay','mill')
+      explain(scene,[2.5,2,2.5],'На Титане извлеки концентрат из восьми кернов. В реактор подай прокалённый концентрат, одну вставку и 500 мБ азота.','ad_astra:gregsingularity_mill_titan_assay','mill')
       show(scene,[4,1,2],'ae2:pattern_provider')
       flow(scene,[3.5,1.65,2.5],[0.08,0,0],amber)
       scene.world.createItemEntity([3.4,2.2,2.5],[0.035,0.08,0],Item.of(k('spent_wick')))
       explain(scene,[4.4,1.9,2.4],'Забери 1500 мБ конденсата и пропитанную вставку. На орбиту уходят оба выхода одного рецепта.',k('spent_wick'),'wash')
     })
-  event.create([k('radiator_core'), 'kubejs:uv_quench_cassette'])
+  event.create([k('radiator_core'), 'gtceu:gregsingularity_uv_quench_cassette'])
     .scene('gtibd_titan_radiators', 'Перегонка на орбите и обратный груз', scene => {
       scene.showBasePlate()
       show(scene,[0,1,2],gt('uv_distillery'))

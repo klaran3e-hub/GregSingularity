@@ -1,14 +1,14 @@
 ServerEvents.recipes(event => {
-  const stampedBlank = 'kubejs:stamped_bronze_blank'
-  const seal = 'kubejs:sealed_boiler_joint'
+  const stampedBlank = 'gtceu:gregsingularity_stamped_bronze_blank'
+  const seal = 'gtceu:gregsingularity_sealed_boiler_joint'
   const casing = 'gtceu:bronze_machine_casing'
   const plate = 'gtceu:bronze_plate'
   const pipe = 'gtceu:bronze_small_fluid_pipe'
-  const lining = 'kubejs:fired_lining'
-  const rivet = 'kubejs:iron_rivet'
+  const lining = 'gtceu:gregsingularity_fired_lining'
+  const rivet = 'gtceu:gregsingularity_iron_rivet'
   const hammer = '#gtceu:tools/crafting_hammers'
   const gt = name => 'gtceu:' + name
-  const ks = name => 'kubejs:' + name
+  const ks = name => global.gsItemId(name)
   const furnace = 'minecraft:furnace'
   const firebox = gt('bronze_firebox_casing')
   const boiler = gt('lp_steam_solid_boiler')
@@ -18,8 +18,8 @@ ServerEvents.recipes(event => {
   const plank = '#minecraft:planks'
   const joint = ks('wooden_joint')
   const lvCircuit = gt('basic_electronic_circuit')
-  const press = 'kubejs:forging_saddle'
-  const pump = 'kubejs:hand_pump_barrel'
+  const press = 'gtceu:gregsingularity_forging_saddle'
+  const pump = 'gtceu:gregsingularity_hand_pump_barrel'
   const bronzeDrum = gt('bronze_drum')
   const valve = ks('packed_steam_valve')
 
@@ -64,22 +64,22 @@ ServerEvents.recipes(event => {
     P: plate, S: valve, V: ks('boiler_tube_bank'), C: casing, F: firebox
   }).id('zero_shift:gtceu/first_boiler')
   event.shaped('gtceu:lp_steam_macerator', ['SDT', 'BCB', 'PVP'], {
-    S: stampedBlank, D: 'kubejs:grinding_runner', T: valve, B: 'kubejs:shaft_bushing',
+    S: stampedBlank, D: 'gtceu:gregsingularity_grinding_runner', T: valve, B: 'gtceu:gregsingularity_shaft_bushing',
     C: casing, P: plate, V: pipe
   }).id('zero_shift:gtceu/steam_macerator')
   event.shaped('gtceu:lp_steam_forge_hammer', ['PHP', 'BCB', 'SVT'], {
-    P: plate, H: 'kubejs:forging_saddle', B: stampedBlank,
+    P: plate, H: 'gtceu:gregsingularity_forging_saddle', B: stampedBlank,
     C: casing, S: seal, V: pipe, T: valve
   }).id('zero_shift:gtceu/steam_forge_hammer')
   event.shaped('gtceu:lp_steam_extractor', ['PSP', 'VCT', 'PFP'], {
-    P: 'gtceu:copper_plate', S: seal, V: pipe, T: valve, C: casing, F: 'kubejs:hearth_bellows'
+    P: 'gtceu:copper_plate', S: seal, V: pipe, T: valve, C: casing, F: 'gtceu:gregsingularity_hearth_bellows'
   }).id('zero_shift:gtceu/steam_extractor')
 
   workshop('lp_steam_furnace', 1, ['PBP', 'VFV', 'SCT'], {
     P: plate, B: stampedBlank, V: pipe, F: furnace, S: seal, C: firebox, T: valve
   })
   workshop('lp_steam_alloy_smelter', 1, ['BCB', 'SFT', 'PVP'], {
-    B: stampedBlank, C: 'kubejs:fired_crucible', S: seal, F: gt('lp_steam_furnace'), T: valve, P: plate, V: pipe
+    B: stampedBlank, C: 'gtceu:gregsingularity_fired_crucible', S: seal, F: gt('lp_steam_furnace'), T: valve, P: plate, V: pipe
   })
 
   workshop('wood_drum', 1, ['PJP', 'RBR', 'PSP'], {
@@ -120,11 +120,11 @@ ServerEvents.recipes(event => {
     liquid_boiler: gt('lv_electric_pump'),
     solar_boiler: 'minecraft:glass_pane',
     furnace: lining,
-    macerator: 'kubejs:grinding_runner',
+    macerator: 'gtceu:gregsingularity_grinding_runner',
     forge_hammer: press,
     extractor: pump,
     compressor: press,
-    alloy_smelter: 'kubejs:fired_crucible',
+    alloy_smelter: 'gtceu:gregsingularity_fired_crucible',
     miner: gt('lv_electric_motor'),
     rock_crusher: 'minecraft:iron_pickaxe'
   }
@@ -148,7 +148,7 @@ ServerEvents.recipes(event => {
     '2x ' + rivet, gt('lv_conveyor_module')], 900, 500)
   assemble('steam_input_hatch', 1, [gt('steam_machine_casing'), bronzeDrum, pump, '2x ' + pipe,
     '2x ' + seal], 900, 500)
-  assemble('steam_grinder', 1, [gt('hp_steam_macerator'), '2x ' + gt('steam_machine_casing'), '2x kubejs:grinding_runner',
+  assemble('steam_grinder', 1, [gt('hp_steam_macerator'), '2x ' + gt('steam_machine_casing'), '2x gtceu:gregsingularity_grinding_runner',
     '2x ' + gt('bronze_pipe_casing'), '2x ' + lvCircuit, '2x ' + seal], 1600, 1250)
   assemble('steam_oven', 1, [gt('hp_steam_furnace'), '2x ' + gt('steam_machine_casing'), '2x ' + firebox,
     '2x ' + gt('bronze_pipe_casing'), '2x ' + lvCircuit, '2x ' + seal], 1600, 1250)
@@ -168,7 +168,7 @@ ServerEvents.recipes(event => {
     '2x ' + stampedBlank, '2x ' + seal], 900, 500)
 
   event.shaped('gtceu:lv_machine_hull', ['BRB', 'WCW', 'BRB'], {
-    B: stampedBlank, R: 'kubejs:lv_terminal_block', W: 'gtceu:tin_single_cable', C: 'gtceu:lv_machine_casing'
+    B: stampedBlank, R: 'gtceu:gregsingularity_lv_terminal_block', W: 'gtceu:tin_single_cable', C: 'gtceu:lv_machine_casing'
   }).id('zero_shift:gtceu/lv_machine_hull')
 
 

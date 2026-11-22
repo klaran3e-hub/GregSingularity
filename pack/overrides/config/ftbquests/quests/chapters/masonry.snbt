@@ -29,12 +29,12 @@
       tasks: [{
         id: "4F7412E898241A08"
         type: "item"
-        item: "kubejs:stone_chisel"
+        item: "gtceu:gregsingularity_stone_chisel"
       }]
       rewards: [{
         id: "4C3F921049144031"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -50,13 +50,13 @@
       tasks: [{
         id: "42E60629D88FA3B3"
         type: "item"
-        item: "kubejs:abrasive_paste"
+        item: "gtceu:gregsingularity_abrasive_paste"
         count: 4L
       }]
       rewards: [{
         id: "44DDB1700442E364"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -72,13 +72,13 @@
       tasks: [{
         id: "4A8BC099A672333A"
         type: "item"
-        item: "kubejs:clay_mortar"
+        item: "gtceu:gregsingularity_clay_mortar"
         count: 4L
       }]
       rewards: [{
         id: "45FB5D58866F05BC"
         type: "item"
-        item: "kubejs:abrasive_paste"
+        item: "gtceu:gregsingularity_abrasive_paste"
         count: 2
       }]
     }
@@ -101,7 +101,7 @@
       rewards: [{
         id: "4E1E4CEEAE32824E"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -147,7 +147,7 @@
       rewards: [{
         id: "4DF84AC6A03AAE65"
         type: "item"
-        item: "kubejs:abrasive_paste"
+        item: "gtceu:gregsingularity_abrasive_paste"
         count: 2
       }]
     }
@@ -170,7 +170,7 @@
       rewards: [{
         id: "4F7E5198C24D9965"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -231,13 +231,13 @@
       tasks: [{
         id: "48A316B18BC5B63B"
         type: "item"
-        item: "kubejs:glass_batch"
+        item: "gtceu:gregsingularity_glass_batch"
         count: 5L
       }]
       rewards: [{
         id: "4EFBD46339C4BDBC"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -281,7 +281,7 @@
       rewards: [{
         id: "42C926B44EDA7F35"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -298,13 +298,13 @@
       tasks: [{
         id: "48E563E1F9706465"
         type: "item"
-        item: "kubejs:stone_chisel"
+        item: "gtceu:gregsingularity_stone_chisel"
         count: 3L
       }]
       rewards: [{
         id: "47611E23793ACD42"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -321,7 +321,7 @@
       tasks: [{
         id: "44B48E609391ABEA"
         type: "item"
-        item: "kubejs:abrasive_paste"
+        item: "gtceu:gregsingularity_abrasive_paste"
         count: 16L
       }]
       rewards: [{
@@ -344,13 +344,13 @@
       tasks: [{
         id: "4FEF0DA9E504AEC8"
         type: "item"
-        item: "kubejs:clay_mortar"
+        item: "gtceu:gregsingularity_clay_mortar"
         count: 12L
       }]
       rewards: [{
         id: "42FECC3B19E0ED95"
         type: "item"
-        item: "kubejs:sand_temper"
+        item: "gtceu:gregsingularity_sand_temper"
         count: 2
       }]
     }
@@ -373,7 +373,7 @@
       rewards: [{
         id: "4367A45688DD0404"
         type: "item"
-        item: "kubejs:clay_mortar"
+        item: "gtceu:gregsingularity_clay_mortar"
         count: 2
       }]
     }
@@ -419,7 +419,7 @@
       rewards: [{
         id: "4AC3A1EB23C5BFD4"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -442,7 +442,7 @@
       rewards: [{
         id: "42D32B67821B97DE"
         type: "item"
-        item: "kubejs:abrasive_paste"
+        item: "gtceu:gregsingularity_abrasive_paste"
         count: 2
       }]
     }
@@ -488,7 +488,7 @@
       rewards: [{
         id: "44A3E4C6779F6D48"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -511,7 +511,7 @@
       rewards: [{
         id: "410D82DC8CA67D61"
         type: "item"
-        item: "kubejs:sand_temper"
+        item: "gtceu:gregsingularity_sand_temper"
         count: 2
       }]
     }
@@ -534,7 +534,7 @@
       rewards: [{
         id: "4329F58AAA979042"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }

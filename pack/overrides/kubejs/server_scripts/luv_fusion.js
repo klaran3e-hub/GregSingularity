@@ -1,6 +1,6 @@
 ServerEvents.recipes(event => {
   const gt = id => 'gtceu:' + id
-  const part = id => 'kubejs:luv_' + id
+  const part = id => global.gsItemId('luv_' + id)
   const prefix = 'zero_shift:luv_fusion/'
   const circuit = gt('nano_processor_mainframe')
   const quantum = gt('quantum_processor_computer')
@@ -19,7 +19,7 @@ ServerEvents.recipes(event => {
   const lubricant = gt('lubricant')
   const shield = 'kubejs:vacuum_shield_gas'
   const coolant = 'kubejs:chilled_vacuum_coolant'
-  const winding = 'kubejs:luv_coil_winding'
+  const winding = 'gtceu:gregsingularity_luv_coil_winding'
   const tube = 'pneumaticcraft:advanced_pressure_tube'
   const regulator = 'pneumaticcraft:safety_tube_module'
   const hvRelay = 'gtceu:gold_quadruple_cable'
@@ -47,26 +47,26 @@ ServerEvents.recipes(event => {
 
   machine('assembler', 'wind_magnet_module', [
     '4x gtceu:niobium_titanium_quadruple_cable', '4x gtceu:hssg_plate', '2x ' + part('busbar'),
-    '2x ' + laminate, '2x kubejs:iv_cooling_jacket', '2x gtceu:iv_field_generator',
+    '2x ' + laminate, '2x gtceu:gregsingularity_iv_cooling_jacket', '2x gtceu:iv_field_generator',
     '2x ' + winding, '2x ' + tube, '2x ' + hvRelay
   ], '2x ' + magnet, 3100, 24576).inputFluids(Fluid.of(coolant, 1800))
   install('superconducting_coil', [
     '2x ' + magnet, '4x ' + plate, '2x ' + clock, '2x gtceu:hssg_coil_block',
-    '2x gtceu:luv_electric_pump', '4x kubejs:vacuum_gasket', '2x gtceu:lv_robot_arm', '2x ' + regulator
+    '2x gtceu:luv_electric_pump', '4x gtceu:gregsingularity_vacuum_gasket', '2x gtceu:lv_robot_arm', '2x ' + regulator
   ], 2, 3600, 27648, coolant, 2400)
   install('fusion_casing', [
     '2x gtceu:robust_machine_casing', '4x ' + plate, '4x ' + laminate,
-    '4x gtceu:hssg_plate', '2x ' + magnet, '4x kubejs:vacuum_gasket',
+    '4x gtceu:hssg_plate', '2x ' + magnet, '4x gtceu:gregsingularity_vacuum_gasket',
     '2x gtceu:steel_frame', '2x ' + tube
   ], 4, 3060, 24576, lubricant, 1800)
   install('fusion_glass', [
     '4x gtceu:laminated_glass', '4x gtceu:cleanroom_glass', '4x ' + laminate,
-    '2x ' + part('optical_core'), '4x ' + plate, '4x kubejs:vacuum_gasket',
+    '2x ' + part('optical_core'), '4x ' + plate, '4x gtceu:gregsingularity_vacuum_gasket',
     '2x gtceu:tempered_glass', '2x pneumaticcraft:pressure_chamber_glass'
   ], 4, 2900, 24576, shield, 1700)
   install('neutron_reflector', [
-    '4x ' + plate, '4x gtceu:tungsten_steel_plate', '2x kubejs:sintered_vacuum_tile',
-    '2x ' + laminate, '2x kubejs:iv_arc_plate'
+    '4x ' + plate, '4x gtceu:tungsten_steel_plate', '2x gtceu:gregsingularity_sintered_vacuum_tile',
+    '2x ' + laminate, '2x gtceu:gregsingularity_iv_arc_plate'
   ], 2, 3180, 26624, lubricant, 1650)
   machine('assembler', 'make_fusion_specimen', [
     '2x gtceu:neutron_reflector', '2x ' + magnet, '2x ' + clock, '4x ' + plate,
@@ -99,16 +99,16 @@ ServerEvents.recipes(event => {
 
   install('tungstensteel_turbine_casing', [
     '4x gtceu:robust_machine_casing', '4x gtceu:tungsten_steel_plate', '2x gtceu:hssg_plate',
-    '2x ' + laminate, '4x kubejs:vacuum_gasket'
+    '2x ' + laminate, '4x gtceu:gregsingularity_vacuum_gasket'
   ], 4, 2400, 7680, lubricant, 1400)
   install('rhodium_plated_palladium_rotor', [
     '4x gtceu:tungsten_steel_plate', '8x ' + plate, '2x gtceu:luv_electric_motor',
-    '2x kubejs:luv_rotor_spindle', '2x ' + part('busbar')
+    '2x gtceu:gregsingularity_luv_rotor_spindle', '2x ' + part('busbar')
   ], 1, 3550, 27648, lubricant, 1950)
   event.remove({ id: 'gtceu:assembler/assemble_rhodium_plated_palladium_turbine_blade' })
   const rotor = Item.of(gt('turbine_rotor'), '{"GT.PartStats":{Material:"gtceu:rhodium_plated_palladium"}}')
   machine('assembler', 'balance_plasma_turbine_rotor', [
-    '2x gtceu:rhodium_plated_palladium_rotor', '4x ' + plate, '2x kubejs:luv_rotor_spindle',
+    '2x gtceu:rhodium_plated_palladium_rotor', '4x ' + plate, '2x gtceu:gregsingularity_luv_rotor_spindle',
     '2x ' + part('busbar'), '4x gtceu:hssg_plate', '2x gtceu:luv_sensor',
     '2x pneumaticcraft:turbine_rotor', '2x gtceu:lv_robot_arm'
   ], rotor, 4400, 29696).inputFluids(Fluid.of(lubricant, 2100))

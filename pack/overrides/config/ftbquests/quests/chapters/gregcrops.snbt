@@ -36,7 +36,7 @@
       rewards: [{
         id: "4508F3A1B9A695FC"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -357,7 +357,7 @@
       rewards: [{
         id: "4C1603E5FCA41A08"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -518,7 +518,7 @@
       rewards: [{
         id: "493534F8640E6995"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -653,7 +653,7 @@
       rewards: [{
         id: "43E08447AAF9B003"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }

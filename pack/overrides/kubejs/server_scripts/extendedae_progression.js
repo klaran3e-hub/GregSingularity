@@ -4,7 +4,7 @@ ServerEvents.recipes(event => {
   const ext = name => 'expatternprovider:' + name
   const ae = name => 'ae2:' + name
   const gt = name => 'gtceu:' + name
-  const ks = name => 'kubejs:' + name
+  const ks = name => global.gsItemId(name)
   const prefix = 'zero_shift:extended_ae/'
   const link = ks('me_optical_link')
   const laminate = ks('me_pattern_laminate')

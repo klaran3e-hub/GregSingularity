@@ -1,5 +1,5 @@
 ;(function () {
-  const permit = 'kubejs:hv_commissioning_report'
+  const permit = 'gtceu:gregsingularity_hv_commissioning_report'
   const permitKey = 'GTIBDForestryPermit'
   const controlled = [
     'forestry:bee_chest', 'forestry:analyzer',

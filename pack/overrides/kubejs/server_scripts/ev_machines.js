@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-  const ks = name => 'kubejs:' + name
+  const ks = name => global.gsItemId(name)
   const gt = name => 'gtceu:' + name
 
   const pnc = name => 'pneumaticcraft:' + name
@@ -31,7 +31,7 @@ ServerEvents.recipes(event => {
   const stable = gt('stable_machine_casing')
   const gear = gt('titanium_gearbox')
   const intake = gt('engine_intake_casing')
-  const press = 'kubejs:forging_saddle'
+  const press = 'gtceu:gregsingularity_forging_saddle'
   const arm = 'gtceu:mv_robot_arm'
   const hvCoil = 'gtceu:hv_voltage_coil'
   const iePump = 'gtceu:lv_electric_pump'
@@ -93,11 +93,11 @@ ServerEvents.recipes(event => {
 
   install('machine_casing', [
     '6x ' + titanium, cage, '2x ' + panel, gt('hv_machine_casing'), '4x ' + gasket,
-    'gtceu:steel_frame', gauge, 'kubejs:lunar_vacuum_seal'
+    'gtceu:steel_frame', gauge, 'ad_astra:gregsingularity_lunar_vacuum_seal'
   ], casing, 1260)
   install('machine_hull', [
     casing, gt('hv_machine_hull'), '2x ' + module, '2x ' + cable,
-    '2x ' + relay, '2x ' + gasket, '2x ' + titanium, 'kubejs:lunar_vacuum_seal', tube
+    '2x ' + relay, '2x ' + gasket, '2x ' + titanium, 'ad_astra:gregsingularity_lunar_vacuum_seal', tube
   ], hull, 1640)
   install('electric_motor', [
     gt('hv_electric_motor'), '2x ' + coil, '2x ' + titanium, '2x ' + cable, '2x ' + gasket, circuit,
@@ -112,7 +112,7 @@ ServerEvents.recipes(event => {
   ], pump, 1180)
   install('conveyor_module', [
     gt('hv_conveyor_module'), '2x ' + motor, '2x ' + ks('balanced_rail_axle'),
-    '2x ' + titanium, '2x ' + ks('chorus_dielectric_film'), cable, 'gtceu:tin_normal_item_pipe', 'kubejs:woven_drive_belt'
+    '2x ' + titanium, '2x ' + ks('chorus_dielectric_film'), cable, 'gtceu:tin_normal_item_pipe', 'gtceu:gregsingularity_woven_drive_belt'
   ], conveyor, 1260)
   install('robot_arm', [
     gt('hv_robot_arm'), motor, piston, coil, '2x ' + titanium, '2x ' + circuit, relay, arm, gauge
@@ -150,7 +150,7 @@ ServerEvents.recipes(event => {
   ], gear, 1120)
   install('engine_intake', [
     jacket, '2x ' + titanium, '2x ' + gt('filter_casing'), pump, '2x ' + gasket,
-    'kubejs:hearth_bellows', 'kubejs:pressed_steel_frame'
+    'gtceu:gregsingularity_hearth_bellows', 'gtceu:gregsingularity_pressed_steel_frame'
   ], '2x ' + intake, 1360)
   install('large_combustion_engine', [
     '2x ' + gt('hv_combustion'), hull, '2x ' + jacket, '2x ' + gear, '4x ' + circuit,
@@ -185,7 +185,7 @@ ServerEvents.recipes(event => {
     [press, 'gtceu:plate_casting_mold'],
     ['gtceu:good_electronic_circuit', hvCoil],
     ['gtceu:steel_frame', pnc('heat_sink')],
-    ['gtceu:tin_normal_item_pipe', 'kubejs:woven_drive_belt'],
+    ['gtceu:tin_normal_item_pipe', 'gtceu:gregsingularity_woven_drive_belt'],
     ['gtceu:lv_sensor', 'gtceu:gold_quadruple_cable'],
     [gauge, 'gtceu:gold_single_cable'],
     [hvCoil, 'gtceu:hv_battery_buffer_4x']

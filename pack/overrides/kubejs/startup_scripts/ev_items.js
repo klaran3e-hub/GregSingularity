@@ -11,7 +11,7 @@ StartupEvents.registry('item', event => {
     'ev_calibrated_wafer', 'ev_commissioning_report'
   ]
   materials.forEach(id => {
-    const item = event.create(id).texture('kubejs:item/' + id)
+    const item = event.create(global.gsItemId(id)).texture('kubejs:item/' + id)
     if (id === 'end_transit_permit') item.maxStackSize(1)
   })
 })

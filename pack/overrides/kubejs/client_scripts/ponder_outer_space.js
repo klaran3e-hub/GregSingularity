@@ -1,5 +1,5 @@
 if (typeof Ponder !== 'undefined') Ponder.registry(event=>{
-  const k=id=>'kubejs:'+id,gt=id=>'gtceu:'+id,a=id=>'ad_astra:'+id,ship=id=>'gtibd_core:'+id
+  const k=id=> global.gsItemId(id),gt=id=>'gtceu:'+id,a=id=>'ad_astra:'+id,ship=id=>global.gsRegistryId('gtibd_core:' + id)
   function block(scene,pos,state){scene.world.setBlock(pos,state,false);scene.world.showSection(pos,Facing.DOWN)}
   function cue(scene,name){
     scene['addInstruction(java.util.function.Consumer)'](playing=>{

@@ -1,13 +1,13 @@
 ServerEvents.recipes(event => {
   global.gtibdPlanetaryMills.forEach(site => {
-    const part = form => 'kubejs:mill_' + site.id + '_' + form
+    const part = form => global.gsItemId('mill_' + site.id + '_' + form)
     const route = (type, operation, ticks) => event.recipes.gtceu[type]('zero_shift:planetary_mill/' + site.id + '/' + operation)
       .duration(ticks).EUt(site.eu)
     const field = (type, operation, ticks) => route(type, operation, ticks).dimension(site.world)
     const size = site.count
 
     field('macerator', 'liberate', 140 * size)
-      .itemInputs(size + 'x kubejs:' + site.ore).itemOutputs('2x ' + part('grit'))
+      .itemInputs(size + 'x ' + global.gsItemId(site.ore)).itemOutputs('2x ' + part('grit'))
     field(site.wash, 'wash', 160 * size)
       .itemInputs('2x ' + part('grit')).inputFluids(Fluid.of(site.water, 250 * size))
       .itemOutputs('2x ' + part('washed'))

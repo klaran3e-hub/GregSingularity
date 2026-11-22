@@ -77,7 +77,7 @@
       rewards: [{
         id: "45F992E8D5510DFF"
         type: "item"
-        item: "kubejs:plant_fibre"
+        item: "gtceu:gregsingularity_plant_fibre"
         count: 2
       }]
     }
@@ -92,7 +92,7 @@
       tasks: [{
         id: "4A9008CA8FCEC803"
         type: "item"
-        item: "kubejs:plant_fibre"
+        item: "gtceu:gregsingularity_plant_fibre"
         count: 4L
       }]
       rewards: [{
@@ -114,7 +114,7 @@
       tasks: [{
         id: "48331B0256C31FFC"
         type: "item"
-        item: "kubejs:flint_shard"
+        item: "gtceu:gregsingularity_flint_shard"
       }]
       rewards: [{
         id: "4E133A7B888243F2"
@@ -156,7 +156,7 @@
       tasks: [{
         id: "4B0E55C7508FD0B7"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 4L
       }]
       rewards: [{
@@ -178,13 +178,13 @@
       tasks: [{
         id: "4A67CB0C7362080C"
         type: "item"
-        item: "kubejs:fibre_cord"
+        item: "gtceu:gregsingularity_fibre_cord"
         count: 2L
       }]
       rewards: [{
         id: "46B6BD06B558D32E"
         type: "item"
-        item: "kubejs:plant_fibre"
+        item: "gtceu:gregsingularity_plant_fibre"
         count: 3
       }]
     }
@@ -200,7 +200,7 @@
       tasks: [{
         id: "454EDCEE0B9D313A"
         type: "item"
-        item: "kubejs:tool_binding"
+        item: "gtceu:gregsingularity_tool_binding"
       }]
       rewards: [{
         id: "4F529E9CC31B0DE8"
@@ -221,7 +221,7 @@
       tasks: [{
         id: "4BB890A699E9BBA2"
         type: "item"
-        item: "kubejs:tool_handle"
+        item: "gtceu:gregsingularity_tool_handle"
       }]
       rewards: [{
         id: "428DCEAF7588C34C"
@@ -242,7 +242,7 @@
       tasks: [{
         id: "4853CE142D46CAFB"
         type: "item"
-        item: "kubejs:rough_slat"
+        item: "gtceu:gregsingularity_rough_slat"
         count: 3L
       }]
       rewards: [{
@@ -264,7 +264,7 @@
       tasks: [{
         id: "41FB353A109ED553"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2L
       }]
       rewards: [{
@@ -286,7 +286,7 @@
       tasks: [{
         id: "44827133410ED334"
         type: "item"
-        item: "kubejs:workbench_frame"
+        item: "gtceu:gregsingularity_workbench_frame"
       }]
       rewards: [{
         id: "4BC8ED01DDCA7303"
@@ -307,7 +307,7 @@
       tasks: [{
         id: "42D7CE1F98417DE3"
         type: "item"
-        item: "kubejs:workbench_top"
+        item: "gtceu:gregsingularity_workbench_top"
       }]
       rewards: [{
         id: "46FB4E3B8166A527"
@@ -333,7 +333,7 @@
       rewards: [{
         id: "4FE711763A570959"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -349,7 +349,7 @@
       tasks: [{
         id: "47D29C169546DFF6"
         type: "item"
-        item: "kubejs:axe_head"
+        item: "gtceu:gregsingularity_axe_head"
       }]
       rewards: [{
         id: "4811AF725556E909"
@@ -370,7 +370,7 @@
       tasks: [{
         id: "475573B68388B0F1"
         type: "item"
-        item: "kubejs:pick_head"
+        item: "gtceu:gregsingularity_pick_head"
       }]
       rewards: [{
         id: "47AE15447B10E40A"
@@ -396,7 +396,7 @@
       rewards: [{
         id: "48F851E8F04D5B53"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 3
       }]
     }
@@ -417,7 +417,7 @@
       rewards: [{
         id: "43221FCC7FE33195"
         type: "item"
-        item: "kubejs:plant_fibre"
+        item: "gtceu:gregsingularity_plant_fibre"
         count: 3
       }]
     }
@@ -438,7 +438,7 @@
       rewards: [{
         id: "48702F2FA34D19E7"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -454,7 +454,7 @@
       tasks: [{
         id: "4D638E14F5AF2A5B"
         type: "item"
-        item: "kubejs:fire_drill"
+        item: "gtceu:gregsingularity_fire_drill"
       }]
       rewards: [{
         id: "4DA018F408970397"
@@ -475,7 +475,7 @@
       tasks: [{
         id: "4DEE4724C133E380"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
       }]
       rewards: [{
         id: "4C1FE26C0274BA9E"
@@ -565,7 +565,7 @@
       rewards: [{
         id: "401407FF1026B476"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 3
       }]
     }
@@ -582,7 +582,7 @@
       tasks: [{
         id: "41F54216DBD491FF"
         type: "item"
-        item: "kubejs:plant_fibre"
+        item: "gtceu:gregsingularity_plant_fibre"
         count: 12L
       }]
       rewards: [{
@@ -618,7 +618,7 @@
     {
       id: "450581277314EBA7"
       title: "Промытое волокно для шнуров"
-      description: ["Промой шестнадцать единиц волокна у воды. За четыре нажатия Shift + ПКМ обработаешь всю партию."]
+      description: ["Свяжи шестнадцать сырых волокон в восемь связок. Вымочи их у воды, затем прочеши гравием или ножом. Из каждой связки выйдут два промытых волокна."]
       x: -19.034d
       y: 4.216d
       shape: "circle"
@@ -628,13 +628,13 @@
       tasks: [{
         id: "4A52C1314F91AEB3"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 16L
       }]
       rewards: [{
         id: "489CDD76D35A21C5"
         type: "item"
-        item: "kubejs:plant_fibre"
+        item: "gtceu:gregsingularity_plant_fibre"
         count: 2
       }]
     }
@@ -657,7 +657,7 @@
       rewards: [{
         id: "461D48F0934D56FD"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -674,7 +674,7 @@
       tasks: [{
         id: "423A080555805BC1"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 16L
       }]
       rewards: [{
@@ -697,13 +697,13 @@
       tasks: [{
         id: "419B4BCCF67D7A5F"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 12L
       }]
       rewards: [{
         id: "49452A944CCCDAD6"
         type: "item"
-        item: "kubejs:plant_fibre"
+        item: "gtceu:gregsingularity_plant_fibre"
         count: 2
       }]
     }
@@ -720,7 +720,7 @@
       tasks: [{
         id: "42B25DD8A7F31FD3"
         type: "item"
-        item: "kubejs:tool_binding"
+        item: "gtceu:gregsingularity_tool_binding"
         count: 8L
       }]
       rewards: [{
@@ -743,7 +743,7 @@
       tasks: [{
         id: "4C47FCD0CF0AD1DE"
         type: "item"
-        item: "kubejs:tool_handle"
+        item: "gtceu:gregsingularity_tool_handle"
         count: 6L
       }]
       rewards: [{
@@ -772,7 +772,7 @@
       rewards: [{
         id: "41148C82187A76E8"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -818,7 +818,7 @@
       rewards: [{
         id: "477934B3BD2BB486"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -834,7 +834,7 @@
       tasks: [{
         id: "4B347443001D4249"
         type: "item"
-        item: "kubejs:scored_flint_core"
+        item: "gtceu:gregsingularity_scored_flint_core"
       }]
       rewards: [{
         id: "43B89C72613C218B"
@@ -855,12 +855,12 @@
       tasks: [{
         id: "488B5CCC058906F8"
         type: "item"
-        item: "kubejs:retting_bundle"
+        item: "gtceu:gregsingularity_retting_bundle"
       }]
       rewards: [{
         id: "44733F9105C4D384"
         type: "item"
-        item: "kubejs:plant_fibre"
+        item: "gtceu:gregsingularity_plant_fibre"
         count: 3
       }]
     }
@@ -876,12 +876,12 @@
       tasks: [{
         id: "49A2CB22FBDD21EC"
         type: "item"
-        item: "kubejs:retted_bundle"
+        item: "gtceu:gregsingularity_retted_bundle"
       }]
       rewards: [{
         id: "4ECD7B33C842B3F1"
         type: "item"
-        item: "kubejs:plant_fibre"
+        item: "gtceu:gregsingularity_plant_fibre"
         count: 3
       }]
     }
@@ -897,12 +897,12 @@
       tasks: [{
         id: "4FC87CA5913805DE"
         type: "item"
-        item: "kubejs:lapped_edge"
+        item: "gtceu:gregsingularity_lapped_edge"
       }]
       rewards: [{
         id: "461D470422BBCA2D"
         type: "item"
-        item: "kubejs:plant_fibre"
+        item: "gtceu:gregsingularity_plant_fibre"
         count: 3
       }]
     }
@@ -918,7 +918,7 @@
       tasks: [{
         id: "49C40A5A7DFFDDF0"
         type: "item"
-        item: "kubejs:haft_blank"
+        item: "gtceu:gregsingularity_haft_blank"
       }]
       rewards: [{
         id: "40971F4B9A144C68"
@@ -939,12 +939,12 @@
       tasks: [{
         id: "435094CE5C62F11B"
         type: "item"
-        item: "kubejs:wedged_tenon"
+        item: "gtceu:gregsingularity_wedged_tenon"
       }]
       rewards: [{
         id: "4022E4096E7ED7AA"
         type: "item"
-        item: "kubejs:plant_fibre"
+        item: "gtceu:gregsingularity_plant_fibre"
         count: 3
       }]
     }
@@ -966,7 +966,7 @@
       rewards: [{
         id: "44265D19DAB9331D"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -982,13 +982,13 @@
       tasks: [{
         id: "4EBA726B65B55F8A"
         type: "item"
-        item: "kubejs:sand_temper"
+        item: "gtceu:gregsingularity_sand_temper"
         count: 4L
       }]
       rewards: [{
         id: "4898A17534D14474"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -1004,13 +1004,13 @@
       tasks: [{
         id: "4BEFCCBC24AAF6BC"
         type: "item"
-        item: "kubejs:wet_lining"
+        item: "gtceu:gregsingularity_wet_lining"
         count: 2L
       }]
       rewards: [{
         id: "49A0D816BEC02A6B"
         type: "item"
-        item: "kubejs:sand_temper"
+        item: "gtceu:gregsingularity_sand_temper"
         count: 3
       }]
     }
@@ -1026,13 +1026,13 @@
       tasks: [{
         id: "49F401CFCF6D815D"
         type: "item"
-        item: "kubejs:fired_lining"
+        item: "gtceu:gregsingularity_fired_lining"
         count: 2L
       }]
       rewards: [{
         id: "4BAAABB4968B2023"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -1048,12 +1048,12 @@
       tasks: [{
         id: "4C244DD079B325E1"
         type: "item"
-        item: "kubejs:kiln_grate"
+        item: "gtceu:gregsingularity_kiln_grate"
       }]
       rewards: [{
         id: "4874A9AC0DE7A747"
         type: "item"
-        item: "kubejs:fired_lining"
+        item: "gtceu:gregsingularity_fired_lining"
         count: 3
       }]
     }
@@ -1074,7 +1074,7 @@
       rewards: [{
         id: "4D1074AC717B2DF9"
         type: "item"
-        item: "kubejs:sand_temper"
+        item: "gtceu:gregsingularity_sand_temper"
         count: 3
       }]
     }
@@ -1096,7 +1096,7 @@
       rewards: [{
         id: "4815A7531124AA84"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -1118,7 +1118,7 @@
       rewards: [{
         id: "4F15601E2239F668"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -1141,7 +1141,7 @@
       rewards: [{
         id: "4B43391BF488461A"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -1158,13 +1158,13 @@
       tasks: [{
         id: "4A9EBCB2611466B7"
         type: "item"
-        item: "kubejs:coarse_flour"
+        item: "gtceu:gregsingularity_coarse_flour"
         count: 2L
       }]
       rewards: [{
         id: "4B294040925EC588"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -1181,13 +1181,13 @@
       tasks: [{
         id: "4D46B15D3BCB3197"
         type: "item"
-        item: "kubejs:camp_dough"
+        item: "gtceu:gregsingularity_camp_dough"
         count: 2L
       }]
       rewards: [{
         id: "4B8EB1CDCD803716"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -1210,7 +1210,7 @@
       rewards: [{
         id: "4A02CFD03EAB7409"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -1248,12 +1248,12 @@
       tasks: [{
         id: "4165136FCD8A10C7"
         type: "item"
-        item: "kubejs:unfired_crucible"
+        item: "gtceu:gregsingularity_unfired_crucible"
       }]
       rewards: [{
         id: "4561BDF7708083CD"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -1269,19 +1269,19 @@
       tasks: [{
         id: "4A6447836D440DAD"
         type: "item"
-        item: "kubejs:fired_crucible"
+        item: "gtceu:gregsingularity_fired_crucible"
       }]
       rewards: [{
         id: "4EB163FAD48DBA79"
         type: "item"
-        item: "kubejs:fired_lining"
+        item: "gtceu:gregsingularity_fired_lining"
         count: 3
       }]
     }
     {
       id: "4772B3A38BB6B7AD"
       title: "Медь под молотом"
-      description: ["Раздроби три единицы сырой меди, малахита или халькопирита молотом. Получишь одну порцию медной крупки."]
+      description: ["Раздроби молотом одну порцию сырой меди, малахита или халькопирита. Получишь одну порцию медной крупки."]
       x: -2.163d
       y: -1.666d
       shape: "circle"
@@ -1290,7 +1290,7 @@
       tasks: [{
         id: "4DB2184B3B7FB4CC"
         type: "item"
-        item: "kubejs:copper_grit"
+        item: "gtceu:gregsingularity_copper_grit"
       }]
       rewards: [{
         id: "4CED25F27272C6BC"
@@ -1302,7 +1302,7 @@
     {
       id: "41689E048458B753"
       title: "Первые зёрна меди"
-      description: ["Промой медную крупку в жёлобе у источника воды. Три порции концентрата понадобятся для бронзы."]
+      description: ["Промой медную крупку в жёлобе у источника воды. Две порции медного концентрата понадобятся для одной бронзовой шихты."]
       x: -0.473d
       y: -1.547d
       shape: "circle"
@@ -1311,7 +1311,7 @@
       tasks: [{
         id: "4BADE1FC36E4E4C1"
         type: "item"
-        item: "kubejs:washed_copper_grit"
+        item: "gtceu:gregsingularity_washed_copper_grit"
       }]
       rewards: [{
         id: "4C237550B59D8D2B"
@@ -1332,13 +1332,13 @@
       tasks: [{
         id: "4642B78D2C1158A5"
         type: "item"
-        item: "kubejs:ore_tailings"
+        item: "gtceu:gregsingularity_ore_tailings"
         count: 8L
       }]
       rewards: [{
         id: "4BF6ED5E6147D639"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -1354,7 +1354,7 @@
       tasks: [{
         id: "4551677F1CCA4004"
         type: "item"
-        item: "kubejs:copper_charge"
+        item: "gtceu:gregsingularity_copper_charge"
       }]
       rewards: [{
         id: "49A92E71F19F611F"
@@ -1380,14 +1380,14 @@
       rewards: [{
         id: "468C754F06015060"
         type: "item"
-        item: "kubejs:fired_lining"
+        item: "gtceu:gregsingularity_fired_lining"
         count: 3
       }]
     }
     {
       id: "491D5107B7A6FFCD"
       title: "Медная лента"
-      description: ["Расплющи медь молотом. Лента нужна и для крицы, и для втулок."]
+      description: ["Расплющи медь молотом. Лента нужна для втулок и паровых трубных пакетов."]
       x: 14.158d
       y: 0.155d
       shape: "circle"
@@ -1396,12 +1396,12 @@
       tasks: [{
         id: "4A562A9203AD3BEB"
         type: "item"
-        item: "kubejs:copper_strap"
+        item: "gtceu:gregsingularity_copper_strap"
       }]
       rewards: [{
         id: "4F7326CBCFFF9F1E"
         type: "item"
-        item: "kubejs:fired_lining"
+        item: "gtceu:gregsingularity_fired_lining"
         count: 3
       }]
     }
@@ -1418,7 +1418,7 @@
       tasks: [{
         id: "4B47D6540AFA7F35"
         type: "item"
-        item: "kubejs:copper_pickaxe"
+        item: "gtceu:gregsingularity_copper_pickaxe"
       }]
       rewards: [{
         id: "496D8F3703DC01BA"
@@ -1440,12 +1440,12 @@
       tasks: [{
         id: "4E2171F68BCE335F"
         type: "item"
-        item: "kubejs:copper_axe"
+        item: "gtceu:gregsingularity_copper_axe"
       }]
       rewards: [{
         id: "4F7765D5E66B1928"
         type: "item"
-        item: "kubejs:fired_lining"
+        item: "gtceu:gregsingularity_fired_lining"
         count: 2
       }]
     }
@@ -1462,7 +1462,7 @@
       tasks: [{
         id: "499160655FF52639"
         type: "item"
-        item: "kubejs:copper_sword"
+        item: "gtceu:gregsingularity_copper_sword"
       }]
       rewards: [{
         id: "4A7175C48CEC73C0"
@@ -1484,12 +1484,12 @@
       tasks: [{
         id: "4E6FBAA47F5EDF77"
         type: "item"
-        item: "kubejs:copper_hoe"
+        item: "gtceu:gregsingularity_copper_hoe"
       }]
       rewards: [{
         id: "4BD20FE59F03F550"
         type: "item"
-        item: "kubejs:sand_temper"
+        item: "gtceu:gregsingularity_sand_temper"
         count: 2
       }]
     }
@@ -1506,12 +1506,12 @@
       tasks: [{
         id: "4B2C37A21D6C86F3"
         type: "item"
-        item: "kubejs:copper_shovel"
+        item: "gtceu:gregsingularity_copper_shovel"
       }]
       rewards: [{
         id: "48B6BE419628114F"
         type: "item"
-        item: "kubejs:fired_lining"
+        item: "gtceu:gregsingularity_fired_lining"
         count: 2
       }]
     }
@@ -1528,19 +1528,19 @@
       tasks: [{
         id: "4ADCD005888FC118"
         type: "item"
-        item: "kubejs:copper_mining_hammer"
+        item: "gtceu:gregsingularity_copper_mining_hammer"
       }]
       rewards: [{
         id: "4A6BEFA763EF90DB"
         type: "item"
-        item: "kubejs:sand_temper"
+        item: "gtceu:gregsingularity_sand_temper"
         count: 2
       }]
     }
     {
       id: "4D0B250682216FA6"
       title: "Дробление железа"
-      description: ["Ищи гётит, гематит, бурый железняк или магнетит."]
+      description: ["Дроби сырое железо, гётит, гематит, лимонит, магнетит или пирит. Одна порция сырья даёт одну порцию крупки."]
       x: -2.778d
       y: -5.132d
       shape: "circle"
@@ -1549,12 +1549,12 @@
       tasks: [{
         id: "4F86BDD0D80AD14C"
         type: "item"
-        item: "kubejs:iron_grit"
+        item: "gtceu:gregsingularity_iron_grit"
       }]
       rewards: [{
         id: "4D0E1986AE0A1676"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -1570,28 +1570,28 @@
       tasks: [{
         id: "43BCB26697110DA4"
         type: "item"
-        item: "kubejs:washed_iron_grit"
+        item: "gtceu:gregsingularity_washed_iron_grit"
       }]
       rewards: [{
         id: "4B72807C0D3664CA"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
     {
       id: "4DA08EC148756311"
       title: "Загрузка железной шихты"
-      description: ["Помимо концентрата и угля нужны футеровка и кованая медная лента."]
+      description: ["Загрузи две порции промытого железного концентрата в обожжённый тигель. Добавь две порции древесного угля."]
       x: 15.103d
       y: 3.669d
       shape: "circle"
       size: 1.090d
-      dependencies: ["4D89158C3E05A1AF","491D5107B7A6FFCD","4F91B6A200BBB092"]
+      dependencies: ["4D89158C3E05A1AF","4F91B6A200BBB092","49F90E9F2AFFA0DD"]
       tasks: [{
         id: "4EFC159DE3AAE5F0"
         type: "item"
-        item: "kubejs:iron_charge"
+        item: "gtceu:gregsingularity_iron_charge"
       }]
       rewards: [{
         id: "48F64177760C56D2"
@@ -1612,12 +1612,12 @@
       tasks: [{
         id: "499200B2F678E1E9"
         type: "item"
-        item: "kubejs:iron_bloom"
+        item: "gtceu:gregsingularity_iron_bloom"
       }]
       rewards: [{
         id: "4EB86C61CB4D7DEC"
         type: "item"
-        item: "kubejs:sand_temper"
+        item: "gtceu:gregsingularity_sand_temper"
         count: 3
       }]
     }
@@ -1654,13 +1654,13 @@
       tasks: [{
         id: "4C4C53A1F41C5511"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 2L
       }]
       rewards: [{
         id: "47D4C8676E8BA294"
         type: "item"
-        item: "kubejs:fired_lining"
+        item: "gtceu:gregsingularity_fired_lining"
         count: 3
       }]
     }
@@ -1676,12 +1676,12 @@
       tasks: [{
         id: "4A31C9A34FA7CB39"
         type: "item"
-        item: "kubejs:hand_forged_plate"
+        item: "gtceu:gregsingularity_hand_forged_plate"
       }]
       rewards: [{
         id: "43FC5C2478387DAB"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -1697,7 +1697,7 @@
       tasks: [{
         id: "4649AFC918FA1796"
         type: "item"
-        item: "kubejs:iron_hinge"
+        item: "gtceu:gregsingularity_iron_hinge"
       }]
       rewards: [{
         id: "47DA312E3AC606C3"
@@ -1719,12 +1719,12 @@
       tasks: [{
         id: "44697E11B83CE130"
         type: "item"
-        item: "kubejs:gold_grit"
+        item: "gtceu:gregsingularity_gold_grit"
       }]
       rewards: [{
         id: "4C2B208567AB91B4"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -1741,30 +1741,30 @@
       tasks: [{
         id: "4C8DD2C4AB37EAA8"
         type: "item"
-        item: "kubejs:washed_gold_grit"
+        item: "gtceu:gregsingularity_washed_gold_grit"
         count: 3L
       }]
       rewards: [{
         id: "4C8569BD092437D6"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
     {
       id: "46B7350592B17877"
       title: "Золотая шихта"
-      description: ["Собери шихту с углём и огнеупорной футеровкой."]
+      description: ["Возьми две порции промытого золотого концентрата, две порции древесного угля и обожжённый тигель."]
       x: 10.226d
       y: 1.978d
       shape: "circle"
       size: 0.910d
-      dependencies: ["4ADFA5E49F791B08","4F91B6A200BBB092","4A969DC8CC61D772"]
+      dependencies: ["4ADFA5E49F791B08","4F91B6A200BBB092"]
       optional: true
       tasks: [{
         id: "468DCE8A6DBD570E"
         type: "item"
-        item: "kubejs:gold_charge"
+        item: "gtceu:gregsingularity_gold_charge"
       }]
       rewards: [{
         id: "40058ECBFE64FB47"
@@ -1791,7 +1791,7 @@
       rewards: [{
         id: "4BE09E82C18DAC5A"
         type: "item"
-        item: "kubejs:fired_lining"
+        item: "gtceu:gregsingularity_fired_lining"
         count: 2
       }]
     }
@@ -1814,7 +1814,7 @@
       rewards: [{
         id: "46A9F96378A13FDF"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -1831,7 +1831,7 @@
       tasks: [{
         id: "4CCAB5EB9F55E441"
         type: "item"
-        item: "kubejs:sand_temper"
+        item: "gtceu:gregsingularity_sand_temper"
         count: 12L
       }]
       rewards: [{
@@ -1844,7 +1844,7 @@
     {
       id: "474A572C8FC723D8"
       title: "Обожжённые вкладыши для ремонта"
-      description: ["Обожги восемь деталей футеровки на костре. Отложи партию на дополнительную печь и медную плавку."]
+      description: ["Обожги восемь деталей футеровки на костре. Отложи партию на дополнительную печь и детали шахтного горна."]
       x: 6.975d
       y: 6.354d
       shape: "circle"
@@ -1854,13 +1854,13 @@
       tasks: [{
         id: "4EC9F8D56109B91F"
         type: "item"
-        item: "kubejs:fired_lining"
+        item: "gtceu:gregsingularity_fired_lining"
         count: 8L
       }]
       rewards: [{
         id: "4B70C100E55CE26D"
         type: "item"
-        item: "kubejs:sand_temper"
+        item: "gtceu:gregsingularity_sand_temper"
         count: 2
       }]
     }
@@ -1877,13 +1877,13 @@
       tasks: [{
         id: "43A5FF100BC7AF22"
         type: "item"
-        item: "kubejs:fired_crucible"
+        item: "gtceu:gregsingularity_fired_crucible"
         count: 6L
       }]
       rewards: [{
         id: "42032B453BF266B7"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -1906,13 +1906,13 @@
       rewards: [{
         id: "4B8DD549D088723E"
         type: "item"
-        item: "kubejs:fired_lining"
+        item: "gtceu:gregsingularity_fired_lining"
         count: 2
       }]
     }
     {
       id: "4EC650742980202D"
-      title: "Концентрат на две медные плавки"
+      title: "Концентрат на пять медных плавок"
       description: ["Промой дроблёную медь. Отмеряй по две порции концентрата на тигель."]
       x: 12.113d
       y: -1.921d
@@ -1923,7 +1923,7 @@
       tasks: [{
         id: "4F66A7C21C9BC527"
         type: "item"
-        item: "kubejs:washed_copper_grit"
+        item: "gtceu:gregsingularity_washed_copper_grit"
         count: 10L
       }]
       rewards: [{
@@ -1946,13 +1946,13 @@
       tasks: [{
         id: "4C79627C89678C97"
         type: "item"
-        item: "kubejs:iron_bloom"
+        item: "gtceu:gregsingularity_iron_bloom"
         count: 4L
       }]
       rewards: [{
         id: "44AA00C271A25626"
         type: "item"
-        item: "kubejs:fired_lining"
+        item: "gtceu:gregsingularity_fired_lining"
         count: 2
       }]
     }
@@ -1969,7 +1969,7 @@
       tasks: [{
         id: "491567A7A13CB32F"
         type: "item"
-        item: "kubejs:hand_forged_plate"
+        item: "gtceu:gregsingularity_hand_forged_plate"
         count: 6L
       }]
       rewards: [{
@@ -1992,13 +1992,13 @@
       tasks: [{
         id: "47B83C0C176A40F8"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 12L
       }]
       rewards: [{
         id: "4B59063D4DF9AA44"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 2
       }]
     }
@@ -2015,7 +2015,7 @@
       tasks: [{
         id: "49593F27D6483BAE"
         type: "item"
-        item: "kubejs:copper_strap"
+        item: "gtceu:gregsingularity_copper_strap"
         count: 8L
       }]
       rewards: [{
@@ -2033,7 +2033,7 @@
       y: -8.081d
       shape: "circle"
       size: 0.910d
-      dependencies: ["42F0238A60452AA4","487FE16FF61AA069"]
+      dependencies: ["42F0238A60452AA4"]
       optional: true
       tasks: [{
         id: "49CDF0AFDE6446B9"
@@ -2044,7 +2044,7 @@
       rewards: [{
         id: "4310C129048E06BD"
         type: "item"
-        item: "kubejs:fired_lining"
+        item: "gtceu:gregsingularity_fired_lining"
         count: 2
       }]
     }
@@ -2060,13 +2060,13 @@
       tasks: [{
         id: "4F09BFB1E3DED9DF"
         type: "item"
-        item: "kubejs:clay_slip_cake"
+        item: "gtceu:gregsingularity_clay_slip_cake"
         count: 2L
       }]
       rewards: [{
         id: "41C3380B6F6D0766"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -2082,7 +2082,7 @@
       tasks: [{
         id: "4A6D34E3B1B7EB92"
         type: "item"
-        item: "kubejs:kiln_biscuit"
+        item: "gtceu:gregsingularity_kiln_biscuit"
       }]
       rewards: [{
         id: "4A18876AEF8881C9"
@@ -2103,7 +2103,7 @@
       tasks: [{
         id: "4593D41DA7B27E55"
         type: "item"
-        item: "kubejs:chamotte"
+        item: "gtceu:gregsingularity_chamotte"
         count: 2L
       }]
       rewards: [{
@@ -2125,7 +2125,7 @@
       tasks: [{
         id: "4BE81FD7D607F295"
         type: "item"
-        item: "kubejs:ramming_mix"
+        item: "gtceu:gregsingularity_ramming_mix"
         count: 3L
       }]
       rewards: [{
@@ -2147,12 +2147,12 @@
       tasks: [{
         id: "4DC17BF4CD2217DE"
         type: "item"
-        item: "kubejs:green_tuyere"
+        item: "gtceu:gregsingularity_green_tuyere"
       }]
       rewards: [{
         id: "49CEB0192BCE325D"
         type: "item"
-        item: "kubejs:sand_temper"
+        item: "gtceu:gregsingularity_sand_temper"
         count: 3
       }]
     }
@@ -2168,12 +2168,12 @@
       tasks: [{
         id: "4C2ED1B61EFDBA7E"
         type: "item"
-        item: "kubejs:fired_tuyere"
+        item: "gtceu:gregsingularity_fired_tuyere"
       }]
       rewards: [{
         id: "435D3FB7B583C4D7"
         type: "item"
-        item: "kubejs:sand_temper"
+        item: "gtceu:gregsingularity_sand_temper"
         count: 3
       }]
     }
@@ -2189,12 +2189,12 @@
       tasks: [{
         id: "49C41A982D2629C0"
         type: "item"
-        item: "kubejs:green_ingot_mould"
+        item: "gtceu:gregsingularity_green_ingot_mould"
       }]
       rewards: [{
         id: "4E57C7F9C5BDCB27"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -2210,13 +2210,13 @@
       tasks: [{
         id: "4D2FFA77CBBA1062"
         type: "item"
-        item: "kubejs:ingot_mould"
+        item: "gtceu:gregsingularity_ingot_mould"
         count: 2L
       }]
       rewards: [{
         id: "47193E482924A427"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -2232,19 +2232,19 @@
       tasks: [{
         id: "47BB1BCCFFCAB9A1"
         type: "item"
-        item: "kubejs:hearth_bellows"
+        item: "gtceu:gregsingularity_hearth_bellows"
       }]
       rewards: [{
         id: "4D54DF143E1056A7"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
     {
       id: "43B6BE56116512A7"
       title: "Огнеупорная кладка горна"
-      description: ["Обожги блоки глины в терракоту. Две терракоты и футеровка дают шесть блоков кладки. Ещё часть уйдёт на фасонные детали."]
+      description: ["Обожги блоки глины в терракоту. Два блока терракоты и футеровка дают шесть блоков кладки. Подготовь три партии: одиннадцать блоков пойдут в стены, ещё четыре в фасонные детали."]
       x: 6.975d
       y: -3.567d
       shape: "circle"
@@ -2253,8 +2253,8 @@
       tasks: [{
         id: "4265F8F6C0DA4D90"
         type: "item"
-        item: "kubejs:bloomery_masonry"
-        count: 11L
+        item: "gtceu:gregsingularity_bloomery_masonry"
+        count: 15L
       }]
       rewards: [{
         id: "48500DE685ED97DA"
@@ -2275,12 +2275,12 @@
       tasks: [{
         id: "446B785323859FA2"
         type: "item"
-        item: "kubejs:bloomery_shoulder"
+        item: "gtceu:gregsingularity_bloomery_shoulder"
       }]
       rewards: [{
         id: "4447DC74201A2D2E"
         type: "item"
-        item: "kubejs:sand_temper"
+        item: "gtceu:gregsingularity_sand_temper"
         count: 3
       }]
     }
@@ -2296,12 +2296,12 @@
       tasks: [{
         id: "44D0F0BC1BAFC0D1"
         type: "item"
-        item: "kubejs:bloomery_stack"
+        item: "gtceu:gregsingularity_bloomery_stack"
       }]
       rewards: [{
         id: "49CD7C1271007E5B"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -2317,7 +2317,7 @@
       tasks: [{
         id: "457013FA74DCE6DA"
         type: "item"
-        item: "kubejs:bloomery_casting_basin"
+        item: "gtceu:gregsingularity_bloomery_casting_basin"
       }]
       rewards: [{
         id: "4E188ACDA82C4D14"
@@ -2343,7 +2343,7 @@
       rewards: [{
         id: "4C898FB2B39E9C72"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -2359,12 +2359,12 @@
       tasks: [{
         id: "41E6C51430CC71A4"
         type: "item"
-        item: "kubejs:shaft_bushing"
+        item: "gtceu:gregsingularity_shaft_bushing"
       }]
       rewards: [{
         id: "4BAF6D68E6F9262E"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 3
       }]
     }
@@ -2380,12 +2380,12 @@
       tasks: [{
         id: "49BBDB442001D280"
         type: "item"
-        item: "kubejs:gear_rim"
+        item: "gtceu:gregsingularity_gear_rim"
       }]
       rewards: [{
         id: "4015FDEA66ED8F59"
         type: "item"
-        item: "kubejs:shaft_bushing"
+        item: "gtceu:gregsingularity_shaft_bushing"
         count: 1
       }]
     }
@@ -2401,13 +2401,13 @@
       tasks: [{
         id: "46722FD3F90D7E5B"
         type: "item"
-        item: "kubejs:wheel_segment"
-        count: 4L
+        item: "gtceu:gregsingularity_wheel_segment"
+        count: 2L
       }]
       rewards: [{
         id: "49B102F23F1DB236"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 3
       }]
     }
@@ -2423,12 +2423,12 @@
       tasks: [{
         id: "410BDCC78A8CD117"
         type: "item"
-        item: "kubejs:saw_teeth"
+        item: "gtceu:gregsingularity_saw_teeth"
       }]
       rewards: [{
         id: "45F71E9499D012E8"
         type: "item"
-        item: "kubejs:copper_strap"
+        item: "gtceu:gregsingularity_copper_strap"
         count: 1
       }]
     }
@@ -2444,12 +2444,12 @@
       tasks: [{
         id: "44B483EC5F4D9513"
         type: "item"
-        item: "kubejs:saw_blade"
+        item: "gtceu:gregsingularity_saw_blade"
       }]
       rewards: [{
         id: "4E372E02819D7573"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 3
       }]
     }
@@ -2512,7 +2512,7 @@
       rewards: [{
         id: "45A9314AAD6577EB"
         type: "item"
-        item: "kubejs:rough_slat"
+        item: "gtceu:gregsingularity_rough_slat"
         count: 3
       }]
     }
@@ -2528,20 +2528,20 @@
       tasks: [{
         id: "43A2E8E20D95920A"
         type: "item"
-        item: "kubejs:woven_drive_belt"
+        item: "gtceu:gregsingularity_woven_drive_belt"
         count: 4L
       }]
       rewards: [{
         id: "4D97158D05E37C62"
         type: "item"
-        item: "kubejs:plant_fibre"
+        item: "gtceu:gregsingularity_plant_fibre"
         count: 3
       }]
     }
     {
       id: "4295F7650B36960B"
       title: "Первое оловянное сырьё"
-      description: ["Добывай олово, касситерит или касситеритовый песок. Три единицы сырья под молотом дают одну порцию крупки."]
+      description: ["Добывай олово, касситерит или касситеритовый песок. Одна порция сырья под молотом даёт одну порцию крупки."]
       x: -2.778d
       y: -6.910d
       shape: "circle"
@@ -2550,12 +2550,12 @@
       tasks: [{
         id: "40F26296D746CF98"
         type: "item"
-        item: "kubejs:tin_grit"
+        item: "gtceu:gregsingularity_tin_grit"
       }]
       rewards: [{
         id: "49A959901FDFD17A"
         type: "item"
-        item: "kubejs:rough_slat"
+        item: "gtceu:gregsingularity_rough_slat"
         count: 3
       }]
     }
@@ -2571,33 +2571,33 @@
       tasks: [{
         id: "4837E96C371900E0"
         type: "item"
-        item: "kubejs:washed_tin_grit"
+        item: "gtceu:gregsingularity_washed_tin_grit"
       }]
       rewards: [{
         id: "45B2584BDF1B0D9A"
         type: "item"
-        item: "kubejs:rough_slat"
+        item: "gtceu:gregsingularity_rough_slat"
         count: 3
       }]
     }
     {
       id: "472A53268625DCD7"
       title: "Шихта для плавки олова"
-      description: ["На отдельную плавку олова идут две порции концентрата, две порции древесного угля, тигель и футеровка."]
+      description: ["На отдельную плавку олова идут две порции концентрата, две порции древесного угля и обожжённый тигель."]
       x: 10.226d
       y: 0.483d
       shape: "circle"
       size: 1.090d
-      dependencies: ["4F8C9D44DA0E4DC9","4F91B6A200BBB092","4A969DC8CC61D772","49F90E9F2AFFA0DD"]
+      dependencies: ["4F8C9D44DA0E4DC9","4F91B6A200BBB092","49F90E9F2AFFA0DD"]
       tasks: [{
         id: "465E189A7EAEA893"
         type: "item"
-        item: "kubejs:tin_charge"
+        item: "gtceu:gregsingularity_tin_charge"
       }]
       rewards: [{
         id: "412F3FEFFD7A6179"
         type: "item"
-        item: "kubejs:rough_slat"
+        item: "gtceu:gregsingularity_rough_slat"
         count: 3
       }]
     }
@@ -2618,7 +2618,7 @@
       rewards: [{
         id: "48BF432ECC70FEB8"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 3
       }]
     }
@@ -2634,12 +2634,12 @@
       tasks: [{
         id: "4FD7BC336D1CDC46"
         type: "item"
-        item: "kubejs:bronze_charge"
+        item: "gtceu:gregsingularity_bronze_charge"
       }]
       rewards: [{
         id: "46B2812AD67D6DD7"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 3
       }]
     }
@@ -2681,7 +2681,7 @@
       rewards: [{
         id: "48CFA6CF9E73DC76"
         type: "item"
-        item: "kubejs:copper_strap"
+        item: "gtceu:gregsingularity_copper_strap"
         count: 1
       }]
     }
@@ -2697,12 +2697,12 @@
       tasks: [{
         id: "4931E9269AD36968"
         type: "item"
-        item: "kubejs:stamped_bronze_blank"
+        item: "gtceu:gregsingularity_stamped_bronze_blank"
       }]
       rewards: [{
         id: "4C403FA032FF1277"
         type: "item"
-        item: "kubejs:rough_slat"
+        item: "gtceu:gregsingularity_rough_slat"
         count: 3
       }]
     }
@@ -2719,13 +2719,13 @@
       tasks: [{
         id: "40DA2D93171D97E8"
         type: "item"
-        item: "kubejs:shaft_bushing"
+        item: "gtceu:gregsingularity_shaft_bushing"
         count: 12L
       }]
       rewards: [{
         id: "4EE63588B61540BB"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2737,7 +2737,7 @@
       y: 0.848d
       shape: "circle"
       size: 0.910d
-      dependencies: ["4CA8AC099D33AB3B","42CA8D93FB0AC26C"]
+      dependencies: ["4CA8AC099D33AB3B"]
       optional: true
       tasks: [{
         id: "45117594A97DB68E"
@@ -2748,7 +2748,7 @@
       rewards: [{
         id: "44C0F69FB928502E"
         type: "item"
-        item: "kubejs:rough_slat"
+        item: "gtceu:gregsingularity_rough_slat"
         count: 2
       }]
     }
@@ -2765,13 +2765,13 @@
       tasks: [{
         id: "4973652D5B8B1628"
         type: "item"
-        item: "kubejs:saw_blade"
+        item: "gtceu:gregsingularity_saw_blade"
         count: 2L
       }]
       rewards: [{
         id: "4A9DD5C47A0FDEF2"
         type: "item"
-        item: "kubejs:rough_slat"
+        item: "gtceu:gregsingularity_rough_slat"
         count: 2
       }]
     }
@@ -2788,7 +2788,7 @@
       tasks: [{
         id: "4C35682E9F715A82"
         type: "item"
-        item: "kubejs:woven_drive_belt"
+        item: "gtceu:gregsingularity_woven_drive_belt"
         count: 4L
       }]
       rewards: [{
@@ -2833,12 +2833,12 @@
       tasks: [{
         id: "45A729DF1B45459F"
         type: "item"
-        item: "kubejs:ore_washing_trough"
+        item: "gtceu:gregsingularity_ore_washing_trough"
       }]
       rewards: [{
         id: "4DCEB5FA22BD35ED"
         type: "item"
-        item: "kubejs:rough_slat"
+        item: "gtceu:gregsingularity_rough_slat"
         count: 3
       }]
     }
@@ -2854,7 +2854,7 @@
       tasks: [{
         id: "4F84CD63AF08E2F9"
         type: "item"
-        item: "kubejs:turned_spindle"
+        item: "gtceu:gregsingularity_turned_spindle"
       }]
       rewards: [{
         id: "47C814528B7AA291"
@@ -2875,12 +2875,12 @@
       tasks: [{
         id: "451EDB6BC0277DBA"
         type: "item"
-        item: "kubejs:grinding_runner"
+        item: "gtceu:gregsingularity_grinding_runner"
       }]
       rewards: [{
         id: "417041D3F7DCC37D"
         type: "item"
-        item: "kubejs:rough_slat"
+        item: "gtceu:gregsingularity_rough_slat"
         count: 3
       }]
     }
@@ -2896,12 +2896,12 @@
       tasks: [{
         id: "4A4ACDF565CD4985"
         type: "item"
-        item: "kubejs:forging_saddle"
+        item: "gtceu:gregsingularity_forging_saddle"
       }]
       rewards: [{
         id: "4E518A0DB0FC5860"
         type: "item"
-        item: "kubejs:rough_slat"
+        item: "gtceu:gregsingularity_rough_slat"
         count: 3
       }]
     }
@@ -2917,19 +2917,19 @@
       tasks: [{
         id: "45D35419099DBDB6"
         type: "item"
-        item: "kubejs:hand_pump_barrel"
+        item: "gtceu:gregsingularity_hand_pump_barrel"
       }]
       rewards: [{
         id: "487AB08C8063C000"
         type: "item"
-        item: "kubejs:shaft_bushing"
+        item: "gtceu:gregsingularity_shaft_bushing"
         count: 1
       }]
     }
     {
       id: "4D892CF91E87A0D8"
       title: "Прокалка бронзовой шихты"
-      description: ["Подай тигель с шихтой, одну порцию угля и изложницу в горн. Прокалка занимает десять секунд."]
+      description: ["Подай тигель с шихтой и одну порцию угля. В третий слот положи обычную или усиленную изложницу. Через десять секунд забери прокалённую шихту из правого выходного слота."]
       x: 11.852d
       y: -3.324d
       shape: "circle"
@@ -2938,7 +2938,7 @@
       tasks: [{
         id: "4CD4F7E9F74D9CFF"
         type: "item"
-        item: "kubejs:roasted_alloy_feed"
+        item: "gtceu:gregsingularity_roasted_alloy_feed"
       }]
       rewards: [{
         id: "4F440FE536E8DCA8"
@@ -2950,7 +2950,7 @@
     {
       id: "4008F1BF994FA57A"
       title: "Вторая полость изложницы"
-      description: ["Усиль обожжённую форму бронзовыми пластинами. Три угля и прокалённая шихта теперь дают два слитка."]
+      description: ["Усиль обожжённую форму бронзовыми пластинами. С ней можно прокаливать шихту, а при отливке три угля и одна прокалённая шихта дадут два слитка. Для меди, железа, олова и золота оставь обычную изложницу."]
       x: 24.857d
       y: 2.402d
       shape: "circle"
@@ -2960,12 +2960,12 @@
       tasks: [{
         id: "4CA6D0A5B25F9E25"
         type: "item"
-        item: "kubejs:bronze_mould_frame"
+        item: "gtceu:gregsingularity_bronze_mould_frame"
       }]
       rewards: [{
         id: "4AC05F83C17EFAB3"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 2
       }]
     }

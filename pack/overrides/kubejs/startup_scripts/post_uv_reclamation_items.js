@@ -7,7 +7,7 @@ StartupEvents.registry('item', event => {
 
   parts.forEach(name => {
     const id = 'reclaim_' + name
-    event.create(id).texture('kubejs:item/' + id)
+    event.create(global.gsItemId(id)).texture('kubejs:item/' + id)
   })
 })
 

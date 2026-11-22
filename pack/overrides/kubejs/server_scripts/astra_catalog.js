@@ -311,7 +311,7 @@ const gtibdAstraRoutes = [
 ]
 ServerEvents.recipes(event=>{
   gtibdAstraOriginalIds.forEach(id=>event.remove({id:'ad_astra:'+id}))
-  var g=id=>'gtceu:'+id,k=id=>'kubejs:'+id,a=id=>'ad_astra:'+id
+  var g=id=>'gtceu:'+id,k=id=> global.gsItemId(id),a=id=>'ad_astra:'+id
   gtibdAstraRoutes.forEach(([key,kind,ingredients,out,count,settings])=>{
     var machine={equipment:'assembler',fixture:'assembler',cut:'cutter',saw:'cutter',packing:'packer',ore:'macerator',fire:'alloy_smelter'}[kind]
     var recipe=event.recipes.gtceu[machine]('zero_shift:astral_workshop/'+key)
@@ -335,7 +335,7 @@ ServerEvents.recipes(event=>{
   })
   if(Platform.isLoaded('patchouli')){
     event.recipes.gtceu.assembler('zero_shift:astral_workshop/astrodux')
-      .itemInputs('minecraft:book','minecraft:blue_dye','gtceu:steel_plate','kubejs:hv_arc_shield')
+      .itemInputs('minecraft:book','minecraft:blue_dye','gtceu:steel_plate','gtceu:gregsingularity_hv_arc_shield')
       .inputFluids(Fluid.of(g('glue'),144)).itemOutputs(Item.of('patchouli:guide_book','{\u0022patchouli:book\u0022:\u0022ad_astra:astrodux\u0022}')).duration(360).EUt(384)
   }
   var stations=[['moon','hv','lunar_vacuum_seal'],['mars','ev','martian_pressure_liner'],

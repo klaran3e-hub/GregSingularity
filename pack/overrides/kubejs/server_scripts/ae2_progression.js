@@ -1,7 +1,7 @@
 ServerEvents.recipes(event => {
   const a = name => 'ae2:' + name
   const gt = name => 'gtceu:' + name
-  const ks = name => 'kubejs:' + name
+  const ks = name => global.gsItemId(name)
   const prefix = 'zero_shift:me/'
   const shell = ks('me_isolation_shell')
   const laminate = ks('me_piezo_laminate')

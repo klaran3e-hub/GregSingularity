@@ -1,5 +1,5 @@
 ServerEvents.recipes(event=>{
-  const k=id=>'kubejs:'+id, gt=id=>'gtceu:'+id, ad=id=>'ad_astra:'+id
+  const k=id=> global.gsItemId(id), gt=id=>'gtceu:'+id, ad=id=>'ad_astra:'+id
   const process=(type,id)=>event.recipes.gtceu[type]('zero_shift:outer_space/'+id)
   const f=(id,n)=>Fluid.of(id,n)
   // Each blend uses equipment and cargo accessible before its destination.
@@ -29,14 +29,14 @@ ServerEvents.recipes(event=>{
 
   const stages=[
     ['luv','surveyor','survey_drive',ad('tier_4_rocket'),k('luv_glacio_seed'),k('luv_venus_timing_prism'),'gtceu:hssg_plate','survey_propellant',30720],
-    ['zpm','courier','courier_drive','gtibd_core:surveyor',k('glacio_reference_crystal'),k('luv_ceres_salt_concentrate'),'gtceu:naquadah_alloy_plate','europa_transfer_medium',122880],
-    ['uv','freighter','freighter_drive','gtibd_core:courier',k('europa_phase_ceramic'),k('uv_phase_interlock'),'gtceu:tritanium_plate','titan_flight_matrix',507904]
+    ['zpm','courier','courier_drive','ad_astra:gregsingularity_surveyor',k('glacio_reference_crystal'),k('luv_ceres_salt_concentrate'),'gtceu:naquadah_alloy_plate','europa_transfer_medium',122880],
+    ['uv','freighter','freighter_drive','ad_astra:gregsingularity_courier',k('europa_phase_ceramic'),k('uv_phase_interlock'),'gtceu:tritanium_plate','titan_flight_matrix',507904]
   ]
   stages.forEach(([tier,ship,drive,previous,local,calibration,plate,fuel,eu],i)=>{
     const line = process('assembly_line', drive)
     const inputs = [gt(tier+'_machine_hull'), '2x '+gt(tier+'_electric_pump'), '2x '+gt(tier+'_electric_motor'),
       '2x '+gt(tier+'_sensor'), '4x '+gt(tier+'_field_generator'), '16x '+plate, '2x '+local,
-      calibration, '4x kubejs:vacuum_gasket']
+      calibration, '4x gtceu:gregsingularity_vacuum_gasket']
     for (const input of inputs) line.itemInputs(input)
     line.inputFluids(f(gt('lubricant'),2000+1000*i), f(gt('soldering_alloy'),2592+1728*i), f(k(fuel),1000*(i+1)))
       .itemOutputs(k(drive)).duration(4900+1220*i).EUt(eu)
@@ -47,7 +47,7 @@ ServerEvents.recipes(event=>{
     event.custom({
       type: ad('nasa_workbench'),
       ingredients: parts.map(item => ({item: item})),
-      result: {id: 'gtibd_core:'+ship, count: 1}
+      result: {id: global.gsRegistryId('gtibd_core:' + ship), count: 1}
     }).id('zero_shift:outer_space/nasa_'+ship)
   })
 })

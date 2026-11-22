@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "gtibd_core:surveyor",
-    "gtibd_core:courier",
-    "gtibd_core:freighter"
+    "ad_astra:gregsingularity_surveyor",
+    "ad_astra:gregsingularity_courier",
+    "ad_astra:gregsingularity_freighter"
   ]
 }

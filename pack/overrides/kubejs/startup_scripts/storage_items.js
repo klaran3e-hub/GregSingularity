@@ -4,5 +4,5 @@ StartupEvents.registry('item', event => {
     'me_isolation_shell', 'me_piezo_laminate', 'me_memory_foil', 'me_etched_foil',
     'me_pattern_laminate', 'me_optical_link', 'me_press_blank', 'singularity_pair_capsule', 'rail_delivery_receipt'
   ]
-  items.forEach(id => event.create(id).texture('kubejs:item/' + id))
+  items.forEach(id => event.create(global.gsItemId(id)).texture('kubejs:item/' + id))
 })

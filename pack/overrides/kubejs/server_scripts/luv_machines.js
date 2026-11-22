@@ -5,10 +5,10 @@ ServerEvents.recipes(event => {
   const prefix = 'zero_shift:luv_machines/'
   const plate = gt('rhodium_plated_palladium_plate')
   const cable = gt('niobium_titanium_single_cable')
-  const clock = 'kubejs:luv_clock_matrix'
-  const laminate = 'kubejs:luv_dielectric_laminate'
-  const optic = 'kubejs:luv_optical_core'
-  const busbar = 'kubejs:luv_busbar'
+  const clock = 'gtceu:gregsingularity_luv_clock_matrix'
+  const laminate = 'gtceu:gregsingularity_luv_dielectric_laminate'
+  const optic = 'gtceu:gregsingularity_luv_optical_core'
+  const busbar = 'gtceu:gregsingularity_luv_busbar'
   const circuit = gt('nano_processor_mainframe')
   const casing = luv('machine_casing')
   const hull = luv('machine_hull')
@@ -36,21 +36,21 @@ ServerEvents.recipes(event => {
   }
 
   tier('machine_casing', [iv('machine_casing'), '6x ' + plate, '4x gtceu:hssg_plate', '2x ' + laminate,
-    '2x kubejs:iv_arc_plate', '4x kubejs:vacuum_gasket', '2x gtceu:steel_frame', 'kubejs:venus_thermal_screen'], 2400, 7360)
+    '2x gtceu:gregsingularity_iv_arc_plate', '4x gtceu:gregsingularity_vacuum_gasket', '2x gtceu:steel_frame', 'ad_astra:gregsingularity_venus_thermal_screen'], 2400, 7360)
   event.remove({output: hull})
   event.recipes.gtceu.assembly_line(prefix + 'machine_hull')
     .itemInputs(iv('machine_hull'), casing, '2x ' + clock, '2x ' + busbar, '4x ' + cable,
-      '2x ' + circuit, '4x ' + laminate, 'kubejs:venus_thermal_screen')
+      '2x ' + circuit, '4x ' + laminate, 'ad_astra:gregsingularity_venus_thermal_screen')
     .inputFluids(Fluid.of(gt('lubricant'), 1450), Fluid.of(gt('soldering_alloy'), 864), Fluid.of('kubejs:iv_ceramic_suspension', 800))
     .itemOutputs(hull).duration(2800).EUt(7680)
-  tier('electric_motor', [iv('electric_motor'), '2x kubejs:iv_servo_core', '4x ' + plate,
+  tier('electric_motor', [iv('electric_motor'), '2x gtceu:gregsingularity_iv_servo_core', '4x ' + plate,
     '2x ' + circuit, '4x ' + cable, '2x ' + busbar, '2x gtceu:electrum_quadruple_cable'], 2400, 7360)
-  tier('electric_pump', [iv('electric_pump'), motor, '2x kubejs:iv_cooling_jacket',
-    '4x ' + plate, '2x ' + laminate, '2x ' + cable, '4x kubejs:vacuum_gasket', tube, safety], 2480, 7360)
-  tier('electric_piston', [iv('electric_piston'), motor, '2x kubejs:iv_servo_core', '4x ' + plate,
+  tier('electric_pump', [iv('electric_pump'), motor, '2x gtceu:gregsingularity_iv_cooling_jacket',
+    '4x ' + plate, '2x ' + laminate, '2x ' + cable, '4x gtceu:gregsingularity_vacuum_gasket', tube, safety], 2480, 7360)
+  tier('electric_piston', [iv('electric_piston'), motor, '2x gtceu:gregsingularity_iv_servo_core', '4x ' + plate,
     '4x gtceu:hssg_plate', '2x ' + cable, '2x ' + laminate, '2x gtceu:lv_robot_arm', tube], 2480, 7360)
   tier('conveyor_module', [iv('conveyor_module'), '2x ' + motor, '2x ' + busbar,
-    '4x ' + plate, '4x ' + laminate, '2x ' + cable, '2x gtceu:lv_conveyor_module', '2x kubejs:woven_drive_belt'], 2520, 7680)
+    '4x ' + plate, '4x ' + laminate, '2x ' + cable, '2x gtceu:lv_conveyor_module', '2x gtceu:gregsingularity_woven_drive_belt'], 2520, 7680)
   tier('robot_arm', [iv('robot_arm'), motor, piston, '2x ' + clock, '2x ' + circuit,
     '4x ' + plate, '2x ' + cable, arm, gauge], 2900, 7680)
   tier('emitter', [iv('emitter'), '2x ' + optic, '2x ' + clock, '2x ' + circuit,
@@ -73,8 +73,8 @@ ServerEvents.recipes(event => {
       '4x ' + gt('niobium_titanium_quadruple_cable'), '4x ' + clock, '4x ' + laminate], 3340, 8000)
     tier(energy + '_16a', [iv(energy + '_16a'), '4x ' + luv(energy + '_4a'), '8x ' + busbar,
       '4x ' + gt('niobium_titanium_hex_cable'), '8x ' + clock, '8x ' + laminate], 3900, 28672)
-    tier(fluid, [iv(fluid), hull, '2x ' + pump, '2x kubejs:iv_cooling_jacket',
-      '4x ' + plate, '4x kubejs:vacuum_gasket', '2x ' + tube, gauge], 2600, 7680)
+    tier(fluid, [iv(fluid), hull, '2x ' + pump, '2x gtceu:gregsingularity_iv_cooling_jacket',
+      '4x ' + plate, '4x gtceu:gregsingularity_vacuum_gasket', '2x ' + tube, gauge], 2600, 7680)
     ;[4, 9].forEach(ports => {
       const id = fluid + '_' + ports + 'x'
       tier(id, [iv(id), ports + 'x ' + luv(fluid), '2x ' + pump,
@@ -90,11 +90,11 @@ ServerEvents.recipes(event => {
     [pump, tube, gauge, ['autoclave', 'brewery', 'canner', 'chemical_bath', 'chemical_reactor', 'distillery', 'electrolyzer',
       'extractor', 'fermenter', 'fisher', 'fluid_heater', 'fluid_passthrough_hatch', 'fluid_regulator',
       'fluid_solidifier', 'gas_collector', 'ore_washer']],
-    [piston, 'kubejs:forging_saddle', safety, ['bender', 'compressor', 'cutter', 'extruder', 'forge_hammer', 'forming_press', 'lathe', 'macerator',
+    [piston, 'gtceu:gregsingularity_forging_saddle', safety, ['bender', 'compressor', 'cutter', 'extruder', 'forge_hammer', 'forming_press', 'lathe', 'macerator',
       'rock_crusher', 'wiremill']],
     [motor, 'gtceu:good_electronic_circuit', safety, ['centrifuge', 'mixer', 'rotor_holder', 'sifter', 'thermal_centrifuge']],
     [busbar, relay, safety, ['alloy_smelter', 'arc_furnace', 'electric_furnace', 'hermetic_casing', 'muffler_hatch']],
-    [conveyor, 'gtceu:tin_normal_restrictive_item_pipe', 'kubejs:woven_drive_belt', ['input_bus', 'item_passthrough_hatch', 'output_bus', 'packer']],
+    [conveyor, 'gtceu:tin_normal_restrictive_item_pipe', 'gtceu:gregsingularity_woven_drive_belt', ['input_bus', 'item_passthrough_hatch', 'output_bus', 'packer']],
     [emitter, 'gtceu:lv_sensor', relay, ['electromagnetic_separator', 'laser_engraver', 'polarizer', 'world_accelerator']],
     [sensor, 'gtceu:lv_sensor', gauge, ['scanner', 'solar_panel']],
     [clock, relay, safety, ['battery_hull', 'charger_4x', 'diode', 'voltage_coil', 'battery_buffer_4x', 'battery_buffer_8x',
@@ -103,7 +103,7 @@ ServerEvents.recipes(event => {
   devices.forEach(([component, interfacePart, controlPart, family]) => {
     family.forEach(id => {
       tier(id, [iv(id), hull, '2x ' + component, '4x ' + plate, '2x ' + circuit,
-        '4x ' + cable, '4x ' + laminate, interfacePart, id.startsWith('transformer_') ? 'kubejs:glacio_reference_crystal' : controlPart], 2850, 22528)
+        '4x ' + cable, '4x ' + laminate, interfacePart, id.startsWith('transformer_') ? 'ad_astra:gregsingularity_glacio_reference_crystal' : controlPart], 2850, 22528)
     })
   })
 

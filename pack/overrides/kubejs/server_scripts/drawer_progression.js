@@ -1,7 +1,7 @@
 ServerEvents.recipes(event => {
   const d = name => 'storagedrawers:' + name
   const gt = name => 'gtceu:' + name
-  const ks = name => 'kubejs:' + name
+  const ks = name => global.gsItemId(name)
   const prefix = 'zero_shift:drawers/'
   const rivet = ks('iron_rivet')
   const blank = ks('drawer_runner_blank')

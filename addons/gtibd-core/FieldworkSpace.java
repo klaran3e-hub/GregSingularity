@@ -24,7 +24,7 @@ import net.minecraftforge.registries.RegistryObject;
 public final class FieldworkSpace {
     static final String MOD = "gtibd_core";
     private static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MOD);
-    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD);
+    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "ad_astra");
 
     enum Ship {
         SURVEYOR("surveyor", 5, 6.0f, 2.85f),
@@ -42,7 +42,7 @@ public final class FieldworkSpace {
             this.entity = ENTITIES.register(name, () -> EntityType.Builder.<Rocket>m_20704_(
                 (type, level) -> new Rocket(type, level, new Rocket.RocketProperties(tier, rocketItem(), seatHeight, fuel)),
                 MobCategory.MISC).m_20719_().m_20702_(10).m_20699_(1.35f, height).m_20712_(id(name).toString()));
-            this.item = ITEMS.register(name, () -> new RocketItem(entity::get, new Item.Properties().m_41487_(1)) {
+            this.item = ITEMS.register("gregsingularity_" + name, () -> new RocketItem(entity::get, new Item.Properties().m_41487_(1)) {
                 @Override public WrappedItemFluidContainer getFluidContainer(ItemStack stack) {
                     var tank = RocketFuel.tierTank(FluidConstants.fromMillibuckets(3000), fuel);
                     return new WrappedItemFluidContainer(stack, tank);
@@ -55,6 +55,10 @@ public final class FieldworkSpace {
     static List<String> rocketSearchAliases(int tier) {
         return List.of("rocket", "rockets", "ракета", "ракеты", "tier " + tier,
             "rocket " + tier, "ракета " + tier, "ракета tier " + tier);
+    }
+
+    static ResourceLocation rocketItemId(String path) {
+        return new ResourceLocation("ad_astra", "gregsingularity_" + path);
     }
 
     static ResourceLocation id(String path) { return new ResourceLocation(MOD, path); }

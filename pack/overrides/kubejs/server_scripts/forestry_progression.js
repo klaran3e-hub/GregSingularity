@@ -2,7 +2,7 @@ ServerEvents.recipes(event => {
   const forestry = id => 'forestry:' + id
   const gendustry = id => 'gendustry:' + id
   const gt = id => 'gtceu:' + id
-  const ks = id => 'kubejs:' + id
+  const ks = id => global.gsItemId(id)
   const mc = id => 'minecraft:' + id
   const prefix = 'zero_shift:forestry/'
 

@@ -1,9 +1,9 @@
 ServerEvents.recipes(event => {
   const knife = '#gtceu:tools/crafting_knives'
-  const joint = 'kubejs:wooden_joint'
-  const peg = 'kubejs:wooden_peg'
-  const hinge = 'kubejs:iron_hinge'
-  const binding = 'kubejs:tool_binding'
+  const joint = 'gtceu:gregsingularity_wooden_joint'
+  const peg = 'gtceu:gregsingularity_wooden_peg'
+  const hinge = 'gtceu:gregsingularity_iron_hinge'
+  const binding = 'gtceu:gregsingularity_tool_binding'
   const woods = ['oak', 'spruce', 'birch', 'jungle', 'acacia', 'dark_oak', 'mangrove', 'cherry', 'bamboo', 'crimson', 'warped']
 
   function replace(item, count, pattern, keys) {
@@ -12,10 +12,10 @@ ServerEvents.recipes(event => {
   }
 
   event.shaped(joint, ['PKP', 'GBF', 'PKP'], {
-    P: '#minecraft:planks', K: peg, G: knife, B: binding, F: 'kubejs:fibre_cord'
+    P: '#minecraft:planks', K: peg, G: knife, B: binding, F: 'gtceu:gregsingularity_fibre_cord'
   }).id('zero_shift:wood/joint').damageIngredient(knife)
   event.shaped(hinge, ['PRP', ' S ', ' H '], {
-    P: 'kubejs:hand_forged_plate', R: 'kubejs:iron_rivet', S: 'kubejs:copper_strap', H: '#gtceu:tools/crafting_hammers'
+    P: 'gtceu:gregsingularity_hand_forged_plate', R: 'gtceu:gregsingularity_iron_rivet', S: 'gtceu:gregsingularity_copper_strap', H: '#gtceu:tools/crafting_hammers'
   }).id('zero_shift:wood/hinge').damageIngredient('#gtceu:tools/crafting_hammers')
   replace('bamboo_block', 1, ['BBB', 'BFB', 'BBB'], { B: 'minecraft:bamboo', F: binding })
 
@@ -39,7 +39,7 @@ ServerEvents.recipes(event => {
     const boat = wood === 'bamboo' ? 'bamboo_raft' : wood + '_boat'
     const chestBoat = wood === 'bamboo' ? 'bamboo_chest_raft' : wood + '_chest_boat'
     replace(boat, 1, ['JHJ', 'PBP', 'PPP'], {
-      J: joint, H: 'kubejs:tool_handle', P: planks, B: binding
+      J: joint, H: 'gtceu:gregsingularity_tool_handle', P: planks, B: binding
     })
     replace(chestBoat, 1, ['JHJ', 'BCB', ' B '], {
       J: joint, H: hinge, B: 'minecraft:' + boat, C: 'minecraft:chest'

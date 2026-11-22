@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-  const ks = name => 'kubejs:' + name
+  const ks = name => global.gsItemId(name)
   const gt = name => 'gtceu:' + name
   const mc = name => 'minecraft:' + name
   const prefix = 'zero_shift:nether/'
@@ -90,12 +90,12 @@ ServerEvents.recipes(event => {
     }).damageIngredient(chisel)
   }
   assemble('nether_brick_fence', ['4x ' + mc('nether_bricks'), '2x ' + mc('nether_brick'),
-    '4x ' + ks('iron_rivet'), steel, liner, 'kubejs:pressed_steel_frame'],
+    '4x ' + ks('iron_rivet'), steel, liner, 'gtceu:gregsingularity_pressed_steel_frame'],
     '2x ' + mc('nether_brick_fence'), 580).inputFluids(Fluid.of(distilled, 250))
-  assemble('blackstone_button', ['2x ' + mc('polished_blackstone'), liner, 'kubejs:copper_contact_strip',
+  assemble('blackstone_button', ['2x ' + mc('polished_blackstone'), liner, 'gtceu:gregsingularity_copper_contact_strip',
     'pneumaticcraft:ingot_iron_compressed', ks('pressure_gasket')], mc('polished_blackstone_button'), 560)
     .inputFluids(Fluid.of(lubricant, 150))
-  assemble('blackstone_pressure_plate', ['3x ' + mc('polished_blackstone'), liner, '2x ' + 'kubejs:copper_contact_strip',
+  assemble('blackstone_pressure_plate', ['3x ' + mc('polished_blackstone'), liner, '2x ' + 'gtceu:gregsingularity_copper_contact_strip',
     gt('mv_sensor'), ks('pressure_gasket')], mc('polished_blackstone_pressure_plate'), 680)
     .inputFluids(Fluid.of(lubricant, 200))
 

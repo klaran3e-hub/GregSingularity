@@ -156,7 +156,7 @@
       tasks: [{
         id: "423FD714DFF73427"
         type: "item"
-        item: "kubejs:me_isolation_shell"
+        item: "ae2:gregsingularity_me_isolation_shell"
         count: 2L
       }]
       rewards: [{
@@ -308,7 +308,7 @@
       tasks: [{
         id: "42F70327D625FF81"
         type: "item"
-        item: "kubejs:me_piezo_laminate"
+        item: "ae2:gregsingularity_me_piezo_laminate"
         count: 4L
       }]
       rewards: [{
@@ -330,7 +330,7 @@
       tasks: [{
         id: "44742B90BF1ADD88"
         type: "item"
-        item: "kubejs:me_memory_foil"
+        item: "ae2:gregsingularity_me_memory_foil"
         count: 4L
       }]
       rewards: [{
@@ -374,7 +374,7 @@
       tasks: [{
         id: "454CEA270C052344"
         type: "item"
-        item: "kubejs:me_press_blank"
+        item: "ae2:gregsingularity_me_press_blank"
       }]
       rewards: [{
         id: "4A4C7052BCABC21C"
@@ -461,7 +461,7 @@
       tasks: [{
         id: "405C93A9F06D52E1"
         type: "item"
-        item: "kubejs:me_etched_foil"
+        item: "ae2:gregsingularity_me_etched_foil"
         count: 2L
       }]
       rewards: [{
@@ -891,7 +891,7 @@
       tasks: [{
         id: "4C3DFE4CE5DBCF90"
         type: "item"
-        item: "kubejs:me_press_blank"
+        item: "ae2:gregsingularity_me_press_blank"
         count: 4L
       }]
       rewards: [{
@@ -1120,7 +1120,7 @@
       tasks: [{
         id: "44B68AB8F154FB91"
         type: "item"
-        item: "kubejs:me_pattern_laminate"
+        item: "ae2:gregsingularity_me_pattern_laminate"
         count: 4L
       }]
       rewards: [{
@@ -1548,7 +1548,7 @@
       tasks: [{
         id: "468AA3F39682D627"
         type: "item"
-        item: "kubejs:me_optical_link"
+        item: "ae2:gregsingularity_me_optical_link"
         count: 2L
       }]
       rewards: [{
@@ -1887,7 +1887,7 @@
       tasks: [{
         id: "4F00F207B7F26153"
         type: "item"
-        item: "kubejs:me_optical_link"
+        item: "ae2:gregsingularity_me_optical_link"
         count: 4L
       }]
       rewards: [{
@@ -1930,7 +1930,7 @@
       tasks: [{
         id: "49DDB50464A267B4"
         type: "item"
-        item: "kubejs:mv_impregnated_insulation"
+        item: "gtceu:gregsingularity_mv_impregnated_insulation"
         count: 2L
       }]
       rewards: [{

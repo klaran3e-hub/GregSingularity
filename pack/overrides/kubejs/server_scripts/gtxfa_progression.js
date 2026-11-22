@@ -1,7 +1,7 @@
 if (Platform.isLoaded('gtxfa')) {
   ServerEvents.recipes(event => {
     const stageVoltage = { hv: 480, ev: 1920, iv: 7680, luv: 30720, zpm: 122880, uv: 491520 }
-    const permit = stage => Item.of('kubejs:' + stage + '_commissioning_report')
+    const permit = stage => Item.of(global.gsItemId(stage + '_commissioning_report'))
     // In GTXFA 0.2.64, only the flower module is read by the apiary.
     const inactiveModules = new Set([
       'cooler_module', 'dryer_module', 'heater_module', 'humidifier_module',

@@ -1,4 +1,4 @@
-const copperHammer = 'kubejs:copper_mining_hammer'
+const copperHammer = 'gtceu:gregsingularity_copper_mining_hammer'
 let copperHammerBreakingNeighbors = false
 
 BlockEvents.broken(event => {

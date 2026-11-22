@@ -1,10 +1,10 @@
 ServerEvents.recipes(event => {
   const gt = id => 'gtceu:' + id
-  const part = id => 'kubejs:zpm_' + id
+  const part = id => global.gsItemId('zpm_' + id)
   const prefix = 'zero_shift:zpm_fusion/'
   const alloy = gt('naquadah_alloy_plate')
   const europium = gt('europium_plate')
-  const permit = 'kubejs:luv_commissioning_report'
+  const permit = 'gtceu:gregsingularity_luv_commissioning_report'
   const shield = 'kubejs:vacuum_shield_gas'
   const cold = 'kubejs:chilled_vacuum_coolant'
   const warm = 'kubejs:warm_vacuum_coolant'
@@ -42,8 +42,8 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'gtceu:plasma_generator/americium' })
 
   machine('assembler', 'wind_coil_cartridge', [
-    '4x kubejs:luv_magnet_module', '8x ' + alloy, '4x ' + europium, '4x ' + laminate,
-    '4x ' + busbar, '2x gtceu:zpm_electric_pump', '4x kubejs:vacuum_gasket', '4x ' + tube, '2x ' + relay
+    '4x gtceu:gregsingularity_luv_magnet_module', '8x ' + alloy, '4x ' + europium, '4x ' + laminate,
+    '4x ' + busbar, '2x gtceu:zpm_electric_pump', '4x gtceu:gregsingularity_vacuum_gasket', '4x ' + tube, '2x ' + relay
   ], '2x ' + coil, 4800, 32000).inputFluids(Fluid.of(cold, 4000))
   machine('assembler', 'build_fusion_coil', [
     '2x gtceu:superconducting_coil', '2x ' + coil, '4x ' + phase, '8x ' + alloy,
@@ -52,12 +52,12 @@ ServerEvents.recipes(event => {
   ], '2x gtceu:fusion_coil', 5400, 32000).inputFluids(Fluid.of(cold, 5200))
   machine('assembler', 'build_fusion_casing', [
     '4x gtceu:fusion_casing', '8x ' + alloy, '4x ' + laminate, '4x ' + busbar,
-    '2x ' + coil, '4x kubejs:iv_arc_plate', '4x kubejs:vacuum_gasket',
+    '2x ' + coil, '4x gtceu:gregsingularity_iv_arc_plate', '4x gtceu:gregsingularity_vacuum_gasket',
     '4x gtceu:steel_frame', '4x ' + tube
   ], '4x gtceu:fusion_casing_mk2', 5200, 32000).inputFluids(Fluid.of(lubricant, 4200))
   machine('assembler', 'make_reactor_standard', [
     '4x ' + coil, '4x ' + phase, '4x gtceu:neutron_reflector', '4x gtceu:zpm_sensor',
-    '4x ae2:cell_component_256k', '4x kubejs:luv_clock_matrix', '8x ' + alloy, '2x ' + gauge
+    '4x ae2:cell_component_256k', '4x gtceu:gregsingularity_luv_clock_matrix', '8x ' + alloy, '2x ' + gauge
   ], standard, 5400, 32000).notConsumable(Item.of(permit)).inputFluids(Fluid.of(shield, 4600))
   const reactor = machine('assembly_line', 'build_reactor_mk2', [
     gt('luv_fusion_reactor'), gt('zpm_machine_hull'), standard, '12x gtceu:fusion_casing_mk2',
@@ -69,7 +69,7 @@ ServerEvents.recipes(event => {
 
   machine('assembler', 'seal_isotope_capsule', [
     '4x ' + part('end_heavy_concentrate'), '4x ' + part('nether_isotope_salt'),
-    '4x gtceu:neutron_reflector', '4x ' + laminate, '4x ' + europium, '4x kubejs:vacuum_gasket',
+    '4x gtceu:neutron_reflector', '4x ' + laminate, '4x ' + europium, '4x gtceu:gregsingularity_vacuum_gasket',
     '2x ' + tube, '2x pneumaticcraft:pressure_chamber_glass'
   ], '2x ' + part('isotope_capsule'), 4600, 61440).inputFluids(Fluid.of(shield, 3800))
   machine('chemical_reactor', 'prepare_americium_feed', ['2x ' + part('isotope_capsule')], '', 4400, 65536)
@@ -81,7 +81,7 @@ ServerEvents.recipes(event => {
 
   machine('assembler', 'assemble_shielded_cask', [
     '8x ' + alloy, '4x ' + laminate, '4x ' + europium, '4x ' + phase,
-    '4x gtceu:neutron_reflector', '4x kubejs:iv_cooling_jacket', '8x kubejs:vacuum_gasket',
+    '4x gtceu:neutron_reflector', '4x gtceu:gregsingularity_iv_cooling_jacket', '8x gtceu:gregsingularity_vacuum_gasket',
     '2x pneumaticcraft:heat_sink', '2x ' + gauge
   ], '2x ' + cask, 5400, 73728).inputFluids(Fluid.of(lubricant, 4400))
   machine('vacuum_freezer', 'irradiate_cask', [cask], irradiated, 4800, 81920)
@@ -96,7 +96,7 @@ ServerEvents.recipes(event => {
 
   machine('assembly_line', 'upgrade_wetware_assembly', [
     '4x gtceu:wetware_processor', '4x ' + phase, '4x ' + coupon, '4x ' + europium,
-    '4x ' + laminate, '4x ae2:cell_component_256k', '4x kubejs:luv_optical_core'
+    '4x ' + laminate, '4x ae2:cell_component_256k', '4x gtceu:gregsingularity_luv_optical_core'
   ], '2x gtceu:wetware_processor_assembly', 5400, 98304)
     .inputFluids(Fluid.of(shield, 3800)).inputFluids(Fluid.of(lubricant, 3400))
   machine('assembly_line', 'upgrade_crystal_computer', [

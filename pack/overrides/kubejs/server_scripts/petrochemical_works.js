@@ -10,7 +10,7 @@ ServerEvents.tags('fluid', event => {
 })
 
 ServerEvents.recipes(event => {
-  const ks = name => 'kubejs:' + name
+  const ks = name => global.gsItemId(name)
   const gt = name => 'gtceu:' + name
   const pnc = name => 'pneumaticcraft:' + name
 
@@ -188,7 +188,7 @@ ServerEvents.recipes(event => {
     .itemOutputs(Item.of(tray, 2)).duration(240).EUt(96)
   assembly('heat_exchange_core', [
     '2x ' + tray, '2x ' + aluminium, '2x ' + ks('heater_ribbon'), frame,
-    'gtceu:lv_robot_arm', 'kubejs:pressed_steel_frame', oldSeal
+    'gtceu:lv_robot_arm', 'gtceu:gregsingularity_pressed_steel_frame', oldSeal
   ], exchanger, 620)
   shaped(pnc('refinery'), pnc('refinery'), ['PFP', 'CHT', 'BEB'], {
     P: pressedIron, F: frame, C: circuit, H: hull, T: tank, B: tray, E: exchanger

@@ -1,5 +1,5 @@
 Ponder.registry(event => {
-  event.create(['kubejs:final_control_console', 'kubejs:final_start_key'])
+  event.create(['gtceu:gregsingularity_final_control_console', 'gtceu:gregsingularity_final_start_key'])
     .scene('gtibd_factory_cold_start', 'Холодный пуск завода', scene => {
       const primary = [0, 1, 0]
       const reserve = [4, 1, 0]

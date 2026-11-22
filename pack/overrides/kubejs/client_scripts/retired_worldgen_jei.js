@@ -16,10 +16,10 @@ JEIEvents.hideItems(event => {
 })
 
 JEIEvents.hideItems(event => {
-  for (const kind of ['knife', 'axe', 'pickaxe']) event.hide('kubejs:flint_' + kind)
+  for (const kind of ['knife', 'axe', 'pickaxe']) event.hide(global.gsItemId('flint_' + kind))
 })
 
-JEIEvents.hideItems(event => event.hide('kubejs:stone_hammer'))
+JEIEvents.hideItems(event => event.hide('gtceu:gregsingularity_stone_hammer'))
 
 JEIEvents.hideItems(event => {
   for (const tool of ['axe', 'hoe', 'pickaxe', 'shovel', 'sword']) {

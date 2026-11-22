@@ -10,15 +10,15 @@ ServerEvents.recipes(event => {
   const quadCable = gt('vanadium_gallium_quadruple_cable')
   const hexCable = gt('vanadium_gallium_hex_cable')
   const wetware = gt('wetware_processor')
-  const timing = 'kubejs:zpm_phase_module'
-  const laminate = 'kubejs:zpm_neutron_laminate'
-  const busbar = 'kubejs:zpm_flux_busbar'
-  const switchgear = 'kubejs:zpm_reserve_switchgear'
-  const optics = 'kubejs:luv_optical_core'
+  const timing = 'gtceu:gregsingularity_zpm_phase_module'
+  const laminate = 'gtceu:gregsingularity_zpm_neutron_laminate'
+  const busbar = 'gtceu:gregsingularity_zpm_flux_busbar'
+  const switchgear = 'gtceu:gregsingularity_zpm_reserve_switchgear'
+  const optics = 'gtceu:gregsingularity_luv_optical_core'
   const lubricant = gt('lubricant')
   const coolant = 'kubejs:chilled_vacuum_coolant'
   const shield = 'kubejs:vacuum_shield_gas'
-  const gasket = 'kubejs:vacuum_gasket'
+  const gasket = 'gtceu:gregsingularity_vacuum_gasket'
   const hull = zpm('machine_hull')
   const motor = zpm('electric_motor')
   const piston = zpm('electric_piston')
@@ -45,25 +45,25 @@ ServerEvents.recipes(event => {
 
   // Manufacture the first ZPM tools and power interfaces with one LuV packet.
   tier('machine_casing', ['2x ' + luv('machine_casing'), '8x ' + plate, '4x ' + europium,
-    '4x ' + laminate, '4x kubejs:iv_bulkhead', '8x ' + gasket, '4x gtceu:steel_frame', 'kubejs:glacio_reference_crystal'], 4100, 28672, coolant)
+    '4x ' + laminate, '4x gtceu:gregsingularity_iv_bulkhead', '8x ' + gasket, '4x gtceu:steel_frame', 'ad_astra:gregsingularity_glacio_reference_crystal'], 4100, 28672, coolant)
   event.remove({ output: hull })
   const firstHull = event.recipes.gtceu.assembly_line(prefix + 'machine_hull')
   ;['2x ' + luv('machine_hull'), zpm('machine_casing'), '4x ' + timing, '4x ' + busbar,
-    '8x ' + wire, '4x ' + wetware, '4x ' + laminate, 'kubejs:glacio_reference_crystal',
-    'kubejs:luv_plasma_coupon'].forEach(stack => firstHull.itemInputs(stack))
+    '8x ' + wire, '4x ' + wetware, '4x ' + laminate, 'ad_astra:gregsingularity_glacio_reference_crystal',
+    'gtceu:gregsingularity_luv_plasma_coupon'].forEach(stack => firstHull.itemInputs(stack))
   firstHull.inputFluids(Fluid.of(lubricant, 3000), Fluid.of(gt('soldering_alloy'), 1728),
     Fluid.of('kubejs:luv_optical_coolant', 1250)).itemOutputs(hull).duration(5000).EUt(30720)
-    .stationResearch(b => b.researchStack(Item.of('kubejs:glacio_reference_crystal'))
+    .stationResearch(b => b.researchStack(Item.of('ad_astra:gregsingularity_glacio_reference_crystal'))
       .dataStack(Item.of(gt('data_orb'))).CWUt(12, 24000).EUt(28672))
   tier('electric_motor', ['2x ' + luv('electric_motor'), '4x ' + busbar, '6x ' + plate,
     '4x ' + europium, '8x ' + wire, '2x ' + timing, '4x ' + laminate, '4x gtceu:steel_quadruple_wire'], 3800, 28672)
-  tier('electric_pump', ['2x ' + luv('electric_pump'), '2x ' + motor, '4x kubejs:iv_cooling_jacket',
+  tier('electric_pump', ['2x ' + luv('electric_pump'), '2x ' + motor, '4x gtceu:gregsingularity_iv_cooling_jacket',
     '6x ' + plate, '4x ' + laminate, '4x ' + busbar, '8x ' + gasket, '4x ' + tube, '2x ' + safety], 4200, 29696, coolant)
-  tier('electric_piston', ['2x ' + luv('electric_piston'), '2x ' + motor, '4x kubejs:iv_servo_core',
+  tier('electric_piston', ['2x ' + luv('electric_piston'), '2x ' + motor, '4x gtceu:gregsingularity_iv_servo_core',
     '6x ' + plate, '4x ' + europium, '4x ' + busbar, '4x ' + laminate], 4200, 29696)
   tier('conveyor_module', ['2x ' + luv('conveyor_module'), '2x ' + motor, '4x ' + busbar,
     '6x ' + plate, '4x ' + laminate, '6x ' + wire, '2x ' + timing,
-    '4x gtceu:tin_normal_restrictive_item_pipe', '4x kubejs:woven_drive_belt'], 4300, 29696)
+    '4x gtceu:tin_normal_restrictive_item_pipe', '4x gtceu:gregsingularity_woven_drive_belt'], 4300, 29696)
   tier('robot_arm', ['2x ' + luv('robot_arm'), '2x ' + motor, '2x ' + piston, '4x ' + timing,
     '4x ' + wetware, '6x ' + plate, '4x ' + busbar, '4x ' + laminate, '2x gtceu:mv_robot_arm'], 4850, 30720)
   tier('emitter', ['2x ' + luv('emitter'), '4x ' + optics, '4x ' + timing, '4x ' + europium,
@@ -89,7 +89,7 @@ ServerEvents.recipes(event => {
       '6x ' + busbar, '4x ' + timing, '8x ' + wire, '6x ' + laminate], 4800, 32000, coolant)
     tier(energy + '_16a', ['2x ' + luv(energy + '_16a'), '4x ' + zpm(energy + '_4a'), '6x ' + voltageCoil,
       '8x ' + busbar, '6x ' + timing, '4x ' + hexCable, '8x ' + laminate], 5800, 98304, coolant, 6400)
-    tier(fluid, ['2x ' + luv(fluid), hull, '2x ' + pump, '4x kubejs:iv_cooling_jacket',
+    tier(fluid, ['2x ' + luv(fluid), hull, '2x ' + pump, '4x gtceu:gregsingularity_iv_cooling_jacket',
       '6x ' + plate, '4x ' + laminate, '8x ' + gasket, '4x ' + tube, '2x ' + gauge], 4300, 30720, coolant)
     tier(bus, ['2x ' + luv(bus), hull, '2x ' + conveyor, '4x ' + timing,
       '4x ' + plate, '4x ' + laminate, '2x ae2:cell_component_256k'], 4300, 30720)
@@ -111,11 +111,11 @@ ServerEvents.recipes(event => {
     [pump, tube, gauge, ['autoclave', 'brewery', 'canner', 'chemical_bath', 'distillery', 'electrolyzer',
       'extractor', 'fermenter', 'fluid_heater', 'fluid_passthrough_hatch', 'fluid_regulator',
       'fluid_solidifier', 'gas_collector', 'ore_washer']],
-    [piston, 'kubejs:zpm_die_cartridge', safety, ['bender', 'compressor', 'cutter', 'extruder', 'forge_hammer', 'forming_press',
+    [piston, 'gtceu:gregsingularity_zpm_die_cartridge', safety, ['bender', 'compressor', 'cutter', 'extruder', 'forge_hammer', 'forming_press',
       'lathe', 'macerator', 'rock_crusher', 'wiremill']],
     [motor, 'gtceu:good_electronic_circuit', safety, ['mixer', 'rotor_holder', 'sifter', 'thermal_centrifuge']],
     [busbar, relay, safety, ['alloy_smelter', 'arc_furnace', 'electric_furnace', 'hermetic_casing', 'muffler_hatch']],
-    [conveyor, 'gtceu:tin_normal_restrictive_item_pipe', 'kubejs:woven_drive_belt', ['item_passthrough_hatch', 'packer']],
+    [conveyor, 'gtceu:tin_normal_restrictive_item_pipe', 'gtceu:gregsingularity_woven_drive_belt', ['item_passthrough_hatch', 'packer']],
     [emitter, 'gtceu:lv_sensor', relay, ['electromagnetic_separator', 'laser_engraver', 'polarizer', 'world_accelerator']],
     [sensor, 'gtceu:lv_sensor', gauge, ['scanner', 'solar_panel']]
   ]
@@ -134,7 +134,7 @@ ServerEvents.recipes(event => {
     const id = 'transformer_' + amps + 'a'
     const conductor = amps <= 4 ? wire : hexCable
     tier(id, ['2x ' + luv(id), hull, (2 * amps) + 'x ' + voltageCoil, (2 * amps) + 'x ' + busbar,
-      (2 * amps) + 'x ' + conductor, '4x ' + switchgear, '4x ' + laminate, 'kubejs:europa_phase_ceramic'],
+      (2 * amps) + 'x ' + conductor, '4x ' + switchgear, '4x ' + laminate, 'ad_astra:gregsingularity_europa_phase_ceramic'],
     4500 + 170 * amps, amps <= 4 ? 32000 : 98304, coolant, 4800)
   })
   ;[[1, 'transformer_1a'], [4, 'transformer_4a'], [8, 'voltage_coil'], [16, 'transformer_16a']].forEach(([amps, core]) => {
@@ -170,14 +170,14 @@ ServerEvents.recipes(event => {
     tier(middle, ['2x ' + luv(middle), '4x ' + zpm(low), '4x ' + optical, '12x ' + optics,
       '8x ' + busbar, '8x ' + timing], 6800, 114688, shield, 5600)
     tier(high, ['2x ' + luv(high), '4x ' + zpm(middle), '4x ' + field, '16x ' + optics,
-      '12x ' + timing, '12x ' + busbar, '8x ' + hexCable, '2x kubejs:zpm_europa_reticle'], 7800, 122880, shield, 6800)
+      '12x ' + timing, '12x ' + busbar, '8x ' + hexCable, '2x ad_astra:gregsingularity_zpm_europa_reticle'], 7800, 122880, shield, 6800)
   })
 
   tier('parallel_hatch', ['2x ' + luv('parallel_hatch'), hull, '4x ' + robot, '6x ' + timing,
-    '4x ' + wetware, '4x ae2:pattern_provider', '4x ' + quadCable, '2x kubejs:zpm_europa_reticle'], 6100, 98304)
+    '4x ' + wetware, '4x ae2:pattern_provider', '4x ' + quadCable, '2x ad_astra:gregsingularity_zpm_europa_reticle'], 6100, 98304)
   tier('quantum_chest', ['2x ' + luv('quantum_chest'), hull, '4x ' + conveyor, '6x ' + timing,
-    '4x ' + wetware, '4x kubejs:zpm_storage_backplane', '4x ae2:storage_bus'], 5800, 98304, shield)
+    '4x ' + wetware, '4x gtceu:gregsingularity_zpm_storage_backplane', '4x ae2:storage_bus'], 5800, 98304, shield)
   tier('quantum_tank', ['2x ' + luv('quantum_tank'), hull, '4x ' + pump, '6x ' + laminate,
-    '4x ' + timing, '4x kubejs:zpm_storage_backplane', '4x ae2:storage_bus',
-    '4x kubejs:zpm_europa_membrane', '2x kubejs:zpm_glacio_lamella'], 5900, 98304, coolant)
+    '4x ' + timing, '4x gtceu:gregsingularity_zpm_storage_backplane', '4x ae2:storage_bus',
+    '4x ad_astra:gregsingularity_zpm_europa_membrane', '2x ad_astra:gregsingularity_zpm_glacio_lamella'], 5900, 98304, coolant)
 })

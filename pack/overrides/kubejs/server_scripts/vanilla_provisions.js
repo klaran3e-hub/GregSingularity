@@ -18,7 +18,7 @@ ServerEvents.tags('item', event => {
 
 ServerEvents.recipes(event => {
   const mc = name => 'minecraft:' + name
-  const part = name => 'kubejs:' + name
+  const part = name => global.gsItemId(name)
   const prefix = 'zero_shift:provisions/'
   const fibre = part('washed_fibre')
   const cord = part('fibre_cord')
@@ -28,7 +28,7 @@ ServerEvents.recipes(event => {
   const slat = part('rough_slat')
   const strap = part('copper_strap')
   const binding = part('tool_binding')
-  const dough = 'kubejs:camp_dough'
+  const dough = 'gtceu:gregsingularity_camp_dough'
   const planks = '#minecraft:planks'
   const water = mc('water')
   const stockRecipes = []

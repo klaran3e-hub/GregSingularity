@@ -36,7 +36,7 @@
       rewards: [{
         id: "41AEB2EC07F5D5B9"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -105,7 +105,7 @@
       rewards: [{
         id: "485A46398F63F4C3"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -128,7 +128,7 @@
       rewards: [{
         id: "44EF332B1C432E76"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -151,7 +151,7 @@
       rewards: [{
         id: "41F67188CC9CFBB3"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -174,7 +174,7 @@
       rewards: [{
         id: "426645CB9B4EAEAF"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -197,7 +197,7 @@
       rewards: [{
         id: "48AEEA552122A235"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -220,7 +220,7 @@
       rewards: [{
         id: "442E802FE8E400A6"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -243,7 +243,7 @@
       rewards: [{
         id: "44081165F2E84FDC"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -266,7 +266,7 @@
       rewards: [{
         id: "4E61B37F6B1456D1"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -334,7 +334,7 @@
       rewards: [{
         id: "44571D5714F0AD6C"
         type: "item"
-        item: "kubejs:tool_binding"
+        item: "gtceu:gregsingularity_tool_binding"
         count: 1
       }]
     }
@@ -356,7 +356,7 @@
       rewards: [{
         id: "45FB7B3B9190C537"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -379,7 +379,7 @@
       rewards: [{
         id: "499973A46E7694CE"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -448,7 +448,7 @@
       rewards: [{
         id: "4B6F70C15E3EE304"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -471,7 +471,7 @@
       rewards: [{
         id: "40BB6C75AED1318D"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -494,7 +494,7 @@
       rewards: [{
         id: "475AA9F146F54873"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -517,7 +517,7 @@
       rewards: [{
         id: "49C0488A2A6414CB"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -540,7 +540,7 @@
       rewards: [{
         id: "43228C1D1FE499B0"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -563,7 +563,7 @@
       rewards: [{
         id: "434F0692A2E18ACF"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -586,7 +586,7 @@
       rewards: [{
         id: "4620AB753D1E3EA3"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -609,7 +609,7 @@
       rewards: [{
         id: "4C1302A19E77A5C2"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -677,7 +677,7 @@
       rewards: [{
         id: "48CD8E72C6359D86"
         type: "item"
-        item: "kubejs:tool_binding"
+        item: "gtceu:gregsingularity_tool_binding"
         count: 1
       }]
     }
@@ -699,7 +699,7 @@
       rewards: [{
         id: "4CBB56F5B37839A7"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -722,7 +722,7 @@
       rewards: [{
         id: "42FD65E5E6FC56BA"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -791,7 +791,7 @@
       rewards: [{
         id: "4BF629184B9312CA"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -814,7 +814,7 @@
       rewards: [{
         id: "4D8E212F36E1B232"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -837,7 +837,7 @@
       rewards: [{
         id: "419FDAF07C8AE675"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -860,7 +860,7 @@
       rewards: [{
         id: "48BBF3385B3CC1B8"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -883,7 +883,7 @@
       rewards: [{
         id: "43CA58111E0FCA5C"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -906,7 +906,7 @@
       rewards: [{
         id: "455A90DB7DD72B2F"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -929,7 +929,7 @@
       rewards: [{
         id: "46A2582DEF68D182"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -952,7 +952,7 @@
       rewards: [{
         id: "436AC5345B8E26E2"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1020,7 +1020,7 @@
       rewards: [{
         id: "48884898D2DBDEA7"
         type: "item"
-        item: "kubejs:tool_binding"
+        item: "gtceu:gregsingularity_tool_binding"
         count: 1
       }]
     }
@@ -1042,7 +1042,7 @@
       rewards: [{
         id: "47148CC75D2D3022"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -1065,7 +1065,7 @@
       rewards: [{
         id: "460AF00ACADC736D"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1134,7 +1134,7 @@
       rewards: [{
         id: "4B92DD264F10E603"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1157,7 +1157,7 @@
       rewards: [{
         id: "46CE483E1C025671"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -1180,7 +1180,7 @@
       rewards: [{
         id: "43FB06EF93912A44"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -1203,7 +1203,7 @@
       rewards: [{
         id: "423156BE61706832"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -1226,7 +1226,7 @@
       rewards: [{
         id: "447F6BFAE908400C"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -1249,7 +1249,7 @@
       rewards: [{
         id: "4AFC9FF3F6795E72"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1272,7 +1272,7 @@
       rewards: [{
         id: "417A18A31726CC75"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1295,7 +1295,7 @@
       rewards: [{
         id: "407086297CA0091A"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1363,7 +1363,7 @@
       rewards: [{
         id: "459ED3ECE1357FDB"
         type: "item"
-        item: "kubejs:tool_binding"
+        item: "gtceu:gregsingularity_tool_binding"
         count: 1
       }]
     }
@@ -1385,7 +1385,7 @@
       rewards: [{
         id: "401D2124B3840F2D"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -1408,7 +1408,7 @@
       rewards: [{
         id: "49D413257E3326B2"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1477,7 +1477,7 @@
       rewards: [{
         id: "461BCB8BC3D804BB"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1500,7 +1500,7 @@
       rewards: [{
         id: "44D62016C183ED0B"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -1523,7 +1523,7 @@
       rewards: [{
         id: "40F7E1521D0F9F4C"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -1546,7 +1546,7 @@
       rewards: [{
         id: "41F6484A00005291"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -1569,7 +1569,7 @@
       rewards: [{
         id: "4A0E2C6CE8D5AD5C"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -1592,7 +1592,7 @@
       rewards: [{
         id: "460DF18A626A5688"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1615,7 +1615,7 @@
       rewards: [{
         id: "45BD892D0233C951"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1638,7 +1638,7 @@
       rewards: [{
         id: "4948E192B65B5966"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1706,7 +1706,7 @@
       rewards: [{
         id: "48CCF8AC3B64D312"
         type: "item"
-        item: "kubejs:tool_binding"
+        item: "gtceu:gregsingularity_tool_binding"
         count: 1
       }]
     }
@@ -1728,7 +1728,7 @@
       rewards: [{
         id: "4BE5EB1DA72DA0A9"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -1751,7 +1751,7 @@
       rewards: [{
         id: "4EFD89C7BEC8C6F2"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1820,7 +1820,7 @@
       rewards: [{
         id: "4C5895D0CA6D59C5"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1843,7 +1843,7 @@
       rewards: [{
         id: "49B9F2E1054D5F49"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -1866,7 +1866,7 @@
       rewards: [{
         id: "43A8CF9041FDFC6C"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -1889,7 +1889,7 @@
       rewards: [{
         id: "453C4914BF0D6A61"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -1912,7 +1912,7 @@
       rewards: [{
         id: "4B73F55F22AB33E8"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -1935,7 +1935,7 @@
       rewards: [{
         id: "4C4FD938D43AE2EA"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1958,7 +1958,7 @@
       rewards: [{
         id: "44CDFD39388155B1"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -1981,7 +1981,7 @@
       rewards: [{
         id: "4511F1D78E958ECC"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2049,7 +2049,7 @@
       rewards: [{
         id: "47AD31712702669C"
         type: "item"
-        item: "kubejs:tool_binding"
+        item: "gtceu:gregsingularity_tool_binding"
         count: 1
       }]
     }
@@ -2071,7 +2071,7 @@
       rewards: [{
         id: "48BB3194E873CC52"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -2094,7 +2094,7 @@
       rewards: [{
         id: "49FFE19E0BB9559F"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2163,7 +2163,7 @@
       rewards: [{
         id: "457675C9C0C737B8"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2186,7 +2186,7 @@
       rewards: [{
         id: "48C8B19EA6A83669"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -2209,7 +2209,7 @@
       rewards: [{
         id: "41E70A9039545EAD"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -2232,7 +2232,7 @@
       rewards: [{
         id: "4E8278708C3B28B4"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -2255,7 +2255,7 @@
       rewards: [{
         id: "4D08868E801FD5E2"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -2278,7 +2278,7 @@
       rewards: [{
         id: "4B14D9FA7E59FCEE"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2301,7 +2301,7 @@
       rewards: [{
         id: "434D048124D0AFAC"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2324,7 +2324,7 @@
       rewards: [{
         id: "45500BDCE5DCDEB8"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2392,7 +2392,7 @@
       rewards: [{
         id: "4F2C4E00E1A9E995"
         type: "item"
-        item: "kubejs:tool_binding"
+        item: "gtceu:gregsingularity_tool_binding"
         count: 1
       }]
     }
@@ -2414,7 +2414,7 @@
       rewards: [{
         id: "47EB641E6C2BFBBA"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -2437,7 +2437,7 @@
       rewards: [{
         id: "4CC2202A97F47FBD"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2506,7 +2506,7 @@
       rewards: [{
         id: "453F57A92A77D20C"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2529,7 +2529,7 @@
       rewards: [{
         id: "40C41C9AE83860DB"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -2552,7 +2552,7 @@
       rewards: [{
         id: "4FCE2364A0B6BAFF"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -2575,7 +2575,7 @@
       rewards: [{
         id: "44E81F868BF46F0F"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -2598,7 +2598,7 @@
       rewards: [{
         id: "4A225758980AFD8B"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -2621,7 +2621,7 @@
       rewards: [{
         id: "4E9DB02EEE7C29C9"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2644,7 +2644,7 @@
       rewards: [{
         id: "423E3F2ACD72FBCB"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2667,7 +2667,7 @@
       rewards: [{
         id: "442E4D70C2AE59CC"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2735,7 +2735,7 @@
       rewards: [{
         id: "4ABADEB35D663418"
         type: "item"
-        item: "kubejs:tool_binding"
+        item: "gtceu:gregsingularity_tool_binding"
         count: 1
       }]
     }
@@ -2757,7 +2757,7 @@
       rewards: [{
         id: "4D7621744196D509"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -2780,7 +2780,7 @@
       rewards: [{
         id: "4FE5B627350779D0"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2849,7 +2849,7 @@
       rewards: [{
         id: "4889FB00E7480322"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2872,7 +2872,7 @@
       rewards: [{
         id: "4E135F60258A7412"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -2895,7 +2895,7 @@
       rewards: [{
         id: "45AADD8098B222AC"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -2918,7 +2918,7 @@
       rewards: [{
         id: "46C2CBF68DD0D385"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -2941,7 +2941,7 @@
       rewards: [{
         id: "4EF0D7CCE3A29980"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -2964,7 +2964,7 @@
       rewards: [{
         id: "45CBBF95F3028D42"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -2987,7 +2987,7 @@
       rewards: [{
         id: "49C6D02D5263C0D4"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -3010,7 +3010,7 @@
       rewards: [{
         id: "487AF703656AAFB9"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -3078,7 +3078,7 @@
       rewards: [{
         id: "468FC7ACAB786F8A"
         type: "item"
-        item: "kubejs:tool_binding"
+        item: "gtceu:gregsingularity_tool_binding"
         count: 1
       }]
     }
@@ -3100,7 +3100,7 @@
       rewards: [{
         id: "4211EC706C5DAF69"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -3192,7 +3192,7 @@
       rewards: [{
         id: "441E0F000D52C6FC"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -3261,7 +3261,7 @@
       rewards: [{
         id: "4E078E7A54E33FC1"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -3284,7 +3284,7 @@
       rewards: [{
         id: "40BD225226AD6E17"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -3307,7 +3307,7 @@
       rewards: [{
         id: "45EC30E621FE34C3"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -3330,7 +3330,7 @@
       rewards: [{
         id: "498577B901F4AE71"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -3353,7 +3353,7 @@
       rewards: [{
         id: "45A573FD6DBD2114"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -3376,7 +3376,7 @@
       rewards: [{
         id: "4A54BA6AF031FCEE"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -3399,7 +3399,7 @@
       rewards: [{
         id: "4332245E5F470C8F"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -3422,7 +3422,7 @@
       rewards: [{
         id: "418F1B99DAEE3B74"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -3491,7 +3491,7 @@
       rewards: [{
         id: "4D0D37BE99AF8294"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -3560,7 +3560,7 @@
       rewards: [{
         id: "40B0CBEBF24CF4F7"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -3583,7 +3583,7 @@
       rewards: [{
         id: "4495615F337CB919"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -3606,7 +3606,7 @@
       rewards: [{
         id: "4857520DA1D1083A"
         type: "item"
-        item: "kubejs:wooden_joint"
+        item: "gtceu:gregsingularity_wooden_joint"
         count: 1
       }]
     }
@@ -3629,7 +3629,7 @@
       rewards: [{
         id: "42C5B4A05EE2096F"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -3652,7 +3652,7 @@
       rewards: [{
         id: "4F7766B7EE3F6E48"
         type: "item"
-        item: "kubejs:iron_rivet"
+        item: "gtceu:gregsingularity_iron_rivet"
         count: 1
       }]
     }
@@ -3675,7 +3675,7 @@
       rewards: [{
         id: "46C8E556DDA37F2F"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -3698,7 +3698,7 @@
       rewards: [{
         id: "47FF7E45B9B7FEC7"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }
@@ -3721,7 +3721,7 @@
       rewards: [{
         id: "4310F235FAD9D38D"
         type: "item"
-        item: "kubejs:wooden_peg"
+        item: "gtceu:gregsingularity_wooden_peg"
         count: 2
       }]
     }

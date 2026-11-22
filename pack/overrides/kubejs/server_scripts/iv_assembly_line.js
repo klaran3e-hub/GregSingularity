@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-  const ks = id => 'kubejs:' + id
+  const ks = id => global.gsItemId(id)
   const gt = id => 'gtceu:' + id
 
   const pnc = id => 'pneumaticcraft:' + id
@@ -39,7 +39,7 @@ ServerEvents.recipes(event => {
     .inputFluids(Fluid.of(gt('soldering_alloy'), 288))
   install('grating', [
     gt('steel_machine_casing'), '2x ' + bulkhead, '3x ' + plate, '2x ' + ks('vacuum_gasket'),
-    'kubejs:woven_drive_belt', 'gtceu:lv_conveyor_module', ks('iv_indexed_rail')
+    'gtceu:gregsingularity_woven_drive_belt', 'gtceu:lv_conveyor_module', ks('iv_indexed_rail')
   ], '4x ' + gt('assembly_line_grating'), 1840, 6144)
   install('laminated_glass', [
     '4x ' + gt('cleanroom_glass'), '2x ' + ks('iv_cable_jacket'), '2x ' + ks('me_optical_link'),

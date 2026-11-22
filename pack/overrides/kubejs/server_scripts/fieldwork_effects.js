@@ -5,7 +5,7 @@ const FieldSounds = Java.loadClass('net.minecraftforge.registries.ForgeRegistrie
 const FieldLocation = Java.loadClass('net.minecraft.resources.ResourceLocation')
 const FieldSoundSource = Java.loadClass('net.minecraft.sounds.SoundSource')
 const FieldItemParticle = Java.loadClass('net.minecraft.core.particles.ItemParticleOption')
-const fieldChips = {knap:'minecraft:flint',lash:'kubejs:plant_fibre',cut:'minecraft:oak_planks',ram:'minecraft:clay_ball',strike:'kubejs:iron_rivet',mill:'kubejs:chamotte'}
+const fieldChips = {knap:'minecraft:flint',lash:'gtceu:gregsingularity_plant_fibre',cut:'minecraft:oak_planks',ram:'minecraft:clay_ball',strike:'gtceu:gregsingularity_iron_rivet',mill:'gtceu:gregsingularity_chamotte'}
 const fieldParticles = {
   knap: FieldParticles.CRIT, lash: FieldParticles.COMPOSTER, cut: FieldParticles.POOF,
   ram: FieldParticles.ASH, wash: FieldParticles.SPLASH, strike: FieldParticles.CRIT,
@@ -50,7 +50,7 @@ const fieldCraftFamilies = {
 }
 const fieldCraftSounds = {}
 Object.entries(fieldCraftFamilies).forEach(([kind, names]) => {
-  names.forEach(name => {fieldCraftSounds[name.includes(':') ? name : 'kubejs:' + name] = kind})
+  names.forEach(name => {fieldCraftSounds[name.includes(':') ? name : global.gsItemId(name)] = kind})
 })
 ItemEvents.crafted(event => {
   const kind = fieldCraftSounds[String(event.item.id)]

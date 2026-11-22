@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-  const part = name => 'kubejs:titan_' + name
+  const part = name => global.gsItemId('titan_' + name)
   const surface = 'zero_shift:titan'
   const orbit = 'zero_shift:titan_orbit'
   const raw = part('raw_condensate')
@@ -11,11 +11,11 @@ ServerEvents.recipes(event => {
   }
 
   process('chemical_bath', 'impregnate_wicks', 'zero_shift:europa', 960, 122880)
-    .itemInputs('kubejs:zpm_europa_membrane').inputFluids(Fluid.of('kubejs:zpm_ceres_brine', 500))
+    .itemInputs('ad_astra:gregsingularity_zpm_europa_membrane').inputFluids(Fluid.of('kubejs:zpm_ceres_brine', 500))
     .itemOutputs('2x ' + part('wick'))
 
   process('chemical_reactor', 'extract_condensate', surface, 1440, 393216)
-    .itemInputs('kubejs:mill_titan_assay', part('wick')).inputFluids(Fluid.of('gtceu:nitrogen', 500))
+    .itemInputs('ad_astra:gregsingularity_mill_titan_assay', part('wick')).inputFluids(Fluid.of('gtceu:nitrogen', 500))
     .outputFluids(Fluid.of(raw, 1500)).itemOutputs(part('spent_wick'))
 
   process('distillery', 'fractionate_condensate', orbit, 1120, 393216)

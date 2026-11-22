@@ -1,7 +1,7 @@
 ServerEvents.recipes(event => {
   const gt = id => 'gtceu:' + id
-  const part = id => 'kubejs:post_uv_' + id
-  const uv = id => 'kubejs:uv_' + id
+  const part = id => global.gsItemId('post_uv_' + id)
+  const uv = id => global.gsItemId('uv_' + id)
   const shield = 'kubejs:vacuum_shield_gas'
   const cold = 'kubejs:chilled_vacuum_coolant'
   const warm = 'kubejs:warm_vacuum_coolant'
@@ -40,7 +40,7 @@ ServerEvents.recipes(event => {
 
   machine('assembler', 'reserve_load_matrix', [
     '2x ' + permit, '4x gtceu:uv_naquadria_battery', '4x gtceu:uv_transformer_4a',
-    '8x ' + uv('pulse_reserve'), '8x ' + uv('flux_shunt'), '8x kubejs:zpm_reserve_switchgear',
+    '8x ' + uv('pulse_reserve'), '8x ' + uv('flux_shunt'), '8x gtceu:gregsingularity_zpm_reserve_switchgear',
     '8x gtceu:yttrium_barium_cuprate_hex_cable', '4x gtceu:good_electronic_circuit',
     '8x pneumaticcraft:reinforced_pressure_tube'
   ], '4x ' + reserve, 10600, 491520)
@@ -55,9 +55,9 @@ ServerEvents.recipes(event => {
     .dimension('minecraft:the_nether')
 
   machine('assembler', 'logistics_clock', [
-    '2x ' + permit, '4x ' + uv('freight_manifest'), '4x kubejs:zpm_freight_certificate',
+    '2x ' + permit, '4x ' + uv('freight_manifest'), '4x gtceu:gregsingularity_zpm_freight_certificate',
     '4x gtceu:uv_emitter', '4x gtceu:mv_sensor', '4x ae2:quantum_link',
-    '4x ae2:pattern_provider', '8x kubejs:zpm_end_heavy_concentrate',
+    '4x ae2:pattern_provider', '8x gtceu:gregsingularity_zpm_end_heavy_concentrate',
     '4x pneumaticcraft:regulator_tube_module'
   ], '4x ' + clock, 11600, 491520)
     .inputFluids(Fluid.of(shield, 11000))
@@ -74,7 +74,7 @@ ServerEvents.recipes(event => {
     .dimension('minecraft:overworld')
 
   machine('assembly_line', 'supply_sync_record', [
-    '4x ' + diagnostic, '4x ' + clock, '8x ' + uv('naquadria_capsule'), '8x kubejs:zpm_nether_isotope_salt',
+    '4x ' + diagnostic, '4x ' + clock, '8x ' + uv('naquadria_capsule'), '8x gtceu:gregsingularity_zpm_nether_isotope_salt',
     '4x ' + uv('freight_manifest'), '4x gtceu:network_switch', '4x gtceu:data_orb',
     '4x ae2:256k_crafting_storage', '4x ae2:quantum_link'
   ], '2x ' + supplyRecord, 16400, 507904)

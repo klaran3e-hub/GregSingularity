@@ -1,7 +1,7 @@
 const FreightCart = Java.loadClass('net.minecraft.world.entity.vehicle.MinecartChest')
 const FreightBounds = Java.loadClass('net.minecraft.world.phys.AABB')
 const FreightUuid = Java.loadClass('java.util.UUID')
-const freightCargo = 'kubejs:sealed_refractory_crate'
+const freightCargo = 'gtceu:gregsingularity_sealed_refractory_crate'
 const freightKey = 'GTIBDShipment'
 const freightBatch = 8
 function cargoSeal(stack) {
@@ -58,7 +58,7 @@ PlayerEvents.inventoryChanged(freightCargo, event => {
   }
 })
 BlockEvents.rightClicked('minecraft:detector_rail', event => {
-  if (event.level.isClientSide() || String(event.item.id) !== 'kubejs:rail_waybill') return
+  if (event.level.isClientSide() || String(event.item.id) !== 'gtceu:gregsingularity_rail_waybill') return
   event.cancel()
   const player = event.player, pos = event.block.pos, waybill = event.item
   const tell = key => player.tell(Text.translate('message.zero_shift.rail_' + key))
@@ -96,7 +96,7 @@ BlockEvents.rightClicked('minecraft:detector_rail', event => {
   slots.forEach(pair => cart.removeItem(pair[0],pair[1]))
   releaseCart(cart)
   waybill.shrink(1)
-  player.give(Item.of('kubejs:received_refractory_crate',freightBatch))
-  player.give('kubejs:rail_delivery_receipt')
+  player.give(Item.of('gtceu:gregsingularity_received_refractory_crate',freightBatch))
+  player.give('gtceu:gregsingularity_rail_delivery_receipt')
   tell('accepted')
 })

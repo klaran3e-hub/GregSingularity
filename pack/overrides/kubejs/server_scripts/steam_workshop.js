@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-  const k = name => 'kubejs:' + name
+  const k = name => global.gsItemId(name)
   const g = name => 'gtceu:' + name
   const id = name => 'zero_shift:steam_workshop/' + name
   const shaped = (name, output, rows, keys) => event.shaped(output, rows, keys).id(id(name))

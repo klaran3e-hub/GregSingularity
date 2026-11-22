@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-  const ks = id => 'kubejs:' + id
+  const ks = id => global.gsItemId(id)
   const gt = id => 'gtceu:' + id
   const iv = id => gt('iv_' + id)
   const ev = id => gt('ev_' + id)
@@ -79,7 +79,7 @@ ServerEvents.recipes(event => {
 
   tier('machine_casing', [
     ev('machine_casing'), '4x ' + plate, '2x ' + bulkhead, '2x ' + arcPlate, '4x ' + gasket,
-    'gtceu:steel_frame', gauge, 'kubejs:martian_pressure_liner'
+    'gtceu:steel_frame', gauge, 'ad_astra:gregsingularity_martian_pressure_liner'
   ], 1820, 1920)
   tier('machine_hull', [
     ev('machine_hull'), casing, '2x ' + switchStack, '2x ' + arcPlate, '4x ' + cable, '2x ' + circuit,
@@ -99,7 +99,7 @@ ServerEvents.recipes(event => {
   ], 1760, 1920)
   tier('conveyor_module', [
     ev('conveyor_module'), '2x ' + motor, '2x ' + plate, '2x ' + ks('iv_cable_jacket'),
-    '2x ' + ks('balanced_rail_axle'), cable, 'gtceu:tin_normal_item_pipe', 'kubejs:woven_drive_belt'
+    '2x ' + ks('balanced_rail_axle'), cable, 'gtceu:tin_normal_item_pipe', 'gtceu:gregsingularity_woven_drive_belt'
   ], 1820, 1920)
   tier('robot_arm', [
     ev('robot_arm'), motor, piston, '2x ' + servo, switchStack, '2x ' + circuit, '2x ' + plate, arm, gauge
@@ -169,10 +169,10 @@ ServerEvents.recipes(event => {
   ]
   const stationEquipment = [
     [iePump, pnc('regulator_tube_module')],
-    ['kubejs:forging_saddle', 'gtceu:plate_casting_mold'],
+    ['gtceu:gregsingularity_forging_saddle', 'gtceu:plate_casting_mold'],
     ['gtceu:good_electronic_circuit', ieCoil],
     ['gtceu:steel_frame', pnc('heat_sink')],
-    ['gtceu:tin_normal_item_pipe', 'kubejs:woven_drive_belt'],
+    ['gtceu:tin_normal_item_pipe', 'gtceu:gregsingularity_woven_drive_belt'],
     ['gtceu:lv_sensor', 'gtceu:gold_quadruple_cable'],
     [gauge, 'gtceu:gold_single_cable'],
     [ieCoil, 'gtceu:hv_battery_buffer_4x']
@@ -191,7 +191,7 @@ ServerEvents.recipes(event => {
       event.remove({ id: gt(recycler + 'iv_' + id) })
     })
     tier(id, [ev(id), hull, '2x ' + regulator, '2x ' + circuit, '2x ' + plate,
-      '4x ' + cable, '2x gtceu:niobium_titanium_single_cable', 'kubejs:venus_thermal_screen'], 2360 + 80 * amps, 7680)
+      '4x ' + cable, '2x gtceu:niobium_titanium_single_cable', 'ad_astra:gregsingularity_venus_thermal_screen'], 2360 + 80 * amps, 7680)
       .notConsumable(Item.of(ks('iv_commissioning_report')))
   })
 
@@ -247,10 +247,10 @@ ServerEvents.recipes(event => {
     const pipe = gt('platinum_' + size + '_item_pipe')
     const previous = index === 0 ? gt('electrum_small_item_pipe') : gt('platinum_' + itemSizes[index - 1] + '_item_pipe')
     install('platinum_' + size + '_item_pipe', (index < 2 ? '2x ' : '') + pipe, [
-      '2x ' + previous, '2x ' + platinum, conveyor, 'gtceu:lv_conveyor_module', 'kubejs:woven_drive_belt', gasket
+      '2x ' + previous, '2x ' + platinum, conveyor, 'gtceu:lv_conveyor_module', 'gtceu:gregsingularity_woven_drive_belt', gasket
     ], 1440 + index * 190, 6144)
     install('platinum_' + size + '_restrictive_item_pipe', gt('platinum_' + size + '_restrictive_item_pipe'), [
-      pipe, gt('electrum_' + size + '_restrictive_item_pipe'), 'kubejs:woven_drive_belt', gauge, regulator, arcPlate
+      pipe, gt('electrum_' + size + '_restrictive_item_pipe'), 'gtceu:gregsingularity_woven_drive_belt', gauge, regulator, arcPlate
     ], 1480 + index * 190, 6144)
   })
 })

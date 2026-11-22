@@ -1,6 +1,6 @@
 ServerEvents.recipes(event => {
   const id = name => 'zero_shift:fieldwork/' + name
-  const k = name => 'kubejs:' + name
+  const k = name => global.gsItemId(name)
   const flint = 'minecraft:flint', gravel = 'minecraft:gravel', stick = 'minecraft:stick'
   const washed = k('washed_fibre'), cord = k('fibre_cord'), lining = k('fired_lining')
   const hammer = '#gtceu:tools/crafting_hammers', knife = '#gtceu:tools/crafting_knives'
@@ -64,7 +64,7 @@ ServerEvents.recipes(event => {
     C: k('washed_copper_grit'), T: k('chamotte'), F: k('fired_crucible'), A: k('washed_tin_grit')
   })
   bronze.field_bloomery(id('roast_alloy'))
-    .itemInputs(k('bronze_charge'), '#zero_shift:bloomery_fuels').notConsumable(k('ingot_mould'))
+    .itemInputs(k('bronze_charge'), '#zero_shift:bloomery_fuels').notConsumable('#zero_shift:bronze_roast_moulds')
     .itemOutputs(k('roasted_alloy_feed')).duration(200)
   cast('pour_bronze', 'roasted_alloy_feed', '2x #zero_shift:bloomery_fuels', 'ingot_mould', 'gtceu:bronze_ingot', 360)
   shape('reinforce_cast', k('bronze_mould_frame'), ['PCP','RMR',' P '], {

@@ -1,7 +1,7 @@
 ServerEvents.recipes(event => {
   const ad = name => 'ad_astra:' + name
   const gt = name => 'gtceu:' + name
-  const k = name => 'kubejs:' + name
+  const k = name => global.gsItemId(name)
   const oil = k('mv_dielectric_oil')
   const lube = gt('lubricant')
   const solder = gt('soldering_alloy')

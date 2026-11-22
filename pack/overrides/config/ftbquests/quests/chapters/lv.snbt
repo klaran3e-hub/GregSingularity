@@ -29,7 +29,7 @@
       tasks: [{
         id: "4208DE7BE3771A36"
         type: "item"
-        item: "kubejs:impregnated_fibre"
+        item: "gtceu:gregsingularity_impregnated_fibre"
       }]
       rewards: [{
         id: "4C847F9DD014C341"
@@ -50,13 +50,13 @@
       tasks: [{
         id: "48CBF76A227771C6"
         type: "item"
-        item: "kubejs:pressed_insulation"
+        item: "gtceu:gregsingularity_pressed_insulation"
         count: 2L
       }]
       rewards: [{
         id: "41606A66D628BEFF"
         type: "item"
-        item: "kubejs:impregnated_fibre"
+        item: "gtceu:gregsingularity_impregnated_fibre"
         count: 3
       }]
     }
@@ -94,7 +94,7 @@
       tasks: [{
         id: "4A66C2A7D377B94D"
         type: "item"
-        item: "kubejs:tin_wire_blank"
+        item: "gtceu:gregsingularity_tin_wire_blank"
       }]
       rewards: [{
         id: "4B9E5CA436AF60EA"
@@ -143,7 +143,7 @@
       rewards: [{
         id: "40E94E4953BE1370"
         type: "item"
-        item: "kubejs:impregnated_fibre"
+        item: "gtceu:gregsingularity_impregnated_fibre"
         count: 3
       }]
     }
@@ -159,7 +159,7 @@
       tasks: [{
         id: "4C6EFFBC129D899A"
         type: "item"
-        item: "kubejs:copper_contact_strip"
+        item: "gtceu:gregsingularity_copper_contact_strip"
         count: 2L
       }]
       rewards: [{
@@ -202,7 +202,7 @@
       tasks: [{
         id: "4250025949B470C7"
         type: "item"
-        item: "kubejs:circuit_laminate"
+        item: "gtceu:gregsingularity_circuit_laminate"
       }]
       rewards: [{
         id: "48B8E6267D681737"
@@ -244,7 +244,7 @@
       tasks: [{
         id: "4353E0EDC262EA3A"
         type: "item"
-        item: "kubejs:carbon_resistor_core"
+        item: "gtceu:gregsingularity_carbon_resistor_core"
       }]
       rewards: [{
         id: "4AFBC80E6F8E0E33"
@@ -287,7 +287,7 @@
       tasks: [{
         id: "4099C04B2FD83667"
         type: "item"
-        item: "kubejs:glass_tube_blank"
+        item: "gtceu:gregsingularity_glass_tube_blank"
       }]
       rewards: [{
         id: "4EB6145C701DE005"
@@ -313,7 +313,7 @@
       rewards: [{
         id: "43F12BDF341043F2"
         type: "item"
-        item: "kubejs:impregnated_fibre"
+        item: "gtceu:gregsingularity_impregnated_fibre"
         count: 3
       }]
     }
@@ -329,7 +329,7 @@
       tasks: [{
         id: "4D61D9FD2795523B"
         type: "item"
-        item: "kubejs:tin_solder_preform"
+        item: "gtceu:gregsingularity_tin_solder_preform"
         count: 2L
       }]
       rewards: [{
@@ -351,7 +351,7 @@
       tasks: [{
         id: "43976D8537C3A50C"
         type: "item"
-        item: "kubejs:bench_soldering_iron"
+        item: "gtceu:gregsingularity_bench_soldering_iron"
       }]
       rewards: [{
         id: "4BCF7F76118A2477"
@@ -377,7 +377,7 @@
       rewards: [{
         id: "4FF738D216977EEF"
         type: "item"
-        item: "kubejs:impregnated_fibre"
+        item: "gtceu:gregsingularity_impregnated_fibre"
         count: 3
       }]
     }
@@ -435,7 +435,7 @@
       tasks: [{
         id: "477FAD0EBEC4FD0E"
         type: "item"
-        item: "kubejs:wound_stator"
+        item: "gtceu:gregsingularity_wound_stator"
       }]
       rewards: [{
         id: "4AC59CCD24B088C8"
@@ -478,7 +478,7 @@
       tasks: [{
         id: "46CCEF5B0D563DA1"
         type: "item"
-        item: "kubejs:magnetic_armature"
+        item: "gtceu:gregsingularity_magnetic_armature"
       }]
       rewards: [{
         id: "4DE1FB2001757F71"
@@ -542,7 +542,7 @@
       tasks: [{
         id: "460A2D15B72ACF54"
         type: "item"
-        item: "kubejs:turbine_rotor_blank"
+        item: "gtceu:gregsingularity_turbine_rotor_blank"
       }]
       rewards: [{
         id: "48BAA7E6E838F54F"
@@ -563,7 +563,7 @@
       tasks: [{
         id: "43FF1C5249DA2FA9"
         type: "item"
-        item: "kubejs:balanced_turbine_rotor"
+        item: "gtceu:gregsingularity_balanced_turbine_rotor"
       }]
       rewards: [{
         id: "458400801593E2C5"
@@ -632,7 +632,7 @@
       rewards: [{
         id: "4A5E2F2CA3CFF007"
         type: "item"
-        item: "kubejs:impregnated_fibre"
+        item: "gtceu:gregsingularity_impregnated_fibre"
         count: 3
       }]
     }
@@ -649,7 +649,7 @@
       tasks: [{
         id: "4BBF656619BD19AB"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 8L
       }]
       rewards: [{
@@ -741,7 +741,7 @@
       tasks: [{
         id: "429BB9A949717F1E"
         type: "item"
-        item: "kubejs:tin_solder_preform"
+        item: "gtceu:gregsingularity_tin_solder_preform"
         count: 12L
       }]
       rewards: [{
@@ -1226,13 +1226,13 @@
       tasks: [{
         id: "4EA48EC10246410C"
         type: "item"
-        item: "kubejs:lv_terminal_block"
+        item: "gtceu:gregsingularity_lv_terminal_block"
         count: 2L
       }]
       rewards: [{
         id: "4CFC10E0BA48643F"
         type: "item"
-        item: "kubejs:copper_contact_strip"
+        item: "gtceu:gregsingularity_copper_contact_strip"
         count: 1
       }]
     }
@@ -1322,7 +1322,7 @@
       rewards: [{
         id: "4F25EBC77AFA2F20"
         type: "item"
-        item: "kubejs:impregnated_fibre"
+        item: "gtceu:gregsingularity_impregnated_fibre"
         count: 3
       }]
     }
@@ -1339,7 +1339,7 @@
       tasks: [{
         id: "4D5B1E514D22444A"
         type: "item"
-        item: "kubejs:wound_stator"
+        item: "gtceu:gregsingularity_wound_stator"
         count: 2L
       }]
       rewards: [{
@@ -1385,7 +1385,7 @@
       tasks: [{
         id: "4FFAF63108816B81"
         type: "item"
-        item: "kubejs:lv_terminal_block"
+        item: "gtceu:gregsingularity_lv_terminal_block"
         count: 4L
       }]
       rewards: [{
@@ -1407,12 +1407,12 @@
       tasks: [{
         id: "482C3030E9E04868"
         type: "item"
-        item: "kubejs:lv_contact_bridge"
+        item: "gtceu:gregsingularity_lv_contact_bridge"
       }]
       rewards: [{
         id: "4755E54522A30310"
         type: "item"
-        item: "kubejs:copper_contact_strip"
+        item: "gtceu:gregsingularity_copper_contact_strip"
         count: 2
       }]
     }
@@ -1428,12 +1428,12 @@
       tasks: [{
         id: "483A3466F1F52896"
         type: "item"
-        item: "kubejs:lv_line_contactor"
+        item: "gtceu:gregsingularity_lv_line_contactor"
       }]
       rewards: [{
         id: "45A0E70065A0E299"
         type: "item"
-        item: "kubejs:pressed_insulation"
+        item: "gtceu:gregsingularity_pressed_insulation"
         count: 2
       }]
     }
@@ -1514,7 +1514,7 @@
       tasks: [{
         id: "4461E24B71281479"
         type: "item"
-        item: "kubejs:pressed_steel_frame"
+        item: "gtceu:gregsingularity_pressed_steel_frame"
       }]
       rewards: [{
         id: "4D3B88229CA9F835"
@@ -1579,7 +1579,7 @@
       tasks: [{
         id: "489BCF8424233DDB"
         type: "item"
-        item: "kubejs:woven_drive_belt"
+        item: "gtceu:gregsingularity_woven_drive_belt"
         count: 2L
       }]
       rewards: [{
@@ -1669,7 +1669,7 @@
       rewards: [{
         id: "41BEE1B2E7C61D74"
         type: "item"
-        item: "kubejs:washed_fibre"
+        item: "gtceu:gregsingularity_washed_fibre"
         count: 3
       }]
     }
@@ -1707,7 +1707,7 @@
       tasks: [{
         id: "4305E42CF1E704DA"
         type: "item"
-        item: "kubejs:pressed_steel_frame"
+        item: "gtceu:gregsingularity_pressed_steel_frame"
         count: 32L
       }]
       rewards: [{
@@ -1730,7 +1730,7 @@
       tasks: [{
         id: "47D6079E973C0627"
         type: "item"
-        item: "kubejs:pressed_steel_frame"
+        item: "gtceu:gregsingularity_pressed_steel_frame"
         count: 8L
       }]
       rewards: [{
@@ -1799,7 +1799,7 @@
       tasks: [{
         id: "430FF58A72844BDF"
         type: "item"
-        item: "kubejs:lime_flux"
+        item: "gtceu:gregsingularity_lime_flux"
         count: 12L
       }]
       rewards: [{
@@ -1822,7 +1822,7 @@
       tasks: [{
         id: "489E372932F34764"
         type: "item"
-        item: "kubejs:steel_furnace_charge"
+        item: "gtceu:gregsingularity_steel_furnace_charge"
         count: 6L
       }]
       rewards: [{
@@ -1868,7 +1868,7 @@
       tasks: [{
         id: "448E585B9BE7212D"
         type: "item"
-        item: "kubejs:pressed_steel_frame"
+        item: "gtceu:gregsingularity_pressed_steel_frame"
         count: 12L
       }]
       rewards: [{
@@ -2073,7 +2073,7 @@
       tasks: [{
         id: "47EFA68659986698"
         type: "item"
-        item: "kubejs:heater_ribbon"
+        item: "gtceu:gregsingularity_heater_ribbon"
       }]
       rewards: [{
         id: "47CC939AB44F2345"
@@ -2162,7 +2162,7 @@
       tasks: [{
         id: "4F8FFAD206C9270C"
         type: "item"
-        item: "kubejs:furnace_lining_insert"
+        item: "gtceu:gregsingularity_furnace_lining_insert"
         count: 2L
       }]
       rewards: [{
@@ -2227,7 +2227,7 @@
       tasks: [{
         id: "4CA53D8B1BE9D725"
         type: "item"
-        item: "kubejs:nickel_concentrate"
+        item: "gtceu:gregsingularity_nickel_concentrate"
         count: 2L
       }]
       rewards: [{
@@ -2249,7 +2249,7 @@
       tasks: [{
         id: "48EB2CF743B27FD1"
         type: "item"
-        item: "kubejs:heater_alloy_charge"
+        item: "gtceu:gregsingularity_heater_alloy_charge"
       }]
       rewards: [{
         id: "4FFD8B2C368DF247"
@@ -2270,7 +2270,7 @@
       tasks: [{
         id: "4CE652B7941177D1"
         type: "item"
-        item: "kubejs:heater_ribbon"
+        item: "gtceu:gregsingularity_heater_ribbon"
         count: 4L
       }]
       rewards: [{
@@ -2484,7 +2484,7 @@
       tasks: [{
         id: "4009C1DEDFAD0097"
         type: "item"
-        item: "kubejs:washed_bauxite"
+        item: "gtceu:gregsingularity_washed_bauxite"
         count: 4L
       }]
       rewards: [{
@@ -2506,7 +2506,7 @@
       tasks: [{
         id: "4BE4EEE6C5883DE2"
         type: "item"
-        item: "kubejs:alumina_charge"
+        item: "gtceu:gregsingularity_alumina_charge"
       }]
       rewards: [{
         id: "4065A01D7AF702E3"
@@ -2527,7 +2527,7 @@
       tasks: [{
         id: "4D8FC14938D8E9A7"
         type: "item"
-        item: "kubejs:hot_aluminium_billet"
+        item: "gtceu:gregsingularity_hot_aluminium_billet"
       }]
       rewards: [{
         id: "4C3E5BBBF682AC38"
@@ -2638,7 +2638,7 @@
       tasks: [{
         id: "4CE94D193DF1AE78"
         type: "item"
-        item: "kubejs:nickel_concentrate"
+        item: "gtceu:gregsingularity_nickel_concentrate"
         count: 8L
       }]
       rewards: [{
@@ -2661,7 +2661,7 @@
       tasks: [{
         id: "4DE9F8C048119DBD"
         type: "item"
-        item: "kubejs:heater_ribbon"
+        item: "gtceu:gregsingularity_heater_ribbon"
         count: 12L
       }]
       rewards: [{
@@ -2684,7 +2684,7 @@
       tasks: [{
         id: "45188433C03661BE"
         type: "item"
-        item: "kubejs:furnace_lining_insert"
+        item: "gtceu:gregsingularity_furnace_lining_insert"
         count: 6L
       }]
       rewards: [{
@@ -2753,7 +2753,7 @@
       tasks: [{
         id: "4716CF39292179BF"
         type: "item"
-        item: "kubejs:alumina_charge"
+        item: "gtceu:gregsingularity_alumina_charge"
         count: 6L
       }]
       rewards: [{
@@ -2776,7 +2776,7 @@
       tasks: [{
         id: "489714D345BAE893"
         type: "item"
-        item: "kubejs:hot_aluminium_billet"
+        item: "gtceu:gregsingularity_hot_aluminium_billet"
         count: 4L
       }]
       rewards: [{
@@ -3039,7 +3039,7 @@
       tasks: [{
         id: "44F125114A1615C2"
         type: "item"
-        item: "kubejs:strainer_mesh"
+        item: "gtceu:gregsingularity_strainer_mesh"
         count: 4L
       }]
       rewards: [{

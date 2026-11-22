@@ -11,5 +11,5 @@ StartupEvents.registry('item', event => {
     'iv_layered_billet', 'iv_bonded_billet', 'iv_indexed_rail', 'iv_index_fixture',
     'iv_line_datum', 'iv_mars_refractory_grain', 'iv_venus_panel_blank'
   ]
-  materials.forEach(id => event.create(id).texture('kubejs:item/' + id))
+  materials.forEach(id => event.create(global.gsItemId(id)).texture('kubejs:item/' + id))
 })

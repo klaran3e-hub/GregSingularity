@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-  const ks = name => 'kubejs:' + name
+  const ks = name => global.gsItemId(name)
   const mc = name => 'minecraft:' + name
   const gt = name => 'gtceu:' + name
 
@@ -105,7 +105,7 @@ ServerEvents.recipes(event => {
   pressing('roll_startup_steel_plate', pressBlank, plate, 2)
 
   shaped('press_piston', mc('piston'), ['PJP', 'SRS', 'ICI'], {
-    P: '#minecraft:planks', J: ks('wooden_joint'), S: gt('iron_plate'), R: 'kubejs:turned_spindle',
+    P: '#minecraft:planks', J: ks('wooden_joint'), S: gt('iron_plate'), R: 'gtceu:gregsingularity_turned_spindle',
     I: ks('shaft_bushing'), C: mc('redstone')
   })
   shaped('machine_press_die', mold, ['PPP', 'PSP', 'IHI'], {
@@ -176,10 +176,10 @@ ServerEvents.recipes(event => {
     P: plate, H: '#zero_shift:crafting_hammers', F: frame, I: gt('lv_machine_hull'), C: lvCircuit, L: lining
   }).damageIngredient('#zero_shift:crafting_hammers')
   shaped('lv_muffler_hatch', gt('lv_muffler_hatch'), ['PLP', 'FHF', 'BCB'], {
-    P: plate, L: lining, F: frame, H: gt('lv_machine_hull'), B: gt('bronze_small_fluid_pipe'), C: 'kubejs:hearth_bellows'
+    P: plate, L: lining, F: frame, H: gt('lv_machine_hull'), B: gt('bronze_small_fluid_pipe'), C: 'gtceu:gregsingularity_hearth_bellows'
   })
   assemble('lv_input_hatch', gt('lv_input_hatch'),
-    [lvHull, '2x ' + pipe, gt('bronze_drum'), '2x ' + seam, frame, 'kubejs:hand_pump_barrel'], 560, 24, 250)
+    [lvHull, '2x ' + pipe, gt('bronze_drum'), '2x ' + seam, frame, 'gtceu:gregsingularity_hand_pump_barrel'], 560, 24, 250)
   assemble('lv_output_hatch', gt('lv_output_hatch'),
     [lvHull, '2x ' + pipe, gt('bronze_drum'), '2x ' + seam, frame, gt('lv_conveyor_module')], 560, 24, 250)
   wash('wash_bauxite', gt('crushed_bauxite_ore'), ks('washed_bauxite'))

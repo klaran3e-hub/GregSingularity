@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-  const ks = id => 'kubejs:' + id
+  const ks = id => global.gsItemId(id)
   const gt = id => 'gtceu:' + id
   const prefix = 'zero_shift:iv_electronics/'
   const cleanrooms = Java.loadClass('com.gregtechceu.gtceu.api.machine.multiblock.CleanroomType')

@@ -3,7 +3,7 @@
   default_quest_shape: ""
   filename: "railway"
   group: "468EF37A10F16FBE"
-  icon: "kubejs:rail_delivery_receipt"
+  icon: "gtceu:gregsingularity_rail_delivery_receipt"
   title: "Железная дорога"
   id: "4307DF0AEB1A048B"
   order_index: 16
@@ -29,7 +29,7 @@
       tasks: [{
         id: "40452CC001D8A490"
         type: "item"
-        item: "kubejs:rail_profile_blank"
+        item: "gtceu:gregsingularity_rail_profile_blank"
         count: 4L
       }]
       rewards: [{
@@ -51,7 +51,7 @@
       tasks: [{
         id: "407908CB6FED3603"
         type: "item"
-        item: "kubejs:rolled_rail"
+        item: "gtceu:gregsingularity_rolled_rail"
         count: 8L
       }]
       rewards: [{
@@ -73,7 +73,7 @@
       tasks: [{
         id: "4215D1E632E0E6EC"
         type: "item"
-        item: "kubejs:treated_sleeper"
+        item: "gtceu:gregsingularity_treated_sleeper"
         count: 8L
       }]
       rewards: [{
@@ -140,7 +140,7 @@
       tasks: [{
         id: "4410171615BDF076"
         type: "item"
-        item: "kubejs:traction_housing"
+        item: "gtceu:gregsingularity_traction_housing"
       }]
       rewards: [{
         id: "4D4D79C7F85F68DF"
@@ -205,7 +205,7 @@
       tasks: [{
         id: "4EED245F704C7AC2"
         type: "item"
-        item: "kubejs:sealed_refractory_crate"
+        item: "gtceu:gregsingularity_sealed_refractory_crate"
         count: 8L
       }]
       rewards: [{
@@ -227,7 +227,7 @@
       tasks: [{
         id: "47A67C698E0C28BA"
         type: "item"
-        item: "kubejs:rail_waybill"
+        item: "gtceu:gregsingularity_rail_waybill"
       }]
       rewards: [{
         id: "41852F40357CF46D"
@@ -248,7 +248,7 @@
       tasks: [{
         id: "48095C99D70332F5"
         type: "item"
-        item: "kubejs:rail_delivery_receipt"
+        item: "gtceu:gregsingularity_rail_delivery_receipt"
       }]
       rewards: [{
         id: "451C748E218A5BF9"
@@ -270,7 +270,7 @@
       tasks: [{
         id: "4E8037010BFC99E2"
         type: "item"
-        item: "kubejs:rail_delivery_receipt"
+        item: "gtceu:gregsingularity_rail_delivery_receipt"
         count: 2L
       }]
       rewards: [{
@@ -293,7 +293,7 @@
       tasks: [{
         id: "45788C81CA3E71AD"
         type: "item"
-        item: "kubejs:rolled_rail"
+        item: "gtceu:gregsingularity_rolled_rail"
         count: 24L
       }]
       rewards: [{
@@ -316,7 +316,7 @@
       tasks: [{
         id: "46C86899135BCE74"
         type: "item"
-        item: "kubejs:treated_sleeper"
+        item: "gtceu:gregsingularity_treated_sleeper"
         count: 24L
       }]
       rewards: [{
@@ -362,7 +362,7 @@
       tasks: [{
         id: "4D736A613FACC41C"
         type: "item"
-        item: "kubejs:rail_waybill"
+        item: "gtceu:gregsingularity_rail_waybill"
         count: 3L
       }]
       rewards: [{

@@ -13,7 +13,7 @@ StartupEvents.registry('item', event => {
   global.gtibdPlanetaryMills.forEach(site => {
     ;['grit','washed','heavy','crystal','assay'].forEach(form => {
       const id = 'mill_' + site.id + '_' + form
-      event.create(id).texture('kubejs:item/' + id)
+      event.create(global.gsItemId(id)).texture('kubejs:item/' + id)
     })
   })
 })
@@ -25,6 +25,6 @@ StartupEvents.registry('fluid', event => {
 })
 StartupEvents.registry('block', event => {
   for (const id of ["moon_desh_breccia","mercury_vitreous_lode","mars_ostrum_breccia","venus_calorite_lode","glacio_cryolite_lens"])
-    event.create(id).stoneSoundType().hardness(5).resistance(7).requiresTool(true).textureAll('kubejs:block/'+id)
+    event.create(global.gsItemId(id)).stoneSoundType().hardness(5).resistance(7).requiresTool(true).textureAll('kubejs:block/'+id)
       .tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_diamond_tool')
 })

@@ -10,7 +10,7 @@
           "block": "minecraft:stone"
         },
         "state": {
-          "Name": "kubejs:titan_seam_core"
+          "Name": "ad_astra:gregsingularity_titan_seam_core"
         }
       }
     ]

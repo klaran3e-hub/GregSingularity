@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-  const ks = name => 'kubejs:' + name
+  const ks = name => global.gsItemId(name)
   const mc = name => 'minecraft:' + name
   const gt = name => 'gtceu:' + name
 
@@ -38,7 +38,7 @@ ServerEvents.recipes(event => {
     grit, grit, binder, tile, ks('pressed_insulation')
   ], purpur, 300)
   assemble('form_purpur_pillar', [
-    '3x ' + purpur, '2x ' + tile, '2x ' + gasket, '2x ' + ks('rail_fastener'), 'kubejs:pressed_steel_frame'
+    '3x ' + purpur, '2x ' + tile, '2x ' + gasket, '2x ' + ks('rail_fastener'), 'gtceu:gregsingularity_pressed_steel_frame'
   ], '2x minecraft:purpur_pillar', 880).inputFluids(Fluid.of(lubricant, 300))
   const stoneForms = [
     ['end_stone_bricks', 'end_stone_brick', [

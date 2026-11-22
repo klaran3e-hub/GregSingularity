@@ -1,6 +1,6 @@
 if (typeof Ponder !== 'undefined') Ponder.registry(event => {
   const gt = id => 'gtceu:' + id
-  const k = id => 'kubejs:zpm_' + id
+  const k = id => global.gsItemId('zpm_' + id)
   const blue = [0.37,0.74,0.78], grey = [0.55,0.55,0.36], orange = [0.98,0.45,0.20]
   function place(scene, pos, state) {
     scene.world.setBlock(pos, state, false)
@@ -44,12 +44,12 @@ if (typeof Ponder !== 'undefined') Ponder.registry(event => {
       const tank = station(scene,4,'zpm_quantum_tank')
       explain(scene,tank,'Для квантового бака ZPM собери четыре платы, четыре мембраны Европы и две пластинки Гласио. Добавь их к насосам и шинам хранения.',k('europa_membrane'),'ram')
     })
-  event.create([k('europa_membrane'),k('glacio_lamella'),'kubejs:europa_rift_core'])
+  event.create([k('europa_membrane'),k('glacio_lamella'),'ad_astra:gregsingularity_europa_rift_core'])
     .scene('gtibd_zpm_brine','Рассол для двух космопортов', scene => {
       scene.showBasePlate()
       const refinery = station(scene,0,'zpm_chemical_reactor')
       stream(scene,[0.5,1.8,1.1],[0,0,0.07],blue)
-      explain(scene,refinery,'На Церере загрузи два концентрата и сапфировую пыль. Подай литр дистиллята и 250 мБ оптического теплоносителя. Отведи литр рассола и нагретую жидкость раздельно.','kubejs:luv_ceres_salt_concentrate','wash')
+      explain(scene,refinery,'На Церере загрузи два концентрата и сапфировую пыль. Подай литр дистиллята и 250 мБ оптического теплоносителя. Отведи литр рассола и нагретую жидкость раздельно.','ad_astra:gregsingularity_luv_ceres_salt_concentrate','wash')
       const cutter = station(scene,2,'zpm_cutter')
       stream(scene,[1,1.8,2.5],[0.08,0,0],blue)
       explain(scene,cutter,'На Гласио закажи две пластинки. Отрезной станок расходует кристалл и пол-литра чистого рассола.',k('glacio_lamella'),'mill')
@@ -57,7 +57,7 @@ if (typeof Ponder !== 'undefined') Ponder.registry(event => {
       stream(scene,[4.5,1.7,1.2],[0,0,0.06],blue)
       explain(scene,bath,'На Европе промой прокалённый концентрат в 500 мБ рассола. В ME должны вернуться две мембраны и 500 мБ отработанного рассола.',k('europa_membrane'),'wash')
       stream(scene,[3.9,1.8,2.5],[-0.10,0,0],grey)
-      explain(scene,refinery,'Вези обратку на Цереру. Добавь один солевой концентрат и 500 мБ дистиллята. Реактор заполнит литровый бак чистым рассолом.','kubejs:luv_ceres_salt_concentrate','wash')
+      explain(scene,refinery,'Вези обратку на Цереру. Добавь один солевой концентрат и 500 мБ дистиллята. Реактор заполнит литровый бак чистым рассолом.','ad_astra:gregsingularity_luv_ceres_salt_concentrate','wash')
     })
   event.create([k('preload_frame'),k('tempered_frame')])
     .scene('gtibd_zpm_frame','Испытание парных рам', scene => {
@@ -74,13 +74,13 @@ if (typeof Ponder !== 'undefined') Ponder.registry(event => {
       stream(scene,[2.6,1.7,2.9],[0.05,0,0.045],grey)
       explain(scene,output,'Импортируй две испытанные рамы и литр тёплого теплоносителя. Оба результата должны быть указаны в шаблоне ME.',k('tempered_frame'),'ram')
       const regen = station(scene,4,'zpm_chemical_reactor')
-      explain(scene,regen,'Регенерируй теплоноситель с 250 мБ гелия. Кассету с Марса оставь в станке, в шаблон её включать не нужно.','kubejs:luv_cryo_cartridge','wash')
+      explain(scene,regen,'Регенерируй теплоноситель с 250 мБ гелия. Кассету с Марса оставь в станке, в шаблон её включать не нужно.','gtceu:gregsingularity_luv_cryo_cartridge','wash')
     })
-  event.create([k('europa_reticle'),k('europa_datum'),'kubejs:europa_phase_ceramic'])
+  event.create([k('europa_reticle'),k('europa_datum'),'ad_astra:gregsingularity_europa_phase_ceramic'])
     .scene('gtibd_zpm_datum','От мембраны до записанной сферы', scene => {
       scene.showBasePlate()
       const press=station(scene,0,'zpm_forming_press')
-      explain(scene,press,'На Европе запрессуй мембрану, пластинку Гласио, два оливина и два листа европия. Одного цикла хватает на две керамические пластины.','kubejs:europa_phase_ceramic','ram')
+      explain(scene,press,'На Европе запрессуй мембрану, пластинку Гласио, два оливина и два листа европия. Одного цикла хватает на две керамические пластины.','ad_astra:gregsingularity_europa_phase_ceramic','ram')
       const laser=station(scene,1,'zpm_laser_engraver')
       stream(scene,[1.5,2.9,2.5],[0,-0.08,0],blue)
       explain(scene,laser,'Закрепи венерианскую призму в гравёре на Европе. Каждая керамическая пластина становится оптической сеткой.',k('europa_reticle'),'mill')
@@ -94,9 +94,9 @@ if (typeof Ponder !== 'undefined') Ponder.registry(event => {
       scene.scaleSceneView(0.58)
       scene.encapsulateBounds([10,4,3])
       scene.showBasePlate()
-      const input = [gt('zpm_machine_hull'),gt('uv_machine_casing'),'kubejs:uv_phase_interlock',
-        'kubejs:uv_flux_shunt',gt('vanadium_gallium_single_wire'),gt('wetware_processor_assembly'),
-        'kubejs:uv_structural_laminate',k('europa_datum'),k('tempered_frame')]
+      const input = [gt('zpm_machine_hull'),gt('uv_machine_casing'),'gtceu:gregsingularity_uv_phase_interlock',
+        'gtceu:gregsingularity_uv_flux_shunt',gt('vanadium_gallium_single_wire'),gt('wetware_processor_assembly'),
+        'gtceu:gregsingularity_uv_structural_laminate',k('europa_datum'),k('tempered_frame')]
       for (let x=0; x<10; x++) {
         place(scene,[x,1,2],gt(x===9?'ulv_output_bus':'ulv_input_bus'))
         place(scene,[x,2,2],gt('assembly_line_unit'))

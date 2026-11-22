@@ -1,8 +1,8 @@
 const legacyFlintTools = {
-  'kubejs:flint_knife': 'gtceu:flint_knife',
-  'kubejs:flint_axe': 'gtceu:flint_axe',
-  'kubejs:flint_pickaxe': 'gtceu:flint_pickaxe',
-  'kubejs:stone_hammer': 'gtceu:flint_hammer'
+  'gtceu:gregsingularity_flint_knife': 'gtceu:flint_knife',
+  'gtceu:gregsingularity_flint_axe': 'gtceu:flint_axe',
+  'gtceu:gregsingularity_flint_pickaxe': 'gtceu:flint_pickaxe',
+  'gtceu:gregsingularity_stone_hammer': 'gtceu:flint_hammer'
 }
 const FlintEnchantments = Java.loadClass('net.minecraft.world.item.enchantment.EnchantmentHelper')
 

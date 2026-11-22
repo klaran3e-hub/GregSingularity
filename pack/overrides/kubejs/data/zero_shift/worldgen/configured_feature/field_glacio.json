@@ -10,7 +10,7 @@
           "tag": "ad_astra:glacio_stone_replaceables"
         },
         "state": {
-          "Name": "kubejs:glacio_cryolite_lens"
+          "Name": "ad_astra:gregsingularity_glacio_cryolite_lens"
         }
       }
     ]

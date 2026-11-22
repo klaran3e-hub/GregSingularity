@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-  const ks = name => 'kubejs:' + name
+  const ks = name => global.gsItemId(name)
   const gt = name => 'gtceu:' + name
   const lv = name => gt('lv_' + name)
   const pnc = name => 'pneumaticcraft:' + name
@@ -33,7 +33,7 @@ ServerEvents.recipes(event => {
   const stoneBase = pnc('stone_base')
   const compressedGear = pnc('compressed_iron_gear')
   const precision = 'gtceu:lv_robot_arm'
-  const steelComponent = 'kubejs:pressed_steel_frame'
+  const steelComponent = 'gtceu:gregsingularity_pressed_steel_frame'
   const joint = ks('sealed_boiler_joint')
   const control = 'gtceu:basic_electronic_circuit'
 
@@ -82,18 +82,18 @@ ServerEvents.recipes(event => {
     precision, '2x ' + steelComponent, '2x ' + joint, stoneBase
   ], pnc('air_compressor'), 920, 28, 500)
   assemble('manual_compressor', [
-    '2x ' + compressedIron, tube, stoneBase, lv('electric_piston'), 'kubejs:gear_rim', compressedGear, joint
+    '2x ' + compressedIron, tube, stoneBase, lv('electric_piston'), 'gtceu:gregsingularity_gear_rim', compressedGear, joint
   ], pnc('manual_compressor'), 680, 24, 250)
   assemble('pressure_gauge', [
     compressedIron, '2x ' + foil, lv('sensor'), 'minecraft:compass', ks('glass_tube_blank'), joint
   ], gauge, 520, 24, 150)
   assemble('pressure_gauge_module', [gauge, tube, control, lv('emitter'), foil, tape],
     gaugeModule, 640, 24, 200)
-  assemble('safety_tube_module', [gauge, tube, 'kubejs:gear_rim', lv('fluid_regulator'), '2x ' + joint],
+  assemble('safety_tube_module', [gauge, tube, 'gtceu:gregsingularity_gear_rim', lv('fluid_regulator'), '2x ' + joint],
     safety, 680, 28, 250)
   assemble('regulator_tube_module', [safety, tube, control, precision, '2x ' + lv('voltage_coil')],
     regulator, 800, 28, 350)
-  assemble('redstone_module', [gaugeModule, '2x ' + control, 'kubejs:copper_contact_strip', tube, '2x ' + foil],
+  assemble('redstone_module', [gaugeModule, '2x ' + control, 'gtceu:gregsingularity_copper_contact_strip', tube, '2x ' + foil],
     pnc('redstone_module'), 680, 28, 250)
   assemble('flow_detector_module', [gaugeModule, lv('fluid_regulator'), 'minecraft:compass', tube, '2x ' + joint],
     pnc('flow_detector_module'), 760, 28, 250)
@@ -104,7 +104,7 @@ ServerEvents.recipes(event => {
     G: 'minecraft:glass_pane', P: tape, W: wall, I: compressedIron
   })
   assemble('pressure_chamber_valve', [
-    '2x ' + compressedIron, tube, wall, '2x ' + joint, steelComponent, safety, 'kubejs:gear_rim'
+    '2x ' + compressedIron, tube, wall, '2x ' + joint, steelComponent, safety, 'gtceu:gregsingularity_gear_rim'
   ], pnc('pressure_chamber_valve'), 660, 28, 250)
   assemble('pressure_chamber_interface', [
     '2x ' + compressedIron, wall, tube, lv('conveyor_module'), lvCircuit, 'gtceu:lv_robot_arm', frame, '2x ' + tape
@@ -116,7 +116,7 @@ ServerEvents.recipes(event => {
   assemble('charging_module', [station, tube, gaugeModule, control, '2x ' + gasket, precision],
     pnc('charging_module'), 760, 28, 250)
   assemble('air_canister', [
-    '2x ' + compressedIron, '2x ' + tube, gauge, 'kubejs:gear_rim', '2x ' + gasket, steelComponent
+    '2x ' + compressedIron, '2x ' + tube, gauge, 'gtceu:gregsingularity_gear_rim', '2x ' + gasket, steelComponent
   ], pnc('air_canister'), 740, 28, 300)
   assemble('thermal_compressor', [
     pnc('air_compressor'), ks('heat_exchange_core'), '2x ' + pnc('heat_pipe'), regulator, '2x ' + pnc('reinforced_pressure_tube'),
@@ -165,7 +165,7 @@ ServerEvents.recipes(event => {
   ], '2x ' + mvCircuit, 760, 96, 400)
   assemble('mv_electric_pump', [
     mvMotor, lv('electric_pump'), '2x ' + tube, '2x ' + gasket, '2x ' + cable, aluminium,
-    ks('balanced_turbine_rotor'), 'kubejs:hand_pump_barrel', steelComponent
+    ks('balanced_turbine_rotor'), 'gtceu:gregsingularity_hand_pump_barrel', steelComponent
   ], mvPump, 780, 96, 450)
   assemble('mv_chemical_reactor', [
     mvHull, lv('chemical_reactor'), '2x ' + mvPump, '3x ' + mvCircuit, '2x ' + lining, '2x ' + gasket,

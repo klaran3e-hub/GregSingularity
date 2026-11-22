@@ -3,7 +3,7 @@
   default_quest_shape: ""
   filename: "post_uv_operations"
   group: "49C57C767912BC15"
-  icon: "kubejs:post_uv_operations_certificate"
+  icon: "gtceu:gregsingularity_post_uv_operations_certificate"
   title: "Эксплуатация после UV"
   id: "4FA9B89ED1A1E937"
   order_index: 10
@@ -29,7 +29,7 @@
       tasks: [{
         id: "42C2CDA3A2CA21C7"
         type: "item"
-        item: "kubejs:uv_commissioning_report"
+        item: "gtceu:gregsingularity_uv_commissioning_report"
       }]
       rewards: [{
         id: "461C15F433D74129"
@@ -72,7 +72,7 @@
       tasks: [{
         id: "40E48351C331FDF4"
         type: "item"
-        item: "kubejs:post_uv_operations_permit"
+        item: "gtceu:gregsingularity_post_uv_operations_permit"
         count: 16L
       }]
       rewards: [{
@@ -116,7 +116,7 @@
       tasks: [{
         id: "4572953F17CADBB6"
         type: "item"
-        item: "kubejs:post_uv_bus_diagnostic"
+        item: "gtceu:gregsingularity_post_uv_bus_diagnostic"
         count: 4L
       }]
       rewards: [{
@@ -160,7 +160,7 @@
       tasks: [{
         id: "4F3653B8448FB6BF"
         type: "item"
-        item: "kubejs:post_uv_reserve_load_matrix"
+        item: "gtceu:gregsingularity_post_uv_reserve_load_matrix"
         count: 4L
       }]
       rewards: [{
@@ -203,7 +203,7 @@
       tasks: [{
         id: "4C1FD7DD7850EA6C"
         type: "item"
-        item: "kubejs:post_uv_coolant_isolation_module"
+        item: "gtceu:gregsingularity_post_uv_coolant_isolation_module"
         count: 4L
       }]
       rewards: [{
@@ -247,7 +247,7 @@
       tasks: [{
         id: "4819F74B69CAB975"
         type: "item"
-        item: "kubejs:post_uv_logistics_clock"
+        item: "gtceu:gregsingularity_post_uv_logistics_clock"
         count: 4L
       }]
       rewards: [{
@@ -269,7 +269,7 @@
       tasks: [{
         id: "4F03D4BFDF9364AC"
         type: "item"
-        item: "kubejs:post_uv_load_acceptance_record"
+        item: "gtceu:gregsingularity_post_uv_load_acceptance_record"
         count: 2L
       }]
       rewards: [{
@@ -291,7 +291,7 @@
       tasks: [{
         id: "48097DBF3CC1614B"
         type: "item"
-        item: "kubejs:post_uv_supply_sync_record"
+        item: "gtceu:gregsingularity_post_uv_supply_sync_record"
         count: 4L
       }]
       rewards: [{
@@ -313,7 +313,7 @@
       tasks: [{
         id: "410762652F1DF360"
         type: "item"
-        item: "kubejs:post_uv_reserve_bleed_record"
+        item: "gtceu:gregsingularity_post_uv_reserve_bleed_record"
         count: 4L
       }]
       rewards: [{
@@ -358,7 +358,7 @@
       tasks: [{
         id: "4FB26D9055743FFD"
         type: "item"
-        item: "kubejs:post_uv_operations_certificate"
+        item: "gtceu:gregsingularity_post_uv_operations_certificate"
       }]
       rewards: [{
         id: "4DC0E7EF5CEF9C0A"

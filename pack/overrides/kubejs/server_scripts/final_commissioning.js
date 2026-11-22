@@ -1,7 +1,7 @@
 ;(function () {
   const rootKey = 'GTIBDFinalShift'
   const bindingKey = 'GTIBDFinalBinding'
-  const prefix = 'kubejs:final_'
+  const item = id => global.gsItemId('final_' + id)
   const bankId = 'gtceu:uv_battery_buffer_4x'
   const concurrentOutput = 24000000
   const reserveStart = 3000000000
@@ -215,12 +215,12 @@
       }
     }
     const inventory = player.getInventory()
-    if (countIn(inventory, prefix + 'backup_module') < 1 ||
-        cargo.some(id => countIn(inventory, prefix + id) < coldCargo)) {
+    if (countIn(inventory, item('backup_module')) < 1 ||
+        cargo.some(id => countIn(inventory, item(id)) < coldCargo)) {
       tell(player, 'Нужен модуль резерва и по шестнадцать грузовых партий из каждого измерения.')
       return
     }
-    cargo.forEach(id => consume(inventory, prefix + id, coldCargo))
+    cargo.forEach(id => consume(inventory, item(id), coldCargo))
     beginPhase(state, 'black_start')
     state.putInt('claimed', 0)
     store(player, state)
@@ -233,7 +233,7 @@
     for (let index = 0; index < records.length; index++) {
       let entry = records[index]
       if ((mask & entry[1]) === 0) continue
-      if (!inventory.add(Item.of(prefix + entry[0]))) {
+      if (!inventory.add(Item.of(item(entry[0])))) {
         tell(player, 'Для протокола нужно свободное место в инвентаре.')
         return
       }
@@ -262,7 +262,7 @@
   function click(event) {
     if (event.level.isClientSide() || String(event.hand) !== 'MAIN_HAND' || event.player instanceof FakePlayer) return
     const id = event.item.id
-    if (![prefix + 'control_console', prefix + 'start_key', prefix + 'backup_module'].includes(id)) return
+    if (![item('control_console'), item('start_key'), item('backup_module')].includes(id)) return
     handleClick(event, id)
     event.cancel()
   }
@@ -274,7 +274,7 @@
     }
     const state = stateOf(player)
     const crouch = player.isShiftKeyDown()
-    if (id === prefix + 'control_console' && crouch) {
+    if (id === item('control_console') && crouch) {
       bind(event, state)
       return
     }
@@ -283,7 +283,7 @@
       return
     }
     const phase = state.getString('phase')
-    if (id === prefix + 'backup_module' && crouch) {
+    if (id === item('backup_module') && crouch) {
       if (phase === 'complete' && (state.getInt('earned') & ~state.getInt('claimed')) !== 0) {
         tell(player, 'Сначала получи все протоколы пультом. Затем можно открыть новую смену.')
         return
@@ -299,12 +299,12 @@
       return
     }
     const site = readSite(event.level, state)
-    if (id === prefix + 'control_console') {
+    if (id === item('control_console')) {
       if (!crouch) claim(player, state)
       status(player, state, site)
       return
     }
-    if (id !== prefix + 'start_key' || !crouch) return
+    if (id !== item('start_key') || !crouch) return
     if (site.reason) {
       tell(player, site.reason)
       return
@@ -345,7 +345,7 @@
     let pending = 0
     for (let slot = 0; slot < handler.getSlots(); slot++) {
       let stack = handler.getStackInSlot(slot)
-      if (stack.id !== prefix + role + '_lot') continue
+      if (stack.id !== item(role + '_lot')) continue
       let size = stack.getCount()
       observed += size
       let remainder = ItemHandlerHelper.insertItemStacked(archive, stack.copy(), true)

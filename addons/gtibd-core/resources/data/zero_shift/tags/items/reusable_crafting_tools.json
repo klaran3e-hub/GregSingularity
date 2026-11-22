@@ -11,9 +11,9 @@
     "#gtceu:tools/crafting_crowbars",
     "#gtceu:tools/crafting_mallets",
     "#gtceu:tools/crafting_wrenches",
-    "kubejs:fire_drill",
-    "kubejs:stone_chisel",
-    "kubejs:bench_soldering_iron",
-    "kubejs:forging_saddle"
+    "gtceu:gregsingularity_fire_drill",
+    "gtceu:gregsingularity_stone_chisel",
+    "gtceu:gregsingularity_bench_soldering_iron",
+    "gtceu:gregsingularity_forging_saddle"
   ]
 }

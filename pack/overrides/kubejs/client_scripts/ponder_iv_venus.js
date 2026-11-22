@@ -1,6 +1,6 @@
 if (typeof Ponder !== 'undefined') {
   Ponder.registry(event => {
-    const k = id => 'kubejs:'+id, gt = id => 'gtceu:'+id, ad = id => 'ad_astra:'+id
+    const k = id => global.gsItemId(id), gt = id => 'gtceu:'+id, ad = id => 'ad_astra:'+id
     function block(scene,x,y,z,id) {
       const pos=[x,y,z]
       scene.world.setBlock(pos,id,false)

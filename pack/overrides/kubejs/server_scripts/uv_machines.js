@@ -2,7 +2,7 @@ ServerEvents.recipes(event => {
   const gt = id => 'gtceu:' + id
   const zpm = id => gt('zpm_' + id)
   const uv = id => gt('uv_' + id)
-  const part = id => 'kubejs:uv_' + id
+  const part = id => global.gsItemId('uv_' + id)
   const prefix = 'zero_shift:uv_machines/uv_'
   const plate = gt('tritanium_plate')
   const americium = gt('americium_plate')
@@ -16,8 +16,8 @@ ServerEvents.recipes(event => {
   const shunt = part('flux_shunt')
   const interlock = part('phase_interlock')
   const reserve = part('pulse_reserve')
-  const optics = 'kubejs:luv_optical_core'
-  const gasket = 'kubejs:vacuum_gasket'
+  const optics = 'gtceu:gregsingularity_luv_optical_core'
+  const gasket = 'gtceu:gregsingularity_vacuum_gasket'
   const lubricant = gt('lubricant')
   const coolant = 'kubejs:chilled_vacuum_coolant'
   const shield = 'kubejs:vacuum_shield_gas'
@@ -58,23 +58,23 @@ ServerEvents.recipes(event => {
 
   // The first UV factory and its power interfaces are produced on ZPM.
   upgrade('machine_casing', ['12x ' + plate, '8x ' + americium, '6x ' + laminate,
-    '4x kubejs:zpm_neutron_laminate', '12x ' + gasket, '2x gtceu:steel_frame',
-    '4x pneumaticcraft:reinforced_pressure_tube', 'kubejs:zpm_glacio_lamella'], 5900, 106496, coolant, 6000)
+    '4x gtceu:gregsingularity_zpm_neutron_laminate', '12x ' + gasket, '2x gtceu:steel_frame',
+    '4x pneumaticcraft:reinforced_pressure_tube', 'ad_astra:gregsingularity_zpm_glacio_lamella'], 5900, 106496, coolant, 6000)
   clearPrevious('machine_hull')
   const hullLine = event.recipes.gtceu.assembly_line(prefix + 'machine_hull')
   const hullInputs = ['2x ' + zpm('machine_hull'), uv('machine_casing'), '4x ' + interlock,
     '6x ' + shunt, '12x ' + winding, '6x ' + zpmCircuit, '6x ' + laminate,
-    'kubejs:zpm_europa_datum', '2x kubejs:zpm_tempered_frame']
+    'ad_astra:gregsingularity_zpm_europa_datum', '2x gtceu:gregsingularity_zpm_tempered_frame']
   hullInputs.forEach(stack => hullLine.itemInputs(stack))
   hullLine.inputFluids(Fluid.of(lubricant, 5400), Fluid.of(gt('soldering_alloy'), 2304),
     Fluid.of('kubejs:zpm_ceres_brine', 2000)).itemOutputs(hull).duration(7200).EUt(122880)
-    .stationResearch(b => b.researchStack(Item.of('kubejs:zpm_europa_datum'))
+    .stationResearch(b => b.researchStack(Item.of('ad_astra:gregsingularity_zpm_europa_datum'))
       .dataStack(Item.of(gt('data_orb'))).CWUt(24, 48000).EUt(114688))
   upgrade('electric_motor', ['6x ' + shunt, '8x ' + plate, '6x ' + americium,
     '12x ' + winding, '4x ' + interlock, '6x ' + laminate], 5100, 114688)
-  upgrade('electric_pump', ['2x ' + motor, '6x kubejs:iv_cooling_jacket', '8x ' + plate,
+  upgrade('electric_pump', ['2x ' + motor, '6x gtceu:gregsingularity_iv_cooling_jacket', '8x ' + plate,
     '6x ' + laminate, '6x ' + shunt, '12x ' + gasket], 5800, 114688, coolant, 6200)
-  upgrade('electric_piston', ['2x ' + motor, '6x kubejs:iv_servo_core', '8x ' + plate,
+  upgrade('electric_piston', ['2x ' + motor, '6x gtceu:gregsingularity_iv_servo_core', '8x ' + plate,
     '6x ' + americium, '6x ' + shunt, '6x ' + laminate], 5700, 114688)
   upgrade('conveyor_module', ['2x ' + motor, '6x ' + shunt, '8x ' + plate,
     '6x ' + laminate, '12x ' + winding, '4x ' + interlock], 5900, 118784)
@@ -103,7 +103,7 @@ ServerEvents.recipes(event => {
       '6x ' + interlock, '12x ' + winding, '8x ' + laminate], 6500, 126976, coolant, 6500)
     upgrade(energy + '_16a', ['4x ' + uv(energy + '_4a'), '8x ' + voltageCoil, '12x ' + shunt,
       '8x ' + interlock, '6x ' + hexCable, '12x ' + laminate], 7600, 393216, coolant, 8200)
-    upgrade(fluid, [hull, '2x ' + pump, '6x kubejs:iv_cooling_jacket',
+    upgrade(fluid, [hull, '2x ' + pump, '6x gtceu:gregsingularity_iv_cooling_jacket',
       '8x ' + plate, '6x ' + laminate, '12x ' + gasket], 5700, 122880, coolant, 6400)
     upgrade(bus, [hull, '2x ' + conveyor, '6x ' + interlock, '8x ' + plate,
       '6x ' + laminate, '4x ae2:cell_component_256k'], 5700, 122880)
@@ -124,10 +124,10 @@ ServerEvents.recipes(event => {
     [pump, 'pneumaticcraft:regulator_tube_module', coolant, 7800, ['autoclave', 'brewery', 'canner', 'chemical_bath', 'distillery', 'electrolyzer',
       'extractor', 'fermenter', 'fluid_heater', 'fluid_passthrough_hatch', 'fluid_regulator',
       'fluid_solidifier', 'gas_collector', 'ore_washer']],
-    [piston, 'kubejs:zpm_die_cartridge', lubricant, 7600, ['bender', 'compressor', 'cutter', 'extruder', 'forge_hammer', 'forming_press',
+    [piston, 'gtceu:gregsingularity_zpm_die_cartridge', lubricant, 7600, ['bender', 'compressor', 'cutter', 'extruder', 'forge_hammer', 'forming_press',
       'lathe', 'macerator', 'rock_crusher', 'wiremill']],
     [motor, 'gtceu:good_electronic_circuit', lubricant, 8400, ['mixer', 'rotor_holder', 'sifter', 'thermal_centrifuge']],
-    [shunt, 'kubejs:heater_ribbon', shield, 8000, ['alloy_smelter', 'arc_furnace', 'electric_furnace', 'hermetic_casing', 'muffler_hatch']],
+    [shunt, 'gtceu:gregsingularity_heater_ribbon', shield, 8000, ['alloy_smelter', 'arc_furnace', 'electric_furnace', 'hermetic_casing', 'muffler_hatch']],
     [conveyor, 'gtceu:mv_sensor', lubricant, 6900, ['item_passthrough_hatch', 'packer']],
     [emitter, 'gtceu:hv_voltage_coil', gt('soldering_alloy'), 8200, ['electromagnetic_separator', 'laser_engraver', 'polarizer', 'world_accelerator']],
     [sensor, 'pneumaticcraft:pressure_gauge_module', gt('soldering_alloy'), 7600, ['scanner', 'solar_panel']]
@@ -189,7 +189,7 @@ ServerEvents.recipes(event => {
   upgrade('parallel_hatch', [hull, '4x ' + robot, '8x ' + interlock, '6x ' + uvCircuit,
     '6x ae2:pattern_provider', '6x ' + quadCable], 8000, 393216)
   upgrade('quantum_chest', [hull, '4x ' + conveyor, '8x ' + interlock, '6x ' + uvCircuit,
-    '6x kubejs:zpm_storage_backplane', '6x ae2:storage_bus'], 7600, 393216, shield, 7800)
+    '6x gtceu:gregsingularity_zpm_storage_backplane', '6x ae2:storage_bus'], 7600, 393216, shield, 7800)
   upgrade('quantum_tank', [hull, '4x ' + pump, '8x ' + laminate, '8x ' + interlock,
-    '6x kubejs:zpm_storage_backplane', '6x ae2:storage_bus'], 7700, 393216, coolant, 7800)
+    '6x gtceu:gregsingularity_zpm_storage_backplane', '6x ae2:storage_bus'], 7700, 393216, coolant, 7800)
 })

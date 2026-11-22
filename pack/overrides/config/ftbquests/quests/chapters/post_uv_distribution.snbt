@@ -3,7 +3,7 @@
   default_quest_shape: ""
   filename: "post_uv_distribution"
   group: "49C57C767912BC15"
-  icon: "kubejs:distribution_network_certificate"
+  icon: "gtceu:gregsingularity_distribution_network_certificate"
   title: "Распределённое производство"
   id: "4957C0A0869D733B"
   order_index: 12
@@ -51,7 +51,7 @@
       tasks: [{
         id: "42AE90FD60890E9E"
         type: "item"
-        item: "kubejs:distribution_distribution_license"
+        item: "gtceu:gregsingularity_distribution_distribution_license"
         count: 4L
       }]
       rewards: [{
@@ -73,7 +73,7 @@
       tasks: [{
         id: "4946A46411E9573D"
         type: "item"
-        item: "kubejs:distribution_cargo_skeleton"
+        item: "gtceu:gregsingularity_distribution_cargo_skeleton"
         count: 16L
       }]
       rewards: [{
@@ -95,7 +95,7 @@
       tasks: [{
         id: "48E9D1D37DF60BA5"
         type: "item"
-        item: "kubejs:distribution_sealed_cell"
+        item: "gtceu:gregsingularity_distribution_sealed_cell"
         count: 16L
       }]
       rewards: [{
@@ -117,7 +117,7 @@
       tasks: [{
         id: "47C416C81DC85F5A"
         type: "item"
-        item: "kubejs:uv_neutronium_coupon"
+        item: "gtceu:gregsingularity_uv_neutronium_coupon"
         count: 576L
       }]
       rewards: [{
@@ -139,7 +139,7 @@
       tasks: [{
         id: "4EBABC62624B24A8"
         type: "item"
-        item: "kubejs:distribution_surface_feed"
+        item: "gtceu:gregsingularity_distribution_surface_feed"
         count: 144L
       }]
       rewards: [{
@@ -183,7 +183,7 @@
       tasks: [{
         id: "452F2B30F819235D"
         type: "item"
-        item: "kubejs:distribution_surface_calibration"
+        item: "gtceu:gregsingularity_distribution_surface_calibration"
         count: 16L
       }]
       rewards: [{
@@ -205,7 +205,7 @@
       tasks: [{
         id: "40C759BD2E7A1E19"
         type: "item"
-        item: "kubejs:distribution_surface_pressure_record"
+        item: "gtceu:gregsingularity_distribution_surface_pressure_record"
         count: 8L
       }]
       rewards: [{
@@ -227,7 +227,7 @@
       tasks: [{
         id: "4A7745247C65CFF3"
         type: "item"
-        item: "kubejs:zpm_nether_isotope_salt"
+        item: "gtceu:gregsingularity_zpm_nether_isotope_salt"
         count: 576L
       }]
       rewards: [{
@@ -249,7 +249,7 @@
       tasks: [{
         id: "4994661ABEA5214B"
         type: "item"
-        item: "kubejs:distribution_nether_feed"
+        item: "gtceu:gregsingularity_distribution_nether_feed"
         count: 144L
       }]
       rewards: [{
@@ -293,7 +293,7 @@
       tasks: [{
         id: "4EF3E5C37D400EA6"
         type: "item"
-        item: "kubejs:distribution_nether_calibration"
+        item: "gtceu:gregsingularity_distribution_nether_calibration"
         count: 16L
       }]
       rewards: [{
@@ -315,7 +315,7 @@
       tasks: [{
         id: "46DDF2384B1611E3"
         type: "item"
-        item: "kubejs:distribution_nether_pressure_record"
+        item: "gtceu:gregsingularity_distribution_nether_pressure_record"
         count: 8L
       }]
       rewards: [{
@@ -337,7 +337,7 @@
       tasks: [{
         id: "493791C0FC25E266"
         type: "item"
-        item: "kubejs:zpm_end_heavy_concentrate"
+        item: "gtceu:gregsingularity_zpm_end_heavy_concentrate"
         count: 576L
       }]
       rewards: [{
@@ -359,7 +359,7 @@
       tasks: [{
         id: "44DB444EF90927E6"
         type: "item"
-        item: "kubejs:distribution_end_feed"
+        item: "gtceu:gregsingularity_distribution_end_feed"
         count: 144L
       }]
       rewards: [{
@@ -403,7 +403,7 @@
       tasks: [{
         id: "48FC29B7FE52564D"
         type: "item"
-        item: "kubejs:distribution_end_calibration"
+        item: "gtceu:gregsingularity_distribution_end_calibration"
         count: 16L
       }]
       rewards: [{
@@ -425,7 +425,7 @@
       tasks: [{
         id: "4257C7F3965A36FA"
         type: "item"
-        item: "kubejs:distribution_end_pressure_record"
+        item: "gtceu:gregsingularity_distribution_end_pressure_record"
         count: 8L
       }]
       rewards: [{
@@ -469,7 +469,7 @@
       tasks: [{
         id: "4BC4DE9A5365EAA9"
         type: "item"
-        item: "kubejs:distribution_distribution_matrix"
+        item: "gtceu:gregsingularity_distribution_distribution_matrix"
         count: 4L
       }]
       rewards: [{
@@ -491,7 +491,7 @@
       tasks: [{
         id: "49B0DDE95A642EB9"
         type: "item"
-        item: "kubejs:distribution_load_fingerprint"
+        item: "gtceu:gregsingularity_distribution_load_fingerprint"
         count: 8L
       }]
       rewards: [{
@@ -536,7 +536,7 @@
       tasks: [{
         id: "4CD54F82181D5C6C"
         type: "item"
-        item: "kubejs:distribution_network_certificate"
+        item: "gtceu:gregsingularity_distribution_network_certificate"
       }]
       rewards: [{
         id: "4BFC980D09557BD8"

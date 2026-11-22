@@ -1,7 +1,7 @@
 ServerEvents.recipes(event => {
   const mc = id => 'minecraft:' + id
   const gt = id => 'gtceu:' + id
-  const ks = id => 'kubejs:' + id
+  const ks = id => global.gsItemId(id)
   const prefix = 'zero_shift:vanilla_workshop/'
   const iron = gt('iron_plate')
   const steel = gt('steel_plate')

@@ -50,11 +50,12 @@ GTCEuServerEvents.oreVeins(event => {
 
 ServerEvents.tags('item', event => {
   event.add('zero_shift:primitive_ores/copper', [
-    '#forge:raw_materials/copper', '#forge:raw_materials/chalcopyrite', '#forge:raw_materials/malachite'
+    '#forge:raw_materials/copper', '#forge:raw_materials/chalcopyrite', '#forge:raw_materials/malachite',
+    '#forge:raw_materials/bornite', '#forge:raw_materials/chalcocite', '#forge:raw_materials/tetrahedrite'
   ])
   event.add('zero_shift:primitive_ores/iron', [
     '#forge:raw_materials/iron', '#forge:raw_materials/goethite', '#forge:raw_materials/hematite',
-    '#forge:raw_materials/yellow_limonite', '#forge:raw_materials/magnetite'
+    '#forge:raw_materials/yellow_limonite', '#forge:raw_materials/magnetite', '#forge:raw_materials/pyrite'
   ])
   event.add('zero_shift:primitive_ores/tin', [
     '#forge:raw_materials/tin', '#forge:raw_materials/cassiterite', '#forge:raw_materials/cassiterite_sand'

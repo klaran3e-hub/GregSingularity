@@ -1,6 +1,6 @@
 ServerEvents.recipes(event => {
   const gt = id => 'gtceu:' + id
-  const part = id => 'kubejs:reclaim_' + id
+  const part = id => global.gsItemId('reclaim_' + id)
   const id = name => 'zero_shift:post_uv_reclamation/' + name
   const water = gt('distilled_water')
   const acid = gt('hydrochloric_acid')
@@ -22,19 +22,19 @@ ServerEvents.recipes(event => {
   const collector = part('recovered_collector')
   const witness = part('loop_witness')
   const certificate = part('reclamation_certificate')
-  const operations = 'kubejs:post_uv_operations_certificate'
+  const operations = 'gtceu:gregsingularity_post_uv_operations_certificate'
 
   function machine(type, name, duration, voltage) {
     return event.recipes.gtceu[type](id(name)).duration(duration).EUt(voltage)
   }
 
   global.fieldworkProcess(event, id('press_membrane_frame'), 'forming_press', {
-    ingredients: [{ item: 'kubejs:final_heavy_backplane' }],
+    ingredients: [{ item: 'gtceu:gregsingularity_final_heavy_backplane' }],
     results: [{ item: frame }]
   }, 126976)
 
   machine('autoclave', 'sinter_membranes', 9600, 458752)
-    .itemInputs('8x ' + frame, '8x kubejs:uv_structural_laminate')
+    .itemInputs('8x ' + frame, '8x gtceu:gregsingularity_uv_structural_laminate')
     .inputFluids(Fluid.of(water, 12800))
     .itemOutputs('4x ' + membrane)
 
@@ -45,20 +45,20 @@ ServerEvents.recipes(event => {
       { type: 'pneumaticcraft:stacked_item', item: membrane, count: 4 },
       { type: 'pneumaticcraft:stacked_item', item: gt('polytetrafluoroethylene_plate'), count: 16 },
       { type: 'pneumaticcraft:stacked_item', item: 'pneumaticcraft:pressure_chamber_glass', count: 8 },
-      { type: 'pneumaticcraft:stacked_item', item: 'kubejs:chemical_grade_seal', count: 8 }
+      { type: 'pneumaticcraft:stacked_item', item: 'gtceu:gregsingularity_chemical_grade_seal', count: 8 }
     ],
     results: [{ item: cartridge, count: 2 }]
   }).id(id('seal_membrane_cartridges'))
 
   machine('assembler', 'build_separation_manifold', 14400, 507904)
     .itemInputs('2x ' + cartridge, '8x gtceu:tritanium_plate', '4x expatternprovider:ex_pattern_provider',
-      '4x gtceu:uv_electric_pump', '8x gtceu:steel_frame', '8x kubejs:final_telemetry_unit')
+      '4x gtceu:uv_electric_pump', '8x gtceu:steel_frame', '8x gtceu:gregsingularity_final_telemetry_unit')
     .notConsumable(Item.of(operations))
     .inputFluids(Fluid.of(shield, 12800))
     .itemOutputs(manifold)
 
   machine('mixer', 'mix_virgin_electrolyte', 7600, 458752)
-    .itemInputs('16x gtceu:boron_dust', '24x gtceu:calcium_dust', '8x kubejs:uv_quench_cassette')
+    .itemInputs('16x gtceu:boron_dust', '24x gtceu:calcium_dust', '8x gtceu:gregsingularity_uv_quench_cassette')
     .notConsumable(Item.of(manifold))
     .inputFluids(Fluid.of(water, 6400), Fluid.of(acid, 1600))
     .outputFluids(Fluid.of(clean, 8000))
@@ -89,7 +89,7 @@ ServerEvents.recipes(event => {
     .outputFluids(Fluid.of(recoveredAcid, 1200))
 
   machine('mixer', 'restore_electrolyte', 9800, 491520)
-    .itemInputs('4x kubejs:uv_quench_cassette')
+    .itemInputs('4x gtceu:gregsingularity_uv_quench_cassette')
     .inputFluids(Fluid.of(permeate, 6000), Fluid.of(recoveredAcid, 1000))
     .outputFluids(Fluid.of(recovered, 7000))
 
@@ -101,7 +101,7 @@ ServerEvents.recipes(event => {
     .outputFluids(Fluid.of(spent, 7000))
 
   machine('assembly_line', 'record_reclamation_loop', 21400, 507904)
-    .itemInputs('16x ' + collector, '8x ' + adsorbent, '8x ' + cartridge, '8x kubejs:final_serial_logic',
+    .itemInputs('16x ' + collector, '8x ' + adsorbent, '8x ' + cartridge, '8x gtceu:gregsingularity_final_serial_logic',
       '8x gtceu:uv_sensor', '8x ae2:cell_component_256k', '4x expatternprovider:precise_storage_bus',
       '8x gtceu:neutronium_plate')
     .inputFluids(Fluid.of(recovered, 12000), Fluid.of(clean, 14000), Fluid.of(shield, 20000))
@@ -109,7 +109,7 @@ ServerEvents.recipes(event => {
 
   const final = machine('assembly_line', 'certify_reclamation', 28000, 507904)
     .itemInputs('8x ' + witness, '4x ' + manifold, '16x ' + adsorbent, '16x ' + collector,
-      '16x gtceu:wetware_processor_computer', '8x ae2:256k_crafting_storage', '8x kubejs:final_warehouse_seal',
+      '16x gtceu:wetware_processor_computer', '8x ae2:256k_crafting_storage', '8x gtceu:gregsingularity_final_warehouse_seal',
       '8x gtceu:uv_fluid_regulator', '16x gtceu:neutronium_plate')
     .inputFluids(Fluid.of(clean, 28000), Fluid.of(recovered, 24000), Fluid.of(brine, 16000), Fluid.of(cold, 32000))
     .itemOutputs(certificate)

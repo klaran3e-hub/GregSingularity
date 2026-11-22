@@ -1,0 +1,39 @@
+newmtl masonry
+Kd 1 1 1
+Ka 0 0 0
+map_Kd kubejs:block/bloomery_masonry
+
+newmtl fireclay
+Kd 1 1 1
+Ka 0 0 0
+map_Kd kubejs:block/bloomery_fireclay
+
+newmtl scorched
+Kd 1 1 1
+Ka 0 0 0
+map_Kd kubejs:block/bloomery_scorched
+
+newmtl timber
+Kd 1 1 1
+Ka 0 0 0
+map_Kd kubejs:block/bloomery_timber
+
+newmtl leather
+Kd 1 1 1
+Ka 0 0 0
+map_Kd kubejs:block/bloomery_leather
+
+newmtl cold_coals
+Kd 1 1 1
+Ka 0 0 0
+map_Kd kubejs:block/bloomery_cold_coals
+
+newmtl live_coals
+Kd 1 1 1
+Ka 1 1 1
+map_Kd kubejs:block/bloomery_live_coals
+
+newmtl hearthstone
+Kd 1 1 1
+Ka 0 0 0
+map_Kd kubejs:block/bloomery_hearthstone

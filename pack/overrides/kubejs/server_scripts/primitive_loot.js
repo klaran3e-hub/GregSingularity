@@ -24,12 +24,12 @@ ServerEvents.genericLootTables(event => {
     'minecraft:iron_nugget': 'minecraft:raw_iron',
     'minecraft:gold_nugget': 'minecraft:raw_gold',
     'minecraft:gold_block': 'minecraft:raw_gold_block',
-    'minecraft:barrel': 'kubejs:rough_slat',
+    'minecraft:barrel': 'gtceu:gregsingularity_rough_slat',
     'minecraft:bucket': 'minecraft:raw_iron',
     'minecraft:furnace': 'minecraft:clay_ball',
     'minecraft:blast_furnace': 'minecraft:clay_ball',
     'minecraft:smoker': 'minecraft:clay_ball',
-    'minecraft:crafting_table': 'kubejs:rough_slat',
+    'minecraft:crafting_table': 'gtceu:gregsingularity_rough_slat',
     'minecraft:campfire': 'minecraft:charcoal',
     'minecraft:soul_campfire': 'minecraft:charcoal',
     'minecraft:iron_block': 'minecraft:raw_iron_block',
@@ -73,7 +73,7 @@ ServerEvents.genericLootTables(event => {
       return
     }
     const replacement = direct ||
-      (tableReplacements !== bastionReplacements && /^minecraft:[a-z_]+_planks$/.test(name) ? 'kubejs:rough_slat' : null)
+      (tableReplacements !== bastionReplacements && /^minecraft:[a-z_]+_planks$/.test(name) ? 'gtceu:gregsingularity_rough_slat' : null)
     if (!replacement) return
     // Retain the original roll, weight and conditions. Nugget stacks become one piece of raw ore.
     if (name.endsWith('_nugget') || name.endsWith('_planks')) entry.remove('functions')

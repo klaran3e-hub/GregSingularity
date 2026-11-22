@@ -3,7 +3,7 @@
   default_quest_shape: ""
   filename: "uv_power"
   group: "49C57C767912BC15"
-  icon: "kubejs:uv_commissioning_report"
+  icon: "gtceu:gregsingularity_uv_commissioning_report"
   title: "UV"
   id: "4EB8138E5258158E"
   order_index: 9
@@ -29,7 +29,7 @@
       tasks: [{
         id: "4290DA3A8C00106E"
         type: "item"
-        item: "kubejs:uv_duranium_target"
+        item: "gtceu:gregsingularity_uv_duranium_target"
         count: 2L
       }]
       rewards: [{
@@ -116,7 +116,7 @@
       tasks: [{
         id: "4CC0C11EB0DBE71F"
         type: "item"
-        item: "kubejs:uv_tritanium_preform"
+        item: "gtceu:gregsingularity_uv_tritanium_preform"
         count: 4L
       }]
       rewards: [{
@@ -225,7 +225,7 @@
       tasks: [{
         id: "4A4CE59B277EE159"
         type: "item"
-        item: "kubejs:uv_laminate_preform"
+        item: "gtceu:gregsingularity_uv_laminate_preform"
         count: 4L
       }]
       rewards: [{
@@ -247,7 +247,7 @@
       tasks: [{
         id: "432557788F49B9EB"
         type: "item"
-        item: "kubejs:uv_structural_laminate"
+        item: "gtceu:gregsingularity_uv_structural_laminate"
         count: 8L
       }]
       rewards: [{
@@ -269,7 +269,7 @@
       tasks: [{
         id: "472E00030BA3C616"
         type: "item"
-        item: "kubejs:uv_flux_shunt"
+        item: "gtceu:gregsingularity_uv_flux_shunt"
         count: 4L
       }]
       rewards: [{
@@ -314,7 +314,7 @@
       tasks: [{
         id: "45C655CB863A59F5"
         type: "item"
-        item: "kubejs:fired_crucible"
+        item: "gtceu:gregsingularity_fired_crucible"
       }]
       rewards: [{
         id: "4B09D224501B125D"
@@ -335,7 +335,7 @@
       tasks: [{
         id: "4D0910BF142F7B10"
         type: "item"
-        item: "kubejs:uv_structural_laminate"
+        item: "gtceu:gregsingularity_uv_structural_laminate"
         count: 24L
       }]
       rewards: [{
@@ -426,7 +426,7 @@
       tasks: [{
         id: "486D4F53245BE1A6"
         type: "item"
-        item: "kubejs:uv_duranium_target"
+        item: "gtceu:gregsingularity_uv_duranium_target"
         count: 8L
       }]
       rewards: [{
@@ -472,7 +472,7 @@
       tasks: [{
         id: "47BAC69EB8E2E94F"
         type: "item"
-        item: "kubejs:uv_tritanium_preform"
+        item: "gtceu:gregsingularity_uv_tritanium_preform"
         count: 16L
       }]
       rewards: [{
@@ -541,7 +541,7 @@
       tasks: [{
         id: "44215845668DCFF0"
         type: "item"
-        item: "kubejs:uv_laminate_preform"
+        item: "gtceu:gregsingularity_uv_laminate_preform"
         count: 16L
       }]
       rewards: [{
@@ -564,7 +564,7 @@
       tasks: [{
         id: "40EE4E3BD5DF1F30"
         type: "item"
-        item: "kubejs:uv_structural_laminate"
+        item: "gtceu:gregsingularity_uv_structural_laminate"
         count: 24L
       }]
       rewards: [{
@@ -587,7 +587,7 @@
       tasks: [{
         id: "4FA0EEC085AEEE2C"
         type: "item"
-        item: "kubejs:uv_flux_shunt"
+        item: "gtceu:gregsingularity_uv_flux_shunt"
         count: 12L
       }]
       rewards: [{
@@ -762,7 +762,7 @@
       tasks: [{
         id: "437B16819F100D46"
         type: "item"
-        item: "kubejs:uv_phase_interlock"
+        item: "gtceu:gregsingularity_uv_phase_interlock"
         count: 4L
       }]
       rewards: [{
@@ -806,7 +806,7 @@
       tasks: [{
         id: "48D5E6937140B3A0"
         type: "item"
-        item: "kubejs:uv_pulse_reserve"
+        item: "gtceu:gregsingularity_uv_pulse_reserve"
         count: 4L
       }]
       rewards: [{
@@ -1098,7 +1098,7 @@
       tasks: [{
         id: "4B8B5FC4CEA33E15"
         type: "item"
-        item: "kubejs:uv_phase_interlock"
+        item: "gtceu:gregsingularity_uv_phase_interlock"
         count: 16L
       }]
       rewards: [{
@@ -1121,7 +1121,7 @@
       tasks: [{
         id: "4256C80A2AFF379F"
         type: "item"
-        item: "kubejs:uv_pulse_reserve"
+        item: "gtceu:gregsingularity_uv_pulse_reserve"
         count: 8L
       }]
       rewards: [{
@@ -1235,7 +1235,7 @@
       tasks: [{
         id: "460848AEC56ECF6F"
         type: "item"
-        item: "kubejs:freighter_drive"
+        item: "ad_astra:gregsingularity_freighter_drive"
       }]
       rewards: [{
         id: "4062E1D4FD288847"
@@ -1278,12 +1278,12 @@
       tasks: [{
         id: "4334564F7E507881"
         type: "item"
-        item: "gtibd_core:freighter"
+        item: "ad_astra:gregsingularity_freighter"
       }]
       rewards: [{
         id: "4F1B1A6AD6502994"
         type: "item"
-        item: "kubejs:vacuum_gasket"
+        item: "gtceu:gregsingularity_vacuum_gasket"
         count: 2
       }]
     }
@@ -1320,12 +1320,12 @@
       tasks: [{
         id: "4B4BA6B146DD0C7B"
         type: "item"
-        item: "kubejs:titan_seam_core"
+        item: "ad_astra:gregsingularity_titan_seam_core"
       }]
       rewards: [{
         id: "43D81D24922848AA"
         type: "item"
-        item: "kubejs:vacuum_gasket"
+        item: "gtceu:gregsingularity_vacuum_gasket"
         count: 2
       }]
     }
@@ -1341,7 +1341,7 @@
       tasks: [{
         id: "409D000496002813"
         type: "item"
-        item: "kubejs:titan_load_standard"
+        item: "ad_astra:gregsingularity_titan_load_standard"
         count: 2L
       }]
       rewards: [{
@@ -1363,7 +1363,7 @@
       tasks: [{
         id: "432A960B2B15DFAD"
         type: "item"
-        item: "kubejs:zpm_glacio_lamella"
+        item: "ad_astra:gregsingularity_zpm_glacio_lamella"
       }]
       rewards: [{
         id: "49104271CEA49174"
@@ -1390,7 +1390,7 @@
       rewards: [{
         id: "4C6FF2BA424AEDA0"
         type: "item"
-        item: "kubejs:vacuum_gasket"
+        item: "gtceu:gregsingularity_vacuum_gasket"
         count: 2
       }]
     }
@@ -1406,7 +1406,7 @@
       tasks: [{
         id: "4C0382F63DBB927B"
         type: "item"
-        item: "kubejs:zpm_tempered_frame"
+        item: "gtceu:gregsingularity_zpm_tempered_frame"
         count: 2L
       }]
       rewards: [{
@@ -1428,7 +1428,7 @@
       tasks: [{
         id: "43CB173C6E6D0B7E"
         type: "item"
-        item: "kubejs:titan_load_standard"
+        item: "ad_astra:gregsingularity_titan_load_standard"
         count: 4L
       }]
       rewards: [{
@@ -1455,7 +1455,7 @@
       rewards: [{
         id: "4C9497FC93532153"
         type: "item"
-        item: "kubejs:vacuum_gasket"
+        item: "gtceu:gregsingularity_vacuum_gasket"
         count: 2
       }]
     }
@@ -2138,7 +2138,7 @@
       tasks: [{
         id: "41317655C122A095"
         type: "item"
-        item: "kubejs:titan_wick"
+        item: "ad_astra:gregsingularity_titan_wick"
         count: 2L
       }]
       rewards: [{
@@ -2203,7 +2203,7 @@
       tasks: [{
         id: "42E1219E2E95DE7B"
         type: "item"
-        item: "kubejs:titan_spent_wick"
+        item: "ad_astra:gregsingularity_titan_spent_wick"
       }]
       rewards: [{
         id: "46EF4689693C7DFF"
@@ -2273,7 +2273,7 @@
       rewards: [{
         id: "4DAACFD556DFB17B"
         type: "item"
-        item: "kubejs:vacuum_gasket"
+        item: "gtceu:gregsingularity_vacuum_gasket"
         count: 2
       }]
     }
@@ -2310,7 +2310,7 @@
       tasks: [{
         id: "462B9A455372CE8B"
         type: "item"
-        item: "kubejs:titan_seam_core"
+        item: "ad_astra:gregsingularity_titan_seam_core"
         count: 8L
       }]
       rewards: [{
@@ -2332,7 +2332,7 @@
       tasks: [{
         id: "470554839A356DCC"
         type: "item"
-        item: "kubejs:mill_titan_grit"
+        item: "ad_astra:gregsingularity_mill_titan_grit"
         count: 2L
       }]
       rewards: [{
@@ -2354,7 +2354,7 @@
       tasks: [{
         id: "4A84EE1A30507372"
         type: "item"
-        item: "kubejs:mill_titan_washed"
+        item: "ad_astra:gregsingularity_mill_titan_washed"
         count: 2L
       }]
       rewards: [{
@@ -2376,7 +2376,7 @@
       tasks: [{
         id: "406184E1762408ED"
         type: "item"
-        item: "kubejs:mill_titan_heavy"
+        item: "ad_astra:gregsingularity_mill_titan_heavy"
       }]
       rewards: [{
         id: "4CA547D9C6760853"
@@ -2419,7 +2419,7 @@
       tasks: [{
         id: "4C9BB409F24FD54B"
         type: "item"
-        item: "kubejs:mill_titan_crystal"
+        item: "ad_astra:gregsingularity_mill_titan_crystal"
       }]
       rewards: [{
         id: "4BEE4F91F5533102"
@@ -2440,7 +2440,7 @@
       tasks: [{
         id: "4241AC4DD431F2B2"
         type: "item"
-        item: "kubejs:mill_titan_assay"
+        item: "ad_astra:gregsingularity_mill_titan_assay"
       }]
       rewards: [{
         id: "4E28DECC7E34BAB7"
@@ -2461,7 +2461,7 @@
       tasks: [{
         id: "433F6F2ABDCF68A2"
         type: "item"
-        item: "kubejs:uv_field_cassette"
+        item: "gtceu:gregsingularity_uv_field_cassette"
         count: 8L
       }]
       rewards: [{
@@ -2571,7 +2571,7 @@
       tasks: [{
         id: "4F952597C4741E02"
         type: "item"
-        item: "kubejs:uv_reactor_standard"
+        item: "gtceu:gregsingularity_uv_reactor_standard"
       }]
       rewards: [{
         id: "4B5A101460A82466"
@@ -2813,7 +2813,7 @@
       tasks: [{
         id: "40CF0023ED8C993C"
         type: "item"
-        item: "kubejs:uv_field_cassette"
+        item: "gtceu:gregsingularity_uv_field_cassette"
         count: 16L
       }]
       rewards: [{
@@ -2859,7 +2859,7 @@
       tasks: [{
         id: "47AE1AAAE8ACB2A8"
         type: "item"
-        item: "kubejs:uv_reactor_standard"
+        item: "gtceu:gregsingularity_uv_reactor_standard"
         count: 2L
       }]
       rewards: [{
@@ -3042,7 +3042,7 @@
       tasks: [{
         id: "4A4D66D60650F956"
         type: "item"
-        item: "kubejs:titan_radiator_core"
+        item: "ad_astra:gregsingularity_titan_radiator_core"
         count: 2L
       }]
       rewards: [{
@@ -3064,7 +3064,7 @@
       tasks: [{
         id: "448082C01673A4D7"
         type: "item"
-        item: "kubejs:uv_naquadria_capsule"
+        item: "gtceu:gregsingularity_uv_naquadria_capsule"
         count: 8L
       }]
       rewards: [{
@@ -3107,7 +3107,7 @@
       tasks: [{
         id: "486A6DA77060A660"
         type: "item"
-        item: "kubejs:uv_neutronium_coupon"
+        item: "gtceu:gregsingularity_uv_neutronium_coupon"
         count: 4L
       }]
       rewards: [{
@@ -3129,7 +3129,7 @@
       tasks: [{
         id: "47234C48B8DDCF0E"
         type: "item"
-        item: "kubejs:uv_quench_cassette"
+        item: "gtceu:gregsingularity_uv_quench_cassette"
         count: 2L
       }]
       rewards: [{
@@ -3173,7 +3173,7 @@
       tasks: [{
         id: "40E93A32C9DDC58D"
         type: "item"
-        item: "kubejs:uv_grid_witness"
+        item: "gtceu:gregsingularity_uv_grid_witness"
         count: 4L
       }]
       rewards: [{
@@ -3217,7 +3217,7 @@
       tasks: [{
         id: "4A817616C946C17C"
         type: "item"
-        item: "kubejs:uv_freight_manifest"
+        item: "gtceu:gregsingularity_uv_freight_manifest"
       }]
       rewards: [{
         id: "42A56D168F91E45D"
@@ -3391,7 +3391,7 @@
       tasks: [{
         id: "4C77BB2CA6E700C4"
         type: "item"
-        item: "kubejs:uv_neutronium_coupon"
+        item: "gtceu:gregsingularity_uv_neutronium_coupon"
         count: 128L
       }]
       rewards: [{
@@ -3413,7 +3413,7 @@
       tasks: [{
         id: "42DDDEAC5DBE9B48"
         type: "item"
-        item: "kubejs:uv_neutronium_acceptance_crate"
+        item: "gtceu:gregsingularity_uv_neutronium_acceptance_crate"
       }]
       rewards: [{
         id: "4F105C0459E1D1AE"
@@ -3434,7 +3434,7 @@
       tasks: [{
         id: "447ED48DF852B94C"
         type: "item"
-        item: "kubejs:uv_commissioning_report"
+        item: "gtceu:gregsingularity_uv_commissioning_report"
       }]
       rewards: [{
         id: "461F84E5ACB775B0"
@@ -3478,7 +3478,7 @@
       tasks: [{
         id: "4610357CF90E0C0B"
         type: "item"
-        item: "kubejs:uv_freight_manifest"
+        item: "gtceu:gregsingularity_uv_freight_manifest"
         count: 4L
       }]
       rewards: [{
@@ -3524,7 +3524,7 @@
       tasks: [{
         id: "4BA94B90E6419B78"
         type: "item"
-        item: "kubejs:uv_naquadria_capsule"
+        item: "gtceu:gregsingularity_uv_naquadria_capsule"
         count: 16L
       }]
       rewards: [{
@@ -3570,7 +3570,7 @@
       tasks: [{
         id: "4A540FEE6491737F"
         type: "item"
-        item: "kubejs:uv_quench_cassette"
+        item: "gtceu:gregsingularity_uv_quench_cassette"
         count: 4L
       }]
       rewards: [{
@@ -3593,7 +3593,7 @@
       tasks: [{
         id: "44370F6A11FDA85D"
         type: "item"
-        item: "kubejs:uv_neutronium_coupon"
+        item: "gtceu:gregsingularity_uv_neutronium_coupon"
         count: 24L
       }]
       rewards: [{
@@ -3616,7 +3616,7 @@
       tasks: [{
         id: "46B48E9623E7588C"
         type: "item"
-        item: "kubejs:uv_grid_witness"
+        item: "gtceu:gregsingularity_uv_grid_witness"
         count: 6L
       }]
       rewards: [{
@@ -3662,7 +3662,7 @@
       tasks: [{
         id: "42E2BC9A9ACFCC4A"
         type: "item"
-        item: "kubejs:uv_freight_manifest"
+        item: "gtceu:gregsingularity_uv_freight_manifest"
         count: 2L
       }]
       rewards: [{

@@ -11,7 +11,7 @@ StartupEvents.registry('item', event => {
     'received_refractory_crate', 'nether_brick_blank', 'netherite_upgrade_charge'
   ]
   materials.forEach(id => {
-    const item = event.create(id).texture('kubejs:item/' + id)
+    const item = event.create(global.gsItemId(id)).texture('kubejs:item/' + id)
     if (id === 'rail_waybill' || id === 'nether_transit_seal') item.maxStackSize(1)
   })
 })

@@ -1,8 +1,8 @@
 ServerEvents.recipes(event => {
   const gt = id => 'gtceu:' + id
-  const part = id => 'kubejs:zpm_' + id
+  const part = id => global.gsItemId('zpm_' + id)
   const prefix = 'zero_shift:zpm_materials/'
-  const permit = 'kubejs:luv_commissioning_report'
+  const permit = 'gtceu:gregsingularity_luv_commissioning_report'
   const shield = 'kubejs:vacuum_shield_gas'
   const cold = 'kubejs:chilled_vacuum_coolant'
   const warm = 'kubejs:warm_vacuum_coolant'
@@ -21,12 +21,12 @@ ServerEvents.recipes(event => {
   }
 
   machine('centrifuge', 'sort_end_concentrate', [
-    '8x kubejs:luv_tantalite_concentrate'
+    '8x gtceu:gregsingularity_luv_tantalite_concentrate'
   ], '4x ' + part('end_heavy_concentrate'), 3400, 24576)
     .notConsumable(Item.of(permit)).inputFluids(Fluid.of(shield, 2200))
-    .itemOutputs('4x kubejs:ore_tailings').dimension('minecraft:the_end')
+    .itemOutputs('4x gtceu:gregsingularity_ore_tailings').dimension('minecraft:the_end')
   machine('chemical_reactor', 'precipitate_nether_salt', [
-    '8x kubejs:chromite_concentrate'
+    '8x gtceu:gregsingularity_chromite_concentrate'
   ], '4x ' + part('nether_isotope_salt'), 3200, 24576)
     .notConsumable(Item.of(permit)).inputFluids(Fluid.of(gt('chlorine'), 3400)).dimension('minecraft:the_nether')
 
@@ -35,10 +35,10 @@ ServerEvents.recipes(event => {
     inputs: [
       { type: 'pneumaticcraft:stacked_item', item: part('end_heavy_concentrate'), count: 2 },
       { type: 'pneumaticcraft:stacked_item', item: part('nether_isotope_salt'), count: 2 },
-      { type: 'pneumaticcraft:stacked_item', item: 'kubejs:luv_plasma_coupon', count: 4 },
+      { type: 'pneumaticcraft:stacked_item', item: 'gtceu:gregsingularity_luv_plasma_coupon', count: 4 },
       { type: 'pneumaticcraft:stacked_item', item: gt('neutron_reflector'), count: 2 },
       { type: 'pneumaticcraft:stacked_item', item: 'minecraft:quartz', count: 8 },
-      { type: 'pneumaticcraft:stacked_item', item: 'kubejs:vacuum_gasket', count: 4 },
+      { type: 'pneumaticcraft:stacked_item', item: 'gtceu:gregsingularity_vacuum_gasket', count: 4 },
       { type: 'pneumaticcraft:stacked_item', item: tube, count: 2 }
     ],
     pressure: 4.9,
@@ -61,8 +61,8 @@ ServerEvents.recipes(event => {
 
   event.remove({ output: gt('naquadah_coil_block') })
   machine('assembler', 'wind_naquadah_coil', [
-    '2x gtceu:hssg_coil_block', '8x gtceu:naquadah_plate', '4x kubejs:luv_magnet_module',
-    '4x kubejs:luv_dielectric_laminate', '4x kubejs:iv_cooling_jacket', '4x kubejs:vacuum_gasket',
+    '2x gtceu:hssg_coil_block', '8x gtceu:naquadah_plate', '4x gtceu:gregsingularity_luv_magnet_module',
+    '4x gtceu:gregsingularity_luv_dielectric_laminate', '4x gtceu:gregsingularity_iv_cooling_jacket', '4x gtceu:gregsingularity_vacuum_gasket',
     '4x gtceu:steel_quadruple_wire', '2x gtceu:lv_robot_arm'
   ], '2x gtceu:naquadah_coil_block', 4400, 30720)
     .notConsumable(Item.of(permit)).inputFluids(Fluid.of(cold, 3600))
@@ -77,7 +77,7 @@ ServerEvents.recipes(event => {
   event.remove({ output: gt('vanadium_gallium_single_cable') })
   machine('assembler', 'insulate_vanadium_gallium_wire', [
     '4x gtceu:vanadium_gallium_single_wire', '2x ' + part('neutron_laminate'),
-    '2x kubejs:luv_dielectric_laminate', '2x kubejs:chemical_grade_seal'
+    '2x gtceu:gregsingularity_luv_dielectric_laminate', '2x gtceu:gregsingularity_chemical_grade_seal'
   ], '4x gtceu:vanadium_gallium_single_cable', 2800, 28672)
     .inputFluids(Fluid.of(gt('silicone_rubber'), 576))
   ;[['single', 'double', 2], ['double', 'quadruple', 4], ['quadruple', 'octal', 8], ['octal', 'hex', 16]]
@@ -90,13 +90,13 @@ ServerEvents.recipes(event => {
       '2x gtceu:vanadium_gallium_' + previous + '_wire', strands / 2 + 'x ' + part('neutron_laminate')
     ], wire, 1600 + strands * 100, 29696).inputFluids(Fluid.of(lubricant, strands * 180))
     machine('assembler', 'insulate_vanadium_gallium_' + size, [
-      wire, strands / 2 + 'x kubejs:chemical_grade_seal', '2x ' + part('neutron_laminate')
+      wire, strands / 2 + 'x gtceu:gregsingularity_chemical_grade_seal', '2x ' + part('neutron_laminate')
     ], cable, 1800 + strands * 100, 30720).inputFluids(Fluid.of(gt('silicone_rubber'), strands * 144))
   })
 
   machine('assembler', 'lay_up_neutron_shield', [
-    '4x ' + europium, '8x ' + alloy, '4x kubejs:luv_dielectric_laminate',
-    '4x kubejs:sintered_vacuum_tile', '4x kubejs:vacuum_gasket', '4x gtceu:tempered_glass',
+    '4x ' + europium, '8x ' + alloy, '4x gtceu:gregsingularity_luv_dielectric_laminate',
+    '4x gtceu:gregsingularity_sintered_vacuum_tile', '4x gtceu:gregsingularity_vacuum_gasket', '4x gtceu:tempered_glass',
     '4x pneumaticcraft:reinforced_pressure_tube'
   ], '4x ' + part('laminate_preform'), 3700, 29696).inputFluids(Fluid.of(shield, 2600))
   global.fieldworkProcess(event, prefix + 'press_neutron_laminate', 'forming_press', {
@@ -104,15 +104,15 @@ ServerEvents.recipes(event => {
     results: [{ item: part('neutron_laminate') }]
   }, 8192)
   machine('assembler', 'braze_flux_busbar', [
-    '4x ' + europium, '6x ' + alloy, '4x kubejs:luv_busbar', '4x gtceu:vanadium_gallium_single_wire',
-    '2x ' + part('neutron_laminate'), '4x kubejs:hv_switch_contact', '2x gtceu:gold_quadruple_cable'
+    '4x ' + europium, '6x ' + alloy, '4x gtceu:gregsingularity_luv_busbar', '4x gtceu:vanadium_gallium_single_wire',
+    '2x ' + part('neutron_laminate'), '4x gtceu:gregsingularity_hv_switch_contact', '2x gtceu:gold_quadruple_cable'
   ], '2x ' + part('flux_busbar'), 4000, 30720).inputFluids(Fluid.of(lubricant, 2800))
   machine('circuit_assembler', 'calibrate_phase_module', [
-    '4x gtceu:wetware_processor', '4x gtceu:crystal_processor_assembly', '4x kubejs:luv_clock_matrix',
+    '4x gtceu:wetware_processor', '4x gtceu:crystal_processor_assembly', '4x gtceu:gregsingularity_luv_clock_matrix',
     '4x ae2:cell_component_256k', '2x ' + part('flux_busbar'), '2x ' + part('neutron_laminate')
   ], '2x ' + part('phase_module'), 4500, 32000).cleanroom(sterile).inputFluids(Fluid.of(shield, 3000))
   machine('assembler', 'wire_diesel_reserve', [
-    gt('extreme_combustion_engine'), '2x gtceu:luv_transformer_4a', '4x kubejs:iv_grid_regulator',
+    gt('extreme_combustion_engine'), '2x gtceu:luv_transformer_4a', '4x gtceu:gregsingularity_iv_grid_regulator',
     '4x ' + part('flux_busbar'), '4x ' + part('phase_module'), '4x ' + part('neutron_laminate'),
     '2x gtceu:luv_energy_output_hatch_4a', '2x gtceu:hv_battery_buffer_4x', '2x pneumaticcraft:advanced_liquid_compressor'
   ], '2x ' + part('reserve_switchgear'), 4600, 32000).inputFluids(Fluid.of(gt('cetane_boosted_diesel'), 6000))
@@ -123,7 +123,7 @@ ServerEvents.recipes(event => {
     event.remove({ output: gt(id) })
     machine('assembler', 'line_' + id, [
       '2x gtceu:niobium_titanium_' + size + '_fluid_pipe', '4x ' + alloy, '2x ' + part('neutron_laminate'),
-      '2x ' + tube, '2x pneumaticcraft:heat_sink', '4x kubejs:vacuum_gasket'
+      '2x ' + tube, '2x pneumaticcraft:heat_sink', '4x gtceu:gregsingularity_vacuum_gasket'
     ], (index < 3 ? '2x ' : '') + gt(id), 3100 + index * 250, 30720).inputFluids(Fluid.of(cold, 2100 + index * 280))
   })
 })

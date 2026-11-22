@@ -1,6 +1,6 @@
 ServerEvents.recipes(event => {
   const gt = id => 'gtceu:' + id
-  const part = id => 'kubejs:uv_' + id
+  const part = id => global.gsItemId('uv_' + id)
   const tritanium = gt('tritanium_plate')
   const americium = gt('americium_plate')
   const shield = 'kubejs:vacuum_shield_gas'
@@ -18,7 +18,7 @@ ServerEvents.recipes(event => {
   const coolantCassette = part('quench_cassette')
   const witness = part('grid_witness')
   const neutronium = gt('neutronium')
-  const permit = 'kubejs:zpm_commissioning_report'
+  const permit = 'gtceu:gregsingularity_zpm_commissioning_report'
 
   function machine(type, id, items, output, ticks, power) {
     const recipe = event.recipes.gtceu[type]('zero_shift:uv_fusion/' + id)
@@ -49,7 +49,7 @@ ServerEvents.recipes(event => {
   ], '2x ' + field, 7000, 126976).inputFluids(Fluid.of(cold, 7200))
   machine('assembler', 'build_fusion_casing_mk3', [
     '4x gtceu:fusion_casing_mk2', '8x ' + tritanium, '6x ' + laminate, '2x ' + field, '4x ' + americium,
-    '4x kubejs:zpm_neutron_laminate', '4x kubejs:iv_arc_plate',
+    '4x gtceu:gregsingularity_zpm_neutron_laminate', '4x gtceu:gregsingularity_iv_arc_plate',
     '4x pneumaticcraft:reinforced_pressure_tube', '4x gtceu:double_steel_plate'
   ], '4x gtceu:fusion_casing_mk3', 6900, 126976).inputFluids(Fluid.of(lubricant, 6400))
   machine('assembler', 'calibrate_reactor_standard', [
@@ -72,11 +72,11 @@ ServerEvents.recipes(event => {
   research(reactor, standard, 48, 144000, 126976)
 
   machine('assembler', 'seal_naquadria_capsule', [
-    '8x gtceu:enriched_naquadah_dust', '4x kubejs:zpm_end_heavy_concentrate', '4x ' + laminate,
-    '4x ' + americium, '4x kubejs:zpm_shielded_cask', '4x ae2:engineering_processor'
+    '8x gtceu:enriched_naquadah_dust', '4x gtceu:gregsingularity_zpm_end_heavy_concentrate', '4x ' + laminate,
+    '4x ' + americium, '4x gtceu:gregsingularity_zpm_shielded_cask', '4x ae2:engineering_processor'
   ], '2x ' + capsule, 6200, 122880).notConsumable(Item.of(permit))
     .inputFluids(Fluid.of(shield, 5400)).dimension('minecraft:the_end')
-  machine('chemical_reactor', 'prepare_neutronium_feed', ['2x ' + capsule, 'kubejs:titan_radiator_core'], '', 5800, 126976)
+  machine('chemical_reactor', 'prepare_neutronium_feed', ['2x ' + capsule, 'ad_astra:gregsingularity_titan_radiator_core'], '', 5800, 126976)
     .inputFluids(Fluid.of(gt('radon'), 3200)).inputFluids(Fluid.of(gt('deuterium'), 3600))
     .outputFluids(Fluid.of(part('neutronium_feed'), 1440)).dimension('minecraft:the_nether')
   machine('fusion_reactor', 'synthesize_neutronium', [], '', 1080, 262144)
@@ -87,9 +87,9 @@ ServerEvents.recipes(event => {
     .outputFluids(Fluid.of(gt('naquadria'), 576)).fusionStartEU(440000000)
 
   machine('assembler', 'build_quench_cassette', [
-    '8x ' + tritanium, '4x ' + americium, '4x ' + laminate, '4x ' + field, '4x kubejs:iv_cooling_jacket',
-    '2x gtceu:uv_electric_pump', '8x kubejs:vacuum_gasket',
-    '2x pneumaticcraft:heat_sink', '2x kubejs:titan_radiator_core'
+    '8x ' + tritanium, '4x ' + americium, '4x ' + laminate, '4x ' + field, '4x gtceu:gregsingularity_iv_cooling_jacket',
+    '2x gtceu:uv_electric_pump', '8x gtceu:gregsingularity_vacuum_gasket',
+    '2x pneumaticcraft:heat_sink', '2x ad_astra:gregsingularity_titan_radiator_core'
   ], '2x ' + coolantCassette, 7300, 393216).inputFluids(Fluid.of(cold, 9200))
   machine('vacuum_freezer', 'test_neutronium_coupon', ['4x ' + tritanium], '4x ' + coupon, 6400, 393216)
     .inputFluids(Fluid.of(neutronium, 720))
@@ -104,13 +104,13 @@ ServerEvents.recipes(event => {
     '2x gtceu:uv_energy_output_hatch_4a', '4x ae2:cell_component_256k'
   ], '2x ' + witness, 7200, 458752).inputFluids(Fluid.of(lubricant, 8200))
   machine('assembler', 'reconcile_three_world_freight', [
-    '8x ' + capsule, '8x ' + coupon, '4x kubejs:zpm_freight_certificate', '4x ' + witness,
+    '8x ' + capsule, '8x ' + coupon, '4x gtceu:gregsingularity_zpm_freight_certificate', '4x ' + witness,
     '4x ae2:quantum_link', '8x ae2:me_p2p_tunnel', '4x ae2:256k_crafting_storage'
   ], part('freight_manifest'), 7400, 491520).inputFluids(Fluid.of(shield, 8400)).dimension('minecraft:overworld')
 
   machine('assembly_line', 'upgrade_wetware_computer', [
     '4x gtceu:wetware_processor_assembly', '4x ' + coupon, '4x ' + interlock, '4x ' + americium, '4x ' + shunt,
-    '4x ae2:cell_component_256k', '4x kubejs:luv_optical_core', '4x gtceu:neutronium_plate'
+    '4x ae2:cell_component_256k', '4x gtceu:gregsingularity_luv_optical_core', '4x gtceu:neutronium_plate'
   ], '2x gtceu:wetware_processor_computer', 7400, 475136)
     .inputFluids(Fluid.of(shield, 7200)).inputFluids(Fluid.of(lubricant, 6800))
   machine('assembly_line', 'upgrade_crystal_mainframe', [
@@ -122,7 +122,7 @@ ServerEvents.recipes(event => {
     '64x ' + coupon, '4x ' + coolantCassette, '4x ' + part('phase_interlock')
   ], part('neutronium_acceptance_crate'), 11600, 507904).inputFluids(Fluid.of(cold, 9600))
   const report = machine('assembly_line', 'close_uv_shift', [
-    '2x kubejs:titan_load_standard', '64x ' + coupon, '2x ' + part('freight_manifest'), '8x ' + witness, '8x ' + reserve, '16x ' + interlock,
+    '2x ad_astra:gregsingularity_titan_load_standard', '64x ' + coupon, '2x ' + part('freight_manifest'), '8x ' + witness, '8x ' + reserve, '16x ' + interlock,
     '8x gtceu:wetware_processor_computer', '8x gtceu:crystal_processor_mainframe', '8x gtceu:uv_lapotronic_battery',
     '16x gtceu:neutronium_plate', '8x ae2:256k_crafting_storage', '8x ' + coolantCassette, '8x expatternprovider:ingredient_buffer', part('neutronium_acceptance_crate')
   ], part('commissioning_report'), 28800, 507904)

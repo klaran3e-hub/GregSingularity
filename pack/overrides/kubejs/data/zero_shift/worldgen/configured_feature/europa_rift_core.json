@@ -10,7 +10,7 @@
           "block": "minecraft:stone"
         },
         "state": {
-          "Name": "kubejs:europa_rift_core"
+          "Name": "ad_astra:gregsingularity_europa_rift_core"
         }
       }
     ]

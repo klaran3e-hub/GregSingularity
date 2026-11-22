@@ -10,7 +10,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
 GTCEuStartupEvents.registry('gtceu:machine', event => {
   const registry = Java.loadClass('net.minecraftforge.registries.ForgeRegistries').BLOCKS
   const Id = Java.loadClass('net.minecraft.resources.ResourceLocation')
-  const brick = id => Predicates.blocks(registry.getValue(new Id('kubejs', id)))
+  const brick = id => Predicates.blocks(registry.getValue(new Id(global.gsItemId(id))))
   const props = Java.loadClass('com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties')
   const logic = Java.loadClass('com.gregtechceu.gtceu.api.machine.trait.RecipeLogic$Status')
   const FieldBloomery = Java.loadClass('gtibd.addon.FieldBloomery')

@@ -1,5 +1,6 @@
 package gtibd.addon;
 
+import com.google.gson.JsonObject;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
@@ -14,19 +15,90 @@ import com.lowdragmc.lowdraglib.gui.modular.ModularUI;
 import com.lowdragmc.lowdraglib.gui.texture.ResourceTexture;
 import com.lowdragmc.lowdraglib.gui.widget.LabelWidget;
 import com.lowdragmc.lowdraglib.gui.widget.ProgressWidget;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public final class FieldBloomery extends PrimitiveFancyUIWorkableMachine {
+    public static final BooleanProperty ASSEMBLED = BooleanProperty.m_61465_("assembled");
+    private Set<BlockPos> coveredParts = Set.of();
+    private boolean updatingPartAppearance;
+
+    public static JsonObject partBlockstate(String part) {
+        var variants = new JsonObject();
+        variants.add("assembled=false", model("kubejs:block/fieldwork/" + part));
+        variants.add("assembled=true", model("kubejs:block/fieldwork/bloomery_hidden"));
+        var state = new JsonObject();
+        state.add("variants", variants);
+        return state;
+    }
+
+    private static JsonObject model(String location) {
+        var json = new JsonObject();
+        json.addProperty("model", location);
+        return json;
+    }
+
+    @Override
+    public void onStructureFormed() {
+        if (updatingPartAppearance) return;
+        super.onStructureFormed();
+        updatePartAppearance(Set.copyOf(getMultiblockState().getCache()));
+    }
+
+    @Override
+    public void onStructureInvalid() {
+        super.onStructureInvalid();
+        updatePartAppearance(Set.of());
+    }
+
+    @Override
+    public void onUnload() {
+        super.onUnload();
+        updatePartAppearance(Set.of());
+    }
+
+    private void updatePartAppearance(Set<BlockPos> formedParts) {
+        if (coveredParts.equals(formedParts)) return;
+        var formerParts = coveredParts;
+        coveredParts = formedParts;
+        // GregTech rechecks the pattern even when only a cosmetic block state changes.
+        updatingPartAppearance = true;
+        try {
+            var removed = new HashSet<>(formerParts);
+            removed.removeAll(formedParts);
+            var added = new HashSet<>(formedParts);
+            added.removeAll(formerParts);
+            setPartAppearance(removed, false);
+            setPartAppearance(added, true);
+        } finally {
+            updatingPartAppearance = false;
+        }
+    }
+
+    private void setPartAppearance(Set<BlockPos> positions, boolean assembled) {
+        var level = getLevel();
+        if (level == null || level.f_46443_) return;
+        for (var position : positions) {
+            if (!level.m_46805_(position)) continue;
+            var state = level.m_8055_(position);
+            if (state.m_61138_(ASSEMBLED) && state.m_61143_(ASSEMBLED) != assembled) {
+                level.m_7731_(position, state.m_61124_(ASSEMBLED, assembled), 2);
+            }
+        }
+    }
+
     private static final Set<String> LOADED = Set.of(
-            "kubejs:copper_charge", "kubejs:tin_charge", "kubejs:iron_charge",
-            "kubejs:gold_charge", "kubejs:bronze_charge", "kubejs:roasted_alloy_feed");
+            "gtceu:gregsingularity_copper_charge", "gtceu:gregsingularity_tin_charge", "gtceu:gregsingularity_iron_charge",
+            "gtceu:gregsingularity_gold_charge", "gtceu:gregsingularity_bronze_charge", "gtceu:gregsingularity_roasted_alloy_feed");
     private static final Set<String> CASTINGS = Set.of(
-            "minecraft:copper_ingot", "minecraft:gold_ingot", "kubejs:iron_bloom",
+            "minecraft:copper_ingot", "minecraft:gold_ingot", "gtceu:gregsingularity_iron_bloom",
             "gtceu:tin_ingot", "gtceu:bronze_ingot");
     private static final String[] INPUT = {"charge", "fuel", "mould"};
     private static final String[] OUTPUT = {"casting", "crucible", "roasted"};
@@ -60,12 +132,12 @@ public final class FieldBloomery extends PrimitiveFancyUIWorkableMachine {
                         return direction == IO.IN ? switch (slot) {
                             case 0 -> LOADED.contains(id);
                             case 1 -> id.equals("minecraft:coal") || id.equals("minecraft:charcoal");
-                            case 2 -> id.equals("kubejs:ingot_mould") || id.equals("kubejs:bronze_mould_frame");
+                            case 2 -> id.equals("gtceu:gregsingularity_ingot_mould") || id.equals("gtceu:gregsingularity_bronze_mould_frame");
                             default -> false;
                         } : switch (slot) {
                             case 0 -> CASTINGS.contains(id);
-                            case 1 -> id.equals("kubejs:fired_crucible");
-                            case 2 -> id.equals("kubejs:roasted_alloy_feed");
+                            case 1 -> id.equals("gtceu:gregsingularity_fired_crucible");
+                            case 2 -> id.equals("gtceu:gregsingularity_roasted_alloy_feed");
                             default -> false;
                         };
                     }

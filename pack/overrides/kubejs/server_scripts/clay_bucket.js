@@ -15,7 +15,7 @@ function swapClayBucket(event, id) {
   event.cancel()
 }
 
-ItemEvents.rightClicked('kubejs:clay_bucket', event => {
+ItemEvents.rightClicked('gtceu:gregsingularity_clay_bucket', event => {
   const player = event.player
   if (!player.getAbilities().mayBuild) return
   const hit = clipClayBucket(event, clayBucketFluidMode.SOURCE_ONLY)
@@ -24,10 +24,10 @@ ItemEvents.rightClicked('kubejs:clay_bucket', event => {
   if (source.id !== 'minecraft:water' || !source.blockState.fluidState.isSource()) return
   if (!event.level.mayInteract(player, source.pos) || !player.mayUseItemAt(source.pos, hit.getDirection(), event.item)) return
   if (!player.isCreative()) source.set('minecraft:air')
-  swapClayBucket(event, 'kubejs:clay_water_bucket')
+  swapClayBucket(event, 'gtceu:gregsingularity_clay_water_bucket')
 })
 
-ItemEvents.rightClicked('kubejs:clay_water_bucket', event => {
+ItemEvents.rightClicked('gtceu:gregsingularity_clay_water_bucket', event => {
   const player = event.player
   if (!player.getAbilities().mayBuild) return
   const hit = clipClayBucket(event, clayBucketFluidMode.NONE)
@@ -37,5 +37,5 @@ ItemEvents.rightClicked('kubejs:clay_water_bucket', event => {
   const target = clicked.offset(side)
   if (!target.blockState.isAir() || !event.level.mayInteract(player, clicked.pos) || !player.mayUseItemAt(target.pos, side, event.item)) return
   target.set('minecraft:water')
-  swapClayBucket(event, 'kubejs:clay_bucket')
+  swapClayBucket(event, 'gtceu:gregsingularity_clay_bucket')
 })

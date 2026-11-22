@@ -84,7 +84,7 @@ public final class FieldworkSpaceClient {
         var ships = FieldworkSpace.Ship.values();
         for (int i = 0; i < numerals.length; i++) {
             int tier = i + 1;
-            var id = tier <= 4 ? new ResourceLocation("ad_astra", astraName(tier)) : FieldworkSpace.id(ships[i - 4].name);
+            var id = tier <= 4 ? new ResourceLocation("ad_astra", astraName(tier)) : FieldworkSpace.rocketItemId(ships[i - 4].name);
             String roman = numerals[i];
             boolean matches = query.contains(":") ? id.toString().contains(query)
                 : id.m_135815_().contains(query)

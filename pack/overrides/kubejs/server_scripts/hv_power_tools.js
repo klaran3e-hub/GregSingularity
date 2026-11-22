@@ -2,11 +2,11 @@ ServerEvents.recipes(event => {
   const items = Java.loadClass('net.minecraftforge.registries.ForgeRegistries').ITEMS
   const Id = Java.loadClass('net.minecraft.resources.ResourceLocation')
   const toolFamilies = {
-    drill: ['gtceu:hv_electric_piston', 'kubejs:grinding_runner'],
-    chainsaw: ['kubejs:balanced_rail_axle', 'kubejs:saw_blade'],
+    drill: ['gtceu:hv_electric_piston', 'gtceu:gregsingularity_grinding_runner'],
+    chainsaw: ['gtceu:gregsingularity_balanced_rail_axle', 'gtceu:gregsingularity_saw_blade'],
     wrench: ['gtceu:hv_robot_arm', 'gtceu:mv_robot_arm'],
-    screwdriver: ['kubejs:hv_switch_contact', 'gtceu:rod_extruder_mold'],
-    wire_cutter: ['kubejs:hv_arc_shield', 'gtceu:wire_extruder_mold']
+    screwdriver: ['gtceu:gregsingularity_hv_switch_contact', 'gtceu:rod_extruder_mold'],
+    wire_cutter: ['gtceu:gregsingularity_hv_arc_shield', 'gtceu:wire_extruder_mold']
   }
   const hvTool = /^gtceu:hv_(.+)_(drill|chainsaw|wrench|screwdriver|wire_cutter)$/
   const tools = []
@@ -34,7 +34,7 @@ ServerEvents.recipes(event => {
   tools.forEach(tool => {
     const recipe = event.recipes.gtceu.assembler('zero_shift:hv_tools/' + tool.suffix)
     const components = [tool.donor, 'gtceu:hv_power_unit'].concat(toolFamilies[tool.family], [
-      '2x gtceu:stainless_steel_plate', '2x kubejs:chemical_grade_seal',
+      '2x gtceu:stainless_steel_plate', '2x gtceu:gregsingularity_chemical_grade_seal',
       'gtceu:advanced_integrated_circuit', '2x pneumaticcraft:reinforced_pressure_tube'
     ])
     components.forEach(component => recipe.itemInputs(component))

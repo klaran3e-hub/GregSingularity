@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-  const ks = name => 'kubejs:' + name
+  const ks = name => global.gsItemId(name)
   const gt = name => 'gtceu:' + name
 
   const prefix = 'zero_shift:hv_foundry/'
@@ -79,9 +79,9 @@ ServerEvents.recipes(event => {
     ['electric_piston', gt('lv_electric_motor'), mvMotor, ks('iron_pressure_slug')],
     ['conveyor_module', gt('lv_conveyor_module'), mvMotor, gt('polyethylene_plate')],
     ['macerator', gt('lp_steam_macerator'), mvMotor, ks('drill_seal_head')],
-    ['mixer', 'kubejs:turned_spindle', mvMotor, ks('heat_exchange_core')],
-    ['wiremill', 'kubejs:forging_saddle', mvMotor, ks('steel_press_blank')],
-    ['lathe', 'kubejs:saw_blade', gt('mv_electric_piston'), ks('drill_seal_head')],
+    ['mixer', 'gtceu:gregsingularity_turned_spindle', mvMotor, ks('heat_exchange_core')],
+    ['wiremill', 'gtceu:gregsingularity_forging_saddle', mvMotor, ks('steel_press_blank')],
+    ['lathe', 'gtceu:gregsingularity_saw_blade', gt('mv_electric_piston'), ks('drill_seal_head')],
     ['bender', gt('lp_steam_forge_hammer'), gt('mv_electric_piston'), 'gtceu:plate_casting_mold']
   ]
   mvTools.forEach(([id, previous, drive, workingPart]) => {
@@ -90,12 +90,12 @@ ServerEvents.recipes(event => {
       .inputFluids(Fluid.of(id === 'electric_piston' ? gt('creosote') : lubricant, 400))
   })
   assemble('mv_input_hatch', [mvHull, mvPump, gt('steel_machine_casing'), '2x ' + seal, '2x ' + cable,
-    '2x pneumaticcraft:pressure_tube', 'kubejs:hand_pump_barrel', '2x ' + frame], gt('mv_input_hatch'), 660)
+    '2x pneumaticcraft:pressure_tube', 'gtceu:gregsingularity_hand_pump_barrel', '2x ' + frame], gt('mv_input_hatch'), 660)
     .inputFluids(Fluid.of(lubricant, 300))
   assemble('mv_robot_arm', [
     '2x ' + mvMotor, gt('mv_electric_piston'), gt('mv_conveyor_module'),
     '2x ' + mvCircuit, '2x ' + frame, '2x ' + cable, '2x ' + seal, 'gtceu:lv_robot_arm',
-    '2x ' + 'kubejs:pressed_steel_frame'
+    '2x ' + 'gtceu:gregsingularity_pressed_steel_frame'
   ], gt('mv_robot_arm'), 880).inputFluids(Fluid.of(lubricant, 450))
 
   event.remove({ id: 'gtceu:macerator/macerate_basalt' })

@@ -1,6 +1,6 @@
 ServerEvents.recipes(event => {
   const mc = id => 'minecraft:' + id
-  const ks = id => 'kubejs:' + id
+  const ks = id => global.gsItemId(id)
   const gt = id => 'gtceu:' + id
   const prefix = 'zero_shift:building/'
   const sand = ks('sand_temper')

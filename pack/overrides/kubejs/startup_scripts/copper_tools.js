@@ -1,20 +1,19 @@
 StartupEvents.registry('item', event => {
   // GregTech flint has 64 uses and 4 mining speed. Its axe has 2 mining speed.
-  const flintUses = 64
   const copperTools = [
-    ['pickaxe', 'pickaxe', 4, 4, 'pickaxes'],
-    ['axe', 'axe', 2, 4, 'axes'],
-    ['sword', 'sword', 4, 4, 'swords'],
-    ['hoe', 'hoe', 4, 4, 'hoes'],
-    ['shovel', 'shovel', 4, 4, 'shovels'],
-    ['mining_hammer', 'pickaxe', 4, 5, 'pickaxes']
+    ['pickaxe', 'pickaxe', 4, 256, 'pickaxes'],
+    ['axe', 'axe', 2, 256, 'axes'],
+    ['sword', 'sword', 4, 256, 'swords'],
+    ['hoe', 'hoe', 4, 256, 'hoes'],
+    ['shovel', 'shovel', 4, 256, 'shovels'],
+    ['mining_hammer', 'pickaxe', 4, 512, 'pickaxes']
   ]
 
-  for (const [name, type, flintSpeed, durabilityMultiplier, tag] of copperTools) {
-    let tool = event.create('copper_' + name, type)
+  for (const [name, type, flintSpeed, durability, tag] of copperTools) {
+    let tool = event.create(global.gsItemId('copper_' + name), type)
     tool.modifyTier(tier => {
       tier.setLevel(1)
-      tier.setUses(flintUses * durabilityMultiplier)
+      tier.setUses(durability)
       tier.setSpeed(flintSpeed * 1.5)
       tier.setAttackDamageBonus(1)
       tier.setEnchantmentValue(5)
@@ -28,7 +27,7 @@ StartupEvents.registry('item', event => {
 // Vanilla swords hard-code block speed independently of the material's tool tier.
 ForgeEvents.onEvent('net.minecraftforge.event.entity.player.PlayerEvent$BreakSpeed', event => {
   let sword = event.getEntity().mainHandItem
-  if (String(sword.id) !== 'kubejs:copper_sword') return
+  if (String(sword.id) !== 'gtceu:gregsingularity_copper_sword') return
 
   let state = event.getState()
   let flintSword = Item.of('gtceu:flint_sword')

@@ -1,7 +1,7 @@
 const BedrockFluidData = Java.loadClass('com.gregtechceu.gtceu.api.data.worldgen.bedrockfluid.BedrockFluidVeinSavedData')
 const OilFluidRegistry = Java.loadClass('net.minecraftforge.registries.ForgeRegistries').FLUIDS
 
-ItemEvents.rightClicked('kubejs:seismic_probe', event => {
+ItemEvents.rightClicked('gtceu:gregsingularity_seismic_probe', event => {
   const level = event.level
   if (level.isClientSide()) return
 

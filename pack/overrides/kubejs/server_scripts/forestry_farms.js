@@ -1,7 +1,7 @@
 ServerEvents.recipes(event => {
   const forestry = name => 'forestry:' + name
   const gt = name => 'gtceu:' + name
-  const ks = name => 'kubejs:' + name
+  const ks = name => global.gsItemId(name)
   const prefix = 'zero_shift:forestry/farm/'
   const circuit = gt('basic_electronic_circuit')
   const hull = gt('lv_machine_hull')
