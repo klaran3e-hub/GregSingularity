@@ -11,6 +11,7 @@ StartupEvents.registry('item', event => {
 
   for (const [name, type, flintSpeed, durability, tag] of copperTools) {
     let tool = event.create(global.gsItemId('copper_' + name), type)
+      .texture('kubejs:item/copper_' + name)
     tool.modifyTier(tier => {
       tier.setLevel(1)
       tier.setUses(durability)

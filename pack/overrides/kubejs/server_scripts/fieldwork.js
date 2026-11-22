@@ -60,8 +60,8 @@ ServerEvents.recipes(event => {
     ['tin','gtceu:tin_ingot'],['gold','minecraft:gold_ingot']]) {
     cast('reduce_' + metal, metal + '_charge', '2x #zero_shift:bloomery_fuels', 'ingot_mould', output, 360)
   }
-  shape('blend_bronze', k('bronze_charge'), ['C C', 'TFT', ' A '], {
-    C: k('washed_copper_grit'), T: k('chamotte'), F: k('fired_crucible'), A: k('washed_tin_grit')
+  shape('blend_bronze', k('bronze_charge'), ['C C', ' F ', ' A '], {
+    C: k('washed_copper_grit'), F: k('fired_crucible'), A: k('washed_tin_grit')
   })
   bronze.field_bloomery(id('roast_alloy'))
     .itemInputs(k('bronze_charge'), '#zero_shift:bloomery_fuels').notConsumable('#zero_shift:bronze_roast_moulds')
